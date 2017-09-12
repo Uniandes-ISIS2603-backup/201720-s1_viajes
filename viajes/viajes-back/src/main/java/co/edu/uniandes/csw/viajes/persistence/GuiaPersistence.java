@@ -11,6 +11,7 @@ import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -19,6 +20,7 @@ import javax.persistence.TypedQuery;
  *
  * @author jc.sanchez12
  */
+@Stateless
 public class GuiaPersistence 
 {
 

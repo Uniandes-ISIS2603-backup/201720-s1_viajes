@@ -204,7 +204,7 @@ public class GuiaPersistenceTest
         GuiaEntity resp = em.find(GuiaEntity.class, entity.getId());
 
         Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
-        Assert.assertEquals(entity.getValor(), newEntity.getValor());
+        Assert.assertEquals(newEntity.getValor(), resp.getValor());
     }
     
   
