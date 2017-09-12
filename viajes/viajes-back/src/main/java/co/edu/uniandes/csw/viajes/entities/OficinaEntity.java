@@ -5,25 +5,17 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import java.io.Serializable;
+
 
 /**
  *
  * @author m.rodriguez21
  */
-public class OficinaEntity extends BaseEntity
+public class OficinaEntity extends BaseEntity implements Serializable
 {
     private String nombreLugar;
     private String nombreEncargado;
-    
-    //////////////////////////////
-    //REVISAR SI SE HACE @EMBEDDED
-    //////////////////////////////
-    @OneToOne (fetch=FetchType.LAZY)
-    @JoinColumn (name="UBICACION_ID") 
-    private UbicacionEntity ubicacion;
     
     
     public String getNombreLugar()
@@ -46,14 +38,4 @@ public class OficinaEntity extends BaseEntity
         this.nombreEncargado = nombreEncargado;
     }
     
-    public UbicacionEntity getUbicacion()
-    {
-        return ubicacion;
-    }
-    
-    public void setUbicacion(UbicacionEntity ubicacion)
-    {
-        this.ubicacion = ubicacion;
-    }
-
 }
