@@ -17,6 +17,7 @@ import javax.persistence.TypedQuery;
  *
  * @author ma.forero11
  */
+@Stateless
 public class UbicacionPersistence {
     
      private static final Logger LOGGER = Logger.getLogger(UbicacionPersistence.class.getName());
