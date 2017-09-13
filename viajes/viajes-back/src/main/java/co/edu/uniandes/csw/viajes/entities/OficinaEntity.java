@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -13,6 +14,7 @@ import javax.persistence.OneToOne;
  *
  * @author m.rodriguez21
  */
+@Entity
 public class OficinaEntity extends BaseEntity
 {
     private String nombreLugar;

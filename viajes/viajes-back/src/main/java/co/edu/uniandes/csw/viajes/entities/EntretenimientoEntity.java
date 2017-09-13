@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -15,6 +16,7 @@ import javax.persistence.OneToOne;
  *
  * @author m.rodriguez21
  */
+@Entity
 public class EntretenimientoEntity extends ServicioEntity
 {
     
