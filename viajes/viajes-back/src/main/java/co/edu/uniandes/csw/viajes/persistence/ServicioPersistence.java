@@ -21,7 +21,7 @@ import javax.persistence.Query;
 @Stateless 
 public class ServicioPersistence {
     
-    @PersistenceContext(unitName = "GorrasToursPU")
+    @PersistenceContext(unitName = "viajesPU")
     protected EntityManager em;
       
       public ServicioEntity find(Long id) {

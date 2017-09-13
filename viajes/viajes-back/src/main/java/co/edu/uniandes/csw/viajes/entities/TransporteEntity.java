@@ -14,10 +14,10 @@ import javax.persistence.Entity;
 @Entity
 public class TransporteEntity extends ServicioEntity{
     
-    private Double valor;
     
     private TipoTransporte tipo;
     
+    /*
     private ImagenEntity[] imagenes;
     
     private UbicacionEntity origen;
@@ -26,13 +26,12 @@ public class TransporteEntity extends ServicioEntity{
     
     private CompañiaEntity compañia;
 
-    public Double getValor() {
-        return valor;
-    }
+*/
 
-    public void setValor(Double valor) {
-        this.valor = valor;
+    public TransporteEntity(TipoTransporte tipo) {
+        this.tipo = tipo;
     }
+    
 
     public TipoTransporte getTipo() {
         return tipo;
@@ -41,7 +40,7 @@ public class TransporteEntity extends ServicioEntity{
     public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
-
+/*
     public ImagenEntity[] getImagenes() {
         return imagenes;
     }
@@ -75,5 +74,5 @@ public class TransporteEntity extends ServicioEntity{
     }
     
     
-    
+    */
 }

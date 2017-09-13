@@ -18,26 +18,16 @@ import javax.persistence.TypedQuery;
  *
  * @author sa.silva1
  */
-
 @Stateless
 public class TransportePersistence {
     
-      @PersistenceContext(unitName = "GorrasToursPU")
+      @PersistenceContext(unitName = "viajesPU")
       protected EntityManager em;
       
       public TransporteEntity find(Long id) {
         return em.find(TransporteEntity.class, id);
     }
 
-      /*
-    public EmployeeEntity findByName(String name) {
-        LOGGER.log(Level.INFO, "Consultando employee con name= ", name);
-        TypedQuery<EmployeeEntity> q
-                = em.createQuery("select u from EmployeeEntity u where u.name = :name", EmployeeEntity.class);
-        q = q.setParameter("name", name);
-        return q.getSingleResult();
-    }
-*/
 
     public List<TransporteEntity> findAll() {
         Query q = em.createQuery("select u from TransporteEntity u");
