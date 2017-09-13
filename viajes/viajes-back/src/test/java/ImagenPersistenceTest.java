@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.viajes.persistence;
 
+
+import co.edu.uniandes.csw.viajes.persistence.ImagenPersistence;
 import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import java.util.ArrayList;
 import java.util.List;
