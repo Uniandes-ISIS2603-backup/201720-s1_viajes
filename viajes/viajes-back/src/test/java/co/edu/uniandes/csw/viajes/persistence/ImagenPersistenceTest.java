@@ -1,3 +1,5 @@
+package co.edu.uniandes.csw.viajes.persistence;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,8 +7,8 @@
  */
 
 
-import co.edu.uniandes.csw.viajes.persistence.ItinerarioPersistence;
-import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
+import co.edu.uniandes.csw.viajes.persistence.ImagenPersistence;
+import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -33,30 +35,14 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
  * @author js.beltran14
  */
 @RunWith(Arquillian.class)
-public class ItinerarioPersistenceTest {
-    
-    /**
-     *
-     * @return Devuelve el jar que Arquillian va a desplegar en el Glassfish
-     * embebido. El jar contiene las clases de XYZ, el descriptor de la
-     * base de datos y el archivo beans.xml para resolver la inyección de
-     * dependencias.
-     */
-    @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addPackage(ItinerarioEntity.class.getPackage())
-                .addPackage(ItinerarioPersistence.class.getPackage())
-                .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
-                .addAsManifestResource("META-INF/beans.xml", "beans.xml");
-    }
+public class ImagenPersistenceTest {
     
     /**
      * Inyección de la dependencia a la clase XYZPersistence cuyos métodos
      * se van a probar.
      */
     @Inject
-    private ItinerarioPersistence persistence;
+    private ImagenPersistence persistence;
 
     /**
      * Contexto de Persistencia que se va a utilizar para acceder a la Base de
@@ -75,9 +61,18 @@ public class ItinerarioPersistenceTest {
      /**
      *
      */
-    private List<ItinerarioEntity> data = new ArrayList<ItinerarioEntity>();
+    private List<ImagenEntity> data = new ArrayList<ImagenEntity>();
     
-    public ItinerarioPersistenceTest() {
+    public ImagenPersistenceTest() {
+    }
+    
+    @Deployment
+    public static JavaArchive createDeployment() {
+        return ShrinkWrap.create(JavaArchive.class)
+                .addPackage(ImagenEntity.class.getPackage())
+                .addPackage(ImagenPersistence.class.getPackage())
+                .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
+                .addAsManifestResource("META-INF/beans.xml", "beans.xml");
     }
     
     @BeforeClass
@@ -90,7 +85,7 @@ public class ItinerarioPersistenceTest {
     
     @Before
     public void setUp() {
-    try {
+         try {
             utx.begin();
             em.joinTransaction();
             clearData();
@@ -106,94 +101,95 @@ public class ItinerarioPersistenceTest {
         }
     }
     
+    @After
+    public void tearDown() {
+    }
+
     private void clearData() {
-        em.createQuery("delete from ItinerarioEntity").executeUpdate();
+        em.createQuery("delete from ImagenEntity").executeUpdate();
     }
 
 
  private void insertData() {
         PodamFactory factory = new PodamFactoryImpl();
         for (int i = 0; i < 3; i++) {
-            ItinerarioEntity entity = factory.manufacturePojo(ItinerarioEntity.class);
+            ImagenEntity entity = factory.manufacturePojo(ImagenEntity.class);
 
             em.persist(entity);
             data.add(entity);
         }
     }
     
-    @After
-    public void tearDown() {
-    }
-
     /**
-     * Test of create method, of class ItinerarioPersistence.
+     * Test of create method, of class ImagenPersistence.
      */
     @Test
     public void testCreate() throws Exception {
         PodamFactory factory = new PodamFactoryImpl();
-        ItinerarioEntity newEntity = factory.manufacturePojo(ItinerarioEntity.class);
-        ItinerarioEntity result = persistence.create(newEntity);
+        ImagenEntity newEntity = factory.manufacturePojo(ImagenEntity.class);
+        ImagenEntity result = persistence.create(newEntity);
 
         Assert.assertNotNull(result);
-        ItinerarioEntity entity = em.find(ItinerarioEntity.class, result.getId());
+        ImagenEntity entity = em.find(ImagenEntity.class, result.getId());
         Assert.assertNotNull(entity);
-        Assert.assertEquals(newEntity.getId(), entity.getId());
-        //fail("testCreate");
+        Assert.assertEquals(newEntity.getRuta(), entity.getRuta());
+       // fail("testCreate");
     }
 
     /**
-     * Test of update method, of class ItinerarioPersistence.
+     * Test of update method, of class ImagenPersistence.
      */
     @Test
     public void testUpdate() throws Exception {
-        ItinerarioEntity entity = data.get(0);
+        ImagenEntity entity = data.get(0);
         PodamFactory factory = new PodamFactoryImpl();
-        ItinerarioEntity newEntity = factory.manufacturePojo(ItinerarioEntity.class);
+        ImagenEntity newEntity = factory.manufacturePojo(ImagenEntity.class);
 
         newEntity.setId(entity.getId());
 
         persistence.update(newEntity);
 
-        ItinerarioEntity resp = em.find(ItinerarioEntity.class, entity.getId());
+        ImagenEntity resp = em.find(ImagenEntity.class, entity.getId());
 
-        Assert.assertEquals(newEntity.getId(), resp.getId());
-        //fail("testUpdate");
+        Assert.assertEquals(newEntity.getRuta(), resp.getRuta());
+        // fail("testUpdate");
     }
 
     /**
-     * Test of delete method, of class ItinerarioPersistence.
+     * Test of delete method, of class ImagenPersistence.
      */
     @Test
     public void testDelete() throws Exception {
-        ItinerarioEntity entity = data.get(0);
+        ImagenEntity entity = data.get(0);
         persistence.delete(entity.getId());
-        ItinerarioEntity deleted = em.find(ItinerarioEntity.class, entity.getId());
+        ImagenEntity deleted = em.find(ImagenEntity.class, entity.getId());
         Assert.assertNull(deleted);
-        //fail("testDelete");
+
+        // fail("testDelete");
     }
 
     /**
-     * Test of find method, of class ItinerarioPersistence.
+     * Test of find method, of class ImagenPersistence.
      */
     @Test
     public void testFind() throws Exception {
-        ItinerarioEntity entity = data.get(0);
-        ItinerarioEntity newEntity = persistence.find(entity.getId());
+        ImagenEntity entity = data.get(0);
+        ImagenEntity newEntity = persistence.find(entity.getId());
         Assert.assertNotNull(newEntity);
-        Assert.assertEquals(entity.getId(), newEntity.getId());
-        // fail("testFind");
+        Assert.assertEquals(entity.getRuta(), newEntity.getRuta());
+        //fail("testFind");
     }
 
     /**
-     * Test of findAll method, of class ItinerarioPersistence.
+     * Test of findAll method, of class ImagenPersistence.
      */
     @Test
     public void testFindAll() throws Exception {
-        List<ItinerarioEntity> list = persistence.findAll();
+        List<ImagenEntity> list = persistence.findAll();
         Assert.assertEquals(data.size(), list.size());
-        for (ItinerarioEntity ent : list) {
+        for (ImagenEntity ent : list) {
             boolean found = false;
-            for (ItinerarioEntity entity : data) {
+            for (ImagenEntity entity : data) {
                 if (ent.getId().equals(entity.getId())) {
                     found = true;
             }

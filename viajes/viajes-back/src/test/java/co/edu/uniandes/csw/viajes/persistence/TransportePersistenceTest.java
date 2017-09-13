@@ -1,3 +1,5 @@
+package co.edu.uniandes.csw.viajes.persistence;
+
 
 import co.edu.uniandes.csw.viajes.entities.TransporteEntity;
 import co.edu.uniandes.csw.viajes.persistence.TransportePersistence;
