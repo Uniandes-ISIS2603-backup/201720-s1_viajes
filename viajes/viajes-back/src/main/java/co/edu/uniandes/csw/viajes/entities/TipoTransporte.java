@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.viajes.persistence;
+package co.edu.uniandes.csw.viajes.entities;
 
 /**
  *
- * @author wr.ravelo
+ * @author sa.silva1
  */
-public class ViajesPersistence {
+public enum TipoTransporte {
     
+    AVION,
+    TREN,
+    TAXI
 }
