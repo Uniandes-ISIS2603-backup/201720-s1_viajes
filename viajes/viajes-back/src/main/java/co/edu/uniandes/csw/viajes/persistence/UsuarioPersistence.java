@@ -5,7 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.persistence;
 
-import co.edu.uniandes.csw.viajes.entities.PagoEntity;
+import co.edu.uniandes.csw.viajes.entities.UsuarioEntity;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -17,30 +17,30 @@ import javax.persistence.TypedQuery;
  * @author tv.huertas10
  */
 @Stateless
-public class PagoPersistence 
+public class UsuarioPersistence 
 {
     @PersistenceContext(unitName = "viajesPU")
     protected EntityManager em;
      
-     public PagoEntity create(PagoEntity entity) {
+     public UsuarioEntity create(UsuarioEntity entity) {
         em.persist(entity);
         return entity;
     }
     
-    public List<PagoEntity> findAll() {
-        TypedQuery query = em.createQuery("select u from PagoEntity u", PagoEntity.class);
+    public List<UsuarioEntity> findAll() {
+        TypedQuery query = em.createQuery("select u from UsuarioEntity u", UsuarioEntity.class);
         return query.getResultList();
     }
         
-    public PagoEntity findById(Long id) {
-        return em.find(PagoEntity.class, id);
+    public UsuarioEntity findById(Long id) {
+        return em.find(UsuarioEntity.class, id);
     }
     
-    public PagoEntity findByName(String nombre)
+    public UsuarioEntity findByName(String nombre)
     {
-        TypedQuery<PagoEntity> query = em.createQuery("select u from PagoEntity u where u.nombre = :nombre", PagoEntity.class);
+        TypedQuery<UsuarioEntity> query = em.createQuery("select u from UsuarioEntity u where u.nombre = :nombre", UsuarioEntity.class);
         query = query.setParameter("nombre", nombre);
-        List<PagoEntity> listName = query.getResultList();
+        List<UsuarioEntity> listName = query.getResultList();
         if (listName.isEmpty()) {
             return null;
         } else {
@@ -49,11 +49,11 @@ public class PagoPersistence
     }
     
     public void delete(Long id) {
-        PagoEntity entity = em.find(PagoEntity.class, id);
+        UsuarioEntity entity = em.find(UsuarioEntity.class, id);
         em.remove(entity);
     }
     
-     public PagoEntity update(PagoEntity entity) {
+     public UsuarioEntity update(UsuarioEntity entity) {
         return em.merge(entity);
     }     
 }

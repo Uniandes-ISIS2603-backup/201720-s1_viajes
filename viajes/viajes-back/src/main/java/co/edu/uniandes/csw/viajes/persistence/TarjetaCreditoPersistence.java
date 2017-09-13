@@ -5,7 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.persistence;
 
-import co.edu.uniandes.csw.viajes.entities.PagoEntity;
+import co.edu.uniandes.csw.viajes.entities.TarjetaCreditoEntity;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -17,30 +17,30 @@ import javax.persistence.TypedQuery;
  * @author tv.huertas10
  */
 @Stateless
-public class PagoPersistence 
+public class TarjetaCreditoPersistence 
 {
     @PersistenceContext(unitName = "viajesPU")
     protected EntityManager em;
      
-     public PagoEntity create(PagoEntity entity) {
+     public TarjetaCreditoEntity create(TarjetaCreditoEntity entity) {
         em.persist(entity);
         return entity;
     }
     
-    public List<PagoEntity> findAll() {
-        TypedQuery query = em.createQuery("select u from PagoEntity u", PagoEntity.class);
+    public List<TarjetaCreditoEntity> findAll() {
+        TypedQuery query = em.createQuery("select u from TarjetaCreditoEntity u", TarjetaCreditoEntity.class);
         return query.getResultList();
     }
         
-    public PagoEntity findById(Long id) {
-        return em.find(PagoEntity.class, id);
+    public TarjetaCreditoEntity findById(Long id) {
+        return em.find(TarjetaCreditoEntity.class, id);
     }
     
-    public PagoEntity findByName(String nombre)
+    public TarjetaCreditoEntity findByNumber(Integer numero)
     {
-        TypedQuery<PagoEntity> query = em.createQuery("select u from PagoEntity u where u.nombre = :nombre", PagoEntity.class);
-        query = query.setParameter("nombre", nombre);
-        List<PagoEntity> listName = query.getResultList();
+        TypedQuery<TarjetaCreditoEntity> query = em.createQuery("select u from TarjetaCreditoEntity u where u.numero = :numero", TarjetaCreditoEntity.class);
+        query = query.setParameter("numero", numero);
+        List<TarjetaCreditoEntity> listName = query.getResultList();
         if (listName.isEmpty()) {
             return null;
         } else {
@@ -49,11 +49,11 @@ public class PagoPersistence
     }
     
     public void delete(Long id) {
-        PagoEntity entity = em.find(PagoEntity.class, id);
+        TarjetaCreditoEntity entity = em.find(TarjetaCreditoEntity.class, id);
         em.remove(entity);
     }
     
-     public PagoEntity update(PagoEntity entity) {
+     public TarjetaCreditoEntity update(TarjetaCreditoEntity entity) {
         return em.merge(entity);
     }     
 }
