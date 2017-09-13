@@ -23,7 +23,7 @@ public class ItinerarioPersistence {
  
      private static final Logger LOGGER = Logger.getLogger(ItinerarioPersistence.class.getName());
 
-    @PersistenceContext(unitName = "itinerarioPU")
+    @PersistenceContext(unitName = "viajesPU")
     protected EntityManager em;
     
     public ItinerarioEntity create(ItinerarioEntity entity){
