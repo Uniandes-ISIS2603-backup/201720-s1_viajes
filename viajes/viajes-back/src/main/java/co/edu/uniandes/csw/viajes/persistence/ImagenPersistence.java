@@ -23,7 +23,7 @@ public class ImagenPersistence {
     
      private static final Logger LOGGER = Logger.getLogger(ImagenPersistence.class.getName());
 
-    @PersistenceContext(unitName = "imagenPU")
+    @PersistenceContext(unitName = "viajesPU")
     protected EntityManager em;
     
     public ImagenEntity create(ImagenEntity entity){
