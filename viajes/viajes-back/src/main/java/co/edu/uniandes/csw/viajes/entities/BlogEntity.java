@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
  *
  * @author m.rodriguez21
  */
-public class BlogEntity extends ServicioEntity
+public class BlogEntity extends BaseEntity
 {
     private String titulo;
     private String comentario;
@@ -23,9 +23,9 @@ public class BlogEntity extends ServicioEntity
     //////////////////////////////
     //REVISAR SI SE HACE @EMBEDDED
     //////////////////////////////
-    @OneToMany(fetch=FetchType.LAZY)
-    @JoinColumn(name="IMAGEN_ID")
-    private List<ImagenEntity> imagen;
+    //@OneToMany(fetch=FetchType.LAZY)
+    //@JoinColumn(name="IMAGEN_ID")
+    //private List<ImagenEntity> imagen;
     
     public String getNombreTitulo()
     {
@@ -47,14 +47,14 @@ public class BlogEntity extends ServicioEntity
         this.comentario = comentario;
     }
     
-     public List<ImagenEntity> getImagenes()
-    {
-        return imagenes;
-    }
+    // public List<ImagenEntity> getImagenes()
+    //{
+    //    return imagenes;
+    //}
     
-    public void setImagenes(List<ImagenEntity> imagenes)
-    {
-        this.imagenes = imagenes;
-    }
+    //public void setImagenes(List<ImagenEntity> imagenes)
+    //{
+    //    this.imagenes = imagenes;
+    //}
     
 }
