@@ -6,7 +6,7 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import javax.persistence.Entity;
-import static javax.ws.rs.client.Entity.entity;
+
 
 /**
  *
