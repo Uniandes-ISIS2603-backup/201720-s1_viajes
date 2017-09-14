@@ -26,6 +26,8 @@ public abstract class ServicioEntity extends BaseEntity{
     private Double calificacion;
     
     private String comentarios;
+    
+     private String descripcion;
 
     public String getNombre() {
         return nombre;
@@ -75,5 +77,11 @@ public abstract class ServicioEntity extends BaseEntity{
         this.comentarios = comentarios;
     }
     
-    
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 }
