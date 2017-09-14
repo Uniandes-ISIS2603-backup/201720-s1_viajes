@@ -56,4 +56,5 @@ public class UsuarioPersistence
      public UsuarioEntity update(UsuarioEntity entity) {
         return em.merge(entity);
     }     
+  
 }
