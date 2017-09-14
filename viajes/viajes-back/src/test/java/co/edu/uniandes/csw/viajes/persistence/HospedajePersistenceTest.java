@@ -122,12 +122,16 @@ public class HospedajePersistenceTest {
      */
     @Test
     public void testUpdate() {
-            HospedajeEntity entity = data.get(0);
+    HospedajeEntity entity = data.get(0);
     PodamFactory factory = new PodamFactoryImpl();
     HospedajeEntity newEntity = factory.manufacturePojo(HospedajeEntity.class);
+    
     newEntity.setId(entity.getId());
+    
     persistence.update(newEntity);
+    
     HospedajeEntity resp = em.find(HospedajeEntity.class, entity.getId());
+    
     Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
     }
 
@@ -136,7 +140,7 @@ public class HospedajePersistenceTest {
      */
     @Test
     public void testDelete() {
-            HospedajeEntity entity = data.get(0);
+    HospedajeEntity entity = data.get(0);
     persistence.delete(entity.getId());
     HospedajeEntity deleted = em.find(HospedajeEntity.class, entity.getId());
     Assert.assertNull(deleted);

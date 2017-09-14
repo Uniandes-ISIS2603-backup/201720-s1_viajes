@@ -13,7 +13,7 @@ import javax.persistence.Entity;
  * @author tv.huertas10
  */
 @Entity
-public class UsuarioEntity extends BaseEntity implements Serializable
+public class UsuarioEntity extends BaseEntity 
 {
     //ATRIBUTOS
     private String nombre; //Nombre del usuario    

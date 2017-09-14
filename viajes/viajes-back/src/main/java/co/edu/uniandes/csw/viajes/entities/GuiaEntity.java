@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
  * @author jc.sanchez12
  */
 @Entity
-public class GuiaEntity extends  BaseEntity implements Serializable
+public class GuiaEntity extends  BaseEntity 
 {
     //ATRIBUTOS
     private String lenguaje; //Lenguaje  del guia

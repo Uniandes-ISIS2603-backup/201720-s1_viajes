@@ -5,10 +5,14 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import javax.persistence.Entity;
+
 /**
  *
+ * Falta el @entity
  * @author js.beltran14
  */
+@Entity
 public class ImagenEntity extends BaseEntity{
     
     private String ruta;

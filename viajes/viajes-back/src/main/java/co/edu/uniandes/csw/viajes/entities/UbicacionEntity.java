@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -15,7 +16,8 @@ import javax.persistence.OneToOne;
  *
  * @author ma.forero11
  */
-public class UbicacionEntity {
+@Entity
+public class UbicacionEntity extends BaseEntity {
     
     private String longitud;
     private String latitud;
@@ -23,16 +25,8 @@ public class UbicacionEntity {
     private String direccion;
     private String ciudad;
     private String pais;
-    private Long id;
     
-    public Long getId(){
-        return id;
-    }
     
-    public void setId(Long pId){
-        this.id = pId;
-    }
-
     public String getLongitud() {
         return longitud;
     }

@@ -13,7 +13,7 @@ import javax.persistence.Entity;
  * @author tv.huertas10
  */
 @Entity
-public class PagoEntity extends BaseEntity implements Serializable
+public class PagoEntity extends BaseEntity
 {
     //ATRIBUTOS
     private String nombre; //Nombre del usuario que hizo el pago

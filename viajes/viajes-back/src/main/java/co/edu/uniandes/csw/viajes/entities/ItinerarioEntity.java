@@ -5,10 +5,13 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import javax.persistence.Entity;
+
 /**
  *
  * @author js.beltran14
  */
+@Entity
 public class ItinerarioEntity extends BaseEntity{
     
     private int costoTotal;

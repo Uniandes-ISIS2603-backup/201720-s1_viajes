@@ -17,7 +17,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.jboss.arquillian.junit.Arquillian;
 import org.junit.runner.RunWith;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -113,7 +112,7 @@ public class UbicacionPersistenceTest {
 
     Assert.assertNotNull(result);
     
-    UbicacionEntity entity = em.find(UbicacionEntity.class, result.getNombre());
+    UbicacionEntity entity = em.find(UbicacionEntity.class, result.getId());
     Assert.assertNotNull(entity);
     Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
     }

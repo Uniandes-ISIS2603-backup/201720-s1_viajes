@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
+import javax.persistence.Entity;
 //import javax.persistence.FetchType;
 //import javax.persistence.JoinColumn;
 //import javax.persistence.OneToMany;
@@ -14,85 +15,32 @@ import java.util.List;
 /**
  *
  * @author ma.forero11
+ * Anotaciones: no tenia @Entity, no extendia de servicio entity, no tenia id
+ * Se agrego la enumeracion
  */
-public class HospedajeEntity{
+@Entity
+public class HospedajeEntity extends ServicioEntity{
 
-    private String fechaInicio;
-    private String fechaFinal;
-    private String nombre;
-    private Double valor;
-    private Integer calificacion;
-    private String comentarios;
-    private long id;
-    private String descripcion;
+    public enum TipoHospedaje {
     
-    public String getFechaInicio() {
-        return fechaInicio;
+    HOTEL,
+    CAMPING
+    
     }
 
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public String getFechaFinal() {
-        return fechaFinal;
-    }
-
-    public void setFechaFinal(String fechaFinal) {
-        this.fechaFinal = fechaFinal;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Double getValor() {
-        return valor;
-    }
-
-    public void setValor(Double valor) {
-        this.valor = valor;
-    }
-
-    public Integer getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(Integer calificacion) {
-        this.calificacion = calificacion;
-    }
-
-    public String getComentarios() {
-        return comentarios;
-    }
-
-    public void setComentarios(String comentarios) {
-        this.comentarios = comentarios;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
+    private TipoHospedaje tipo;
     
     //private UbicacionEntity ubicacion;
     //private List<ImagenEntity> imagenes;
     //private CompaniaEntity compania;
+    
+    public TipoHospedaje getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoHospedaje tipo) {
+        this.tipo = tipo;
+    }
     
     // public UbicacionEntity getUbicacion()
     //{
