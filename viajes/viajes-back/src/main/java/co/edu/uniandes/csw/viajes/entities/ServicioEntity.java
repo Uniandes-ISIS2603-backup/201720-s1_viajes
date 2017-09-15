@@ -13,7 +13,7 @@ import javax.persistence.Entity;
  */
 
 @Entity
-public abstract class ServicioEntity extends BaseEntity{
+public class ServicioEntity extends BaseEntity{
     
     private String nombre;
     
