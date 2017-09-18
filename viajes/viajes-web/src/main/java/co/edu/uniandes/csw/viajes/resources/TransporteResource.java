@@ -8,6 +8,7 @@ package co.edu.uniandes.csw.viajes.resources;
 import co.edu.uniandes.csw.viajes.dtos.TransporteDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.TransporteLogic;
 import co.edu.uniandes.csw.viajes.entities.TransporteEntity;
+import co.edu.uniandes.csw.viajes.excpetions.BusinessLogicException;
 import co.edu.uniandes.csw.viajes.persistence.TransportePersistence;
 import java.util.ArrayList;
 import java.util.List;
