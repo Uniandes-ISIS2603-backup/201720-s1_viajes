@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -23,9 +24,9 @@ public class OficinaEntity extends BaseEntity
     //////////////////////////////
     //REVISAR SI SE HACE @EMBEDDED
     //////////////////////////////
-    //@OneToOne (fetch=FetchType.LAZY)
-    //@JoinColumn (name="UBICACION_ID") 
-    //private UbicacionEntity ubicacion;
+    @OneToOne (fetch=FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
+    @JoinColumn(name="UBICACION_ID")
+    private UbicacionEntity ubicacion;
     
     
     public String getNombreLugar()
@@ -48,14 +49,14 @@ public class OficinaEntity extends BaseEntity
         this.nombreEncargado = nombreEncargado;
     }
     
-    //public UbicacionEntity getUbicacion()
-    //{
-    //    return ubicacion;
-    //}
+    public UbicacionEntity getUbicacion()
+    {
+        return ubicacion;
+    }
     
-    //public void setUbicacion(UbicacionEntity ubicacion)
-    //{
-    //    this.ubicacion = ubicacion;
-    //}
+    public void setUbicacion(UbicacionEntity ubicacion)
+    {
+        this.ubicacion = ubicacion;
+    }
 
 }

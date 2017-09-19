@@ -6,11 +6,13 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -24,12 +26,14 @@ public class BlogEntity extends BaseEntity
     
     //////////////////////////////
     //REVISAR SI SE HACE @EMBEDDED
+    //REVISAR CASCADA
     //////////////////////////////
-    //@OneToMany(fetch=FetchType.LAZY)
-    //@JoinColumn(name="IMAGEN_ID")
-    //private List<ImagenEntity> imagen;
+    @PodamExclude
+    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
+    @JoinColumn(name="IMAGEN_ID")
+    private List<ImagenEntity> imagenes;
     
-    public String getNombreTitulo()
+    public String getTitulo()
     {
         return titulo;
     }
@@ -49,14 +53,14 @@ public class BlogEntity extends BaseEntity
         this.comentario = comentario;
     }
     
-    // public List<ImagenEntity> getImagenes()
-    //{
-    //    return imagenes;
-    //}
+     public List<ImagenEntity> getImagenes()
+    {
+        return imagenes;
+    }
     
-    //public void setImagenes(List<ImagenEntity> imagenes)
-    //{
-    //    this.imagenes = imagenes;
-    //}
+    public void setImagenes(List<ImagenEntity> imagenes)
+    {
+        this.imagenes = imagenes;
+    }
     
 }
