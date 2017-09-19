@@ -33,6 +33,10 @@ public class ImagenResource {
     @Inject
     ImagenLogic imagenLogic;
     
+    /**
+     *
+     * @return devuelve las imagenes en la base de datos.
+     */
     @GET
     public List<ImagenDTO> getImagen(){
         List<ImagenDTO> imagenDTOs = new ArrayList<>();
@@ -45,6 +49,12 @@ public class ImagenResource {
         return imagenDTOs;
     }
     
+    /**
+     * Busca si hay algun dto con el id que se envía de argumento
+     * @exception HTTPException si es nulo el dto 
+     * @param id: id del dto que se está buscando
+     * @return Si existe alguna devuelve la primera.
+     */
     @GET
     @Path("{id: \\d+}")
     public ImagenDTO getImagen(@PathParam("id") Long id) throws HTTPException {
@@ -53,6 +63,11 @@ public class ImagenResource {
         return new ImagenDTO(toGet);
     }
     
+    /**
+     *
+     * @param imagenDTO: objeto imagen que se creará en la base de datos
+     * @return devuelve el DTO creado con un id dado por la base de datos.
+     */
     @POST
     public ImagenDTO createImagen(ImagenDTO imagenDTO){
         ImagenEntity imagen = imagenDTO.toEntity();
@@ -60,6 +75,12 @@ public class ImagenResource {
         return new ImagenDTO(entity);
     }
     
+    /**
+     *
+     * @param dto objeto imagen que se cambiara en la base de datos
+     * @param id id del dto
+     * @return devuelve el dto cambiado.
+     */
     @PUT
     @Path("{id: \\d+}")
     public ImagenDTO updateImagen(@PathParam("id") Long id, ImagenDTO dto) {
@@ -68,6 +89,10 @@ public class ImagenResource {
        return new ImagenDTO(imagenLogic.updateImagen(entity)); 
     }
     
+    /**
+     *
+     * @param id dto imagen que se borrara de la base de datos
+     */
     @DELETE
     @Path("{id: \\d+}")
     public void deleteImagen(@PathParam("id") Long id) {

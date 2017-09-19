@@ -17,12 +17,20 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
         
     }
     
-    
+    /**
+     * Constructor para transformar un Entity a un DTO
+     *
+     * @param entity
+     */
     public ItinerarioDetailDTO(ItinerarioEntity entity){
         super(entity);
     }
     
-    
+    /**
+     * Transformar un DTO a un Entity
+     *
+     * @return 
+     */
     @Override
     public ItinerarioEntity toEntity(){
         ItinerarioEntity entity = super.toEntity();

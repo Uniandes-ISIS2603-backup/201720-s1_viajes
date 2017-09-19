@@ -23,6 +23,11 @@ public class ImagenDTO {
         
     }
     
+    /**
+     * Conviertir Entity a DTO
+     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
+     * @param entity: Es la entidad que se va a convertir a DTO 
+     */
     public ImagenDTO(ImagenEntity entity){
         this.id = entity.getId();
         this.comentario = entity.getComentario();
@@ -72,6 +77,10 @@ public class ImagenDTO {
         this.id = id;
     }
     
+    /**
+     * Convertir DTO a Entity
+     * @return Un Entity con los valores del DTO 
+     */
     public ImagenEntity toEntity(){
         ImagenEntity entity = new ImagenEntity();
         entity.setId(this.id);

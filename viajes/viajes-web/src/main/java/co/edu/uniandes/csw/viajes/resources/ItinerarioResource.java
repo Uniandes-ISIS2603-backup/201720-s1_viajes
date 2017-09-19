@@ -33,6 +33,10 @@ public class ItinerarioResource {
     @Inject
     ItinerarioLogic itinerarioLogic;
     
+    /**
+     *
+     * @return devuelve los itinerarios en la base de datos.
+     */
     @GET
     public List<ItinerarioDTO> getItinerario(){
         List<ItinerarioDTO> ItinerarioDTOs = new ArrayList<>();
@@ -45,6 +49,12 @@ public class ItinerarioResource {
         return ItinerarioDTOs;
     }
     
+    /**
+     * Busca si hay algun itinerario con el id que se envía de argumento
+     * @exception HTTPException si el dto es nulo
+     * @param id: id de la imagen que se está buscando
+     * @return Si existe alguna devuelve la primera.
+     */
     @GET
     @Path("{id: \\d+}")
     public ItinerarioDTO getItinerario(@PathParam("id") Long id) throws HTTPException {
@@ -53,6 +63,11 @@ public class ItinerarioResource {
         return new ItinerarioDTO(toGet);
     }
     
+    /**
+     *
+     * @param itinerarioDTO  dto itinerario que se creará en la base de datos
+     * @return devuelve el dto creada con un id dado por la base de datos.
+     */
     @POST
     public ItinerarioDTO createItinerario(ItinerarioDTO itinerarioDTO){
         ItinerarioEntity itinerario = itinerarioDTO.toEntity();
@@ -60,6 +75,11 @@ public class ItinerarioResource {
         return new ItinerarioDTO(entity);
     }
     
+    /**
+     * @param id identificador del dto
+     * @param dto dto itinerario que se cambiara en la base de datos
+     * @return devuelve el dto cambiada.
+     */
     @PUT
     @Path("{id: \\d+}")
     public ItinerarioDTO updateImagen(@PathParam("id") Long id, ItinerarioDTO dto) {
@@ -68,6 +88,10 @@ public class ItinerarioResource {
        return new ItinerarioDTO(itinerarioLogic.updateItinerario(entity)); 
     }
     
+    /**
+     *
+     * @param id del dto itinerario que se borrara de la base de datos
+     */
     @DELETE
     @Path("{id: \\d+}")
     public void deleteImagen(@PathParam("id") Long id) {

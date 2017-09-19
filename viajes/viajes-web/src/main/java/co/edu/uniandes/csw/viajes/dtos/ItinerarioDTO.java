@@ -27,6 +27,11 @@ public class ItinerarioDTO {
         
     }
     
+     /**
+     * Conviertir Entity a DTO
+     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
+     * @param entity: Es la entidad que se va a convertir a DTO 
+     */
     public ItinerarioDTO(ItinerarioEntity entity){
         this.id = entity.getId();
         this.numeroVisitantes = entity.getNumeroVisitantes();
@@ -105,6 +110,10 @@ public class ItinerarioDTO {
         this.numeroVisitantes = numeroVisitantes;
     }
     
+    /**
+     * Convertir DTO a Entity
+     * @return Un Entity con los valores del DTO 
+     */
     public ItinerarioEntity toEntity(){
         ItinerarioEntity entity = new ItinerarioEntity();
         entity.setId(this.id);

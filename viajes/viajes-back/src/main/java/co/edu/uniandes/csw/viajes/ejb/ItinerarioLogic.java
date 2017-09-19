@@ -24,27 +24,35 @@ public class ItinerarioLogic {
     @Inject
     private ItinerarioPersistence persistence;
     
-     public List<ItinerarioEntity> getItinerarios() {
+    public List<ItinerarioEntity> getItinerarios() {
+        LOGGER.info("Inicia proceso de consultar todas los itinerarios");
         return persistence.findAll();
     }
     
-      public ItinerarioEntity getItinerario(Long id) {
+    public ItinerarioEntity getItinerario(Long id) {
+        LOGGER.info("Inicia proceso de consultar un itinerario");
         return persistence.find(id);
     }
      
-     public ItinerarioEntity createItinrario(ItinerarioEntity entity) {
+    public ItinerarioEntity createItinrario(ItinerarioEntity entity) {
+        LOGGER.info("Inicia proceso de creación de itinerario");
         persistence.create(entity);
+        LOGGER.info("Termina proceso de creación de itinerario");
+        LOGGER.info(entity.getFechaInicial()+" "+entity.getFechaFinal());
         return entity;
     }
 
    
     public ItinerarioEntity updateItinerario(ItinerarioEntity entity) {
+        LOGGER.info("Inicia proceso de consultar un itinerario");
         return persistence.update(entity);
     }
 
    
     public void deleteItinerario(Long id) {
+        LOGGER.info("Inicia proceso de borrar un itinerario");
         persistence.delete(id);
+        LOGGER.info("Termina proceso de borrar un itinerario");
     }
      
     

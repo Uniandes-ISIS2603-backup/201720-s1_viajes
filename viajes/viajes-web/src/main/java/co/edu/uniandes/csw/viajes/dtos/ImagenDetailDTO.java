@@ -17,10 +17,20 @@ public class ImagenDetailDTO extends ImagenDTO{
         
     }
     
+    /**
+     * Constructor para transformar un Entity a un DTO
+     *
+     * @param entity
+     */
     public ImagenDetailDTO(ImagenEntity entity){
         super(entity);
     }
     
+    /**
+     * Transformar un DTO a un Entity
+     *
+     * @return 
+     */
     @Override
     public ImagenEntity toEntity(){
         ImagenEntity entity = super.toEntity();
