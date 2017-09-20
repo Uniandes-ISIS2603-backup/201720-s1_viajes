@@ -108,8 +108,6 @@ public class CompaniaResource
             throw new WebApplicationException("El author no existe", 404);
         }
        companialogic.deleteCompania(id);
-    }
-    
-    
+    }    
     
 }
