@@ -25,6 +25,17 @@ public class TransporteEntity extends ServicioEntity{
     
     private TipoTransporte tipo;
     
+    /*
+    private ImagenEntity[] imagenes;
+    
+    private UbicacionEntity origen;
+    
+    private UbicacionEntity destino;
+    
+    private CompañiaEntity compañia;
+
+*/
+    
     public TipoTransporte getTipo() {
         return tipo;
     }
@@ -32,5 +43,39 @@ public class TransporteEntity extends ServicioEntity{
     public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
+/*
+    public ImagenEntity[] getImagenes() {
+        return imagenes;
+    }
+
+    public void setImagenes(ImagenEntity[] imagenes) {
+        this.imagenes = imagenes;
+    }
+
+    public UbicacionEntity getOrigen() {
+        return origen;
+    }
+
+    public void setOrigen(UbicacionEntity origen) {
+        this.origen = origen;
+    }
+
+    public UbicacionEntity getDestino() {
+        return destino;
+    }
+
+    public void setDestino(UbicacionEntity destino) {
+        this.destino = destino;
+    }
+
+    public CompañiaEntity getCompañia() {
+        return compañia;
+    }
+
+    public void setCompañia(CompañiaEntity compañia) {
+        this.compañia = compañia;
+    }
     
+    
+    */
 }

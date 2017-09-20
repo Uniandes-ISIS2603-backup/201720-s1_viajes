@@ -13,7 +13,7 @@ import javax.persistence.Entity;
  */
 
 @Entity
-public class ServicioEntity extends BaseEntity{
+public abstract class ServicioEntity extends BaseEntity{
     
     private String nombre;
     
@@ -84,5 +84,4 @@ public class ServicioEntity extends BaseEntity{
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
 }
