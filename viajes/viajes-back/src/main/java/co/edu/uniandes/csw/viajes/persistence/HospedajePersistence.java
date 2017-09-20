@@ -22,7 +22,7 @@ public class HospedajePersistence {
     
      private static final Logger LOGGER = Logger.getLogger(HospedajePersistence.class.getName());
      
-     @PersistenceContext(unitName = "hospedajePU")
+     @PersistenceContext(unitName = "viajesPU")
       protected EntityManager em;
      
      public HospedajeEntity create(HospedajeEntity entity){

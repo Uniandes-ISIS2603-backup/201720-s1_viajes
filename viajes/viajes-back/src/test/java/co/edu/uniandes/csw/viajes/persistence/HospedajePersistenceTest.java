@@ -72,14 +72,6 @@ public class HospedajePersistenceTest {
     public HospedajePersistenceTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
     @Before
     public void setUp() {
         try {
@@ -97,17 +89,14 @@ public class HospedajePersistenceTest {
             }
         }
     }
-    
-    @After
-    public void tearDown() {
-    }
+
 
     /**
      * Test of create method, of class HospedajePersistence.
      */
     @Test
     public void testCreate() {
-            PodamFactory factory = new PodamFactoryImpl();
+        PodamFactory factory = new PodamFactoryImpl();
     HospedajeEntity newEntity = factory.manufacturePojo(HospedajeEntity.class);
     HospedajeEntity result = persistence.create(newEntity);
 

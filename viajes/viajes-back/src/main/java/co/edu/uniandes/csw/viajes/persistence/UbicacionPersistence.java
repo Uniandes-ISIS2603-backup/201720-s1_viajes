@@ -22,7 +22,7 @@ public class UbicacionPersistence {
     
      private static final Logger LOGGER = Logger.getLogger(UbicacionPersistence.class.getName());
      
-     @PersistenceContext(unitName = "ubicacionPU")
+     @PersistenceContext(unitName = "viajesPU")
       protected EntityManager em;
      
      public UbicacionEntity create(UbicacionEntity entity){
