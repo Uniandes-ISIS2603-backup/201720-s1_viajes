@@ -30,6 +30,10 @@ public class HospedajeEntity extends ServicioEntity{
 
     private TipoHospedaje tipo;
     
+    //private UbicacionEntity ubicacion;
+    //private List<ImagenEntity> imagenes;
+    //private CompaniaEntity compania;
+
     private UbicacionEntity ubicacion;
     private List<ImagenEntity> imagenes;
     private CompaniaEntity compania;
@@ -47,29 +51,29 @@ public class HospedajeEntity extends ServicioEntity{
     //    return ubicacion;
     //}
      
-    public void setUbicacion(UbicacionEntity ubicacion)
-    {
-        this.ubicacion = ubicacion;
-    }
-     
-    public List<ImagenEntity> getImagenes()
-    {
-        return imagenes;
-    }
+//    public void setUbicacion(UbicacionEntity ubicacion)
+//    {
+//        this.ubicacion = ubicacion;
+//    }
+//     
+//    public List<ImagenEntity> getImagenes()
+//    {
+//        return imagenes;
+//    }
+//    
+//    public void setImagenes(List<ImagenEntity> imagenes)
+//    {
+//        this.imagenes = imagenes;
+//    }
     
-    public void setImagenes(List<ImagenEntity> imagenes)
-    {
-        this.imagenes = imagenes;
-    }
-    
-    public CompaniaEntity getCompania()
-    {
-        return compania;
-    }
-    
-    public void setCompania(CompaniaEntity compania)
-    {
-        this.compania = compania;
-    }
+//    public CompaniaEntity getCompania()
+//    {
+//        return compania;
+//    }
+//    
+//    public void setCompania(CompaniaEntity compania)
+//    {
+//        this.compania = compania;
+//    }
      
 }
