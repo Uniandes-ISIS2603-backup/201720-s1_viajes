@@ -1,7 +1,3 @@
-<<<<<<< HEAD:viajes-back/src/main/java/co/edu/uniandes/csw/viajes/entities/ImagenEntity.java
-=======
-
->>>>>>> e7910ed95c91f9262305ad2222e729cc532d5bad:viajes-back/src/main/java/co/edu/uniandes/csw/viajes/entities/ImagenEntity.java
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -52,7 +48,3 @@ public class ImagenEntity extends BaseEntity{
     }
     
 }
-<<<<<<< HEAD:viajes-back/src/main/java/co/edu/uniandes/csw/viajes/entities/ImagenEntity.java
-=======
-
->>>>>>> e7910ed95c91f9262305ad2222e729cc532d5bad:viajes-back/src/main/java/co/edu/uniandes/csw/viajes/entities/ImagenEntity.java
