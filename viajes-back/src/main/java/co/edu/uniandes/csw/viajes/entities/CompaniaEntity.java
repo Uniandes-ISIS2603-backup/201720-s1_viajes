@@ -96,7 +96,5 @@ public class CompaniaEntity extends BaseEntity implements Serializable
     
     public void setOficinas(List<OficinaEntity> oficinas) {
         this.oficinas = oficinas;
-    }
-    
-    
+    }       
 }
