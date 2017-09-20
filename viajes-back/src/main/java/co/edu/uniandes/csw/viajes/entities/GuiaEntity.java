@@ -6,17 +6,19 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
 
 /**
  *
  * @author jc.sanchez12
  */
 @Entity
-public class GuiaEntity extends  BaseEntity 
+public class GuiaEntity extends  BaseEntity  implements Serializable
 {
     //ATRIBUTOS
     private String lenguaje; //Lenguaje  del guia
@@ -27,8 +29,10 @@ public class GuiaEntity extends  BaseEntity
     private String nombre; //Nombre del guia
     private Long calificacion; //Clasificación del guia
     
+    @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    private CompaniaEntity compania;
     
-    
+   
     public String getLenguaje() {
         return lenguaje;
     }
@@ -85,4 +89,11 @@ public class GuiaEntity extends  BaseEntity
         this.calificacion = calificacion;
     }
 
+    public CompaniaEntity getCompania() {
+        return compania;
+    }
+
+    public void setCompania(CompaniaEntity compania) {
+        this.compania = compania;
+    }
 }
