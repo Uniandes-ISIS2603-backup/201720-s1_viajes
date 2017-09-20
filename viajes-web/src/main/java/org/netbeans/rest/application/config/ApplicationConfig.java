@@ -31,6 +31,8 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(co.edu.uniandes.csw.viajes.resources.CompaniaResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.GuiaResource.class);
-    }
-    
+        resources.add(co.edu.uniandes.csw.viajes.resources.ImagenResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.TransporteResource.class);
+    }    
 }
