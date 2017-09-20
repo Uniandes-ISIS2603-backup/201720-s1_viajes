@@ -6,18 +6,20 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
  * @author jc.sanchez12
  */
 @Entity
-public class CompaniaEntity extends BaseEntity 
+public class CompaniaEntity extends BaseEntity implements Serializable
 {
     //*************
     //**ATRIBUTOS**
@@ -29,9 +31,9 @@ public class CompaniaEntity extends BaseEntity
     private String nombre; //Nombre de la empresa
     
     
-   // @OneToMany(fetch=FetchType.LAZY) //Tipo de relación
-   // @JoinColumn(name="OFICINA_ID") //Columna  asociada
-    //private List<OficinaEntity> oficinas; //Modela la  coleccion de  oficinas 
+    @PodamExclude
+    @OneToMany(cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<OficinaEntity> oficinas;
     
 
 
@@ -85,4 +87,14 @@ public class CompaniaEntity extends BaseEntity
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    
+    public List<OficinaEntity> getOficinas() {
+        return oficinas;
+    }
+
+    
+    public void setOficinas(List<OficinaEntity> oficinas) {
+        this.oficinas = oficinas;
+    }       
 }
