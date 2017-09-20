@@ -6,7 +6,10 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -19,6 +22,9 @@ public class PagoEntity extends BaseEntity
     private String nombre; //Nombre del usuario que hizo el pago
     private String fecha; //Fecha en la que se realizó el pago
     private Double valor; //Valor por el cuál se hizo el pago
+    
+    @ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.PERSIST)
+    private TarjetaCreditoEntity tarjeta;
     
     //GETTERS/SETTERS
     
@@ -40,5 +46,19 @@ public class PagoEntity extends BaseEntity
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+    
+    public TarjetaCreditoEntity getTarjeta()            
+    {
+        return tarjeta;
+    }
+    
+    public void setTarjeta(TarjetaCreditoEntity tarjeta)
+    {
+        this.tarjeta = tarjeta;
     }
 }

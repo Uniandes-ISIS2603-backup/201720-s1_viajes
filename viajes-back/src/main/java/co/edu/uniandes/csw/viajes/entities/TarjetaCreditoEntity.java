@@ -6,7 +6,13 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -19,8 +25,34 @@ public class TarjetaCreditoEntity extends BaseEntity implements Serializable
     private Integer numero; //Número de cuenta 
     private Long fondos; //Cantidad de dinero disponible
     
+    @PodamExclude
+    @OneToMany(cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<PagoEntity> pagos;    
+    
+    @ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.PERSIST)
+    private UsuarioEntity usuario;
     
     //GETTERS/SETTERS
+    
+    public UsuarioEntity getUsuario()
+    {
+        return usuario;
+    }
+    
+    public void setUsuario(UsuarioEntity usuario)
+    {
+        this.usuario = usuario;
+    }
+    
+    public List<PagoEntity> getPagos()
+    {
+        return pagos;
+    }
+    
+    public void setPagos(List<PagoEntity> pagos)
+    {
+        this.pagos = pagos;
+    }
     
     public Integer getNumero() {
         return numero;

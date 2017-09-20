@@ -6,7 +6,13 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -18,7 +24,34 @@ public class UsuarioEntity extends BaseEntity
     //ATRIBUTOS
     private String nombre; //Nombre del usuario    
     
+    @PodamExclude
+    @OneToMany(cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<TarjetaCreditoEntity> tarjetas;
+    
+    @ManyToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    private List<ItinerarioEntity> itinerarios;
+    
     //GETTERS/SETTERS
+    
+    public List<ItinerarioEntity> getItinerarios()
+    {
+        return itinerarios;
+    }
+    
+    public void setItinerarios(List<ItinerarioEntity> itinerarios)
+    {
+        this.itinerarios = itinerarios;
+    }
+        
+    public List<TarjetaCreditoEntity> getTarjetas()
+    {
+        return tarjetas;
+    }
+    
+    public void setTarjetas(List<TarjetaCreditoEntity> tarjetas)
+    {
+        this.tarjetas = tarjetas;
+    }
     
     public String getNombre() {
         return nombre;
