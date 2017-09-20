@@ -3,40 +3,43 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.viajes.entities;
+package co.edu.uniandes.csw.viajes.dtos;
 
-import javax.persistence.Entity;
+import co.edu.uniandes.csw.viajes.entities.ServicioEntity;
 
 /**
  *
  * @author sa.silva1
  */
-
-@Entity
-public class ServicioEntity extends BaseEntity{
-    
-    private String nombre;
+public class ServicioDTO {
+ 
     
     private String fechaInicio;
     
     private String fechaFinal;
+    
+    private String nombre;
     
     private Double valor;
     
     private Double calificacion;
     
     private String comentarios;
+
     
-     private String descripcion;
-
-    public String getNombre() {
-        return nombre;
+    public ServicioDTO() {
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+     public ServicioDTO(ServicioEntity servicio) {
+         this.fechaInicio = servicio.getFechaInicio();
+         this.fechaFinal = servicio.getFechaFinal();
+         this.nombre = servicio.getNombre();
+         this.valor = servicio.getValor();
+         this.calificacion = servicio.getCalificacion();
+         this.comentarios = servicio.getComentarios();     
     }
-
+    
+    
     public String getFechaInicio() {
         return fechaInicio;
     }
@@ -51,6 +54,14 @@ public class ServicioEntity extends BaseEntity{
 
     public void setFechaFinal(String fechaFinal) {
         this.fechaFinal = fechaFinal;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public Double getValor() {
@@ -77,12 +88,15 @@ public class ServicioEntity extends BaseEntity{
         this.comentarios = comentarios;
     }
     
-    public String getDescripcion() {
-        return descripcion;
+    public ServicioEntity toEntity() {
+        ServicioEntity entity = new ServicioEntity() {};
+        entity.setFechaInicio(this.fechaInicio);
+        entity.setFechaFinal(this.fechaFinal);
+        entity.setNombre(this.nombre);
+        entity.setValor(this.valor);
+        entity.setCalificacion(this.calificacion);
+        entity.setComentarios(this.comentarios);
+        
+        return entity;
     }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
 }
