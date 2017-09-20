@@ -1,5 +1,9 @@
 package co.edu.uniandes.csw.viajes.persistence;
 
+<<<<<<< HEAD:viajes-back/src/test/java/co/edu/uniandes/csw/viajes/persistence/ItinerarioPersistenceTest.java
+=======
+
+>>>>>>> e7910ed95c91f9262305ad2222e729cc532d5bad:viajes-back/src/test/java/co/edu/uniandes/csw/viajes/persistence/ItinerarioPersistenceTest.java
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -139,7 +143,11 @@ public class ItinerarioPersistenceTest {
         Assert.assertNotNull(result);
         ItinerarioEntity entity = em.find(ItinerarioEntity.class, result.getId());
         Assert.assertNotNull(entity);
+<<<<<<< HEAD:viajes-back/src/test/java/co/edu/uniandes/csw/viajes/persistence/ItinerarioPersistenceTest.java
         Assert.assertEquals(newEntity.getId(), entity.getId());
+=======
+        Assert.assertEquals(newEntity.getCostoTotal(), entity.getCostoTotal());
+>>>>>>> e7910ed95c91f9262305ad2222e729cc532d5bad:viajes-back/src/test/java/co/edu/uniandes/csw/viajes/persistence/ItinerarioPersistenceTest.java
         //fail("testCreate");
     }
 
@@ -158,7 +166,11 @@ public class ItinerarioPersistenceTest {
 
         ItinerarioEntity resp = em.find(ItinerarioEntity.class, entity.getId());
 
+<<<<<<< HEAD:viajes-back/src/test/java/co/edu/uniandes/csw/viajes/persistence/ItinerarioPersistenceTest.java
         Assert.assertEquals(newEntity.getId(), resp.getId());
+=======
+        Assert.assertEquals(newEntity.getCostoTotal(), resp.getCostoTotal());
+>>>>>>> e7910ed95c91f9262305ad2222e729cc532d5bad:viajes-back/src/test/java/co/edu/uniandes/csw/viajes/persistence/ItinerarioPersistenceTest.java
         //fail("testUpdate");
     }
 
@@ -182,7 +194,11 @@ public class ItinerarioPersistenceTest {
         ItinerarioEntity entity = data.get(0);
         ItinerarioEntity newEntity = persistence.find(entity.getId());
         Assert.assertNotNull(newEntity);
+<<<<<<< HEAD:viajes-back/src/test/java/co/edu/uniandes/csw/viajes/persistence/ItinerarioPersistenceTest.java
         Assert.assertEquals(entity.getId(), newEntity.getId());
+=======
+        Assert.assertEquals(entity.getCostoTotal(), newEntity.getCostoTotal());
+>>>>>>> e7910ed95c91f9262305ad2222e729cc532d5bad:viajes-back/src/test/java/co/edu/uniandes/csw/viajes/persistence/ItinerarioPersistenceTest.java
         // fail("testFind");
     }
 

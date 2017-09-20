@@ -30,9 +30,15 @@ public class HospedajeEntity extends ServicioEntity{
 
     private TipoHospedaje tipo;
     
+<<<<<<< HEAD:viajes-back/src/main/java/co/edu/uniandes/csw/viajes/entities/HospedajeEntity.java
     //private UbicacionEntity ubicacion;
     //private List<ImagenEntity> imagenes;
     //private CompaniaEntity compania;
+=======
+    private UbicacionEntity ubicacion;
+    private List<ImagenEntity> imagenes;
+    private CompaniaEntity compania;
+>>>>>>> e7910ed95c91f9262305ad2222e729cc532d5bad:viajes-back/src/main/java/co/edu/uniandes/csw/viajes/entities/HospedajeEntity.java
     
     public TipoHospedaje getTipo() {
         return tipo;
@@ -47,6 +53,7 @@ public class HospedajeEntity extends ServicioEntity{
     //    return ubicacion;
     //}
      
+<<<<<<< HEAD:viajes-back/src/main/java/co/edu/uniandes/csw/viajes/entities/HospedajeEntity.java
 //    public void setUbicacion(UbicacionEntity ubicacion)
 //    {
 //        this.ubicacion = ubicacion;
@@ -71,5 +78,31 @@ public class HospedajeEntity extends ServicioEntity{
 //    {
 //        this.compania = compania;
 //    }
+=======
+    public void setUbicacion(UbicacionEntity ubicacion)
+    {
+        this.ubicacion = ubicacion;
+    }
+     
+    public List<ImagenEntity> getImagenes()
+    {
+        return imagenes;
+    }
+    
+    public void setImagenes(List<ImagenEntity> imagenes)
+    {
+        this.imagenes = imagenes;
+    }
+    
+    public CompaniaEntity getCompania()
+    {
+        return compania;
+    }
+    
+    public void setCompania(CompaniaEntity compania)
+    {
+        this.compania = compania;
+    }
+>>>>>>> e7910ed95c91f9262305ad2222e729cc532d5bad:viajes-back/src/main/java/co/edu/uniandes/csw/viajes/entities/HospedajeEntity.java
      
 }
