@@ -45,10 +45,10 @@ public class GuiaResource
     }
     
     /**
-     * Obtiene los datos de una instancia de Author a partir de su ID
+     * Obtiene los datos de una instancia de Guia a partir de su ID
      *
      * @param id Identificador de la instancia a consultar
-     * @return Instancia de AuthorDetailDTO con los datos del Author consultado
+     * @return Instancia de AuthorDetailDTO con los datos del Guia consultado
      * 
      */
     @GET
@@ -62,10 +62,10 @@ public class GuiaResource
     }
 
     /**
-     * Se encarga de crear un Author en la base de datos
+     * Se encarga de crear un Guia en la base de datos
      *
-     * @param dto Objeto de AuthorDetailDTO con los datos nuevos
-     * @return Objeto de AuthorDetailDTOcon los datos nuevos y su ID
+     * @param dto Objeto de GuiaDetailDTO con los datos nuevos
+     * @return Objeto de GuiaDetailDTO los datos nuevos y su ID
      * 
      */
     @POST
@@ -74,11 +74,11 @@ public class GuiaResource
     }
 
     /**
-     * Actualiza la información de una instancia de Author
+     * Actualiza la información de una instancia de Guia
      *
-     * @param id Identificador de la instancia de Author a modificar
-     * @param dto Instancia de AuthorDetailDTO con los nuevos datos
-     * @return Instancia de AuthorDetailDTO con los datos actualizados
+     * @param id Identificador de la instancia de Guia a modificar
+     * @param dto Instancia de GuiaDetailDTO con los nuevos datos
+     * @return Instancia de GuiaDetailDTO con los datos actualizados
      * 
      */
     @PUT
@@ -95,7 +95,7 @@ public class GuiaResource
     }
 
     /**
-     * Elimina una instancia de Author de la base de datos
+     * Elimina una instancia de Guia de la base de datos
      *
      * @param id Identificador de la instancia a eliminar
      * 
