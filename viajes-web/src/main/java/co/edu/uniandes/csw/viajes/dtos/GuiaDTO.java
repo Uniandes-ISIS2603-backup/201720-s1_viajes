@@ -12,7 +12,7 @@ import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
  * @author Juan
  */
 public class GuiaDTO {
-     private Long id;
+    private Long id;
     private String nombre;
     private String lenguaje;
     private Long valor; //Valor del guia
