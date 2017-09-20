@@ -96,5 +96,4 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     public void setCompania(CompaniaEntity compania) {
         this.compania = compania;
     }
-
 }
