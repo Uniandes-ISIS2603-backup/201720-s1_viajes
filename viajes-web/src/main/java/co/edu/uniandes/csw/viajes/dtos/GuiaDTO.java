@@ -20,7 +20,9 @@ public class GuiaDTO {
     private String fechaInicio; //Fecha  de inicio del servicio de guia
     private String fechaFinal; //Fecha  del final del servicio de guia
     private Long calificacion; //Clasificación del guia
-      /**
+    
+    
+    /**
      * Constructor por defecto
      */
     public GuiaDTO()
