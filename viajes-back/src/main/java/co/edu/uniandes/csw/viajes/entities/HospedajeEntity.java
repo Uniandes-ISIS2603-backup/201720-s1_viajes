@@ -33,10 +33,6 @@ public class HospedajeEntity extends ServicioEntity{
     //private UbicacionEntity ubicacion;
     //private List<ImagenEntity> imagenes;
     //private CompaniaEntity compania;
-
-    private UbicacionEntity ubicacion;
-    private List<ImagenEntity> imagenes;
-    private CompaniaEntity compania;
     
     public TipoHospedaje getTipo() {
         return tipo;
