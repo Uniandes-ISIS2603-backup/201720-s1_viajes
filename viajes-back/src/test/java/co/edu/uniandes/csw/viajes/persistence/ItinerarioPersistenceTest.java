@@ -1,5 +1,6 @@
 package co.edu.uniandes.csw.viajes.persistence;
 
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -139,7 +140,7 @@ public class ItinerarioPersistenceTest {
         Assert.assertNotNull(result);
         ItinerarioEntity entity = em.find(ItinerarioEntity.class, result.getId());
         Assert.assertNotNull(entity);
-        Assert.assertEquals(newEntity.getId(), entity.getId());
+        Assert.assertEquals(newEntity.getCostoTotal(), entity.getCostoTotal());
         //fail("testCreate");
     }
 
@@ -158,7 +159,7 @@ public class ItinerarioPersistenceTest {
 
         ItinerarioEntity resp = em.find(ItinerarioEntity.class, entity.getId());
 
-        Assert.assertEquals(newEntity.getId(), resp.getId());
+        Assert.assertEquals(newEntity.getCostoTotal(), resp.getCostoTotal());
         //fail("testUpdate");
     }
 
@@ -182,7 +183,7 @@ public class ItinerarioPersistenceTest {
         ItinerarioEntity entity = data.get(0);
         ItinerarioEntity newEntity = persistence.find(entity.getId());
         Assert.assertNotNull(newEntity);
-        Assert.assertEquals(entity.getId(), newEntity.getId());
+        Assert.assertEquals(entity.getCostoTotal(), newEntity.getCostoTotal());
         // fail("testFind");
     }
 
