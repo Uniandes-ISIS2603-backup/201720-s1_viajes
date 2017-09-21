@@ -20,11 +20,8 @@ import javax.persistence.OneToOne;
 public class EntretenimientoEntity extends ServicioEntity
 {
     
-    //////////////////////////////
-    //REVISAR SI SE HACE @EMBEDDED
-    //////////////////////////////
+
     //@OneToMany(fetch=FetchType.LAZY)
-    //@JoinColumn(name="IMAGEN_ID")
     //private List<ImagenEntity> imagenes;
     
     //////////////////////////////

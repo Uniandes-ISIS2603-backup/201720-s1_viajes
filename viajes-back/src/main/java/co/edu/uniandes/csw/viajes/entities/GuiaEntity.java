@@ -9,7 +9,6 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 
@@ -29,7 +28,7 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     private String nombre; //Nombre del guia
     private Long calificacion; //Clasificación del guia
     
-    @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     private CompaniaEntity compania;
     
    
@@ -96,4 +95,11 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     public void setCompania(CompaniaEntity compania) {
         this.compania = compania;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+    
+    
 }

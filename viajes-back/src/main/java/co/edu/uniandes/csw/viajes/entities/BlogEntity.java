@@ -23,10 +23,6 @@ public class BlogEntity extends BaseEntity
     private String titulo;
     private String comentario;
     
-    //////////////////////////////
-    //REVISAR SI SE HACE @EMBEDDED
-    //REVISAR CASCADA
-    //////////////////////////////
     @PodamExclude
     @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name="IMAGEN_ID")
@@ -61,5 +57,11 @@ public class BlogEntity extends BaseEntity
     {
         this.imagenes = imagenes;
     }
-    
+
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
+    }    
+
 }

@@ -6,7 +6,6 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -96,5 +95,12 @@ public class CompaniaEntity extends BaseEntity implements Serializable
     
     public void setOficinas(List<OficinaEntity> oficinas) {
         this.oficinas = oficinas;
-    }       
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
+
