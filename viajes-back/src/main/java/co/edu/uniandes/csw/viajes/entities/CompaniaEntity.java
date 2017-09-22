@@ -30,26 +30,20 @@ public class CompaniaEntity extends BaseEntity implements Serializable
     @OneToMany(mappedBy = "compania",cascade = CascadeType.PERSIST,orphanRemoval = true)
     private List<GuiaEntity> guias;
    
+    /*
    @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
     private List<OficinaEntity> oficinas;
+   */
    
     @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
     private List<TransporteEntity> transportes;
     
-     @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
+    @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
     private List<EntretenimientoEntity> entretenimientos;
      
      @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
     private List<HospedajeEntity> hospedajes;
 
-    /**
-     * Obtener el atributo email
-     * 
-     * @return  email
-     */
-    public String getEmail() {
-        return email;
-    }
 
     /**
      * Obtener el atributo telefono
@@ -106,7 +100,7 @@ public class CompaniaEntity extends BaseEntity implements Serializable
     public void setGuias(List<GuiaEntity> guias) {
         this.guias = guias;
     }
-
+ /*
     public List<OficinaEntity> getOficinas() {
         return oficinas;
     }
@@ -114,7 +108,8 @@ public class CompaniaEntity extends BaseEntity implements Serializable
     public void setOficinas(List<OficinaEntity> oficinas) {
         this.oficinas = oficinas;
     }
-
+*/
+   
     public List<TransporteEntity> getTransportes() {
         return transportes;
     }
@@ -137,6 +132,10 @@ public class CompaniaEntity extends BaseEntity implements Serializable
 
     public void setHospedajes(List<HospedajeEntity> hospedajes) {
         this.hospedajes = hospedajes;
+    }
+
+    public String getEmail() {
+        return email;
     }
    
     

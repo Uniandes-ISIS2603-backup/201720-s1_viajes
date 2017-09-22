@@ -31,8 +31,7 @@ public abstract class ServicioEntity extends BaseEntity{
     
     private String descripcion;
      
-    @ManyToMany
-    private List<ItinerarioEntity> itinerarios;
+  
      
 
     public String getNombre() {
@@ -90,14 +89,4 @@ public abstract class ServicioEntity extends BaseEntity{
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-    public List<ItinerarioEntity> getItinerarios() {
-        return itinerarios;
-    }
-
-    public void setItinerarios(List<ItinerarioEntity> itinerarios) {
-        this.itinerarios = itinerarios;
-    }
-    
-    
 }
