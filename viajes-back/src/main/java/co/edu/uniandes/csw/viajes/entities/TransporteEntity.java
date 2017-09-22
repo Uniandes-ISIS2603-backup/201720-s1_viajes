@@ -5,7 +5,11 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -25,16 +29,20 @@ public class TransporteEntity extends ServicioEntity{
     
     private TipoTransporte tipo;
     
-    /*
+    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
     private ImagenEntity[] imagenes;
     
+    @OneToOne (cascade = CascadeType.ALL, orphanRemoval = true)
     private UbicacionEntity origen;
     
+    @OneToOne (cascade = CascadeType.ALL, orphanRemoval = true)
     private UbicacionEntity destino;
     
-    private CompañiaEntity compañia;
+    @PodamExclude
+    @OneToOne
+    private CompaniaEntity compania;
 
-*/
+
     
     public TipoTransporte getTipo() {
         return tipo;
@@ -43,7 +51,7 @@ public class TransporteEntity extends ServicioEntity{
     public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
-/*
+
     public ImagenEntity[] getImagenes() {
         return imagenes;
     }
@@ -68,14 +76,14 @@ public class TransporteEntity extends ServicioEntity{
         this.destino = destino;
     }
 
-    public CompañiaEntity getCompañia() {
-        return compañia;
+    public CompaniaEntity getCompania() {
+        return compania;
     }
 
-    public void setCompañia(CompañiaEntity compañia) {
-        this.compañia = compañia;
+    public void setCompañia(CompaniaEntity compania) {
+        this.compania = compania;
     }
     
     
-    */
+  
 }
