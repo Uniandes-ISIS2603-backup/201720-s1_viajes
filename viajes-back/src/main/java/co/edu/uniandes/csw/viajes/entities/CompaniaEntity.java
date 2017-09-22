@@ -10,6 +10,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
 
@@ -29,10 +31,10 @@ public class CompaniaEntity extends BaseEntity implements Serializable
     private Long telefono; //Telefono de la empresa
     private String nombre; //Nombre de la empresa
     
-    
-    @PodamExclude
-    @OneToMany(cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<OficinaEntity> oficinas;
+    @OneToMany(mappedBy = "compania",cascade = CascadeType.PERSIST)
+    private List<GuiaEntity> guias;
+   
+   
     
 
 
@@ -87,20 +89,18 @@ public class CompaniaEntity extends BaseEntity implements Serializable
         this.nombre = nombre;
     }
 
-    
-    public List<OficinaEntity> getOficinas() {
-        return oficinas;
-    }
-
-    
-    public void setOficinas(List<OficinaEntity> oficinas) {
-        this.oficinas = oficinas;
-    }
 
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    public List<GuiaEntity> getGuias() {
+        return guias;
+    }
+
+    public void setGuias(List<GuiaEntity> guias) {
+        this.guias = guias;
+    }
 }
 

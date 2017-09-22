@@ -85,20 +85,5 @@ public class GuiaLogic {
         persistence.delete(id);
     }
     
-/**
-     * Obtiene una instancia de CompaniaEntity asociada a una instancia de Guia
-     *
-     * @param GuiaId Id Identificador de la instancia de Author
-     * @return
-     * @generated
-     */
-    public CompaniaEntity getCompania(Long GuiaId) {
-        LOGGER.log(Level.INFO, "Inicia proceso de consultar una compañina de un guia");
-       CompaniaEntity compE = getGuia(GuiaId).getCompania();
-        if (compE!=null) {
-            return compE;
-        }
-        return null;
-    }
-    
+
 }
