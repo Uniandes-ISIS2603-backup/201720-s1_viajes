@@ -5,18 +5,11 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-<<<<<<< HEAD
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-=======
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
->>>>>>> 35b72520c904c5a12d64deabe3e0b875926023f6
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -37,13 +30,7 @@ public class TransporteEntity extends ServicioEntity
     }
     
     private TipoTransporte tipo;
-    
-<<<<<<< HEAD
-    
-    private ImagenEntity[] imagenes;
-    
-   
-=======
+
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
@@ -63,15 +50,8 @@ public class TransporteEntity extends ServicioEntity
  
     private CompaniaEntity compania;
 
-
+ 
     
-    public TipoTransporte getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoTransporte tipo) {
-        this.tipo = tipo;
-    }
 
 <<<<<<< HEAD
     public ImagenEntity[] getImagenes() {
@@ -101,23 +81,18 @@ public class TransporteEntity extends ServicioEntity
         this.destino = destino;
     }
 */
+    public TipoTransporte getTipo() {
+        return tipo;
+    }
 
+    public void setTipo(TipoTransporte tipo) {
+        this.tipo = tipo;
+    }
     public CompaniaEntity getCompania() {
         return compania;
     }
 
-<<<<<<< HEAD
-    public void setCompania(CompaniaEntity compania) {
-=======
     public void setCompañia(CompaniaEntity compania) {
->>>>>>> 35b72520c904c5a12d64deabe3e0b875926023f6
         this.compania = compania;
-    }
-    
-    
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 35b72520c904c5a12d64deabe3e0b875926023f6
+    }    
 }
