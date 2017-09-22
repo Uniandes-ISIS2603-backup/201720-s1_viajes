@@ -8,6 +8,7 @@ package co.edu.uniandes.csw.viajes.entities;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -24,10 +25,6 @@ public class ItinerarioEntity extends BaseEntity{
     
     private int numeroVisitantes;
 
-    @ManyToMany(mappedBy = "itinerarios")
-    private List<ServicioEntity> servicios;
-    
-  
     
     /**
      * @return the costoTotal
@@ -84,14 +81,5 @@ public class ItinerarioEntity extends BaseEntity{
     public void setNumeroVisitantes(int numeroVisitantes) {
         this.numeroVisitantes = numeroVisitantes;
     }
-
-    public List<ServicioEntity> getServicios() {
-        return servicios;
-    }
-
-    public void setServicios(List<ServicioEntity> servicios) {
-        this.servicios = servicios;
-    }
-
 
 }

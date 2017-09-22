@@ -90,7 +90,7 @@ public class CompaniaResource
         if (oldEntity == null) {
             throw new WebApplicationException("El guia no existe", 404);
         }
-        entity.setOficinas(oldEntity.getOficinas());
+        //entity.setOficinas(oldEntity.getOficinas());
         return new CompaniaDetailDTO(companialogic.updateCompania(entity));
     }
 

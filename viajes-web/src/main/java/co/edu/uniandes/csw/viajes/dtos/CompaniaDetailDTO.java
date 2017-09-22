@@ -27,15 +27,19 @@ public class CompaniaDetailDTO extends CompaniaDTO
      *
      * @param entity
      */
+     
     public CompaniaDetailDTO(CompaniaEntity entity) {
         super(entity);
+        /*
         if (entity.getOficinas()!=null) {
          //    oficinas = new ArrayList<>();
             for (OficinaEntity entityOficina : entity.getOficinas()) {
             //   oficinas.add(new OficinaDTO(entityOficina));
             }
         }
+        */
     }
+    
     
     /**
      * Transformar un DTO a un Entity
@@ -45,16 +49,19 @@ public class CompaniaDetailDTO extends CompaniaDTO
     @Override
     public CompaniaEntity toEntity() {
         CompaniaEntity companiaE = super.toEntity();
-       // if (this.getOficinas!=null) {
+       /*if (this.getOficinas!=null) {
         List<OficinaEntity> oficinasEntity = new ArrayList<>();
       //      for (OficinaDTO dtoOficina : getOficinas()) {
       //         oficinasEntity.add(dtoOficina.toEntity());
       //     }
             companiaE.setOficinas(oficinasEntity);
         //}
+    */
         return companiaE;
+         
     }
      
+    
     //public OficinaDTO getOficinas() {
     //    return oficinas;
     //}
