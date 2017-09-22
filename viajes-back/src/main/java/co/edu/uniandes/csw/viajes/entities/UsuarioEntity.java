@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,7 +5,6 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -62,40 +60,3 @@ public class UsuarioEntity extends BaseEntity
         this.nombre = nombre;
     }
 }
-=======
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package co.edu.uniandes.csw.viajes.entities;
-
-
-import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-
-/**
- *
- * @author tv.huertas10
- */
-@Entity
-public class UsuarioEntity extends BaseEntity 
-{
-    //ATRIBUTOS
-    private String nombre; //Nombre del usuario    
-      
-    //GETTERS/SETTERS
-    
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    
-}
->>>>>>> 46b40ff28509a7518e8f096e4aaff7c5a508f362

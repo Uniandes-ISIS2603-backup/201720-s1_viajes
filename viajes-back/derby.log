@@ -1,40 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:viajes/viajes-back/derby.log
 ----------------------------------------------------------------
-Fri Sep 15 09:06:58 COT 2017:
- Iniciando instancia a816c00e-015e-85dd-2e1a-00000d578790 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\tv.huertas10\AppData\Local\Temp\gfembed4198491009221614479tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@6bc7c054
+Fri Sep 22 10:19:06 COT 2017:
+ Iniciando instancia a816c00e-015e-aa2b-bc01-00000deb50e8 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
+en el directorio de base de datos C:\Users\tv.huertas10\AppData\Local\Temp\gfembed8554979075039983004tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@6bc7c054
 Cargado desde file:/C:/Users/tv.huertas10/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
-=======
-<<<<<<< HEAD
-----------------------------------------------------------------
-Tue Sep 19 19:04:01 COT 2017:
- Iniciando instancia a816c00e-015e-9c99-396f-00000eee8b68 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\js.beltran14\AppData\Local\Temp\gfembed3312167904657941840tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@6bc7c054
-Cargado desde file:/C:/Users/js.beltran14/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
->>>>>>> master
-=======
-----------------------------------------------------------------
-<<<<<<< HEAD
-Mon Sep 18 10:59:38 COT 2017:
- Iniciando instancia a816c00e-015e-95b7-68f7-00000a55bd88 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\tv.huertas10\AppData\Local\Temp\gfembed109441859067660752tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
-Cargado desde file:/C:/Users/tv.huertas10/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
->>>>>>> master:viajes-back/derby.log
-=======
-Wed Sep 20 00:08:36 GMT-05:00 2017:
- Iniciando instancia a816c00e-015e-9db0-16fa-0000092ec070 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\Juan\AppData\Local\Temp\gfembed4070187513735206840tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@6bc7c054
-Cargado desde file:/C:/Users/Juan/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
->>>>>>> master
-=======
-----------------------------------------------------------------
-Fri Sep 22 09:11:43 COT 2017:
- Iniciando instancia a816c00e-015e-a9ee-0ade-00000e392168 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\tv.huertas10\AppData\Local\Temp\gfembed2303592675476986065tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@6bc7c054
-Cargado desde file:/C:/Users/tv.huertas10/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
->>>>>>> 46b40ff28509a7518e8f096e4aaff7c5a508f362
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_144-b01
 user.dir=C:\Users\tv.huertas10\Documents\NetBeansProjects\Ciclo1\s1_viajes\viajes-back
