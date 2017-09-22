@@ -22,10 +22,10 @@ public class UbicacionEntity extends BaseEntity {
     private String ciudad;
     private String pais;
     
-    /*
+    
     @OneToOne
     private OficinaEntity oficina;
-    */
+    
     
     public String getLongitud() {
         return longitud;

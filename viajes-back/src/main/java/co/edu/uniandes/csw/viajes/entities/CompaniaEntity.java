@@ -30,10 +30,10 @@ public class CompaniaEntity extends BaseEntity implements Serializable
     @OneToMany(mappedBy = "compania",cascade = CascadeType.PERSIST,orphanRemoval = true)
     private List<GuiaEntity> guias;
    
-    /*
-   @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
+    
+   @OneToMany(mappedBy = "compania", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<OficinaEntity> oficinas;
-   */
+   
    
     @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
     private List<TransporteEntity> transportes;

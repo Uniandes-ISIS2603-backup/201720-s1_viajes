@@ -6,8 +6,11 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 
 /**
@@ -20,13 +23,14 @@ public class OficinaEntity extends BaseEntity
     private String nombreLugar;
     private String nombreEncargado;
    
-    /*
+    
     @ManyToOne
     private CompaniaEntity compania;
     
+    
     @OneToOne(mappedBy = "oficina",fetch=FetchType.LAZY,cascade = CascadeType.PERSIST)
     private UbicacionEntity ubicacion;
-    */
+    
     
     public String getNombreLugar()
     {
@@ -47,6 +51,8 @@ public class OficinaEntity extends BaseEntity
     {
         this.nombreEncargado = nombreEncargado;
     }
+    
+    
     /*
     public CompaniaEntity getCompania() {
         return compania;
@@ -55,7 +61,7 @@ public class OficinaEntity extends BaseEntity
     public void setCompania(CompaniaEntity compania) {
         this.compania = compania;
     }
-
+    
     public UbicacionEntity getUbicacion() {
         return ubicacion;
     }

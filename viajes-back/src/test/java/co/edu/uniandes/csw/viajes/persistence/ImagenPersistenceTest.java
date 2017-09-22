@@ -37,6 +37,7 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 @RunWith(Arquillian.class)
 public class ImagenPersistenceTest {
     
+    
     /**
      * Inyección de la dependencia a la clase XYZPersistence cuyos métodos
      * se van a probar.
