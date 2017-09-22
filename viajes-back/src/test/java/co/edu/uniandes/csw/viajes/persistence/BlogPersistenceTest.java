@@ -135,7 +135,7 @@ public class BlogPersistenceTest {
     Assert.assertNotNull(result);
     BlogEntity entity = em.find(BlogEntity.class, result.getId());
     Assert.assertNotNull(entity);
-    Assert.assertEquals(newEntity.getNombreTitulo(), entity.getNombreTitulo());
+    Assert.assertEquals(newEntity.getTitulo(), entity.getTitulo());
     }
 
     /**
@@ -153,7 +153,7 @@ public class BlogPersistenceTest {
 
     BlogEntity resp = em.find(BlogEntity.class, entity.getId());
 
-    Assert.assertEquals(newEntity.getNombreTitulo(), resp.getNombreTitulo());
+    Assert.assertEquals(newEntity.getTitulo(), resp.getTitulo());
     }
 
     /**
@@ -175,7 +175,7 @@ public class BlogPersistenceTest {
     BlogEntity entity = data.get(0);
     BlogEntity newEntity = persistence.find(entity.getId());
     Assert.assertNotNull(newEntity);
-    Assert.assertEquals(entity.getNombreTitulo(), newEntity.getNombreTitulo());
+    Assert.assertEquals(entity.getTitulo(), newEntity.getTitulo());
     }
 
     /**
@@ -194,6 +194,5 @@ public class BlogPersistenceTest {
         }
         Assert.assertTrue(found);
     }
-    }
-    
+    }    
 }

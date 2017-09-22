@@ -48,7 +48,7 @@ public class GuiaResource
      * Obtiene los datos de una instancia de Guia a partir de su ID
      *
      * @param id Identificador de la instancia a consultar
-     * @return Instancia de AuthorDetailDTO con los datos del Guia consultado
+     * @return Instancia de GuiaDetailDTO con los datos del Guia consultado
      * 
      */
     @GET

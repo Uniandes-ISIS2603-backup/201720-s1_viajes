@@ -5,7 +5,12 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -13,7 +18,8 @@ import javax.persistence.Entity;
  * Anotaciones: No debia haber constructor
  */
 @Entity
-public class TransporteEntity extends ServicioEntity{
+public class TransporteEntity extends ServicioEntity 
+{
     
     public enum TipoTransporte {
     
@@ -25,9 +31,16 @@ public class TransporteEntity extends ServicioEntity{
     
     private TipoTransporte tipo;
     
-    /*
-    private ImagenEntity[] imagenes;
+    @PodamExclude
+    @ManyToOne
+    private CompaniaEntity compania;
     
+    
+    @OneToMany(mappedBy = "transporte",cascade = CascadeType.PERSIST,orphanRemoval = true)
+    private List<ImagenEntity> imagenes;
+    
+    /*
+  
     private UbicacionEntity origen;
     
     private UbicacionEntity destino;
@@ -43,15 +56,15 @@ public class TransporteEntity extends ServicioEntity{
     public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
-/*
-    public ImagenEntity[] getImagenes() {
+
+    public List<ImagenEntity> getImagenes() {
         return imagenes;
     }
 
-    public void setImagenes(ImagenEntity[] imagenes) {
+    public void setImagenes(List<ImagenEntity> imagenes) {
         this.imagenes = imagenes;
     }
-
+/*
     public UbicacionEntity getOrigen() {
         return origen;
     }
@@ -67,15 +80,16 @@ public class TransporteEntity extends ServicioEntity{
     public void setDestino(UbicacionEntity destino) {
         this.destino = destino;
     }
+*/
 
-    public CompañiaEntity getCompañia() {
-        return compañia;
+    public CompaniaEntity getCompania() {
+        return compania;
     }
 
-    public void setCompañia(CompañiaEntity compañia) {
-        this.compañia = compañia;
+    public void setCompañia(CompaniaEntity compania) {
+        this.compania = compania;
     }
     
     
-    */
+    
 }

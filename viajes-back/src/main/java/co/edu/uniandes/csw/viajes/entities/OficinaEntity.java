@@ -5,10 +5,10 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+
 
 /**
  *
@@ -19,14 +19,14 @@ public class OficinaEntity extends BaseEntity
 {
     private String nombreLugar;
     private String nombreEncargado;
+   
+    /*
+    @ManyToOne
+    private CompaniaEntity compania;
     
-    //////////////////////////////
-    //REVISAR SI SE HACE @EMBEDDED
-    //////////////////////////////
-    //@OneToOne (fetch=FetchType.LAZY)
-    //@JoinColumn (name="UBICACION_ID") 
-    //private UbicacionEntity ubicacion;
-    
+    @OneToOne(mappedBy = "oficina",fetch=FetchType.LAZY,cascade = CascadeType.PERSIST)
+    private UbicacionEntity ubicacion;
+    */
     
     public String getNombreLugar()
     {
@@ -47,15 +47,22 @@ public class OficinaEntity extends BaseEntity
     {
         this.nombreEncargado = nombreEncargado;
     }
-    
-    //public UbicacionEntity getUbicacion()
-    //{
-    //    return ubicacion;
-    //}
-    
-    //public void setUbicacion(UbicacionEntity ubicacion)
-    //{
-    //    this.ubicacion = ubicacion;
-    //}
+    /*
+    public CompaniaEntity getCompania() {
+        return compania;
+    }
 
+    public void setCompania(CompaniaEntity compania) {
+        this.compania = compania;
+    }
+
+    public UbicacionEntity getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(UbicacionEntity ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+ 
+    */
 }
