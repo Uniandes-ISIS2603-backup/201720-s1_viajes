@@ -5,11 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -26,6 +22,10 @@ public class UbicacionEntity extends BaseEntity {
     private String ciudad;
     private String pais;
     
+    /*
+    @OneToOne
+    private OficinaEntity oficina;
+    */
     
     public String getLongitud() {
         return longitud;
@@ -74,4 +74,16 @@ public class UbicacionEntity extends BaseEntity {
     public void setPais(String pais) {
         this.pais = pais;
     }
+
+    /*
+    public OficinaEntity getOficina() {
+        return oficina;
+    }
+
+    public void setOficina(OficinaEntity oficina) {
+        this.oficina = oficina;
+    }
+*/
+    
+    
 }

@@ -197,6 +197,5 @@ public class ImagenPersistenceTest {
         Assert.assertTrue(found);
     }
         //fail("testFindAll");
-    }
-    
+    }    
 }
