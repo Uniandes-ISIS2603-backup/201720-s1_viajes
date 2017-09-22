@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
@@ -21,17 +16,32 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class UsuarioEntity extends BaseEntity 
 {
     //ATRIBUTOS
-    private String nombre; //Nombre del usuario    
     
+    /** 
+     * Nombre del usuario
+     */
+    private String nombre;  
+    
+    /**
+     * Tarjetas que le pertenecen al usuario
+     */
     @PodamExclude
     @OneToMany(cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<TarjetaCreditoEntity> tarjetas;
     
+    /**
+     * Itinerarios que tiene el usuario
+     */
     @ManyToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
     private List<ItinerarioEntity> itinerarios;
     
     //GETTERS/SETTERS
     
+    /**
+     * Lista de itinerarios programados por el usuario
+     * 
+     * @return itinerarios
+     */
     public List<ItinerarioEntity> getItinerarios()
     {
         return itinerarios;

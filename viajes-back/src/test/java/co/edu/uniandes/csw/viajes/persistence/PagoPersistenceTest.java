@@ -159,7 +159,7 @@ public class PagoPersistenceTest
                     found = true;
                 }
             }
-            Assert.assertTrue(found);
+            Assert.assertTrue(found);            
         }
     }
     
