@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
  * @author jc.sanchez12
  */
 @Entity
-public class CompaniaEntity extends BaseEntity implements Serializable
+public class CompaniaEntity extends BaseEntity
 {
     //*************
     //**ATRIBUTOS**
