@@ -207,7 +207,5 @@ public class GuiaPersistenceTest
 
         Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
         Assert.assertEquals(newEntity.getValor(), resp.getValor());
-    }
-    
-  
+    }  
 }
