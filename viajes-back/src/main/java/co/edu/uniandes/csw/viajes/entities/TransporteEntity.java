@@ -53,7 +53,7 @@ public class TransporteEntity extends ServicioEntity
         return tipo;
     }
 
-    public void setTipo(TipoTransporte tipo) {
+   public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
 

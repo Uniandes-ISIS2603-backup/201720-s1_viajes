@@ -7,13 +7,8 @@ package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
-<<<<<<< HEAD
-import javax.persistence.FetchType;
-import javax.persistence.OneToOne;
-=======
 import javax.persistence.ManyToOne;
 import uk.co.jemos.podam.common.PodamExclude;
->>>>>>> 0daec1331d44b5b2f745c8b917089cef4ece7216
 
 
 /**
