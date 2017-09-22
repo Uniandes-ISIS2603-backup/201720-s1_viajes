@@ -5,8 +5,11 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-import java.io.Serializable;
+
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -17,7 +20,7 @@ public class UsuarioEntity extends BaseEntity
 {
     //ATRIBUTOS
     private String nombre; //Nombre del usuario    
-    
+      
     //GETTERS/SETTERS
     
     public String getNombre() {
@@ -27,4 +30,6 @@ public class UsuarioEntity extends BaseEntity
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    
 }

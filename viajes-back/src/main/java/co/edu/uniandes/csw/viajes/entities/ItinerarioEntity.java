@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,7 +5,10 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -23,6 +25,7 @@ public class ItinerarioEntity extends BaseEntity{
     
     private int numeroVisitantes;
 
+    
     /**
      * @return the costoTotal
      */
@@ -78,8 +81,5 @@ public class ItinerarioEntity extends BaseEntity{
     public void setNumeroVisitantes(int numeroVisitantes) {
         this.numeroVisitantes = numeroVisitantes;
     }
-    
-    
-    
-}
 
+}

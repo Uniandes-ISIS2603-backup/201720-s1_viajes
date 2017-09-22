@@ -5,7 +5,9 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -27,7 +29,10 @@ public abstract class ServicioEntity extends BaseEntity{
     
     private String comentarios;
     
-     private String descripcion;
+    private String descripcion;
+     
+  
+     
 
     public String getNombre() {
         return nombre;
