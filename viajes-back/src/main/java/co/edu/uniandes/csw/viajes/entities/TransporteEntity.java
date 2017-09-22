@@ -29,17 +29,16 @@ public class TransporteEntity extends ServicioEntity{
     
     private TipoTransporte tipo;
     
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    
     private ImagenEntity[] imagenes;
     
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+   
     private UbicacionEntity origen;
     
-     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    
     private UbicacionEntity destino;
     
-     @PodamExclude
-     @OneToOne
+ 
     private CompaniaEntity compania;
 
 
