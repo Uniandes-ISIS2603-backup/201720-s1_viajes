@@ -5,12 +5,13 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -21,8 +22,12 @@ public class EntretenimientoEntity extends ServicioEntity
 {
     
 
-    //@OneToMany(fetch=FetchType.LAZY)
-    //private List<ImagenEntity> imagenes;
+    @OneToMany(mappedBy = "entretenimiento",cascade = CascadeType.PERSIST,orphanRemoval = true)
+    private List<ImagenEntity> imagenes;
+    
+    @PodamExclude
+    @ManyToOne
+    private CompaniaEntity compania;
     
     //////////////////////////////
     //REVISAR SI SE HACE @EMBEDDED
@@ -30,12 +35,7 @@ public class EntretenimientoEntity extends ServicioEntity
     //@OneToOne (fetch=FetchType.LAZY)
     //@JoinColumn(name="UBICACION_ID")
     //private UbicacionEntity ubicacion;
-    
-
-    //@OneToOne (fetch=FetchType.LAZY)
-    //@JoinColumn (name="UBICACION_ID")
-    //private CompaniaEntity compania;
-    
+   
     //public UbicacionEntity getUbicacion()
     //{
     //    return ubicacion;
@@ -46,24 +46,24 @@ public class EntretenimientoEntity extends ServicioEntity
     //    this.ubicacion = ubicacion;
     //}
 
-    //public CompaniaEntity getCompania()
-    //{
-    //    return compania;
-    //}
+    public CompaniaEntity getCompania()
+    {
+        return compania;
+    }
     
-    //public void setCompania(CompaniaEntity compania)
-    //{
-    //    this.compania = compania;
-    //}
+    public void setCompania(CompaniaEntity compania)
+    {
+        this.compania = compania;
+    }
 
-    //public List<ImagenEntity> getImagenes()
-    //{
-    //    return imagenes;
-    //}
+    public List<ImagenEntity> getImagenes()
+    {
+        return imagenes;
+    }
     
-    //public void setImagenes(List<ImagenEntity> imagenes)
-    //{
-    //    this.imagenes = imagenes;
-    //}
+    public void setImagenes(List<ImagenEntity> imagenes)
+    {
+        this.imagenes = imagenes;
+    }
     
 }

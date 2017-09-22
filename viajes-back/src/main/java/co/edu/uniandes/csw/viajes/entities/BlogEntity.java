@@ -8,8 +8,6 @@ package co.edu.uniandes.csw.viajes.entities;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
 
@@ -24,8 +22,7 @@ public class BlogEntity extends BaseEntity
     private String comentario;
     
     @PodamExclude
-    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
-    @JoinColumn(name="IMAGEN_ID")
+     @OneToMany(mappedBy = "blog",cascade = CascadeType.PERSIST,orphanRemoval = true)
     private List<ImagenEntity> imagenes;
     
     public String getTitulo()

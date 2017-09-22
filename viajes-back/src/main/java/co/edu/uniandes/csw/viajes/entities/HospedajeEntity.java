@@ -7,10 +7,15 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 
+import java.util.List;
+import java.util.logging.Logger;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 
 /**
@@ -31,14 +36,19 @@ public class HospedajeEntity extends ServicioEntity{
 
     private TipoHospedaje tipo;
     
-    @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    private UbicacionEntity ubicacion;
-    
+    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    //private UbicacionEntity ubicacion;
     
     //private List<ImagenEntity> imagenes;
     
-    @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    @PodamExclude
+    @ManyToOne
     private CompaniaEntity compania;
+    
+   
+    @OneToMany(mappedBy = "hospedaje",cascade = CascadeType.PERSIST,orphanRemoval = true)
+    private List<ImagenEntity> imagenes;
+    
     
     public TipoHospedaje getTipo() {
         return tipo;
@@ -48,16 +58,6 @@ public class HospedajeEntity extends ServicioEntity{
         this.tipo = tipo;
     }
     
-     public UbicacionEntity getUbicacion()
-    {
-        return ubicacion;
-    }
-     
-    public void setUbicacion(UbicacionEntity ubicacion)
-    {
-        this.ubicacion = ubicacion;
-    }
-     
     public CompaniaEntity getCompania()
     {
         return compania;
@@ -72,5 +72,16 @@ public class HospedajeEntity extends ServicioEntity{
     public boolean equals(Object obj) {
         return super.equals(obj); 
     }
+
+    public void setImagenes(List<ImagenEntity> imagenes) {
+        this.imagenes = imagenes;
+    }
+
+    public List<ImagenEntity> getImagenes() {
+        return imagenes;
+    }
+    
+    
   
+    
 }

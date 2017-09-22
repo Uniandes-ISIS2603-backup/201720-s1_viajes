@@ -6,6 +6,8 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -19,6 +21,25 @@ public class ImagenEntity extends BaseEntity{
     
     private String comentario;
 
+    @PodamExclude
+    @ManyToOne()
+    private EntretenimientoEntity entretenimiento;
+    
+    
+    @PodamExclude
+    @ManyToOne()
+    private TransporteEntity transporte;
+    
+    
+    @PodamExclude
+    @ManyToOne()
+    private HospedajeEntity hospedaje;
+    
+    @PodamExclude
+    @ManyToOne()
+    private BlogEntity blog;
+    
+    
     /**
      * @return the ruta
      */
@@ -46,5 +67,30 @@ public class ImagenEntity extends BaseEntity{
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
-    
+
+    public EntretenimientoEntity getEntretenimiento() {
+        return entretenimiento;
+    }
+
+    public void setEntretenimiento(EntretenimientoEntity entretenimiento) {
+        this.entretenimiento = entretenimiento;
+    }
+
+    public TransporteEntity getTransporte() {
+        return transporte;
+    }
+
+    public void setTransporte(TransporteEntity transporte) {
+        this.transporte = transporte;
+    }
+
+    public HospedajeEntity getHospedaje() {
+        return hospedaje;
+    }
+
+    public void setHospedaje(HospedajeEntity hospedaje) {
+        this.hospedaje = hospedaje;
+    }
+
+ 
 }

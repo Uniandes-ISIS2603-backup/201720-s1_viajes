@@ -5,7 +5,9 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -27,7 +29,11 @@ public abstract class ServicioEntity extends BaseEntity{
     
     private String comentarios;
     
-     private String descripcion;
+    private String descripcion;
+     
+    @ManyToMany
+    private List<ItinerarioEntity> itinerarios;
+     
 
     public String getNombre() {
         return nombre;
@@ -84,4 +90,14 @@ public abstract class ServicioEntity extends BaseEntity{
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public List<ItinerarioEntity> getItinerarios() {
+        return itinerarios;
+    }
+
+    public void setItinerarios(List<ItinerarioEntity> itinerarios) {
+        this.itinerarios = itinerarios;
+    }
+    
+    
 }
