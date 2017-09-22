@@ -84,4 +84,3 @@ public class HospedajeEntity extends ServicioEntity{
   
     
 }
->>>>>>> js.beltran14

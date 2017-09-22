@@ -1,23 +1,12 @@
 ----------------------------------------------------------------
-<<<<<<< HEAD
-Fri Sep 22 09:22:58 COT 2017:
- Iniciando instancia a816c00e-015e-a9f8-5900-00000ddbdc48 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\sa.silva1\AppData\Local\Temp\gfembed7146959414121244631tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@6bc7c054
-Cargado desde file:/C:/Users/sa.silva1/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
+Fri Sep 22 12:40:54 COT 2017:
+ Iniciando instancia a816c00e-015e-aaad-8c40-000023927d80 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
+en el directorio de base de datos C:\Users\Cesar Forero\AppData\Local\Temp\gfembed9083418919951810417tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
+Cargado desde file:/C:/Users/Cesar%20Forero/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_144-b01
-user.dir=C:\Users\sa.silva1\Documents\NetBeansProjects\s1_viajes\viajes-back
-os.name=Windows 7
-=======
-Fri Sep 22 11:33:12 GMT-05:00 2017:
- Iniciando instancia a816c00e-015e-aa6f-9244-000005c47080 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\Juan\AppData\Local\Temp\gfembed793060558530450647tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
-Cargado desde file:/C:/Users/Juan/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_144-b01
-user.dir=C:\Users\Juan\Documents\NetBeansProjects\s1_viajes\viajes-back
+user.dir=C:\Users\Cesar Forero\Documents\NetBeansProjects\s1_viajes\viajes-back
 os.name=Windows 10
->>>>>>> js.beltran14
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
