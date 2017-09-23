@@ -5,8 +5,11 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -17,6 +20,18 @@ public class UsuarioEntity extends BaseEntity
 {
     //ATRIBUTOS
     private String nombre; //Nombre del usuario    
+      
+    @PodamExclude
+    @OneToMany(mappedBy = "usuario")
+    private List<TarjetaCreditoEntity> tarjeta;
+    
+    @PodamExclude
+    @OneToMany(mappedBy = "usuario")
+    private List<ItinerarioEntity> itinerario;
+    
+    @PodamExclude
+    @OneToOne(mappedBy = "usuario")
+    private BlogEntity blog;
     
     //GETTERS/SETTERS
     
@@ -27,4 +42,6 @@ public class UsuarioEntity extends BaseEntity
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    
 }

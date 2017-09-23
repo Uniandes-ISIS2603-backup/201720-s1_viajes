@@ -6,11 +6,9 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -23,14 +21,13 @@ public class BlogEntity extends BaseEntity
     private String titulo;
     private String comentario;
     
-    //////////////////////////////
-    //REVISAR SI SE HACE @EMBEDDED
-    //REVISAR CASCADA
-    //////////////////////////////
     @PodamExclude
-    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval=true)
-    @JoinColumn(name="IMAGEN_ID")
+    @OneToMany(mappedBy = "blog")
     private List<ImagenEntity> imagenes;
+    
+    @PodamExclude
+    @OneToOne
+    private UsuarioEntity usuario;
     
     public String getTitulo()
     {
@@ -61,5 +58,11 @@ public class BlogEntity extends BaseEntity
     {
         this.imagenes = imagenes;
     }
-    
+
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
+    }    
+
 }

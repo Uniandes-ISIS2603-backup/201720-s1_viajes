@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
 
@@ -19,7 +18,7 @@ import uk.co.jemos.podam.common.PodamExclude;
  * @author jc.sanchez12
  */
 @Entity
-public class CompaniaEntity extends BaseEntity implements Serializable
+public class CompaniaEntity extends BaseEntity
 {
     //*************
     //**ATRIBUTOS**
@@ -30,21 +29,25 @@ public class CompaniaEntity extends BaseEntity implements Serializable
     private Long telefono; //Telefono de la empresa
     private String nombre; //Nombre de la empresa
     
+    @PodamExclude
+    @OneToMany(mappedBy = "compania")
+    private List<GuiaEntity> guias;
+      
+    @PodamExclude
+    @OneToMany(mappedBy = "compania")
+    private List<TransporteEntity> transportes;
     
     @PodamExclude
-    @OneToMany(cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "compania")
+    private List<EntretenimientoEntity> entretenimientos;
+     
+    @PodamExclude
+    @OneToMany(mappedBy = "compania")
+    private List<HospedajeEntity> hospedajes;
+
+    @PodamExclude
+    @OneToMany(mappedBy = "compania")
     private List<OficinaEntity> oficinas;
-    
-
-
-    /**
-     * Obtener el atributo email
-     * 
-     * @return  email
-     */
-    public String getEmail() {
-        return email;
-    }
 
     /**
      * Obtener el atributo telefono
@@ -88,13 +91,56 @@ public class CompaniaEntity extends BaseEntity implements Serializable
         this.nombre = nombre;
     }
 
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<GuiaEntity> getGuias() {
+        return guias;
+    }
+
+    public void setGuias(List<GuiaEntity> guias) {
+        this.guias = guias;
+    }
+ /*
     public List<OficinaEntity> getOficinas() {
         return oficinas;
     }
 
-    
     public void setOficinas(List<OficinaEntity> oficinas) {
         this.oficinas = oficinas;
-    }       
+    }
+*/
+   
+    public List<TransporteEntity> getTransportes() {
+        return transportes;
+    }
+
+    public void setTransportes(List<TransporteEntity> transportes) {
+        this.transportes = transportes;
+    }
+
+    public List<EntretenimientoEntity> getEntretenimientos() {
+        return entretenimientos;
+    }
+
+    public void setEntretenimientos(List<EntretenimientoEntity> entretenimientos) {
+        this.entretenimientos = entretenimientos;
+    }
+
+    public List<HospedajeEntity> getHospedajes() {
+        return hospedajes;
+    }
+
+    public void setHospedajes(List<HospedajeEntity> hospedajes) {
+        this.hospedajes = hospedajes;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+   
+    
 }

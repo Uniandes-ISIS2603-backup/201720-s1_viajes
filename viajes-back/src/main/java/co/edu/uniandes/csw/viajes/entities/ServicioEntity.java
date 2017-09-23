@@ -5,14 +5,13 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 
 /**
  *
  * @author sa.silva1
  */
-
-@Entity
+@MappedSuperclass
 public abstract class ServicioEntity extends BaseEntity{
     
     private String nombre;
@@ -27,7 +26,9 @@ public abstract class ServicioEntity extends BaseEntity{
     
     private String comentarios;
     
-     private String descripcion;
+    private String descripcion;
+        
+     
 
     public String getNombre() {
         return nombre;
