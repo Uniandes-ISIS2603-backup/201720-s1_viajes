@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
@@ -143,4 +144,3 @@ public class CompaniaEntity extends BaseEntity
    
     
 }
-

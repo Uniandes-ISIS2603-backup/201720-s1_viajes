@@ -109,5 +109,4 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
         return super.equals(obj);
     }
     
-    
 }

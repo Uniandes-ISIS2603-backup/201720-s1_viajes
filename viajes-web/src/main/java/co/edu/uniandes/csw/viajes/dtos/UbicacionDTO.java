@@ -98,5 +98,4 @@ public class UbicacionDTO {
         entity.setNombre(this.nombre);
         return entity;
     }
-    
 }

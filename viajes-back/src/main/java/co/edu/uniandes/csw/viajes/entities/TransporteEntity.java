@@ -31,7 +31,7 @@ public class TransporteEntity extends ServicioEntity
     }
     
     private TipoTransporte tipo;
-    
+
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
@@ -50,7 +50,7 @@ public class TransporteEntity extends ServicioEntity
     
     @PodamExclude
     @ManyToOne
-    private ItinerarioEntity itinerario;    
+    private ItinerarioEntity itinerario;   
     
     public TipoTransporte getTipo() {
         return tipo;
@@ -59,40 +59,11 @@ public class TransporteEntity extends ServicioEntity
     public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
-
-    public List<ImagenEntity> getImagenes() {
-        return imagenes;
-    }
-
-    public void setImagenes(List<ImagenEntity> imagenes) {
-        this.imagenes = imagenes;
-    }
-/*
-    public UbicacionEntity getOrigen() {
-        return origen;
-    }
-
-    public void setOrigen(UbicacionEntity origen) {
-        this.origen = origen;
-    }
-
-    public UbicacionEntity getDestino() {
-        return destino;
-    }
-
-    public void setDestino(UbicacionEntity destino) {
-        this.destino = destino;
-    }
-*/
-
     public CompaniaEntity getCompania() {
         return compania;
     }
 
     public void setCompañia(CompaniaEntity compania) {
         this.compania = compania;
-    }
-    
-    
-    
+    }    
 }
