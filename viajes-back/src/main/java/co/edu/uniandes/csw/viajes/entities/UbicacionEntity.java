@@ -7,6 +7,7 @@ package co.edu.uniandes.csw.viajes.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -21,11 +22,26 @@ public class UbicacionEntity extends BaseEntity {
     private String direccion;
     private String ciudad;
     private String pais;
-    
-    /*
+       
+    @PodamExclude
     @OneToOne
     private OficinaEntity oficina;
-    */
+    
+    @PodamExclude
+    @OneToOne
+    private HospedajeEntity hospedaje;
+    
+    @PodamExclude
+    @OneToOne
+    private EntretenimientoEntity entretenimiento;
+    
+    @PodamExclude
+    @OneToOne
+    private TransporteEntity origen;
+    
+    @PodamExclude
+    @OneToOne
+    private TransporteEntity destino;
     
     public String getLongitud() {
         return longitud;

@@ -29,6 +29,10 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
+    
+    @PodamExclude
+    @ManyToOne
+    private ItinerarioEntity itinerario;
 
     public GuiaEntity() 
     {
