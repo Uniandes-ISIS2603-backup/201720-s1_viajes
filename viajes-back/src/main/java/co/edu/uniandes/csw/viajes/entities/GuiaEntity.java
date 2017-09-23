@@ -29,6 +29,10 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
+    
+    @PodamExclude
+    @ManyToOne
+    private ItinerarioEntity itinerario;
 
     public GuiaEntity() 
     {
@@ -104,6 +108,5 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
-    
     
 }

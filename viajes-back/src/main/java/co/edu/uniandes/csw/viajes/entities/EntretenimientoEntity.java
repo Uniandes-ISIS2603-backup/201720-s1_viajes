@@ -9,8 +9,10 @@ package co.edu.uniandes.csw.viajes.entities;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -19,32 +21,32 @@ import uk.co.jemos.podam.common.PodamExclude;
  */
 @Entity
 public class EntretenimientoEntity extends ServicioEntity
-{
-    
-
-    @OneToMany(mappedBy = "entretenimiento",cascade = CascadeType.PERSIST,orphanRemoval = true)
+{    
+    @PodamExclude
+    @OneToMany(mappedBy = "entretenimiento")
     private List<ImagenEntity> imagenes;
     
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
     
-    //////////////////////////////
-    //REVISAR SI SE HACE @EMBEDDED
-    //////////////////////////////
-    //@OneToOne (fetch=FetchType.LAZY)
-    //@JoinColumn(name="UBICACION_ID")
-    //private UbicacionEntity ubicacion;
-   
-    //public UbicacionEntity getUbicacion()
-    //{
-    //    return ubicacion;
-    //}
+    @PodamExclude
+    @OneToOne()
+    private UbicacionEntity ubicacion;
     
-    //public void setUbicacion(UbicacionEntity ubicacion)
-    //{
-    //    this.ubicacion = ubicacion;
-    //}
+    @PodamExclude
+    @ManyToOne
+    private ItinerarioEntity itinerario;
+   
+    public UbicacionEntity getUbicacion()
+    {
+        return ubicacion;
+    }
+    
+    public void setUbicacion(UbicacionEntity ubicacion)
+    {
+        this.ubicacion = ubicacion;
+    }
 
     public CompaniaEntity getCompania()
     {
