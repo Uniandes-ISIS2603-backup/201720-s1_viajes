@@ -1,11 +1,9 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -26,14 +24,19 @@ public class UsuarioEntity extends BaseEntity
      * Tarjetas que le pertenecen al usuario
      */
     @PodamExclude
-    @OneToMany(cascade=CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<TarjetaCreditoEntity> tarjetas;
+    @OneToMany(mappedBy = "usuario")
+    private List<TarjetaCreditoEntity> tarjeta;
     
     /**
      * Itinerarios que tiene el usuario
      */
-    @ManyToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    private List<ItinerarioEntity> itinerarios;
+    @PodamExclude
+    @OneToMany(mappedBy = "usuario")
+    private List<ItinerarioEntity> itinerario;
+    
+    @PodamExclude
+    @OneToOne(mappedBy = "usuario")
+    private BlogEntity blog;
     
     //GETTERS/SETTERS
     
@@ -44,22 +47,22 @@ public class UsuarioEntity extends BaseEntity
      */
     public List<ItinerarioEntity> getItinerarios()
     {
-        return itinerarios;
+        return itinerario;
     }
     
     public void setItinerarios(List<ItinerarioEntity> itinerarios)
     {
-        this.itinerarios = itinerarios;
+        this.itinerario = itinerarios;
     }
         
     public List<TarjetaCreditoEntity> getTarjetas()
     {
-        return tarjetas;
+        return tarjeta;
     }
     
     public void setTarjetas(List<TarjetaCreditoEntity> tarjetas)
     {
-        this.tarjetas = tarjetas;
+        this.tarjeta = tarjetas;
     }
     
     public String getNombre() {

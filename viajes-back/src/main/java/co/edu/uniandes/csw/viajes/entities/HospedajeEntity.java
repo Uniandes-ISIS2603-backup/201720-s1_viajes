@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,17 +5,12 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-
 import java.util.List;
-import java.util.logging.Logger;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
-
 
 /**
  *
@@ -36,19 +30,21 @@ public class HospedajeEntity extends ServicioEntity{
 
     private TipoHospedaje tipo;
     
-    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    //private UbicacionEntity ubicacion;
-    
-    //private List<ImagenEntity> imagenes;
-    
+    @PodamExclude
+    @OneToOne()
+    private UbicacionEntity ubicacion;
+        
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
     
-   
-    @OneToMany(mappedBy = "hospedaje",cascade = CascadeType.PERSIST,orphanRemoval = true)
+    @PodamExclude   
+    @OneToMany(mappedBy = "hospedaje")
     private List<ImagenEntity> imagenes;
     
+    @PodamExclude
+    @ManyToOne
+    private ItinerarioEntity itinerario;
     
     public TipoHospedaje getTipo() {
         return tipo;

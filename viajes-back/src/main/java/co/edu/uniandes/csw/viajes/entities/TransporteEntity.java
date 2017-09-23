@@ -10,6 +10,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -30,24 +31,26 @@ public class TransporteEntity extends ServicioEntity
     }
     
     private TipoTransporte tipo;
-    
+
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
     
-    
-    @OneToMany(mappedBy = "transporte",cascade = CascadeType.PERSIST,orphanRemoval = true)
+    @PodamExclude
+    @OneToMany(mappedBy = "transporte")
     private List<ImagenEntity> imagenes;
     
-    /*
-  
+    @PodamExclude
+    @OneToOne(mappedBy = "origen")
     private UbicacionEntity origen;
     
+    @PodamExclude
+    @OneToOne(mappedBy = "destino")
     private UbicacionEntity destino;
     
-    private CompañiaEntity compañia;
-
-*/
+    @PodamExclude
+    @ManyToOne
+    private ItinerarioEntity itinerario;   
     
     public TipoTransporte getTipo() {
         return tipo;
@@ -56,40 +59,11 @@ public class TransporteEntity extends ServicioEntity
     public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
-
-    public List<ImagenEntity> getImagenes() {
-        return imagenes;
-    }
-
-    public void setImagenes(List<ImagenEntity> imagenes) {
-        this.imagenes = imagenes;
-    }
-/*
-    public UbicacionEntity getOrigen() {
-        return origen;
-    }
-
-    public void setOrigen(UbicacionEntity origen) {
-        this.origen = origen;
-    }
-
-    public UbicacionEntity getDestino() {
-        return destino;
-    }
-
-    public void setDestino(UbicacionEntity destino) {
-        this.destino = destino;
-    }
-*/
-
     public CompaniaEntity getCompania() {
         return compania;
     }
 
     public void setCompañia(CompaniaEntity compania) {
         this.compania = compania;
-    }
-    
-    
-    
+    }    
 }

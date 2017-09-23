@@ -1,9 +1,8 @@
 package co.edu.uniandes.csw.viajes.entities;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -32,8 +31,10 @@ public class PagoEntity extends BaseEntity
     /**
      * Tarjeta de credito con la que se realizó el pago
      */
-    @ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.PERSIST)
+    @PodamExclude
+    @ManyToOne
     private TarjetaCreditoEntity tarjeta;
+    
     
     //GETTERS/SETTERS
     
