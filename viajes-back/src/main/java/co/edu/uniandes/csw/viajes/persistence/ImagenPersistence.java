@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -26,7 +25,7 @@ public class ImagenPersistence {
 
     @PersistenceContext(unitName = "viajesPU")
     protected EntityManager em;
-    
+   
     /**
      *
      * @param entity objeto imagen que se creará en la base de datos
@@ -59,8 +58,7 @@ public class ImagenPersistence {
         ImagenEntity entity = em.find(ImagenEntity.class, id);
         em.remove(entity);
     }
-    
-    /**
+   /**
      * Busca si hay alguna imagen con el id que se envía de argumento
      *
      * @param id: id de la imagen que se está buscando
@@ -72,7 +70,7 @@ public class ImagenPersistence {
         
         return em.find(ImagenEntity.class, id);
     }
-    
+   
     /**
      *
      * @return devuelve las imagenes en la base de datos.

@@ -25,7 +25,7 @@ public class ItinerarioPersistence {
 
     @PersistenceContext(unitName = "viajesPU")
     protected EntityManager em;
-    
+   
     /**
      *
      * @param entity objeto itinerario que se creará en la base de datos
@@ -38,7 +38,7 @@ public class ItinerarioPersistence {
         return entity;
        
     }
-    
+   
     /**
      *
      * @param entity objeto itinerario que se cambiara en la base de datos
@@ -48,7 +48,7 @@ public class ItinerarioPersistence {
         LOGGER.log(Level.INFO, "Actualizando itinerario con id={0}", entity.getId());
         return em.merge(entity);
     }
-    
+   
     /**
      *
      * @param id del objeto itinerario que se borrara de la base de datos
@@ -58,6 +58,7 @@ public class ItinerarioPersistence {
         ItinerarioEntity entity = em.find(ItinerarioEntity.class, id);
         em.remove(entity);
     }
+
     /**
      * Busca si hay algun itinerario con el id que se envía de argumento
      *
@@ -70,7 +71,7 @@ public class ItinerarioPersistence {
         
         return em.find(ItinerarioEntity.class, id);
     }
-    
+
     /**
      *
      * @return devuelve los itinerarios en la base de datos.

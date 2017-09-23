@@ -7,10 +7,10 @@ package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
 import javax.persistence.Entity;
-//import javax.persistence.FetchType;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.OneToMany;
-//import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -30,9 +30,21 @@ public class HospedajeEntity extends ServicioEntity{
 
     private TipoHospedaje tipo;
     
+    @PodamExclude
+    @OneToOne()
     private UbicacionEntity ubicacion;
-    private List<ImagenEntity> imagenes;
+        
+    @PodamExclude
+    @ManyToOne
     private CompaniaEntity compania;
+    
+    @PodamExclude   
+    @OneToMany(mappedBy = "hospedaje")
+    private List<ImagenEntity> imagenes;
+    
+    @PodamExclude
+    @ManyToOne
+    private ItinerarioEntity itinerario;
     
     public TipoHospedaje getTipo() {
         return tipo;
@@ -40,26 +52,6 @@ public class HospedajeEntity extends ServicioEntity{
 
     public void setTipo(TipoHospedaje tipo) {
         this.tipo = tipo;
-    }
-    
-    // public UbicacionEntity getUbicacion()
-    //{
-    //    return ubicacion;
-    //}
-     
-    public void setUbicacion(UbicacionEntity ubicacion)
-    {
-        this.ubicacion = ubicacion;
-    }
-     
-    public List<ImagenEntity> getImagenes()
-    {
-        return imagenes;
-    }
-    
-    public void setImagenes(List<ImagenEntity> imagenes)
-    {
-        this.imagenes = imagenes;
     }
     
     public CompaniaEntity getCompania()
@@ -71,5 +63,21 @@ public class HospedajeEntity extends ServicioEntity{
     {
         this.compania = compania;
     }
-     
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); 
+    }
+
+    public void setImagenes(List<ImagenEntity> imagenes) {
+        this.imagenes = imagenes;
+    }
+
+    public List<ImagenEntity> getImagenes() {
+        return imagenes;
+    }
+    
+    
+  
+    
 }

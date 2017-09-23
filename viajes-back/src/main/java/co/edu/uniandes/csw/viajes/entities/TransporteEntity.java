@@ -5,7 +5,13 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -13,7 +19,8 @@ import javax.persistence.Entity;
  * Anotaciones: No debia haber constructor
  */
 @Entity
-public class TransporteEntity extends ServicioEntity{
+public class TransporteEntity extends ServicioEntity 
+{
     
     public enum TipoTransporte {
     
@@ -24,17 +31,26 @@ public class TransporteEntity extends ServicioEntity{
     }
     
     private TipoTransporte tipo;
+
+    @PodamExclude
+    @ManyToOne
+    private CompaniaEntity compania;
     
-    /*
-    private ImagenEntity[] imagenes;
+    @PodamExclude
+    @OneToMany(mappedBy = "transporte")
+    private List<ImagenEntity> imagenes;
     
+    @PodamExclude
+    @OneToOne(mappedBy = "origen")
     private UbicacionEntity origen;
     
+    @PodamExclude
+    @OneToOne(mappedBy = "destino")
     private UbicacionEntity destino;
     
-    private CompañiaEntity compañia;
-
-*/
+    @PodamExclude
+    @ManyToOne
+    private ItinerarioEntity itinerario;   
     
     public TipoTransporte getTipo() {
         return tipo;
@@ -43,39 +59,11 @@ public class TransporteEntity extends ServicioEntity{
     public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
-/*
-    public ImagenEntity[] getImagenes() {
-        return imagenes;
+    public CompaniaEntity getCompania() {
+        return compania;
     }
 
-    public void setImagenes(ImagenEntity[] imagenes) {
-        this.imagenes = imagenes;
-    }
-
-    public UbicacionEntity getOrigen() {
-        return origen;
-    }
-
-    public void setOrigen(UbicacionEntity origen) {
-        this.origen = origen;
-    }
-
-    public UbicacionEntity getDestino() {
-        return destino;
-    }
-
-    public void setDestino(UbicacionEntity destino) {
-        this.destino = destino;
-    }
-
-    public CompañiaEntity getCompañia() {
-        return compañia;
-    }
-
-    public void setCompañia(CompañiaEntity compañia) {
-        this.compañia = compañia;
-    }
-    
-    
-    */
+    public void setCompañia(CompaniaEntity compania) {
+        this.compania = compania;
+    }    
 }

@@ -5,12 +5,15 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -18,55 +21,51 @@ import javax.persistence.OneToOne;
  */
 @Entity
 public class EntretenimientoEntity extends ServicioEntity
-{
+{    
+    @PodamExclude
+    @OneToMany(mappedBy = "entretenimiento")
+    private List<ImagenEntity> imagenes;
     
-    //////////////////////////////
-    //REVISAR SI SE HACE @EMBEDDED
-    //////////////////////////////
-    //@OneToMany(fetch=FetchType.LAZY)
-    //@JoinColumn(name="IMAGEN_ID")
-    //private List<ImagenEntity> imagenes;
+    @PodamExclude
+    @ManyToOne
+    private CompaniaEntity compania;
     
-    //////////////////////////////
-    //REVISAR SI SE HACE @EMBEDDED
-    //////////////////////////////
-    //@OneToOne (fetch=FetchType.LAZY)
-    //@JoinColumn(name="UBICACION_ID")
-    //private UbicacionEntity ubicacion;
+    @PodamExclude
+    @OneToOne()
+    private UbicacionEntity ubicacion;
     
+    @PodamExclude
+    @ManyToOne
+    private ItinerarioEntity itinerario;
+   
+    public UbicacionEntity getUbicacion()
+    {
+        return ubicacion;
+    }
+    
+    public void setUbicacion(UbicacionEntity ubicacion)
+    {
+        this.ubicacion = ubicacion;
+    }
 
-    //@OneToOne (fetch=FetchType.LAZY)
-    //@JoinColumn (name="UBICACION_ID")
-    //private CompaniaEntity compania;
+    public CompaniaEntity getCompania()
+    {
+        return compania;
+    }
     
-    //public UbicacionEntity getUbicacion()
-    //{
-    //    return ubicacion;
-    //}
-    
-    //public void setUbicacion(UbicacionEntity ubicacion)
-    //{
-    //    this.ubicacion = ubicacion;
-    //}
+    public void setCompania(CompaniaEntity compania)
+    {
+        this.compania = compania;
+    }
 
-    //public CompaniaEntity getCompania()
-    //{
-    //    return compania;
-    //}
+    public List<ImagenEntity> getImagenes()
+    {
+        return imagenes;
+    }
     
-    //public void setCompania(CompaniaEntity compania)
-    //{
-    //    this.compania = compania;
-    //}
-
-    //public List<ImagenEntity> getImagenes()
-    //{
-    //    return imagenes;
-    //}
-    
-    //public void setImagenes(List<ImagenEntity> imagenes)
-    //{
-    //    this.imagenes = imagenes;
-    //}
+    public void setImagenes(List<ImagenEntity> imagenes)
+    {
+        this.imagenes = imagenes;
+    }
     
 }

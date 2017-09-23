@@ -5,8 +5,9 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -19,6 +20,11 @@ public class PagoEntity extends BaseEntity
     private String nombre; //Nombre del usuario que hizo el pago
     private String fecha; //Fecha en la que se realizó el pago
     private Double valor; //Valor por el cuál se hizo el pago
+    
+    @PodamExclude
+    @ManyToOne
+    private TarjetaCreditoEntity tarjeta;
+    
     
     //GETTERS/SETTERS
     
