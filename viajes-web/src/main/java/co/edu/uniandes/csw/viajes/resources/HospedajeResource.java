@@ -58,5 +58,4 @@ public class HospedajeResource {
     public void deleteHospedaje(@PathParam("id") Long id) {
        hospedajeLogic.deleteHospedaje(id);
     }
-   
 }

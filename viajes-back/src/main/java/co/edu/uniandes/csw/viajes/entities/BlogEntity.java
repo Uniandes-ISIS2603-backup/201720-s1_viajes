@@ -6,9 +6,9 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -22,8 +22,12 @@ public class BlogEntity extends BaseEntity
     private String comentario;
     
     @PodamExclude
-     @OneToMany(mappedBy = "blog",cascade = CascadeType.PERSIST,orphanRemoval = true)
+    @OneToMany(mappedBy = "blog")
     private List<ImagenEntity> imagenes;
+    
+    @PodamExclude
+    @OneToOne
+    private UsuarioEntity usuario;
     
     public String getTitulo()
     {

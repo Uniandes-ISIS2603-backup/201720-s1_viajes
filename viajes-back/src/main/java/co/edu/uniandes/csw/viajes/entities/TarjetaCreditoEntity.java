@@ -6,19 +6,30 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
  * @author tv.huertas10
  */
 @Entity
-public class TarjetaCreditoEntity extends BaseEntity implements Serializable
+public class TarjetaCreditoEntity extends BaseEntity
 {
     //ATRIBUTOS
     private Integer numero; //Número de cuenta 
     private Long fondos; //Cantidad de dinero disponible
     
+    @PodamExclude
+    @OneToMany(mappedBy = "tarjeta")
+    private List<PagoEntity> pagos; 
+    
+    @PodamExclude
+    @ManyToOne
+    private UsuarioEntity usuario;
     
     //GETTERS/SETTERS
     

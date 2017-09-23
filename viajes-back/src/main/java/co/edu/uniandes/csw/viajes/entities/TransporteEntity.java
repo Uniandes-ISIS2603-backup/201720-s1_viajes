@@ -6,11 +6,10 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
+import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -35,6 +34,22 @@ public class TransporteEntity extends ServicioEntity
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
+
+    @PodamExclude
+    @OneToMany(mappedBy = "transporte")
+    private List<ImagenEntity> imagenes;
+    
+    @PodamExclude
+    @OneToOne(mappedBy = "origen")
+    private UbicacionEntity origen;
+    
+    @PodamExclude
+    @OneToOne(mappedBy = "destino")
+    private UbicacionEntity destino;
+    
+    @PodamExclude
+    @ManyToOne
+    private ItinerarioEntity itinerario;   
     
     public TipoTransporte getTipo() {
         return tipo;

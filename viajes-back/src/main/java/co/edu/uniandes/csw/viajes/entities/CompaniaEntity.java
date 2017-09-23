@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
@@ -10,13 +11,14 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
  * @author jc.sanchez12
  */
 @Entity
-public class CompaniaEntity extends BaseEntity implements Serializable
+public class CompaniaEntity extends BaseEntity
 {
     //*************
     //**ATRIBUTOS**
@@ -27,23 +29,25 @@ public class CompaniaEntity extends BaseEntity implements Serializable
     private Long telefono; //Telefono de la empresa
     private String nombre; //Nombre de la empresa
     
-    @OneToMany(mappedBy = "compania",cascade = CascadeType.PERSIST,orphanRemoval = true)
+    @PodamExclude
+    @OneToMany(mappedBy = "compania")
     private List<GuiaEntity> guias;
-   
-    /*
-   @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
-    private List<OficinaEntity> oficinas;
-   */
-   
-    @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
+      
+    @PodamExclude
+    @OneToMany(mappedBy = "compania")
     private List<TransporteEntity> transportes;
     
-    @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
+    @PodamExclude
+    @OneToMany(mappedBy = "compania")
     private List<EntretenimientoEntity> entretenimientos;
      
-     @OneToMany(mappedBy = "compania", cascade = CascadeType.PERSIST,orphanRemoval = true)
+    @PodamExclude
+    @OneToMany(mappedBy = "compania")
     private List<HospedajeEntity> hospedajes;
 
+    @PodamExclude
+    @OneToMany(mappedBy = "compania")
+    private List<OficinaEntity> oficinas;
 
     /**
      * Obtener el atributo telefono
@@ -140,4 +144,3 @@ public class CompaniaEntity extends BaseEntity implements Serializable
    
     
 }
-
