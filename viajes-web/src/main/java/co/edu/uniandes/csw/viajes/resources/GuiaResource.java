@@ -60,6 +60,25 @@ public class GuiaResource
         }
         return new GuiaDetailDTO(entity);
     }
+    
+    
+    /**
+     * Obtiene los datos de una instancia de Guia a partir de su lenguaje
+     *
+     * @param lenguaje Identificador de la instancia a consultar
+     * @return Instancia de GuiaDetailDTO con los datos del Guia consultado
+     * 
+     */
+    @GET
+    @Path("{lenguaje: \\d+}")
+    public GuiaDetailDTO getGuia(@PathParam("lenguaje") String lenguaje) {
+        GuiaEntity entity = guialogic.getGuiaL(lenguaje);
+        if (entity == null) {
+            throw new WebApplicationException("El Guia no existe", 404);
+        }
+        return new GuiaDetailDTO(entity);
+    }
+    
 
     /**
      * Se encarga de crear un Guia en la base de datos
