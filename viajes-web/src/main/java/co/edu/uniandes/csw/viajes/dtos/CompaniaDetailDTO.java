@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class CompaniaDetailDTO extends CompaniaDTO
 {
-   // private List<OficinaDTO> oficinas;
+    private List<OficinaDTO> oficinas;
     
      public CompaniaDetailDTO() {
         super();
@@ -30,17 +30,15 @@ public class CompaniaDetailDTO extends CompaniaDTO
      
     public CompaniaDetailDTO(CompaniaEntity entity) {
         super(entity);
-        /*
-        if (entity.getOficinas()!=null) {
-         //    oficinas = new ArrayList<>();
+        if (entity != null) {
+            oficinas = new ArrayList<>();
             for (OficinaEntity entityOficina : entity.getOficinas()) {
-            //   oficinas.add(new OficinaDTO(entityOficina));
+              oficinas.add(new OficinaDTO(entityOficina));
             }
         }
-        */
+      
     }
-    
-    
+
     /**
      * Transformar un DTO a un Entity
      *
@@ -48,25 +46,25 @@ public class CompaniaDetailDTO extends CompaniaDTO
      */
     @Override
     public CompaniaEntity toEntity() {
-        CompaniaEntity companiaE = super.toEntity();
-       /*if (this.getOficinas!=null) {
-        List<OficinaEntity> oficinasEntity = new ArrayList<>();
-      //      for (OficinaDTO dtoOficina : getOficinas()) {
-      //         oficinasEntity.add(dtoOficina.toEntity());
-      //     }
-            companiaE.setOficinas(oficinasEntity);
-        //}
-    */
+       CompaniaEntity companiaE = super.toEntity();
+       if (oficinas!=null) {
+        List<OficinaEntity> oficinaEntity = new ArrayList<>();
+            for (OficinaDTO dtoOficina : oficinas) {
+               oficinaEntity.add(dtoOficina.toEntity());
+           }
+            companiaE.setOficinas(oficinaEntity);
+        }
+    
         return companiaE;
          
     }
-     
-    
-    //public OficinaDTO getOficinas() {
-    //    return oficinas;
-    //}
+  
+    public List<OficinaDTO> getOficinas() {
+        return oficinas;
+    }
 
-    //public void setOficina(OficinaDTO oficina) {
-    //    this.oficina = oficina;
-    //}
+    public void setOficina(List<OficinaDTO> oficina)
+    {
+        this.oficinas = oficina;
+    }
 }
