@@ -33,7 +33,11 @@ public class ItinerarioEntity extends BaseEntity{
     @PodamExclude
     @ManyToOne()
     private UsuarioEntity usuario;
-        
+   
+    @PodamExclude
+    @OneToMany(mappedBy = "itinerario")
+    private List<ServicioEntity> servicios;
+    /*    
     @PodamExclude
     @OneToMany(mappedBy = "itinerario")
     private List<HospedajeEntity> hospedajes;
@@ -45,7 +49,7 @@ public class ItinerarioEntity extends BaseEntity{
     @PodamExclude
     @OneToMany(mappedBy = "itinerario")
     private List<TransporteEntity> transportes;
-    
+    */
     /**
      * @return the costoTotal
      */
@@ -100,6 +104,48 @@ public class ItinerarioEntity extends BaseEntity{
      */
     public void setNumeroVisitantes(int numeroVisitantes) {
         this.numeroVisitantes = numeroVisitantes;
+    }
+
+    /**
+     * @return the gias
+     */
+    public List<GuiaEntity> getGias() {
+        return gias;
+    }
+
+    /**
+     * @param gias the gias to set
+     */
+    public void setGias(List<GuiaEntity> gias) {
+        this.gias = gias;
+    }
+
+    /**
+     * @return the usuario
+     */
+    public UsuarioEntity getUsuario() {
+        return usuario;
+    }
+
+    /**
+     * @param usuario the usuario to set
+     */
+    public void setUsuario(UsuarioEntity usuario) {
+        this.usuario = usuario;
+    }
+
+    /**
+     * @return the servicios
+     */
+    public List<ServicioEntity> getServicios() {
+        return servicios;
+    }
+
+    /**
+     * @param servicios the servicios to set
+     */
+    public void setServicios(List<ServicioEntity> servicios) {
+        this.servicios = servicios;
     }
 
 }

@@ -21,7 +21,8 @@ import uk.co.jemos.podam.common.PodamExclude;
  */
 @Entity
 public class EntretenimientoEntity extends ServicioEntity
-{    
+{  
+    /*
     @PodamExclude
     @OneToMany(mappedBy = "entretenimiento")
     private List<ImagenEntity> imagenes;
@@ -67,5 +68,5 @@ public class EntretenimientoEntity extends ServicioEntity
     {
         this.imagenes = imagenes;
     }
-    
+   */ 
 }

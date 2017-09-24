@@ -5,13 +5,25 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import java.util.List;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
  * @author sa.silva1
  */
-@MappedSuperclass
+@Entity
+@Table
+@Inheritance( strategy = InheritanceType.TABLE_PER_CLASS )
 public abstract class ServicioEntity extends BaseEntity{
     
     private String nombre;
@@ -28,7 +40,22 @@ public abstract class ServicioEntity extends BaseEntity{
     
     private String descripcion;
         
-     
+   @PodamExclude
+    @OneToOne()
+    private UbicacionEntity ubicacion;
+        
+    @PodamExclude
+    @ManyToOne
+    private CompaniaEntity compania;
+    
+    @PodamExclude   
+    //@OneToMany(mappedBy = "sercivio")
+    @OneToMany
+    private List<ImagenEntity> imagenes;
+    
+    @PodamExclude
+    @ManyToOne
+    private ItinerarioEntity itinerario;
 
     public String getNombre() {
         return nombre;
@@ -84,5 +111,61 @@ public abstract class ServicioEntity extends BaseEntity{
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the ubicacion
+     */
+    public UbicacionEntity getUbicacion() {
+        return ubicacion;
+    }
+
+    /**
+     * @param ubicacion the ubicacion to set
+     */
+    public void setUbicacion(UbicacionEntity ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    /**
+     * @return the compania
+     */
+    public CompaniaEntity getCompania() {
+        return compania;
+    }
+
+    /**
+     * @param compania the compania to set
+     */
+    public void setCompania(CompaniaEntity compania) {
+        this.compania = compania;
+    }
+
+    /**
+     * @return the imagenes
+     */
+    public List<ImagenEntity> getImagenes() {
+        return imagenes;
+    }
+
+    /**
+     * @param imagenes the imagenes to set
+     */
+    public void setImagenes(List<ImagenEntity> imagenes) {
+        this.imagenes = imagenes;
+    }
+
+    /**
+     * @return the itinerario
+     */
+    public ItinerarioEntity getItinerario() {
+        return itinerario;
+    }
+
+    /**
+     * @param itinerario the itinerario to set
+     */
+    public void setItinerario(ItinerarioEntity itinerario) {
+        this.itinerario = itinerario;
     }
 }
