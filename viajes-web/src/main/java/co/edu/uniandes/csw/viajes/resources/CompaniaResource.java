@@ -60,7 +60,7 @@ public class CompaniaResource
         }
         return new CompaniaDetailDTO(entity);
     }
-
+    
     /**
      * Se encarga de crear un Compania en la base de datos
      *

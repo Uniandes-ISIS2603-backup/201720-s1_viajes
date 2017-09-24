@@ -40,8 +40,7 @@ public class CompaniaDetailDTO extends CompaniaDTO
         }
         
     }
-    
-    
+   
     /**
      * Transformar un DTO a un Entity
      *
@@ -62,12 +61,17 @@ public class CompaniaDetailDTO extends CompaniaDTO
          
     }
      
-    
+       /**
+     * @return the oficinas
+     */
     public List<OficinaDTO> getOficinas() {
         return oficinas;
     }
 
-    public void setOficina(List<OficinaDTO> oficina) {
-        this.oficinas = oficina;
+     /**
+     * @param oficinas the oficinas to set
+     */
+    public void setOficina(List<OficinaDTO> oficinas) {
+        this.oficinas = oficinas;
     }
 }

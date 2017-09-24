@@ -51,13 +51,16 @@ public class GuiaDetailDTO extends GuiaDTO
         return guiaE;
     }
     
-    
-    
-  
+    /**
+     * @return the compania
+     */
     public CompaniaDTO getCompania() {
         return compania;
     }
 
+    /**
+     * @param compania the compania to set
+     */
     public void setCompania(CompaniaDTO compania) {
         this.compania = compania;
     }

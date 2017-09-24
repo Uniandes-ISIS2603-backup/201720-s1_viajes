@@ -81,4 +81,6 @@ public class CompaniaLogic
         LOGGER.log(Level.INFO, "Inicia proceso de borrar una compania ");
         persistence.delete(id);
     }
+    
+    
 }

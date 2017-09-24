@@ -13,8 +13,8 @@ import co.edu.uniandes.csw.viajes.entities.CompaniaEntity;
  */
 public class CompaniaDTO {
     
-    private Long id;
-     private String email; //Email de la empresa
+    private Long id;  //id de la empresa
+    private String email; //Email de la empresa
     private Long telefono; //Telefono de la empresa
     private String nombre; //Nombre de la empresa
     
@@ -26,34 +26,82 @@ public class CompaniaDTO {
         
     }
 
+    /**
+     * Obtiene el atributo nombre.
+     *
+     * @return atributo nombre.
+     * 
+     */
     public String getNombre() {
         return nombre;
     }
 
+     /**
+     * Obtiene el atributo id.
+     *
+     * @return atributo id.
+     * 
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Establece el valor del atributo nombre.
+     *
+     * @param nombre nuevo valor del atributo
+     * 
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * Establece el valor del atributo id.
+     *
+     * @param id nuevo valor del atributo
+     * 
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+      /**
+     * Obtiene el atributo email.
+     *
+     * @return atributo email.
+     * 
+     */
     public String getEmail() {
         return email;
     }
 
+      /**
+     * Obtiene el atributo telefono.
+     *
+     * @return atributo telefono.
+     * 
+     */
     public Long getTelefono() {
         return telefono;
     }
 
+    /**
+     * Establece el valor del atributo email.
+     *
+     * @param email nuevo valor del atributo
+     * 
+     */
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
+    /**
+     * Establece el valor del atributo telefono.
+     *
+     * @param telefono nuevo valor del atributo
+     * 
+     */
     public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }

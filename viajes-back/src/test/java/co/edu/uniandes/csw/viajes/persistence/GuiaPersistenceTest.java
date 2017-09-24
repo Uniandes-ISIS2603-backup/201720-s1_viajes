@@ -2,7 +2,6 @@ package co.edu.uniandes.csw.viajes.persistence;
 
 
 import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
-import co.edu.uniandes.csw.viajes.persistence.GuiaPersistence;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -170,6 +169,20 @@ public class GuiaPersistenceTest
     public void getGuiaTest() {
         GuiaEntity entity = data.get(0);
         GuiaEntity newEntity = guiaPersistence.findById(entity.getId());
+        Assert.assertNotNull(newEntity);
+        Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
+        Assert.assertEquals(entity.getValor(), newEntity.getValor());
+    }
+    
+    /**
+     * Prueba para consultar un Guia.
+     *
+     *
+     */
+    @Test
+    public void getGuiabyLTest() {
+        GuiaEntity entity = data.get(0);
+        GuiaEntity newEntity = guiaPersistence.findByLenguaje(entity.getLenguaje());
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getValor(), newEntity.getValor());

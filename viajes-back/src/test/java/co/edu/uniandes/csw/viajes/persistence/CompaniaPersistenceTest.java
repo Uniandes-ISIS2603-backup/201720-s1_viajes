@@ -20,7 +20,7 @@ import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
-/*0
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -139,6 +139,13 @@ public class CompaniaPersistenceTest
 
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getTelefono(), entity.getTelefono());
+        Assert.assertEquals(newEntity.getEmail(), entity.getEmail());
+        Assert.assertEquals(newEntity.getGuias().size(), entity.getGuias().size());
+        Assert.assertEquals(newEntity.getOficinas().size(), entity.getOficinas().size());
+        Assert.assertEquals(newEntity.getTransportes().size(), entity.getTransportes().size());
+        Assert.assertEquals(newEntity.getHospedajes().size(), entity.getHospedajes().size());
+        Assert.assertEquals(newEntity.getEntretenimientos().size(), entity.getEntretenimientos().size());
+        
     }
 
      /**
@@ -173,7 +180,15 @@ public class CompaniaPersistenceTest
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getTelefono(), newEntity.getTelefono());
+        Assert.assertEquals(entity.getEmail(), newEntity.getEmail());
+        Assert.assertEquals(entity.getGuias().size(), newEntity.getGuias().size());
+        Assert.assertEquals(entity.getOficinas().size(), newEntity.getOficinas().size());
+        Assert.assertEquals(entity.getTransportes().size(), newEntity.getTransportes().size());
+        Assert.assertEquals(entity.getHospedajes().size(), newEntity.getHospedajes().size());
+        Assert.assertEquals(entity.getEntretenimientos().size(), newEntity.getEntretenimientos().size());
     }
+    
+    
     
     /**
      * Prueba para eliminar una Compania.
@@ -202,10 +217,14 @@ public class CompaniaPersistenceTest
         newEntity.setId(entity.getId());
 
         companiaPersistence.update(newEntity);
-
+        
         CompaniaEntity resp = em.find(CompaniaEntity.class, entity.getId());
-
         Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
         Assert.assertEquals(newEntity.getTelefono(), resp.getTelefono());
+        Assert.assertEquals(newEntity.getGuias().size(), resp.getGuias().size());
+        Assert.assertEquals(newEntity.getOficinas().size(), resp.getOficinas().size());
+        Assert.assertEquals(newEntity.getTransportes().size(), resp.getTransportes().size());
+        Assert.assertEquals(newEntity.getHospedajes().size(), resp.getHospedajes().size());
+         Assert.assertEquals(newEntity.getEntretenimientos().size(), resp.getEntretenimientos().size());
     }
  }
