@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Fri Sep 22 19:06:50 COT 2017:
- Iniciando instancia a816c00e-015e-ac0e-e388-00000e932078 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\tv.huertas10\AppData\Local\Temp\gfembed8427773699558328475tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@6bc7c054
-Cargado desde file:/C:/Users/tv.huertas10/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
+Sun Sep 24 16:57:18 COT 2017:
+ Iniciando instancia a816c00e-015e-b5e5-0515-00000e712a18 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
+en el directorio de base de datos C:\Users\ma.forero11\AppData\Local\Temp\gfembed4275640153085890637tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@6bc7c054
+Cargado desde file:/C:/Users/ma.forero11/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_144-b01
-user.dir=C:\Users\tv.huertas10\Documents\NetBeansProjects\Ciclo1\s1_viajes\viajes-back
+user.dir=C:\Users\ma.forero11\Desktop\Talleres\s1_viajes\s1_viajes\viajes-back
 os.name=Windows 7
 os.arch=amd64
 os.version=6.1
