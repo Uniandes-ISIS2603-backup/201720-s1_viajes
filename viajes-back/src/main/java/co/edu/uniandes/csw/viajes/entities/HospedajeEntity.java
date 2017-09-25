@@ -29,7 +29,7 @@ public class HospedajeEntity extends ServicioEntity{
     }
 
     private TipoHospedaje tipo;
-    
+    /*
     @PodamExclude
     @OneToOne()
     private UbicacionEntity ubicacion;
@@ -45,7 +45,7 @@ public class HospedajeEntity extends ServicioEntity{
     @PodamExclude
     @ManyToOne
     private ItinerarioEntity itinerario;
-    
+    */
     public TipoHospedaje getTipo() {
         return tipo;
     }
@@ -53,7 +53,7 @@ public class HospedajeEntity extends ServicioEntity{
     public void setTipo(TipoHospedaje tipo) {
         this.tipo = tipo;
     }
-    
+    /*
     public CompaniaEntity getCompania()
     {
         return compania;
@@ -76,7 +76,7 @@ public class HospedajeEntity extends ServicioEntity{
     public List<ImagenEntity> getImagenes() {
         return imagenes;
     }
-    
+    */
     
   
     

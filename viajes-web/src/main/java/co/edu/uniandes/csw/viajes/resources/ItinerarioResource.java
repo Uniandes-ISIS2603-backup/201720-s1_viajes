@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.viajes.resources;
 
 import co.edu.uniandes.csw.viajes.dtos.ItinerarioDTO;
+import co.edu.uniandes.csw.viajes.dtos.ItinerarioDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.ItinerarioLogic;
 import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
 import java.util.ArrayList;
@@ -57,10 +58,10 @@ public class ItinerarioResource {
      */
     @GET
     @Path("{id: \\d+}")
-    public ItinerarioDTO getItinerario(@PathParam("id") Long id) throws HTTPException {
+    public ItinerarioDetailDTO getItinerario(@PathParam("id") Long id) throws HTTPException {
         ItinerarioEntity toGet = itinerarioLogic.getItinerario(id);
         if(toGet==null) throw new HTTPException(404);
-        return new ItinerarioDTO(toGet);
+        return new ItinerarioDetailDTO(toGet);
     }
     
     /**
@@ -69,10 +70,10 @@ public class ItinerarioResource {
      * @return devuelve el dto creada con un id dado por la base de datos.
      */
     @POST
-    public ItinerarioDTO createItinerario(ItinerarioDTO itinerarioDTO){
+    public ItinerarioDetailDTO createItinerario(ItinerarioDTO itinerarioDTO){
         ItinerarioEntity itinerario = itinerarioDTO.toEntity();
         ItinerarioEntity entity = itinerarioLogic.createItinrario(itinerario);  
-        return new ItinerarioDTO(entity);
+        return new ItinerarioDetailDTO(entity);
     }
     
     /**
@@ -82,10 +83,10 @@ public class ItinerarioResource {
      */
     @PUT
     @Path("{id: \\d+}")
-    public ItinerarioDTO updateImagen(@PathParam("id") Long id, ItinerarioDTO dto) {
+    public ItinerarioDetailDTO updateImagen(@PathParam("id") Long id, ItinerarioDTO dto) {
        ItinerarioEntity entity = dto.toEntity();
        entity.setId(id);
-       return new ItinerarioDTO(itinerarioLogic.updateItinerario(entity)); 
+       return new ItinerarioDetailDTO(itinerarioLogic.updateItinerario(entity)); 
     }
     
     /**
