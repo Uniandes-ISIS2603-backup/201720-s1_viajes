@@ -6,12 +6,10 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
-import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -40,7 +38,7 @@ public abstract class ServicioEntity extends BaseEntity{
     
     private String descripcion;
         
-   @PodamExclude
+    @PodamExclude
     @OneToOne()
     private UbicacionEntity ubicacion;
         
@@ -49,7 +47,6 @@ public abstract class ServicioEntity extends BaseEntity{
     private CompaniaEntity compania;
     
     @PodamExclude   
-    //@OneToMany(mappedBy = "sercivio")
     @OneToMany
     private List<ImagenEntity> imagenes;
     

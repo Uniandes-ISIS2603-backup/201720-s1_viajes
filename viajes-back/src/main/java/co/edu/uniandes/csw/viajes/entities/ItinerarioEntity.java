@@ -29,11 +29,7 @@ public class ItinerarioEntity extends BaseEntity{
     @PodamExclude
     @OneToMany(mappedBy = "itinerario")
     private List<GuiaEntity> gias;
-    
-    @PodamExclude
-    @ManyToOne()
-    private UsuarioEntity usuario;
-   
+       
     @PodamExclude
     @OneToMany(mappedBy = "itinerario")
     private List<ServicioEntity> servicios;
@@ -118,20 +114,6 @@ public class ItinerarioEntity extends BaseEntity{
      */
     public void setGias(List<GuiaEntity> gias) {
         this.gias = gias;
-    }
-
-    /**
-     * @return the usuario
-     */
-    public UsuarioEntity getUsuario() {
-        return usuario;
-    }
-
-    /**
-     * @param usuario the usuario to set
-     */
-    public void setUsuario(UsuarioEntity usuario) {
-        this.usuario = usuario;
     }
 
     /**

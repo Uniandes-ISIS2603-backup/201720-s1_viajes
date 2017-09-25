@@ -22,13 +22,10 @@ public class BlogEntity extends BaseEntity
     private String comentario;
     
     @PodamExclude
-    @OneToMany(mappedBy = "blog")
+    @OneToMany
     private List<ImagenEntity> imagenes;
     
-    @PodamExclude
-    @OneToOne
-    private UsuarioEntity usuario;
-    
+      
     public String getTitulo()
     {
         return titulo;

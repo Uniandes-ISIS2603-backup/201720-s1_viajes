@@ -22,11 +22,7 @@ public class UbicacionEntity extends BaseEntity {
     private String direccion;
     private String ciudad;
     private String pais;
-       
-    @PodamExclude
-    @OneToOne
-    private OficinaEntity oficina;
-    
+          
     @PodamExclude
     @OneToOne
     private HospedajeEntity hospedaje;

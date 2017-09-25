@@ -31,7 +31,7 @@ public class UsuarioEntity extends BaseEntity
      * Itinerarios que tiene el usuario
      */
     @PodamExclude
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany
     private List<ItinerarioEntity> itinerario;
     
     
@@ -39,6 +39,7 @@ public class UsuarioEntity extends BaseEntity
      * Blog que le pertenece al usuario
      */
     @PodamExclude
+    @OneToOne
     private BlogEntity blog;
     
     //GETTERS/SETTERS

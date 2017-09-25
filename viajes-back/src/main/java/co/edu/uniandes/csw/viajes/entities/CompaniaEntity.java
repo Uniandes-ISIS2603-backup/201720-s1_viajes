@@ -6,9 +6,7 @@
 
 package co.edu.uniandes.csw.viajes.entities;
 
-import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
@@ -34,7 +32,7 @@ public class CompaniaEntity extends BaseEntity
     private List<GuiaEntity> guias;
       
     @PodamExclude
-    @OneToMany(mappedBy = "compania")
+    @OneToMany
     private List<TransporteEntity> transportes;
     
     @PodamExclude
@@ -42,11 +40,11 @@ public class CompaniaEntity extends BaseEntity
     private List<EntretenimientoEntity> entretenimientos;
      
     @PodamExclude
-    @OneToMany(mappedBy = "compania")
+    @OneToMany
     private List<HospedajeEntity> hospedajes;
 
     @PodamExclude
-    @OneToMany(mappedBy = "compania")
+    @OneToMany
     private List<OficinaEntity> oficinas;
 
     /**

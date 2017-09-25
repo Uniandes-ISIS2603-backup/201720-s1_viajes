@@ -20,14 +20,10 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class OficinaEntity extends BaseEntity
 {
     private String nombreLugar;
-    private String nombreEncargado;
+    private String nombreEncargado;   
    
     @PodamExclude
-    @ManyToOne
-    private CompaniaEntity compania;
-    
-    @PodamExclude
-    @OneToOne(mappedBy = "oficina")
+    @OneToOne
     private UbicacionEntity ubicacion;
     
     
