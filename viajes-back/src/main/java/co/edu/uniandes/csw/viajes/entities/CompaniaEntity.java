@@ -141,6 +141,16 @@ public class CompaniaEntity extends BaseEntity
     public String getEmail() {
         return email;
     }
+
+    public List<OficinaEntity> getOficinas() {
+        return oficinas;
+    }
+
+    public void setOficinas(List<OficinaEntity> oficinas) {
+        this.oficinas = oficinas;
+    }
+    
+    
    
     
 }
