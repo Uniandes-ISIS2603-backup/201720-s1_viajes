@@ -19,8 +19,15 @@ public class HospedajeDTO {
     private Double valor;
     private Double calificacion;
     private String comentarios;
-    private long id;
+    private Long id;
     private String descripcion;
+    
+    /**
+     * Constructor por defecto
+     */
+    public HospedajeDTO (){
+        
+    }
     
     public HospedajeDTO (HospedajeEntity entity){
         this.fechaInicio = entity.getFechaInicio();
@@ -85,7 +92,7 @@ public class HospedajeDTO {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -106,6 +113,7 @@ public class HospedajeDTO {
         entity.setCalificacion(this.calificacion);
         entity.setComentarios(this.comentarios);
         entity.setId(this.id);
+        entity.setDescripcion(this.descripcion);
         return entity;
     }
 }

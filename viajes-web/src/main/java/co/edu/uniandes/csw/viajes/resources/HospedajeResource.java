@@ -12,7 +12,6 @@ import co.edu.uniandes.csw.viajes.entities.HospedajeEntity;
 import co.edu.uniandes.csw.viajes.excpetions.BusinessLogicException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -24,7 +23,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
-import javax.xml.ws.http.HTTPException;
 
 /**
  *
@@ -47,7 +45,7 @@ public class HospedajeResource {
      * @throws BusinessLogicException
      */
     @GET
-    public List<HospedajeDetailDTO> getHospedajes() throws BusinessLogicException{
+    public List<HospedajeDTO> getHospedajes() throws BusinessLogicException{
         return listEntity2DetailDTO(hospedajeLogic.getHospedajes());
     }
     
@@ -79,10 +77,10 @@ public class HospedajeResource {
      * la base de datos y el tipo del objeto java.
      */
     @POST
-    public HospedajeDTO createHospedaje(HospedajeDTO itinerarioDTO)throws BusinessLogicException{
+    public HospedajeDetailDTO createHospedaje(HospedajeDetailDTO itinerarioDTO)throws BusinessLogicException{
         HospedajeEntity itinerario = itinerarioDTO.toEntity();
         HospedajeEntity entity = hospedajeLogic.createHospedaje(itinerario);  
-        return new HospedajeDTO(entity);
+        return new HospedajeDetailDTO(entity);
     }
     
     /**
@@ -97,10 +95,13 @@ public class HospedajeResource {
      */
     @PUT
     @Path("{id: \\d+}")
-    public HospedajeDTO updateHospedaje(@PathParam("id") Long id, HospedajeDTO dto)throws BusinessLogicException {
-       HospedajeEntity entity = dto.toEntity();
-       entity.setId(id);
-       return new HospedajeDTO(hospedajeLogic.updateHospedaje(entity)); 
+    public HospedajeDetailDTO updateHospedaje(@PathParam("id") Long id, HospedajeDetailDTO dto)throws BusinessLogicException {
+        dto.setId(id);
+        HospedajeEntity entity = hospedajeLogic.getHospedaje(id);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /hospedaje/" + id + " no existe.", 404);
+        }
+        return new HospedajeDetailDTO(hospedajeLogic.updateHospedaje(dto.toEntity()));
     }
     
     /**
@@ -114,7 +115,11 @@ public class HospedajeResource {
     @DELETE
     @Path("{id: \\d+}")
     public void deleteHospedaje(@PathParam("id") Long id)throws BusinessLogicException {
-       hospedajeLogic.deleteHospedaje(id);
+       HospedajeEntity entity = hospedajeLogic.getHospedaje(id);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /hospedaje/" + id + " no existe.", 404);
+        }
+        hospedajeLogic.deleteHospedaje(id);
     }
     
     /**
@@ -128,10 +133,10 @@ public class HospedajeResource {
      * que vamos a convertir a DTO.
      * @return la lista de hospedaje en forma DTO (json)
      */
-    private List<HospedajeDetailDTO> listEntity2DetailDTO(List<HospedajeEntity> entityList) {
-        List<HospedajeDetailDTO> list = new ArrayList<>();
+    private List<HospedajeDTO> listEntity2DetailDTO(List<HospedajeEntity> entityList) {
+        List<HospedajeDTO> list = new ArrayList<>();
         for (HospedajeEntity entity : entityList) {
-            list.add(new HospedajeDetailDTO(entity));
+            list.add(new HospedajeDTO(entity));
         }
         return list;
     }

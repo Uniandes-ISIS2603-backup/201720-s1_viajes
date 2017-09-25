@@ -14,6 +14,10 @@ import co.edu.uniandes.csw.viajes.entities.HospedajeEntity;
  */
 public class HospedajeDetailDTO extends HospedajeDTO {
     
+    public HospedajeDetailDTO(){
+        
+    }
+    
     /**
      * Constructor para transformar un Entity a un DTO
      *

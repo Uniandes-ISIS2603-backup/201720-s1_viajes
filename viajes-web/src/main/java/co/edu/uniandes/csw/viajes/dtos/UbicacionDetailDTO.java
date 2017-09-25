@@ -13,6 +13,11 @@ import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
  */
 public class UbicacionDetailDTO extends UbicacionDTO{
     
+    public UbicacionDetailDTO(){
+        
+    }
+    
+    
     /**
      * Constructor para transformar un Entity a un DTO
      *

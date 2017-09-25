@@ -79,7 +79,7 @@ public class UbicacionResource {
      * la base de datos y el tipo del objeto java.
      */
     @POST
-    public UbicacionDetailDTO createUbicacion(UbicacionDTO itinerarioDTO)throws BusinessLogicException{
+    public UbicacionDetailDTO createUbicacion(UbicacionDetailDTO itinerarioDTO)throws BusinessLogicException{
         UbicacionEntity itinerario = itinerarioDTO.toEntity();
         UbicacionEntity entity = ubicacionLogic.createUbicacion(itinerario);  
         return new UbicacionDetailDTO(entity);
@@ -98,9 +98,12 @@ public class UbicacionResource {
     @PUT
     @Path("{id: \\d+}")
     public UbicacionDTO updateUbicacion(@PathParam("id") Long id, UbicacionDTO dto)throws BusinessLogicException {
-       UbicacionEntity entity = dto.toEntity();
-       entity.setId(id);
-       return new UbicacionDTO(ubicacionLogic.updateUbicacion(entity)); 
+       dto.setId(id);
+        UbicacionEntity entity = ubicacionLogic.getUbicacion(id);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /ubicaciones/" + id + " no existe.", 404);
+        }
+        return new UbicacionDetailDTO(ubicacionLogic.updateUbicacion(dto.toEntity())); 
     }
     
     /**
@@ -114,7 +117,11 @@ public class UbicacionResource {
     @DELETE
     @Path("{id: \\d+}")
     public void deleteUbicacion(@PathParam("id") Long id) throws BusinessLogicException{
-       ubicacionLogic.deleteUbicacion(id);
+       UbicacionEntity entity = ubicacionLogic.getUbicacion(id);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /ubicaciones/" + id + " no existe.", 404);
+        }
+        ubicacionLogic.deleteUbicacion(id);
     }
     
     /**

@@ -54,6 +54,14 @@ public class HospedajeEntity extends ServicioEntity{
         this.tipo = tipo;
     }
     
+    public UbicacionEntity getUbicacion(){
+        return ubicacion;
+    }
+    
+    public void setUbicacion(UbicacionEntity ubicacion){
+        this.ubicacion = ubicacion;
+    }
+    
     public CompaniaEntity getCompania()
     {
         return compania;
@@ -64,20 +72,11 @@ public class HospedajeEntity extends ServicioEntity{
         this.compania = compania;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj); 
-    }
-
     public void setImagenes(List<ImagenEntity> imagenes) {
         this.imagenes = imagenes;
     }
 
     public List<ImagenEntity> getImagenes() {
         return imagenes;
-    }
-    
-    
-  
-    
+    } 
 }
