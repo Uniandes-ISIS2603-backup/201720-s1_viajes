@@ -174,7 +174,10 @@ public class HospedajePersistenceTest {
         Assert.assertTrue(found);
     }
     }
-
+    /**
+     * Inserta los datos iniciales para el correcto funcionamiento de las
+     * pruebas.
+     */
     private void insertData() {
         PodamFactory factory = new PodamFactoryImpl();
         for (int i = 0; i < 3; i++) {

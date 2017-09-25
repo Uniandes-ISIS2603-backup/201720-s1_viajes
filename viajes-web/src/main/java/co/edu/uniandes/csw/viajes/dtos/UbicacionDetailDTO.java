@@ -12,10 +12,21 @@ import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
  * @author ma.forero11
  */
 public class UbicacionDetailDTO extends UbicacionDTO{
+    
+    /**
+     * Constructor para transformar un Entity a un DTO
+     *
+     * @param entity
+     */
     public UbicacionDetailDTO (UbicacionEntity entity){
         super(entity);
     }
     
+    /**
+     * Transformar un DTO a un Entity
+     *
+     * @return 
+     */
     @Override
     public UbicacionEntity toEntity(){
         UbicacionEntity entity = super.toEntity();

@@ -51,6 +51,15 @@ public class HospedajeResource {
         return listEntity2DetailDTO(hospedajeLogic.getHospedajes());
     }
     
+    /**
+     * GET para un Hospedaje
+     * http://localhost:8080/viajesp-web/api/hospedajes/1
+     *
+     * @param id corresponde al id del Hospedaje buscado.
+     * @return El Hospedaje encontrado.
+     * En caso de no existir el id del Hospedaje buscado se retorna un 404 con
+     * el mensaje.
+     */
     @GET
     @Path("{id: \\d+}")
     public HospedajeDetailDTO getHospedaje(@PathParam("id") Long id) throws BusinessLogicException {
@@ -61,6 +70,14 @@ public class HospedajeResource {
         return new HospedajeDetailDTO(toGet);
     }
     
+    /**
+     * POST http://localhost:8080/viajesp-web/api/hospedajes 
+     *
+     * @param hospedaje correponde a la representación java del objeto json
+     * enviado en el llamado.
+     * @return Devuelve el objeto json de entrada que contiene el id creado por
+     * la base de datos y el tipo del objeto java.
+     */
     @POST
     public HospedajeDTO createHospedaje(HospedajeDTO itinerarioDTO)throws BusinessLogicException{
         HospedajeEntity itinerario = itinerarioDTO.toEntity();
@@ -68,6 +85,16 @@ public class HospedajeResource {
         return new HospedajeDTO(entity);
     }
     
+    /**
+     * PUT http://localhost:8080/viajesp-web/api/hospedajes/1 
+     *
+     * @param id corresponde al hospedaje a actualizar.
+     * @param hospedaje corresponde a al objeto con los cambios que se van a
+     * realizar.
+     * @return El Hospedaje actualizado.
+     * En caso de no existir el id del Hospedaje a actualizar se retorna un
+     * 404 con el mensaje.
+     */
     @PUT
     @Path("{id: \\d+}")
     public HospedajeDTO updateHospedaje(@PathParam("id") Long id, HospedajeDTO dto)throws BusinessLogicException {
@@ -76,6 +103,14 @@ public class HospedajeResource {
        return new HospedajeDTO(hospedajeLogic.updateHospedaje(entity)); 
     }
     
+    /**
+     * DELETE http://localhost:8080/viajesp-web/api/hospedajes/1
+     *
+     * @param id corresponde al Hospdaje a borrar.
+     * En caso de no existir el id del Hospedaje a actualizar se retorna un
+     * 404 con el mensaje.
+     *
+     */
     @DELETE
     @Path("{id: \\d+}")
     public void deleteHospedaje(@PathParam("id") Long id)throws BusinessLogicException {

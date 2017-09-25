@@ -51,6 +51,15 @@ public class UbicacionResource {
         return listEntity2DetailDTO(ubicacionLogic.getUbicaciones());
     }
     
+    /**
+     * GET para una Ubicacion
+     * http://localhost:8080/viajesp-web/api/ubicaciones/1
+     *
+     * @param id corresponde al id de la Ubicacion buscada.
+     * @return La Ubicacion encontrada.
+     * En caso de no existir el id de la Ubicacion buscada se retorna un 404 con
+     * el mensaje.
+     */
     @GET
     @Path("{id: \\d+}")
     public UbicacionDetailDTO getUbicacion(@PathParam("id") Long id) throws BusinessLogicException {
@@ -61,6 +70,14 @@ public class UbicacionResource {
         return new UbicacionDetailDTO(toGet);
     }
     
+    /**
+     * POST http://localhost:8080/viajesp-web/api/ubicaciones
+     *
+     * @param Ubicacion correponde a la representación java del objeto json
+     * enviado en el llamado.
+     * @return Devuelve el objeto json de entrada que contiene el id creado por
+     * la base de datos y el tipo del objeto java.
+     */
     @POST
     public UbicacionDetailDTO createUbicacion(UbicacionDTO itinerarioDTO)throws BusinessLogicException{
         UbicacionEntity itinerario = itinerarioDTO.toEntity();
@@ -68,6 +85,16 @@ public class UbicacionResource {
         return new UbicacionDetailDTO(entity);
     }
     
+    /**
+     * PUT http://localhost:8080/viajesp-web/api/ubicaciones/1
+     *
+     * @param id corresponde a la ubicacion a actualizar.
+     * @param ubicacion corresponde a al objeto con los cambios que se van a
+     * realizar.
+     * @return La Ubicacion actualizada.
+     * En caso de no existir el id de la Ubicacion a actualizar se retorna un
+     * 404 con el mensaje.
+     */
     @PUT
     @Path("{id: \\d+}")
     public UbicacionDTO updateUbicacion(@PathParam("id") Long id, UbicacionDTO dto)throws BusinessLogicException {
@@ -76,6 +103,14 @@ public class UbicacionResource {
        return new UbicacionDTO(ubicacionLogic.updateUbicacion(entity)); 
     }
     
+    /**
+     * DELETE http://localhost:8080/viajesp-web/api/ubicaciones/1
+     *
+     * @param id corresponde a la Ubicacion a borrar.
+     * En caso de no existir el id de la Ubicacion a actualizar se retorna un
+     * 404 con el mensaje.
+     *
+     */
     @DELETE
     @Path("{id: \\d+}")
     public void deleteUbicacion(@PathParam("id") Long id) throws BusinessLogicException{
