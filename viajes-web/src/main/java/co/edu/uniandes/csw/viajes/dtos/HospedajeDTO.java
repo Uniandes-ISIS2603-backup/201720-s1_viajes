@@ -88,7 +88,7 @@ public class HospedajeDTO {
         this.comentarios = comentarios;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
