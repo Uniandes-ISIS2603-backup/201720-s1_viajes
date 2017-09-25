@@ -6,12 +6,17 @@
 package co.edu.uniandes.csw.viajes.dtos;
 
 import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
+import co.edu.uniandes.csw.viajes.entities.ServicioEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author js.beltran14
  */
 public class ItinerarioDetailDTO extends ItinerarioDTO{
+    
+    private List<ServicioDTO> servicios;
     
     public ItinerarioDetailDTO(){
         
@@ -24,6 +29,13 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
      */
     public ItinerarioDetailDTO(ItinerarioEntity entity){
         super(entity);
+        if (entity != null) {
+            servicios = new ArrayList<>();
+            for (ServicioEntity entityServicio : entity.getServicios()) {
+                servicios.add(new ServicioDTO(entityServicio));
+            }
+
+        }
     }
     
     /**
@@ -34,7 +46,28 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
     @Override
     public ItinerarioEntity toEntity(){
         ItinerarioEntity entity = super.toEntity();
+        if (getServicios() != null) {
+            List<ServicioEntity> serviciosEntity = new ArrayList<>();
+            for (ServicioDTO dtoServicio : getServicios()) {
+                serviciosEntity.add(dtoServicio.toEntity());
+            }
+            entity.setServicios(serviciosEntity);
+        }
         return entity;
+    }
+
+    /**
+     * @return the servicios
+     */
+    public List<ServicioDTO> getServicios() {
+        return servicios;
+    }
+
+    /**
+     * @param servicios the servicios to set
+     */
+    public void setServicios(List<ServicioDTO> servicios) {
+        this.servicios = servicios;
     }
     
 }
