@@ -64,27 +64,7 @@ public class GuiaPersistence
         LOGGER.log(Level.INFO, "Consultando guia ", id);
         return em.find(GuiaEntity.class, id);
     }
-    
-     /**
-     *
-     * Borra un guia de la base de datos recibiendo como argumento el id
-     * de la guia
-     *
-     * @param lenguaje: lenguaje correspondiente del guia a borrar.
-     * @return guia con  su lenguaje asociado
-     */
-    public GuiaEntity findByLenguaje(String lenguaje)
-    {
-        LOGGER.log(Level.INFO, "Consultando guia  por nombre ", lenguaje);
-        TypedQuery<GuiaEntity> query = em.createQuery("select u from GuiaEntity u where u.lenguaje = :lenguaje", GuiaEntity.class);
-        query = query.setParameter("lenguaje", lenguaje);
-        List<GuiaEntity> sameLenguaje = query.getResultList();
-        if (sameLenguaje.isEmpty()) {
-            return null;
-        } else {
-            return sameLenguaje.get(0);
-        }
-    }
+   
     
      /**
      *

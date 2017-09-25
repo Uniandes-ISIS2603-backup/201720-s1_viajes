@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.resources;
 
+import co.edu.uniandes.csw.viajes.dtos.CompaniaDTO;
 import co.edu.uniandes.csw.viajes.dtos.CompaniaDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.CompaniaLogic;
 import co.edu.uniandes.csw.viajes.entities.CompaniaEntity;
@@ -27,7 +28,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author Juan
  */
-@Path("/companias")
+@Path("companias")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @RequestScoped
@@ -42,6 +43,22 @@ public class CompaniaResource
             list.add(new CompaniaDetailDTO(entity));
         }
         return list;
+    }
+    
+    /**
+     *
+     * @return devuelve las companias en la base de datos.
+     */
+    @GET
+    public List<CompaniaDTO> getCompania(){
+        List<CompaniaDTO> CompaniaDTOS = new ArrayList<>();
+
+        List<CompaniaEntity> companias = companialogic.getCompanias();
+        for(CompaniaEntity compania : companias){
+            CompaniaDTO dto = new CompaniaDTO(compania);
+            CompaniaDTOS.add(dto);
+        }
+        return CompaniaDTOS;
     }
     
     /**

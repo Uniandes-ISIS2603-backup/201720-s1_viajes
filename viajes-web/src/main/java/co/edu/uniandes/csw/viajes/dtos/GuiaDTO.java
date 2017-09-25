@@ -203,6 +203,7 @@ public class GuiaDTO {
          if (guia!=null) {
         this.id = guia.getId();
         this.nombre = guia.getNombre();
+        this.lenguaje=guia.getLenguaje();
         this.calificacion=guia.getCalificacion();
         this.valor=guia.getValor();
         this.contratoHora=guia.getContratoHora();
@@ -220,6 +221,7 @@ public class GuiaDTO {
         GuiaEntity entity = new GuiaEntity();
         entity.setId(this.id);
         entity.setNombre(this.nombre);
+        entity.setLenguaje(this.lenguaje);
         entity.setCalificacion(this.calificacion);
         entity.setValor(this.valor);
         entity.setContratoHora(this.contratoHora);

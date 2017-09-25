@@ -173,21 +173,7 @@ public class GuiaPersistenceTest
         Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getValor(), newEntity.getValor());
     }
-    
-    /**
-     * Prueba para consultar un Guia.
-     *
-     *
-     */
-    @Test
-    public void getGuiabyLTest() {
-        GuiaEntity entity = data.get(0);
-        GuiaEntity newEntity = guiaPersistence.findByLenguaje(entity.getLenguaje());
-        Assert.assertNotNull(newEntity);
-        Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
-        Assert.assertEquals(entity.getValor(), newEntity.getValor());
-    }
-
+ 
      /**
      * Prueba para eliminar un Guia.
      *

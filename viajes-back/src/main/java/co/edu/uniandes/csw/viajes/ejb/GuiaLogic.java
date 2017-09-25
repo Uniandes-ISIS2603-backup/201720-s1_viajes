@@ -49,20 +49,7 @@ public class GuiaLogic {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar un guia con id = {0}", id);
         return persistence.findById(id);
     }
-    
-     /**
-     * Obtiene los datos de una instancia de Guia a partir de su lenguaje.
-     *
-     * @param lenguaje Identificador de la instancia a consultar
-     * @return Instancia de GuiaEntity con los datos del Guia consultado.
-     * @generated
-     */
-    public GuiaEntity getGuiaL(String lenguaje)
-    {
-         LOGGER.log(Level.INFO, "Inicia proceso de consultar un guia con lenguaje", lenguaje);
-         return persistence.findByLenguaje(lenguaje);
-    }
-    
+ 
     /**
      * Se encarga de crear un Guia en la base de datos.
      *
