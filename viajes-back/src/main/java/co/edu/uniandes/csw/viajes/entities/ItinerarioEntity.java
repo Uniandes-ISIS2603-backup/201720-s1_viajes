@@ -7,7 +7,6 @@ package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
 
@@ -33,7 +32,8 @@ public class ItinerarioEntity extends BaseEntity{
     @PodamExclude
     @OneToMany(mappedBy = "itinerario")
     private List<ServicioEntity> servicios;
-    /*    
+    
+    /**
     @PodamExclude
     @OneToMany(mappedBy = "itinerario")
     private List<HospedajeEntity> hospedajes;
@@ -45,7 +45,8 @@ public class ItinerarioEntity extends BaseEntity{
     @PodamExclude
     @OneToMany(mappedBy = "itinerario")
     private List<TransporteEntity> transportes;
-    */
+    **/
+    
     /**
      * @return the costoTotal
      */

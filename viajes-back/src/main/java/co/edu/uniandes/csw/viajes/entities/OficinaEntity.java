@@ -7,7 +7,6 @@ package co.edu.uniandes.csw.viajes.entities;
 
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
@@ -46,15 +45,7 @@ public class OficinaEntity extends BaseEntity
     {
         this.nombreEncargado = nombreEncargado;
     }
-    /*
-    public CompaniaEntity getCompania() {
-        return compania;
-    }
-
-    public void setCompania(CompaniaEntity compania) {
-        this.compania = compania;
-    }
-
+        
     public UbicacionEntity getUbicacion() {
         return ubicacion;
     }
@@ -62,6 +53,4 @@ public class OficinaEntity extends BaseEntity
     public void setUbicacion(UbicacionEntity ubicacion) {
         this.ubicacion = ubicacion;
     }
- 
-    */
 }

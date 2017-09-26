@@ -49,7 +49,7 @@ public class TransporteEntity extends ServicioEntity
     
     @PodamExclude
     @ManyToOne
-    private ItinerarioEntity itinerario;   
+    private ServicioEntity servicio;   
     
     public TipoTransporte getTipo() {
         return tipo;
@@ -58,7 +58,7 @@ public class TransporteEntity extends ServicioEntity
     public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
-   /*
+   
     public CompaniaEntity getCompania() {
         return compania;
     }
@@ -66,5 +66,4 @@ public class TransporteEntity extends ServicioEntity
     public void setCompañia(CompaniaEntity compania) {
         this.compania = compania;
     }
-*/
 }

@@ -44,7 +44,7 @@ public class HospedajeEntity extends ServicioEntity{
     
     @PodamExclude
     @ManyToOne
-    private ItinerarioEntity itinerario;
+    private ServicioEntity servicio;
     
     public TipoHospedaje getTipo() {
         return tipo;
@@ -53,12 +53,14 @@ public class HospedajeEntity extends ServicioEntity{
     public void setTipo(TipoHospedaje tipo) {
         this.tipo = tipo;
     }
-    /*
+    
+    @Override
     public CompaniaEntity getCompania()
     {
         return compania;
     }
     
+    @Override
     public void setCompania(CompaniaEntity compania)
     {
         this.compania = compania;
@@ -69,15 +71,13 @@ public class HospedajeEntity extends ServicioEntity{
         return super.equals(obj); 
     }
 
+    @Override
     public void setImagenes(List<ImagenEntity> imagenes) {
         this.imagenes = imagenes;
     }
 
+    @Override
     public List<ImagenEntity> getImagenes() {
         return imagenes;
     }
-    */
-    
-  
-    
 }

@@ -53,6 +53,19 @@ public abstract class ServicioEntity extends BaseEntity{
     @PodamExclude
     @ManyToOne
     private ItinerarioEntity itinerario;
+    
+    @PodamExclude
+    @OneToMany(mappedBy = "servicio")
+    private List<HospedajeEntity> hospedajes;
+     
+    @PodamExclude
+    @OneToMany(mappedBy = "servicio")
+    private List<EntretenimientoEntity> entretenimientos;
+      
+    @PodamExclude
+    @OneToMany(mappedBy = "servicio")
+    private List<TransporteEntity> transportes;
+    
 
     public String getNombre() {
         return nombre;

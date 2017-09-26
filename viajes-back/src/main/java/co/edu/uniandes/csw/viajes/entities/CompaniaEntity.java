@@ -102,7 +102,7 @@ public class CompaniaEntity extends BaseEntity
     public void setGuias(List<GuiaEntity> guias) {
         this.guias = guias;
     }
- /*
+ 
     public List<OficinaEntity> getOficinas() {
         return oficinas;
     }
@@ -110,7 +110,6 @@ public class CompaniaEntity extends BaseEntity
     public void setOficinas(List<OficinaEntity> oficinas) {
         this.oficinas = oficinas;
     }
-*/
    
     public List<TransporteEntity> getTransportes() {
         return transportes;
@@ -138,17 +137,5 @@ public class CompaniaEntity extends BaseEntity
 
     public String getEmail() {
         return email;
-    }
-
-    public List<OficinaEntity> getOficinas() {
-        return oficinas;
-    }
-
-    public void setOficinas(List<OficinaEntity> oficinas) {
-        this.oficinas = oficinas;
-    }
-    
-    
-   
-    
+    }    
 }

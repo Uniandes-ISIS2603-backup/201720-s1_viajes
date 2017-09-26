@@ -39,6 +39,7 @@ public class UbicacionEntity extends BaseEntity {
     @OneToOne
     private TransporteEntity destino;
     
+    
     public String getLongitud() {
         return longitud;
     }

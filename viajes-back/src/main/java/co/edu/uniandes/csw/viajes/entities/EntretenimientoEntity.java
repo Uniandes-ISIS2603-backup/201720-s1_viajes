@@ -7,9 +7,7 @@ package co.edu.uniandes.csw.viajes.entities;
 
 
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -36,33 +34,39 @@ public class EntretenimientoEntity extends ServicioEntity
     
     @PodamExclude
     @ManyToOne
-    private ItinerarioEntity itinerario;
+    private ServicioEntity servicio;
    
+    @Override
     public UbicacionEntity getUbicacion()
     {
         return ubicacion;
     }
     
+    @Override
     public void setUbicacion(UbicacionEntity ubicacion)
     {
         this.ubicacion = ubicacion;
     }
-
+    
+    @Override
     public CompaniaEntity getCompania()
     {
         return compania;
     }
     
+    @Override
     public void setCompania(CompaniaEntity compania)
     {
         this.compania = compania;
     }
 
+    @Override
     public List<ImagenEntity> getImagenes()
     {
         return imagenes;
     }
     
+    @Override
     public void setImagenes(List<ImagenEntity> imagenes)
     {
         this.imagenes = imagenes;

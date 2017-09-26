@@ -19,50 +19,97 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class TarjetaCreditoEntity extends BaseEntity
 {
     //ATRIBUTOS
-    private Integer numero; //Número de cuenta 
-    private Long fondos; //Cantidad de dinero disponible
     
+    /**
+     * Número de cuenta
+     */
+    private Integer numero;
+    
+    /**
+     * Cantidad de dinero disponible
+     */
+    private Long fondos; 
+    
+    /**
+     * Pagos realizados con la tarjeta
+     */
     @PodamExclude
     @OneToMany(mappedBy = "tarjeta")
     private List<PagoEntity> pagos; 
     
+    /**
+     * Usuario al que le pertence la tarjeta
+     */
     @PodamExclude
     @ManyToOne
     private UsuarioEntity usuario;
     
     //GETTERS/SETTERS   
+    
+    /**
+     * Usuario al que le pertenece la tarjeta
+     * @return usuario
+     */
     public UsuarioEntity getUsuario()
     {
         return usuario;
     }
     
+    /**
+     * Agrega el usuario al que le pertenece la tarjeta
+     * @param usuario 
+     */
     public void setUsuario(UsuarioEntity usuario)
     {
         this.usuario = usuario;
     }
     
+    /**
+     * Pagos hechos con la tarjeta
+     * @return pagos
+     */
     public List<PagoEntity> getPagos()
     {
         return pagos;
     }
     
-    public void setPagos(List<PagoEntity> pagos)
+    /**
+     * Agrega un nuevo pago 
+     * @param pago
+     */
+    public void setPagos(PagoEntity pago)
     {
-        this.pagos = pagos;
+        this.pagos.add(pago);
     }
     
+    /**
+     * Número de cuenta
+     * @return numero
+     */   
     public Integer getNumero() {
         return numero;
     }
 
+    /**
+     * Fondos de la cuenta
+     * @return fondos
+     */
     public Long getFondos() {
         return fondos;
     }
 
+    /**
+     * Cambia el número de la cuenta
+     * @param numero 
+     */
     public void setNumero(Integer numero) {
         this.numero = numero;
     }
 
+    /**
+     * Cambia la cantidad de dinero disponible
+     * @param fondos 
+     */
     public void setFondos(Long fondos) {
         this.fondos = fondos;
     }

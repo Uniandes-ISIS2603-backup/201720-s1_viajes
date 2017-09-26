@@ -10,7 +10,6 @@ import co.edu.uniandes.csw.viajes.entities.PagoEntity;
 import co.edu.uniandes.csw.viajes.entities.TarjetaCreditoEntity;
 import co.edu.uniandes.csw.viajes.persistence.PagoPersistence;
 import java.util.List;
-import java.util.logging.Level;
 import javax.inject.Inject;
 
 /**
