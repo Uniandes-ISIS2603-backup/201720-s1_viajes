@@ -33,10 +33,12 @@ public class HospedajeEntity extends ServicioEntity{
     @PodamExclude
     @OneToOne()
     private UbicacionEntity ubicacion;
-        
+   
+    /*
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
+    */
     
     @PodamExclude   
     @OneToMany(mappedBy = "hospedaje")
@@ -71,6 +73,8 @@ public class HospedajeEntity extends ServicioEntity{
         this.tipo = tipo;
     }
     
+    
+    /*
     public CompaniaEntity getCompania()
     {
         return compania;
@@ -81,6 +85,7 @@ public class HospedajeEntity extends ServicioEntity{
         this.compania = compania;
     }
 
+    */
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj); 

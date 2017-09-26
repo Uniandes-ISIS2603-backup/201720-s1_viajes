@@ -26,9 +26,9 @@ public class EntretenimientoEntity extends ServicioEntity
     @OneToMany(mappedBy = "entretenimiento")
     private List<ImagenEntity> imagenes;
     
-    @PodamExclude
-    @ManyToOne
-    private CompaniaEntity compania;
+    //@PodamExclude
+    //@ManyToOne
+    //private CompaniaEntity compania;
     
     @PodamExclude
     @OneToOne()
@@ -58,6 +58,7 @@ public class EntretenimientoEntity extends ServicioEntity
         this.ubicacion = ubicacion;
     }
 
+    /*
     public CompaniaEntity getCompania()
     {
         return compania;
@@ -68,6 +69,8 @@ public class EntretenimientoEntity extends ServicioEntity
         this.compania = compania;
     }
 
+    */
+    
     public List<ImagenEntity> getImagenes()
     {
         return imagenes;

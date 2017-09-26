@@ -26,9 +26,11 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     private String nombre; //Nombre del guia
     private Long calificacion; //Clasificación del guia
     
+    /*
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
+    */
     
     @PodamExclude
     @ManyToOne
@@ -95,6 +97,7 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
         this.calificacion = calificacion;
     }
 
+    /*
     public CompaniaEntity getCompania() {
         return compania;
     }
@@ -103,7 +106,7 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
         this.compania = compania;
     }
 
-  
+  */
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
