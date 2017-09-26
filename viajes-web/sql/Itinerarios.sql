@@ -9,6 +9,7 @@
  */
 
 delete from ServicioEntity;
+delete from GuiaEntity;
 delete from ItinerarioEntity;
 
 
@@ -18,3 +19,5 @@ insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVI
 
 insert into ServicioEntity (ID, CALIFICACION, COMENTARIOS, DESCRIPCION, FECHAFINAL, FECHAINICIO, NOMBRE, VALOR, ITINERARIO_ID) 
 values (1,5,'HOLA','HOLA','02/02/17','01/01/17','HOTEL',1000,1);
+
+insert into GuiaEntity(ID, ITINERARIO_ID) values (1,1);
