@@ -7,6 +7,7 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -31,23 +32,23 @@ public class CompaniaEntity extends BaseEntity
     
     @PodamExclude
     @OneToMany(mappedBy = "compania")
-    private List<GuiaEntity> guias;
+    private List<GuiaEntity> guias = new ArrayList();
       
     @PodamExclude
     @OneToMany(mappedBy = "compania")
-    private List<TransporteEntity> transportes;
+    private List<TransporteEntity> transportes = new ArrayList();
     
     @PodamExclude
     @OneToMany(mappedBy = "compania")
-    private List<EntretenimientoEntity> entretenimientos;
+    private List<EntretenimientoEntity> entretenimientos = new ArrayList();
      
     @PodamExclude
     @OneToMany(mappedBy = "compania")
-    private List<HospedajeEntity> hospedajes;
+    private List<HospedajeEntity> hospedajes = new ArrayList();
 
     @PodamExclude
     @OneToMany(mappedBy = "compania")
-    private List<OficinaEntity> oficinas;
+    private List<OficinaEntity> oficinas = new ArrayList();
 
     /**
      * Obtener el atributo telefono
@@ -92,11 +93,7 @@ public class CompaniaEntity extends BaseEntity
     }
 
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
-    }
-
+  
     public List<GuiaEntity> getGuias() {
         return guias;
     }
@@ -149,8 +146,7 @@ public class CompaniaEntity extends BaseEntity
     public void setOficinas(List<OficinaEntity> oficinas) {
         this.oficinas = oficinas;
     }
-    
-    
    
     
 }
+
