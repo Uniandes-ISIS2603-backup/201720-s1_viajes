@@ -108,5 +108,13 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
+
+    public ItinerarioEntity getItinerario() {
+        return itinerario;
+    }
+
+    public void setItinerario(ItinerarioEntity itinerario) {
+        this.itinerario = itinerario;
+    }    
     
 }

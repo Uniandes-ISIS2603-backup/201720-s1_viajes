@@ -48,4 +48,22 @@ public class TarjetaCreditoEntity extends BaseEntity
     public void setFondos(Long fondos) {
         this.fondos = fondos;
     }
+
+    public void setPagos(List<PagoEntity> pagos) {
+        this.pagos = pagos;
+    }
+
+    public List<PagoEntity> getPagos() {
+        return pagos;
+    }
+
+    public UsuarioEntity getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(UsuarioEntity usuario) {
+        this.usuario = usuario;
+    }
+    
+    
 }

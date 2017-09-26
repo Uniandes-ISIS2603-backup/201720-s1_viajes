@@ -37,6 +37,16 @@ public class EntretenimientoEntity extends ServicioEntity
     @PodamExclude
     @ManyToOne
     private ItinerarioEntity itinerario;
+
+    public ItinerarioEntity getItinerario() {
+        return itinerario;
+    }
+
+    public void setItinerario(ItinerarioEntity itinerario) {
+        this.itinerario = itinerario;
+    }
+    
+    
    
     public UbicacionEntity getUbicacion()
     {

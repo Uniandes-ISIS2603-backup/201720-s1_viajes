@@ -66,4 +66,36 @@ public class TransporteEntity extends ServicioEntity
     public void setCompañia(CompaniaEntity compania) {
         this.compania = compania;
     }    
+
+    public List<ImagenEntity> getImagenes() {
+        return imagenes;
+    }
+
+    public UbicacionEntity getOrigen() {
+        return origen;
+    }
+
+    public UbicacionEntity getDestino() {
+        return destino;
+    }
+
+    public ItinerarioEntity getItinerario() {
+        return itinerario;
+    }
+
+    public void setOrigen(UbicacionEntity origen) {
+        this.origen = origen;
+    }
+
+    public void setImagenes(List<ImagenEntity> imagenes) {
+        this.imagenes = imagenes;
+    }
+
+    public void setItinerario(ItinerarioEntity itinerario) {
+        this.itinerario = itinerario;
+    }
+
+    public void setCompania(CompaniaEntity compania) {
+        this.compania = compania;
+    }
 }

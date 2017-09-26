@@ -45,8 +45,25 @@ public class HospedajeEntity extends ServicioEntity{
     @PodamExclude
     @ManyToOne
     private ItinerarioEntity itinerario;
+
+    public UbicacionEntity getUbicacion() {
+        return ubicacion;
+    }
+
+    public ItinerarioEntity getItinerario() {
+        return itinerario;
+    }
+
+    public void setItinerario(ItinerarioEntity itinerario) {
+        this.itinerario = itinerario;
+    }
+
+    public void setUbicacion(UbicacionEntity ubicacion) {
+        this.ubicacion = ubicacion;
+    }
     
-    public TipoHospedaje getTipo() {
+   
+   public TipoHospedaje getTipo() {
         return tipo;
     }
 

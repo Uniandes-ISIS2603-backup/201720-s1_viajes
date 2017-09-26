@@ -47,4 +47,12 @@ public class PagoEntity extends BaseEntity
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public TarjetaCreditoEntity getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(TarjetaCreditoEntity tarjeta) {
+        this.tarjeta = tarjeta;
+    }
 }

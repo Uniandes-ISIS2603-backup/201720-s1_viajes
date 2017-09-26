@@ -50,7 +50,7 @@ public class OficinaEntity extends BaseEntity
     {
         this.nombreEncargado = nombreEncargado;
     }
-    /*
+    
     public CompaniaEntity getCompania() {
         return compania;
     }
@@ -67,5 +67,5 @@ public class OficinaEntity extends BaseEntity
         this.ubicacion = ubicacion;
     }
  
-    */
+    
 }
