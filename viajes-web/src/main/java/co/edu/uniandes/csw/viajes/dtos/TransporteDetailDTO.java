@@ -8,12 +8,14 @@ package co.edu.uniandes.csw.viajes.dtos;
 import co.edu.uniandes.csw.viajes.entities.TransporteEntity;
 
 /**
- *
+ * Clase del transporte DTO en detalle
  * @author sa.silva1
  */
 public class TransporteDetailDTO extends TransporteDTO{
     
-         
+    /**
+     * Constructor por defecto
+     */
     public TransporteDetailDTO() {
     }
 
@@ -35,7 +37,6 @@ public class TransporteDetailDTO extends TransporteDTO{
     @Override
     public TransporteEntity toEntity() {
         TransporteEntity transporteE = super.toEntity();
-        transporteE.setTipo(this.getTipo());
         return transporteE;
     }
 }
