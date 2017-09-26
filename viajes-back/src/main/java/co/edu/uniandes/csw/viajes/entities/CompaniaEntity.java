@@ -32,23 +32,23 @@ public class CompaniaEntity extends BaseEntity
     
     @PodamExclude
     @OneToMany(mappedBy = "compania")
-    private List<GuiaEntity> guias = new ArrayList();
+    private List<GuiaEntity> guias;
       
     @PodamExclude
     @OneToMany(mappedBy = "compania")
-    private List<TransporteEntity> transportes = new ArrayList();
+    private List<TransporteEntity> transportes;
     
     @PodamExclude
     @OneToMany(mappedBy = "compania")
-    private List<EntretenimientoEntity> entretenimientos = new ArrayList();
+    private List<EntretenimientoEntity> entretenimientos;
      
     @PodamExclude
     @OneToMany(mappedBy = "compania")
-    private List<HospedajeEntity> hospedajes = new ArrayList();
+    private List<HospedajeEntity> hospedajes;
 
     @PodamExclude
     @OneToMany(mappedBy = "compania")
-    private List<OficinaEntity> oficinas = new ArrayList();
+    private List<OficinaEntity> oficinas;
 
     /**
      * Obtener el atributo telefono
