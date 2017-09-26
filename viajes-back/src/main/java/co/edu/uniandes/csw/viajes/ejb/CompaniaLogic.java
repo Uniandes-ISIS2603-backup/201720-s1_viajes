@@ -31,7 +31,7 @@ public class CompaniaLogic
      * @generated
      */
     public List<CompaniaEntity> getCompanias() {
-        LOGGER.log(Level.INFO, "Inicia proceso de consultar todos los guais");
+        LOGGER.log(Level.INFO, "Inicia proceso de consultar todas las companias");
         return persistence.findAll();
     }
     

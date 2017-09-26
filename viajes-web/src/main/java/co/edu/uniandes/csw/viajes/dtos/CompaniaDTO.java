@@ -11,123 +11,126 @@ import co.edu.uniandes.csw.viajes.entities.CompaniaEntity;
  *
  * @author Juan
  */
-public class CompaniaDTO {
-    
-    private Long id;  //id de la empresa
-    private String email; //Email de la empresa
-    private Long telefono; //Telefono de la empresa
-    private String nombre; //Nombre de la empresa
-    
-    /**
-     * Constructor por defecto
-     */
-    public CompaniaDTO()
-    {
-        
-    }
+public class CompaniaDTO
+{
+    /*
+    Id
+    */
+    private Long id;
+     /*
+    Email  de contacto de la companñia
+    */
+    private String email; 
+    /*
+    Telefono de contacto de la compañia
+    */
+    private Long telefono; 
+    /*
+    Nombre de la compañia
+    */
+    private String nombre; 
+  
+    /*
+   Constructor por defecto
+   */
+   public CompaniaDTO()
+   {
+       
+   }
 
     /**
-     * Obtiene el atributo nombre.
-     *
-     * @return atributo nombre.
+     * Obtener el atributo id
      * 
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-     /**
-     * Obtiene el atributo id.
-     *
-     * @return atributo id.
-     * 
-     */
-    public Long getId() {
+     * @return id
+     */ 
+   public Long getId() {
         return id;
     }
 
     /**
-     * Establece el valor del atributo nombre.
-     *
-     * @param nombre nuevo valor del atributo
+     * Obtener el atributo telefono
      * 
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Establece el valor del atributo id.
-     *
-     * @param id nuevo valor del atributo
-     * 
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-      /**
-     * Obtiene el atributo email.
-     *
-     * @return atributo email.
-     * 
-     */
-    public String getEmail() {
-        return email;
-    }
-
-      /**
-     * Obtiene el atributo telefono.
-     *
-     * @return atributo telefono.
-     * 
+     * @return telefono
      */
     public Long getTelefono() {
         return telefono;
     }
 
     /**
-     * Establece el valor del atributo email.
-     *
-     * @param email nuevo valor del atributo
+     * Obtener el atributo nombre
      * 
+     * @return  nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+      /**
+     * Obtener el atributo email
+     * 
+     * @return  email
+     */
+    public String getEmail() 
+    {
+        return email;
+    }
+
+    /**
+     * Actualizar el atributo  email
+     * @param email email to set
      */
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     /**
-     * Establece el valor del atributo telefono.
-     *
-     * @param telefono nuevo valor del atributo
-     * 
+     * Actualizar el atributo telefono 
+     * @param telefono telefono to set
      */
     public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
-      
+
+    /**
+     * Actualizar el atributo nombre
+     * @param nombre nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+     /**
+     * Actualizar el atributo id
+     * @param id nombre to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
     /**
      * Conviertir Entity a DTO
      * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
      * @param compania:Es la entidad que se va a convertir a DTO 
      */
-     public CompaniaDTO(CompaniaEntity compania) {
-        this.id = compania.getId();
-        this.nombre = compania.getNombre();
-        this.email= compania.getEmail();
+    public CompaniaDTO(CompaniaEntity compania)
+    {
+        this.id=compania.getId();
+        this.email=compania.getEmail();
+        this.nombre=compania.getNombre();
         this.telefono=compania.getTelefono();
     }
-     
-      /**
-     * Convertir DTO a Entity
-     * @return Un Entity con los valores del DTO 
+    
+    /**
+     *Convertir un DTO a un Entity
+     * @return un Entity de los  valores del DTO
      */
-    public CompaniaEntity toEntity() {
-        CompaniaEntity entity = new CompaniaEntity();
-        entity.setId(this.id);
-        entity.setNombre(this.nombre);
-        entity.setEmail(this.email);
-        entity.setTelefono(this.telefono);
+    public CompaniaEntity toEntiy()
+    {
+        CompaniaEntity entity= new CompaniaEntity();
+        entity.setId(id);
+        entity.setNombre(nombre);
+        entity.setEmail(email);
+        entity.setTelefono(telefono);
         return entity;
     }
     

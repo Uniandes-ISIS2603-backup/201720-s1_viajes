@@ -46,7 +46,7 @@ public class GuiaDetailDTO extends GuiaDTO
     public GuiaEntity toEntity() {
         GuiaEntity guiaE = super.toEntity();
         if (this.getCompania()!=null) {
-            guiaE.setCompania(this.getCompania().toEntity());
+            guiaE.setCompania(this.getCompania().toEntiy());
         }
         return guiaE;
     }

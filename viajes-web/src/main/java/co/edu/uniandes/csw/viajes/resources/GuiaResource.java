@@ -61,6 +61,7 @@ public class GuiaResource
         }
         return GuiasDTOS;
     }
+    
     /**
      * Obtiene los datos de una instancia de Guia a partir de su ID
      *
