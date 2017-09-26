@@ -13,6 +13,7 @@ import co.edu.uniandes.csw.viajes.entities.CompaniaEntity;
  */
 public class CompaniaDTO {
     
+    /*
     private Long id;
      private String email; //Email de la empresa
     private Long telefono; //Telefono de la empresa
@@ -21,6 +22,7 @@ public class CompaniaDTO {
     /**
      * Constructor por defecto
      */
+    /*
     public CompaniaDTO()
     {
         
@@ -63,24 +65,26 @@ public class CompaniaDTO {
      * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
      * @param compania:Es la entidad que se va a convertir a DTO 
      */
+    /*
      public CompaniaDTO(CompaniaEntity compania) {
         this.id = compania.getId();
-        this.nombre = compania.getNombre();
-        this.email= compania.getEmail();
-        this.telefono=compania.getTelefono();
+        //this.nombre = compania.getNombre();
+        //this.email= compania.getEmail();
+        //this.telefono=compania.getTelefono();
     }
      
       /**
      * Convertir DTO a Entity
      * @return Un Entity con los valores del DTO 
      */
+    /*
     public CompaniaEntity toEntity() {
         CompaniaEntity entity = new CompaniaEntity();
         entity.setId(this.id);
-        entity.setNombre(this.nombre);
-        entity.setEmail(this.email);
-        entity.setTelefono(this.telefono);
+        //entity.setNombre(this.nombre);
+        //entity.setEmail(this.email);
+        //entity.setTelefono(this.telefono);
         return entity;
     }
-    
+    */
 }

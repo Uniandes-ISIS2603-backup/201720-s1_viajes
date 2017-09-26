@@ -16,6 +16,7 @@ import java.util.List;
  */
 public class CompaniaDetailDTO extends CompaniaDTO
 {
+    /*
     private List<OficinaDTO> oficinas;
     
      public CompaniaDetailDTO() {
@@ -27,14 +28,14 @@ public class CompaniaDetailDTO extends CompaniaDTO
      *
      * @param entity
      */
-     
+/* 
     public CompaniaDetailDTO(CompaniaEntity entity) {
         super(entity);
         if (entity != null) {
             oficinas = new ArrayList<>();
-            for (OficinaEntity entityOficina : entity.getOficinas()) {
-              oficinas.add(new OficinaDTO(entityOficina));
-            }
+//            for (OficinaEntity entityOficina : entity.getOficinas()) {
+ //             oficinas.add(new OficinaDTO(entityOficina));
+           // }
         }
       
     }
@@ -44,6 +45,7 @@ public class CompaniaDetailDTO extends CompaniaDTO
      *
      * @return 
      */
+/*
     @Override
     public CompaniaEntity toEntity() {
        CompaniaEntity companiaE = super.toEntity();
@@ -52,7 +54,7 @@ public class CompaniaDetailDTO extends CompaniaDTO
             for (OficinaDTO dtoOficina : oficinas) {
                oficinaEntity.add(dtoOficina.toEntity());
            }
-            companiaE.setOficinas(oficinaEntity);
+           // companiaE.setOficinas(oficinaEntity);
         }
     
         return companiaE;
@@ -67,4 +69,5 @@ public class CompaniaDetailDTO extends CompaniaDTO
     {
         this.oficinas = oficina;
     }
+*/
 }

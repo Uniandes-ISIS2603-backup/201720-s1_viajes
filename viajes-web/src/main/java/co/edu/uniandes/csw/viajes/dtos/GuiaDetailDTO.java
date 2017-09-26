@@ -30,7 +30,7 @@ public class GuiaDetailDTO extends GuiaDTO
     public GuiaDetailDTO(GuiaEntity entity) {
         super(entity);
         if (entity.getCompania()!=null) {
-            this.compania=new CompaniaDTO(entity.getCompania());
+         //   this.compania=new CompaniaDTO(entity.getCompania());
         }
         else{
             entity.setCompania(null);
@@ -46,7 +46,7 @@ public class GuiaDetailDTO extends GuiaDTO
     public GuiaEntity toEntity() {
         GuiaEntity guiaE = super.toEntity();
         if (this.getCompania()!=null) {
-            guiaE.setCompania(this.getCompania().toEntity());
+//            guiaE.setCompania(this.getCompania().toEntity());
         }
         return guiaE;
     }

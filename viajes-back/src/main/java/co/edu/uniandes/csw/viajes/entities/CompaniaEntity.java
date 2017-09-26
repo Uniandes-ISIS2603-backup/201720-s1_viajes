@@ -6,10 +6,7 @@
 
 package co.edu.uniandes.csw.viajes.entities;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
@@ -25,7 +22,7 @@ public class CompaniaEntity extends BaseEntity
     //**ATRIBUTOS**
     //*************
     
-    
+    /**
     private String email; //Email de la empresa
     private Long telefono; //Telefono de la empresa
     private String nombre; //Nombre de la empresa
@@ -49,51 +46,52 @@ public class CompaniaEntity extends BaseEntity
     @PodamExclude
     @OneToMany(mappedBy = "compania")
     private List<OficinaEntity> oficinas;
-
+    */
+    
     /**
      * Obtener el atributo telefono
      * 
      * @return telefono
-     */
+     
     public Long getTelefono() {
         return telefono;
     }
-
+    */
     /**
      * Obtener el atributo nombre
      * 
      * @return  nombre
-     */
+     
     public String getNombre() {
         return nombre;
     }
-
+    */
     /**
      * 
      * @param email email to set
-     */
+    
     public void setEmail(String email) {
         this.email = email;
     }
-
+    */
     /**
      * 
      * @param telefono telefono to set
-     */
+    
     public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
-
+    */
     /**
      * 
      * @param nombre nombre to set
-     */
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-
-  
+    */
+  /**
     public List<GuiaEntity> getGuias() {
         return guias;
     }
@@ -101,6 +99,7 @@ public class CompaniaEntity extends BaseEntity
     public void setGuias(List<GuiaEntity> guias) {
         this.guias = guias;
     }
+    */
  /*
     public List<OficinaEntity> getOficinas() {
         return oficinas;
@@ -110,7 +109,7 @@ public class CompaniaEntity extends BaseEntity
         this.oficinas = oficinas;
     }
 */
-   
+   /**
     public List<TransporteEntity> getTransportes() {
         return transportes;
     }
@@ -147,6 +146,6 @@ public class CompaniaEntity extends BaseEntity
         this.oficinas = oficinas;
     }
    
-    
+  */ 
 }
 

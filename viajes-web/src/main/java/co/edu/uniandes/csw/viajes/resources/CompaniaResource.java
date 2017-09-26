@@ -27,12 +27,14 @@ import javax.ws.rs.core.MediaType;
  *
  * @author Juan
  */
+
 @Path("/companias")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @RequestScoped
 public class CompaniaResource
 {
+    /*
     @Inject
     private CompaniaLogic companialogic;
             
@@ -51,6 +53,7 @@ public class CompaniaResource
      * @return Instancia de CompaniaDetailDTO con los datos del Author consultado
      * 
      */
+    /*
     @GET
     @Path("{id: \\d+}")
     public CompaniaDetailDTO getCompania(@PathParam("id") Long id) {
@@ -60,6 +63,7 @@ public class CompaniaResource
         }
         return new CompaniaDetailDTO(entity);
     }
+    
 
     /**
      * Se encarga de crear un Compania en la base de datos
@@ -68,6 +72,7 @@ public class CompaniaResource
      * @return Objeto de CompaniaDetailDTO los datos nuevos y su ID
      * 
      */
+/*
     @POST
     public CompaniaDetailDTO createCompania(CompaniaDetailDTO dto) {
         return new CompaniaDetailDTO(companialogic.createCompania(dto.toEntity()));
@@ -81,6 +86,7 @@ public class CompaniaResource
      * @return Instancia de CompaniaDetailDTO con los datos actualizados
      * 
      */
+/*
     @PUT
     @Path("{id: \\d+}")
     public CompaniaDetailDTO updateCompania(@PathParam("id") Long id, CompaniaDetailDTO dto) {
@@ -90,7 +96,7 @@ public class CompaniaResource
         if (oldEntity == null) {
             throw new WebApplicationException("El guia no existe", 404);
         }
-        entity.setOficinas(oldEntity.getOficinas());
+        //entity.setOficinas(oldEntity.getOficinas());
         return new CompaniaDetailDTO(companialogic.updateCompania(entity));
     }
 
@@ -100,6 +106,7 @@ public class CompaniaResource
      * @param id Identificador de la instancia a eliminar
      * 
      */
+/*
     @DELETE
     @Path("{id: \\d+}")
     public void deleteCompania(@PathParam("id") Long id) {
@@ -109,5 +116,5 @@ public class CompaniaResource
         }
        companialogic.deleteCompania(id);
     }    
-    
+ */   
 }
