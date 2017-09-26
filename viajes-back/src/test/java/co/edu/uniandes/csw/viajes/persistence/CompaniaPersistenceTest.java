@@ -2,7 +2,6 @@ package co.edu.uniandes.csw.viajes.persistence;
 
 
 import co.edu.uniandes.csw.viajes.entities.CompaniaEntity;
-import co.edu.uniandes.csw.viajes.persistence.CompaniaPersistence;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
