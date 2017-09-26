@@ -69,7 +69,7 @@ public class TransporteEntity extends ServicioEntity
      */
     @PodamExclude
     @ManyToOne
-    private ServicioEntity servicio;   
+    private ItinerarioEntity itinerario;   
     
     /**
      * Retornar el tipo del transporte

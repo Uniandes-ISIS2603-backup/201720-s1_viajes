@@ -34,39 +34,33 @@ public class EntretenimientoEntity extends ServicioEntity
     
     @PodamExclude
     @ManyToOne
-    private ServicioEntity servicio;
+    private ItinerarioEntity itinerario;
    
-    @Override
     public UbicacionEntity getUbicacion()
     {
         return ubicacion;
     }
     
-    @Override
     public void setUbicacion(UbicacionEntity ubicacion)
     {
         this.ubicacion = ubicacion;
     }
     
-    @Override
     public CompaniaEntity getCompania()
     {
         return compania;
     }
     
-    @Override
     public void setCompania(CompaniaEntity compania)
     {
         this.compania = compania;
     }
 
-    @Override
     public List<ImagenEntity> getImagenes()
     {
         return imagenes;
     }
     
-    @Override
     public void setImagenes(List<ImagenEntity> imagenes)
     {
         this.imagenes = imagenes;

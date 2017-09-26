@@ -20,9 +20,6 @@ import uk.co.jemos.podam.common.PodamExclude;
  * Clase que representa la entidad del Servicio en general
  * @author sa.silva1
  */
-//@Entity
-//@Table
-//@Inheritance( strategy = InheritanceType.TABLE_PER_CLASS )
 @MappedSuperclass
 public abstract class ServicioEntity extends BaseEntity{
     
@@ -61,34 +58,7 @@ public abstract class ServicioEntity extends BaseEntity{
      */
     private String descripcion;
 
-    @PodamExclude
-    @OneToOne()
-    private UbicacionEntity ubicacion;
-        
-    @PodamExclude
-    @ManyToOne
-    private CompaniaEntity compania;
     
-    @PodamExclude   
-    @OneToMany
-    private List<ImagenEntity> imagenes;
-    
-    @PodamExclude
-    @ManyToOne
-    private ItinerarioEntity itinerario;
-    
-    @PodamExclude
-    @OneToMany(mappedBy = "servicio")
-    private List<HospedajeEntity> hospedajes;
-     
-    @PodamExclude
-    @OneToMany(mappedBy = "servicio")
-    private List<EntretenimientoEntity> entretenimientos;
-      
-    @PodamExclude
-    @OneToMany(mappedBy = "servicio")
-    private List<TransporteEntity> transportes;
-
      /**
       * Retornar el nombre del servicio
       * @return nombre del servicio
@@ -199,61 +169,5 @@ public abstract class ServicioEntity extends BaseEntity{
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    /**
-     * @return the ubicacion
-     */
-    public UbicacionEntity getUbicacion() {
-        return ubicacion;
-    }
-
-    /**
-     * @param ubicacion the ubicacion to set
-     */
-    public void setUbicacion(UbicacionEntity ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
-    /**
-     * @return the compania
-     */
-    public CompaniaEntity getCompania() {
-        return compania;
-    }
-
-    /**
-     * @param compania the compania to set
-     */
-    public void setCompania(CompaniaEntity compania) {
-        this.compania = compania;
-    }
-
-    /**
-     * @return the imagenes
-     */
-    public List<ImagenEntity> getImagenes() {
-        return imagenes;
-    }
-
-    /**
-     * @param imagenes the imagenes to set
-     */
-    public void setImagenes(List<ImagenEntity> imagenes) {
-        this.imagenes = imagenes;
-    }
-
-    /**
-     * @return the itinerario
-     */
-    public ItinerarioEntity getItinerario() {
-        return itinerario;
-    }
-
-    /**
-     * @param itinerario the itinerario to set
-     */
-    public void setItinerario(ItinerarioEntity itinerario) {
-        this.itinerario = itinerario;
     }
 }
