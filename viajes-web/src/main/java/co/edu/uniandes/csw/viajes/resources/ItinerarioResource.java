@@ -20,6 +20,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
 import javax.xml.ws.http.HTTPException;
 
 /**
@@ -97,6 +98,15 @@ public class ItinerarioResource {
     @Path("{id: \\d+}")
     public void deleteImagen(@PathParam("id") Long id) {
        itinerarioLogic.deleteItinerario(id);
+    }
+    
+    @Path("{itinerariosId: \\d+}/guias")
+    public Class<ItinerariosGuiasResource> getItinerariosGuiasResource(@PathParam("itinerariosId") Long itinerariosId){
+        ItinerarioEntity entity = itinerarioLogic.getItinerario(itinerariosId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /editorials/" + itinerariosId + " no existe.", 404);
+        }
+        return ItinerariosGuiasResource.class;
     }
     
 }
