@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Sat Sep 23 21:29:19 GMT-05:00 2017:
- Iniciando instancia a816c00e-015e-b1b7-b1bd-0000079c3e20 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\Juan\AppData\Local\Temp\gfembed7828902137932966464tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
+Mon Sep 25 19:30:55 GMT-05:00 2017:
+ Iniciando instancia a816c00e-015e-bb98-03cd-00000536b2a0 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
+en el directorio de base de datos C:\Users\Juan\AppData\Local\Temp\gfembed24982842328823964tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
 Cargado desde file:/C:/Users/Juan/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_144-b01
