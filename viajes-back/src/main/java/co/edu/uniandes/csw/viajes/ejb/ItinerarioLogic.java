@@ -29,16 +29,33 @@ public class ItinerarioLogic {
     @Inject
     private GuiaLogic guiaLogic;
     
+    /**
+     *
+     * Obtener la lista de los itinerarios
+     * @return lista de los itinerarios
+     */
     public List<ItinerarioEntity> getItinerarios() {
         LOGGER.info("Inicia proceso de consultar todas los itinerarios");
         return persistence.findAll();
     }
     
+    /**
+     *
+     * Obtener un itinerario por medio de su id.
+     *
+     * @param id: id de la editorial para ser buscada.
+     * @return el itinerario solicitada por medio de su id.
+     */
     public ItinerarioEntity getItinerario(Long id) {
         LOGGER.info("Inicia proceso de consultar un itinerario");
         return persistence.find(id);
     }
-     
+    
+    /**
+     *
+     * @param entity
+     * @return ItinerarioEntity
+     */
     public ItinerarioEntity createItinrario(ItinerarioEntity entity) {
         LOGGER.info("Inicia proceso de creación de itinerario");
         persistence.create(entity);
@@ -47,19 +64,35 @@ public class ItinerarioLogic {
         return entity;
     }
 
-   
+    
+    /**
+     *
+     * Actualizar un itinerario.
+     * @param entity: itinerario con los cambios para ser actualizada.
+     * @return  itinerario con los cambios actualizados en la base de datos.
+     */
     public ItinerarioEntity updateItinerario(ItinerarioEntity entity) {
         LOGGER.info("Inicia proceso de consultar un itinerario");
         return persistence.update(entity);
     }
 
-   
+   /**
+     * Borrar un itinerario
+     *
+     * @param id: id del itinerario a borrar
+     */
     public void deleteItinerario(Long id) {
         LOGGER.info("Inicia proceso de borrar un itinerario");
         persistence.delete(id);
         LOGGER.info("Termina proceso de borrar un itinerario");
     }
      
+    /**
+     * adiere un guia a un itinerario
+     *
+     * @param guiaId : id del guia 
+     * @param itinerarioId : id del itinerario
+     */
      public GuiaEntity addGuia(Long guiaId, Long itinerarioId) {
         ItinerarioEntity itinerarioEntity = getItinerario(itinerarioId);
         GuiaEntity guiaEntity = guiaLogic.getGuia(guiaId);
@@ -67,6 +100,12 @@ public class ItinerarioLogic {
         return guiaEntity;
     }
      
+     /**
+     * remueve un guia a un itinerario
+     *
+     * @param guiaId : id del guia 
+     * @param itinerarioId : id del itinerario
+     */
      public void removeGuia(Long guiaId, Long itinerarioId) {
         ItinerarioEntity itinerarioEntity = getItinerario(itinerarioId);
         GuiaEntity guia = guiaLogic.getGuia(guiaId);
@@ -74,6 +113,12 @@ public class ItinerarioLogic {
         itinerarioEntity.getGias().remove(guia);
     }
      
+     /**
+     * adiere un guia a un itinerario
+     *
+     * @param guiaId : id del guia 
+     * @param itinerarioId : id del itinerario
+     */
     public List<GuiaEntity> replaceGuias(Long itinerarioId, List<GuiaEntity> guias) {
         ItinerarioEntity itinerario = getItinerario(itinerarioId);
         List<GuiaEntity> guiaList = guiaLogic.getGuias();
@@ -87,10 +132,21 @@ public class ItinerarioLogic {
         return guias;
     } 
     
+    /**
+     * @return  los guia a un itinerario
+     *
+     * @param itinerarioId : id del itinerario
+     */
     public List<GuiaEntity> getGuias(Long itinerarioId) {
         return getItinerario(itinerarioId).getGias();
     }
     
+    /**
+     * @return  un guia a un itinerario
+     *
+     * @param guiaId : id del guia 
+     * @param itinerarioId : id del itinerario
+     */
     public GuiaEntity getGuia(Long itinerarioId, Long guiaId) throws BusinessLogicException {
         List<GuiaEntity> guias = getItinerario(itinerarioId).getGias();
         GuiaEntity guia = guiaLogic.getGuia(guiaId);
@@ -98,10 +154,15 @@ public class ItinerarioLogic {
         if (index >= 0) {
             return guias.get(index);
         }
-        throw new BusinessLogicException("El libro no está asociado a la editorial");
+        throw new BusinessLogicException("El GUIA no está asociado a la editorial");
 
     }
     
+    /**
+     * @return lista con guias
+     *
+     * @param itinerarioId : id del itinerario
+     */
     public List<GuiaEntity> listGuias(Long itinerarioId) {
         return getItinerario(itinerarioId).getGias();
     }

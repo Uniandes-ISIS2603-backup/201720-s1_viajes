@@ -50,7 +50,7 @@ public class ItinerariosGuiasResource {
     }
     
     @GET
-    public List<GuiaDetailDTO> listBooks(@PathParam("itinerariosId") Long itinerariosId) {
+    public List<GuiaDetailDTO> listGuias(@PathParam("itinerariosId") Long itinerariosId) {
         return guiasListEntity2DTO(itinerarioLogic.listGuias(itinerariosId));
     }
     
