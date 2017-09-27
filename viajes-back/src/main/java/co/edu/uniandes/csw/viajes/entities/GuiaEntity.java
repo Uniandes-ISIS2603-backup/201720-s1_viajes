@@ -18,20 +18,6 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class GuiaEntity extends  BaseEntity  implements Serializable
 {    
-
-    /**
-     * @return the itinerario
-     */
-    public ItinerarioEntity getItinerario() {
-        return itinerario;
-    }
-
-    /**
-     * @param itinerario the itinerario to set
-     */
-    public void setItinerario(ItinerarioEntity itinerario) {
-        this.itinerario = itinerario;
-    }
     private String lenguaje; //Lenguaje  del guia
     private Long valor; //Valor del guia
     private Long contratoHora; //Contrato por hora del guia
@@ -40,17 +26,13 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     private String nombre; //Nombre del guia
     private Long calificacion; //Clasificación del guia
     
+    
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
     
-    @PodamExclude
-    @ManyToOne
-    private ItinerarioEntity itinerario;
-
-    public GuiaEntity() 
-    {
-        
+    public GuiaEntity()
+    {        
     }
    
     public String getLenguaje() {
@@ -109,6 +91,7 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
         this.calificacion = calificacion;
     }
 
+    
     public CompaniaEntity getCompania() {
         return compania;
     }
@@ -122,5 +105,4 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
-    
 }

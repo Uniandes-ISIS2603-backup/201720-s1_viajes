@@ -3,29 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
-import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
- * @author jc.sanchez12
+ * @author Juan
  */
-@Entity
 public class CompaniaEntity extends BaseEntity
 {
-    //*************
-    //**ATRIBUTOS**
-    //*************
+    /*
+    Email de la empresa
+    */
+     private String email;
+     
+     /*
+     /Telefono de la empresa
+     */
+    private Long telefono;
     
-    
-    private String email; //Email de la empresa
-    private Long telefono; //Telefono de la empresa
-    private String nombre; //Nombre de la empresa
+    /*
+    Nombre de la empresa
+    */
+    private String nombre;
     
     @PodamExclude
     @OneToMany(mappedBy = "compania")
@@ -46,96 +49,83 @@ public class CompaniaEntity extends BaseEntity
     @PodamExclude
     @OneToMany
     private List<OficinaEntity> oficinas;
-
+    
     /**
-     * Obtener el atributo telefono
-     * 
-     * @return telefono
-     */
+     * Constructor de la  empresa
+     */ 
+    public CompaniaEntity()
+    {
+        
+    }
+    
+    /*
+    /Obtener  el email de la empresa
+    /@return email
+    */
+    public String getEmail() {
+        return email;
+    }
+
+    
+     /*
+    /Obtener  el telefono de la empresa
+    /@return telefono
+    */
     public Long getTelefono() {
         return telefono;
     }
 
-    /**
-     * Obtener el atributo nombre
-     * 
-     * @return  nombre
-     */
+     /*
+    /Obtener  el nombre de la empresa
+    /@return nombre
+    */
     public String getNombre() {
         return nombre;
     }
 
-    /**
-     * 
-     * @param email email to set
-     */
+    /*
+    Actualizar  email
+    @param email to set
+    */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    /**
-     * 
-     * @param telefono telefono to set
-     */
+    /*
+    Actualizar  telefono
+    @param telefono to set
+    */
     public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
 
-    /**
-     * 
-     * @param nombre nombre to set
-     */
+    /*
+    Actualizar  nombre
+    @param nombre to set
+    */
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public List<GuiaEntity> getGuias() {
-        return guias;
-    }
-
-    public void setGuias(List<GuiaEntity> guias) {
-        this.guias = guias;
-    }
- 
-    public List<OficinaEntity> getOficinas() {
-        return oficinas;
-    }
-
-    public void setOficinas(List<OficinaEntity> oficinas) {
-        this.oficinas = oficinas;
-    }
-   
-    public List<TransporteEntity> getTransportes() {
-        return transportes;
-    }
-
-    public void setTransportes(List<TransporteEntity> transportes) {
-        this.transportes = transportes;
     }
 
     public List<EntretenimientoEntity> getEntretenimientos() {
         return entretenimientos;
     }
 
-    public void setEntretenimientos(List<EntretenimientoEntity> entretenimientos) {
-        this.entretenimientos = entretenimientos;
+    public List<GuiaEntity> getGuias() {
+        return guias;
     }
 
     public List<HospedajeEntity> getHospedajes() {
         return hospedajes;
     }
 
-    public void setHospedajes(List<HospedajeEntity> hospedajes) {
-        this.hospedajes = hospedajes;
+    public List<OficinaEntity> getOficinas() {
+        return oficinas;
     }
 
-    public String getEmail() {
-        return email;
-    }    
+    public List<TransporteEntity> getTransportes() {
+        return transportes;
+    }
+    
+    
 }

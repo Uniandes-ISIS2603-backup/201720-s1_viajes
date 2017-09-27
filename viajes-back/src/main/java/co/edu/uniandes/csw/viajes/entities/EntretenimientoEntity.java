@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -19,9 +18,9 @@ import uk.co.jemos.podam.common.PodamExclude;
  */
 @Entity
 public class EntretenimientoEntity extends ServicioEntity
-{  
+{    
     @PodamExclude
-    @OneToMany
+    @OneToMany(mappedBy = "entretenimiento")
     private List<ImagenEntity> imagenes;
     
     @PodamExclude
@@ -32,19 +31,22 @@ public class EntretenimientoEntity extends ServicioEntity
     @OneToOne()
     private UbicacionEntity ubicacion;
     
-    @PodamExclude
-    @ManyToOne
-    private ItinerarioEntity itinerario;
-   
+     /**
+     * @return la ubicacion
+     */
     public UbicacionEntity getUbicacion()
     {
         return ubicacion;
     }
     
+    /**
+     * @param ubicacion la ubicacion a settear
+     */
     public void setUbicacion(UbicacionEntity ubicacion)
     {
         this.ubicacion = ubicacion;
     }
+
     
     public CompaniaEntity getCompania()
     {
@@ -55,14 +57,21 @@ public class EntretenimientoEntity extends ServicioEntity
     {
         this.compania = compania;
     }
-
+        
+    /**
+     * @return las imagenes
+     */
     public List<ImagenEntity> getImagenes()
     {
         return imagenes;
     }
     
+    /**
+     * @param imagenes las imagenes a settear
+     */
     public void setImagenes(List<ImagenEntity> imagenes)
     {
         this.imagenes = imagenes;
     }
+    
 }

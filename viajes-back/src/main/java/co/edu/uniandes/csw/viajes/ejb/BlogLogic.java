@@ -28,6 +28,8 @@ public class BlogLogic {
 
     /**
      *
+     * Crear un nuevo blog.
+     * 
      * @param entity
      * @return
      */
@@ -41,9 +43,9 @@ public class BlogLogic {
 
     /**
      * 
-     * Obtener todas las bloges existentes en la base de datos.
+     * Obtener todos los blogs existentes en la base de datos.
      *
-     * @return una lista de bloges.
+     * @return una lista de blogs.
      */
     public List<BlogEntity> getBlogs() {
         LOGGER.info("Inicia proceso de consultar todas las bloges");
@@ -55,17 +57,17 @@ public class BlogLogic {
 
     /**
      *
-     * Obtener una blog por medio de su id.
+     * Obtener un blog por medio de su id.
      * 
-     * @param id: id de la blog para ser buscada.
-     * @return la blog solicitada por medio de su id.
+     * @param id: id del blog para ser buscado.
+     * @return el blog solicitado por medio de su id.
      */
     public BlogEntity getBlog(Long id) {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar blog con id={0}", id);
         // Note que, por medio de la inyección de dependencias se llama al método "find(id)" que se encuentra en la persistencia.
         BlogEntity blog = persistence.find(id);
         if (blog == null) {
-            LOGGER.log(Level.SEVERE, "La blog con el id {0} no existe", id);
+            LOGGER.log(Level.SEVERE, "El blog con el id {0} no existe", id);
         }
         LOGGER.log(Level.INFO, "Termina proceso de consultar blog con id={0}", id);
         return blog;
@@ -75,10 +77,10 @@ public class BlogLogic {
      *
      * Actualizar una blog.
      *
-     * @param id: id de la blog para buscarla en la base de datos.
+     * @param id: id del blog para buscarlo en la base de datos.
      * @param entity: blog con los cambios para ser actualizada, por
      * ejemplo el nombre.
-     * @return la blog con los cambios actualizados en la base de datos.
+     * @return el blog con los cambios actualizados en la base de datos.
      */
     public BlogEntity updateBlog(Long id, BlogEntity entity) {
         LOGGER.log(Level.INFO, "Inicia proceso de actualizar blog con id={0}", id);
@@ -91,7 +93,7 @@ public class BlogLogic {
     /**
      * Borrar un blog
      *
-     * @param id: id de la blog a borrar
+     * @param id: id del blog a borrar
      */
     public void deleteBlog(Long id) {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar blog con id={0}", id);

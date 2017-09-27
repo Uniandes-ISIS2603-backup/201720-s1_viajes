@@ -21,42 +21,54 @@ public class BlogEntity extends BaseEntity
     private String comentario;
     
     @PodamExclude
-    @OneToMany
+    @OneToMany(mappedBy = "blog")
     private List<ImagenEntity> imagenes;
     
-      
+    /**
+     * @return el titulo
+     */
     public String getTitulo()
     {
         return titulo;
     }
     
+    /**
+     * @param titulo el titulo a settear
+     */
     public void setTitulo(String titulo)
     {
         this.titulo = titulo;
     }
     
+    /**
+     * @return el comentario
+     */
     public String getComentario()
     {
         return comentario;
     }
     
+    /**
+     * @param comentario el comentario a settear
+     */
     public void setComentario(String comentario)
     {
         this.comentario = comentario;
     }
     
+    /**
+     * @return las imagenes
+     */
      public List<ImagenEntity> getImagenes()
     {
         return imagenes;
     }
     
+     /**
+     * @param imagenes las imagenes a settear
+     */
     public void setImagenes(List<ImagenEntity> imagenes)
     {
         this.imagenes = imagenes;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
-    }    
 }

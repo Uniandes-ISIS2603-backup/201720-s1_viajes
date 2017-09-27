@@ -33,20 +33,39 @@ public class HospedajeEntity extends ServicioEntity{
     @PodamExclude
     @OneToOne()
     private UbicacionEntity ubicacion;
-        
+   
+    /*
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
+    */
     
     @PodamExclude   
-    @OneToMany
+    @OneToMany(mappedBy = "hospedaje")
     private List<ImagenEntity> imagenes;
     
     @PodamExclude
     @ManyToOne
     private ItinerarioEntity itinerario;
+
+    public UbicacionEntity getUbicacion() {
+        return ubicacion;
+    }
+
+    public ItinerarioEntity getItinerario() {
+        return itinerario;
+    }
+
+    public void setItinerario(ItinerarioEntity itinerario) {
+        this.itinerario = itinerario;
+    }
+
+    public void setUbicacion(UbicacionEntity ubicacion) {
+        this.ubicacion = ubicacion;
+    }
     
-    public TipoHospedaje getTipo() {
+   
+   public TipoHospedaje getTipo() {
         return tipo;
     }
 
@@ -54,6 +73,8 @@ public class HospedajeEntity extends ServicioEntity{
         this.tipo = tipo;
     }
     
+    
+    /*
     public CompaniaEntity getCompania()
     {
         return compania;
@@ -64,6 +85,7 @@ public class HospedajeEntity extends ServicioEntity{
         this.compania = compania;
     }
 
+    */
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj); 
@@ -75,5 +97,5 @@ public class HospedajeEntity extends ServicioEntity{
 
     public List<ImagenEntity> getImagenes() {
         return imagenes;
-    }
+    }    
 }

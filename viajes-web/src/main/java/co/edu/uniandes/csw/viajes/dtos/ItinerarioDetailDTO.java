@@ -7,7 +7,6 @@ package co.edu.uniandes.csw.viajes.dtos;
 
 import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
 import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
-import co.edu.uniandes.csw.viajes.entities.ServicioEntity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +33,7 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
         super(entity);
         if (entity != null) {
             guias = new ArrayList<>();
-            for(GuiaEntity entityGuia : entity.getGuias())  {
+            for(GuiaEntity entityGuia : entity.getGias())  {
                 guias.add(new GuiaDTO(entityGuia));
             }
         }

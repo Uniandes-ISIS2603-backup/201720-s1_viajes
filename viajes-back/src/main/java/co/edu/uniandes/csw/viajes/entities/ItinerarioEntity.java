@@ -40,7 +40,38 @@ public class ItinerarioEntity extends BaseEntity{
     @PodamExclude
     @OneToMany
     private List<TransporteEntity> transportes;
-              
+    
+    public List<EntretenimientoEntity> getEntretenimientos() {
+        return entretenimientos;
+    }
+
+    public List<GuiaEntity> getGias() {
+        return guias;
+    }
+
+    public List<HospedajeEntity> getHospedajes() {
+        return hospedajes;
+    }
+
+    public List<TransporteEntity> getTransportes() {
+        return transportes;
+    }
+
+    public void setEntretenimientos(List<EntretenimientoEntity> entretenimientos) {
+        this.entretenimientos = entretenimientos;
+    }
+
+    public void setGias(List<GuiaEntity> gias) {
+        this.guias = gias;
+    }
+
+    public void setHospedajes(List<HospedajeEntity> hospedajes) {
+        this.hospedajes = hospedajes;
+    }
+
+    public void setTransportes(List<TransporteEntity> transportes) {
+        this.transportes = transportes;
+    }
     
     /**
      * @return the costoTotal
@@ -97,42 +128,4 @@ public class ItinerarioEntity extends BaseEntity{
     public void setNumeroVisitantes(int numeroVisitantes) {
         this.numeroVisitantes = numeroVisitantes;
     }
-
-    /**
-     * @return the gias
-     */
-    public List<GuiaEntity> getGuias() {
-        return guias;
-    }
-
-    /**
-     * @param guias the gias to set
-     */
-    public void setGias(List<GuiaEntity> guias) {
-        this.guias = guias;
-    }
-
-    /**
-     * 
-     * @return entretenimientos
-     */
-    public List<EntretenimientoEntity> getEntretenimientos() {
-        return entretenimientos;
-    }
-
-    /**
-     * 
-     * @return hospedajes
-     */
-    public List<HospedajeEntity> getHospedajes() {
-        return hospedajes;
-    }
-
-    /**
-     * 
-     * @return transportes 
-     */
-    public List<TransporteEntity> getTransportes() {
-        return transportes;
-    }   
 }
