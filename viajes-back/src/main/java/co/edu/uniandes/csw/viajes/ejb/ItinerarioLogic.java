@@ -110,7 +110,7 @@ public class ItinerarioLogic {
         ItinerarioEntity itinerarioEntity = getItinerario(itinerarioId);
         GuiaEntity guia = guiaLogic.getGuia(guiaId);
         guia.setItinerario(null);
-        itinerarioEntity.getGias().remove(guia);
+        itinerarioEntity.getGuias().remove(guia);
     }
      
      /**
@@ -138,7 +138,7 @@ public class ItinerarioLogic {
      * @param itinerarioId : id del itinerario
      */
     public List<GuiaEntity> getGuias(Long itinerarioId) {
-        return getItinerario(itinerarioId).getGias();
+        return getItinerario(itinerarioId).getGuias();
     }
     
     /**
@@ -148,7 +148,7 @@ public class ItinerarioLogic {
      * @param itinerarioId : id del itinerario
      */
     public GuiaEntity getGuia(Long itinerarioId, Long guiaId) throws WebApplicationException {
-        List<GuiaEntity> guias = getItinerario(itinerarioId).getGias();
+        List<GuiaEntity> guias = getItinerario(itinerarioId).getGuias();
         GuiaEntity guia = guiaLogic.getGuia(guiaId);
         int index = guias.indexOf(guia);
         if (index >= 0) {
@@ -164,6 +164,6 @@ public class ItinerarioLogic {
      * @param itinerarioId : id del itinerario
      */
     public List<GuiaEntity> listGuias(Long itinerarioId) {
-        return getItinerario(itinerarioId).getGias();
+        return getItinerario(itinerarioId).getGuias();
     }
 }

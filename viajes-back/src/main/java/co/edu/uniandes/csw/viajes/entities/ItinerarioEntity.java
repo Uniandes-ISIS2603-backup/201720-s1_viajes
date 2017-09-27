@@ -26,19 +26,19 @@ public class ItinerarioEntity extends BaseEntity{
     private int numeroVisitantes;
 
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
-    private List<GuiaEntity> gias;
+    @OneToMany
+    private List<GuiaEntity> guias;
         
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
+    @OneToMany
     private List<HospedajeEntity> hospedajes;
      
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
+    @OneToMany
     private List<EntretenimientoEntity> entretenimientos;
       
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
+    @OneToMany
     private List<TransporteEntity> transportes;
               
     
@@ -101,15 +101,15 @@ public class ItinerarioEntity extends BaseEntity{
     /**
      * @return the gias
      */
-    public List<GuiaEntity> getGias() {
-        return gias;
+    public List<GuiaEntity> getGuias() {
+        return guias;
     }
 
     /**
-     * @param gias the gias to set
+     * @param guias the gias to set
      */
-    public void setGias(List<GuiaEntity> gias) {
-        this.gias = gias;
+    public void setGias(List<GuiaEntity> guias) {
+        this.guias = guias;
     }
 
     /**

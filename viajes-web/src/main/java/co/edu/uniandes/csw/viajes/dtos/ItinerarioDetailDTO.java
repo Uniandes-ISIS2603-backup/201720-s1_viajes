@@ -33,12 +33,8 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
     public ItinerarioDetailDTO(ItinerarioEntity entity){
         super(entity);
         if (entity != null) {
-          //  servicios = new ArrayList<>();
             guias = new ArrayList<>();
-            //for (ServicioEntity entityServicio : entity.getServicios()) {
-            //    servicios.add(new ServicioDTO(entityServicio));
-            //}
-            for (GuiaEntity entityGuia : entity.getGias())  {
+            for(GuiaEntity entityGuia : entity.getGuias())  {
                 guias.add(new GuiaDTO(entityGuia));
             }
         }
@@ -52,13 +48,6 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
     @Override
     public ItinerarioEntity toEntity(){
         ItinerarioEntity entity = super.toEntity();
-            List<ServicioEntity> serviciosEntity = new ArrayList<>();
-
-//            for (ServicioDTO dtoServicio : getServicios()) {
-  //              serviciosEntity.add(dtoServicio.toEntity());
-    //        }
-      //      entity.setServicios(serviciosEntity);
-        //}
         if (getGuias() != null) {
             List<GuiaEntity> guiasEntity = new ArrayList<>();
             for (GuiaDTO dtoGuia : getGuias()) {

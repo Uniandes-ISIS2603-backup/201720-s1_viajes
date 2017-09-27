@@ -22,24 +22,8 @@ public class UbicacionEntity extends BaseEntity {
     private String direccion;
     private String ciudad;
     private String pais;
-          
-    @PodamExclude
-    @OneToOne
-    private HospedajeEntity hospedaje;
-    
-    @PodamExclude
-    @OneToOne
-    private EntretenimientoEntity entretenimiento;
-    
-    @PodamExclude
-    @OneToOne
-    private TransporteEntity origen;
-    
-    @PodamExclude
-    @OneToOne
-    private TransporteEntity destino;
-    
-    
+         
+   
     public String getLongitud() {
         return longitud;
     }

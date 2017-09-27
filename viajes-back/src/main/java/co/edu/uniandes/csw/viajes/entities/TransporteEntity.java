@@ -54,23 +54,16 @@ public class TransporteEntity extends ServicioEntity
      * Direccion de origen del transporte
      */
     @PodamExclude
-    @OneToOne(mappedBy = "origen")
+    @OneToOne
     private UbicacionEntity origen;
     
     /**
      * Direccion destino del transporte
      */
     @PodamExclude
-    @OneToOne(mappedBy = "destino")
+    @OneToOne
     private UbicacionEntity destino;
-    
-    /**
-     * Itinerario al cual pertenece un transporte
-     */
-    @PodamExclude
-    @ManyToOne
-    private ItinerarioEntity itinerario;   
-    
+   
     /**
      * Retornar el tipo del transporte
      * @return tipo del transporte
