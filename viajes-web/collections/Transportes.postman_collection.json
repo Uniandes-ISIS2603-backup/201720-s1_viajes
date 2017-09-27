@@ -1,0 +1,204 @@
+{
+	"variables": [],
+	"info": {
+		"name": "TransportesCollection.postman_collection",
+		"_postman_id": "da09a235-7fda-87b5-1e68-8259e3cb182f",
+		"description": "Pruebas referentes a todo lo relacionado con la entidad Transporte.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consultar todos los transportes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/transportes",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Consulta todos los transportes registrados"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar transporte con id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/transportes/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Consulta el transporte con id 1"
+			},
+			"response": []
+		},
+		{
+			"name": "Actualización de datos de un transporte",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/transportes/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\" : \"cambio de nombre\"}"
+				},
+				"description": "Actualiza la información de un transporte"
+			},
+			"response": []
+		},
+		{
+			"name": "Generación de un nuevo transporte",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/transportes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"nombre\" : \"Perdieron con el poderoso Bucaramanga\", \"tipo\": \"AVION\", \"fechaInicio\" : \"sdvfs\", \"fechaFinal\" : \"jdhgsu\", \"valor\" : 345.65, \"calificacion\" : 4.5, \"comentarios\" : \"sfsdf\" , \"descripcion\" : \"sdfs\"}"
+				},
+				"description": "Crea un nuevo transporte y lo guarda"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminacion de un transporte con id dado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 204\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/transportes/2",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Elimina un transporte con id 1 "
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar un transporte inexistente con id dado ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/transportes/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\" : \"cambio de nombre\"}"
+				},
+				"description": "Consulta un transporte con un id, este transporte no existe, lanza 404."
+			},
+			"response": []
+		},
+		{
+			"name": "Actualización de datos de un transporte inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/transportes/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\" : \"cambio de nombre\"}"
+				},
+				"description": "Intenta actualizar la información de un transporte que no existe. Lanza 404."
+			},
+			"response": []
+		}
+	]
+}

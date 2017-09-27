@@ -24,7 +24,8 @@ public class OficinaLogic {
     private OficinaPersistence persistence; // Variable para acceder a la persistencia de la aplicación. Es una inyección de dependencias.
 
     /**
-     *
+     *Crear una nueva oficina
+     * 
      * @param entity
      * @return
      */
@@ -38,15 +39,15 @@ public class OficinaLogic {
 
     /**
      * 
-     * Obtener todas las oficinaes existentes en la base de datos.
+     * Obtener todas las oficinas existentes en la base de datos.
      *
-     * @return una lista de oficinaes.
+     * @return una lista de oficinas.
      */
     public List<OficinaEntity> getOficinas() {
-        LOGGER.info("Inicia proceso de consultar todas las oficinaes");
+        LOGGER.info("Inicia proceso de consultar todas las oficinas");
         // Note que, por medio de la inyección de dependencias se llama al método "findAll()" que se encuentra en la persistencia.
         List<OficinaEntity> oficinas = persistence.findAll();
-        LOGGER.info("Termina proceso de consultar todas las oficinaes");
+        LOGGER.info("Termina proceso de consultar todas las oficinas");
         return oficinas;
     }
 
@@ -86,7 +87,7 @@ public class OficinaLogic {
     }
 
     /**
-     * Borrar un oficina
+     * Borrar una oficina
      *
      * @param id: id de la oficina a borrar
      */

@@ -24,7 +24,8 @@ public class EntretenimientoLogic {
     private EntretenimientoPersistence persistence; // Variable para acceder a la persistencia de la aplicación. Es una inyección de dependencias.
 
     /**
-     *
+     *Crear un nuevo entretenimiento
+     * 
      * @param entity
      * @return
      */
@@ -38,15 +39,15 @@ public class EntretenimientoLogic {
 
     /**
      * 
-     * Obtener todas las entretenimientoes existentes en la base de datos.
+     * Obtener todos los entretenimientos existentes en la base de datos.
      *
-     * @return una lista de entretenimientoes.
+     * @return una lista de entretenimientos.
      */
     public List<EntretenimientoEntity> getEntretenimientos() {
-        LOGGER.info("Inicia proceso de consultar todas las entretenimientoes");
+        LOGGER.info("Inicia proceso de consultar todas las entretenimientos");
         // Note que, por medio de la inyección de dependencias se llama al método "findAll()" que se encuentra en la persistencia.
         List<EntretenimientoEntity> entretenimientos = persistence.findAll();
-        LOGGER.info("Termina proceso de consultar todas las entretenimientoes");
+        LOGGER.info("Termina proceso de consultar todas las entretenimientos");
         return entretenimientos;
     }
 
@@ -54,7 +55,7 @@ public class EntretenimientoLogic {
      *
      * Obtener una entretenimiento por medio de su id.
      * 
-     * @param id: id de la entretenimiento para ser buscada.
+     * @param id: id del entretenimiento para ser buscada.
      * @return la entretenimiento solicitada por medio de su id.
      */
     public EntretenimientoEntity getEntretenimiento(Long id) {
@@ -72,7 +73,7 @@ public class EntretenimientoLogic {
      *
      * Actualizar una entretenimiento.
      *
-     * @param id: id de la entretenimiento para buscarla en la base de datos.
+     * @param id: id del entretenimiento para buscarla en la base de datos.
      * @param entity: entretenimiento con los cambios para ser actualizada, por
      * ejemplo el nombre.
      * @return la entretenimiento con los cambios actualizados en la base de datos.
@@ -88,7 +89,7 @@ public class EntretenimientoLogic {
     /**
      * Borrar un entretenimiento
      *
-     * @param id: id de la entretenimiento a borrar
+     * @param id: id del entretenimiento a borrar
      */
     public void deleteEntretenimiento(Long id) {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar entretenimiento con id={0}", id);

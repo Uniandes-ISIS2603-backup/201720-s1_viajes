@@ -175,6 +175,10 @@ public class UbicacionPersistenceTest {
     }
     }
     
+    /**
+     * Inserta los datos iniciales para el correcto funcionamiento de las
+     * pruebas.
+     */
     private void insertData() {
         PodamFactory factory = new PodamFactoryImpl();
         for (int i = 0; i < 3; i++) {
@@ -183,7 +187,7 @@ public class UbicacionPersistenceTest {
             data.add(entity);
         }
     }
-
+    
     private void clearData() {
         em.createQuery("delete from UbicacionEntity").executeUpdate();
     }

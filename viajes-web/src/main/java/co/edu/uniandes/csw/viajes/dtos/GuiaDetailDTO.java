@@ -63,7 +63,5 @@ public class GuiaDetailDTO extends GuiaDTO
      */
     public void setCompania(CompaniaDTO compania) {
         this.compania = compania;
-    }
-    
-     
+    }    
 }

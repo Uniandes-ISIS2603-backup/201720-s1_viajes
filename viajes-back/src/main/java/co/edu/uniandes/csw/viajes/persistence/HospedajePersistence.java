@@ -25,6 +25,11 @@ public class HospedajePersistence {
      @PersistenceContext(unitName = "viajesPU")
       protected EntityManager em;
      
+     /**
+     *
+     * @param entity objeto Hospedaje que se creará en la base de datos
+     * @return devuelve la entidad creada con un id dado por la base de datos.
+     */
      public HospedajeEntity create(HospedajeEntity entity){
          LOGGER.info("Creando un hospedaje nuevo");
          em.persist(entity);
@@ -33,23 +38,48 @@ public class HospedajePersistence {
         
     }
    
+     /**
+     * Actualiza un Hospedaje.
+     *
+     * @param entity: el Hospedaje que viene con los nuevos cambios. 
+     * @return un Hospedaje con los cambios aplicados.
+     */
     public HospedajeEntity update(HospedajeEntity entity){
         LOGGER.log(Level.INFO, "Actualizando hospedaje");
         return em.merge(entity);
     }
     
+    /**
+     *
+     * Borra un Hospedaje de la base de datos recibiendo como argumento el id
+     * del Hospedaje
+     *
+     * @param id: id correspondiente al Hospedaje a borrar.
+     */
     public void delete(Long id){
         LOGGER.log(Level.INFO, "Borrando hospedaje con id ", id);
         HospedajeEntity entity = em.find(HospedajeEntity.class, id);
         em.remove(entity);
     }
    
+    /**
+     * Busca si hay algún Hospedaje con el id que se envía de argumento
+     *
+     * @param id: id correspondiente al Hospedaje buscado.
+     * @return un Hospedaje.
+     */
     public HospedajeEntity find(Long id){
        LOGGER.log(Level.INFO, "Consultando hospedaje con id ", id);
         
         return em.find(HospedajeEntity.class, id);
     }
     
+    /**
+     * Devuelve todos los Hospedajes de la base de datos.
+     *
+     * @return una lista con todos los Hospedajes que encuentre en la base de
+     * datos
+     */
     public List<HospedajeEntity> findAll() {
          LOGGER.info("Consultando todos los hospedajes");
          TypedQuery query = em.createQuery("select u from HospedajeEntity u", HospedajeEntity.class);

@@ -5,7 +5,10 @@
  */
 package co.edu.uniandes.csw.viajes.dtos;
 
+import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
 import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -13,8 +16,10 @@ import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
  */
 public class ItinerarioDetailDTO extends ItinerarioDTO{
     
+    private List<GuiaDTO> guias;
+    
     public ItinerarioDetailDTO(){
-        
+        super();
     }
     
     /**
@@ -24,6 +29,12 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
      */
     public ItinerarioDetailDTO(ItinerarioEntity entity){
         super(entity);
+        if (entity != null) {
+            guias = new ArrayList<>();
+            for(GuiaEntity entityGuia : entity.getGias())  {
+                guias.add(new GuiaDTO(entityGuia));
+            }
+        }
     }
     
     /**
@@ -34,7 +45,27 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
     @Override
     public ItinerarioEntity toEntity(){
         ItinerarioEntity entity = super.toEntity();
+        if (getGuias() != null) {
+            List<GuiaEntity> guiasEntity = new ArrayList<>();
+            for (GuiaDTO dtoGuia : getGuias()) {
+                guiasEntity.add(dtoGuia.toEntity());
+            }
+            entity.setGias(guiasEntity);
+        }
         return entity;
     }
-    
+
+    /**
+     * @return the guias
+     */
+    public List<GuiaDTO> getGuias() {
+        return guias;
+    }
+
+    /**
+     * @param guias the guias to set
+     */
+    public void setGuias(List<GuiaDTO> guias) {
+        this.guias = guias;
+    }    
 }

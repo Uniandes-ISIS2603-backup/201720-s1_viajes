@@ -3,23 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
+import javax.persistence.Entity;
+
 
 /**
  *
- * @author jc.sanchez12
+ * @author Juan
  */
 @Entity
 public class CompaniaEntity extends BaseEntity
-{
- 
+{ 
     /*
     Email  de contacto de la companñia
     */
@@ -65,37 +63,43 @@ public class CompaniaEntity extends BaseEntity
     Relacion asociada a las oficinas que  conforman  la compañia 
     */
     @PodamExclude
-    @OneToMany(mappedBy = "compania",cascade = CascadeType.PERSIST)
+    @OneToMany
     private List<OficinaEntity> oficinas;
-
+    
     /**
-     * Obtener el atributo telefono
-     * 
-     * @return telefono
-     */
+     * Constructor de la  empresa
+     */ 
+    public CompaniaEntity()
+    {
+        
+    }
+    
+    /*
+    /Obtener  el email de la compania
+    /@return email
+    */
+    public String getEmail() {
+        return email;
+    }
+
+    
+     /*
+    /Obtener  el telefono de la empresa
+    /@return telefono
+    */
     public Long getTelefono() {
         return telefono;
     }
 
-    /**
-     * Obtener el atributo nombre
-     * 
-     * @return  nombre
-     */
+     /*
+    /Obtener  el nombre de la empresa
+    /@return nombre
+    */
     public String getNombre() {
         return nombre;
     }
 
-      /**
-     * Obtener el atributo email
-     * 
-     * @return  email
-     */
-    public String getEmail() 
-    {
-        return email;
-    }
-
+     
     /**
      * Actualizar el atributo  email
      * @param email email to set
@@ -135,7 +139,7 @@ public class CompaniaEntity extends BaseEntity
         return guias;
     }
 
-      /**
+    /**
      * Actualizar el atributo guias
      * @param guias guias to set
      */

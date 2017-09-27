@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.csw.viajes.ejb;
 
-import co.edu.uniandes.csw.viajes.entities.CompaniaEntity;
 import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
 import co.edu.uniandes.csw.viajes.persistence.GuiaPersistence;
 import java.util.List;
@@ -83,7 +82,6 @@ public class GuiaLogic {
     public void deleteGuia(Long id) {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar un guia ");
         persistence.delete(id);
-    }
-    
+    }   
 
 }

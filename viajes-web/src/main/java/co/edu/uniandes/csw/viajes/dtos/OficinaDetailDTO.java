@@ -13,10 +13,16 @@ import co.edu.uniandes.csw.viajes.entities.OficinaEntity;
  */
 public class OficinaDetailDTO extends OficinaDTO {
     
+    /*
+    * Relación a una ubicacion
+    */
+    private UbicacionDTO ubicacion;
+    
     /**
      * Constructor por defecto
      */
     public OficinaDetailDTO() {
+        super();
     }
 
     /**
@@ -26,6 +32,12 @@ public class OficinaDetailDTO extends OficinaDTO {
      */
     public OficinaDetailDTO(OficinaEntity entity) {
         super(entity);
+        
+        if (entity.getUbicacion() != null) {
+            this.ubicacion = new UbicacionDTO(entity.getUbicacion());
+        } else {
+            entity.setUbicacion(null);
+        }
     }
 
     /**
@@ -36,8 +48,18 @@ public class OficinaDetailDTO extends OficinaDTO {
     @Override
     public OficinaEntity toEntity() {
         OficinaEntity oficinaE = super.toEntity();
+        if (this.getUbicacion() != null) {
+            oficinaE.setUbicacion(this.getUbicacion().toEntity());
+        }
         return oficinaE;
     }
     
+    public void setUbicacion(UbicacionDTO ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public UbicacionDTO getUbicacion() {
+        return ubicacion;
+    }
     
 }

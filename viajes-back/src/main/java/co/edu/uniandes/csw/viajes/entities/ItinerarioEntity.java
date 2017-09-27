@@ -7,7 +7,6 @@ package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
 
@@ -27,24 +26,52 @@ public class ItinerarioEntity extends BaseEntity{
     private int numeroVisitantes;
 
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
-    private List<GuiaEntity> gias;
-    
-    @PodamExclude
-    @ManyToOne()
-    private UsuarioEntity usuario;
+    @OneToMany
+    private List<GuiaEntity> guias;
         
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
+    @OneToMany
     private List<HospedajeEntity> hospedajes;
      
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
+    @OneToMany
     private List<EntretenimientoEntity> entretenimientos;
       
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
+    @OneToMany
     private List<TransporteEntity> transportes;
+    
+    public List<EntretenimientoEntity> getEntretenimientos() {
+        return entretenimientos;
+    }
+
+    public List<GuiaEntity> getGias() {
+        return guias;
+    }
+
+    public List<HospedajeEntity> getHospedajes() {
+        return hospedajes;
+    }
+
+    public List<TransporteEntity> getTransportes() {
+        return transportes;
+    }
+
+    public void setEntretenimientos(List<EntretenimientoEntity> entretenimientos) {
+        this.entretenimientos = entretenimientos;
+    }
+
+    public void setGias(List<GuiaEntity> gias) {
+        this.guias = gias;
+    }
+
+    public void setHospedajes(List<HospedajeEntity> hospedajes) {
+        this.hospedajes = hospedajes;
+    }
+
+    public void setTransportes(List<TransporteEntity> transportes) {
+        this.transportes = transportes;
+    }
     
     /**
      * @return the costoTotal
@@ -101,5 +128,4 @@ public class ItinerarioEntity extends BaseEntity{
     public void setNumeroVisitantes(int numeroVisitantes) {
         this.numeroVisitantes = numeroVisitantes;
     }
-
 }

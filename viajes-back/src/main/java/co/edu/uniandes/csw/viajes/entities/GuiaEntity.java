@@ -25,18 +25,13 @@ public class GuiaEntity extends  BaseEntity
     private String fechaFinal; //Fecha  del final del servicio de guia
     private String nombre; //Nombre del guia
     private Long calificacion; //Clasificación del guia
-    
+        
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
     
-    @PodamExclude
-    @ManyToOne
-    private ItinerarioEntity itinerario;
-
-    public GuiaEntity() 
-    {
-        
+    public GuiaEntity()
+    {        
     }
    
      /**
@@ -111,15 +106,7 @@ public class GuiaEntity extends  BaseEntity
         return compania;
     }
      
-      /**
-     * Obtener el atributo itinerario
-     * 
-     * @return  itinerario
-     */
-    public ItinerarioEntity getItinerario() {
-        return itinerario;
-    }
-
+    
      /**
      * Actualizar el atributo lenguaje
      * @param lenguaje lenguaje to set
@@ -176,25 +163,16 @@ public class GuiaEntity extends  BaseEntity
         this.calificacion = calificacion;
     }
 
-     /**
+    /**
      * Actualizar el atributo compania
      * @param compania compania to set
      */
     public void setCompania(CompaniaEntity compania) {
         this.compania = compania;
-    }
-
-    /**
-     * Actualizar el atributo itinerario
-     * @param itinerario itinerario to set
-     */
-    public void setItinerario(ItinerarioEntity itinerario) {
-        this.itinerario = itinerario;
-    }
+    } 
 
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
-    
 }

@@ -105,7 +105,7 @@ public class PagoPersistenceTest
     
     private List<PagoEntity> data = new ArrayList<PagoEntity>();
     
-      /**
+     /**
      * Inserta los datos iniciales para el correcto funcionamiento de las
      * pruebas.
      *
@@ -138,6 +138,9 @@ public class PagoPersistenceTest
 
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getValor(), entity.getValor());
+        
+        result = null;
+        Assert.assertNull(result);
     }
     
     /**
@@ -156,7 +159,7 @@ public class PagoPersistenceTest
                     found = true;
                 }
             }
-            Assert.assertTrue(found);
+            Assert.assertTrue(found);            
         }
     }
     

@@ -126,7 +126,5 @@ public class GuiaResource
             throw new WebApplicationException("El author no existe", 404);
         }
        guialogic.deleteGuia(id);
-    }
-    
-    
+    }    
 }
