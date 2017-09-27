@@ -18,7 +18,9 @@ import javax.inject.Inject;
  */
 public class PagoLogic {
     
-    
+    /**
+     * Acceso a la aplicación 
+     */
     @Inject
     private PagoPersistence persistence;
     

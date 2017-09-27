@@ -18,13 +18,21 @@ import javax.inject.Inject;
  */
 public class UsuarioLogic {
 
-    
+    /**
+     * Acceso a la aplicación
+     */
     @Inject
     private UsuarioPersistence persistence;
     
+    /**
+     * Acceso a la aplicación de tarjeta
+     */
     @Inject
     private TarjetaCreditoLogic tarjetaLogic;
     
+    /**
+     * Acceso a la palicacion de itinerario
+     */
     @Inject
     private ItinerarioLogic itinerarioLogic;
     

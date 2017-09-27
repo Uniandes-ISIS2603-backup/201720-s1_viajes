@@ -54,25 +54,46 @@ public class UsuarioEntity extends BaseEntity
         return itinerario;
     }
     
+    
+    /**
+     * Se agregan itinerarios a la lista de itinerarios del usuario
+     * @param itinerarios 
+     */
     public void setItinerarios(List<ItinerarioEntity> itinerarios)
     {
         this.itinerario = itinerarios;
     }
         
+    /**
+     * Tarjetas de credito de las que el usuario es dueño
+     * @return 
+     */
     public List<TarjetaCreditoEntity> getTarjetas()
     {
         return tarjeta;
     }
     
+    /**
+     * Se agregan tarjetas al usuario
+     * @param tarjetas 
+     */
     public void setTarjetas(List<TarjetaCreditoEntity> tarjetas)
     {
         this.tarjeta = tarjetas;
     }
     
+    /**
+     * Nombre del usuario
+     * @return nombre
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * Se cambia el nombre del usuario
+     * @param nombre 
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

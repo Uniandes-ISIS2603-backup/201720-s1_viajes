@@ -18,6 +18,10 @@ import javax.inject.Inject;
  */
 public class TarjetaCreditoLogic {
     
+    
+    /**
+     * Acceso a la aplicación
+     */
     @Inject
     private TarjetaCreditoPersistence persistence;    
     
