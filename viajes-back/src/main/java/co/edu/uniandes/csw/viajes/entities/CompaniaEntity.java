@@ -5,10 +5,13 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
+import javax.persistence.Entity;
+
 /**
  *
  * @author Juan
  */
+@Entity
 public class CompaniaEntity extends BaseEntity
 {
     /*
