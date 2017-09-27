@@ -24,8 +24,7 @@ public class OficinaEntity extends BaseEntity
     @PodamExclude
     @OneToOne
     private UbicacionEntity ubicacion;
-    
-    
+        
     public String getNombreLugar()
     {
         return nombreLugar;

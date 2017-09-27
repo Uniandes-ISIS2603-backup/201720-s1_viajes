@@ -6,8 +6,6 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -70,17 +68,5 @@ public class UbicacionEntity extends BaseEntity {
 
     public void setPais(String pais) {
         this.pais = pais;
-    }
-
-    /*
-    public OficinaEntity getOficina() {
-        return oficina;
-    }
-
-    public void setOficina(OficinaEntity oficina) {
-        this.oficina = oficina;
-    }
-*/
-    
-    
+    }  
 }
