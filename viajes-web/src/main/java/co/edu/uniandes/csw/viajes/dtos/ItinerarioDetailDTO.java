@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.dtos;
 
+import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
 import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
 import co.edu.uniandes.csw.viajes.entities.ServicioEntity;
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
     
     //private List<ServicioDTO> servicios;
     
+    private List<GuiaDTO> guias;
+    
     public ItinerarioDetailDTO(){
         
     }
@@ -30,11 +33,14 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
     public ItinerarioDetailDTO(ItinerarioEntity entity){
         super(entity);
         if (entity != null) {
-           // servicios = new ArrayList<>();
+          //  servicios = new ArrayList<>();
+            guias = new ArrayList<>();
             //for (ServicioEntity entityServicio : entity.getServicios()) {
-              //  servicios.add(new ServicioDTO(entityServicio));
+            //    servicios.add(new ServicioDTO(entityServicio));
             //}
-
+            for (GuiaEntity entityGuia : entity.getGias())  {
+                guias.add(new GuiaDTO(entityGuia));
+            }
         }
     }
     
@@ -46,28 +52,34 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
     @Override
     public ItinerarioEntity toEntity(){
         ItinerarioEntity entity = super.toEntity();
-//        if (getServicios() != null) {
             List<ServicioEntity> serviciosEntity = new ArrayList<>();
-            //for (ServicioDTO dtoServicio : getServicios()) {
-              //  serviciosEntity.add(dtoServicio.toEntity());
-            //}
-            //entity.setServicios(serviciosEntity);
-  //      }
+
+//            for (ServicioDTO dtoServicio : getServicios()) {
+  //              serviciosEntity.add(dtoServicio.toEntity());
+    //        }
+      //      entity.setServicios(serviciosEntity);
+        //}
+        if (getGuias() != null) {
+            List<GuiaEntity> guiasEntity = new ArrayList<>();
+            for (GuiaDTO dtoGuia : getGuias()) {
+                guiasEntity.add(dtoGuia.toEntity());
+            }
+            entity.setGias(guiasEntity);
+        }
         return entity;
     }
 
     /**
-     * @return the servicios
+     * @return the guias
      */
-    //public List<ServicioDTO> getServicios() {
-     //   return servicios;
-    //}
+    public List<GuiaDTO> getGuias() {
+        return guias;
+    }
 
     /**
-     * @param servicios the servicios to set
+     * @param guias the guias to set
      */
-    //public void setServicios(List<ServicioDTO> servicios) {
-      //  this.servicios = servicios;
-    //}
-    
+    public void setGuias(List<GuiaDTO> guias) {
+        this.guias = guias;
+    }    
 }
