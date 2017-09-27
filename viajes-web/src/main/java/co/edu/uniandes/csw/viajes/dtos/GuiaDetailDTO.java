@@ -15,9 +15,9 @@ import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
  */
 public class GuiaDetailDTO extends GuiaDTO
 {
-    
+    /**
     private CompaniaDTO compania;
-    
+    */
      public GuiaDetailDTO() {
         super();
     }
@@ -29,12 +29,12 @@ public class GuiaDetailDTO extends GuiaDTO
      */
     public GuiaDetailDTO(GuiaEntity entity) {
         super(entity);
-        if (entity.getCompania()!=null) {
-            this.compania=new CompaniaDTO(entity.getCompania());
-        }
-        else{
-            entity.setCompania(null);
-        }
+        //if (entity.getCompania()!=null) {
+          //  this.compania=new CompaniaDTO(entity.getCompania());
+        //}
+        //else{
+          //  entity.setCompania(null);
+        //}
     }
     
     /**
@@ -45,23 +45,24 @@ public class GuiaDetailDTO extends GuiaDTO
     @Override
     public GuiaEntity toEntity() {
         GuiaEntity guiaE = super.toEntity();
-        if (this.getCompania()!=null) {
-            guiaE.setCompania(this.getCompania().toEntiy());
-        }
+        //if (this.getCompania()!=null) {
+          //  guiaE.setCompania(this.getCompania().toEntiy());
+        //}
         return guiaE;
     }
     
     /**
      * @return the compania
-     */
+     
     public CompaniaDTO getCompania() {
         return compania;
     }
 
     /**
      * @param compania the compania to set
-     */
+     
     public void setCompania(CompaniaDTO compania) {
         this.compania = compania;
     }    
+    */
 }

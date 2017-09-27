@@ -34,10 +34,11 @@ public class HospedajeEntity extends ServicioEntity{
     @OneToOne()
     private UbicacionEntity ubicacion;
     
+    /**
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
-    
+    */
     
     @PodamExclude   
     @OneToMany
@@ -72,7 +73,7 @@ public class HospedajeEntity extends ServicioEntity{
         this.tipo = tipo;
     }
 
-    
+    /**
     public CompaniaEntity getCompania()
     {
         return compania;
@@ -90,4 +91,5 @@ public class HospedajeEntity extends ServicioEntity{
     public List<ImagenEntity> getImagenes() {
         return imagenes;
 }
+* */
 }

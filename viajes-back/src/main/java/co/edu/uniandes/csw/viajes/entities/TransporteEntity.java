@@ -7,7 +7,7 @@ package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+//import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
@@ -38,11 +38,12 @@ public class TransporteEntity extends ServicioEntity
 
     /**
      * Compania a la cual pertenece el transporte
-     */
+     
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
-
+    * 
+    */
     /**
      * Imagenes asociadas al transporte
      */
@@ -83,7 +84,7 @@ public class TransporteEntity extends ServicioEntity
     /**
      * Rretornar la compania a la cual pertenece el transporte
      * @return compania del transporte
-     */
+     
     public CompaniaEntity getCompania() {
         return compania;
     }
@@ -91,8 +92,9 @@ public class TransporteEntity extends ServicioEntity
     /**
      * Asignar la compania del transporte
      * @param compania del transporte
-     */
+     
     public void setCompañia(CompaniaEntity compania) {
         this.compania = compania;
     }
+    * */
 }

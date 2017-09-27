@@ -22,11 +22,11 @@ public class EntretenimientoEntity extends ServicioEntity
     @PodamExclude
     @OneToMany
     private List<ImagenEntity> imagenes;
-    
+    /**
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
-    
+    */
     @PodamExclude
     @OneToOne()
     private UbicacionEntity ubicacion;
@@ -47,7 +47,7 @@ public class EntretenimientoEntity extends ServicioEntity
         this.ubicacion = ubicacion;
     }
 
-    
+    /**
     public CompaniaEntity getCompania()
     {
         return compania;
@@ -57,7 +57,7 @@ public class EntretenimientoEntity extends ServicioEntity
     {
         this.compania = compania;
     }
-        
+       */ 
     /**
      * @return las imagenes
      */

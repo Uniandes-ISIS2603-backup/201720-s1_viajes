@@ -108,7 +108,7 @@ public class GuiaResource
         if (oldEntity == null) {
             throw new WebApplicationException("El guia no existe", 404);
         }
-        entity.setCompania(oldEntity.getCompania());
+//        entity.setCompania(oldEntity.getCompania());
         return new GuiaDetailDTO(guialogic.updateGuia(entity));
     }
 
