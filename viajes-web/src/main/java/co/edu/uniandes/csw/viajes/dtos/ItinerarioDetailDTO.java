@@ -16,12 +16,10 @@ import java.util.List;
  */
 public class ItinerarioDetailDTO extends ItinerarioDTO{
     
-    //private List<ServicioDTO> servicios;
-    
     private List<GuiaDTO> guias;
     
     public ItinerarioDetailDTO(){
-        
+        super();
     }
     
     /**

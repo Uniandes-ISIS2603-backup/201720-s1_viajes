@@ -10,13 +10,8 @@
 
 delete from BlogEntity;
 
-<<<<<<< HEAD
-insert into BlogEntity (id, titulo, comentario) values (100,'Mi primer blog', 'No se que escribir');
-insert into BlogEntity (id, titulo, comentario) values (200,'Hello world!', 'I wanna be the very best');
-=======
 insert into BlogEntity (id, titulo, comentario) values (1,'Mi primer blog', 'No se que escribir');
 insert into BlogEntity (id, titulo, comentario) values (2,'Hello world!', 'I wanna be the very best');
->>>>>>> m.rodriguez21
 
 delete from OficinaEntity;
 
@@ -25,13 +20,9 @@ insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (2,'Edificio
 
 delete from EntretenimientoEntity;
 
-<<<<<<< HEAD
-insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion) values (100, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, '', 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
-insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion) values (200, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, '', 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
-=======
 insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
 values (1, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
 insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
 values (2, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
->>>>>>> m.rodriguez21
+
 

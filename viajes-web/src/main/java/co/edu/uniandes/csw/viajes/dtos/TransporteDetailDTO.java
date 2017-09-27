@@ -17,6 +17,7 @@ public class TransporteDetailDTO extends TransporteDTO{
      * Constructor por defecto
      */
     public TransporteDetailDTO() {
+        super();
     }
 
     /**
