@@ -25,22 +25,42 @@ public class PagoDTO {
         
     }
     
+    /**
+     * Valor del pago
+     * @return valor
+     */
      public Double getValor() {
         return valor;
     }
 
+    /**
+     * Fecha en la que se realizó el pago
+     * @return 
+     */
     public String getFecha() {
         return fecha;
     }
 
+    /**
+     * Nombre de quíen hizo el pago
+     * @return 
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * Cambiar el valor del pago
+     * @param valor 
+     */
     public void setValor(Double valor) {
         this.valor = valor;
     }
 
+    /**
+     * Cambiar el nombre de quien le petenece el pago
+     * @param nombre 
+     */    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
