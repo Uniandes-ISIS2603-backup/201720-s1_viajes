@@ -20,7 +20,7 @@ public class OficinaEntity extends BaseEntity
     private String nombreEncargado;
        
     @PodamExclude
-    @OneToOne(mappedBy = "oficina")
+    @OneToOne
     private UbicacionEntity ubicacion;
       
     /**

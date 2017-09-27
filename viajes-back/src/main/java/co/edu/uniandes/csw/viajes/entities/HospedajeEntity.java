@@ -41,7 +41,7 @@ public class HospedajeEntity extends ServicioEntity{
     */
     
     @PodamExclude   
-    @OneToMany(mappedBy = "hospedaje")
+    @OneToMany
     private List<ImagenEntity> imagenes;
     
     @PodamExclude

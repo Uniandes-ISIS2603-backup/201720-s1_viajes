@@ -25,8 +25,7 @@ public class GuiaEntity extends  BaseEntity  implements Serializable
     private String fechaFinal; //Fecha  del final del servicio de guia
     private String nombre; //Nombre del guia
     private Long calificacion; //Clasificación del guia
-    
-    
+        
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;

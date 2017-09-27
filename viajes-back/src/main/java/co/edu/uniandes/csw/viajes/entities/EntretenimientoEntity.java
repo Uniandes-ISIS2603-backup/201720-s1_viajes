@@ -20,7 +20,7 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class EntretenimientoEntity extends ServicioEntity
 {    
     @PodamExclude
-    @OneToMany(mappedBy = "entretenimiento")
+    @OneToMany
     private List<ImagenEntity> imagenes;
     
     @PodamExclude

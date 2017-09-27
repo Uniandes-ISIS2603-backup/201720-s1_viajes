@@ -1,40 +1,11 @@
 ----------------------------------------------------------------
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Mon Sep 25 11:07:31 COT 2017:
- Iniciando instancia a816c00e-015e-b9cb-2296-000013fa05f8 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\tv.huertas10\AppData\Local\Temp\gfembed5220147004118133567tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
-=======
-Tue Sep 26 18:51:49 COT 2017:
- Iniciando instancia a816c00e-015e-c09a-92fd-000017c5d278 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\tv.huertas10\AppData\Local\Temp\gfembed2820506466160815086tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
->>>>>>> js.beltran14
+Tue Sep 26 20:51:52 COT 2017:
+ Iniciando instancia a816c00e-015e-c108-7bf3-000014e2d5a8 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
+en el directorio de base de datos C:\Users\tv.huertas10\AppData\Local\Temp\gfembed7657798474037954884tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
 Cargado desde file:/C:/Users/tv.huertas10/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_144-b01
 user.dir=C:\Users\tv.huertas10\Documents\NetBeansProjects\Ciclo1\s1_viajes\viajes-back
-<<<<<<< HEAD
-=======
-Tue Sep 26 14:57:52 COT 2017:
- Iniciando instancia a816c00e-015e-bfc4-64b1-00000d8539d8 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\sa.silva1\AppData\Local\Temp\gfembed2757845009741992632tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@18b4aac2
-Cargado desde file:/C:/Users/sa.silva1/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_144-b01
-user.dir=C:\Users\sa.silva1\Documents\NetBeansProjects\s1_viajes\viajes-back
->>>>>>> Sergio2
-=======
->>>>>>> js.beltran14
-=======
-Tue Sep 26 19:21:28 COT 2017:
- Iniciando instancia a816c00e-015e-c0b5-b9ec-00000e4b2958 de Derby, versión The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): 
-en el directorio de base de datos C:\Users\m.rodriguez21\AppData\Local\Temp\gfembed2029733682741364155tmp\lib\databases\embedded_default con el cargador de clases sun.misc.Launcher$AppClassLoader@6bc7c054
-Cargado desde file:/C:/Users/m.rodriguez21/.m2/repository/org/glassfish/main/extras/glassfish-embedded-all/4.1/glassfish-embedded-all-4.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_144-b01
-user.dir=C:\Users\m.rodriguez21\Documents\NetBeansProjects\s1_viajes\viajes-back
->>>>>>> m.rodriguez21
 os.name=Windows 7
 os.arch=amd64
 os.version=6.1

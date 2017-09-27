@@ -21,7 +21,7 @@ public class BlogEntity extends BaseEntity
     private String comentario;
     
     @PodamExclude
-    @OneToMany(mappedBy = "blog")
+    @OneToMany
     private List<ImagenEntity> imagenes;
     
     /**
