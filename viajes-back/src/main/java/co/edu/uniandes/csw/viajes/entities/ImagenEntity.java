@@ -38,6 +38,14 @@ public class ImagenEntity extends BaseEntity{
     @PodamExclude
     @ManyToOne()
     private BlogEntity blog;
+
+    public BlogEntity getBlog() {
+        return blog;
+    }
+
+    public void setBlog(BlogEntity blog) {
+        this.blog = blog;
+    }
     
     
     /**

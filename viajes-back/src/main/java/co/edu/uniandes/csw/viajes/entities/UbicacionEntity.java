@@ -91,7 +91,7 @@ public class UbicacionEntity extends BaseEntity {
         this.pais = pais;
     }
 
-    /*
+    
     public OficinaEntity getOficina() {
         return oficina;
     }
@@ -99,7 +99,37 @@ public class UbicacionEntity extends BaseEntity {
     public void setOficina(OficinaEntity oficina) {
         this.oficina = oficina;
     }
-*/
-    
+
+    public TransporteEntity getDestino() {
+        return destino;
+    }
+
+    public EntretenimientoEntity getEntretenimiento() {
+        return entretenimiento;
+    }
+
+    public HospedajeEntity getHospedaje() {
+        return hospedaje;
+    }
+
+    public TransporteEntity getOrigen() {
+        return origen;
+    }
+
+    public void setDestino(TransporteEntity destino) {
+        this.destino = destino;
+    }
+
+    public void setEntretenimiento(EntretenimientoEntity entretenimiento) {
+        this.entretenimiento = entretenimiento;
+    }
+
+    public void setHospedaje(HospedajeEntity hospedaje) {
+        this.hospedaje = hospedaje;
+    }
+
+    public void setOrigen(TransporteEntity origen) {
+        this.origen = origen;
+    }
     
 }

@@ -5,7 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.ejb;
 
-import co.edu.uniandes.csw.viajes.entities.CompaniaEntity;
+
 import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
 import co.edu.uniandes.csw.viajes.persistence.GuiaPersistence;
 import java.util.List;
@@ -24,6 +24,7 @@ public class GuiaLogic {
    @Inject
     private GuiaPersistence persistence;
    
+   /*
     @Inject
     private CompaniaLogic companiaLogic;
     

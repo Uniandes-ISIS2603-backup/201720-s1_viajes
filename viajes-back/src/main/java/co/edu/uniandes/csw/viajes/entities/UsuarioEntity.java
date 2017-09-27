@@ -43,5 +43,27 @@ public class UsuarioEntity extends BaseEntity
         this.nombre = nombre;
     }
 
-    
+    public BlogEntity getBlog() {
+        return blog;
+    }
+
+    public List<ItinerarioEntity> getItinerario() {
+        return itinerario;
+    }
+
+    public List<TarjetaCreditoEntity> getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setBlog(BlogEntity blog) {
+        this.blog = blog;
+    }
+
+    public void setItinerario(List<ItinerarioEntity> itinerario) {
+        this.itinerario = itinerario;
+    }
+
+    public void setTarjeta(List<TarjetaCreditoEntity> tarjeta) {
+        this.tarjeta = tarjeta;
+    }    
 }

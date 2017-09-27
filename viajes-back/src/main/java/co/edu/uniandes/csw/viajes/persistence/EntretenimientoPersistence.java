@@ -65,17 +65,16 @@ public class EntretenimientoPersistence {
     }
 
     /**
-     * Devuelve todas las entretenimientoes de la base de datos.
+     * Devuelve todos los entretenimientos de la base de datos.
      *
      * @return una lista con todas las entretenimientos que encuentre en la base de
      * datos, "select u from entretenimientoEntity u" es como un "select * from
      * entretenimientoEntity;" - "SELECT * FROM table_codigo" en SQL.
      */
-    public List<EntretenimientoEntity> findAll() {
-        
+    public List<EntretenimientoEntity> findAll() {        
         // Se crea un query para buscar todas las entretenimientos en la base de datos.
         TypedQuery query = em.createQuery("select u from EntretenimientoEntity u", EntretenimientoEntity.class);
-        // Note que en el query se hace uso del método getResultList() que obtiene una lista de entretenimientoes.
+        // Note que en el query se hace uso del método getResultList() que obtiene una lista de entretenimientos.
         return query.getResultList();
     }
 }

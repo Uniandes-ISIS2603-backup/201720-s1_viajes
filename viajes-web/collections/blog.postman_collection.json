@@ -74,7 +74,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/blogs/100",
+				"url": "http://localhost:8080/viajes-web/api/blogs/1",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -118,7 +118,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/blogs/100",
+				"url": "http://localhost:8080/viajes-web/api/blogs/1",
 				"method": "PUT",
 				"header": [
 					{
@@ -174,13 +174,13 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+							"tests[\"Status code is 200\"] = responseCode.code === 204;"
 						]
 					}
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/blogs/100",
+				"url": "http://localhost:8080/viajes-web/api/blogs/1",
 				"method": "DELETE",
 				"header": [
 					{
@@ -211,7 +211,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/blogs/100",
+				"url": "http://localhost:8080/viajes-web/api/blogs/1",
 				"method": "DELETE",
 				"header": [
 					{
