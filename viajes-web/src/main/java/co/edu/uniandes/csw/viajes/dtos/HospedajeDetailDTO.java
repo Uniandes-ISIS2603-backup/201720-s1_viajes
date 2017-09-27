@@ -15,6 +15,7 @@ import co.edu.uniandes.csw.viajes.entities.HospedajeEntity;
 public class HospedajeDetailDTO extends HospedajeDTO {
     
     public HospedajeDetailDTO(){
+        super();
         
     }
     
