@@ -19,14 +19,7 @@ import javax.inject.Inject;
 public class TarjetaCreditoLogic {
     
     @Inject
-    private TarjetaCreditoPersistence persistence;
-    
-    @Inject
-    private PagoLogic pagoLogic;
-    
-    @Inject 
-    private UsuarioLogic usuarioLogic;
-    
+    private TarjetaCreditoPersistence persistence;    
     
    /**
      * Obtiene la lista de los registros de TarjetaCredito.

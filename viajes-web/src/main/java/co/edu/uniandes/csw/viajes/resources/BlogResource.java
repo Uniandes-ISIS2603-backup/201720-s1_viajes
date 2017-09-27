@@ -132,6 +132,15 @@ public class BlogResource {
         }
         blogLogic.deleteBlog(id);
     }
+    
+    @Path("{blogsId: \\d+}/imagenes")
+    public Class<BlogImagenesResource> getBlogImagenesResource(@PathParam("blogsId") Long blogsId) {
+        BlogEntity entity = blogLogic.getBlog(blogsId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /blogs/" + blogsId + "/imagenes no existe.", 404);
+        }
+        return BlogImagenesResource.class;
+    }
 
     /**
      *
