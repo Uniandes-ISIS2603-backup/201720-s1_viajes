@@ -14,6 +14,11 @@ import co.edu.uniandes.csw.viajes.entities.TarjetaCreditoEntity;
 public class TarjetaCreditoDTO {
     
     /**
+     * Id del usuario
+     */
+    private Long id;
+    
+    /**
      * Número de la cuenta
      */
     private Integer numero;
@@ -47,6 +52,22 @@ public class TarjetaCreditoDTO {
         return fondos;
     }
 
+    /**
+     * Id de la tarjeta de crédito
+     * @return id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * Cambia el id de la tarjeta de crédito
+     * @param id 
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }   
+    
     /**
      * Cambiar el número de la cuenta
      * @param numero 

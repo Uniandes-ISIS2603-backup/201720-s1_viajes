@@ -13,9 +13,25 @@ import co.edu.uniandes.csw.viajes.entities.PagoEntity;
  */
 public class PagoDTO {
     
-    private String nombre; //Nombre del usuario que hizo el pago
-    private String fecha; //Fecha en la que se realizó el pago
-    private Double valor; //Valor por el cuál se hizo el pago
+    /**
+     * Nombre del usuario que hizo el pago
+     */
+    private String nombre; 
+    
+    /**
+     * Fecha en la que se realizó el pago
+     */
+    private String fecha;
+    
+    /**
+     * Valor por el cuál se hizo el pago
+     */
+    private Double valor;
+    
+    /**
+     * Id del usuario
+     */
+    private Long id;
     
     /**
      * Constructor por defecto
@@ -48,7 +64,23 @@ public class PagoDTO {
     public String getNombre() {
         return nombre;
     }
+    
+    /**
+     * Id del pago
+     * @return id
+     */
+    public Long getId() {
+        return id;
+    }
 
+    /**
+     * Se cambia el id del pago
+     * @param id 
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }   
+    
     /**
      * Cambiar el valor del pago
      * @param valor 

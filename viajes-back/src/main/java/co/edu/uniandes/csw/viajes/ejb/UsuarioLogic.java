@@ -70,12 +70,12 @@ public class UsuarioLogic {
     
     /**
      * Actualiza la información de una instancia de Usuario.
-     *
+     * @param id Identificador de la instancia a actualizar
      * @param entity Instancia de UsuarioEntity con los nuevos datos.
      * @return Instancia de UsuarioEntity con los datos actualizados.
      * @generated
      */
-    public UsuarioEntity updateUsuario(UsuarioEntity entity) {
+    public UsuarioEntity updateUsuario(Long id, UsuarioEntity entity) {
         return persistence.update(entity);
     }
     
@@ -118,4 +118,68 @@ public class UsuarioLogic {
         }
         return null;
     } 
+    
+    /**
+     * Obtiene una instancia de ItinerarioEntity asociada a una instancia de Usuario
+     *
+     * @param usuarioId Identificador de la instancia de Usuario
+     * @param itinerariosId Identificador de la instancia de Itinerario
+     * @return El itinerario con id dado
+     * 
+     */
+    public ItinerarioEntity getItinerario(Long usuarioId, Long itinerariosId) {
+        List<ItinerarioEntity> list = getUsuario(usuarioId).getItinerarios();
+        ItinerarioEntity itinerariosEntity = new ItinerarioEntity();
+        itinerariosEntity.setId(itinerariosId);
+        int index = list.indexOf(itinerariosEntity);
+        if (index >= 0) {
+            return list.get(index);
+        }
+        return null;
+    }
+    
+    /**
+     * Asocia un Itinerario existente a un Usuario
+     *
+     * @param usuarioId Identificador de la instancia de Usuario
+     * @param itinerariosId Identificador de la instancia de Itinerario
+     * @return Instancia de ItinerarioEntity que fue asociada a Usuario
+     * 
+     */
+    public ItinerarioEntity addItinerario(Long usuarioId, Long itinerariosId) {
+        UsuarioEntity usuarioEntity = getUsuario(usuarioId);
+        ItinerarioEntity itinerariosEntity = new ItinerarioEntity();
+        itinerariosEntity.setId(itinerariosId);
+        usuarioEntity.getItinerarios().add(itinerariosEntity);
+        return getItinerario(usuarioId, itinerariosId);
+    }
+    
+    /**
+     * Remplaza las instancias de Itinerario asociadas a una instancia de Usuario
+     *
+     * @param usuarioId Identificador de la instancia de Usuario
+     * @param list Colección de instancias de ItinerarioEntity a asociar a instancia
+     * de Usuario
+     * @return Nueva colección de ItinerarioEntity asociada a la instancia de Usuario
+     * 
+     */
+    public List<ItinerarioEntity> replaceItinerarios(Long usuarioId, List<ItinerarioEntity> list) {
+        UsuarioEntity usuarioEntity = getUsuario(usuarioId);
+        usuarioEntity.setItinerarios(list);
+        return usuarioEntity.getItinerarios();
+    }
+    
+    /**
+     * Desasocia un Itinerario existente de un Usuario existente
+     *
+     * @param usuarioId Identificador de la instancia de Usuario
+     * @param itinerariosId Identificador de la instancia de Itinerario
+     * 
+     */
+    public void removeItinerario(Long usuarioId, Long itinerariosId) {
+        UsuarioEntity entity = getUsuario(usuarioId);
+        ItinerarioEntity itinerariosEntity = new ItinerarioEntity();
+        itinerariosEntity.setId(itinerariosId);
+        entity.getItinerarios().remove(itinerariosEntity);
+    }
 }

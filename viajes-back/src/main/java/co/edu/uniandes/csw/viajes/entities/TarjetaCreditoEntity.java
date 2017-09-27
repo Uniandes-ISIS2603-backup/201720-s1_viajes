@@ -75,11 +75,11 @@ public class TarjetaCreditoEntity extends BaseEntity
     
     /**
      * Agrega un nuevo pago 
-     * @param pago
+     * @param pagos
      */
-    public void setPagos(PagoEntity pago)
+    public void setPagos(List<PagoEntity> pagos)
     {
-        this.pagos.add(pago);
+        this.pagos = pagos;
     }
     
     /**

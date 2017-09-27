@@ -97,4 +97,20 @@ public class UsuarioEntity extends BaseEntity
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    /**
+     * Blog que le pertenece al usuario
+     * @return blog
+     */
+    public BlogEntity getBlog() {
+        return blog;
+    }
+
+    /**
+     * Agrega un blog al usuario
+     * @param blog 
+     */
+    public void setBlog(BlogEntity blog) {
+        this.blog = blog;
+    }    
 }

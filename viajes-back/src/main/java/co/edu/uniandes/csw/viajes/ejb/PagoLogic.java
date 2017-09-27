@@ -59,11 +59,12 @@ public class PagoLogic {
     /**
      * Actualiza la información de una instancia de Pago.
      *
+     * @param id Id del pago
      * @param entity Instancia de PagoEntity con los nuevos datos.
      * @return Instancia de PagoEntity con los datos actualizados.
      * @generated
      */
-    public PagoEntity updatePago(PagoEntity entity) {
+    public PagoEntity updatePago(Long id, PagoEntity entity) {
         return persistence.update(entity);
     }
     

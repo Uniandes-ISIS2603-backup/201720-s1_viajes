@@ -69,5 +69,6 @@ public class PagoDetailDTO extends PagoDTO
      */
     public void setTarjeta(TarjetaCreditoDTO tarjeta) {
         this.tarjeta = tarjeta;
-    }    
-}
+    }  
+    
+    }

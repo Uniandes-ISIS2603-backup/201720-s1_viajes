@@ -60,11 +60,12 @@ public class TarjetaCreditoLogic {
     /**
      * Actualiza la información de una instancia de TarjetaCredito.
      *
+     * @param id Id de la tarjeta
      * @param entity Instancia de TarjetaCreditoEntity con los nuevos datos.
      * @return Instancia de TarjetaCreditoEntity con los datos actualizados.
      * @generated
      */
-    public TarjetaCreditoEntity updateTarjetaCredito(TarjetaCreditoEntity entity) {
+    public TarjetaCreditoEntity updateTarjetaCredito(Long id,TarjetaCreditoEntity entity) {
         return persistence.update(entity);
     }
     
