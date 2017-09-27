@@ -32,9 +32,11 @@ public class TransporteEntity extends ServicioEntity
     
     private TipoTransporte tipo;
 
+    /*
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
+    */
     
     @PodamExclude
     @OneToMany(mappedBy = "transporte")
@@ -59,6 +61,7 @@ public class TransporteEntity extends ServicioEntity
     public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
+    /*
     public CompaniaEntity getCompania() {
         return compania;
     }
@@ -66,4 +69,39 @@ public class TransporteEntity extends ServicioEntity
     public void setCompañia(CompaniaEntity compania) {
         this.compania = compania;
     }    
+
+*/
+    public List<ImagenEntity> getImagenes() {
+        return imagenes;
+    }
+
+    public UbicacionEntity getOrigen() {
+        return origen;
+    }
+
+    public UbicacionEntity getDestino() {
+        return destino;
+    }
+
+    public ItinerarioEntity getItinerario() {
+        return itinerario;
+    }
+
+    public void setOrigen(UbicacionEntity origen) {
+        this.origen = origen;
+    }
+
+    public void setImagenes(List<ImagenEntity> imagenes) {
+        this.imagenes = imagenes;
+    }
+
+    public void setItinerario(ItinerarioEntity itinerario) {
+        this.itinerario = itinerario;
+    }
+
+    /*
+    public void setCompania(CompaniaEntity compania) {
+        this.compania = compania;
+    }
+    */
 }

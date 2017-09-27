@@ -45,6 +45,48 @@ public class ItinerarioEntity extends BaseEntity{
     @PodamExclude
     @OneToMany(mappedBy = "itinerario")
     private List<TransporteEntity> transportes;
+
+    public List<EntretenimientoEntity> getEntretenimientos() {
+        return entretenimientos;
+    }
+
+    public List<GuiaEntity> getGias() {
+        return gias;
+    }
+
+    public List<HospedajeEntity> getHospedajes() {
+        return hospedajes;
+    }
+
+    public List<TransporteEntity> getTransportes() {
+        return transportes;
+    }
+
+    public UsuarioEntity getUsuario() {
+        return usuario;
+    }
+
+    public void setEntretenimientos(List<EntretenimientoEntity> entretenimientos) {
+        this.entretenimientos = entretenimientos;
+    }
+
+    public void setGias(List<GuiaEntity> gias) {
+        this.gias = gias;
+    }
+
+    public void setHospedajes(List<HospedajeEntity> hospedajes) {
+        this.hospedajes = hospedajes;
+    }
+
+    public void setTransportes(List<TransporteEntity> transportes) {
+        this.transportes = transportes;
+    }
+
+    public void setUsuario(UsuarioEntity usuario) {
+        this.usuario = usuario;
+    }
+    
+    
     
     /**
      * @return the costoTotal

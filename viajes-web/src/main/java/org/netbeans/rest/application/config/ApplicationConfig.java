@@ -30,7 +30,6 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(co.edu.uniandes.csw.viajes.resources.BlogResource.class);
-        resources.add(co.edu.uniandes.csw.viajes.resources.CompaniaResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.EntretenimientoResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.GuiaResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.HospedajeResource.class);

@@ -33,10 +33,11 @@ public class HospedajeEntity extends ServicioEntity{
     @PodamExclude
     @OneToOne()
     private UbicacionEntity ubicacion;
-        
+    
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
+    
     
     @PodamExclude   
     @OneToMany(mappedBy = "hospedaje")
@@ -45,22 +46,32 @@ public class HospedajeEntity extends ServicioEntity{
     @PodamExclude
     @ManyToOne
     private ItinerarioEntity itinerario;
+
+    public UbicacionEntity getUbicacion() {
+        return ubicacion;
+    }
+
+    public ItinerarioEntity getItinerario() {
+        return itinerario;
+    }
+
+    public void setItinerario(ItinerarioEntity itinerario) {
+        this.itinerario = itinerario;
+    }
+
+    public void setUbicacion(UbicacionEntity ubicacion) {
+        this.ubicacion = ubicacion;
+    }
     
-    public TipoHospedaje getTipo() {
+   
+   public TipoHospedaje getTipo() {
         return tipo;
     }
 
     public void setTipo(TipoHospedaje tipo) {
         this.tipo = tipo;
     }
-    
-    public UbicacionEntity getUbicacion(){
-        return ubicacion;
-    }
-    
-    public void setUbicacion(UbicacionEntity ubicacion){
-        this.ubicacion = ubicacion;
-    }
+
     
     public CompaniaEntity getCompania()
     {

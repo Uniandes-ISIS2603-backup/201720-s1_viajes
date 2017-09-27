@@ -22,10 +22,12 @@ public class OficinaEntity extends BaseEntity
     private String nombreLugar;
     private String nombreEncargado;
    
+    /*
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
     
+*/
     @PodamExclude
     @OneToOne(mappedBy = "oficina")
     private UbicacionEntity ubicacion;
@@ -58,6 +60,7 @@ public class OficinaEntity extends BaseEntity
     public void setCompania(CompaniaEntity compania) {
         this.compania = compania;
     }
+*/
 
     public UbicacionEntity getUbicacion() {
         return ubicacion;
@@ -67,5 +70,5 @@ public class OficinaEntity extends BaseEntity
         this.ubicacion = ubicacion;
     }
  
-    */
+    
 }

@@ -28,6 +28,15 @@ public class BlogEntity extends BaseEntity
     @PodamExclude
     @OneToOne
     private UsuarioEntity usuario;
+
+    public UsuarioEntity getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(UsuarioEntity usuario) {
+        this.usuario = usuario;
+    }
+    
     
     public String getTitulo()
     {
