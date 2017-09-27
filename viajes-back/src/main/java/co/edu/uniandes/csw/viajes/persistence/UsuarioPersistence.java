@@ -19,6 +19,9 @@ import javax.persistence.TypedQuery;
 @Stateless
 public class UsuarioPersistence 
 {
+    /**
+     * Conexión a base de datos
+     */
     @PersistenceContext(unitName = "viajesPU")
     protected EntityManager em;
      
