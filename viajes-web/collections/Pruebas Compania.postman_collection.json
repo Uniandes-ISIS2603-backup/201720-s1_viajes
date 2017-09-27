@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Pruebas Compania",
+		"_postman_id": "98ff8580-0a8b-9128-3078-e62fe2617363",
+		"description": "Pruebas  realizadas para la clase compania con su respectivo \nget, put,post y delete",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/viajes-web/webresources/companias",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/companias",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "obtiene todas las companias\n"
+			},
+			"response": []
+		},
+		{
+			"name": "post  compania",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/companias",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"5palamateria@uniandes.edu.co\",\n    \"nombre\": \"Tatiana\",\n    \"telefono\": 39123184928,\n    \"oficinas\": []\n}"
+				},
+				"description": "Crea una compania con su info"
+			},
+			"response": []
+		},
+		{
+			"name": "get  con id ",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/companias/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Obtiene la compania con un id  dado"
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/companias/6",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "borra una comapnai  dada  un id"
+			},
+			"response": []
+		},
+		{
+			"name": "actualiza una compania  con su id",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/webresources/companias/6",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"5palamateria@uniandes.edu.co\",\n    \"nombre\": \"Andres\",\n    \"telefono\": 312415,\n    \"oficinas\": []\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
