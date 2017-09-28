@@ -22,11 +22,11 @@ public class EntretenimientoEntity extends ServicioEntity
     @PodamExclude
     @OneToMany
     private List<ImagenEntity> imagenes;
-    /**
+    
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
-    */
+    
     @PodamExclude
     @OneToOne()
     private UbicacionEntity ubicacion;

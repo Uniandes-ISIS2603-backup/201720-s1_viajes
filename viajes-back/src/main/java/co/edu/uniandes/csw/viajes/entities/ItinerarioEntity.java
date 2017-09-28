@@ -17,58 +17,114 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class ItinerarioEntity extends BaseEntity{
     
+    /**
+     * Costo del itinerario
+     */
     private int costoTotal;
     
+    /**
+     * Fecha de inicio del itinerario
+     */
     private String fechaInicial;
     
+    /**
+     * Fecha final del itinerario
+     */
     private String fechaFinal;
     
+    /**
+     * Numero de visitantes del itinerario
+     */
     private int numeroVisitantes;
 
+    /**
+     * Guias del itinerario
+     */
     @PodamExclude
     @OneToMany
     private List<GuiaEntity> guias;
         
+    /**
+     * Hospedajes en el itinerario
+     */
     @PodamExclude
     @OneToMany
     private List<HospedajeEntity> hospedajes;
      
+    /**
+     * Entretenimientos que se encuentran en el itinerario
+     */
     @PodamExclude
     @OneToMany
     private List<EntretenimientoEntity> entretenimientos;
       
+    /**
+     * Transportes que se encuentran en el itinerario
+     */
     @PodamExclude
     @OneToMany
     private List<TransporteEntity> transportes;
     
+    /**
+     * Entretenimientos que se encuentran en el itinerario
+     * @return entretenimientos
+     */
     public List<EntretenimientoEntity> getEntretenimientos() {
         return entretenimientos;
     }
 
+    /**
+     * Guias del itinerario
+     * @return guias
+     */
     public List<GuiaEntity> getGias() {
         return guias;
     }
 
+    /**
+     * Hospedajes del itinerario
+     * @return hospedajes
+     */
     public List<HospedajeEntity> getHospedajes() {
         return hospedajes;
     }
 
+    /**
+     * Transportes del itinerario
+     * @return transportes
+     */
     public List<TransporteEntity> getTransportes() {
         return transportes;
     }
 
+    /**
+     * Cambia o agrega los entretenimientos del itinerario
+     * @param entretenimientos 
+     */
     public void setEntretenimientos(List<EntretenimientoEntity> entretenimientos) {
         this.entretenimientos = entretenimientos;
     }
 
+    /**
+     * Cambia los guias del itinerario
+     * @param gias 
+     */
     public void setGias(List<GuiaEntity> gias) {
         this.guias = gias;
     }
 
+    /**
+     * Cambia los hospedajes del itinerario
+     * @param hospedajes 
+     */
     public void setHospedajes(List<HospedajeEntity> hospedajes) {
         this.hospedajes = hospedajes;
     }
 
+    /**
+     * Cambia los transportes del itinerario
+     * @param transportes 
+     */
     public void setTransportes(List<TransporteEntity> transportes) {
         this.transportes = transportes;
     }

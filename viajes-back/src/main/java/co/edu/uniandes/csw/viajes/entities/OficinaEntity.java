@@ -16,9 +16,19 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class OficinaEntity extends BaseEntity
 {
+    /**
+     * Nombre del lugar en el que se encuentra la oficina
+     */
     private String nombreLugar;
+    
+    /**
+     * Nombre del encargado de la oficina
+     */
     private String nombreEncargado;
        
+    /**
+     * Ubicacion de la oficina
+     */
     @PodamExclude
     @OneToOne
     private UbicacionEntity ubicacion;

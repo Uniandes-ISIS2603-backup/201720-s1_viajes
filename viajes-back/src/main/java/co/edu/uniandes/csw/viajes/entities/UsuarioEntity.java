@@ -13,8 +13,6 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class UsuarioEntity extends BaseEntity 
 {
-    //ATRIBUTOS
-    
     /** 
      * Nombre del usuario
      */
@@ -42,8 +40,6 @@ public class UsuarioEntity extends BaseEntity
     @OneToOne
     private BlogEntity blog;
     
-    //GETTERS/SETTERS
-    
     /**
      * Lista de itinerarios programados por el usuario
      * 
@@ -53,8 +49,7 @@ public class UsuarioEntity extends BaseEntity
     {
         return itinerario;
     }
-    
-    
+        
     /**
      * Se agregan itinerarios a la lista de itinerarios del usuario
      * @param itinerarios 

@@ -26,11 +26,14 @@ public class GuiaEntity extends  BaseEntity
     private String nombre; //Nombre del guia
     private Long calificacion; //Clasificación del guia
         
-    /**
+    
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
-    */
+    
+    /**
+     * Constructor por defecto
+     */
     public GuiaEntity()
     {        
     }
@@ -102,12 +105,11 @@ public class GuiaEntity extends  BaseEntity
      * Obtener el atributo compania
      * 
      * @return  compania
-     
+     */
      public CompaniaEntity getCompania() {
         return compania;
     }
-     */
-    
+        
      /**
      * Actualizar el atributo lenguaje
      * @param lenguaje lenguaje to set
@@ -167,13 +169,8 @@ public class GuiaEntity extends  BaseEntity
     /**
      * Actualizar el atributo compania
      * @param compania compania to set
-     
+     */
     public void setCompania(CompaniaEntity compania) {
         this.compania = compania;
     } 
-*/
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 }

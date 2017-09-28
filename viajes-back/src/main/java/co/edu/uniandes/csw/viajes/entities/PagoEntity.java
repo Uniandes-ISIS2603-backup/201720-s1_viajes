@@ -10,9 +10,7 @@ import uk.co.jemos.podam.common.PodamExclude;
  */
 @Entity
 public class PagoEntity extends BaseEntity
-{
-    //ATRIBUTOS
-    
+{    
     /**
      * Nombre del usuario que hizo el pago
      */
@@ -34,10 +32,7 @@ public class PagoEntity extends BaseEntity
     @PodamExclude
     @ManyToOne
     private TarjetaCreditoEntity tarjeta;
-    
-    
-    //GETTERS/SETTERS
-    
+        
     /**
      * Valor del pago
      * 

@@ -17,9 +17,7 @@ import uk.co.jemos.podam.common.PodamExclude;
  */
 @Entity
 public class TarjetaCreditoEntity extends BaseEntity
-{
-    //ATRIBUTOS
-    
+{    
     /**
      * Número de cuenta
      */
@@ -43,9 +41,7 @@ public class TarjetaCreditoEntity extends BaseEntity
     @PodamExclude
     @ManyToOne
     private UsuarioEntity usuario;
-    
-    //GETTERS/SETTERS   
-    
+        
     /**
      * Usuario al que le pertenece la tarjeta
      * @return usuario
