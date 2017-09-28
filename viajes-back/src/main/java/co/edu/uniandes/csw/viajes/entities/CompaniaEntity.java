@@ -14,4 +14,26 @@ import javax.persistence.Entity;
 @Entity
 public class CompaniaEntity extends BaseEntity{
         
+    /**
+    * Email  de contacto de la companñia
+    */
+    private String email; 
+    
+    /**
+    * Telefono de contacto de la compañia
+    */
+    private Long telefono; 
+    
+    /**
+    * Nombre de la compañia
+    */
+    private String nombre;
+    
+    /**
+     * Constructor de la  empresa
+     */ 
+    public CompaniaEntity()
+    {
+        
+    }       
 }
