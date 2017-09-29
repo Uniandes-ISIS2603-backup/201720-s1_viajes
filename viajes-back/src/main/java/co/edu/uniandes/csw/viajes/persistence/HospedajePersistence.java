@@ -20,7 +20,6 @@ import javax.persistence.TypedQuery;
 @Stateless
 public class HospedajePersistence {
     
-     private static final Logger LOGGER = Logger.getLogger(HospedajePersistence.class.getName());
      
      @PersistenceContext(unitName = "viajesPU")
       protected EntityManager em;
@@ -31,9 +30,7 @@ public class HospedajePersistence {
      * @return devuelve la entidad creada con un id dado por la base de datos.
      */
      public HospedajeEntity create(HospedajeEntity entity){
-         LOGGER.info("Creando un hospedaje nuevo");
          em.persist(entity);
-         LOGGER.info("Nuevo hospedaje creado");
          return entity;
         
     }
@@ -45,7 +42,6 @@ public class HospedajePersistence {
      * @return un Hospedaje con los cambios aplicados.
      */
     public HospedajeEntity update(HospedajeEntity entity){
-        LOGGER.log(Level.INFO, "Actualizando hospedaje");
         return em.merge(entity);
     }
     
@@ -57,7 +53,6 @@ public class HospedajePersistence {
      * @param id: id correspondiente al Hospedaje a borrar.
      */
     public void delete(Long id){
-        LOGGER.log(Level.INFO, "Borrando hospedaje con id ", id);
         HospedajeEntity entity = em.find(HospedajeEntity.class, id);
         em.remove(entity);
     }
@@ -68,9 +63,7 @@ public class HospedajePersistence {
      * @param id: id correspondiente al Hospedaje buscado.
      * @return un Hospedaje.
      */
-    public HospedajeEntity find(Long id){
-       LOGGER.log(Level.INFO, "Consultando hospedaje con id ", id);
-        
+    public HospedajeEntity find(Long id){       
         return em.find(HospedajeEntity.class, id);
     }
     
@@ -81,7 +74,6 @@ public class HospedajePersistence {
      * datos
      */
     public List<HospedajeEntity> findAll() {
-         LOGGER.info("Consultando todos los hospedajes");
          TypedQuery query = em.createQuery("select u from HospedajeEntity u", HospedajeEntity.class);
       
          return query.getResultList();

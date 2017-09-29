@@ -22,10 +22,10 @@ public class GuiaLogic {
       
    @Inject
     private GuiaPersistence persistence;
-   /**
+   
     @Inject
     private CompaniaLogic companiaLogic;
-    */
+   
      /**
      * Obtiene la lista de los registros de Guia.
      *

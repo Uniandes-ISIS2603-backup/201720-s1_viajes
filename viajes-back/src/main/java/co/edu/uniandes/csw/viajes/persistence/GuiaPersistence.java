@@ -24,8 +24,7 @@ import javax.persistence.TypedQuery;
 public class GuiaPersistence 
 {
 
-    private static final Logger LOGGER = Logger.getLogger(GuiaPersistence.class.getName());
-     @PersistenceContext(unitName = "viajesPU")
+    @PersistenceContext(unitName = "viajesPU")
     protected EntityManager em;
      
      
@@ -35,9 +34,7 @@ public class GuiaPersistence
      * @return devuelve la entidad creada con un id dado por la base de datos.
      */
      public GuiaEntity create(GuiaEntity entity) {
-        LOGGER.info("Creando un guia nuevo");
         em.persist(entity);
-        LOGGER.info("Se creo un  guia nuevo");
         return entity;
     }
     
@@ -49,7 +46,6 @@ public class GuiaPersistence
      * GuiaEntity;" - "SELECT * FROM table_name" en SQL.
      */
     public List<GuiaEntity> findAll() {
-        LOGGER.info("Consultando todos los guias");
         TypedQuery query = em.createQuery("select u from GuiaEntity u", GuiaEntity.class);
         return query.getResultList();
     }
@@ -61,7 +57,6 @@ public class GuiaPersistence
      * @return una compania.
      */  
     public GuiaEntity findById(Long id) {
-        LOGGER.log(Level.INFO, "Consultando guia ", id);
         return em.find(GuiaEntity.class, id);
     }
    
@@ -74,7 +69,6 @@ public class GuiaPersistence
      * @param id: id correspondiente a la compania a borrar.
      */
     public void delete(Long id) {
-        LOGGER.log(Level.INFO, "Borrando guia con id={0}", id);
         GuiaEntity entity = em.find(GuiaEntity.class, id);
         em.remove(entity);
     }
@@ -88,7 +82,6 @@ public class GuiaPersistence
      * @return una compania con los cambios aplicados.
      */
      public GuiaEntity update(GuiaEntity entity) {
-        LOGGER.log(Level.INFO, "Actualizando guia con id={0}", entity.getId());
         return em.merge(entity);
     }
      

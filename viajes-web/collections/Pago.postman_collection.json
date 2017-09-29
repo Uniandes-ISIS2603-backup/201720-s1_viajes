@@ -1,0 +1,62 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Ciclo1",
+		"_postman_id": "84b2ea0e-46d3-abcb-4d42-0dd931ae0ae9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Pagos",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/pagos",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 9,\n        \"nombre\": \"James Horan\",\n        \"valor\": 8000\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Post Pagos",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/pagos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 10,\n        \"nombre\": \"James Horan\",\n        \"valor\": 8000\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pagos",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/pagos/9",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
