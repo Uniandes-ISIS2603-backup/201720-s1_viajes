@@ -136,6 +136,8 @@ public class BlogPersistenceTest {
     BlogEntity entity = em.find(BlogEntity.class, result.getId());
     Assert.assertNotNull(entity);
     Assert.assertEquals(newEntity.getTitulo(), entity.getTitulo());
+    Assert.assertEquals(newEntity.getComentario(), entity.getComentario());
+    Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
     }
 
     /**

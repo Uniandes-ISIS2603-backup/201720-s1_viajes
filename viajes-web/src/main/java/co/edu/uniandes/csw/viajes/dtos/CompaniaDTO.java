@@ -126,7 +126,7 @@ public class CompaniaDTO {
      *Convertir un DTO a un Entity
      * @return un Entity de los  valores del DTO
      */
-    public CompaniaEntity toEntiy()
+    public CompaniaEntity toEntity()
     {
         CompaniaEntity entity= new CompaniaEntity();
         entity.setId(id);

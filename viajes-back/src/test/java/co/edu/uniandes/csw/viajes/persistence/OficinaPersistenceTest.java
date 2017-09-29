@@ -137,6 +137,8 @@ public class OficinaPersistenceTest {
     OficinaEntity entity = em.find(OficinaEntity.class, result.getId());
     Assert.assertNotNull(entity);
     Assert.assertEquals(newEntity.getNombreLugar(), entity.getNombreLugar());
+    Assert.assertEquals(newEntity.getNombreEncargado(), entity.getNombreEncargado());
+    Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
     }
 
     /**
@@ -177,6 +179,8 @@ public class OficinaPersistenceTest {
     OficinaEntity newEntity = persistence.find(entity.getId());
     Assert.assertNotNull(newEntity);
     Assert.assertEquals(entity.getNombreLugar(), newEntity.getNombreLugar());
+    Assert.assertEquals(entity.getNombreEncargado(), newEntity.getNombreEncargado());
+    Assert.assertEquals(entity.getUbicacion(), newEntity.getUbicacion());
     }
 
     /**
