@@ -1,0 +1,53 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CUsu",
+		"_postman_id": "c4361f3a-22f3-3c4d-b3de-81247b53b5c3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Usuario",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/usuarios",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Post Usuario",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/usuarios",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 2000,\n        \"nombre\": \"Tatiana Huertas\",\n        \"itinerario\": [],\n        \"tarjeta\": []\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Usuario",
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/usuarios/409",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
