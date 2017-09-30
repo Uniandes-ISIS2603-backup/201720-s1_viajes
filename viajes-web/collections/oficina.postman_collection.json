@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "oficina",
-		"_postman_id": "5b07d247-92af-74e3-b28a-5d9287cb09c2",
+		"_postman_id": "ccd3a111-2075-a03a-e6d4-3eb956b5738b",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -24,7 +24,10 @@
 				"url": "http://localhost:8080/viajes-web/api/oficinas",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -74,10 +77,13 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/oficinas/1",
+				"url": "http://localhost:8080/viajes-web/api/oficinas/100",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -99,7 +105,10 @@
 				"url": "http://localhost:8080/viajes-web/api/oficinas/500",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -118,7 +127,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/oficinas/1",
+				"url": "http://localhost:8080/viajes-web/api/oficinas/100",
 				"method": "PUT",
 				"header": [
 					{
@@ -180,7 +189,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/oficinas/1",
+				"url": "http://localhost:8080/viajes-web/api/oficinas/100",
 				"method": "DELETE",
 				"header": [
 					{

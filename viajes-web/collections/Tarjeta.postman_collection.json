@@ -1,25 +1,50 @@
 {
 	"variables": [],
 	"info": {
-		"name": "CTar",
-		"_postman_id": "238a45e7-9be8-0508-e8aa-44950b1f2d94",
+		"name": "Tarjeta",
+		"_postman_id": "b19af826-8c47-6bba-034c-4d8878700183",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Get Tarjetas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": "http://localhost:8080/viajes-web/api/tarjetas",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
 		},
 		{
 			"name": "Post Tarjetas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": "http://localhost:8080/viajes-web/api/tarjetas",
 				"method": "POST",
@@ -40,11 +65,25 @@
 		},
 		{
 			"name": "Delete Tarjeta",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": "http://localhost:8080/viajes-web/api/tarjetas/405",
 				"method": "DELETE",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []

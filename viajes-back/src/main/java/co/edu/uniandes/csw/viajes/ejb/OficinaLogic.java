@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.viajes.ejb;
 
 import co.edu.uniandes.csw.viajes.entities.OficinaEntity;
+import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
 import co.edu.uniandes.csw.viajes.persistence.OficinaPersistence;
 import java.util.List;
 import java.util.logging.Level;
@@ -97,5 +98,6 @@ public class OficinaLogic {
         persistence.delete(id);
         LOGGER.log(Level.INFO, "Termina proceso de borrar oficina con id={0}", id);
     }
-    
+
+       
 }

@@ -1,14 +1,25 @@
 {
 	"variables": [],
 	"info": {
-		"name": "CUsu",
-		"_postman_id": "c4361f3a-22f3-3c4d-b3de-81247b53b5c3",
+		"name": "Usuario",
+		"_postman_id": "f7b3b39d-4ec3-8d74-0518-7bea015a953e",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Get Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": "http://localhost:8080/viajes-web/api/usuarios",
 				"method": "GET",
@@ -20,6 +31,17 @@
 		},
 		{
 			"name": "Post Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": "http://localhost:8080/viajes-web/api/usuarios",
 				"method": "POST",
@@ -40,6 +62,17 @@
 		},
 		{
 			"name": "Delete Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
 			"request": {
 				"url": "http://localhost:8080/viajes-web/api/usuarios/409",
 				"method": "DELETE",

@@ -1,16 +1,27 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Pruebas Compania",
-		"_postman_id": "98ff8580-0a8b-9128-3078-e62fe2617363",
+		"name": "Compania",
+		"_postman_id": "b6d20f59-0854-4c16-daed-586b57bc3aa2",
 		"description": "Pruebas  realizadas para la clase compania con su respectivo \nget, put,post y delete",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/viajes-web/webresources/companias",
+			"name": "Consultar compañias",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/companias",
+				"url": "http://localhost:8080/viajes-web/api/companias",
 				"method": "GET",
 				"header": [
 					{
@@ -29,8 +40,19 @@
 		},
 		{
 			"name": "post  compania",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/companias",
+				"url": "http://localhost:8080/viajes-web/api/companias",
 				"method": "POST",
 				"header": [
 					{
@@ -49,8 +71,19 @@
 		},
 		{
 			"name": "get  con id ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/companias/1",
+				"url": "http://localhost:8080/viajes-web/api/companias/12",
 				"method": "GET",
 				"header": [
 					{
@@ -69,8 +102,19 @@
 		},
 		{
 			"name": "delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/companias/6",
+				"url": "http://localhost:8080/viajes-web/api/companias/12",
 				"method": "DELETE",
 				"header": [
 					{
@@ -89,8 +133,19 @@
 		},
 		{
 			"name": "actualiza una compania  con su id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/companias/6",
+				"url": "http://localhost:8080/viajes-web/api/companias/13",
 				"method": "PUT",
 				"header": [
 					{

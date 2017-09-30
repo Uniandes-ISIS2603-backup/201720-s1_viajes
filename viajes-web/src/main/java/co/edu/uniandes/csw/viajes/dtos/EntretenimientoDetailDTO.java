@@ -27,7 +27,7 @@ public class EntretenimientoDetailDTO extends EntretenimientoDTO{
     /*
     * Relación a una ubicacion
     */
-    //private CompaniaDTO compania;
+    private CompaniaDTO compania;
     
     /**
      * Constructor por defecto
@@ -55,12 +55,12 @@ public class EntretenimientoDetailDTO extends EntretenimientoDTO{
         } else {
             entity.setUbicacion(null);
         }
-        /*if (entity.getCompania() != null) {
-            this.ubicacion = new CompaniaDTO(entity.getCompania());
+       if (entity.getCompania() != null) {
+            this.compania = new CompaniaDTO(entity.getCompania());
         } else {
-            entity.setUbicacion(null);
+            entity.setCompania(null);
         }
-        */
+        
     }
 
     /**
@@ -84,10 +84,10 @@ public class EntretenimientoDetailDTO extends EntretenimientoDTO{
             entretenimientoE.setUbicacion(this.getUbicacion().toEntity());
         }
         
-        /*if (this.getCompania() != null) {
-            entretenimientoE.setUbicacion(this.getCompania().toEntity());
+        if (this.getCompania() != null) {
+            entretenimientoE.setCompania(this.getCompania().toEntity());
         }
-        */
+        
         return entretenimientoE;
     }
     
@@ -113,12 +113,12 @@ public class EntretenimientoDetailDTO extends EntretenimientoDTO{
         return ubicacion;
     }
     
-    /*public void setCompania(CompaniaDTO compania) {
+    public void setCompania(CompaniaDTO compania) {
         this.compania = compania;
     }
 
     public CompaniaDTO getCompania() {
         return compania;
     }
-    */
+    
 }

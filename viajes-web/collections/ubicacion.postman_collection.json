@@ -1,8 +1,8 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Pruebas REST Ubicacion",
-		"_postman_id": "ff3542e1-767e-0762-3fa6-79414dedbbad",
+		"name": "Ubicacion",
+		"_postman_id": "4bed0f58-8fbd-a262-0837-8c9b3656a31b",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},

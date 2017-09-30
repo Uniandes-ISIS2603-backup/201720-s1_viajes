@@ -47,7 +47,6 @@ public class EntretenimientoEntity extends ServicioEntity
         this.ubicacion = ubicacion;
     }
 
-    /**
     public CompaniaEntity getCompania()
     {
         return compania;
@@ -57,7 +56,7 @@ public class EntretenimientoEntity extends ServicioEntity
     {
         this.compania = compania;
     }
-       */ 
+       
     /**
      * @return las imagenes
      */

@@ -1,8 +1,8 @@
 {
 	"variables": [],
 	"info": {
-		"name": "ItinerariosCollection",
-		"_postman_id": "fbb3a2f8-acc4-5060-33fe-166bc076b740",
+		"name": "Itinerarios",
+		"_postman_id": "58a91fd7-86a8-3718-19b1-5ba5572a7295",
 		"description": "get, post, getid",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -21,7 +21,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/itinerarios",
+				"url": "http://localhost:8080/viajes-web/api/itinerarios",
 				"method": "GET",
 				"header": [
 					{
@@ -52,7 +52,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/itinerarios/1",
+				"url": "http://localhost:8080/viajes-web/api/itinerarios/100",
 				"method": "GET",
 				"header": [
 					{
@@ -83,7 +83,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/itinerarios",
+				"url": "http://localhost:8080/viajes-web/api/itinerarios",
 				"method": "POST",
 				"header": [
 					{

@@ -39,7 +39,20 @@ public class CompaniaDTO {
    {
        
    }
-
+    
+    /**
+     * Conviertir Entity a DTO
+     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
+     * @param compania:Es la entidad que se va a convertir a DTO 
+     */
+    public CompaniaDTO(CompaniaEntity compania)
+    {
+        this.id=compania.getId();
+        this.email=compania.getEmail();
+        this.nombre=compania.getNombre();
+        this.telefono=compania.getTelefono();
+    }
+    
     /**
      * Obtener el atributo id
      * 
@@ -110,23 +123,10 @@ public class CompaniaDTO {
     }
     
     /**
-     * Conviertir Entity a DTO
-     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
-     * @param compania:Es la entidad que se va a convertir a DTO 
-     */
-    public CompaniaDTO(CompaniaEntity compania)
-    {
-        this.id=compania.getId();
-        this.email=compania.getEmail();
-        this.nombre=compania.getNombre();
-        this.telefono=compania.getTelefono();
-    }
-    
-    /**
      *Convertir un DTO a un Entity
      * @return un Entity de los  valores del DTO
      */
-    public CompaniaEntity toEntiy()
+    public CompaniaEntity toEntity()
     {
         CompaniaEntity entity= new CompaniaEntity();
         entity.setId(id);

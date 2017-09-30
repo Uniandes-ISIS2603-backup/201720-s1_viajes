@@ -51,7 +51,7 @@ public class CompaniaDetailDTO extends CompaniaDTO{
      */
     public CompaniaEntity toEntity()
     {
-        CompaniaEntity companiaE= super.toEntiy();
+        CompaniaEntity companiaE= super.toEntity();
         if (oficinas!=null) {
             List<OficinaEntity> oficinaEntity= new ArrayList<>();
             for(OficinaDTO dtoOficina : oficinas)

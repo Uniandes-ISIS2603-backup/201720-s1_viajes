@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "blog",
-		"_postman_id": "02cddfdf-bdb6-5e80-d171-324ed9c8edbf",
+		"_postman_id": "9909a011-e453-8691-1c4e-8b371197990d",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -24,7 +24,10 @@
 				"url": "http://localhost:8080/viajes-web/api/blogs",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -74,7 +77,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/blogs/1",
+				"url": "http://localhost:8080/viajes-web/api/blogs/100",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -99,7 +102,10 @@
 				"url": "http://localhost:8080/viajes-web/api/blogs/500",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -118,7 +124,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/blogs/1",
+				"url": "http://localhost:8080/viajes-web/api/blogs/100",
 				"method": "PUT",
 				"header": [
 					{
@@ -180,7 +186,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/blogs/1",
+				"url": "http://localhost:8080/viajes-web/api/blogs/100",
 				"method": "DELETE",
 				"header": [
 					{
@@ -211,7 +217,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/blogs/1",
+				"url": "http://localhost:8080/viajes-web/api/blogs/100",
 				"method": "DELETE",
 				"header": [
 					{

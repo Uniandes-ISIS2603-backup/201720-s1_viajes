@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.viajes.ejb;
 
 import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
+import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import co.edu.uniandes.csw.viajes.persistence.EntretenimientoPersistence;
 import java.util.List;
 import java.util.logging.Level;
@@ -98,4 +99,80 @@ public class EntretenimientoLogic {
         LOGGER.log(Level.INFO, "Termina proceso de borrar entretenimiento con id={0}", id);
     }
     
+    /**
+     * Obtiene una colección de instancias de ImagenEntity asociadas a una
+     * instancia de Entretenimiento
+     *
+     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @return Colección de instancias de ImagenEntity asociadas a la instancia
+     * de Entretenimiento
+     * 
+     */
+    public List<ImagenEntity> listImagenes(Long entretenimientoId) {
+        return getEntretenimiento(entretenimientoId).getImagenes();
+    }
+
+    /**
+     * Obtiene una instancia de ImagenEntity asociada a una instancia de Entretenimiento
+     *
+     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @param imagenesId Identificador de la instancia de Imagen
+     * @return La imagen con id dado
+     * 
+     */
+    public ImagenEntity getImagen(Long entretenimientoId, Long imagenesId) {
+        List<ImagenEntity> list = getEntretenimiento(entretenimientoId).getImagenes();
+        ImagenEntity imagenesEntity = new ImagenEntity();
+        imagenesEntity.setId(imagenesId);
+        int index = list.indexOf(imagenesEntity);
+        if (index >= 0) {
+            return list.get(index);
+        }
+        return null;
+    }
+
+    /**
+     * Asocia una Imagen existente a un Entretenimiento
+     *
+     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @param imagenesId Identificador de la instancia de Imagen
+     * @return Instancia de ImagenEntity que fue asociada a Entretenimiento
+     * 
+     */
+    public ImagenEntity addImagen(Long entretenimientoId, Long imagenesId) {
+        EntretenimientoEntity entretenimientoEntity = getEntretenimiento(entretenimientoId);
+        ImagenEntity imagenesEntity = new ImagenEntity();
+        imagenesEntity.setId(imagenesId);
+        entretenimientoEntity.getImagenes().add(imagenesEntity);
+        return getImagen(entretenimientoId, imagenesId);
+    }
+
+    /**
+     * Remplaza las instancias de Imagen asociadas a una instancia de Entretenimiento
+     *
+     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @param list Colección de instancias de ImagenEntity a asociar a instancia
+     * de Entretenimiento
+     * @return Nueva colección de ImagenEntity asociada a la instancia de Entretenimiento
+     * 
+     */
+    public List<ImagenEntity> replaceImagenes(Long entretenimientoId, List<ImagenEntity> list) {
+        EntretenimientoEntity entretenimientoEntity = getEntretenimiento(entretenimientoId);
+        entretenimientoEntity.setImagenes(list);
+        return entretenimientoEntity.getImagenes();
+    }
+
+    /**
+     * Desasocia un Imagen existente de un Entretenimiento existente
+     *
+     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @param imagenesId Identificador de la instancia de Imagen
+     * 
+     */
+    public void removeImagen(Long entretenimientoId, Long imagenesId) {
+        EntretenimientoEntity entity = getEntretenimiento(entretenimientoId);
+        ImagenEntity imagenesEntity = new ImagenEntity();
+        imagenesEntity.setId(imagenesId);
+        entity.getImagenes().remove(imagenesEntity);
+    }
 }
