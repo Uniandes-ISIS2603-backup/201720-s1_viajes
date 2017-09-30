@@ -1,8 +1,8 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Pruebas REST Hospedaje",
-		"_postman_id": "4053aec2-bf75-80ce-b03b-1ff080628af6",
+		"name": "Hospedaje",
+		"_postman_id": "dd091c86-4978-6e21-d320-2484f1e7c351",
 		"description": "Pruebas del REST para la entidad Hospedaje",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},

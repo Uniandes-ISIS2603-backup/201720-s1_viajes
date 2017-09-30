@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "entretenimiento",
-		"_postman_id": "ace889e2-0cea-59d3-556a-2e961ef4ad85",
+		"_postman_id": "76b45e6a-122e-a3e9-0a31-aa8624d3b8fa",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -24,7 +24,10 @@
 				"url": "http://localhost:8080/viajes-web/api/entretenimientos",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -74,7 +77,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/entretenimientos/1",
+				"url": "http://localhost:8080/viajes-web/api/entretenimientos/100",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -99,7 +102,10 @@
 				"url": "http://localhost:8080/viajes-web/api/entretenimientos/500",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -118,7 +124,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/entretenimientos/1",
+				"url": "http://localhost:8080/viajes-web/api/entretenimientos/100",
 				"method": "PUT",
 				"header": [
 					{
@@ -180,7 +186,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/entretenimientos/1",
+				"url": "http://localhost:8080/viajes-web/api/entretenimientos/100",
 				"method": "DELETE",
 				"header": [
 					{
@@ -211,7 +217,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/api/entretenimientos/1",
+				"url": "http://localhost:8080/viajes-web/api/entretenimientos/100",
 				"method": "DELETE",
 				"header": [
 					{

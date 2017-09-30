@@ -17,38 +17,32 @@ delete from TransporteEntity;
 delete from UbicacionEntity;
 delete from UsuarioEntity;
 delete from BlogEntity;
-delete from BlogEntity;
 delete from EntretenimientoEntity;
 delete from OficinaEntity;
+delete from GuiaEntity;
+delete from ItinerarioEntity;
 
+insert into BlogEntity (id, titulo, comentario) values (100,'Mi primer blog', 'No se que escribir');
+insert into BlogEntity (id, titulo, comentario) values (200,'Hello world!', 'I wanna be the very best');
 
-insert into BlogEntity (id, titulo, comentario) values (1,'Mi primer blog', 'No se que escribir');
-insert into BlogEntity (id, titulo, comentario) values (2,'Hello world!', 'I wanna be the very best');
-
-
-insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (3,'Oficina Avianca Chapinero', 'Alfonso Lopez');
-insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (4,'Edificio Sotomayor SATENA', 'Gonzalo Jimenez');
+insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (100,'Oficina Avianca Chapinero', 'Alfonso Lopez');
+insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (400,'Edificio Sotomayor SATENA', 'Gonzalo Jimenez');
 
 insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
-values (5, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
+values (100, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
 insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
-values (6, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
-
+values (600, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
 
 insert into BlogEntity (id, titulo, comentario) values (7,'Mi primer blog', 'No se que escribir');
 insert into BlogEntity (id, titulo, comentario) values (8,'Hello world!', 'I wanna be the very best');
 
-delete from OficinaEntity;
-
-insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (9,'Oficina Avianca Chapinero', 'Alfonso Lopez');
+insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (900,'Oficina Avianca Chapinero', 'Alfonso Lopez');
 insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (10,'Edificio Sotomayor SATENA', 'Gonzalo Jimenez');
-
 
 insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
 values (11, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
 insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
 values (12, 'Fiesta en la casa de tatiana', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
-
 
 insert into UsuarioEntity (id, nombre)
 values (409, 'Tatiana Huertas');
@@ -57,13 +51,12 @@ insert into UsuarioEntity (id, nombre)
 values (410, 'Mariana Rodriguez');
 
 insert into UbicacionEntity (ID, LONGITUD, LATITUD, NOMBRE, DIRECCION, CIUDAD, PAIS)
- values (9, 12.0, 13.0, 'Hola', 'Calle', 'Bogota', 'Colombia');
+ values (2, 12.0, 13.0, 'Hola', 'Calle', 'Bogota', 'Colombia');
 insert into UbicacionEntity (ID, LONGITUD, LATITUD, NOMBRE, DIRECCION, CIUDAD, PAIS)
- values (12, 15.0, 16.0, 'Quiai', 'Avenida', 'Medellín', 'Colombia');
+ values (1, 15.0, 16.0, 'Quiai', 'Avenida', 'Medellín', 'Colombia');
 
-
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (1, 'Santa fe es muy malo', 15000.158);
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (2, 'Eliminados de la sudamericana', 6550.56);
+insert into TransporteEntity (ID, NOMBRE, VALOR) values (100, 'Santa fe es muy malo', 15000.158);
+insert into TransporteEntity (ID, NOMBRE, VALOR) values (200, 'Eliminados de la sudamericana', 6550.56);
 
 insert into TarjetaCreditoEntity (id, numero, fondos)
 values (405, 1073175780, 900000000);
@@ -91,3 +84,11 @@ values (200, 'Hotel Petunias', '17/11/2017 16:30', '17/11/2017 22:30', 500, 7, '
 
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (16,'Hola 1','Ruta1');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Hola 2','Ruta2');
+
+insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (100,'01/01/17','02/02/17',1000,1);
+insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (200,'02/02/17','03/03/17',2000,2);
+
+insert into GuiaEntity(ID, CALIFICACION, CONTRATOHORA, LENGUAJE, NOMBRE, COMPANIA_ID) values (100,5,1000,'FRANCES','SEBASTIAN',13);
+insert into GuiaEntity(ID, CALIFICACION, CONTRATOHORA, LENGUAJE, NOMBRE, COMPANIA_ID) values (200,4,500,'ITALIANO','SEBASTIAN',13);
+insert into GuiaEntity(ID, CALIFICACION, CONTRATOHORA, LENGUAJE, NOMBRE, COMPANIA_ID) values (300,5,1000,'FRANCES','SEBASTIAN',13);
+insert into GuiaEntity(ID, CALIFICACION, CONTRATOHORA, LENGUAJE, NOMBRE, COMPANIA_ID) values (400,4,500,'ITALIANO','SEBASTIAN',13);

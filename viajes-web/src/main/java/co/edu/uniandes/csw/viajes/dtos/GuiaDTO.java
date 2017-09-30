@@ -21,8 +21,7 @@ public class GuiaDTO {
     private String fechaInicio; //Fecha  de inicio del servicio de guia
     private String fechaFinal; //Fecha  del final del servicio de guia
     private Long calificacion; //Clasificación del guia
-    
-    
+        
     /**
      * Constructor por defecto
      */
@@ -31,6 +30,24 @@ public class GuiaDTO {
         
     }
     
+    /**
+     * Conviertir Entity a DTO
+     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
+     * @param guia:Es la entidad que se va a convertir a DTO 
+     */
+     public GuiaDTO(GuiaEntity guia) {
+         if (guia!=null) {
+        this.id = guia.getId();
+        this.nombre = guia.getNombre();
+        this.lenguaje=guia.getLenguaje();
+        this.calificacion=guia.getCalificacion();
+        this.valor=guia.getValor();
+        this.contratoHora=guia.getContratoHora();
+        this.fechaFinal=guia.getFechaFinal();
+        this.fechaInicio=guia.getFechaInicio();
+         }
+        
+    }
      /**
      * Obtiene el atributo nombre.
      *
@@ -182,7 +199,6 @@ public class GuiaDTO {
     public void setFechaFinal(String fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
-
     
      /**
      * Establece el valor del atributo calificacion.
@@ -193,27 +209,8 @@ public class GuiaDTO {
     public void setCalificacion(Long calificacion) {
         this.calificacion = calificacion;
     }
-    
+   
     /**
-     * Conviertir Entity a DTO
-     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
-     * @param guia:Es la entidad que se va a convertir a DTO 
-     */
-     public GuiaDTO(GuiaEntity guia) {
-         if (guia!=null) {
-        this.id = guia.getId();
-        this.nombre = guia.getNombre();
-        this.lenguaje=guia.getLenguaje();
-        this.calificacion=guia.getCalificacion();
-        this.valor=guia.getValor();
-        this.contratoHora=guia.getContratoHora();
-        this.fechaFinal=guia.getFechaFinal();
-        this.fechaInicio=guia.getFechaInicio();
-         }
-        
-    }
-    
-      /**
      * Convertir DTO a Entity
      * @return Un Entity con los valores del DTO 
      */

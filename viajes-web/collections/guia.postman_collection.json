@@ -1,8 +1,8 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Pruebas Guia",
-		"_postman_id": "036108b2-9015-39d8-2d19-da87126248fa",
+		"name": "Guia",
+		"_postman_id": "04220806-67a9-79f8-1bde-fe4fc8a775a3",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -21,7 +21,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/guias/3",
+				"url": "http://localhost:8080/viajes-web/api/guias/100",
 				"method": "DELETE",
 				"header": [
 					{
@@ -40,8 +40,19 @@
 		},
 		{
 			"name": "put ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/guias/3",
+				"url": "http://localhost:8080/viajes-web/api/guias/300",
 				"method": "PUT",
 				"header": [
 					{
@@ -60,8 +71,19 @@
 		},
 		{
 			"name": "Put guia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/guias",
+				"url": "http://localhost:8080/viajes-web/api/guias",
 				"method": "POST",
 				"header": [
 					{
@@ -92,7 +114,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/guias",
+				"url": "http://localhost:8080/viajes-web/api/guias",
 				"method": "GET",
 				"header": [
 					{
@@ -123,7 +145,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/guias/2",
+				"url": "http://localhost:8080/viajes-web/api/guias/200",
 				"method": "GET",
 				"header": [
 					{
