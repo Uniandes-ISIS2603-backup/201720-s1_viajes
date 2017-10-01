@@ -176,18 +176,14 @@ public class UsuarioPersistenceTest
         
         UsuarioEntity entity2 = usuarioPersistence.findByName(entity.getNombre());
         Assert.assertNotNull(entity2);
+        entity2 = null;
+        Assert.assertNull(entity2);
 
         Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getId(), newEntity.getId());
         Assert.assertEquals(entity.getItinerarios(), newEntity.getItinerarios());
         Assert.assertEquals(entity.getTarjetas(), newEntity.getTarjetas());
-        Assert.assertEquals(entity.getBlog(), newEntity.getBlog());
-        
-        Assert.assertEquals(entity.getNombre(), entity2.getNombre());
-        Assert.assertEquals(entity.getId(), entity2.getId());
-        Assert.assertEquals(entity.getItinerarios(), entity2.getItinerarios());
-        Assert.assertEquals(entity.getTarjetas(), entity2.getTarjetas());
-        Assert.assertEquals(entity.getBlog(), entity2.getBlog());
+        Assert.assertEquals(entity.getBlog(), newEntity.getBlog());        
     }
 
      /**

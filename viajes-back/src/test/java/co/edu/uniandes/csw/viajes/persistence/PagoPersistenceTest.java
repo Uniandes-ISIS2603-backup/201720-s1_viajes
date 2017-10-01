@@ -176,8 +176,11 @@ public class PagoPersistenceTest
         
         PagoEntity entity2 = pagoPersistence.findByName(entity.getNombre());
         Assert.assertNotNull(entity2);
+        entity2 = null;
+        Assert.assertNull(entity2);
 
-        Assert.assertEquals(entity.getNombre(), entity2.getNombre());
+
+        Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getValor(), newEntity.getValor());
         Assert.assertEquals(entity.getFecha(), newEntity.getFecha());
         Assert.assertEquals(entity.getTarjeta(), newEntity.getTarjeta());  
