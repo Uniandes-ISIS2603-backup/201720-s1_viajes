@@ -130,7 +130,8 @@ public class ImagenPersistenceTest {
         ImagenEntity entity = em.find(ImagenEntity.class, result.getId());
         Assert.assertNotNull(entity);
         Assert.assertEquals(newEntity.getRuta(), entity.getRuta());
-        Assert.assertEquals(newEntity.getComentario(), entity.getComentario());
+        Assert.assertEquals(newEntity.getComentario(), entity.getComentario());        
+        Assert.assertEquals(newEntity.equals(entity), entity.equals(newEntity));
     }
 
     /**

@@ -136,6 +136,15 @@ public class EntretenimientoPersistenceTest {
     EntretenimientoEntity entity = em.find(EntretenimientoEntity.class, result.getId());
     Assert.assertNotNull(entity);
     Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
+    Assert.assertEquals(newEntity.getFechaInicio(), entity.getFechaInicio());
+    Assert.assertEquals(newEntity.getFechaFinal(), entity.getFechaFinal());
+    Assert.assertEquals(newEntity.getValor(), entity.getValor());
+    Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
+    Assert.assertEquals(newEntity.getComentarios(), entity.getComentarios());
+    Assert.assertEquals(newEntity.getDescripcion(), entity.getDescripcion());
+    Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
+    Assert.assertEquals(newEntity.getCompania(), entity.getCompania());
+    Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
     }
 
     /**
@@ -154,6 +163,15 @@ public class EntretenimientoPersistenceTest {
     EntretenimientoEntity resp = em.find(EntretenimientoEntity.class, entity.getId());
 
     Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
+    Assert.assertEquals(newEntity.getFechaInicio(), resp.getFechaInicio());
+    Assert.assertEquals(newEntity.getFechaFinal(), resp.getFechaFinal());
+    Assert.assertEquals(newEntity.getValor(), resp.getValor());
+    Assert.assertEquals(newEntity.getCalificacion(), resp.getCalificacion());
+    Assert.assertEquals(newEntity.getComentarios(), resp.getComentarios());
+    Assert.assertEquals(newEntity.getDescripcion(), resp.getDescripcion());
+    Assert.assertEquals(newEntity.getImagenes(), resp.getImagenes());
+    Assert.assertEquals(newEntity.getCompania(), resp.getCompania());
+    Assert.assertEquals(newEntity.getUbicacion(), resp.getUbicacion());
     }
 
     /**
@@ -176,6 +194,15 @@ public class EntretenimientoPersistenceTest {
     EntretenimientoEntity newEntity = persistence.find(entity.getId());
     Assert.assertNotNull(newEntity);
     Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
+    Assert.assertEquals(entity.getFechaInicio(), newEntity.getFechaInicio());
+    Assert.assertEquals(entity.getFechaFinal(), newEntity.getFechaFinal());
+    Assert.assertEquals(entity.getValor(), newEntity.getValor());
+    Assert.assertEquals(entity.getCalificacion(), newEntity.getCalificacion());
+    Assert.assertEquals(entity.getComentarios(), newEntity.getComentarios());
+    Assert.assertEquals(entity.getDescripcion(), newEntity.getDescripcion());
+    Assert.assertEquals(entity.getImagenes(), newEntity.getImagenes());
+    Assert.assertEquals(entity.getCompania(), newEntity.getCompania());
+    Assert.assertEquals(entity.getUbicacion(), newEntity.getUbicacion());
     }
 
     /**
@@ -194,6 +221,5 @@ public class EntretenimientoPersistenceTest {
         }
         Assert.assertTrue(found);
     }
-    }
-    
+    }    
 }

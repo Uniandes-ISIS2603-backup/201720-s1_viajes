@@ -77,5 +77,4 @@ public class BlogPersistence {
         // Note que en el query se hace uso del método getResultList() que obtiene una lista de blogs.
         return query.getResultList();
     }
-
 }

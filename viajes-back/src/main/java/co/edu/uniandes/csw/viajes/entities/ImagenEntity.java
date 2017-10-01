@@ -47,17 +47,4 @@ public class ImagenEntity extends BaseEntity{
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
-    
-    /**
-     * Overide 
-     * @param obj
-     * @return True or false
-     */
-    @Override
-    public boolean equals(Object obj) {
-        if (this.getId() != null && ((ImagenEntity) obj).getId() != null) {
-            return this.getId().equals(((ImagenEntity) obj).getId());
-        }
-        return super.equals(obj);
-    }
 }

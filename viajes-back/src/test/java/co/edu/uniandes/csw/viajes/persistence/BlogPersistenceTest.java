@@ -156,6 +156,8 @@ public class BlogPersistenceTest {
     BlogEntity resp = em.find(BlogEntity.class, entity.getId());
 
     Assert.assertEquals(newEntity.getTitulo(), resp.getTitulo());
+    Assert.assertEquals(newEntity.getComentario(), resp.getComentario());
+    Assert.assertEquals(newEntity.getImagenes(), resp.getImagenes());
     }
 
     /**
@@ -178,6 +180,8 @@ public class BlogPersistenceTest {
     BlogEntity newEntity = persistence.find(entity.getId());
     Assert.assertNotNull(newEntity);
     Assert.assertEquals(entity.getTitulo(), newEntity.getTitulo());
+    Assert.assertEquals(entity.getComentario(), newEntity.getComentario());
+    Assert.assertEquals(entity.getImagenes(), newEntity.getImagenes());
     }
 
     /**
