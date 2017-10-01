@@ -132,16 +132,17 @@ public class TransportePersistenceTest {
 
         TransporteEntity entity = em.find(TransporteEntity.class, result.getId());
 
-       
         Assert.assertEquals(newEntity.getValor(), entity.getValor());
         Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
-        /*
+        Assert.assertEquals(newEntity.getCompania(), entity.getCompania());
+        Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
+        Assert.assertEquals(newEntity.getOrigen(), entity.getOrigen());
+        Assert.assertEquals(newEntity.getDestino(), entity.getDestino());
         Assert.assertEquals(newEntity.getFechaInicio(), entity.getFechaInicio());
         Assert.assertEquals(newEntity.getFechaFinal(), entity.getFechaFinal());
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
         Assert.assertEquals(newEntity.getComentarios(), entity.getComentarios());
-        */
     }
 
     /**
@@ -176,13 +177,15 @@ public class TransportePersistenceTest {
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(entity.getValor(), newEntity.getValor());
         Assert.assertEquals(entity.getTipo(), newEntity.getTipo());
-        /*
+        Assert.assertEquals(entity.getCompania(), newEntity.getCompania());
+        Assert.assertEquals(entity.getImagenes(), newEntity.getImagenes());
+        Assert.assertEquals(entity.getOrigen(), newEntity.getOrigen());
+        Assert.assertEquals(entity.getDestino(), newEntity.getDestino());
         Assert.assertEquals(entity.getFechaInicio(), newEntity.getFechaInicio());
         Assert.assertEquals(entity.getFechaFinal(), newEntity.getFechaFinal());
         Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getCalificacion(), newEntity.getCalificacion());
         Assert.assertEquals(entity.getComentarios(), newEntity.getComentarios());
-        */
     }
 
     /**
@@ -217,14 +220,14 @@ public class TransportePersistenceTest {
 
         Assert.assertEquals(newEntity.getValor(), resp.getValor());
         Assert.assertEquals(newEntity.getTipo(), resp.getTipo());
-        /*
+        Assert.assertEquals(newEntity.getCompania(), resp.getCompania());
+        Assert.assertEquals(newEntity.getImagenes(), resp.getImagenes());
+        Assert.assertEquals(newEntity.getOrigen(), resp.getOrigen());
+        Assert.assertEquals(newEntity.getDestino(), resp.getDestino());
         Assert.assertEquals(newEntity.getFechaInicio(), resp.getFechaInicio());
         Assert.assertEquals(newEntity.getFechaFinal(), resp.getFechaFinal());
         Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
         Assert.assertEquals(newEntity.getCalificacion(), resp.getCalificacion());
         Assert.assertEquals(newEntity.getComentarios(), resp.getComentarios());
-*/
-        
-        
     }
 }

@@ -32,22 +32,6 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 @RunWith(Arquillian.class)
 public class PagoPersistenceTest
 {
-    /**
-     *
-     * @return Devuelve el jar que Arquillian va a desplegar en el Glassfish
-     * embebido. El jar contiene las clases de Pago, el descriptor de la
-     * base de datos y el archivo beans.xml para resolver la inyección de
-     * dependencias.
-     */
-    @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addPackage(PagoEntity.class.getPackage())
-                .addPackage(PagoPersistence.class.getPackage())
-                .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
-                .addAsManifestResource("META-INF/beans.xml", "beans.xml");
-    }
-    
      /**
      * Inyección de la dependencia a la clase PagoPersistence cuyos métodos
      * se van a probar.
@@ -69,7 +53,24 @@ public class PagoPersistenceTest
     @Inject
     UserTransaction utx;
     
-       /**
+    /**
+     *
+     * @return Devuelve el jar que Arquillian va a desplegar en el Glassfish
+     * embebido. El jar contiene las clases de Pago, el descriptor de la
+     * base de datos y el archivo beans.xml para resolver la inyección de
+     * dependencias.
+     */
+    @Deployment
+    public static JavaArchive createDeployment() {
+        return ShrinkWrap.create(JavaArchive.class)
+                .addPackage(PagoEntity.class.getPackage())
+                .addPackage(PagoPersistence.class.getPackage())
+                .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
+                .addAsManifestResource("META-INF/beans.xml", "beans.xml");
+    }
+    
+       
+    /**
      * Configuración inicial de la prueba.
      *
      *
@@ -138,9 +139,8 @@ public class PagoPersistenceTest
 
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getValor(), entity.getValor());
-        
-        result = null;
-        Assert.assertNull(result);
+        Assert.assertEquals(newEntity.getFecha(), entity.getFecha());
+        Assert.assertEquals(newEntity.getTarjeta(), entity.getTarjeta());       
     }
     
     /**
@@ -173,8 +173,14 @@ public class PagoPersistenceTest
         PagoEntity entity = data.get(0);
         PagoEntity newEntity = pagoPersistence.findById(entity.getId());
         Assert.assertNotNull(newEntity);
-        Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
+        
+        PagoEntity entity2 = pagoPersistence.findByName(entity.getNombre());
+        Assert.assertNotNull(entity2);
+
+        Assert.assertEquals(entity.getNombre(), entity2.getNombre());
         Assert.assertEquals(entity.getValor(), newEntity.getValor());
+        Assert.assertEquals(entity.getFecha(), newEntity.getFecha());
+        Assert.assertEquals(entity.getTarjeta(), newEntity.getTarjeta());  
     }
 
      /**
@@ -190,7 +196,7 @@ public class PagoPersistenceTest
         Assert.assertNull(deleted);
     }
     
- /**
+    /**
      * Prueba para actualizar un Pago.
      *
      *
@@ -209,6 +215,7 @@ public class PagoPersistenceTest
 
         Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
         Assert.assertEquals(newEntity.getValor(), resp.getValor());
-    }   
-  
+        Assert.assertEquals(newEntity.getFecha(), resp.getFecha());
+        Assert.assertEquals(newEntity.getTarjeta(), resp.getTarjeta());  
+    }     
 }

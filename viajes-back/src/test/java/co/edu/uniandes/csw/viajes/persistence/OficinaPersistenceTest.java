@@ -157,6 +157,8 @@ public class OficinaPersistenceTest {
     OficinaEntity resp = em.find(OficinaEntity.class, entity.getId());
 
     Assert.assertEquals(newEntity.getNombreLugar(), resp.getNombreLugar());
+    Assert.assertEquals(newEntity.getNombreEncargado(), resp.getNombreEncargado());
+    Assert.assertEquals(newEntity.getUbicacion(), resp.getUbicacion());
     }
 
     /**
@@ -199,6 +201,5 @@ public class OficinaPersistenceTest {
         }
         Assert.assertTrue(found);
     }
-    }
-    
+    }   
 }
