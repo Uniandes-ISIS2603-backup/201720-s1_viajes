@@ -174,16 +174,32 @@ public class UsuarioPersistenceTest
         UsuarioEntity newEntity = usuarioPersistence.findById(entity.getId());
         Assert.assertNotNull(newEntity);
         
-        UsuarioEntity entity2 = usuarioPersistence.findByName(entity.getNombre());
-        Assert.assertNotNull(entity2);
-        entity2 = null;
-        Assert.assertNull(entity2);
-
         Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getId(), newEntity.getId());
         Assert.assertEquals(entity.getItinerarios(), newEntity.getItinerarios());
         Assert.assertEquals(entity.getTarjetas(), newEntity.getTarjetas());
         Assert.assertEquals(entity.getBlog(), newEntity.getBlog());        
+    }
+    
+    /**
+     * Prueba para consultar un Usuario.
+     * 
+     * 
+     */
+    @Test
+    public void getUsuarioNameTest()
+    {
+        UsuarioEntity entity = data.get(0);
+
+        UsuarioEntity newEntity = usuarioPersistence.findByName(entity.getNombre());
+        Assert.assertNotNull(newEntity);
+
+        Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
+        Assert.assertEquals(entity.getId(), newEntity.getId());
+        Assert.assertEquals(entity.getItinerarios(), newEntity.getItinerarios());
+        Assert.assertEquals(entity.getTarjetas(), newEntity.getTarjetas());
+        Assert.assertEquals(entity.getBlog(), newEntity.getBlog());   
+   
     }
 
      /**

@@ -173,18 +173,31 @@ public class TarjetaCreditoPersistenceTest
         TarjetaCreditoEntity newEntity = tarjetaCreditoPersistence.findById(entity.getId());
         Assert.assertNotNull(newEntity);
         
-        TarjetaCreditoEntity entity2 = tarjetaCreditoPersistence.findByNumber(entity.getNumero());
-        Assert.assertNotNull(entity2);
-        entity2 = null;
-        Assert.assertNull(entity2);
-
-
         Assert.assertEquals(entity.getNumero(), newEntity.getNumero());
         Assert.assertEquals(entity.getFondos(), newEntity.getFondos());
         Assert.assertEquals(entity.getPagos(), newEntity.getPagos());
         Assert.assertEquals(entity.getUsuario(), newEntity.getUsuario());
     }
 
+    /**
+     * Prueba para consultar una TarjetaCredito.
+     * 
+     * 
+     */
+    @Test
+    public void getTarjetaCreditoNumberTest()
+    { 
+        TarjetaCreditoEntity entity = data.get(0);
+
+        TarjetaCreditoEntity newEntity = tarjetaCreditoPersistence.findByNumber(entity.getNumero());
+        Assert.assertNotNull(newEntity);
+
+        Assert.assertEquals(entity.getNumero(), newEntity.getNumero());
+        Assert.assertEquals(entity.getFondos(), newEntity.getFondos());
+        Assert.assertEquals(entity.getPagos(), newEntity.getPagos());
+        Assert.assertEquals(entity.getUsuario(), newEntity.getUsuario());        
+    }
+    
      /**
      * Prueba para eliminar una TarjetaCredito.
      *
