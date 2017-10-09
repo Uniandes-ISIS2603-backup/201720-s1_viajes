@@ -75,17 +75,29 @@ public class EntretenimientoPersistenceTest {
                 .addAsManifestResource("META-INF/beans.xml", "beans.xml");
     }
     
+    /**
+     * 
+     */
     public EntretenimientoPersistenceTest() {
     }
     
+    /**
+     * 
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     * 
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     * 
+     */
     @Before
     public void setUp() {
         try {
@@ -104,11 +116,16 @@ public class EntretenimientoPersistenceTest {
         }
     }
     
+    /**
+     * 
+     */
     private void clearData() {
         em.createQuery("delete from EntretenimientoEntity").executeUpdate();
     }
 
-
+    /**
+     * 
+     */
     private void insertData() {
         PodamFactory factory = new PodamFactoryImpl();
         for (int i = 0; i < 3; i++) {
@@ -119,6 +136,9 @@ public class EntretenimientoPersistenceTest {
         }
     }
     
+    /**
+     * 
+     */
     @After
     public void tearDown() {
     }
@@ -145,8 +165,17 @@ public class EntretenimientoPersistenceTest {
     Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
     Assert.assertEquals(newEntity.getCompania(), entity.getCompania());
     Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
+    
+    entity.setUbicacion(newEntity.getUbicacion());
+    Assert.assertEquals("Incoherencia de datos", entity.getUbicacion(), newEntity.getUbicacion()); 
+    
+    entity.setCompania(newEntity.getCompania());
+    Assert.assertEquals("Incoherencia de datos", entity.getCompania(), newEntity.getCompania()); 
+    
+    entity.setImagenes(newEntity.getImagenes());
+    Assert.assertEquals("Incoherencia de datos", entity.getImagenes(), newEntity.getImagenes()); 
     }
-
+    
     /**
      * Test of update method, of class EntretenimientoPersistence.
      */
@@ -221,5 +250,5 @@ public class EntretenimientoPersistenceTest {
         }
         Assert.assertTrue(found);
     }
-    }    
+    }     
 }
