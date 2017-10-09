@@ -63,11 +63,7 @@ public class PagoPersistence
         TypedQuery<PagoEntity> query = em.createQuery("select u from PagoEntity u where u.nombre = :nombre", PagoEntity.class);
         query = query.setParameter("nombre", nombre);
         List<PagoEntity> listName = query.getResultList();
-        if (listName.isEmpty()) {
-            return null;
-        } else {
-            return listName.get(0);
-        }
+        return listName.get(0);        
     }
     
     /**

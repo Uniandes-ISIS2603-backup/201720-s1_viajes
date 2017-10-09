@@ -63,11 +63,7 @@ public class TarjetaCreditoPersistence
         TypedQuery<TarjetaCreditoEntity> query = em.createQuery("select u from TarjetaCreditoEntity u where u.numero = :numero", TarjetaCreditoEntity.class);
         query = query.setParameter("numero", numero);
         List<TarjetaCreditoEntity> listName = query.getResultList();
-        if (listName.isEmpty()) {
-            return null;
-        } else {
-            return listName.get(0);
-        }
+        return listName.get(0);
     }
     
     /**
