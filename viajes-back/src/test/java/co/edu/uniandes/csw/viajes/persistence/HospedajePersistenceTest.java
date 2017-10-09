@@ -17,7 +17,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.jboss.arquillian.junit.Arquillian;
 import org.junit.runner.RunWith;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -125,7 +124,9 @@ public class HospedajePersistenceTest {
     Assert.assertEquals(newEntity.getValor(), entity.getValor());
     Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
     Assert.assertEquals(newEntity.getComentarios(), entity.getComentarios());
-    Assert.assertEquals(newEntity.getDescripcion(), entity.getDescripcion());    
+    Assert.assertEquals(newEntity.getDescripcion(), entity.getDescripcion());  
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -155,6 +156,8 @@ public class HospedajePersistenceTest {
     Assert.assertEquals(newEntity.getCalificacion(), resp.getCalificacion());
     Assert.assertEquals(newEntity.getComentarios(), resp.getComentarios());
     Assert.assertEquals(newEntity.getDescripcion(), resp.getDescripcion()); 
+    Assert.assertTrue(newEntity.equals(resp));
+    Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -188,6 +191,8 @@ public class HospedajePersistenceTest {
     Assert.assertEquals(entity.getCalificacion(), newEntity.getCalificacion());
     Assert.assertEquals(entity.getComentarios(), newEntity.getComentarios());
     Assert.assertEquals(entity.getDescripcion(), newEntity.getDescripcion());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**

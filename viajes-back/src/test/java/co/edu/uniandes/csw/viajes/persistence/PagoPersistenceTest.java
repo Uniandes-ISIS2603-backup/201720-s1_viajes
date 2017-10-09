@@ -140,7 +140,9 @@ public class PagoPersistenceTest
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getValor(), entity.getValor());
         Assert.assertEquals(newEntity.getFecha(), entity.getFecha());
-        Assert.assertEquals(newEntity.getTarjeta(), entity.getTarjeta());       
+        Assert.assertEquals(newEntity.getTarjeta(), entity.getTarjeta());   
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
     
     /**
@@ -177,7 +179,9 @@ public class PagoPersistenceTest
         Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getValor(), newEntity.getValor());
         Assert.assertEquals(entity.getFecha(), newEntity.getFecha());
-        Assert.assertEquals(entity.getTarjeta(), newEntity.getTarjeta());  
+        Assert.assertEquals(entity.getTarjeta(), newEntity.getTarjeta()); 
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
     
     /**
@@ -197,6 +201,8 @@ public class PagoPersistenceTest
         Assert.assertEquals(entity.getValor(), newEntity.getValor());
         Assert.assertEquals(entity.getFecha(), newEntity.getFecha());
         Assert.assertEquals(entity.getTarjeta(), newEntity.getTarjeta());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
      /**
@@ -232,6 +238,8 @@ public class PagoPersistenceTest
         Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
         Assert.assertEquals(newEntity.getValor(), resp.getValor());
         Assert.assertEquals(newEntity.getFecha(), resp.getFecha());
-        Assert.assertEquals(newEntity.getTarjeta(), resp.getTarjeta());  
+        Assert.assertEquals(newEntity.getTarjeta(), resp.getTarjeta());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }     
 }

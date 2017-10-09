@@ -140,6 +140,8 @@ public class TarjetaCreditoPersistenceTest
         Assert.assertEquals(newEntity.getFondos(), entity.getFondos());
         Assert.assertEquals(newEntity.getPagos(), entity.getPagos());
         Assert.assertEquals(newEntity.getUsuario(), entity.getUsuario());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
     
     /**
@@ -177,6 +179,8 @@ public class TarjetaCreditoPersistenceTest
         Assert.assertEquals(entity.getFondos(), newEntity.getFondos());
         Assert.assertEquals(entity.getPagos(), newEntity.getPagos());
         Assert.assertEquals(entity.getUsuario(), newEntity.getUsuario());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -195,7 +199,9 @@ public class TarjetaCreditoPersistenceTest
         Assert.assertEquals(entity.getNumero(), newEntity.getNumero());
         Assert.assertEquals(entity.getFondos(), newEntity.getFondos());
         Assert.assertEquals(entity.getPagos(), newEntity.getPagos());
-        Assert.assertEquals(entity.getUsuario(), newEntity.getUsuario());        
+        Assert.assertEquals(entity.getUsuario(), newEntity.getUsuario()); 
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
     
      /**
@@ -231,6 +237,8 @@ public class TarjetaCreditoPersistenceTest
         Assert.assertEquals(newEntity.getNumero(), resp.getNumero());
         Assert.assertEquals(newEntity.getFondos(), resp.getFondos());
         Assert.assertEquals(newEntity.getPagos(), resp.getPagos());
-        Assert.assertEquals(newEntity.getUsuario(), resp.getUsuario());        
+        Assert.assertEquals(newEntity.getUsuario(), resp.getUsuario());  
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }     
 }

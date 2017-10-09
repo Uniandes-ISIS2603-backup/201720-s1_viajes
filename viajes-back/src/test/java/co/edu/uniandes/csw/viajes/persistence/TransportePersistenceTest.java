@@ -2,7 +2,6 @@ package co.edu.uniandes.csw.viajes.persistence;
 
 
 import co.edu.uniandes.csw.viajes.entities.TransporteEntity;
-import co.edu.uniandes.csw.viajes.persistence.TransportePersistence;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -143,6 +142,8 @@ public class TransportePersistenceTest {
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
         Assert.assertEquals(newEntity.getComentarios(), entity.getComentarios());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -186,6 +187,8 @@ public class TransportePersistenceTest {
         Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getCalificacion(), newEntity.getCalificacion());
         Assert.assertEquals(entity.getComentarios(), newEntity.getComentarios());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -229,5 +232,7 @@ public class TransportePersistenceTest {
         Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
         Assert.assertEquals(newEntity.getCalificacion(), resp.getCalificacion());
         Assert.assertEquals(newEntity.getComentarios(), resp.getComentarios());
+        Assert.assertTrue(newEntity.equals(resp));
+        Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 }

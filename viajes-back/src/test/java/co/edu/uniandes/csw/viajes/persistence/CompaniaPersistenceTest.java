@@ -144,7 +144,8 @@ public class CompaniaPersistenceTest {
         Assert.assertEquals(newEntity.getTransportes().size(), entity.getTransportes().size());
         Assert.assertEquals(newEntity.getHospedajes().size(), entity.getHospedajes().size());
         Assert.assertEquals(newEntity.getEntretenimientos().size(), entity.getEntretenimientos().size());
-        
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
      /**
@@ -185,6 +186,8 @@ public class CompaniaPersistenceTest {
         Assert.assertEquals(entity.getTransportes().size(), newEntity.getTransportes().size());
         Assert.assertEquals(entity.getHospedajes().size(), newEntity.getHospedajes().size());
         Assert.assertEquals(entity.getEntretenimientos().size(), newEntity.getEntretenimientos().size());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());       
     }
         
     /**
@@ -222,6 +225,8 @@ public class CompaniaPersistenceTest {
         Assert.assertEquals(newEntity.getOficinas().size(), resp.getOficinas().size());
         Assert.assertEquals(newEntity.getTransportes().size(), resp.getTransportes().size());
         Assert.assertEquals(newEntity.getHospedajes().size(), resp.getHospedajes().size());
-         Assert.assertEquals(newEntity.getEntretenimientos().size(), resp.getEntretenimientos().size());
+        Assert.assertEquals(newEntity.getEntretenimientos().size(), resp.getEntretenimientos().size());
+        Assert.assertTrue(newEntity.equals(resp));
+        Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }    
 }

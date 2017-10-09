@@ -138,6 +138,8 @@ public class BlogPersistenceTest {
     Assert.assertEquals(newEntity.getTitulo(), entity.getTitulo());
     Assert.assertEquals(newEntity.getComentario(), entity.getComentario());
     Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -158,6 +160,8 @@ public class BlogPersistenceTest {
     Assert.assertEquals(newEntity.getTitulo(), resp.getTitulo());
     Assert.assertEquals(newEntity.getComentario(), resp.getComentario());
     Assert.assertEquals(newEntity.getImagenes(), resp.getImagenes());
+    Assert.assertTrue(newEntity.equals(resp));
+    Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -182,6 +186,8 @@ public class BlogPersistenceTest {
     Assert.assertEquals(entity.getTitulo(), newEntity.getTitulo());
     Assert.assertEquals(entity.getComentario(), newEntity.getComentario());
     Assert.assertEquals(entity.getImagenes(), newEntity.getImagenes());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**

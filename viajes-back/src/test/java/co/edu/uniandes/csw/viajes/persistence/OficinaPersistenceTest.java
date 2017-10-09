@@ -22,7 +22,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
@@ -139,6 +138,8 @@ public class OficinaPersistenceTest {
     Assert.assertEquals(newEntity.getNombreLugar(), entity.getNombreLugar());
     Assert.assertEquals(newEntity.getNombreEncargado(), entity.getNombreEncargado());
     Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -159,6 +160,8 @@ public class OficinaPersistenceTest {
     Assert.assertEquals(newEntity.getNombreLugar(), resp.getNombreLugar());
     Assert.assertEquals(newEntity.getNombreEncargado(), resp.getNombreEncargado());
     Assert.assertEquals(newEntity.getUbicacion(), resp.getUbicacion());
+    Assert.assertTrue(newEntity.equals(resp));
+    Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -183,6 +186,8 @@ public class OficinaPersistenceTest {
     Assert.assertEquals(entity.getNombreLugar(), newEntity.getNombreLugar());
     Assert.assertEquals(entity.getNombreEncargado(), newEntity.getNombreEncargado());
     Assert.assertEquals(entity.getUbicacion(), newEntity.getUbicacion());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**

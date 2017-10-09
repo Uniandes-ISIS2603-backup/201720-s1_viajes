@@ -140,7 +140,9 @@ public class UsuarioPersistenceTest
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getItinerarios(), entity.getItinerarios());
         Assert.assertEquals(newEntity.getTarjetas(), entity.getTarjetas());
-        Assert.assertEquals(newEntity.getBlog(), entity.getBlog());
+        Assert.assertEquals(newEntity.getBlog(), entity.getBlog());        
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
     
     /**
@@ -178,7 +180,9 @@ public class UsuarioPersistenceTest
         Assert.assertEquals(entity.getId(), newEntity.getId());
         Assert.assertEquals(entity.getItinerarios(), newEntity.getItinerarios());
         Assert.assertEquals(entity.getTarjetas(), newEntity.getTarjetas());
-        Assert.assertEquals(entity.getBlog(), newEntity.getBlog());        
+        Assert.assertEquals(entity.getBlog(), newEntity.getBlog());   
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
     
     /**
@@ -198,8 +202,9 @@ public class UsuarioPersistenceTest
         Assert.assertEquals(entity.getId(), newEntity.getId());
         Assert.assertEquals(entity.getItinerarios(), newEntity.getItinerarios());
         Assert.assertEquals(entity.getTarjetas(), newEntity.getTarjetas());
-        Assert.assertEquals(entity.getBlog(), newEntity.getBlog());   
-   
+        Assert.assertEquals(entity.getBlog(), newEntity.getBlog());  
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());   
     }
 
      /**
@@ -237,5 +242,7 @@ public class UsuarioPersistenceTest
         Assert.assertEquals(newEntity.getItinerarios(), resp.getItinerarios());
         Assert.assertEquals(newEntity.getTarjetas(), resp.getTarjetas());
         Assert.assertEquals(newEntity.getBlog(), resp.getBlog());
+        Assert.assertTrue(newEntity.equals(resp));
+        Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }  
 }

@@ -144,6 +144,9 @@ public class GuiaPersistenceTest
         Assert.assertEquals(newEntity.getFechaFinal(), entity.getFechaFinal());
         Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
         Assert.assertEquals(newEntity.getCompania(), entity.getCompania());
+        
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
     
     /**
@@ -184,6 +187,8 @@ public class GuiaPersistenceTest
         Assert.assertEquals(entity.getFechaFinal(), newEntity.getFechaFinal());
         Assert.assertEquals(entity.getCalificacion(), newEntity.getCalificacion());
         Assert.assertEquals(entity.getCompania(), newEntity.getCompania());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
  
      /**
@@ -223,6 +228,8 @@ public class GuiaPersistenceTest
         Assert.assertEquals(newEntity.getFechaInicio(), resp.getFechaInicio());
         Assert.assertEquals(newEntity.getFechaFinal(), resp.getFechaFinal());
         Assert.assertEquals(newEntity.getCalificacion(), resp.getCalificacion());
-        Assert.assertEquals(newEntity.getCompania(), resp.getCompania());        
+        Assert.assertEquals(newEntity.getCompania(), resp.getCompania());
+        Assert.assertTrue(newEntity.equals(resp));
+        Assert.assertEquals(newEntity.hashCode(), resp.hashCode());        
     }  
 }

@@ -174,6 +174,9 @@ public class EntretenimientoPersistenceTest {
     
     entity.setImagenes(newEntity.getImagenes());
     Assert.assertEquals("Incoherencia de datos", entity.getImagenes(), newEntity.getImagenes()); 
+    
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
     
     /**
@@ -201,6 +204,8 @@ public class EntretenimientoPersistenceTest {
     Assert.assertEquals(newEntity.getImagenes(), resp.getImagenes());
     Assert.assertEquals(newEntity.getCompania(), resp.getCompania());
     Assert.assertEquals(newEntity.getUbicacion(), resp.getUbicacion());
+    Assert.assertTrue(newEntity.equals(resp));
+    Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -232,6 +237,8 @@ public class EntretenimientoPersistenceTest {
     Assert.assertEquals(entity.getImagenes(), newEntity.getImagenes());
     Assert.assertEquals(entity.getCompania(), newEntity.getCompania());
     Assert.assertEquals(entity.getUbicacion(), newEntity.getUbicacion());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**

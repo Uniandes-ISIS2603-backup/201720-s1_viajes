@@ -121,6 +121,8 @@ public class UbicacionPersistenceTest {
     Assert.assertEquals(newEntity.getDireccion(), entity.getDireccion());
     Assert.assertEquals(newEntity.getCiudad(), entity.getCiudad());
     Assert.assertEquals(newEntity.getPais(), entity.getPais());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -145,6 +147,8 @@ public class UbicacionPersistenceTest {
     Assert.assertEquals(newEntity.getDireccion(), resp.getDireccion());
     Assert.assertEquals(newEntity.getCiudad(), resp.getCiudad());
     Assert.assertEquals(newEntity.getPais(), resp.getPais());
+    Assert.assertTrue(newEntity.equals(resp));
+    Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -173,6 +177,8 @@ public class UbicacionPersistenceTest {
     Assert.assertEquals(entity.getDireccion(), newEntity.getDireccion());
     Assert.assertEquals(entity.getCiudad(), newEntity.getCiudad());
     Assert.assertEquals(entity.getPais(), newEntity.getPais());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
