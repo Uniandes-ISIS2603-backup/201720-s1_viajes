@@ -68,14 +68,6 @@ public class CompaniaEntity extends BaseEntity{
     private List<OficinaEntity> oficinas;
     
     /**
-     * Constructor de la  empresa
-     */ 
-    public CompaniaEntity()
-    {
-        
-    }       
-    
-    /**
     * Obtener  el email de la compania
     *@return email
     */

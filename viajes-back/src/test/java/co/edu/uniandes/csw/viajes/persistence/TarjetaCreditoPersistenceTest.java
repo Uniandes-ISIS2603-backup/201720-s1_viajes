@@ -140,6 +140,13 @@ public class TarjetaCreditoPersistenceTest
         Assert.assertEquals(newEntity.getFondos(), entity.getFondos());
         Assert.assertEquals(newEntity.getPagos(), entity.getPagos());
         Assert.assertEquals(newEntity.getUsuario(), entity.getUsuario());
+        
+        entity.setPagos(newEntity.getPagos());
+        Assert.assertEquals("Incoherencia de datos", entity.getPagos(), newEntity.getPagos());
+        
+        entity.setUsuario(newEntity.getUsuario());
+        Assert.assertEquals("Incoherencia de datos", entity.getUsuario(), newEntity.getUsuario());
+        
         Assert.assertTrue(newEntity.equals(entity));
         Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }

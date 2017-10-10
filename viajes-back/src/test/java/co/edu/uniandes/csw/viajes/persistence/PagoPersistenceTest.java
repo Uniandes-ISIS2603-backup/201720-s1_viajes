@@ -140,7 +140,11 @@ public class PagoPersistenceTest
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getValor(), entity.getValor());
         Assert.assertEquals(newEntity.getFecha(), entity.getFecha());
-        Assert.assertEquals(newEntity.getTarjeta(), entity.getTarjeta());   
+        Assert.assertEquals(newEntity.getTarjeta(), entity.getTarjeta());  
+        
+        entity.setTarjeta(newEntity.getTarjeta());
+        Assert.assertEquals("Incoherencia de datos", entity.getTarjeta(), newEntity.getTarjeta());
+        
         Assert.assertTrue(newEntity.equals(entity));
         Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }

@@ -144,6 +144,22 @@ public class CompaniaPersistenceTest {
         Assert.assertEquals(newEntity.getTransportes().size(), entity.getTransportes().size());
         Assert.assertEquals(newEntity.getHospedajes().size(), entity.getHospedajes().size());
         Assert.assertEquals(newEntity.getEntretenimientos().size(), entity.getEntretenimientos().size());
+        
+        entity.setGuias(newEntity.getGuias());
+        Assert.assertEquals("Incoherencia de datos", entity.getGuias(), newEntity.getGuias());
+        
+        entity.setOficinas(newEntity.getOficinas());
+        Assert.assertEquals("Incoherencia de datos", entity.getOficinas(), newEntity.getOficinas());
+        
+        entity.setTransportes(newEntity.getTransportes());
+        Assert.assertEquals("Incoherencia de datos", entity.getTransportes(), newEntity.getTransportes());
+        
+        entity.setHospedajes(newEntity.getHospedajes());
+        Assert.assertEquals("Incoherencia de datos", entity.getHospedajes(), newEntity.getHospedajes());
+        
+        entity.setEntretenimientos(newEntity.getEntretenimientos());
+        Assert.assertEquals("Incoherencia de datos", entity.getEntretenimientos(), newEntity.getEntretenimientos());
+        
         Assert.assertTrue(newEntity.equals(entity));
         Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }

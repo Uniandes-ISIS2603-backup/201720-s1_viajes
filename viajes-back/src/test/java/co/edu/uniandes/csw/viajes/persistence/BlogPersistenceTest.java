@@ -186,6 +186,10 @@ public class BlogPersistenceTest {
     Assert.assertEquals(entity.getTitulo(), newEntity.getTitulo());
     Assert.assertEquals(entity.getComentario(), newEntity.getComentario());
     Assert.assertEquals(entity.getImagenes(), newEntity.getImagenes());
+    
+    entity.setImagenes(newEntity.getImagenes());
+    Assert.assertEquals("Incoherencia de datos", entity.getImagenes(), newEntity.getImagenes());
+    
     Assert.assertTrue(newEntity.equals(entity));
     Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }

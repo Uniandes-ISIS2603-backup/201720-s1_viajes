@@ -107,26 +107,38 @@ public class HospedajePersistenceTest {
     @Test
     public void testCreate() {
             PodamFactory factory = new PodamFactoryImpl();
-    HospedajeEntity newEntity = factory.manufacturePojo(HospedajeEntity.class);
-    HospedajeEntity result = persistence.create(newEntity);
+            HospedajeEntity newEntity = factory.manufacturePojo(HospedajeEntity.class);
+            HospedajeEntity result = persistence.create(newEntity);
 
-    Assert.assertNotNull(result);
-    HospedajeEntity entity = em.find(HospedajeEntity.class, result.getId());
-    Assert.assertNotNull(entity);
-    Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
-    Assert.assertEquals(newEntity.getCompania(), entity.getCompania());
-    Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
-    Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
-    Assert.assertEquals(newEntity.getItinerario(), entity.getItinerario());
-    Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
-    Assert.assertEquals(newEntity.getFechaInicio(), entity.getFechaInicio());
-    Assert.assertEquals(newEntity.getFechaFinal(), entity.getFechaFinal());
-    Assert.assertEquals(newEntity.getValor(), entity.getValor());
-    Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
-    Assert.assertEquals(newEntity.getComentarios(), entity.getComentarios());
-    Assert.assertEquals(newEntity.getDescripcion(), entity.getDescripcion());  
-    Assert.assertTrue(newEntity.equals(entity));
-    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
+            Assert.assertNotNull(result);
+            HospedajeEntity entity = em.find(HospedajeEntity.class, result.getId());
+            Assert.assertNotNull(entity);
+            Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
+            Assert.assertEquals(newEntity.getCompania(), entity.getCompania());
+            Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
+            Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
+            Assert.assertEquals(newEntity.getItinerario(), entity.getItinerario());
+            Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
+            Assert.assertEquals(newEntity.getFechaInicio(), entity.getFechaInicio());
+            Assert.assertEquals(newEntity.getFechaFinal(), entity.getFechaFinal());
+            Assert.assertEquals(newEntity.getValor(), entity.getValor());
+            Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
+            Assert.assertEquals(newEntity.getComentarios(), entity.getComentarios());
+            Assert.assertEquals(newEntity.getDescripcion(), entity.getDescripcion());  
+            Assert.assertTrue(newEntity.equals(entity));
+            Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
+            
+            entity.setCompania(newEntity.getCompania());
+            Assert.assertEquals("Incoherencia de datos", entity.getCompania(), newEntity.getCompania());
+            
+            entity.setUbicacion(newEntity.getUbicacion());
+            Assert.assertEquals("Incoherencia de datos", entity.getUbicacion(), newEntity.getUbicacion());
+            
+            entity.setImagenes(newEntity.getImagenes());
+            Assert.assertEquals("Incoherencia de datos", entity.getImagenes(), newEntity.getImagenes());
+            
+            entity.setItinerario(newEntity.getItinerario());
+            Assert.assertEquals("Incoherencia de datos", entity.getItinerario(), newEntity.getItinerario());
     }
 
     /**

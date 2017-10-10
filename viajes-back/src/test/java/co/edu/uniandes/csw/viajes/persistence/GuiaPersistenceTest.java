@@ -145,6 +145,9 @@ public class GuiaPersistenceTest
         Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
         Assert.assertEquals(newEntity.getCompania(), entity.getCompania());
         
+        entity.setCompania(newEntity.getCompania());
+        Assert.assertEquals("Incoherencia de datos", entity.getCompania(), newEntity.getCompania());
+        
         Assert.assertTrue(newEntity.equals(entity));
         Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }

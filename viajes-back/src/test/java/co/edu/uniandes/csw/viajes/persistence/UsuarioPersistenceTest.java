@@ -143,6 +143,15 @@ public class UsuarioPersistenceTest
         Assert.assertEquals(newEntity.getBlog(), entity.getBlog());        
         Assert.assertTrue(newEntity.equals(entity));
         Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
+        
+        entity.setItinerarios(newEntity.getItinerarios());
+        Assert.assertEquals("Incoherencia de datos", entity.getItinerarios(), newEntity.getItinerarios()); 
+        
+        entity.setTarjetas(newEntity.getTarjetas());
+        Assert.assertEquals("Incoherencia de datos", entity.getTarjetas(), newEntity.getTarjetas()); 
+        
+        entity.setBlog(newEntity.getBlog());
+        Assert.assertEquals("Incoherencia de datos", entity.getBlog(), newEntity.getBlog()); 
     }
     
     /**

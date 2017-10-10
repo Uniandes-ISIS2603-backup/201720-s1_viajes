@@ -138,6 +138,10 @@ public class OficinaPersistenceTest {
     Assert.assertEquals(newEntity.getNombreLugar(), entity.getNombreLugar());
     Assert.assertEquals(newEntity.getNombreEncargado(), entity.getNombreEncargado());
     Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
+    
+    entity.setUbicacion(newEntity.getUbicacion());
+    Assert.assertEquals("Incoherencia de datos", entity.getUbicacion(), newEntity.getUbicacion());
+    
     Assert.assertTrue(newEntity.equals(entity));
     Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
