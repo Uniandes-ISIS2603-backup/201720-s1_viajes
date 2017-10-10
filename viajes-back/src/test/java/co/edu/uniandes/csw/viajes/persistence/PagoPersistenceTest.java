@@ -145,8 +145,12 @@ public class PagoPersistenceTest
         entity.setTarjeta(newEntity.getTarjeta());
         Assert.assertEquals("Incoherencia de datos", entity.getTarjeta(), newEntity.getTarjeta());
         
-        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertTrue(newEntity.equals(entity));        
+        Assert.assertFalse(newEntity.getNombre().equals("No hay"));
         Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
+        
+        PagoEntity result2 = factory.manufacturePojo(PagoEntity.class);
+        Assert.assertNotEquals(result2.hashCode(),newEntity.hashCode());
     }
     
     /**
