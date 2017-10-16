@@ -14,59 +14,69 @@ import java.util.List;
  *
  * @author Juan
  */
-public class CompaniaDetailDTO extends CompaniaDTO
-{
-   // private List<OficinaDTO> oficinas;
+public class CompaniaDetailDTO extends CompaniaDTO{
     
-     public CompaniaDetailDTO() {
+    /*
+    * List de oficinas
+    */
+    private List<OficinaDTO> oficinas;
+    
+    /**
+     * Constructor por defecto
+    */
+    public CompaniaDetailDTO()
+    {
         super();
     }
     
-     /**
-     * Constructor para transformar un Entity a un DTO
-     *
-     * @param entity
-     */
-     
-    public CompaniaDetailDTO(CompaniaEntity entity) {
+    /**
+    * Constructor para  transformar un Entity en DTO
+    * @param entity 
+    */
+    public CompaniaDetailDTO (CompaniaEntity entity )
+    {
         super(entity);
-        /*
-        if (entity.getOficinas()!=null) {
-         //    oficinas = new ArrayList<>();
-            for (OficinaEntity entityOficina : entity.getOficinas()) {
-            //   oficinas.add(new OficinaDTO(entityOficina));
+        if (entity!=null) {
+            oficinas= new ArrayList<>();
+            for(OficinaEntity entityOficina : entity.getOficinas())
+            {
+                oficinas.add(new OficinaDTO(entityOficina));
             }
         }
-        */
     }
-    
     
     /**
-     * Transformar un DTO a un Entity
-     *
-     * @return 
+     * Transformar un DTO  en una  Entity 
+     * @return una  CompaniaEntity
      */
-    @Override
-    public CompaniaEntity toEntity() {
-        CompaniaEntity companiaE = super.toEntity();
-       /*if (this.getOficinas!=null) {
-        List<OficinaEntity> oficinasEntity = new ArrayList<>();
-      //      for (OficinaDTO dtoOficina : getOficinas()) {
-      //         oficinasEntity.add(dtoOficina.toEntity());
-      //     }
-            companiaE.setOficinas(oficinasEntity);
-        //}
-    */
+    public CompaniaEntity toEntity()
+    {
+        CompaniaEntity companiaE= super.toEntity();
+        if (oficinas!=null) {
+            List<OficinaEntity> oficinaEntity= new ArrayList<>();
+            for(OficinaDTO dtoOficina : oficinas)
+            {
+                oficinaEntity.add(dtoOficina.toEntity());
+            }
+            companiaE.setOficinas(oficinaEntity);
+        }
         return companiaE;
-         
     }
-     
-    
-    //public OficinaDTO getOficinas() {
-    //    return oficinas;
-    //}
 
-    //public void setOficina(OficinaDTO oficina) {
-    //    this.oficina = oficina;
-    //}
+
+    /**
+     * Obtener las oficinas 
+     * @return  oficinas
+     */
+    public List<OficinaDTO> getOficinas() {
+        return oficinas;
+    }
+
+    /**
+     * Actualizar las Oficinas
+     * @param oficinas 
+     */
+    public void setOficinas(List<OficinaDTO> oficinas) {
+        this.oficinas = oficinas;
+    }
 }

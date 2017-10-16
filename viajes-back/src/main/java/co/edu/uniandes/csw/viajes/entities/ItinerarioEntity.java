@@ -7,7 +7,6 @@ package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
 
@@ -18,38 +17,118 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class ItinerarioEntity extends BaseEntity{
     
+    /**
+     * Costo del itinerario
+     */
     private int costoTotal;
     
+    /**
+     * Fecha de inicio del itinerario
+     */
     private String fechaInicial;
     
+    /**
+     * Fecha final del itinerario
+     */
     private String fechaFinal;
     
+    /**
+     * Numero de visitantes del itinerario
+     */
     private int numeroVisitantes;
 
+    /**
+     * Guias del itinerario
+     */
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
-    private List<GuiaEntity> gias;
-    
+    @OneToMany
+    private List<GuiaEntity> guias;
+        
+    /**
+     * Hospedajes en el itinerario
+     */
     @PodamExclude
-    @ManyToOne()
-    private UsuarioEntity usuario;
-   
-    @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
-    private List<ServicioEntity> servicios;
-    /*    
-    @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
+    @OneToMany
     private List<HospedajeEntity> hospedajes;
      
+    /**
+     * Entretenimientos que se encuentran en el itinerario
+     */
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
+    @OneToMany
     private List<EntretenimientoEntity> entretenimientos;
       
+    /**
+     * Transportes que se encuentran en el itinerario
+     */
     @PodamExclude
-    @OneToMany(mappedBy = "itinerario")
+    @OneToMany
     private List<TransporteEntity> transportes;
-    */
+    
+    /**
+     * Entretenimientos que se encuentran en el itinerario
+     * @return entretenimientos
+     */
+    public List<EntretenimientoEntity> getEntretenimientos() {
+        return entretenimientos;
+    }
+
+    /**
+     * Guias del itinerario
+     * @return guias
+     */
+    public List<GuiaEntity> getGias() {
+        return guias;
+    }
+
+    /**
+     * Hospedajes del itinerario
+     * @return hospedajes
+     */
+    public List<HospedajeEntity> getHospedajes() {
+        return hospedajes;
+    }
+
+    /**
+     * Transportes del itinerario
+     * @return transportes
+     */
+    public List<TransporteEntity> getTransportes() {
+        return transportes;
+    }
+
+    /**
+     * Cambia o agrega los entretenimientos del itinerario
+     * @param entretenimientos 
+     */
+    public void setEntretenimientos(List<EntretenimientoEntity> entretenimientos) {
+        this.entretenimientos = entretenimientos;
+    }
+
+    /**
+     * Cambia los guias del itinerario
+     * @param gias 
+     */
+    public void setGias(List<GuiaEntity> gias) {
+        this.guias = gias;
+    }
+
+    /**
+     * Cambia los hospedajes del itinerario
+     * @param hospedajes 
+     */
+    public void setHospedajes(List<HospedajeEntity> hospedajes) {
+        this.hospedajes = hospedajes;
+    }
+
+    /**
+     * Cambia los transportes del itinerario
+     * @param transportes 
+     */
+    public void setTransportes(List<TransporteEntity> transportes) {
+        this.transportes = transportes;
+    }
+    
     /**
      * @return the costoTotal
      */
@@ -105,47 +184,4 @@ public class ItinerarioEntity extends BaseEntity{
     public void setNumeroVisitantes(int numeroVisitantes) {
         this.numeroVisitantes = numeroVisitantes;
     }
-
-    /**
-     * @return the gias
-     */
-    public List<GuiaEntity> getGias() {
-        return gias;
-    }
-
-    /**
-     * @param gias the gias to set
-     */
-    public void setGias(List<GuiaEntity> gias) {
-        this.gias = gias;
-    }
-
-    /**
-     * @return the usuario
-     */
-    public UsuarioEntity getUsuario() {
-        return usuario;
-    }
-
-    /**
-     * @param usuario the usuario to set
-     */
-    public void setUsuario(UsuarioEntity usuario) {
-        this.usuario = usuario;
-    }
-
-    /**
-     * @return the servicios
-     */
-    public List<ServicioEntity> getServicios() {
-        return servicios;
-    }
-
-    /**
-     * @param servicios the servicios to set
-     */
-    public void setServicios(List<ServicioEntity> servicios) {
-        this.servicios = servicios;
-    }
-
 }

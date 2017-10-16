@@ -6,8 +6,6 @@ package co.edu.uniandes.csw.viajes.persistence;
  * and open the template in the editor.
  */
 
-
-import co.edu.uniandes.csw.viajes.persistence.ImagenPersistence;
 import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +23,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
@@ -36,6 +33,7 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
  */
 @RunWith(Arquillian.class)
 public class ImagenPersistenceTest {
+    
     
     /**
      * Inyección de la dependencia a la clase XYZPersistence cuyos métodos
@@ -110,11 +108,10 @@ public class ImagenPersistenceTest {
     }
 
 
- private void insertData() {
+    private void insertData() {
         PodamFactory factory = new PodamFactoryImpl();
         for (int i = 0; i < 3; i++) {
             ImagenEntity entity = factory.manufacturePojo(ImagenEntity.class);
-
             em.persist(entity);
             data.add(entity);
         }
@@ -133,7 +130,10 @@ public class ImagenPersistenceTest {
         ImagenEntity entity = em.find(ImagenEntity.class, result.getId());
         Assert.assertNotNull(entity);
         Assert.assertEquals(newEntity.getRuta(), entity.getRuta());
-       // fail("testCreate");
+        Assert.assertEquals(newEntity.getComentario(), entity.getComentario());        
+        Assert.assertEquals(newEntity.equals(entity), entity.equals(newEntity));
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -152,7 +152,9 @@ public class ImagenPersistenceTest {
         ImagenEntity resp = em.find(ImagenEntity.class, entity.getId());
 
         Assert.assertEquals(newEntity.getRuta(), resp.getRuta());
-        // fail("testUpdate");
+        Assert.assertEquals(newEntity.getComentario(), resp.getComentario());
+        Assert.assertTrue(newEntity.equals(resp));
+        Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -164,8 +166,6 @@ public class ImagenPersistenceTest {
         persistence.delete(entity.getId());
         ImagenEntity deleted = em.find(ImagenEntity.class, entity.getId());
         Assert.assertNull(deleted);
-
-        // fail("testDelete");
     }
 
     /**
@@ -177,7 +177,9 @@ public class ImagenPersistenceTest {
         ImagenEntity newEntity = persistence.find(entity.getId());
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(entity.getRuta(), newEntity.getRuta());
-        //fail("testFind");
+        Assert.assertEquals(newEntity.getComentario(), entity.getComentario());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -196,6 +198,5 @@ public class ImagenPersistenceTest {
         }
         Assert.assertTrue(found);
     }
-        //fail("testFindAll");
     }    
 }

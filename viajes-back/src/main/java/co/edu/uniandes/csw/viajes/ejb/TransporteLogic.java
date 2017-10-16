@@ -6,7 +6,6 @@
 package co.edu.uniandes.csw.viajes.ejb;
 
 import co.edu.uniandes.csw.viajes.entities.TransporteEntity;
-import co.edu.uniandes.csw.viajes.excpetions.BusinessLogicException;
 import co.edu.uniandes.csw.viajes.persistence.TransportePersistence;
 import java.util.List;
 import java.util.logging.Level;
@@ -15,29 +14,31 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
- *
+ * Clase que representa la logica de Transportes
  * @author sa.silva1
  */
 @Stateless
 public class TransporteLogic {
     
+    /**
+    *Logger de la clase, se encarga de imprimir en consola lo que está sucediendo
+    */
     private static final Logger LOGGER = Logger.getLogger(TransporteLogic.class.getName());
 
+    /**
+    *Persistencia de transporte
+    */
     @Inject
     private TransportePersistence persistence; // Variable para acceder a la persistencia de la aplicación. Es una inyección de dependencias.
     
     
      /**
+      * Metodo que llama a la persistencia para crear el transporte
      * @param entity
-     * @return
-     * @throws BusinessLogicException
+     * @return entity, entidad transporte creada
      */
-     public TransporteEntity createTransporte(TransporteEntity entity) throws BusinessLogicException {
+     public TransporteEntity createTransporte(TransporteEntity entity){
         LOGGER.info("Inicia proceso de creación de transporte");
-        // Verifica la regla de negocio que dice que no puede haber dos transportes con el mismo id
-        if (persistence.find(entity.getId()) != null) {
-            throw new BusinessLogicException("Ya existe un Transporte con el id \"" + entity.getId() + "\"");
-        }
         // Invoca la persistencia para crear el transporte
         persistence.create(entity);
         LOGGER.info("Termina proceso de creación de transporte");

@@ -1,0 +1,259 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Ubicacion",
+		"_postman_id": "4bed0f58-8fbd-a262-0837-8c9b3656a31b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Ubicacion 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"StatusCodeis200\"]=responseCode.code==200"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/ubicaciones",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"calificacion\": 15,\n        \"comentarios\": \"Muy regular\",\n        \"descripcion\": \"Cama quíntuple\",\n        \"fechaFinal\": \"17/11/2017 22:30\",\n        \"fechaInicio\": \"17/11/2018 16:30\",\n        \"nombre\": \"Hotel Amapolas\",\n        \"valor\": 1959\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ubicacion 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"StatusCodeis200\"]=responseCode.code==200"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/ubicaciones/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"calificacion\": 15,\n        \"comentarios\": \"Muy regular\",\n        \"descripcion\": \"Cama quíntuple\",\n        \"fechaFinal\": \"17/11/2017 22:30\",\n        \"fechaInicio\": \"17/11/2018 16:30\",\n        \"nombre\": \"Hotel Amapolas\",\n        \"valor\": 1959\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ubicacion 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"StatusCodeis404\"]=responseCode.code==404"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/ubicaciones/6564",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"calificacion\": 15,\n        \"comentarios\": \"Muy regular\",\n        \"descripcion\": \"Cama quíntuple\",\n        \"fechaFinal\": \"17/11/2017 22:30\",\n        \"fechaInicio\": \"17/11/2018 16:30\",\n        \"nombre\": \"Hotel Amapolas\",\n        \"valor\": 1959\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DEL Ubicacion 204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"StatusCodeis204\"]=responseCode.code==204"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/ubicaciones/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DEL Ubicacion 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"StatusCodeis404\"]=responseCode.code==404"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/ubicaciones/999",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Ubicacion 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"StatusCodeis200\"]=responseCode.code==200"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/ubicaciones",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ciudad\":\"Barrancabermeja\",\n\t\"direccion\":\"Paso\",\n\t\"latitud\":26.0,\n\t\"longitud\":-95.0,\n\t\"nombre\":\"Mermelada\",\n\t\"pais\":\"Bermudas\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Ubicacion 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"StatusCodeis200\"]=responseCode.code==200"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/ubicaciones/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ciudad\":\"Barrancabermeja\",\n\t\"direccion\":\"Cra. 2 #16a-38 Torres Gonzalo Jiménez de Quesada Apto 1504 Torre 5 Habitación al fondo a la derecha cama en la mitad se acuerda en la mitad de la cama y tiene una bicicleta a la lado pero ya no\",\n\t\"latitud\":26.0,\n\t\"longitud\":-95.0,\n\t\"nombre\":\"Mermelada\",\n\t\"pais\":\"Colombia\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Ubicacion 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"StatusCodeis404\"]=responseCode.code==404"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/ubicaciones/356546",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ciudad\":\"Barrancabermeja\",\n\t\"direccion\":\"Cra. 2 #16a-38 Torres Gonzalo Jiménez de Quesada Apto 1504 Torre 5 Habitación al fondo a la derecha cama en la mitad se acuerda en la mitad de la cama y tiene una bicicleta a la lado pero ya no\",\n\t\"latitud\":26.0,\n\t\"longitud\":-95.0,\n\t\"nombre\":\"Mermelada\",\n\t\"pais\":\"Colombia\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

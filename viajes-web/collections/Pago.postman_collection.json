@@ -1,14 +1,14 @@
 {
 	"variables": [],
 	"info": {
-		"name": "ItinerariosCollection",
-		"_postman_id": "fbb3a2f8-acc4-5060-33fe-166bc076b740",
-		"description": "get, post, getid",
+		"name": "Pago",
+		"_postman_id": "8a050878-351f-c7ea-c66f-6208f567537e",
+		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "itinerarios/id get",
+			"name": "Get Pagos",
 			"event": [
 				{
 					"listen": "test",
@@ -21,7 +21,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/itinerarios",
+				"url": "http://localhost:8080/viajes-web/api/pagos",
 				"method": "GET",
 				"header": [
 					{
@@ -32,14 +32,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"numeroVisitantes\":3}"
+					"raw": "{\n        \"id\": 9,\n        \"nombre\": \"James Horan\",\n        \"valor\": 8000\n    }"
 				},
 				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": "itinerarios get",
+			"name": "Post Pagos",
 			"event": [
 				{
 					"listen": "test",
@@ -52,38 +52,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/itinerarios/1",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"numeroVisitantes\":3}"
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "itinerarios post",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/itinerarios",
+				"url": "http://localhost:8080/viajes-web/api/pagos",
 				"method": "POST",
 				"header": [
 					{
@@ -94,7 +63,32 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"numeroVisitantes\":3}"
+					"raw": "{\n        \"id\": 10,\n        \"nombre\": \"James Horan\",\n        \"valor\": 8000\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pagos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/pagos/400",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
 				},
 				"description": ""
 			},

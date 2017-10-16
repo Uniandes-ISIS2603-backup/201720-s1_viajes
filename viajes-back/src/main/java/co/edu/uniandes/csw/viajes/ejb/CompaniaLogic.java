@@ -8,30 +8,24 @@ package co.edu.uniandes.csw.viajes.ejb;
 import co.edu.uniandes.csw.viajes.entities.CompaniaEntity;
 import co.edu.uniandes.csw.viajes.persistence.CompaniaPersistence;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.inject.Inject;
 
 /**
  *
  * @author Juan
  */
-public class CompaniaLogic
-{
-
-    private static final Logger LOGGER = Logger.getLogger(CompaniaLogic.class.getName());
+public class CompaniaLogic {
     
     @Inject
     private CompaniaPersistence persistence;
     
-     /**
+    /**
      * Obtiene la lista de los registros de Compania.
      *
      * @return Colección de objetos de CompaniaEntity.
      * @generated
      */
     public List<CompaniaEntity> getCompanias() {
-        LOGGER.log(Level.INFO, "Inicia proceso de consultar todos los guais");
         return persistence.findAll();
     }
     
@@ -43,7 +37,6 @@ public class CompaniaLogic
      * @generated
      */
     public CompaniaEntity getCompania(Long id) {
-        LOGGER.log(Level.INFO, "Inicia proceso de consultar un compania con id = {0}", id);
         return persistence.findById(id);
     }
     
@@ -55,7 +48,6 @@ public class CompaniaLogic
      * @generated
      */
     public CompaniaEntity createCompania(CompaniaEntity entity) {
-        LOGGER.log(Level.INFO, "Inicia proceso de crear una compania ");
         return persistence.create(entity);
     }
     
@@ -67,7 +59,6 @@ public class CompaniaLogic
      * @generated
      */
     public CompaniaEntity updateCompania(CompaniaEntity entity) {
-        LOGGER.log(Level.INFO, "Inicia proceso de actualizar uns compania ");
         return persistence.update(entity);
     }
     
@@ -78,7 +69,6 @@ public class CompaniaLogic
      * @generated
      */
     public void deleteCompania(Long id) {
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar una compania ");
         persistence.delete(id);
-    }
+    }   
 }

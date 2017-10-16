@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.resources;
 
+import co.edu.uniandes.csw.viajes.dtos.CompaniaDTO;
 import co.edu.uniandes.csw.viajes.dtos.CompaniaDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.CompaniaLogic;
 import co.edu.uniandes.csw.viajes.entities.CompaniaEntity;
@@ -27,87 +28,101 @@ import javax.ws.rs.core.MediaType;
  *
  * @author Juan
  */
-@Path("/companias")
+@Path("companias")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @RequestScoped
-public class CompaniaResource
-{
+public class CompaniaResource {
+    
     @Inject
     private CompaniaLogic companialogic;
-            
-    private List<CompaniaDetailDTO> listEntity2DTO(List<CompaniaEntity> entityList) {
-        List<CompaniaDetailDTO> list = new ArrayList<>();
-        for (CompaniaEntity entity : entityList) {
+  
+    /**
+     * 
+     * @param entityList
+     * @return list 
+     */    
+    private List<CompaniaDetailDTO> listEntity2DTO(List<CompaniaEntity> entityList)
+    {
+        List<CompaniaDetailDTO> list= new ArrayList<>();
+        for(CompaniaEntity entity : entityList)
+        {
             list.add(new CompaniaDetailDTO(entity));
         }
         return list;
     }
     
     /**
-     * Obtiene los datos de una instancia de Compania a partir de su ID
-     *
-     * @param id Identificador de la instancia a consultar
-     * @return Instancia de CompaniaDetailDTO con los datos del Author consultado
      * 
+     * @param id
+     * @return 
      */
     @GET
-    @Path("{id: \\d+}")
-    public CompaniaDetailDTO getCompania(@PathParam("id") Long id) {
-        CompaniaEntity entity = companialogic.getCompania(id);
-        if (entity == null) {
-            throw new WebApplicationException("El Guia no existe", 404);
+    @Path("{id : \\d+}")
+    public CompaniaDetailDTO getCompania(@PathParam("id") Long id)
+    {
+        CompaniaEntity entity= companialogic.getCompania(id);
+        if (entity==null) {
+            throw new  WebApplicationException("La compania no existe", 404);    
         }
         return new CompaniaDetailDTO(entity);
     }
-
+    
     /**
-     * Se encarga de crear un Compania en la base de datos
      *
-     * @param dto Objeto de CompaniaDetailDTO con los datos nuevos
-     * @return Objeto de CompaniaDetailDTO los datos nuevos y su ID
+     * @return devuelve los companias en la base de datos.
+     */
+    @GET
+    public List<CompaniaDTO> getGuia(){
+        List<CompaniaDTO> CompaniasDTOS = new ArrayList<>();
+
+        List<CompaniaEntity> guias = companialogic.getCompanias();
+        for(CompaniaEntity guia : guias){
+            CompaniaDTO dto = new CompaniaDTO(guia);
+            CompaniasDTOS.add(dto);
+        }
+        return CompaniasDTOS;
+    }
+    
+    
+    /**
      * 
+     * @param dto
+     * @return 
      */
     @POST
-    public CompaniaDetailDTO createCompania(CompaniaDetailDTO dto) {
-        return new CompaniaDetailDTO(companialogic.createCompania(dto.toEntity()));
+    public CompaniaDetailDTO createCompania(CompaniaDetailDTO dto)
+    {
+        return new  CompaniaDetailDTO(companialogic.createCompania(dto.toEntity()));
     }
 
     /**
-     * Actualiza la información de una instancia de Compania
      *
-     * @param id Identificador de la instancia de Compania a modificar
-     * @param dto Instancia de CompaniaDetailDTO con los nuevos datos
-     * @return Instancia de CompaniaDetailDTO con los datos actualizados
-     * 
+     * @param id
+     * @return
      */
     @PUT
-    @Path("{id: \\d+}")
-    public CompaniaDetailDTO updateCompania(@PathParam("id") Long id, CompaniaDetailDTO dto) {
-        CompaniaEntity entity = dto.toEntity();
+    @Path("{id : \\d+}")
+    public CompaniaDetailDTO getCompania(@PathParam("id") Long id, CompaniaDetailDTO dto)
+    {
+        CompaniaEntity entity= dto.toEntity();
         entity.setId(id);
         CompaniaEntity oldEntity = companialogic.getCompania(id);
-        if (oldEntity == null) {
-            throw new WebApplicationException("El guia no existe", 404);
+        if (oldEntity==null) {
+            throw new  WebApplicationException("La compania no existe", 404); 
         }
-        //entity.setOficinas(oldEntity.getOficinas());
+        entity.setOficinas(oldEntity.getOficinas());
         return new CompaniaDetailDTO(companialogic.updateCompania(entity));
     }
 
-    /**
-     * Elimina una instancia de Compania de la base de datos
-     *
-     * @param id Identificador de la instancia a eliminar
-     * 
-     */
     @DELETE
-    @Path("{id: \\d+}")
-    public void deleteCompania(@PathParam("id") Long id) {
-        CompaniaEntity entity = companialogic.getCompania(id);
-        if (entity == null) {
-            throw new WebApplicationException("El author no existe", 404);
+    @Path("{id : \\d+}")
+    public void deleteCompania(@PathParam("id") Long id)
+    {
+     CompaniaEntity entity= companialogic.getCompania(id);
+         if (entity==null) {
+            throw new  WebApplicationException("La compania no existe", 404); 
         }
        companialogic.deleteCompania(id);
-    }    
-    
+    }
 }

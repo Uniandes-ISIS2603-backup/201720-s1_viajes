@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.resources;
 
+import co.edu.uniandes.csw.viajes.dtos.GuiaDTO;
 import co.edu.uniandes.csw.viajes.dtos.GuiaDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.GuiaLogic;
 import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
@@ -26,7 +27,7 @@ import javax.ws.rs.WebApplicationException;
  *
  * @author Juan
  */
-@Path("/guias")
+@Path("guias")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @RequestScoped
@@ -42,6 +43,23 @@ public class GuiaResource
             list.add(new GuiaDetailDTO(entity));
         }
         return list;
+    }
+    
+    
+    /**
+     *
+     * @return devuelve los guias en la base de datos.
+     */
+    @GET
+    public List<GuiaDTO> getGuia(){
+        List<GuiaDTO> GuiasDTOS = new ArrayList<>();
+
+        List<GuiaEntity> guias = guialogic.getGuias();
+        for(GuiaEntity guia : guias){
+            GuiaDTO dto = new GuiaDTO(guia);
+            GuiasDTOS.add(dto);
+        }
+        return GuiasDTOS;
     }
     
     /**
@@ -60,7 +78,7 @@ public class GuiaResource
         }
         return new GuiaDetailDTO(entity);
     }
-
+   
     /**
      * Se encarga de crear un Guia en la base de datos
      *
@@ -90,7 +108,7 @@ public class GuiaResource
         if (oldEntity == null) {
             throw new WebApplicationException("El guia no existe", 404);
         }
-        entity.setCompania(oldEntity.getCompania());
+//        entity.setCompania(oldEntity.getCompania());
         return new GuiaDetailDTO(guialogic.updateGuia(entity));
     }
 
@@ -108,7 +126,5 @@ public class GuiaResource
             throw new WebApplicationException("El author no existe", 404);
         }
        guialogic.deleteGuia(id);
-    }
-    
-    
+    }    
 }

@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.viajes.ejb;
 
 import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
+import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import co.edu.uniandes.csw.viajes.persistence.EntretenimientoPersistence;
 import java.util.List;
 import java.util.logging.Level;
@@ -24,7 +25,8 @@ public class EntretenimientoLogic {
     private EntretenimientoPersistence persistence; // Variable para acceder a la persistencia de la aplicación. Es una inyección de dependencias.
 
     /**
-     *
+     *Crear un nuevo entretenimiento
+     * 
      * @param entity
      * @return
      */
@@ -38,15 +40,15 @@ public class EntretenimientoLogic {
 
     /**
      * 
-     * Obtener todas las entretenimientoes existentes en la base de datos.
+     * Obtener todos los entretenimientos existentes en la base de datos.
      *
-     * @return una lista de entretenimientoes.
+     * @return una lista de entretenimientos.
      */
     public List<EntretenimientoEntity> getEntretenimientos() {
-        LOGGER.info("Inicia proceso de consultar todas las entretenimientoes");
+        LOGGER.info("Inicia proceso de consultar todas las entretenimientos");
         // Note que, por medio de la inyección de dependencias se llama al método "findAll()" que se encuentra en la persistencia.
         List<EntretenimientoEntity> entretenimientos = persistence.findAll();
-        LOGGER.info("Termina proceso de consultar todas las entretenimientoes");
+        LOGGER.info("Termina proceso de consultar todas las entretenimientos");
         return entretenimientos;
     }
 
@@ -54,7 +56,7 @@ public class EntretenimientoLogic {
      *
      * Obtener una entretenimiento por medio de su id.
      * 
-     * @param id: id de la entretenimiento para ser buscada.
+     * @param id: id del entretenimiento para ser buscada.
      * @return la entretenimiento solicitada por medio de su id.
      */
     public EntretenimientoEntity getEntretenimiento(Long id) {
@@ -72,7 +74,7 @@ public class EntretenimientoLogic {
      *
      * Actualizar una entretenimiento.
      *
-     * @param id: id de la entretenimiento para buscarla en la base de datos.
+     * @param id: id del entretenimiento para buscarla en la base de datos.
      * @param entity: entretenimiento con los cambios para ser actualizada, por
      * ejemplo el nombre.
      * @return la entretenimiento con los cambios actualizados en la base de datos.
@@ -88,7 +90,7 @@ public class EntretenimientoLogic {
     /**
      * Borrar un entretenimiento
      *
-     * @param id: id de la entretenimiento a borrar
+     * @param id: id del entretenimiento a borrar
      */
     public void deleteEntretenimiento(Long id) {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar entretenimiento con id={0}", id);
@@ -97,4 +99,80 @@ public class EntretenimientoLogic {
         LOGGER.log(Level.INFO, "Termina proceso de borrar entretenimiento con id={0}", id);
     }
     
+    /**
+     * Obtiene una colección de instancias de ImagenEntity asociadas a una
+     * instancia de Entretenimiento
+     *
+     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @return Colección de instancias de ImagenEntity asociadas a la instancia
+     * de Entretenimiento
+     * 
+     */
+    public List<ImagenEntity> listImagenes(Long entretenimientoId) {
+        return getEntretenimiento(entretenimientoId).getImagenes();
+    }
+
+    /**
+     * Obtiene una instancia de ImagenEntity asociada a una instancia de Entretenimiento
+     *
+     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @param imagenesId Identificador de la instancia de Imagen
+     * @return La imagen con id dado
+     * 
+     */
+    public ImagenEntity getImagen(Long entretenimientoId, Long imagenesId) {
+        List<ImagenEntity> list = getEntretenimiento(entretenimientoId).getImagenes();
+        ImagenEntity imagenesEntity = new ImagenEntity();
+        imagenesEntity.setId(imagenesId);
+        int index = list.indexOf(imagenesEntity);
+        if (index >= 0) {
+            return list.get(index);
+        }
+        return null;
+    }
+
+    /**
+     * Asocia una Imagen existente a un Entretenimiento
+     *
+     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @param imagenesId Identificador de la instancia de Imagen
+     * @return Instancia de ImagenEntity que fue asociada a Entretenimiento
+     * 
+     */
+    public ImagenEntity addImagen(Long entretenimientoId, Long imagenesId) {
+        EntretenimientoEntity entretenimientoEntity = getEntretenimiento(entretenimientoId);
+        ImagenEntity imagenesEntity = new ImagenEntity();
+        imagenesEntity.setId(imagenesId);
+        entretenimientoEntity.getImagenes().add(imagenesEntity);
+        return getImagen(entretenimientoId, imagenesId);
+    }
+
+    /**
+     * Remplaza las instancias de Imagen asociadas a una instancia de Entretenimiento
+     *
+     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @param list Colección de instancias de ImagenEntity a asociar a instancia
+     * de Entretenimiento
+     * @return Nueva colección de ImagenEntity asociada a la instancia de Entretenimiento
+     * 
+     */
+    public List<ImagenEntity> replaceImagenes(Long entretenimientoId, List<ImagenEntity> list) {
+        EntretenimientoEntity entretenimientoEntity = getEntretenimiento(entretenimientoId);
+        entretenimientoEntity.setImagenes(list);
+        return entretenimientoEntity.getImagenes();
+    }
+
+    /**
+     * Desasocia un Imagen existente de un Entretenimiento existente
+     *
+     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @param imagenesId Identificador de la instancia de Imagen
+     * 
+     */
+    public void removeImagen(Long entretenimientoId, Long imagenesId) {
+        EntretenimientoEntity entity = getEntretenimiento(entretenimientoId);
+        ImagenEntity imagenesEntity = new ImagenEntity();
+        imagenesEntity.setId(imagenesId);
+        entity.getImagenes().remove(imagenesEntity);
+    }
 }

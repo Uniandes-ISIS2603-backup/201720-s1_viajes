@@ -5,8 +5,6 @@ package co.edu.uniandes.csw.viajes.persistence;
  * and open the template in the editor.
  */
 
-
-import co.edu.uniandes.csw.viajes.persistence.ItinerarioPersistence;
 import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +22,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
@@ -81,14 +78,23 @@ public class ItinerarioPersistenceTest {
     public ItinerarioPersistenceTest() {
     }
     
+    /**
+     * 
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     * 
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     * 
+     */
     @Before
     public void setUp() {
     try {
@@ -107,12 +113,17 @@ public class ItinerarioPersistenceTest {
         }
     }
     
+    /**
+     * 
+     */
     private void clearData() {
         em.createQuery("delete from ItinerarioEntity").executeUpdate();
     }
 
-
- private void insertData() {
+    /**
+     * 
+     */
+    private void insertData() {
         PodamFactory factory = new PodamFactoryImpl();
         for (int i = 0; i < 3; i++) {
             ItinerarioEntity entity = factory.manufacturePojo(ItinerarioEntity.class);
@@ -122,6 +133,9 @@ public class ItinerarioPersistenceTest {
         }
     }
     
+    /**
+     * 
+     */
     @After
     public void tearDown() {
     }
@@ -138,9 +152,29 @@ public class ItinerarioPersistenceTest {
         Assert.assertNotNull(result);
         ItinerarioEntity entity = em.find(ItinerarioEntity.class, result.getId());
         Assert.assertNotNull(entity);
-        Assert.assertEquals(newEntity.getId(), entity.getId());
+        Assert.assertEquals(newEntity.getFechaInicial(), entity.getFechaInicial());
         Assert.assertEquals(newEntity.getCostoTotal(), entity.getCostoTotal());
-        //fail("testCreate");
+        Assert.assertEquals(newEntity.getFechaFinal(), entity.getFechaFinal());
+        Assert.assertEquals(newEntity.getNumeroVisitantes(), entity.getNumeroVisitantes());
+        Assert.assertEquals(newEntity.getGias(), entity.getGias());
+        Assert.assertEquals(newEntity.getHospedajes(), entity.getHospedajes());
+        Assert.assertEquals(newEntity.getEntretenimientos(), entity.getEntretenimientos());
+        Assert.assertEquals(newEntity.getTransportes(), entity.getTransportes());
+        
+        entity.setGias(newEntity.getGias());
+        Assert.assertEquals("Incoherencia de datos", entity.getGias(), newEntity.getGias());   
+        
+        entity.setHospedajes(newEntity.getHospedajes());
+        Assert.assertEquals("Incoherencia de datos", entity.getHospedajes(), newEntity.getHospedajes());
+        
+        entity.setEntretenimientos(newEntity.getEntretenimientos());
+        Assert.assertEquals("Incoherencia de datos", entity.getEntretenimientos(), newEntity.getEntretenimientos());
+        
+        entity.setTransportes(newEntity.getTransportes());
+        Assert.assertEquals("Incoherencia de datos", entity.getTransportes(), newEntity.getTransportes());
+        
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -158,9 +192,16 @@ public class ItinerarioPersistenceTest {
 
         ItinerarioEntity resp = em.find(ItinerarioEntity.class, entity.getId());
 
-        Assert.assertEquals(newEntity.getId(), resp.getId());
+        Assert.assertEquals(newEntity.getFechaInicial(), resp.getFechaInicial());
         Assert.assertEquals(newEntity.getCostoTotal(), resp.getCostoTotal());
-        //fail("testUpdate");
+        Assert.assertEquals(newEntity.getFechaFinal(), resp.getFechaFinal());
+        Assert.assertEquals(newEntity.getNumeroVisitantes(), resp.getNumeroVisitantes());
+        Assert.assertEquals(newEntity.getGias(), resp.getGias());
+        Assert.assertEquals(newEntity.getHospedajes(), resp.getHospedajes());
+        Assert.assertEquals(newEntity.getEntretenimientos(), resp.getEntretenimientos());
+        Assert.assertEquals(newEntity.getTransportes(), resp.getTransportes());
+        Assert.assertTrue(newEntity.equals(resp));
+        Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -172,7 +213,6 @@ public class ItinerarioPersistenceTest {
         persistence.delete(entity.getId());
         ItinerarioEntity deleted = em.find(ItinerarioEntity.class, entity.getId());
         Assert.assertNull(deleted);
-        //fail("testDelete");
     }
 
     /**
@@ -183,9 +223,16 @@ public class ItinerarioPersistenceTest {
         ItinerarioEntity entity = data.get(0);
         ItinerarioEntity newEntity = persistence.find(entity.getId());
         Assert.assertNotNull(newEntity);
-        Assert.assertEquals(entity.getId(), newEntity.getId());
+        Assert.assertEquals(entity.getFechaInicial(), newEntity.getFechaInicial());
         Assert.assertEquals(entity.getCostoTotal(), newEntity.getCostoTotal());
-        // fail("testFind");
+        Assert.assertEquals(entity.getFechaFinal(), newEntity.getFechaFinal());
+        Assert.assertEquals(entity.getNumeroVisitantes(), newEntity.getNumeroVisitantes());
+        Assert.assertEquals(entity.getGias(), newEntity.getGias());
+        Assert.assertEquals(entity.getHospedajes(), newEntity.getHospedajes());
+        Assert.assertEquals(entity.getEntretenimientos(), newEntity.getEntretenimientos());
+        Assert.assertEquals(entity.getTransportes(), newEntity.getTransportes());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -204,7 +251,5 @@ public class ItinerarioPersistenceTest {
         }
         Assert.assertTrue(found);
     }
-        //fail("testFindAll");
     }
-    
 }

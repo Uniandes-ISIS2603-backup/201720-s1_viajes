@@ -7,12 +7,12 @@ package co.edu.uniandes.csw.viajes.ejb;
 
 import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
 import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
-import co.edu.uniandes.csw.viajes.excpetions.BusinessLogicException;
 import co.edu.uniandes.csw.viajes.persistence.ItinerarioPersistence;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.ws.rs.WebApplicationException;
 
 /**
  *
@@ -93,10 +93,8 @@ public class ItinerarioLogic {
      * @param guiaId : id del guia 
      * @param itinerarioId : id del itinerario
      */
-     public GuiaEntity addGuia(Long guiaId, Long itinerarioId) {
-        ItinerarioEntity itinerarioEntity = getItinerario(itinerarioId);
+     public GuiaEntity addGuia(Long itinerarioId, Long guiaId) {
         GuiaEntity guiaEntity = guiaLogic.getGuia(guiaId);
-        guiaEntity.setItinerario(itinerarioEntity);
         return guiaEntity;
     }
      
@@ -109,26 +107,24 @@ public class ItinerarioLogic {
      public void removeGuia(Long guiaId, Long itinerarioId) {
         ItinerarioEntity itinerarioEntity = getItinerario(itinerarioId);
         GuiaEntity guia = guiaLogic.getGuia(guiaId);
-        guia.setItinerario(null);
         itinerarioEntity.getGias().remove(guia);
     }
      
      /**
      * adiere un guia a un itinerario
      *
-     * @param guiaId : id del guia 
-     * @param itinerarioId : id del itinerario
+     * @param itinerarioId : id del guia 
+     * @param guias : id del itinerario
      */
     public List<GuiaEntity> replaceGuias(Long itinerarioId, List<GuiaEntity> guias) {
         ItinerarioEntity itinerario = getItinerario(itinerarioId);
         List<GuiaEntity> guiaList = guiaLogic.getGuias();
-        for (GuiaEntity guia : guiaList) {
-            if (guias.contains(guia)) {
-                guia.setItinerario(itinerario);
-            } else if (guia.getItinerario() != null && guia.getItinerario().equals(itinerario)) {
-                guia.setItinerario(null);
-            }
-        }
+        //for (GuiaEntity guia : guiaList) {
+          //  if (guias.contains(guia)) {
+            //} else if (guia.getItinerario() != null && guia.getItinerario().equals(itinerario)) {
+              //  guia.setItinerario(null);
+            //}
+        //}
         return guias;
     } 
     
@@ -147,14 +143,14 @@ public class ItinerarioLogic {
      * @param guiaId : id del guia 
      * @param itinerarioId : id del itinerario
      */
-    public GuiaEntity getGuia(Long itinerarioId, Long guiaId) throws BusinessLogicException {
+    public GuiaEntity getGuia(Long itinerarioId, Long guiaId) throws WebApplicationException {
         List<GuiaEntity> guias = getItinerario(itinerarioId).getGias();
         GuiaEntity guia = guiaLogic.getGuia(guiaId);
         int index = guias.indexOf(guia);
         if (index >= 0) {
             return guias.get(index);
         }
-        throw new BusinessLogicException("El GUIA no está asociado a la editorial");
+        throw new WebApplicationException("El GUIA no está asociado a la editorial");
 
     }
     

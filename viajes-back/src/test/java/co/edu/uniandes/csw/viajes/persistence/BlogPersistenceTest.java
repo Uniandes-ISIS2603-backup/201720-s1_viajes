@@ -136,6 +136,10 @@ public class BlogPersistenceTest {
     BlogEntity entity = em.find(BlogEntity.class, result.getId());
     Assert.assertNotNull(entity);
     Assert.assertEquals(newEntity.getTitulo(), entity.getTitulo());
+    Assert.assertEquals(newEntity.getComentario(), entity.getComentario());
+    Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -154,6 +158,10 @@ public class BlogPersistenceTest {
     BlogEntity resp = em.find(BlogEntity.class, entity.getId());
 
     Assert.assertEquals(newEntity.getTitulo(), resp.getTitulo());
+    Assert.assertEquals(newEntity.getComentario(), resp.getComentario());
+    Assert.assertEquals(newEntity.getImagenes(), resp.getImagenes());
+    Assert.assertTrue(newEntity.equals(resp));
+    Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -176,6 +184,14 @@ public class BlogPersistenceTest {
     BlogEntity newEntity = persistence.find(entity.getId());
     Assert.assertNotNull(newEntity);
     Assert.assertEquals(entity.getTitulo(), newEntity.getTitulo());
+    Assert.assertEquals(entity.getComentario(), newEntity.getComentario());
+    Assert.assertEquals(entity.getImagenes(), newEntity.getImagenes());
+    
+    entity.setImagenes(newEntity.getImagenes());
+    Assert.assertEquals("Incoherencia de datos", entity.getImagenes(), newEntity.getImagenes());
+    
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**

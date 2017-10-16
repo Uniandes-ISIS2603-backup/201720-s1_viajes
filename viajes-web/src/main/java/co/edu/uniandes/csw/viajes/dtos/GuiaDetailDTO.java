@@ -15,9 +15,14 @@ import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
  */
 public class GuiaDetailDTO extends GuiaDTO
 {
-    
+    /*
+    * Relación a una ubicacion
+    */
     private CompaniaDTO compania;
     
+    /**
+    private CompaniaDTO compania;
+    */
      public GuiaDetailDTO() {
         super();
     }
@@ -51,16 +56,18 @@ public class GuiaDetailDTO extends GuiaDTO
         return guiaE;
     }
     
-    
-    
-  
+    /**
+     * @return the compania
+     */
     public CompaniaDTO getCompania() {
         return compania;
     }
 
+    /**
+     * @param compania the compania to set
+     */
     public void setCompania(CompaniaDTO compania) {
         this.compania = compania;
-    }
+    }    
     
-     
 }

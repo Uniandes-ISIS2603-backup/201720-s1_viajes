@@ -2,7 +2,6 @@ package co.edu.uniandes.csw.viajes.persistence;
 
 
 import co.edu.uniandes.csw.viajes.entities.TransporteEntity;
-import co.edu.uniandes.csw.viajes.persistence.TransportePersistence;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -132,16 +131,32 @@ public class TransportePersistenceTest {
 
         TransporteEntity entity = em.find(TransporteEntity.class, result.getId());
 
-       
         Assert.assertEquals(newEntity.getValor(), entity.getValor());
         Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
-        /*
+        Assert.assertEquals(newEntity.getCompania(), entity.getCompania());
+        Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
+        Assert.assertEquals(newEntity.getOrigen(), entity.getOrigen());
+        Assert.assertEquals(newEntity.getDestino(), entity.getDestino());
         Assert.assertEquals(newEntity.getFechaInicio(), entity.getFechaInicio());
         Assert.assertEquals(newEntity.getFechaFinal(), entity.getFechaFinal());
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
         Assert.assertEquals(newEntity.getComentarios(), entity.getComentarios());
-        */
+        
+        entity.setCompañia(newEntity.getCompania());
+        Assert.assertEquals("Incoherencia de datos", entity.getCompania(), newEntity.getCompania());
+        
+        entity.setImagenes(newEntity.getImagenes());
+        Assert.assertEquals("Incoherencia de datos", entity.getImagenes(), newEntity.getImagenes());
+        
+        entity.setOrigen(newEntity.getOrigen());
+        Assert.assertEquals("Incoherencia de datos", entity.getOrigen(), newEntity.getOrigen());
+        
+        entity.setDestino(newEntity.getDestino());
+        Assert.assertEquals("Incoherencia de datos", entity.getDestino(), newEntity.getDestino());
+        
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -176,13 +191,17 @@ public class TransportePersistenceTest {
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(entity.getValor(), newEntity.getValor());
         Assert.assertEquals(entity.getTipo(), newEntity.getTipo());
-        /*
+        Assert.assertEquals(entity.getCompania(), newEntity.getCompania());
+        Assert.assertEquals(entity.getImagenes(), newEntity.getImagenes());
+        Assert.assertEquals(entity.getOrigen(), newEntity.getOrigen());
+        Assert.assertEquals(entity.getDestino(), newEntity.getDestino());
         Assert.assertEquals(entity.getFechaInicio(), newEntity.getFechaInicio());
         Assert.assertEquals(entity.getFechaFinal(), newEntity.getFechaFinal());
         Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getCalificacion(), newEntity.getCalificacion());
         Assert.assertEquals(entity.getComentarios(), newEntity.getComentarios());
-        */
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -217,14 +236,16 @@ public class TransportePersistenceTest {
 
         Assert.assertEquals(newEntity.getValor(), resp.getValor());
         Assert.assertEquals(newEntity.getTipo(), resp.getTipo());
-        /*
+        Assert.assertEquals(newEntity.getCompania(), resp.getCompania());
+        Assert.assertEquals(newEntity.getImagenes(), resp.getImagenes());
+        Assert.assertEquals(newEntity.getOrigen(), resp.getOrigen());
+        Assert.assertEquals(newEntity.getDestino(), resp.getDestino());
         Assert.assertEquals(newEntity.getFechaInicio(), resp.getFechaInicio());
         Assert.assertEquals(newEntity.getFechaFinal(), resp.getFechaFinal());
         Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
         Assert.assertEquals(newEntity.getCalificacion(), resp.getCalificacion());
         Assert.assertEquals(newEntity.getComentarios(), resp.getComentarios());
-*/
-        
-        
+        Assert.assertTrue(newEntity.equals(resp));
+        Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 }
