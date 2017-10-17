@@ -56,13 +56,13 @@ public class ItinerariosGuiasResource {
     
     @GET
     @Path("{guiasId: \\d+}")
-    public GuiaDetailDTO getGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("guiaId") Long guiasId) throws WebApplicationException {
+    public GuiaDetailDTO getGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("guiasId") Long guiasId) throws WebApplicationException {
         return new GuiaDetailDTO(itinerarioLogic.getGuia(itinerarioId, guiasId));
     }
     
     @POST
     @Path("{guiaId: \\d+}")
-    public GuiaDetailDTO addGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("itinerarioId") Long guiaId) {
+    public GuiaDetailDTO addGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("guiaId") Long guiaId) {
         return new GuiaDetailDTO(itinerarioLogic.addGuia(itinerarioId, guiaId));
     }
     
