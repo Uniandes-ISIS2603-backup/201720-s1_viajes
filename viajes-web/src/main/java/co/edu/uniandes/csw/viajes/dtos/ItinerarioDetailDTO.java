@@ -42,21 +42,30 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
         super(entity);
         if (entity != null) {
             guias = new ArrayList<>();
-            for(GuiaEntity entityGuia : entity.getGias())  {
+            if(entity.getGias()!=null){
+                for(GuiaEntity entityGuia : entity.getGias())  {
                 guias.add(new GuiaDTO(entityGuia));
+                }
             }
             entretenimientos = new ArrayList<>();
-            for(EntretenimientoEntity entityEntretenimiento : entity.getEntretenimientos()){
+            if(entity.getEntretenimientos()!=null){
+                for(EntretenimientoEntity entityEntretenimiento : entity.getEntretenimientos()){
                 entretenimientos.add(new EntretenimientoDTO(entityEntretenimiento));
+                }   
             }
             hospedajes = new ArrayList<>();
-            for(HospedajeEntity entityHospedaje : entity.getHospedajes()){
+            if(entity.getHospedajes()!=null){
+                for(HospedajeEntity entityHospedaje : entity.getHospedajes()){
                 hospedajes.add(new HospedajeDTO(entityHospedaje));
+                }   
             }
             transportes = new ArrayList<>();
-            for(TransporteEntity entityTransporte : entity.getTransportes()){
+            if(entity.getTransportes()!=null){
+                for(TransporteEntity entityTransporte : entity.getTransportes()){
                 transportes.add(new TransporteDTO(entityTransporte));
+                }
             }
+            
         }
     }
     
