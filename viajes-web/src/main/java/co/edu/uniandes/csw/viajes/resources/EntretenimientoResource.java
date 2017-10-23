@@ -150,8 +150,5 @@ public class EntretenimientoResource {
             list.add(new EntretenimientoDetailDTO(entity));
         }
         return list;
-    }
-    
-    
-    
+    }    
 }

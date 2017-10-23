@@ -14,7 +14,7 @@ import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 public class ImagenDetailDTO extends ImagenDTO{
     
     public ImagenDetailDTO(){
-        
+        super();
     }
     
     /**

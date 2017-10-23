@@ -138,6 +138,17 @@ public class TarjetaCreditoPersistenceTest
 
         Assert.assertEquals(newEntity.getNumero(), entity.getNumero());
         Assert.assertEquals(newEntity.getFondos(), entity.getFondos());
+        Assert.assertEquals(newEntity.getPagos(), entity.getPagos());
+        Assert.assertEquals(newEntity.getUsuario(), entity.getUsuario());
+        
+        entity.setPagos(newEntity.getPagos());
+        Assert.assertEquals("Incoherencia de datos", entity.getPagos(), newEntity.getPagos());
+        
+        entity.setUsuario(newEntity.getUsuario());
+        Assert.assertEquals("Incoherencia de datos", entity.getUsuario(), newEntity.getUsuario());
+        
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
     
     /**
@@ -170,10 +181,36 @@ public class TarjetaCreditoPersistenceTest
         TarjetaCreditoEntity entity = data.get(0);
         TarjetaCreditoEntity newEntity = tarjetaCreditoPersistence.findById(entity.getId());
         Assert.assertNotNull(newEntity);
+        
         Assert.assertEquals(entity.getNumero(), newEntity.getNumero());
         Assert.assertEquals(entity.getFondos(), newEntity.getFondos());
+        Assert.assertEquals(entity.getPagos(), newEntity.getPagos());
+        Assert.assertEquals(entity.getUsuario(), newEntity.getUsuario());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
+    /**
+     * Prueba para consultar una TarjetaCredito.
+     * 
+     * 
+     */
+    @Test
+    public void getTarjetaCreditoNumberTest()
+    { 
+        TarjetaCreditoEntity entity = data.get(0);
+
+        TarjetaCreditoEntity newEntity = tarjetaCreditoPersistence.findByNumber(entity.getNumero());
+        Assert.assertNotNull(newEntity);
+
+        Assert.assertEquals(entity.getNumero(), newEntity.getNumero());
+        Assert.assertEquals(entity.getFondos(), newEntity.getFondos());
+        Assert.assertEquals(entity.getPagos(), newEntity.getPagos());
+        Assert.assertEquals(entity.getUsuario(), newEntity.getUsuario()); 
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
+    }
+    
      /**
      * Prueba para eliminar una TarjetaCredito.
      *
@@ -206,6 +243,9 @@ public class TarjetaCreditoPersistenceTest
 
         Assert.assertEquals(newEntity.getNumero(), resp.getNumero());
         Assert.assertEquals(newEntity.getFondos(), resp.getFondos());
-    }   
-  
+        Assert.assertEquals(newEntity.getPagos(), resp.getPagos());
+        Assert.assertEquals(newEntity.getUsuario(), resp.getUsuario());  
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
+    }     
 }

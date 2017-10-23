@@ -65,7 +65,6 @@ public class OficinaResource {
      * http://localhost:8080/viajes-web/api/oficinas
      *
      * @return la lista de todas las oficinaes en objetos json DTO.
-     * @throws BusinessLogicException
      */
     @GET
     public List<OficinaDetailDTO> getOficinas(){

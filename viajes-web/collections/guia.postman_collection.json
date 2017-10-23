@@ -1,0 +1,166 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Guia",
+		"_postman_id": "04220806-67a9-79f8-1bde-fe4fc8a775a3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "delete despues de crear",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 204\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/guias/100",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "put ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/guias/300",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n        \"calificacion\": 3,\n        \"contratoHora\": 9000,\n        \"fechaFinal\": \"25/09/17\",\n        \"fechaInicio\": \"25/09/17\",\n        \"id\": 3,\n        \"lenguaje\": \"INGLES\",\n        \"nombre\": \"dasda\",\n        \"valor\": 2000\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Put guia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/guias",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"calificacion\": 6,\n        \"contratoHora\": 9000,\n        \"fechaFinal\": \"25/09/17\",\n        \"fechaInicio\": \"25/09/17\",\n        \"lenguaje\": \"INGLES\",\n        \"nombre\": \"Juan\",\n        \"valor\": 2000\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get guias",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/guias",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n        \"calificacion\": 3,\n        \"contratoHora\": 9000,\n        \"fechaFinal\": \"25/09/17\",\n        \"fechaInicio\": \"25/09/17\",\n        \"id\": 3,\n        \"lenguaje\": \"INGLES\",\n        \"nombre\": \"dasda\",\n        \"valor\": 2000\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get guias por id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/viajes-web/api/guias/200",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n        \"calificacion\": 3,\n        \"contratoHora\": 9000,\n        \"fechaFinal\": \"25/09/17\",\n        \"fechaInicio\": \"25/09/17\",\n        \"id\": 3,\n        \"lenguaje\": \"INGLES\",\n        \"nombre\": \"dasda\",\n        \"valor\": 2000\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
