@@ -42,35 +42,29 @@ public class TransporteEntity extends ServicioEntity
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
-
+     
+   
     /**
      * Imagenes asociadas al transporte
      */
     @PodamExclude
-    @OneToMany(mappedBy = "transporte")
+    @OneToMany
     private List<ImagenEntity> imagenes;
     
     /**
      * Direccion de origen del transporte
      */
     @PodamExclude
-    @OneToOne(mappedBy = "origen")
+    @OneToOne
     private UbicacionEntity origen;
     
     /**
      * Direccion destino del transporte
      */
     @PodamExclude
-    @OneToOne(mappedBy = "destino")
+    @OneToOne
     private UbicacionEntity destino;
-    
-    /**
-     * Itinerario al cual pertenece un transporte
-     */
-    @PodamExclude
-    @ManyToOne
-    private ItinerarioEntity itinerario;   
-    
+   
     /**
      * Retornar el tipo del transporte
      * @return tipo del transporte
@@ -86,7 +80,7 @@ public class TransporteEntity extends ServicioEntity
     public void setTipo(TipoTransporte tipo) {
         this.tipo = tipo;
     }
-    
+
     /**
      * Rretornar la compania a la cual pertenece el transporte
      * @return compania del transporte
@@ -103,29 +97,50 @@ public class TransporteEntity extends ServicioEntity
         this.compania = compania;
     }
 
+    /**
+     * Imagenes del transporte
+     * @return imagenes
+     */
     public List<ImagenEntity> getImagenes() {
         return imagenes;
     }
-
+    /**
+     * Cambia o agrega las imagenes
+     * @param imagenes 
+     */
     public void setImagenes(List<ImagenEntity> imagenes) {
         this.imagenes = imagenes;
     }
-
+    
+    /**
+     * Ubicación origen del transporte
+     * @return origen
+     */
     public UbicacionEntity getOrigen() {
         return origen;
     }
-
+    
+    /**
+     * Cambia la ubicación de origen 
+     * @param origen 
+     */
     public void setOrigen(UbicacionEntity origen) {
         this.origen = origen;
     }
-
+    
+    /**
+     * Ubicacion destino del transporte
+     * @return destino
+     */
     public UbicacionEntity getDestino() {
         return destino;
     }
-
+    
+    /**
+     * Cambia la ubicación de destino del transporte
+     * @param destino 
+     */
     public void setDestino(UbicacionEntity destino) {
         this.destino = destino;
-    }
-    
-    
+    }   
 }

@@ -1,8 +1,8 @@
 {
 	"variables": [],
 	"info": {
-		"name": "TransportesCollection.postman_collection",
-		"_postman_id": "da09a235-7fda-87b5-1e68-8259e3cb182f",
+		"name": "Transportes",
+		"_postman_id": "db7872ee-3a46-5b8c-b78c-4db14f176269",
 		"description": "Pruebas referentes a todo lo relacionado con la entidad Transporte.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -24,7 +24,10 @@
 				"url": "http://localhost:8080/viajes-web/webresources/transportes",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Consulta todos los transportes registrados"
 			},
 			"response": []
@@ -43,7 +46,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/transportes/1",
+				"url": "http://localhost:8080/viajes-web/webresources/transportes/100",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -65,7 +68,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/transportes/1",
+				"url": "http://localhost:8080/viajes-web/webresources/transportes/100",
 				"method": "PUT",
 				"header": [
 					{
@@ -127,7 +130,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/transportes/2",
+				"url": "http://localhost:8080/viajes-web/webresources/transportes/200",
 				"method": "DELETE",
 				"header": [],
 				"body": {
@@ -152,7 +155,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/transportes/2",
+				"url": "http://localhost:8080/viajes-web/webresources/transportes/200",
 				"method": "GET",
 				"header": [
 					{
@@ -183,7 +186,7 @@
 				}
 			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/transportes/2",
+				"url": "http://localhost:8080/viajes-web/webresources/transportes/200",
 				"method": "PUT",
 				"header": [
 					{

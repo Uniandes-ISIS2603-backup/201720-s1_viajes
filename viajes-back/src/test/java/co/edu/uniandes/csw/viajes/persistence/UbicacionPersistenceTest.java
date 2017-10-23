@@ -115,6 +115,14 @@ public class UbicacionPersistenceTest {
     UbicacionEntity entity = em.find(UbicacionEntity.class, result.getId());
     Assert.assertNotNull(entity);
     Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
+    Assert.assertEquals(newEntity.getLongitud(), entity.getLongitud());
+    Assert.assertEquals(newEntity.getLatitud(), entity.getLatitud());
+    Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
+    Assert.assertEquals(newEntity.getDireccion(), entity.getDireccion());
+    Assert.assertEquals(newEntity.getCiudad(), entity.getCiudad());
+    Assert.assertEquals(newEntity.getPais(), entity.getPais());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -133,6 +141,14 @@ public class UbicacionPersistenceTest {
     UbicacionEntity resp = em.find(UbicacionEntity.class, entity.getId());
 
     Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
+    Assert.assertEquals(newEntity.getLongitud(), resp.getLongitud());
+    Assert.assertEquals(newEntity.getLatitud(), resp.getLatitud());
+    Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
+    Assert.assertEquals(newEntity.getDireccion(), resp.getDireccion());
+    Assert.assertEquals(newEntity.getCiudad(), resp.getCiudad());
+    Assert.assertEquals(newEntity.getPais(), resp.getPais());
+    Assert.assertTrue(newEntity.equals(resp));
+    Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -155,6 +171,14 @@ public class UbicacionPersistenceTest {
     UbicacionEntity newEntity = persistence.find(entity.getId());
     Assert.assertNotNull(newEntity);
     Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
+    Assert.assertEquals(entity.getLongitud(), newEntity.getLongitud());
+    Assert.assertEquals(entity.getLatitud(), newEntity.getLatitud());
+    Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
+    Assert.assertEquals(entity.getDireccion(), newEntity.getDireccion());
+    Assert.assertEquals(entity.getCiudad(), newEntity.getCiudad());
+    Assert.assertEquals(entity.getPais(), newEntity.getPais());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -175,6 +199,10 @@ public class UbicacionPersistenceTest {
     }
     }
     
+    /**
+     * Inserta los datos iniciales para el correcto funcionamiento de las
+     * pruebas.
+     */
     private void insertData() {
         PodamFactory factory = new PodamFactoryImpl();
         for (int i = 0; i < 3; i++) {
@@ -183,7 +211,7 @@ public class UbicacionPersistenceTest {
             data.add(entity);
         }
     }
-
+    
     private void clearData() {
         em.createQuery("delete from UbicacionEntity").executeUpdate();
     }

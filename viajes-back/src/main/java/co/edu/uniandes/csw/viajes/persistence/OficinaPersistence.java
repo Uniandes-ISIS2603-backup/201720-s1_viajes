@@ -65,7 +65,7 @@ public class OficinaPersistence {
     }
 
     /**
-     * Devuelve todas las oficinaes de la base de datos.
+     * Devuelve todas las oficinas de la base de datos.
      *
      * @return una lista con todas las oficinas que encuentre en la base de
      * datos, "select u from oficinaEntity u" es como un "select * from
@@ -75,8 +75,7 @@ public class OficinaPersistence {
         
         // Se crea un query para buscar todas las oficinas en la base de datos.
         TypedQuery query = em.createQuery("select u from OficinaEntity u", OficinaEntity.class);
-        // Note que en el query se hace uso del método getResultList() que obtiene una lista de oficinaes.
+        // Note que en el query se hace uso del método getResultList() que obtiene una lista de oficinas.
         return query.getResultList();
     }
-
 }

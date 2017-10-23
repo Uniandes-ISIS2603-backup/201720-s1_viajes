@@ -22,7 +22,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
@@ -137,6 +136,14 @@ public class OficinaPersistenceTest {
     OficinaEntity entity = em.find(OficinaEntity.class, result.getId());
     Assert.assertNotNull(entity);
     Assert.assertEquals(newEntity.getNombreLugar(), entity.getNombreLugar());
+    Assert.assertEquals(newEntity.getNombreEncargado(), entity.getNombreEncargado());
+    Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
+    
+    entity.setUbicacion(newEntity.getUbicacion());
+    Assert.assertEquals("Incoherencia de datos", entity.getUbicacion(), newEntity.getUbicacion());
+    
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -155,6 +162,10 @@ public class OficinaPersistenceTest {
     OficinaEntity resp = em.find(OficinaEntity.class, entity.getId());
 
     Assert.assertEquals(newEntity.getNombreLugar(), resp.getNombreLugar());
+    Assert.assertEquals(newEntity.getNombreEncargado(), resp.getNombreEncargado());
+    Assert.assertEquals(newEntity.getUbicacion(), resp.getUbicacion());
+    Assert.assertTrue(newEntity.equals(resp));
+    Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -177,6 +188,10 @@ public class OficinaPersistenceTest {
     OficinaEntity newEntity = persistence.find(entity.getId());
     Assert.assertNotNull(newEntity);
     Assert.assertEquals(entity.getNombreLugar(), newEntity.getNombreLugar());
+    Assert.assertEquals(entity.getNombreEncargado(), newEntity.getNombreEncargado());
+    Assert.assertEquals(entity.getUbicacion(), newEntity.getUbicacion());
+    Assert.assertTrue(newEntity.equals(entity));
+    Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -195,6 +210,5 @@ public class OficinaPersistenceTest {
         }
         Assert.assertTrue(found);
     }
-    }
-    
+    }   
 }

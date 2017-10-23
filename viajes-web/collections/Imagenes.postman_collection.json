@@ -1,16 +1,27 @@
 {
 	"variables": [],
 	"info": {
-		"name": "ImagenesCollection",
-		"_postman_id": "4c64861a-b995-1dcd-f7c7-5bc46ee8a9da",
+		"name": "Imagenes",
+		"_postman_id": "d5a27a86-af1e-c697-68a3-4255de666919",
 		"description": "get imagenes, post imagenes, get imagenes/id",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "get imagenes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/imagenes",
+				"url": "http://localhost:8080/viajes-web/api/imagenes",
 				"method": "GET",
 				"header": [
 					{
@@ -29,8 +40,19 @@
 		},
 		{
 			"name": "imagenes post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/imagenes",
+				"url": "http://localhost:8080/viajes-web/api/imagenes",
 				"method": "POST",
 				"header": [
 					{
@@ -49,8 +71,19 @@
 		},
 		{
 			"name": "imagenes/id get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
 			"request": {
-				"url": "http://localhost:8080/viajes-web/webresources/imagenes/1",
+				"url": "http://localhost:8080/viajes-web/webresources/imagenes/16",
 				"method": "GET",
 				"header": [
 					{

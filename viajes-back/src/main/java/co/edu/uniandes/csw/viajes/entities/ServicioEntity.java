@@ -48,7 +48,8 @@ public abstract class ServicioEntity extends BaseEntity{
      * Descripcion del servicio
      */
     private String descripcion;
-        
+
+    
      /**
       * Retornar el nombre del servicio
       * @return nombre del servicio

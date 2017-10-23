@@ -13,13 +13,20 @@ import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
  */
 public class UbicacionDTO {
     
-    private String longitud;
-    private String latitud;
+    private Double longitud;
+    private Double latitud;
     private String nombre;
     private String direccion;
     private String ciudad;
     private String pais;
     private Long id;
+    
+    /**
+     * Constructor por defecto
+     */
+    public UbicacionDTO (){
+        
+    }
     
     public UbicacionDTO (UbicacionEntity entity){
         this.longitud = entity.getLongitud();
@@ -31,19 +38,19 @@ public class UbicacionDTO {
         this.id = entity.getId();
     }
 
-    public String getLongitud() {
+    public Double getLongitud() {
         return longitud;
     }
 
-    public void setLongitud(String longitud) {
+    public void setLongitud(Double longitud) {
         this.longitud = longitud;
     }
 
-    public String getLatitud() {
+    public Double getLatitud() {
         return latitud;
     }
 
-    public void setLatitud(String latitud) {
+    public void setLatitud(Double latitud) {
         this.latitud = latitud;
     }
 
