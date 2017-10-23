@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.resources;
 
+import co.edu.uniandes.csw.viajes.dtos.GuiaDTO;
 import co.edu.uniandes.csw.viajes.dtos.GuiaDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.GuiaLogic;
 import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
@@ -26,7 +27,7 @@ import javax.ws.rs.WebApplicationException;
  *
  * @author Juan
  */
-@Path("/guias")
+@Path("guias")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @RequestScoped
@@ -35,7 +36,7 @@ public class GuiaResource
     @Inject
     private GuiaLogic guialogic;
     
-  /*
+  
     private List<GuiaDetailDTO> listEntity2DTO(List<GuiaEntity> entityList) {
         List<GuiaDetailDTO> list = new ArrayList<>();
         for (GuiaEntity entity : entityList) {
@@ -43,7 +44,23 @@ public class GuiaResource
         }
         return list;
     }
-    */
+    
+    
+    /**
+     *
+     * @return devuelve los guias en la base de datos.
+     */
+    @GET
+    public List<GuiaDTO> getGuia(){
+        List<GuiaDTO> GuiasDTOS = new ArrayList<>();
+
+        List<GuiaEntity> guias = guialogic.getGuias();
+        for(GuiaEntity guia : guias){
+            GuiaDTO dto = new GuiaDTO(guia);
+            GuiasDTOS.add(dto);
+        }
+        return GuiasDTOS;
+    }
     
     /**
      * Obtiene los datos de una instancia de Guia a partir de su ID
@@ -52,7 +69,6 @@ public class GuiaResource
      * @return Instancia de GuiaDetailDTO con los datos del Guia consultado
      * 
      */
-    /*
     @GET
     @Path("{id: \\d+}")
     public GuiaDetailDTO getGuia(@PathParam("id") Long id) {
@@ -62,8 +78,7 @@ public class GuiaResource
         }
         return new GuiaDetailDTO(entity);
     }
-    */
-
+   
     /**
      * Se encarga de crear un Guia en la base de datos
      *
@@ -71,13 +86,11 @@ public class GuiaResource
      * @return Objeto de GuiaDetailDTO los datos nuevos y su ID
      * 
      */
-    /*
     @POST
     public GuiaDetailDTO createGuia(GuiaDetailDTO dto) {
         return new GuiaDetailDTO(guialogic.createGuia(dto.toEntity()));
     }
-    */
-    
+
     /**
      * Actualiza la información de una instancia de Guia
      *
@@ -86,7 +99,6 @@ public class GuiaResource
      * @return Instancia de GuiaDetailDTO con los datos actualizados
      * 
      */
-    /*
     @PUT
     @Path("{id: \\d+}")
     public GuiaDetailDTO updateGuia(@PathParam("id") Long id, GuiaDetailDTO dto) {
@@ -96,10 +108,9 @@ public class GuiaResource
         if (oldEntity == null) {
             throw new WebApplicationException("El guia no existe", 404);
         }
-        entity.setCompania(oldEntity.getCompania());
+//        entity.setCompania(oldEntity.getCompania());
         return new GuiaDetailDTO(guialogic.updateGuia(entity));
     }
-    */
 
     /**
      * Elimina una instancia de Guia de la base de datos
@@ -115,7 +126,5 @@ public class GuiaResource
             throw new WebApplicationException("El author no existe", 404);
         }
        guialogic.deleteGuia(id);
-    }
-    
-    
+    }    
 }

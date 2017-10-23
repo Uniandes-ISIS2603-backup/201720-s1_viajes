@@ -20,8 +20,7 @@ import javax.persistence.TypedQuery;
 @Stateless
 public class UbicacionPersistence {
     
-     private static final Logger LOGGER = Logger.getLogger(UbicacionPersistence.class.getName());
-     
+    
      @PersistenceContext(unitName = "viajesPU")
       protected EntityManager em;
      
@@ -31,11 +30,8 @@ public class UbicacionPersistence {
      * @return devuelve la entidad creada con un id dado por la base de datos.
      */
      public UbicacionEntity create(UbicacionEntity entity){
-         LOGGER.info("Creando una ubicación nueva");
          em.persist(entity);
-         LOGGER.info("Nueva ubicación creada");
-         return entity;
-        
+         return entity;        
     }
    
      /**
@@ -45,7 +41,6 @@ public class UbicacionPersistence {
      * @return una Ubicacion con los cambios aplicados.
      */
     public UbicacionEntity update(UbicacionEntity entity){
-        LOGGER.log(Level.INFO, "Actualizando ubicación");
         return em.merge(entity);
     }
     
@@ -57,7 +52,6 @@ public class UbicacionPersistence {
      * @param id: id correspondiente a la Ubicacion a borrar.
      */
     public void delete(Long id){
-        LOGGER.log(Level.INFO, "Borrando ubicación con id ", id);
         UbicacionEntity entity = em.find(UbicacionEntity.class, id);
         em.remove(entity);
     }
@@ -69,7 +63,6 @@ public class UbicacionPersistence {
      * @return una Ubicacion.
      */
     public UbicacionEntity find(Long id){
-       LOGGER.log(Level.INFO, "Consultando ubicación con id ", id);
         
         return em.find(UbicacionEntity.class, id);
     }
@@ -81,7 +74,6 @@ public class UbicacionPersistence {
      * datos
      */
     public List<UbicacionEntity> findAll() {
-         LOGGER.info("Consultando todas las ubicaciones");
          TypedQuery query = em.createQuery("select u from UbicacionEntity u", UbicacionEntity.class);
       
          return query.getResultList();

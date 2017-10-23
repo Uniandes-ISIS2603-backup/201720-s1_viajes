@@ -5,11 +5,8 @@
  */
 package co.edu.uniandes.csw.viajes.entities;
 
-
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -23,42 +20,33 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class EntretenimientoEntity extends ServicioEntity
 {    
     @PodamExclude
-    @OneToMany(mappedBy = "entretenimiento")
+    @OneToMany
     private List<ImagenEntity> imagenes;
     
-    //@PodamExclude
-    //@ManyToOne
-    //private CompaniaEntity compania;
+    @PodamExclude
+    @ManyToOne
+    private CompaniaEntity compania;
     
     @PodamExclude
     @OneToOne()
     private UbicacionEntity ubicacion;
     
-    @PodamExclude
-    @ManyToOne
-    private ItinerarioEntity itinerario;
-
-    public ItinerarioEntity getItinerario() {
-        return itinerario;
-    }
-
-    public void setItinerario(ItinerarioEntity itinerario) {
-        this.itinerario = itinerario;
-    }
-    
-    
-   
+     /**
+     * @return la ubicacion
+     */
     public UbicacionEntity getUbicacion()
     {
         return ubicacion;
     }
     
+    /**
+     * @param ubicacion la ubicacion a settear
+     */
     public void setUbicacion(UbicacionEntity ubicacion)
     {
         this.ubicacion = ubicacion;
     }
 
-    /*
     public CompaniaEntity getCompania()
     {
         return compania;
@@ -68,14 +56,18 @@ public class EntretenimientoEntity extends ServicioEntity
     {
         this.compania = compania;
     }
-
-    */
-    
+       
+    /**
+     * @return las imagenes
+     */
     public List<ImagenEntity> getImagenes()
     {
         return imagenes;
     }
     
+    /**
+     * @param imagenes las imagenes a settear
+     */
     public void setImagenes(List<ImagenEntity> imagenes)
     {
         this.imagenes = imagenes;

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.edu.uniandes.csw.viajes.entities;
 
 import java.util.List;
@@ -18,52 +13,99 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class UsuarioEntity extends BaseEntity 
 {
-    //ATRIBUTOS
-    private String nombre; //Nombre del usuario    
-      
+    /** 
+     * Nombre del usuario
+     */
+    private String nombre;  
+    
+    /**
+     * Tarjetas que le pertenecen al usuario
+     */
     @PodamExclude
     @OneToMany(mappedBy = "usuario")
     private List<TarjetaCreditoEntity> tarjeta;
     
+    /**
+     * Itinerarios que tiene el usuario
+     */
     @PodamExclude
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany
     private List<ItinerarioEntity> itinerario;
     
+    
+    /**
+     * Blog que le pertenece al usuario
+     */
     @PodamExclude
-    @OneToOne(mappedBy = "usuario")
+    @OneToOne
     private BlogEntity blog;
     
-    //GETTERS/SETTERS
+    /**
+     * Lista de itinerarios programados por el usuario
+     * 
+     * @return itinerarios
+     */
+    public List<ItinerarioEntity> getItinerarios()
+    {
+        return itinerario;
+    }
+        
+    /**
+     * Se agregan itinerarios a la lista de itinerarios del usuario
+     * @param itinerarios 
+     */
+    public void setItinerarios(List<ItinerarioEntity> itinerarios)
+    {
+        this.itinerario = itinerarios;
+    }
+        
+    /**
+     * Tarjetas de credito de las que el usuario es dueño
+     * @return 
+     */
+    public List<TarjetaCreditoEntity> getTarjetas()
+    {
+        return tarjeta;
+    }
     
+    /**
+     * Se agregan tarjetas al usuario
+     * @param tarjetas 
+     */
+    public void setTarjetas(List<TarjetaCreditoEntity> tarjetas)
+    {
+        this.tarjeta = tarjetas;
+    }
+    
+    /**
+     * Nombre del usuario
+     * @return nombre
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * Se cambia el nombre del usuario
+     * @param nombre 
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * Blog que le pertenece al usuario
+     * @return blog
+     */
     public BlogEntity getBlog() {
         return blog;
     }
 
-    public List<ItinerarioEntity> getItinerario() {
-        return itinerario;
-    }
-
-    public List<TarjetaCreditoEntity> getTarjeta() {
-        return tarjeta;
-    }
-
+    /**
+     * Agrega un blog al usuario
+     * @param blog 
+     */
     public void setBlog(BlogEntity blog) {
         this.blog = blog;
-    }
-
-    public void setItinerario(List<ItinerarioEntity> itinerario) {
-        this.itinerario = itinerario;
-    }
-
-    public void setTarjeta(List<TarjetaCreditoEntity> tarjeta) {
-        this.tarjeta = tarjeta;
     }    
 }

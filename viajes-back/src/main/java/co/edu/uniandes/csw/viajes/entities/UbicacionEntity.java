@@ -6,8 +6,6 @@
 package co.edu.uniandes.csw.viajes.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -16,126 +14,129 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class UbicacionEntity extends BaseEntity {
     
+    /**
+     * Longitud de la ubicacion
+     */
     private Double longitud;
+    
+    /**
+     * Latitud de la ubicacion
+     */
     private Double latitud;
+    
+    /**
+     * Nombre del lugar
+     */
     private String nombre;
+    
+    /**
+     * Direccion del lugar
+     */
     private String direccion;
+    
+    /**
+     * Ciudad de la direccion
+     */
     private String ciudad;
+    
+    /**
+     * País en el que se encuentra el lugar
+     */
     private String pais;
-       
-    @PodamExclude
-    @OneToOne
-    private OficinaEntity oficina;
-    
-    @PodamExclude
-    @OneToOne
-    private HospedajeEntity hospedaje;
-    
-    @PodamExclude
-    @OneToOne
-    private EntretenimientoEntity entretenimiento;
-    
-    @PodamExclude
-    @OneToOne
-    private TransporteEntity origen;
-    
-    @PodamExclude
-    @OneToOne
-    private TransporteEntity destino;
-    
+
+    /**
+     * Longitud de la ubicación
+     * @return longitud
+     */
     public Double getLongitud() {
         return longitud;
     }
 
+    /**
+     * Cambiar longitud de la ubicación
+     * @param longitud 
+     */
     public void setLongitud(Double longitud) {
         this.longitud = longitud;
     }
 
+    /**
+     * Latitud de la ubicación
+     * @return latitud
+     */
     public Double getLatitud() {
         return latitud;
     }
 
+    /**
+     * Cambiar latitud de la ubicación
+     * @param latitud 
+     */
     public void setLatitud(Double latitud) {
         this.latitud = latitud;
     }
 
+    /**
+     * Nombre del lugar
+     * @return nombre
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * Cambiar el nombre del lugar
+     * @param nombre 
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * Dirección del lugar
+     * @return direccion
+     */
     public String getDireccion() {
         return direccion;
     }
 
+    /**
+     * Cambiar direccion del lugar
+     * @param direccion 
+     */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
+    /**
+     * Ciudad del lugar
+     * @return ciudad
+     */
     public String getCiudad() {
         return ciudad;
     }
 
+    /**
+     * Cambiar la ciudad de la dirección
+     * @param ciudad 
+     */
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
 
+    /**
+     * País del lugar 
+     * @return 
+     */
     public String getPais() {
         return pais;
     }
 
+    /**
+     * Cambiar el país
+     * @param pais 
+     */
     public void setPais(String pais) {
         this.pais = pais;
     }
-    
-    public OficinaEntity getOficina() {
-        return oficina;
-    }
-
-    public void setOficina(OficinaEntity oficina) {
-        this.oficina = oficina;
-    }
-
-    public TransporteEntity getDestino() {
-        return destino;
-    }
-
-    public EntretenimientoEntity getEntretenimiento() {
-        return entretenimiento;
-    }
-
-    public HospedajeEntity getHospedaje() {
-        return hospedaje;
-    }
-
-    public TransporteEntity getOrigen() {
-        return origen;
-    }
-
-    public void setDestino(TransporteEntity destino) {
-        this.destino = destino;
-    }
-
-    public void setEntretenimiento(EntretenimientoEntity entretenimiento) {
-        this.entretenimiento = entretenimiento;
-    }
-
-    public void setHospedaje(HospedajeEntity hospedaje) {
-        this.hospedaje = hospedaje;
-    }
-
-    public void setOrigen(TransporteEntity origen) {
-        this.origen = origen;
-    }
-    
-//    public OficinaEntity getOficina() {
-//        return oficina;
-//    }
-//
-//    public void setOficina(OficinaEntity oficina) {
-//        this.oficina = oficina;
-//    }
-}
+ }

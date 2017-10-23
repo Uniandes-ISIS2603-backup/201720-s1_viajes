@@ -65,18 +65,16 @@ public class BlogPersistence {
     }
 
     /**
-     * Devuelve todas las bloges de la base de datos.
+     * Devuelve todos los blogs de la base de datos.
      *
      * @return una lista con todas las blogs que encuentre en la base de
      * datos, "select u from blogEntity u" es como un "select * from
      * blogEntity;" - "SELECT * FROM table_codigo" en SQL.
      */
-    public List<BlogEntity> findAll() {
-        
+    public List<BlogEntity> findAll() {        
         // Se crea un query para buscar todas las blogs en la base de datos.
         TypedQuery query = em.createQuery("select u from BlogEntity u", BlogEntity.class);
-        // Note que en el query se hace uso del método getResultList() que obtiene una lista de bloges.
+        // Note que en el query se hace uso del método getResultList() que obtiene una lista de blogs.
         return query.getResultList();
     }
-
 }

@@ -6,6 +6,9 @@
 package co.edu.uniandes.csw.viajes.dtos;
 
 import co.edu.uniandes.csw.viajes.entities.BlogEntity;
+import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -13,10 +16,14 @@ import co.edu.uniandes.csw.viajes.entities.BlogEntity;
  */
 public class BlogDetailDTO extends BlogDTO {
     
+    // relación  cero o muchos imagenes
+    private List<ImagenDTO> imagenes;
+    
     /**
      * Constructor por defecto
      */
     public BlogDetailDTO() {
+        super();
     }
 
     /**
@@ -26,6 +33,13 @@ public class BlogDetailDTO extends BlogDTO {
      */
     public BlogDetailDTO(BlogEntity entity) {
         super(entity);
+        
+        if (entity.getImagenes() != null) {
+            imagenes = new ArrayList<>();
+            for (ImagenEntity entityImagen : entity.getImagenes()) {
+                imagenes.add(new ImagenDTO(entityImagen));
+            }
+        }
     }
 
     /**
@@ -36,7 +50,30 @@ public class BlogDetailDTO extends BlogDTO {
     @Override
     public BlogEntity toEntity() {
         BlogEntity blogE = super.toEntity();
+        
+        if (this.getImagenes()!= null) {
+            List<ImagenEntity> imagenesEntity = new ArrayList<>();
+            for (ImagenDTO dtoImagen : getImagenes()) {
+                imagenesEntity.add(dtoImagen.toEntity());
+            }
+            blogE.setImagenes(imagenesEntity);
+        }
+        
         return blogE;
+    }
+    
+    /**
+     * @return the imagenes
+     */
+    public List<ImagenDTO> getImagenes() {
+        return imagenes;
+    }
+
+    /**
+     * @param imagenes the imagenes to set
+     */
+    public void setImagens(List<ImagenDTO> imagenes) {
+        this.imagenes = imagenes;
     }
     
 }

@@ -14,10 +14,8 @@ import co.edu.uniandes.csw.viajes.dtos.UbicacionDTO;
 import co.edu.uniandes.csw.viajes.dtos.UbicacionDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.UbicacionLogic;
 import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
-import co.edu.uniandes.csw.viajes.excpetions.BusinessLogicException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -29,7 +27,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
-import javax.xml.ws.http.HTTPException;
 
 @Path("ubicaciones")
 @Produces("application/json")
@@ -47,7 +44,7 @@ public class UbicacionResource {
      * @throws BusinessLogicException
      */
     @GET
-    public List<UbicacionDetailDTO> getUbicaciones() throws BusinessLogicException{
+    public List<UbicacionDetailDTO> getUbicaciones() throws WebApplicationException{
         return listEntity2DetailDTO(ubicacionLogic.getUbicaciones());
     }
     
@@ -62,7 +59,7 @@ public class UbicacionResource {
      */
     @GET
     @Path("{id: \\d+}")
-    public UbicacionDetailDTO getUbicacion(@PathParam("id") Long id) throws BusinessLogicException {
+    public UbicacionDetailDTO getUbicacion(@PathParam("id") Long id) throws WebApplicationException {
         UbicacionEntity toGet = ubicacionLogic.getUbicacion(id);
         if(toGet==null){
         throw new WebApplicationException("El recurso /ubicaciones/" + id + " no existe.", 404);
@@ -79,7 +76,7 @@ public class UbicacionResource {
      * la base de datos y el tipo del objeto java.
      */
     @POST
-    public UbicacionDetailDTO createUbicacion(UbicacionDetailDTO itinerarioDTO)throws BusinessLogicException{
+    public UbicacionDetailDTO createUbicacion(UbicacionDetailDTO itinerarioDTO)throws WebApplicationException{
         UbicacionEntity itinerario = itinerarioDTO.toEntity();
         UbicacionEntity entity = ubicacionLogic.createUbicacion(itinerario);  
         return new UbicacionDetailDTO(entity);
@@ -97,7 +94,7 @@ public class UbicacionResource {
      */
     @PUT
     @Path("{id: \\d+}")
-    public UbicacionDTO updateUbicacion(@PathParam("id") Long id, UbicacionDTO dto)throws BusinessLogicException {
+    public UbicacionDTO updateUbicacion(@PathParam("id") Long id, UbicacionDTO dto)throws WebApplicationException {
        dto.setId(id);
         UbicacionEntity entity = ubicacionLogic.getUbicacion(id);
         if (entity == null) {
@@ -116,7 +113,7 @@ public class UbicacionResource {
      */
     @DELETE
     @Path("{id: \\d+}")
-    public void deleteUbicacion(@PathParam("id") Long id) throws BusinessLogicException{
+    public void deleteUbicacion(@PathParam("id") Long id) throws WebApplicationException{
        UbicacionEntity entity = ubicacionLogic.getUbicacion(id);
         if (entity == null) {
             throw new WebApplicationException("El recurso /ubicaciones/" + id + " no existe.", 404);

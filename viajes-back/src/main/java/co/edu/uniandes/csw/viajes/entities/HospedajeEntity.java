@@ -27,67 +27,120 @@ public class HospedajeEntity extends ServicioEntity{
     CAMPING
     
     }
-
+    
+    /**
+     * Tipo de hospedaje
+     */
     private TipoHospedaje tipo;
     
+    /**
+     * Ubicación del hospedaje
+     */
     @PodamExclude
     @OneToOne()
     private UbicacionEntity ubicacion;
     
+    /**
+     * Compañia a la que pertenece el hospedaje
+     */
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
     
-    
+    /**
+     * Imagenes del hospedaje
+     */
     @PodamExclude   
-    @OneToMany(mappedBy = "hospedaje")
+    @OneToMany
     private List<ImagenEntity> imagenes;
     
+    /**
+     * Itinerario al que pertenece el hospedaje
+     */
     @PodamExclude
     @ManyToOne
     private ItinerarioEntity itinerario;
 
+    /**
+     * Ubicacion del hospedaje
+     * @return ubicacion
+     */
     public UbicacionEntity getUbicacion() {
         return ubicacion;
     }
 
+    /**
+     * Itinerario al que pertenece el hospedaje
+     * @return itinerario
+     */
     public ItinerarioEntity getItinerario() {
         return itinerario;
     }
-
+    
+    
+    /** 
+     * Cambia el itinerario al que pertenece el hospedaje
+     * @param itinerario 
+     */
     public void setItinerario(ItinerarioEntity itinerario) {
         this.itinerario = itinerario;
     }
 
+    /**
+     * Cambia la ubicacion del hospedaje
+     * @param ubicacion 
+     */
     public void setUbicacion(UbicacionEntity ubicacion) {
         this.ubicacion = ubicacion;
     }
     
-   
+   /**
+    * Tipo de hospedaje
+    * @return tipo
+    */
    public TipoHospedaje getTipo() {
         return tipo;
     }
 
+   /**
+    * Cambia el tipo de hospedaje
+    * @param tipo 
+    */
     public void setTipo(TipoHospedaje tipo) {
         this.tipo = tipo;
     }
 
-    
+    /**
+     * Compañia a la que pertenece el hospedaje
+     * @return compania
+     */
     public CompaniaEntity getCompania()
     {
         return compania;
     }
     
+    /**
+     * Cambia la compañia a la que pertenece el hospedaje
+     * @param compania 
+     */
     public void setCompania(CompaniaEntity compania)
     {
         this.compania = compania;
     }
 
+    /**
+     * Cambia las imagenes del hospedaje
+     * @param imagenes 
+     */
     public void setImagenes(List<ImagenEntity> imagenes) {
         this.imagenes = imagenes;
     }
 
+    /**
+     * Imagenes del hospedaje
+     * @return imagenes
+     */
     public List<ImagenEntity> getImagenes() {
         return imagenes;
-    } 
+    }
 }
