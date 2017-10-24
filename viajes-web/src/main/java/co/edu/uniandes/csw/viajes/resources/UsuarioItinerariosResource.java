@@ -95,7 +95,7 @@ public class UsuarioItinerariosResource {
      *
      * @param usuariosId Identificador de la instancia de Usuario
      * @param itinerariosId Identificador de la instancia de Itinerario
-     * @return Instancia de ItinerarioDetailDTO que fue asociada a Blog
+     * @return Instancia de ItinerarioDetailDTO que fue asociada a Usuario
      * 
      */
     @POST

@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.csw.viajes.resources;
 
-import co.edu.uniandes.csw.viajes.dtos.EntretenimientoDTO;
 import co.edu.uniandes.csw.viajes.dtos.EntretenimientoDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.ItinerarioLogic;
 import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
