@@ -63,11 +63,7 @@ public class UsuarioPersistence
         TypedQuery<UsuarioEntity> query = em.createQuery("select u from UsuarioEntity u where u.nombre = :nombre", UsuarioEntity.class);
         query = query.setParameter("nombre", nombre);
         List<UsuarioEntity> listName = query.getResultList();
-        if (listName.isEmpty()) {
-            return null;
-        } else {
-            return listName.get(0);
-        }
+        return listName.get(0);
     }
     
     /**

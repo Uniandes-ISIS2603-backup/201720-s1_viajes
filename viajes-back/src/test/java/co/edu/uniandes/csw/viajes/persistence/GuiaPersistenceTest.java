@@ -138,6 +138,18 @@ public class GuiaPersistenceTest
 
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getValor(), entity.getValor());
+        Assert.assertEquals(newEntity.getLenguaje(), entity.getLenguaje());
+        Assert.assertEquals(newEntity.getContratoHora(), entity.getContratoHora());
+        Assert.assertEquals(newEntity.getFechaInicio(), entity.getFechaInicio());
+        Assert.assertEquals(newEntity.getFechaFinal(), entity.getFechaFinal());
+        Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
+        Assert.assertEquals(newEntity.getCompania(), entity.getCompania());
+        
+        entity.setCompania(newEntity.getCompania());
+        Assert.assertEquals("Incoherencia de datos", entity.getCompania(), newEntity.getCompania());
+        
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
     
     /**
@@ -172,6 +184,14 @@ public class GuiaPersistenceTest
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
         Assert.assertEquals(entity.getValor(), newEntity.getValor());
+        Assert.assertEquals(entity.getLenguaje(), newEntity.getLenguaje());
+        Assert.assertEquals(entity.getContratoHora(), newEntity.getContratoHora());
+        Assert.assertEquals(entity.getFechaInicio(), newEntity.getFechaInicio());
+        Assert.assertEquals(entity.getFechaFinal(), newEntity.getFechaFinal());
+        Assert.assertEquals(entity.getCalificacion(), newEntity.getCalificacion());
+        Assert.assertEquals(entity.getCompania(), newEntity.getCompania());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
  
      /**
@@ -206,5 +226,13 @@ public class GuiaPersistenceTest
 
         Assert.assertEquals(newEntity.getNombre(), resp.getNombre());
         Assert.assertEquals(newEntity.getValor(), resp.getValor());
+        Assert.assertEquals(newEntity.getLenguaje(), resp.getLenguaje());
+        Assert.assertEquals(newEntity.getContratoHora(), resp.getContratoHora());
+        Assert.assertEquals(newEntity.getFechaInicio(), resp.getFechaInicio());
+        Assert.assertEquals(newEntity.getFechaFinal(), resp.getFechaFinal());
+        Assert.assertEquals(newEntity.getCalificacion(), resp.getCalificacion());
+        Assert.assertEquals(newEntity.getCompania(), resp.getCompania());
+        Assert.assertTrue(newEntity.equals(resp));
+        Assert.assertEquals(newEntity.hashCode(), resp.hashCode());        
     }  
 }

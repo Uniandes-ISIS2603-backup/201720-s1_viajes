@@ -32,13 +32,6 @@ public class GuiaEntity extends  BaseEntity
     private CompaniaEntity compania;
     
     /**
-     * Constructor por defecto
-     */
-    public GuiaEntity()
-    {        
-    }
-   
-     /**
      * Obtener el atributo lenguaje
      * 
      * @return  lenguaje

@@ -130,7 +130,10 @@ public class ImagenPersistenceTest {
         ImagenEntity entity = em.find(ImagenEntity.class, result.getId());
         Assert.assertNotNull(entity);
         Assert.assertEquals(newEntity.getRuta(), entity.getRuta());
-        Assert.assertEquals(newEntity.getComentario(), entity.getComentario());
+        Assert.assertEquals(newEntity.getComentario(), entity.getComentario());        
+        Assert.assertEquals(newEntity.equals(entity), entity.equals(newEntity));
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**
@@ -150,6 +153,8 @@ public class ImagenPersistenceTest {
 
         Assert.assertEquals(newEntity.getRuta(), resp.getRuta());
         Assert.assertEquals(newEntity.getComentario(), resp.getComentario());
+        Assert.assertTrue(newEntity.equals(resp));
+        Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }
 
     /**
@@ -173,6 +178,8 @@ public class ImagenPersistenceTest {
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(entity.getRuta(), newEntity.getRuta());
         Assert.assertEquals(newEntity.getComentario(), entity.getComentario());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
     /**

@@ -145,6 +145,23 @@ public class CompaniaPersistenceTest {
         Assert.assertEquals(newEntity.getHospedajes().size(), entity.getHospedajes().size());
         Assert.assertEquals(newEntity.getEntretenimientos().size(), entity.getEntretenimientos().size());
         
+        entity.setGuias(newEntity.getGuias());
+        Assert.assertEquals("Incoherencia de datos", entity.getGuias(), newEntity.getGuias());
+        
+        entity.setOficinas(newEntity.getOficinas());
+        Assert.assertEquals("Incoherencia de datos", entity.getOficinas(), newEntity.getOficinas());
+        
+        entity.setTransportes(newEntity.getTransportes());
+        Assert.assertEquals("Incoherencia de datos", entity.getTransportes(), newEntity.getTransportes());
+        
+        entity.setHospedajes(newEntity.getHospedajes());
+        Assert.assertEquals("Incoherencia de datos", entity.getHospedajes(), newEntity.getHospedajes());
+        
+        entity.setEntretenimientos(newEntity.getEntretenimientos());
+        Assert.assertEquals("Incoherencia de datos", entity.getEntretenimientos(), newEntity.getEntretenimientos());
+        
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());
     }
 
      /**
@@ -185,6 +202,8 @@ public class CompaniaPersistenceTest {
         Assert.assertEquals(entity.getTransportes().size(), newEntity.getTransportes().size());
         Assert.assertEquals(entity.getHospedajes().size(), newEntity.getHospedajes().size());
         Assert.assertEquals(entity.getEntretenimientos().size(), newEntity.getEntretenimientos().size());
+        Assert.assertTrue(newEntity.equals(entity));
+        Assert.assertEquals(newEntity.hashCode(), entity.hashCode());       
     }
         
     /**
@@ -222,6 +241,8 @@ public class CompaniaPersistenceTest {
         Assert.assertEquals(newEntity.getOficinas().size(), resp.getOficinas().size());
         Assert.assertEquals(newEntity.getTransportes().size(), resp.getTransportes().size());
         Assert.assertEquals(newEntity.getHospedajes().size(), resp.getHospedajes().size());
-         Assert.assertEquals(newEntity.getEntretenimientos().size(), resp.getEntretenimientos().size());
+        Assert.assertEquals(newEntity.getEntretenimientos().size(), resp.getEntretenimientos().size());
+        Assert.assertTrue(newEntity.equals(resp));
+        Assert.assertEquals(newEntity.hashCode(), resp.hashCode());
     }    
 }
