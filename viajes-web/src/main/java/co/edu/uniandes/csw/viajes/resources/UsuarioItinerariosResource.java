@@ -86,7 +86,7 @@ public class UsuarioItinerariosResource {
      */
     @GET
     @Path("{itinerariosId: \\d+}")
-    public ItinerarioDetailDTO getImagens(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
+    public ItinerarioDetailDTO getItinerario(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
         return new ItinerarioDetailDTO(usuarioLogic.getItinerario(usuariosId, itinerariosId));
     }
 
@@ -100,7 +100,7 @@ public class UsuarioItinerariosResource {
      */
     @POST
     @Path("{itinerariosId: \\d+}")
-    public ItinerarioDetailDTO addImagens(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
+    public ItinerarioDetailDTO addItinerario(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
         return new ItinerarioDetailDTO(usuarioLogic.addItinerario(usuariosId, itinerariosId));
     }
 
