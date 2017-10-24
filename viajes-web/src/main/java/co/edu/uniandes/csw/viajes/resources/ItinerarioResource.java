@@ -109,4 +109,31 @@ public class ItinerarioResource {
         return ItinerariosGuiasResource.class;
     }
     
+    @Path("{itinerariosId: \\d+}/entretenimientos")
+    public Class<ItinerarioEntretenimientosResource> getItinerariosEntretenimientosResource(@PathParam("itinerariosId") Long itinerariosId){
+        ItinerarioEntity entity = itinerarioLogic.getItinerario(itinerariosId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /editorials/" + itinerariosId + " no existe.", 404);
+        }
+        return ItinerarioEntretenimientosResource.class;
+    }
+    
+    @Path("{itinerariosId: \\d+}/hospedajes")
+    public Class<ItinerarioHospedajesResource> getItinerariosHospedajesResource(@PathParam("itinerariosId") Long itinerariosId){
+        ItinerarioEntity entity = itinerarioLogic.getItinerario(itinerariosId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /editorials/" + itinerariosId + " no existe.", 404);
+        }
+        return ItinerarioHospedajesResource.class;
+    }
+    
+    @Path("{itinerariosId: \\d+}/transportes")
+    public Class<ItinerarioTransportesResource> getItinerariosTransportesResource(@PathParam("itinerariosId") Long itinerariosId){
+        ItinerarioEntity entity = itinerarioLogic.getItinerario(itinerariosId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /editorials/" + itinerariosId + " no existe.", 404);
+        }
+        return ItinerarioTransportesResource.class;
+    }
+    
 }
