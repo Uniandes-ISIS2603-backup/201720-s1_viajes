@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+(function (ng) {
+    var app = angular.module('mainApp', [
+        // External dependencies
+        'ui.router',
+       
+        // Internal modules dependencies       
+        'hospedajesModule',
+=======
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,9 +20,13 @@
         // Internal modules dependencies       
 <<<<<<< HEAD
        
+<<<<<<< HEAD
         'itinerariosModule'
 =======
        'transportesModule',
+=======
+>>>>>>> master
+>>>>>>> ma.forero11
         
 >>>>>>> Sergio2
 
@@ -24,4 +37,7 @@
         }]);
 })(window.angular);
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> master

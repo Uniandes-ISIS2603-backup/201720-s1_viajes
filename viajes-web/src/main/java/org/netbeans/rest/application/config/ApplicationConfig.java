@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -30,6 +33,20 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+<<<<<<< HEAD
+        resources.add(co.edu.uniandes.csw.viajes.resources.BlogResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.EntretenimientoResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.GuiaResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.HospedajeImagenesResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.HospedajeResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.ImagenResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.OficinaResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.TransporteResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.UbicacionResource.class);
+    }    
+}
+=======
         resources.add(co.edu.uniandes.csw.viajes.resources.BlogImagenesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.BlogResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.CompaniaResource.class);
@@ -53,3 +70,4 @@ public class ApplicationConfig extends Application {
     }    
 }
 
+>>>>>>> master
