@@ -7,9 +7,10 @@
     var app = angular.module('mainApp', [
         // External dependencies
         'ui.router',
+        'ui.bootstrap',
        
         // Internal modules dependencies       
-       'transportesModule',
+       'transportesModule'
         
 
     ]);

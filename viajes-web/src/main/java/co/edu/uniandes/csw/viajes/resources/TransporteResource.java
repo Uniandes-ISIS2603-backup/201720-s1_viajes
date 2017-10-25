@@ -37,7 +37,6 @@ import javax.ws.rs.WebApplicationException;
 @Path("transportes")
 @Produces("application/json")
 @Consumes("application/json")
-@RequestScoped
 public class TransporteResource {
     
     /**
