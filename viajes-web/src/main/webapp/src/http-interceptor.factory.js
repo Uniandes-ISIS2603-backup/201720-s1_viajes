@@ -41,6 +41,9 @@
 })(window.angular);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> ma.forero11
+=======
+>>>>>>> m.rodriguez21
