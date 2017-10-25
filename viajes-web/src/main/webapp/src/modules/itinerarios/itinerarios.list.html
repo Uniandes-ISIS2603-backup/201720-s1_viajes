@@ -11,14 +11,14 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Name</th>    
-                                <th>Birth Date</th>  
-                                <th>Actions</th>  
+                                <th>Id</th>    
+                                <th>Cantidad</th>                               
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="itinerario in itinerariosRecords">
-                                
+                            <tr ng-repeat="record in itinerariosRecords">
+                             <td id="{{$index}}-id">{{record.id}}</td>
+                             <td id="{{$index}}-cantidad">{{record.cantidad}}</td>   
                             </tr>
                         </tbody>
                     </table>
