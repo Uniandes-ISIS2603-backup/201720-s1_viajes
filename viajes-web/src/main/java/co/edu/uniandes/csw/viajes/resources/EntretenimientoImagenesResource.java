@@ -88,6 +88,7 @@ public class EntretenimientoImagenesResource {
     @GET
     @Path("{imagenesId: \\d+}")
     public ImagenDetailDTO getImagens(@PathParam("entretenimientosId") Long entretenimientosId, @PathParam("imagenesId") Long imagenesId) {
+       
         return new ImagenDetailDTO(entretenimientoLogic.getImagen(entretenimientosId, imagenesId));
     }
 
