@@ -6,7 +6,7 @@
 package co.edu.uniandes.csw.viajes.resources;
 
 import co.edu.uniandes.csw.viajes.dtos.ItinerarioDetailDTO;
-import co.edu.uniandes.csw.viajes.ejb.TarjetaCreditoLogic;
+import co.edu.uniandes.csw.viajes.ejb.UsuarioLogic;
 import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +30,10 @@ import javax.ws.rs.core.MediaType;
 public class TarjetaCreditoPagosResource {
     
     @Inject
-    private TarjetaCreditoLogic tarjetaCreditoLogic;
+    private UsuarioLogic usuarioLogic;
     
      /**
-     * Convierte una lista de ItinerarioEntity a una lista de ItinerarioDetailDTO.
+     * Convierte una lista de PagoEntity a una lista de PagoDetailDTO.
      *
      * @param entityList Lista de ItinerarioEntity a convertir.
      * @return Lista de ItinerarioDetailDTO convertida.

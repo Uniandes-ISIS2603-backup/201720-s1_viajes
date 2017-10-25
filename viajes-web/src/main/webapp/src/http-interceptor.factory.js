@@ -39,11 +39,3 @@
             $httpProvider.interceptors.push('httpInterceptor');
         }]);
 })(window.angular);
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> ma.forero11
-=======
->>>>>>> m.rodriguez21
