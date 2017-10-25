@@ -86,7 +86,7 @@ public class UsuarioItinerariosResource {
      */
     @GET
     @Path("{itinerariosId: \\d+}")
-    public ItinerarioDetailDTO getImagens(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
+    public ItinerarioDetailDTO getItinerario(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
         return new ItinerarioDetailDTO(usuarioLogic.getItinerario(usuariosId, itinerariosId));
     }
 
@@ -95,12 +95,12 @@ public class UsuarioItinerariosResource {
      *
      * @param usuariosId Identificador de la instancia de Usuario
      * @param itinerariosId Identificador de la instancia de Itinerario
-     * @return Instancia de ItinerarioDetailDTO que fue asociada a Blog
+     * @return Instancia de ItinerarioDetailDTO que fue asociada a Usuario
      * 
      */
     @POST
     @Path("{itinerariosId: \\d+}")
-    public ItinerarioDetailDTO addImagens(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
+    public ItinerarioDetailDTO addItinerario(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
         return new ItinerarioDetailDTO(usuarioLogic.addItinerario(usuariosId, itinerariosId));
     }
 

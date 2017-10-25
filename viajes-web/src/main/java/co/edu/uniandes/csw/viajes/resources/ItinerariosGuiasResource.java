@@ -36,7 +36,7 @@ public class ItinerariosGuiasResource {
     private List<GuiaDetailDTO> guiasListEntity2DTO(List<GuiaEntity> entityList){
         List<GuiaDetailDTO> list = new ArrayList<>();
         for (GuiaEntity entity : entityList) {
-          //  list.add(new GuiaDetailDTO(entity));
+            list.add(new GuiaDetailDTO(entity));
         }
         return list;
     }
@@ -54,17 +54,17 @@ public class ItinerariosGuiasResource {
         return guiasListEntity2DTO(itinerarioLogic.listGuias(itinerariosId));
     }
     
-    //@GET
-    //@Path("{guiasId: \\d+}")
-    //public GuiaDetailDTO getGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("guiaId") Long guiasId) throws WebApplicationException {
-     //   return new GuiaDetailDTO(itinerarioLogic.getGuia(itinerarioId, guiasId));
-    //}
+    @GET
+    @Path("{guiasId: \\d+}")
+    public GuiaDetailDTO getGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("guiasId") Long guiasId) throws WebApplicationException {
+        return new GuiaDetailDTO(itinerarioLogic.getGuia(itinerarioId, guiasId));
+    }
     
-    //@POST
-    //@Path("{guiaId: \\d+}")
-    //public GuiaDetailDTO addGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("itinerarioId") Long guiaId) {
-       // return new GuiaDetailDTO(itinerarioLogic.addGuia(itinerarioId, guiaId));
-    //}
+    @POST
+    @Path("{guiaId: \\d+}")
+    public GuiaDetailDTO addGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("guiaId") Long guiaId) {
+        return new GuiaDetailDTO(itinerarioLogic.addGuia(itinerarioId, guiaId));
+    }
     
     @PUT
     public List<GuiaDetailDTO> replaceGuias(@PathParam("itinerarioId") Long itinerarioId, List<GuiaDetailDTO> guias) {
