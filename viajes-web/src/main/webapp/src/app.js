@@ -9,8 +9,13 @@
         'ui.router',
        
         // Internal modules dependencies       
+<<<<<<< HEAD
        
         'itinerariosModule'
+=======
+       'transportesModule',
+        
+>>>>>>> Sergio2
 
     ]);
     // Resuelve problemas de las promesas
