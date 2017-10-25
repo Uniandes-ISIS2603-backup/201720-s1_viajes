@@ -108,4 +108,68 @@ public class TarjetaCreditoLogic {
         }
         return null;
     }
+    
+    /**
+     * Obtiene una instancia de PagoEntity asociada a una instancia de Usuario
+     *
+     * @param usuarioId Identificador de la instancia de Usuario
+     * @param pagosId Identificador de la instancia de Pago
+     * @return El pago con id dado
+     * 
+     */
+    public PagoEntity getPago(Long usuarioId, Long pagosId) {
+        List<PagoEntity> list = getTarjetaCredito(usuarioId).getPagos();
+        PagoEntity pagosEntity = new PagoEntity();
+        pagosEntity.setId(pagosId);
+        int index = list.indexOf(pagosEntity);
+        if (index >= 0) {
+            return list.get(index);
+        }
+        return null;
+    }
+    //-------------- SEGUIR DESDE AQUí
+    /**
+     * Asocia una TarjetaCredito existente a un Usuario
+     *
+     * @param usuarioId Identificador de la instancia de Usuario
+     * @param tarjetasId Identificador de la instancia de TarjetaCredito
+     * @return Instancia de TarjetaCreditoEntity que fue asociada a Usuario
+     * 
+     */
+    public TarjetaCreditoEntity addTarjeta(Long usuarioId, Long tarjetasId) {
+        UsuarioEntity usuarioEntity = getUsuario(usuarioId);
+        TarjetaCreditoEntity tarjetasEntity = new TarjetaCreditoEntity();
+        tarjetasEntity.setId(tarjetasId);
+        usuarioEntity.getTarjetas().add(tarjetasEntity);
+        return getTarjeta(usuarioId, tarjetasId);
+    }
+    
+    /**
+     * Remplaza las instancias de TarjetaCredito asociadas a una instancia de Usuario
+     *
+     * @param usuarioId Identificador de la instancia de Usuario
+     * @param list Colección de instancias de TarjetaCreditoEntity a asociar a instancia
+     * de Usuario
+     * @return Nueva colección de TarjetaCreditoEntity asociada a la instancia de Usuario
+     * 
+     */
+    public List<TarjetaCreditoEntity> replaceTarjetaCredito(Long usuarioId, List<TarjetaCreditoEntity> list) {
+        UsuarioEntity usuarioEntity = getUsuario(usuarioId);
+        usuarioEntity.setTarjetas(list);
+        return usuarioEntity.getTarjetas();
+    }
+    
+    /**
+     * Desasocia un TarjetaCredito existente de un Usuario existente
+     *
+     * @param usuarioId Identificador de la instancia de Usuario
+     * @param tarjetasId Identificador de la instancia de TarjetaCredito
+     * 
+     */
+    public void removeTarjetaCredito(Long usuarioId, Long tarjetasId) {
+        UsuarioEntity entity = getUsuario(usuarioId);
+        TarjetaCreditoEntity tarjetasEntity = new TarjetaCreditoEntity();
+        tarjetasEntity.setId(tarjetasId);
+        entity.getTarjetas().remove(tarjetasEntity);
+    }
 }
