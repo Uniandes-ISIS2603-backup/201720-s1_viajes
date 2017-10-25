@@ -1,12 +1,13 @@
 (function (ng) {
-var mod = ng.module("transportesModule", []);
+var mod = ng.module("transportesModule", ['ui.router']);
     mod.constant("transportesContext", "api/transportes");
-    mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    mod.config(['$stateProvider', '$urlRouterProvider', 
+        function ($stateProvider, $urlRouterProvider) {
             var basePath = 'src/modules/transportes/';
-            $urlRouterProvider.otherwise("/transportesList");
+            //$urlRouterProvider.otherwise("/transportesList");
 
             $stateProvider.state('transportesList', {
-                url: '/transportes',
+                url: '/transportes/list',
                 views: {
                     'mainView': {
                         controller: 'transportesCtrl',
