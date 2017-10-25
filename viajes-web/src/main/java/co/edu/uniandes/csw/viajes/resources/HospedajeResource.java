@@ -121,6 +121,15 @@ public class HospedajeResource {
         hospedajeLogic.deleteHospedaje(id);
     }
     
+    @Path("{hospedajeId: \\d+}/imagenes")
+    public Class<HospedajeImagenesResource> getHospedajeImagenesResource(@PathParam("hospedajeId") Long hospedajeId) {
+        HospedajeEntity entity = hospedajeLogic.getHospedaje(hospedajeId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /hospedaje/" + hospedajeId + "/imagenes no existe.", 404);
+        }
+        return HospedajeImagenesResource.class;
+    }
+    
     /**
      *
      * lista de entidades a DTO.
