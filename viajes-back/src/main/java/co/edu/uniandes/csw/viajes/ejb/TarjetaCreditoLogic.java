@@ -131,17 +131,17 @@ public class TarjetaCreditoLogic {
     /**
      * Asocia una TarjetaCredito existente a un Usuario
      *
-     * @param usuarioId Identificador de la instancia de Usuario
-     * @param tarjetasId Identificador de la instancia de TarjetaCredito
+     * @param tarjetaId Identificador de la instancia de Usuario
+     * @param pagosId Identificador de la instancia de TarjetaCredito
      * @return Instancia de TarjetaCreditoEntity que fue asociada a Usuario
      * 
      */
-    public TarjetaCreditoEntity addTarjeta(Long usuarioId, Long tarjetasId) {
-        UsuarioEntity usuarioEntity = getUsuario(usuarioId);
-        TarjetaCreditoEntity tarjetasEntity = new TarjetaCreditoEntity();
-        tarjetasEntity.setId(tarjetasId);
-        usuarioEntity.getTarjetas().add(tarjetasEntity);
-        return getTarjeta(usuarioId, tarjetasId);
+    public PagoEntity addPago(Long tarjetaId, Long pagosId) {
+        TarjetaCreditoEntity tarjetaCreditoEntity = getTarjetaCredito(tarjetaId);
+        PagoEntity pagosEntity = new PagoEntity();
+        pagosEntity.setId(pagosId);
+        tarjetaCreditoEntity.getPagos().add(pagosEntity);
+        return getPago(tarjetaId, pagosId);
     }
     
     /**
