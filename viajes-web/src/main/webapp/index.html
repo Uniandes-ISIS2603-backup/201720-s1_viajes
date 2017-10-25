@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mainApp">
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-    <body>
-        <h1>Hello World! Viajes :D Is working...</h1>
+    <body style="padding-top: 20px">
+        <div class="container-fluid col-md-12">
+            <h1>TRANSPORTES</h1>
+            <ul class="nav nav-tabs">
+                <li><a ui-sref="transportesList">List</a></li>
+            </ul>
+            <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert()">{{alert.msg}} </alert>
+            <div ui-view="mainView">
+            </div>
+        </div>
     </body>
 </html>
