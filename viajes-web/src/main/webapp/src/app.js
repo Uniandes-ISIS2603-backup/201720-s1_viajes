@@ -6,11 +6,11 @@
 (function (ng) {
     var app = angular.module('mainApp', [
         // External dependencies
-        'ui.router'
+        'ui.router',
        
         // Internal modules dependencies       
        
-        
+        'itinerariosModule'
 
     ]);
     // Resuelve problemas de las promesas
