@@ -6,6 +6,14 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ */<<<<<<< HEAD
+=======
+
+>>>>>>> master
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package org.netbeans.rest.application.config;
 
@@ -33,17 +41,26 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-<<<<<<< HEAD
+        resources.add(co.edu.uniandes.csw.viajes.resources.BlogImagenesResourc
         resources.add(co.edu.uniandes.csw.viajes.resources.BlogResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.CompaniaResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.EntretenimientoImagenesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.EntretenimientoResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.GuiaResource.class);
-        resources.add(co.edu.uniandes.csw.viajes.resources.HospedajeImagenesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.HospedajeResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ImagenResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioEntretenimientosResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioTransportesResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.ItinerariosGuiasResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.OficinaResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.PagoResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.TarjetaCreditoResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.TransporteResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.UbicacionResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.UsuarioItinerariosResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.UsuarioResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.UsuarioTarjetasResource.class);
     }    
 }
 =======
