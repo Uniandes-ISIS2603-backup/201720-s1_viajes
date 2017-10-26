@@ -104,7 +104,6 @@ public class TransporteEntity extends ServicioEntity
     public List<ImagenEntity> getImagenes() {
         return imagenes;
     }
-
     /**
      * Cambia o agrega las imagenes
      * @param imagenes 
@@ -112,7 +111,7 @@ public class TransporteEntity extends ServicioEntity
     public void setImagenes(List<ImagenEntity> imagenes) {
         this.imagenes = imagenes;
     }
-
+    
     /**
      * Ubicación origen del transporte
      * @return origen
@@ -120,7 +119,7 @@ public class TransporteEntity extends ServicioEntity
     public UbicacionEntity getOrigen() {
         return origen;
     }
-
+    
     /**
      * Cambia la ubicación de origen 
      * @param origen 
@@ -128,7 +127,7 @@ public class TransporteEntity extends ServicioEntity
     public void setOrigen(UbicacionEntity origen) {
         this.origen = origen;
     }
-
+    
     /**
      * Ubicacion destino del transporte
      * @return destino
@@ -136,7 +135,7 @@ public class TransporteEntity extends ServicioEntity
     public UbicacionEntity getDestino() {
         return destino;
     }
-
+    
     /**
      * Cambia la ubicación de destino del transporte
      * @param destino 

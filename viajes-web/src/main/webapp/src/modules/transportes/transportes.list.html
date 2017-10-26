@@ -1,0 +1,26 @@
+<div class="col-md-4">
+    <table class="table table-striped col-md-4">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Valor</th>
+                <th>Fecha inicio</th>
+                <th>Fecha final</th>
+                <th>Calificación</th>
+                <th>Comentarios</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="record in transportesRecords">
+                <td id="{{$index}}-name">{{record.nombre}}</td>
+                <td id="{{$index}}-name">{{record.valor}}</td>
+                <td id="{{$index}}-name">{{record.fechaInicio}}</td>
+                <td id="{{$index}}-name">{{record.fechaFinal}}</td>
+                <td id="{{$index}}-name">{{record.calificacion}}</td>
+                <td id="{{$index}}-name">{{record.comentarios}}</td>
+                <td id="{{$index}}-name">{{record.descripcion}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

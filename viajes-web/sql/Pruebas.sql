@@ -1,4 +1,4 @@
-/* 
+/*   
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -57,6 +57,9 @@ insert into UbicacionEntity (ID, LONGITUD, LATITUD, NOMBRE, DIRECCION, CIUDAD, P
 
 insert into TransporteEntity (ID, NOMBRE, VALOR) values (100, 'Santa fe es muy malo', 15000.158);
 insert into TransporteEntity (ID, NOMBRE, VALOR) values (200, 'Eliminados de la sudamericana', 6550.56);
+insert into TransporteEntity (ID, NOMBRE, VALOR) values (50, 'UBER', 666.666);
+insert into TransporteEntity (ID, NOMBRE, VALOR) values (16, 'TAXIS LIBRES', 4500.25);
+insert into TransporteEntity (ID, NOMBRE, VALOR) values (899, 'TRANSMILENIO', 2200.8966);
 
 insert into TarjetaCreditoEntity (id, numero, fondos)
 values (405, 1073175780, 900000000);
