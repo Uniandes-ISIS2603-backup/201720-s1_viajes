@@ -12,13 +12,19 @@
                         <thead>
                             <tr>
                                 <th>Id</th>    
-                                <th>Cantidad</th>                               
+                                <th>Costo</th>
+                                <th>Fecha inicial</th>
+                                <th>Fecha final</th>
+                                <th>Visitantes</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="record in itinerariosRecords">
                              <td id="{{$index}}-id">{{record.id}}</td>
-                             <td id="{{$index}}-cantidad">{{record.cantidad}}</td>   
+                             <td id="{{$index}}-cantidad">{{record.costoTotal}}</td>   
+                             <td id="{{$index}}-cantidad">{{record.fechaInicial}}</td>   
+                             <td id="{{$index}}-cantidad">{{record.fechaFinal}}</td>   
+                             <td id="{{$index}}-cantidad">{{record.numeroVisitantes}}</td>   
                             </tr>
                         </tbody>
                     </table>

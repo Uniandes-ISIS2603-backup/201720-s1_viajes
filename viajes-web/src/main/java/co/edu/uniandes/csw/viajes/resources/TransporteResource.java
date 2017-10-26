@@ -122,64 +122,64 @@ public class TransporteResource {
     }
     
     
-    @GET
-    @Path("{id: \\d+}")
-    public UbicacionDetailDTO getDdestino(@PathParam("id") Long id){
-        TransporteEntity entity = transporteLogic.getTransporte(id);
-        if (entity == null) {
-            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
-        }
-        else if(entity.getDestino() == null){
-            throw new WebApplicationException("El destino del recurso /transportes" + id + " no existe.", 404);
-        }
-        return new UbicacionDetailDTO(entity.getDestino());
-    }
-    
-    @GET
-    @Path("{id: \\d+}")
-    public UbicacionDetailDTO getOrigen(@PathParam("id") Long id){
-        TransporteEntity entity = transporteLogic.getTransporte(id);
-        if (entity == null) {
-            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
-        }
-        else if(entity.getOrigen() == null){
-            throw new WebApplicationException("El origen del recurso /transportes" + id + " no existe.", 404);
-        }
-        return new UbicacionDetailDTO(entity.getOrigen());
-    }
-    
-    @GET
-    @Path("{id: \\d+}")
-    public List<ImagenDetailDTO> getImagenes(@PathParam("id") Long id){
-        TransporteEntity entity = transporteLogic.getTransporte(id);
-        List<ImagenDetailDTO> resp = new ArrayList<>();
-        if (entity == null) {
-            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
-        }
-        else if (entity.getImagenes() == null){
-            throw new WebApplicationException("Las imagenes del recurso /transportes/" + id + " no existen.", 404);
-        }
-        else{
-            for(ImagenEntity img : entity.getImagenes()){
-                resp.add(new ImagenDetailDTO(img));
-            }
-        }
-        return resp;
-    }
-    
-    @GET
-    @Path("{id: \\d+}")
-    public CompaniaDetailDTO getCompania(@PathParam("id") Long id){
-        TransporteEntity entity = transporteLogic.getTransporte(id);
-        if (entity == null) {
-            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
-        }
-        else if(entity.getCompania() == null){
-            throw new WebApplicationException("La compañia del recurso /transportes" + id + " no existe.", 404);
-        }
-        
-        return new CompaniaDetailDTO(entity.getCompania());
-    }
+//    @GET
+//    @Path("{id: \\d+}")
+//    public UbicacionDetailDTO getDdestino(@PathParam("id") Long id){
+//        TransporteEntity entity = transporteLogic.getTransporte(id);
+//        if (entity == null) {
+//            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
+//        }
+//        else if(entity.getDestino() == null){
+//            throw new WebApplicationException("El destino del recurso /transportes" + id + " no existe.", 404);
+//        }
+//        return new UbicacionDetailDTO(entity.getDestino());
+//    }
+//    
+//    @GET
+//    @Path("{id: \\d+}")
+//    public UbicacionDetailDTO getOrigen(@PathParam("id") Long id){
+//        TransporteEntity entity = transporteLogic.getTransporte(id);
+//        if (entity == null) {
+//            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
+//        }
+//        else if(entity.getOrigen() == null){
+//            throw new WebApplicationException("El origen del recurso /transportes" + id + " no existe.", 404);
+//        }
+//        return new UbicacionDetailDTO(entity.getOrigen());
+//    }
+//    
+//    @GET
+//    @Path("{id: \\d+}")
+//    public List<ImagenDetailDTO> getImagenes(@PathParam("id") Long id){
+//        TransporteEntity entity = transporteLogic.getTransporte(id);
+//        List<ImagenDetailDTO> resp = new ArrayList<>();
+//        if (entity == null) {
+//            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
+//        }
+//        else if (entity.getImagenes() == null){
+//            throw new WebApplicationException("Las imagenes del recurso /transportes/" + id + " no existen.", 404);
+//        }
+//        else{
+//            for(ImagenEntity img : entity.getImagenes()){
+//                resp.add(new ImagenDetailDTO(img));
+//            }
+//        }
+//        return resp;
+//    }
+//    
+//    @GET
+//    @Path("{id: \\d+}")
+//    public CompaniaDetailDTO getCompania(@PathParam("id") Long id){
+//        TransporteEntity entity = transporteLogic.getTransporte(id);
+//        if (entity == null) {
+//            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
+//        }
+//        else if(entity.getCompania() == null){
+//            throw new WebApplicationException("La compañia del recurso /transportes" + id + " no existe.", 404);
+//        }
+//        
+//        return new CompaniaDetailDTO(entity.getCompania());
+//    }
     /**
      * PUT http://localhost:8080/viajesp-web/api/transportes/1 Ejemplo
      * json { "id": 1, "name": "Santa fe sigue siendo muy malo" }
