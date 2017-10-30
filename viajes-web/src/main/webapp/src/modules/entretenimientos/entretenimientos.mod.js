@@ -40,4 +40,3 @@ var mod = ng.module("entretenimientosModule", []);
         }]);
 
 })(window.angular);
-
