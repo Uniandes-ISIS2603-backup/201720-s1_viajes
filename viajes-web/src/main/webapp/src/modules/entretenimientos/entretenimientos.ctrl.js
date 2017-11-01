@@ -37,7 +37,6 @@
                     calificacion: 0 /*Tipo Double*/
                 };
 
-                $scope.alerts = [];
             }
 
 
@@ -73,11 +72,10 @@
                 $http.delete(context + "/" + id);
                 $state.reload('entretenimientosList');
 
-            }
+            };
 
 // Código continua con las funciones de despliegue de errores
 
 
         }]);
 })(window.angular);
-

@@ -3,7 +3,6 @@ var mod = ng.module("entretenimientosModule", []);
     mod.constant("entretenimientosContext", "api/entretenimientos");
     mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             var basePath = 'src/modules/entretenimientos/';
-            $urlRouterProvider.otherwise("/entretenimientosList");
 
             $stateProvider.state('entretenimientosList', {
                 url: '/entretenimientos',
@@ -40,4 +39,3 @@ var mod = ng.module("entretenimientosModule", []);
         }]);
 
 })(window.angular);
-

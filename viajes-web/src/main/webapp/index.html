@@ -8,14 +8,23 @@
         
         <title>Gorra Tours</title>
         
-        <link rel="shortcut icon" href="resources/images/logo1.png">
-        <link rel="stylesheet" href="resources/css/app.css" />
-        
          <!-- Dependencias Externas -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        
+        <!-- Itinerarios -->
+        <script src="src/modules/itinerarios/itinerarios.mod.js" type="text/javascript"></script>
+        <script src="src/modules/itinerarios/itinerarios.ctrl.js" type="text/javascript"></script>
+       
+        <!--Hospedaje-->
+        <script src="src/modules/hospedajes/hospedajes.mod.js" type="text/javascript"></script>
+        <script src="src/modules/hospedajes/hospedajes.ctrl.js" type="text/javascript"></script>
+    
+        <!--Transporte-->
+        <script src="src/modules/transportes/transportes.mod.js" type="text/javascript"></script>
+        <script src="src/modules/transportes/transportes.ctrl.js" type="text/javascript"></script>
         
         <!--Entretenimiento-->
         <script src="src/modules/entretenimientos/entretenimientos.mod.js" type="text/javascript"></script>
@@ -23,6 +32,9 @@
         
         <script src="src/app.js" type="text/javascript"></script> 
         <script src="src/http-interceptor.factory.js" type="text/javascript"></script>
+        
+        <link rel="shortcut icon" href="resources/images/logo1.png">
+        <link rel="stylesheet" href="resources/css/app.css" />
     </head>
 
      <body class="span4">
@@ -41,12 +53,16 @@
                     </ul>
                 </div>
             </div>
+            <div class="container-fluid col-md-12">
                     <ul class="nav nav-tabs">
+                        <li><a ui-sref="transportesList">Transporte</a></li>
+                        <li><a ui-sref="hospedajesList">Hospedajes</a></li>
                         <li><a ui-sref="entretenimientosList">Entretenimiento</a></li>
+                        <li><a ui-sref="itinerariosList">Itinerarios</a></li>
                     </ul>
+            </div>
         </div> 
             <div ui-view="mainView">
             </div>
-        </div>
     </body>
 </html>

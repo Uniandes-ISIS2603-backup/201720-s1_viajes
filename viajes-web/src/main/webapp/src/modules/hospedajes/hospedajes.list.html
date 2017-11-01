@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <table class="table table-striped col-md-4">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Valor</th>
+                <th>Fecha inicio</th>
+                <th>Fecha final</th>
+                <th>Calificación</th>
+                <th>Comentarios</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="record in hospedajesRecords">
+                <td id="{{$index}}-nombre">{{record.nombre}}</td>
+                <td id="{{$index}}-valor">{{record.valor}}</td>
+                <td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>
+                <td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>
+                <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
+                <td id="{{$index}}-comentarios">{{record.comentarios}}</td>
+                <td id="{{$index}}-descripcion">{{record.descripcion}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
