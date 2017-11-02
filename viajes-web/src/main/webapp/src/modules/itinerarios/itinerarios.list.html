@@ -8,6 +8,7 @@
                                          </div>
                 </div>
                 <div class="col-md-8">
+                    <button id="create-btn" class="btn btn-default btn-sm" ui-sref="itinerariosCreate" style="float: right;"><span class="glyphicon glyphicon-plus"></span>Agregar</button>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -16,15 +17,19 @@
                                 <th>Fecha inicial</th>
                                 <th>Fecha final</th>
                                 <th>Visitantes</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="record in itinerariosRecords">
                              <td id="{{$index}}-id">{{record.id}}</td>
-                             <td id="{{$index}}-cantidad">{{record.costoTotal}}</td>   
-                             <td id="{{$index}}-cantidad">{{record.fechaInicial}}</td>   
-                             <td id="{{$index}}-cantidad">{{record.fechaFinal}}</td>   
+                             <td id="{{$index}}-costo">{{record.costoTotal}}</td>   
+                             <td id="{{$index}}-fechaIni">{{record.fechaInicial}}</td>   
+                             <td id="{{$index}}-fechaFi">{{record.fechaFinal}}</td>   
                              <td id="{{$index}}-cantidad">{{record.numeroVisitantes}}</td>   
+                             <td>
+                                <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                             </td>
                             </tr>
                         </tbody>
                     </table>

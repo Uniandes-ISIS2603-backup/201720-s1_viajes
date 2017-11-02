@@ -19,6 +19,16 @@
                         templateUrl: basePath + 'itinerarios.list.html'
                     }
                 }
+            }).state('itinerariosCreate', {
+                url: '/itinerarios/create',
+                views: {
+                    'mainView': {
+                        controller: 'itinerariosCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'itinerarios.create.html'
+                    }
+                }
+
             });
         }]);
 })(window.angular);
