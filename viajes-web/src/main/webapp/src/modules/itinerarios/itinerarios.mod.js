@@ -29,6 +29,18 @@
                     }
                 }
 
+            }).state('itinerariosEdit', {
+                url: '/itinerarios/:itinerariosId',
+                param: {
+                    itinerariosId: null
+                },
+                views: {
+                    'mainView': {
+                        controller: 'itinerariosCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'itinerarios.create.html'
+                    }
+                }
             });
         }]);
 })(window.angular);

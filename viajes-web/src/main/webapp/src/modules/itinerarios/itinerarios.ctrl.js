@@ -66,7 +66,7 @@
             
             this.deleteRecord = function (id) {
                 $http.delete(itinerariosContext + "/" + id);
-                $state.reload('entretenimientosList');
+                $state.reload('itinerariosList');
 
             };
         }
