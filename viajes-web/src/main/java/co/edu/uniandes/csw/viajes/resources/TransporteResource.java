@@ -111,17 +111,17 @@ public class TransporteResource {
      * En caso de no existir el id del transporte buscado se retorna un 404 con
      * el mensaje.
      */
-    @GET
-    @Path("{id: \\d+}")
-    public TransporteDetailDTO getTransporte(@PathParam("id") Long id){
-        TransporteEntity entity = transporteLogic.getTransporte(id);
-        if (entity == null) {
-            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
-        }
-        return new TransporteDetailDTO(transporteLogic.getTransporte(id));
-    }
-    
-    
+//    @GET
+//    @Path("{id: \\d+}")
+//    public TransporteDetailDTO getTransporte(@PathParam("id") Long id){
+//        TransporteEntity entity = transporteLogic.getTransporte(id);
+//        if (entity == null) {
+//            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
+//        }
+//        return new TransporteDetailDTO(transporteLogic.getTransporte(id));
+//    }
+//    
+//    
 //    @GET
 //    @Path("{id: \\d+}")
 //    public UbicacionDetailDTO getDdestino(@PathParam("id") Long id){
@@ -180,47 +180,47 @@ public class TransporteResource {
 //        
 //        return new CompaniaDetailDTO(entity.getCompania());
 //    }
-    /**
-     * PUT http://localhost:8080/viajesp-web/api/transportes/1 Ejemplo
-     * json { "id": 1, "name": "Santa fe sigue siendo muy malo" }
-     *
-     * @param id corresponde al transporte a actualizar.
-     * @param transporte corresponde a al objeto con los cambios que se van a
-     * realizar.
-     * @return El transporte actualizado.
-     * En caso de no existir el id del transporte a actualizar se retorna un
-     * 404 con el mensaje.
-     */
-    @PUT
-    @Path("{id: \\d+}")
-    public TransporteDetailDTO updateTransporte(@PathParam("id") Long id, TransporteDetailDTO transporte){
-        transporte.setId(id);
-        TransporteEntity entity = transporteLogic.getTransporte(id);
-        if (entity == null) {
-            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
-        }
-        return new TransporteDetailDTO(transporteLogic.updateTransporte(id, transporte.toEntity()));
-    }
-    
-    
-    /**
-     * DELETE http://localhost:8080/viajesp-web/api/transportes/1
-     *
-     * @param id corresponde al transporte a borrar.
-     * En caso de no existir el id del transporte a actualizar se retorna un
-     * 404 con el mensaje.
-     *
-     */
-    @DELETE
-    @Path("{id: \\d+}")
-    public void deleteTransporte(@PathParam("id") Long id){
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar un transporte con id {0}", id);
-        TransporteEntity entity = transporteLogic.getTransporte(id);
-        if (entity == null) {
-            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
-        }
-        transporteLogic.deleteTransporte(id);
-    }
+//    /**
+//     * PUT http://localhost:8080/viajesp-web/api/transportes/1 Ejemplo
+//     * json { "id": 1, "name": "Santa fe sigue siendo muy malo" }
+//     *
+//     * @param id corresponde al transporte a actualizar.
+//     * @param transporte corresponde a al objeto con los cambios que se van a
+//     * realizar.
+//     * @return El transporte actualizado.
+//     * En caso de no existir el id del transporte a actualizar se retorna un
+//     * 404 con el mensaje.
+//     */
+//    @PUT
+//    @Path("{id: \\d+}")
+//    public TransporteDetailDTO updateTransporte(@PathParam("id") Long id, TransporteDetailDTO transporte){
+//        transporte.setId(id);
+//        TransporteEntity entity = transporteLogic.getTransporte(id);
+//        if (entity == null) {
+//            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
+//        }
+//        return new TransporteDetailDTO(transporteLogic.updateTransporte(id, transporte.toEntity()));
+//    }
+//    
+//    
+//    /**
+//     * DELETE http://localhost:8080/viajesp-web/api/transportes/1
+//     *
+//     * @param id corresponde al transporte a borrar.
+//     * En caso de no existir el id del transporte a actualizar se retorna un
+//     * 404 con el mensaje.
+//     *
+//     */
+//    @DELETE
+//    @Path("{id: \\d+}")
+//    public void deleteTransporte(@PathParam("id") Long id){
+//        LOGGER.log(Level.INFO, "Inicia proceso de borrar un transporte con id {0}", id);
+//        TransporteEntity entity = transporteLogic.getTransporte(id);
+//        if (entity == null) {
+//            throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
+//        }
+//        transporteLogic.deleteTransporte(id);
+//    }
     
  
     

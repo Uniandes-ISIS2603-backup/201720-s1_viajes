@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="panel-group">
         <div class="panel panel-primary">
-            <div class="panel-heading"><label>Authors list</label></div>
+            <div class="panel-heading"><label>Itinerarios</label></div>
             <div class="panel-body">
                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -21,10 +21,10 @@
                         <tbody>
                             <tr ng-repeat="record in itinerariosRecords">
                              <td id="{{$index}}-id">{{record.id}}</td>
-                             <td id="{{$index}}-cantidad">{{record.costoTotal}}</td>   
-                             <td id="{{$index}}-cantidad">{{record.fechaInicial}}</td>   
-                             <td id="{{$index}}-cantidad">{{record.fechaFinal}}</td>   
-                             <td id="{{$index}}-cantidad">{{record.numeroVisitantes}}</td>   
+                             <td id="{{$index}}-costoTotal">{{record.costoTotal}}</td>   
+                             <td id="{{$index}}-fechaInicial">{{record.fechaInicial}}</td>   
+                             <td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>   
+                             <td id="{{$index}}-numeroVisitantes">{{record.numeroVisitantes}}</td>   
                             </tr>
                         </tbody>
                     </table>

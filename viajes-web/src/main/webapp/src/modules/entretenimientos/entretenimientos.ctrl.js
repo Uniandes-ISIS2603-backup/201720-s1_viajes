@@ -30,10 +30,13 @@
                 // el registro actual debe estar vacio
                 $scope.currentRecord = {
                     id: undefined /*Tipo Long. El valor se asigna en el backend*/,
-                    name: '' /*Tipo String*/,
+                    nombre: '' /*Tipo String*/,
+                    valor: 0 /*Tipo Double*/,
+                    fechaInicio: '' /*Tipo String*/,
+                    fechaFin: '' /*Tipo String*/,
+                    calificacion: 0 /*Tipo Double*/
                 };
 
-                $scope.alerts = [];
             }
 
 
@@ -69,11 +72,10 @@
                 $http.delete(context + "/" + id);
                 $state.reload('entretenimientosList');
 
-            }
+            };
 
 // Código continua con las funciones de despliegue de errores
 
 
         }]);
 })(window.angular);
-
