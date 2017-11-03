@@ -1,4 +1,6 @@
 <div class="container-fluid">
+    <br>
+    <button id="create-btn" class="btn btn-default btn-sm" ui-sref="hospedajesCreate" style="float: right;"><span class="glyphicon glyphicon-plus"></span>Agregar</button>
     <table class="table table-striped col-md-4">
         <thead>
             <tr>
@@ -9,6 +11,7 @@
                 <th>Calificación</th>
                 <th>Comentarios</th>
                 <th>Descripción</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +23,10 @@
                 <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
                 <td id="{{$index}}-comentarios">{{record.comentarios}}</td>
                 <td id="{{$index}}-descripcion">{{record.descripcion}}</td>
+                <td>
+                <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ui-sref="hospedajesEdit({hospedajeId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
+                <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                </td>
             </tr>
         </tbody>
     </table>
