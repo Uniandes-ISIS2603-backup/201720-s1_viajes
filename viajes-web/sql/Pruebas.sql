@@ -45,10 +45,10 @@ insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, c
 values (12, 'Fiesta en la casa de tatiana', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
 
 insert into UsuarioEntity (id, nombre)
-values (409, 'Tatiana Huertas');
+values (411, 'Tatiana Huertas');
 
 insert into UsuarioEntity (id, nombre)
-values (410, 'Mariana Rodriguez');
+values (412, 'Mariana Rodriguez');
 
 insert into UbicacionEntity (ID, LONGITUD, LATITUD, NOMBRE, DIRECCION, CIUDAD, PAIS)
  values (2, 12.0, 13.0, 'Hola', 'Calle', 'Bogota', 'Colombia');
