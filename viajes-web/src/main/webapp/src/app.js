@@ -10,7 +10,7 @@
         'ui.bootstrap',
        
         // Internal modules dependencies       
-        'transportesModule'
+        'transportesModule',
         'hospedajesModule',
         'itinerariosModule',
         'transportesModule',

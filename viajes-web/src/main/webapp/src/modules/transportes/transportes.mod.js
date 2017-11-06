@@ -1,5 +1,5 @@
 (function (ng) {
-var mod = ng.module("transportesModule", ['ui.router']);
+var mod = ng.module("transportesModule", []);
     mod.constant("transportesContext", "api/transportes");
     mod.config(['$stateProvider', '$urlRouterProvider', 
         function ($stateProvider, $urlRouterProvider) {
@@ -15,9 +15,30 @@ var mod = ng.module("transportesModule", ['ui.router']);
                         templateUrl: basePath + 'transportes.list.html'
                     }
                 }
+            }).state('transporteCreate', {
+                url: '/transportes/create',
+                views: {
+                    'mainView': {
+                        controller: 'transportesCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'transportes.create.html'
+                    }
+                }
+
+            }).state('transporteEdit', {
+                url: '/transportes/:transporteId',
+                param: {
+                    transporteId: null
+                },
+                views: {
+                    'mainView': {
+                        controller: 'transportesCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'transportes.create.html'
+                    }
+                }
             });
         }]);
 
 })(window.angular);
-
 
