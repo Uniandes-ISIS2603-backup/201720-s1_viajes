@@ -1,4 +1,5 @@
 (function (ng) {
+<<<<<<< HEAD
  
      var mod = ng.module("transportesModule");
  
@@ -77,3 +78,19 @@
  
          }]);
  })(window.angular);
+=======
+
+    var mod = ng.module("transportesModule");
+    mod.constant("transportesContext", "api/transportes");
+    mod.controller("transportesCtrl", ['$scope','$http', 'transportesContext','$state',
+        function ($scope, $http, transportesContext, $state) {
+
+            // inicialmente el listado de transportes está vacio
+            //$scope.records = {};
+            // carga los transportes
+            $http.get(transportesContext).then(function (response) {
+                $scope.transportesRecords = response.data;
+            });
+        }]);
+})(window.angular);
+>>>>>>> e5fd30653d64003bde7cdeb8a4807fdb3543d3da

@@ -80,10 +80,16 @@ insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFIN
 insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFINAL, NOMBRE, CALIFICACION) values (15,'FRANCES',7000,10000,'26/09/17','26/09/17', 'Tatiana', 2.5);
 
 insert into HospedajeEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
-values (100, 'Hotel Rosas', '17/11/2017 16:30', '17/11/2017 22:30', 395, 10, 'Muy bueno', 'Cama doble');
+values (100, 'Hotel Rosas', '17/11/2017 16:30', '17/11/2017 22:30', 395000, 7.5, 'Muy bueno', 'Cerca de la playa');
 
 insert into HospedajeEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
-values (200, 'Hotel Petunias', '17/11/2017 16:30', '17/11/2017 22:30', 500, 7, 'Muy malo', 'Cama triple');
+values (200, 'Hotel Petunias', '17/11/2017 16:30', '17/11/2017 22:30', 500000, 7, 'Muy malo', 'Wifi gratis');
+
+insert into HospedajeEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
+values (300, 'Hotel Margaritas', '12/12/2017 10:30', '20/12/2017 22:30', 1395000, 9.45, 'Espectacular', 'Buffet');
+
+insert into HospedajeEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
+values (400, 'Hotel Claveles', '12/01/2018 06:30', '30/02/2018 20:30', 1500000, 9.9, 'Impresionante, espectacular, increíble', 'Random descripción xd');
 
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (16,'Hola 1','Ruta1');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Hola 2','Ruta2');

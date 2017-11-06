@@ -10,8 +10,12 @@
         'ui.bootstrap',
        
         // Internal modules dependencies       
-       'transportesModule'
-        
+        'transportesModule'
+        'hospedajesModule',
+        'itinerariosModule',
+        'transportesModule',
+        'entretenimientosModule'
+
 
     ]);
     // Resuelve problemas de las promesas
@@ -19,5 +23,4 @@
             $qProvider.errorOnUnhandledRejections(false);
         }]);
 })(window.angular);
-
 

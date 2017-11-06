@@ -39,5 +39,3 @@
             $httpProvider.interceptors.push('httpInterceptor');
         }]);
 })(window.angular);
-
-
