@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -123,7 +122,7 @@ public class TransporteResource {
     
     @GET
     @Path("{id: \\d+}")
-    public UbicacionDetailDTO getDdestino(@PathParam("id") Long id){
+    public UbicacionDetailDTO getDdestino(@PathParam("idDestino") Long id){
         TransporteEntity entity = transporteLogic.getTransporte(id);
         if (entity == null) {
             throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
