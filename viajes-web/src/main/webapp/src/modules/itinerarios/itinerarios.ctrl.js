@@ -10,7 +10,7 @@
              $scope.itinerariosRecords = response.data;
             });
             
-             if ($stateParams.entretenimientoId !== null && $stateParams.entretenimientoId !== undefined) {
+             if ($stateParams.itinerarioId !== null && $stateParams.itinerarioId !== undefined) {
 
                 // toma el id del parámetro
                 id = $stateParams.itinerarioId;
@@ -33,7 +33,7 @@
                     numeroVisitantes: 0 /*Tipo Integer*/
                     
                 };
-
+                
             }
             
             this.saveRecord = function (id) {

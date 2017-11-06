@@ -30,15 +30,27 @@
                 }
 
             }).state('itinerariosEdit', {
-                url: '/itinerarios/:itinerariosId',
+                url: '/itinerarios/:itinerarioId',
                 param: {
-                    itinerariosId: null
+                    itinerarioId: null
                 },
                 views: {
                     'mainView': {
                         controller: 'itinerariosCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'itinerarios.create.html'
+                    }
+                }
+            }).state('itinerariosDetail', {
+                url: '/itinerarios/detail/:itinerarioId',
+                param: {
+                    itinerarioId: null
+                },
+                views: {
+                    'mainView': {
+                        controller: 'itinerariosCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'itinerarios.detail.html'
                     }
                 }
             });
