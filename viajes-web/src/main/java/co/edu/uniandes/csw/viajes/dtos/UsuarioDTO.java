@@ -27,8 +27,7 @@ public class UsuarioDTO {
      * Constructir por defecto
      */
     public UsuarioDTO()
-    {
-        
+    {       
     }
     
     /**
