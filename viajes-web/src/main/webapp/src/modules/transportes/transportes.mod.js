@@ -7,7 +7,7 @@ var mod = ng.module("transportesModule", ['ui.router']);
             //$urlRouterProvider.otherwise("/transportesList");
 
             $stateProvider.state('transportesList', {
-                url: '/transportes/list',
+                url: '/transportes',
                 views: {
                     'mainView': {
                         controller: 'transportesCtrl',

@@ -1,4 +1,6 @@
 <div class="container-fluid">
+   <br>
+  <button id="create-btn" class="btn btn-default btn-sm" ui-sref="entretenimientoCreate" style="float: right;"><span class="glyphicon glyphicon-plus"></span>Agregar</button>
   <table class="table table-striped" class="col-md-4">
     <thead>
       <tr>
@@ -13,13 +15,13 @@
     <tbody>
       <tr ng-repeat="record in records">
         <td id="{{$index}}-nombre">{{record.nombre}}</td>
-        <td id="{{$index}}-valor">{{record.valor}}</td>
+        <td id="{{$index}}-valor"><span id="currency-no-fractions">{{record.valor | currency}}</span></td>
         <td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>
-        <td id="{{$index}}-fechaFin">{{record.fechaFinal}}</td>
+        <td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>
         <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
         <td>
-          <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
-          AQUI VAN LOS BOTONES
+            <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ui-sref="entretenimientoEdit({entretenimientoId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
+            <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
         </td>
       </tr>
     </tbody>

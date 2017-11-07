@@ -11,7 +11,7 @@
             // Definición del estado 'authorsList' donde se listan los autores
             $stateProvider.state('itinerariosList', {
                 // Url que aparecerá en el browser
-                url: '/itinerarios/list',
+                url: '/itinerarios',
                 views: {
                     'mainView': {                      
                         controller: 'itinerariosCtrl',
