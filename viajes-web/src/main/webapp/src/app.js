@@ -13,8 +13,8 @@
         'hospedajesModule',
         'itinerariosModule',
         'transportesModule',
-        'entretenimientosModule'
-
+        'entretenimientosModule',
+        'usuariosModule'
     ]);
     // Resuelve problemas de las promesas
     app.config(['$qProvider', function ($qProvider) {
