@@ -42,16 +42,17 @@ var mod = ng.module("hospedajesModule", []);
                     hospedajesId: null
                 },
                 views: {
-                    'listView': {
-                        templateUrl: basePath + 'hospedajes.list.html',
-                        controller: 'hospedajesCtrl',
-                        controllerAs: 'ctrl'
-                    },
-                    'detailView': {
+                    'mainView': {
                         templateUrl: basePath + 'hospedaje.detail.html',
                         controller: 'hospedajesCtrl',
                         controllerAs: 'ctrl'
                     }
+//                    ,
+//                    'detailView': {
+//                        templateUrl: basePath + 'hospedaje.detail.html',
+//                        controller: 'hospedajesCtrl',
+//                        controllerAs: 'ctrl'
+//                    }
                 }
             });
         }]);

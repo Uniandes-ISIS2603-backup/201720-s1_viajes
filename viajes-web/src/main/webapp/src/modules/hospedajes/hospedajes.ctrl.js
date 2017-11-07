@@ -4,11 +4,11 @@
     
 //    mod.constant("hospedajesContext", "api/hospedajes");
     
-    mod.controller('hospedajesCtrl', ['$scope', '$state', '$stateParams', '$http', 'hospedajesContext', function ($scope, $state, $stateParams, $http, context ) {
+    mod.controller('hospedajesCtrl', ['$scope', '$state', '$http', 'hospedajesContext', function ($scope, $state, $http, hospedajesContext ) {
             // inicialmente el listado de ciudades está vacio
             $scope.hospedajesRecords = {};
             // carga las ciudades
-            $http.get(context).then(function (response) {
+            $http.get(hospedajesContext).then(function (response) {
                 $scope.hospedajesRecords = response.data;
             });
             
@@ -17,12 +17,14 @@
             // el controlador recibió un entretenimientoId ??
             // revisa los parámetros (ver el :entretenimientoId en la definición de la ruta)
 //            console.log($state.params.);
-            if ($stateParams.hospedajesId !== null && $stateParams.hospedajesId !== undefined) {
-                console.log("1->>>>>>>>>>>>>>>>>>>>>>>")
+            if ($state.params.hospedajesId !== null && $state.params.hospedajesId !== undefined) {
+                console.log("1->>>>>>>>>>>>>>>>>>>>>>>");
                 // toma el id del parámetro
-                id = $stateParams.hospedajesId;
+                id = $state.params.hospedajesId;
+                console.log(id);
+                console.log(hospedajesContext);
                 // obtiene el dato del recurso REST
-                $http.get(context + "/" + id)
+                $http.get(hospedajesContext + "/" + id)
                         .then(function (response) {
                             // $http.get es una promesa
                             // cuando llegue el dato, actualice currentRecord
@@ -52,7 +54,7 @@
                 if (id == null) {
 
                     // ejecuta POST en el recurso REST
-                    return $http.post(context, currentRecord)
+                    return $http.post(hospedajesContext, currentRecord)
                             .then(function () {
                                 // $http.post es una promesa
                                 // cuando termine bien, cambie de estado
@@ -63,7 +65,7 @@
                 } else {
 
                     // ejecuta PUT en el recurso REST
-                    return $http.put(context + "/" + currentRecord.id, currentRecord)
+                    return $http.put(hospedajesContext + "/" + currentRecord.id, currentRecord)
                             .then(function () {
                                 // $http.put es una promesa
                                 // cuando termine bien, cambie de estado
