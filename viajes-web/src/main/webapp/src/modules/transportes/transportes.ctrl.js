@@ -31,17 +31,20 @@
                     valor: 0 /*Tipo Double*/,
                     fechaInicio: '' /*Tipo String*/,
                     fechaFin: '' /*Tipo String*/,
-                    calificacion: 0 /*Tipo Double*/
+                    calificacion: 0 /*Tipo Double*/,
+                    comentarios: '',
+                    descripcion: ''
                 };
                 $scope.alerts = [];
             }
 
 
             this.saveRecord = function (id) {
+                console.log(id)
                 currentRecord = $scope.currentRecord;
-
+                console.log(currentRecord.id)
                 // si el id es null, es un registro nuevo, entonces lo crea
-                if (id !== null || id !== undefined) {
+                if (id !== null && id !== undefined) {
 
                     // ejecuta POST en el recurso REST
                     return $http.put(context + "/" + currentRecord.id, currentRecord)
