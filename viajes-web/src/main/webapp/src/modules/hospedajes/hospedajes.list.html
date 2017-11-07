@@ -1,33 +1,46 @@
 <div class="container-fluid">
-    <br>
-    <button id="create-btn" class="btn btn-default btn-sm" ui-sref="hospedajesCreate" style="float: right;"><span class="glyphicon glyphicon-plus"></span>Agregar</button>
-    <table class="table table-striped col-md-4">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Valor</th>
-                <th>Fecha inicio</th>
-                <th>Fecha final</th>
-                <th>Calificación</th>
-                <th>Comentarios</th>
-                <th>Descripción</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="record in hospedajesRecords">
-                <td id="{{$index}}-nombre"><a ui-sref="hospedajeDetail({hospedajesId: record.id})">{{record.nombre}}</a></td>
-                <td id="{{$index}}-valor">{{record.valor}}</td>
-                <td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>
-                <td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>
-                <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
-                <td id="{{$index}}-comentarios">{{record.comentarios}}</td>
-                <td id="{{$index}}-descripcion">{{record.descripcion}}</td>
-                <td>
-                <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ui-sref="hospedajesEdit({hospedajesId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
-                <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><label>Hospedajes</label></div>
+            <div class="panel-body">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    
+                    <button id="create-btn" class="btn btn-default btn-sm" ui-sref="hospedajesCreate" style="float: right;"><span class="glyphicon glyphicon-plus"></span>Agregar</button>
+                    <table class="table table-striped col-md-4">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Valor</th>
+                                <th>Fecha inicio</th>
+                                <th>Fecha final</th>
+                                <th>Calificación</th>
+                                <th>Comentarios</th>
+                                <th>Descripción</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="record in hospedajesRecords">
+                                <td id="{{$index}}-nombre"><a ui-sref="hospedajeDetail({hospedajesId: record.id})">{{record.nombre}}</a></td>
+                                <td id="{{$index}}-valor">{{record.valor}}</td>
+                                <td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>
+                                <td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>
+                                <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
+                                <td id="{{$index}}-comentarios">{{record.comentarios}}</td>
+                                <td id="{{$index}}-descripcion">{{record.descripcion}}</td>
+                                <td>
+                                    <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ui-sref="hospedajesEdit({hospedajesId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
+                                    <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
