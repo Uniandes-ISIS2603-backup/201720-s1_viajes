@@ -1,5 +1,5 @@
 (function (ng) {
-    
+
     var mod = ng.module("transportesModule");
     mod.constant("transportesContext", "api/transportes");
     mod.controller("transportesCtrl", ['$scope', '$state', '$stateParams', '$http', 'transportesContext',
@@ -11,7 +11,7 @@
             $http.get(context).then(function (response) {
                 $scope.records = response.data;
             });
-            
+
             if ($stateParams.transporteId !== null && $stateParams.transporteId !== undefined) {
 
                 // toma el id del parámetro
@@ -33,7 +33,7 @@
                     fechaFin: '' /*Tipo String*/,
                     calificacion: 0 /*Tipo Double*/
                 };
-
+                $scope.alerts = [];
             }
 
 
@@ -41,12 +41,12 @@
                 currentRecord = $scope.currentRecord;
 
                 // si el id es null, es un registro nuevo, entonces lo crea
-                if (id === null) {
+                if (id !== null || id !== undefined) {
 
                     // ejecuta POST en el recurso REST
-                    return $http.post(context, currentRecord)
+                    return $http.put(context + "/" + currentRecord.id, currentRecord)
                             .then(function () {
-                                // $http.post es una promesa
+                                // $http.put es una promesa
                                 // cuando termine bien, cambie de estado
                                 $state.go('transportesList');
                             });
@@ -54,13 +54,15 @@
                     // si el id no es null, es un registro existente entonces lo actualiza
                 } else {
 
-                    // ejecuta PUT en el recurso REST
-                    return $http.put(context + "/" + currentRecord.id, currentRecord)
+                    return $http.post(context, currentRecord)
                             .then(function () {
-                                // $http.put es una promesa
+                                // $http.post es una promesa
                                 // cuando termine bien, cambie de estado
                                 $state.go('transportesList');
                             });
+
+                    // ejecuta PUT en el recurso REST
+                    
                 }
                 ;
             };
