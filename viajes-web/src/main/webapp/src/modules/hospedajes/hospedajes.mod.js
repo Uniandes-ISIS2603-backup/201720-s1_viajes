@@ -35,6 +35,24 @@ var mod = ng.module("hospedajesModule", []);
                         templateUrl: basePath + 'hospedajes.create.html'
                     }
                 }
+            }).state('hospedajeDetail', {
+                url: '/{hospedajesId:int}/detail',
+//                parent: 'hospedajes',
+                param: {
+                    hospedajesId: null
+                },
+                views: {
+                    'listView': {
+                        templateUrl: basePath + 'hospedajes.list.html',
+                        controller: 'hospedajesCtrl',
+                        controllerAs: 'ctrl'
+                    },
+                    'detailView': {
+                        templateUrl: basePath + 'hospedaje.detail.html',
+                        controller: 'hospedajesCtrl',
+                        controllerAs: 'ctrl'
+                    }
+                }
             });
         }]);
 

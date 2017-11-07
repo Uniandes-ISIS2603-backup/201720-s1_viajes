@@ -9,17 +9,16 @@
             $scope.hospedajesRecords = {};
             // carga las ciudades
             $http.get(context).then(function (response) {
-                console.log(response.data);
                 $scope.hospedajesRecords = response.data;
             });
             
-            console.log("aa"+$stateParams);
+//            console.log("aa"+$stateParams);
 //            console.log($scope.hospedajesRecords)
-
             // el controlador recibió un entretenimientoId ??
             // revisa los parámetros (ver el :entretenimientoId en la definición de la ruta)
+//            console.log($state.params.);
             if ($stateParams.hospedajesId !== null && $stateParams.hospedajesId !== undefined) {
-
+                console.log("1->>>>>>>>>>>>>>>>>>>>>>>")
                 // toma el id del parámetro
                 id = $stateParams.hospedajesId;
                 // obtiene el dato del recurso REST
@@ -32,6 +31,7 @@
 
                 // el controlador no recibió un entretenimientoId
             } else {
+                console.log("2->>>>>>>>>>>>>>>>>>>>>>>")
                 // el registro actual debe estar vacio
                 $scope.currentRecord = {
                     id: undefined /*Tipo Long. El valor se asigna en el backend*/,
