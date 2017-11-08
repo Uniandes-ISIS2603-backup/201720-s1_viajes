@@ -14,12 +14,13 @@
 
             // el controlador recibió un usuarioId ??
             // revisa los parámetros (ver el :usuarioId en la definición de la ruta)
-            if ($stateParams.usuarioId !== null && $stateParams.usuarioId !== undefined) {
+            if ($stateParams.usuarioId) {
 
                 // toma el id del parámetro
                 id = $stateParams.usuarioId;
                 // obtiene el dato del recurso REST
-                $http.get(usuariosContext + "/" + id)
+                console.log(usuariosContext)
+                $http.get(/*usuariosContext*/ + "api/usuarios/" + id)
                         .then(function (response) {
                             // $http.get es una promesa
                             // cuando llegue el dato, actualice currentRecord
