@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><label>Usuario</label></div>
+            <div class="panel-body">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                                         </div>
+                </div>
+                <div class="col-md-8">
+                    
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                             <td id="{{$index}}-name">{{currentRecord.nombre}}</td>                               
+                            </tr>
+                        </tbody>
+                    </table>
+                   <button type="button" ui-sref='usuariosList' style="float: right;">Volver</button>
+                          
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

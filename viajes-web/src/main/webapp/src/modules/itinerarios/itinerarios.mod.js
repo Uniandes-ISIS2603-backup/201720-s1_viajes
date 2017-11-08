@@ -19,6 +19,40 @@
                         templateUrl: basePath + 'itinerarios.list.html'
                     }
                 }
+            }).state('itinerariosCreate', {
+                url: '/itinerarios/create',
+                views: {
+                    'mainView': {
+                        controller: 'itinerariosCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'itinerarios.create.html'
+                    }
+                }
+
+            }).state('itinerariosEdit', {
+                url: '/itinerarios/:itinerarioId',
+                param: {
+                    itinerarioId: null
+                },
+                views: {
+                    'mainView': {
+                        controller: 'itinerariosCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'itinerarios.create.html'
+                    }
+                }
+            }).state('itinerariosDetail', {
+                url: '/itinerarios/detail/:itinerarioId',
+                param: {
+                    itinerarioId: null
+                },
+                views: {
+                    'mainView': {
+                        controller: 'itinerariosCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'itinerarios.detail.html'
+                    }
+                }
             });
         }]);
 })(window.angular);

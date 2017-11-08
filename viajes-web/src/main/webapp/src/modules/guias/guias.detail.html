@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><label>Guías Detail</label></div>
+            <div class="panel-body">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <button type="button" ui-sref='guiasList' style="float: right;">Volver</button>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Valor</th>
+                                <th>Lenguaje</th>
+                                <th>Fecha inicio</th>
+                                <th>Fecha final</th>
+                                <th>Contrato hora</th>
+                                <th>Calificación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                             <td id="{{$index}}-nombre">{{currentRecord.nombre}}</td>
+                                <td id="{{$index}}-valor">{{currentRecord.valor}}</td>
+                                <td id="{{$index}}-lenguaje">{{currentRecord.lenguaje}}</td>
+                                <td id="{{$index}}-fechaInicio">{{currentRecord.fechaInicio}}</td>
+                                <td id="{{$index}}-fechaFinal">{{currentRecord.fechaFinal}}</td>
+                                <td id="{{$index}}-contratoHora">{{currentRecord.contratoHora}}</td>
+                                <td id="{{$index}}-calificacion">{{currentRecord.calificacion}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

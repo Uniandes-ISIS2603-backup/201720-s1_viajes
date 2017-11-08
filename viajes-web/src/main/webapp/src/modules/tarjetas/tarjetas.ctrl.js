@@ -1,41 +1,40 @@
 (function (ng) {
-    var mod = ng.module("itinerariosModule");
-    mod.constant("itinerariosContext", "api/itinerarios");
-    mod.controller('itinerariosCtrl', ['$scope', '$http', 'itinerariosContext', '$state', '$stateParams',
-        function ($scope, $http, itinerariosContext, $state, $stateParams) {
-            
+
+    var mod = ng.module("tarjetasModule");
+
+    mod.controller("tarjetasCtrl", ['$scope', '$state', '$stateParams', '$http', 'tarjetasContext', function ($scope, $state, $stateParams, $http, tarjetasContext) {
+
+            // inicialmente el listado de tarjetas está vacio
             $scope.records = {};
-            // carga las ciudades
-             $http.get(itinerariosContext).then(function (response) {
-             $scope.itinerariosRecords = response.data;
+            // carga las tarjetas
+            $http.get(tarjetasContext).then(function (response) {
+                $scope.records = response.data;
             });
-            
-             if ($stateParams.itinerarioId !== null && $stateParams.itinerarioId !== undefined) {
+
+            // el controlador recibió un tarjetasId ??
+            // revisa los parámetros (ver el :tarjetasId en la definición de la ruta)
+            if ($stateParams.tarjetasId) {
 
                 // toma el id del parámetro
-                id = $stateParams.itinerarioId;
+                id = $stateParams.tarjetasId;
                 // obtiene el dato del recurso REST
-                $http.get(itinerariosContext + "/" + id)
+                $http.get(tarjetasContext + "/" + id)
                         .then(function (response) {
                             // $http.get es una promesa
                             // cuando llegue el dato, actualice currentRecord
                             $scope.currentRecord = response.data;
                         });
 
-                // el controlador no recibió un entretenimientoId
+                // el controlador no recibió un tarjetasId
             } else {
                 // el registro actual debe estar vacio
                 $scope.currentRecord = {
                     id: undefined /*Tipo Long. El valor se asigna en el backend*/,
-                    costoTotal: 0 /*Tipo Double*/,
-                    fechaInicial:'' /*Tipo String*/,
-                    fechaFinal: '' /*Tipo String*/,
-                    numeroVisitantes: 0 /*Tipo Integer*/
-                    
+                    numero: 0 /*Tipo Integer*/,
+                    fondos: 0 /*Tipo Long*/
                 };
-                
             }
-            
+
             this.saveRecord = function (id) {
                 currentRecord = $scope.currentRecord;
 
@@ -43,32 +42,30 @@
                 if (id == null) {
 
                     // ejecuta POST en el recurso REST
-                    return $http.post(itinerariosContext, currentRecord)
+                    return $http.post(tarjetasContext, currentRecord)
                             .then(function () {
                                 // $http.post es una promesa
                                 // cuando termine bien, cambie de estado
-                                $state.go('itinerariosList');
+                                $state.go('tarjetasList');
                             });
 
                     // si el id no es null, es un registro existente entonces lo actualiza
                 } else {
 
                     // ejecuta PUT en el recurso REST
-                    return $http.put(itinerariosContext + "/" + currentRecord.id, currentRecord)
+                    return $http.put(tarjetasContext + "/" + currentRecord.id, currentRecord)
                             .then(function () {
                                 // $http.put es una promesa
                                 // cuando termine bien, cambie de estado
-                                $state.go('itinerariosList');
+                                $state.go('tarjetasList');
                             });
                 }
-                
+                ;
             };
-            
-            this.deleteRecord = function (id) {
-                $http.delete(itinerariosContext + "/" + id);
-                $state.reload('itinerariosList');
 
+            this.deleteRecord = function (id) {
+                $http.delete(tarjetasContext + "/" + id);
+                $state.reload('tarjetasList');
             };
-        }
-    ]);
-})(angular);
+        }]);
+})(window.angular);

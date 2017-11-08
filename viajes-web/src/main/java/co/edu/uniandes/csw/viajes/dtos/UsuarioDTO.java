@@ -27,8 +27,7 @@ public class UsuarioDTO {
      * Constructir por defecto
      */
     public UsuarioDTO()
-    {
-        
+    {       
     }
     
     /**
@@ -54,6 +53,7 @@ public class UsuarioDTO {
      * @param usuario:Es la entidad que se va a convertir a DTO 
      */
     public UsuarioDTO(UsuarioEntity usuario) {
+        this.id = usuario.getId();
         this.nombre = usuario.getNombre();
        }
      
@@ -63,6 +63,7 @@ public class UsuarioDTO {
      */
     public UsuarioEntity toEntity() {
         UsuarioEntity entity = new UsuarioEntity();
+        entity.setId(this.id);
         entity.setNombre(this.nombre);
         return entity;
     }  
