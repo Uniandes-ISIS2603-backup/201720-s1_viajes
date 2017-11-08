@@ -9,6 +9,7 @@
             // carga los usuarios
             $http.get(usuariosContext).then(function (response) {
                 $scope.records = response.data;
+                console.log($scope.records)
             });
 
             // el controlador recibió un usuarioId ??
@@ -64,10 +65,9 @@
             };
 
             this.deleteRecord = function (id) {
+                console.log(id)
                 $http.delete(usuariosContext + "/" + id);
                 $state.reload('usuariosList');
             };
-
-// Código continua con las funciones de despliegue de errores
         }]);
 })(window.angular);

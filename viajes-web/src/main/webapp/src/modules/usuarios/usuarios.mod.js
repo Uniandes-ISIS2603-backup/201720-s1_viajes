@@ -13,7 +13,7 @@ var mod = ng.module("usuariosModule", []);
                         templateUrl: basePath + 'usuarios.list.html'
                     }
                 }
-            }).state('usuarioCreate', {
+            }).state('usuariosCreate', {
                 url: '/usuarios/create',
                 views: {
                     'mainView': {
@@ -23,16 +23,28 @@ var mod = ng.module("usuariosModule", []);
                     }
                 }
 
-            }).state('usuarioEdit', {
-                url: '/usuarios/:usuarioId',
+            }).state('usuariosEdit', {
+                url: '/usuarios/:usuariosId',
                 param: {
-                    usuarioId: null
+                    usuariosId: null
                 },
                 views: {
                     'mainView': {
                         controller: 'usuariosCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'usuarios.create.html'
+                    }
+                }
+                 }).state('usuarioDetail', {
+                url: '/{usuariosId:int}/detail',
+                param: {
+                    usuariosId: null
+                },
+                views: {
+                    'mainView': {
+                        templateUrl: basePath + 'usuario.detail.html',
+                        controller: 'usuariosCtrl',
+                        controllerAs: 'ctrl'
                     }
                 }
             });
