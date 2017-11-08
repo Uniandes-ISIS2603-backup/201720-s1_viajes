@@ -5,9 +5,9 @@
  */
 package co.edu.uniandes.csw.viajes.resources;
 
-import co.edu.uniandes.csw.viajes.dtos.ItinerarioDetailDTO;
-import co.edu.uniandes.csw.viajes.ejb.UsuarioLogic;
-import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
+import co.edu.uniandes.csw.viajes.dtos.PagoDetailDTO;
+import co.edu.uniandes.csw.viajes.ejb.TarjetaCreditoLogic;
+import co.edu.uniandes.csw.viajes.entities.PagoEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -30,104 +30,104 @@ import javax.ws.rs.core.MediaType;
 public class TarjetaCreditoPagosResource {
     
     @Inject
-    private UsuarioLogic usuarioLogic;
+    private TarjetaCreditoLogic tarjetaCreditoLogic;
     
      /**
      * Convierte una lista de PagoEntity a una lista de PagoDetailDTO.
      *
-     * @param entityList Lista de ItinerarioEntity a convertir.
-     * @return Lista de ItinerarioDetailDTO convertida.
+     * @param entityList Lista de PagoEntity a convertir.
+     * @return Lista de PagoDetailDTO convertida.
      * 
      */
-    private List<ItinerarioDetailDTO> itinerariosListEntity2DTO(List<ItinerarioEntity> entityList) {
-        List<ItinerarioDetailDTO> list = new ArrayList<>();
-        for (ItinerarioEntity entity : entityList) {
-            list.add(new ItinerarioDetailDTO(entity));
+    private List<PagoDetailDTO> pagosListEntity2DTO(List<PagoEntity> entityList) {
+        List<PagoDetailDTO> list = new ArrayList<>();
+        for (PagoEntity entity : entityList) {
+            list.add(new PagoDetailDTO(entity));
         }
         return list;
     }
 
     /**
-     * Convierte una lista de ItinerarioDetailDTO a una lista de ItinerarioEntity.
+     * Convierte una lista de PagoDetailDTO a una lista de PagoEntity.
      *
-     * @param dtos Lista de ItinerarioDetailDTO a convertir.
-     * @return Lista de ItinerarioEntity convertida.
+     * @param dtos Lista de PagoDetailDTO a convertir.
+     * @return Lista de PagoEntity convertida.
      * 
      */
-    private List<ItinerarioEntity> itinerariosListDTO2Entity(List<ItinerarioDetailDTO> dtos) {
-        List<ItinerarioEntity> list = new ArrayList<>();
-        for (ItinerarioDetailDTO dto : dtos) {
+    private List<PagoEntity> pagosListDTO2Entity(List<PagoDetailDTO> dtos) {
+        List<PagoEntity> list = new ArrayList<>();
+        for (PagoDetailDTO dto : dtos) {
             list.add(dto.toEntity());
         }
         return list;
     }
 
     /**
-     * Obtiene una colección de instancias de ItinerarioDetailDTO asociadas a una
-     * instancia de Usuario
+     * Obtiene una colección de instancias de PagoDetailDTO asociadas a una
+     * instancia de TarjetaCredito
      *
-     * @param usuariosId Identificador de la instancia de Usuario
-     * @return Colección de instancias de ItinerarioDetailDTO asociadas a la
-     * instancia de Usuario
+     * @param tarjetasId Identificador de la instancia de TarjetaCredito
+     * @return Colección de instancias de PagoDetailDTO asociadas a la
+     * instancia de TarjetaCredito
      * 
      */
     @GET
-    public List<ItinerarioDetailDTO> listItinerarios(@PathParam("usuariosId") Long usuariosId) {
-        return itinerariosListEntity2DTO(usuarioLogic.getItinerario(usuariosId));
+    public List<PagoDetailDTO> listPagos(@PathParam("tarjetasId") Long tarjetasId) {
+        return pagosListEntity2DTO(tarjetaCreditoLogic.getPagos(tarjetasId));
     }
 
     /**
-     * Obtiene una instancia de Itinerario asociada a una instancia de Usuario
+     * Obtiene una instancia de Pago asociada a una instancia de TarjetaCredito
      *
-     * @param usuariosId Identificador de la instancia de Usuario
-     * @param itinerariosId Identificador de la instancia de Itinerario
+     * @param tarjetasId Identificador de la instancia de TarjetaCredito
+     * @param pagosId Identificador de la instancia de Pago
      * @return 
      * 
      */
     @GET
-    @Path("{itinerariosId: \\d+}")
-    public ItinerarioDetailDTO getItinerario(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
-        return new ItinerarioDetailDTO(usuarioLogic.getItinerario(usuariosId, itinerariosId));
+    @Path("{pagosId: \\d+}")
+    public PagoDetailDTO getPago(@PathParam("tarjetasId") Long tarjetasId, @PathParam("pagosId") Long pagosId) {
+        return new PagoDetailDTO(tarjetaCreditoLogic.getPago(tarjetasId, pagosId));
     }
 
     /**
-     * Asocia un Itinerario existente a un Usuario
+     * Asocia un Pago existente a una TarjetaCredito
      *
-     * @param usuariosId Identificador de la instancia de Usuario
-     * @param itinerariosId Identificador de la instancia de Itinerario
-     * @return Instancia de ItinerarioDetailDTO que fue asociada a Usuario
+     * @param tarjetasId Identificador de la instancia de TarjetaCredito
+     * @param pagosId Identificador de la instancia de Pago
+     * @return Instancia de PagoDetailDTO que fue asociada a TarjetaCredito
      * 
      */
     @POST
-    @Path("{itinerariosId: \\d+}")
-    public ItinerarioDetailDTO addItinerario(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
-        return new ItinerarioDetailDTO(usuarioLogic.addItinerario(usuariosId, itinerariosId));
+    @Path("{pagosId: \\d+}")
+    public PagoDetailDTO addPago(@PathParam("tarjetasId") Long tarjetasId, @PathParam("pagosId") Long pagosId) {
+        return new PagoDetailDTO(tarjetaCreditoLogic.addPago(tarjetasId, pagosId));
     }
 
     /**
-     * Remplaza las instancias de Itinerario asociadas a una instancia de Usuario
+     * Remplaza las instancias de Pago asociadas a una instancia de Tarjetacredito
      *
-     * @param usuariosId Identificador de la instancia de Usuario
-     * @param itinerarios Colección de instancias de ItinerarioDTO a asociar a instancia
-     * de Usuario
-     * @return Nueva colección de ItinerarioDTO asociada a la instancia de Usuario
+     * @param tarjetasId Identificador de la instancia de TarjetaCredito
+     * @param pagos Colección de instancias de PagoDTO a asociar a instancia
+     * de TarjetaCredito
+     * @return Nueva colección de PagoDTO asociada a la instancia de TarjetaCredito
      * 
      */
     @PUT
-    public List<ItinerarioDetailDTO> replaceItinerarios(@PathParam("usuariosId") Long usuariosId, List<ItinerarioDetailDTO> itinerarios) {
-        return itinerariosListEntity2DTO(usuarioLogic.replaceItinerarios(usuariosId, itinerariosListDTO2Entity(itinerarios)));
+    public List<PagoDetailDTO> replacePagos(@PathParam("tarjetasId") Long tarjetasId, List<PagoDetailDTO> pagos) {
+        return pagosListEntity2DTO(tarjetaCreditoLogic.replacePago(tarjetasId, pagosListDTO2Entity(pagos)));
     }
 
     /**
-     * Desasocia un Itinerario existente de un Usuario existente
+     * Desasocia un Pago existente de una TarjetaCredito existente
      *
-     * @param usuariosId Identificador de la instancia de Usuario
-     * @param itinerariosId Identificador de la instancia de Itinerario
+     * @param tarjetasId Identificador de la instancia de TarjetaCredito
+     * @param pagosId Identificador de la instancia de Pago
      * 
      */
     @DELETE
-    @Path("{itinerariosId: \\d+}")
-    public void removeItinerarios(@PathParam("usuariosId") Long usuariosId, @PathParam("itinerariosId") Long itinerariosId) {
-        usuarioLogic.removeItinerario(usuariosId, itinerariosId);
+    @Path("{pagosId: \\d+}")
+    public void removePagos(@PathParam("tarjetasId") Long tarjetasId, @PathParam("pagosId") Long pagosId) {
+        tarjetaCreditoLogic.removePago(tarjetasId, pagosId);
     }    
 }

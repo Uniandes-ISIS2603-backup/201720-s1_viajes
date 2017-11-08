@@ -79,21 +79,6 @@ public class TarjetaCreditoLogic {
         persistence.delete(id);
     }
     
-/**
-     * Obtiene una instancia de PagoEntity asociada a una instancia de TarjetaCredito
-     *
-     * @param TarjetaCreditoId Id Identificador de la instancia de Author
-     * @return
-     * @generated
-     */
-    public List<PagoEntity> getPagos(Long TarjetaCreditoId) {
-       List<PagoEntity> pago = getTarjetaCredito(TarjetaCreditoId).getPagos();
-        if (pago!=null) {
-            return pago;
-        }
-        return null;
-    }
-    
     /**
      * Obtiene una instancia de UsuarioEntity asociada a una instancia de TarjetaCredito
      *
@@ -110,15 +95,15 @@ public class TarjetaCreditoLogic {
     }
     
     /**
-     * Obtiene una instancia de PagoEntity asociada a una instancia de Usuario
+     * Obtiene una instancia de PagoEntity asociada a una instancia de TarjetaCredito
      *
-     * @param usuarioId Identificador de la instancia de Usuario
+     * @param tarjetaId Identificador de la instancia de Usuario
      * @param pagosId Identificador de la instancia de Pago
      * @return El pago con id dado
      * 
      */
-    public PagoEntity getPago(Long usuarioId, Long pagosId) {
-        List<PagoEntity> list = getTarjetaCredito(usuarioId).getPagos();
+    public PagoEntity getPago(Long tarjetaId, Long pagosId) {
+        List<PagoEntity> list = getTarjetaCredito(tarjetaId).getPagos();
         PagoEntity pagosEntity = new PagoEntity();
         pagosEntity.setId(pagosId);
         int index = list.indexOf(pagosEntity);
@@ -127,13 +112,13 @@ public class TarjetaCreditoLogic {
         }
         return null;
     }
-    //-------------- SEGUIR DESDE AQUí
+    
     /**
-     * Asocia una TarjetaCredito existente a un Usuario
+     * Asocia un Pago existente a una TarjetaCredito
      *
-     * @param tarjetaId Identificador de la instancia de Usuario
-     * @param pagosId Identificador de la instancia de TarjetaCredito
-     * @return Instancia de TarjetaCreditoEntity que fue asociada a Usuario
+     * @param tarjetaId Identificador de la instancia de TarjetaCredito
+     * @param pagosId Identificador de la instancia de Pago
+     * @return Instancia de PagoEntity que fue asociada a TarjetaCredito
      * 
      */
     public PagoEntity addPago(Long tarjetaId, Long pagosId) {
@@ -145,31 +130,46 @@ public class TarjetaCreditoLogic {
     }
     
     /**
-     * Remplaza las instancias de TarjetaCredito asociadas a una instancia de Usuario
+     * Remplaza las instancias de Pago asociadas a una instancia de TarjetaCredito
      *
-     * @param usuarioId Identificador de la instancia de Usuario
-     * @param list Colección de instancias de TarjetaCreditoEntity a asociar a instancia
-     * de Usuario
-     * @return Nueva colección de TarjetaCreditoEntity asociada a la instancia de Usuario
+     * @param tarjetaId Identificador de la instancia de TarjetaCredito
+     * @param list Colección de instancias de PagoEntity a asociar a instancia
+     * de TarjetaCredito
+     * @return Nueva colección de PagoEntity asociada a la instancia de TarjetaCredito
      * 
      */
-    public List<TarjetaCreditoEntity> replaceTarjetaCredito(Long usuarioId, List<TarjetaCreditoEntity> list) {
-        UsuarioEntity usuarioEntity = getUsuario(usuarioId);
-        usuarioEntity.setTarjetas(list);
-        return usuarioEntity.getTarjetas();
+    public List<PagoEntity> replacePago(Long tarjetaId, List<PagoEntity> list) {
+        TarjetaCreditoEntity tarjetaCreditoEntity = getTarjetaCredito(tarjetaId);
+        tarjetaCreditoEntity.setPagos(list);
+        return tarjetaCreditoEntity.getPagos();
     }
     
     /**
-     * Desasocia un TarjetaCredito existente de un Usuario existente
+     * Desasocia un Pago existente de una TarjetaCredito existente
      *
-     * @param usuarioId Identificador de la instancia de Usuario
-     * @param tarjetasId Identificador de la instancia de TarjetaCredito
+     * @param tarjetaId Identificador de la instancia de TarjetaCredito
+     * @param pagosId Identificador de la instancia de Pago
      * 
      */
-    public void removeTarjetaCredito(Long usuarioId, Long tarjetasId) {
-        UsuarioEntity entity = getUsuario(usuarioId);
-        TarjetaCreditoEntity tarjetasEntity = new TarjetaCreditoEntity();
-        tarjetasEntity.setId(tarjetasId);
-        entity.getTarjetas().remove(tarjetasEntity);
+    public void removePago(Long tarjetaId, Long pagosId) {
+        TarjetaCreditoEntity entity = getTarjetaCredito(tarjetaId);
+        PagoEntity pagosEntity = new PagoEntity();
+        pagosEntity.setId(pagosId);
+        entity.getPagos().remove(pagosEntity);
     }
+    
+    /**
+     * Obtiene una instancia de PagoEntity asociada a una instancia de TarjetaCredito
+     *
+     * @param tarjetaCreditoId Id Identificador de la instancia de TarjetaCredito
+     * @return
+     * @generated
+     */
+    public List<PagoEntity> getPagos(Long tarjetaCreditoId) {
+       List<PagoEntity> pagos = getTarjetaCredito(tarjetaCreditoId).getPagos();
+        if (pagos != null) {
+            return pagos;
+        }
+        return null;
+    }    
 }
