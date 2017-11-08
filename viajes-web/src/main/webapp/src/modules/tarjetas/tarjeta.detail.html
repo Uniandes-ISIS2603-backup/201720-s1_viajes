@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<div class="container-fluid">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><label>Tarjeta</label></div>
+            <div class="panel-body">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                                         </div>
+                </div>
+                <div class="col-md-8">
+                    <button type="button" ui-sref='tarjetasList' style="float: right;">Volver</button>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Numero</th>    
+                                <th>Fondos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                             <td id="{{$index}}-numero">{{currentRecord.numero}}</td>
+                             <td id="{{$index}}-fondos">{{currentRecord.fondos}}</td>    
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
