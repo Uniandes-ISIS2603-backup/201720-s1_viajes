@@ -1,39 +1,81 @@
-   <div class="col-xs-6 col-sm-6 col-md-8 col-lg-10 well">
+ <alert class="alert alert-danger" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert()">{{alert.msg}} </alert>
+ <div class="container-fluid">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+         
+               
+            <div class="panel-body">
+                <form ng-submit="ctrl.saveRecord(currentRecord.id)" name="transporte">
+                    
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="nombre" class="col-sm-2">Nombre</label>
+                            <input id="nombre" required ng-model="currentRecord.nombre" class="col-sm-6"/>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="valor" class="col-sm-2">Valor</label>
+                            <textarea id="valor" required ng-model="currentRecord.valor" class="col-sm-6"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="fechaInicio" class="col-sm-2">Fecha de Inicio</label>
+                            <textarea id="fechaInicio" required ng-model="currentRecord.fechaInicio" class="col-sm-6"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="fechaFinal" class="col-sm-2">Fecha Final</label>
+                            <textarea id="fechaFinal" required ng-model="currentRecord.fechaFinal" class="col-sm-6"></textarea>
+                        </div>
+                    </div> 
+                    
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="calificacion" class="col-sm-2">Calificacion</label>
+                            <textarea id="calificacion" required ng-model="currentRecord.calificacion" class="col-sm-6"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="comentarios" class="col-sm-2">Comentarios</label>
+                            <textarea id="comentarios" required ng-model="currentRecord.comentarios" class="col-sm-6"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="descripcion" class="col-sm-2">Descripcion</label>
+                            <textarea id="descripcion" required ng-model="currentRecord.descripcion" class="col-sm-6"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <div class="form-group col-sm-4" ng-if="!transporte.$valid">
+                            <div class="alert alert-warning" >
+                                <strong>Atención! </strong><p>Todos los campos son necesarios</p>
+                            </div> 
+                        </div> 
+                    </div> 
+                    
+                    <div class="form-group row">
+                        <div class="form-group col-sm-12">
+                            <input ng-show="transporte.$valid" type="submit" value="Save" class="btn btn-success"/>
+                            <a class="btn btn-danger" ui-sref="hospedajesList">Cancelar</a>
+                        </div>
+                    </div>
+                    
+                </form>
 
-    <form novalidate name="form" id="hospedajes-form" role="form" ng-submit="form.$valid && ctrl.saveRecord(currentRecord.id)">
-
-        <div ng-messages="form.$error">
-            <div ng-message="required">Llene los campos requeridos!</div>
-            <br>
-        </div>
-
-        <fieldset>
-            <input id="id" class="form-control" type="hidden" ng-model="currentRecord.id" />
-            <div class="form-group col-md-12" ng-class="{'has-success': form.name.$valid && form.name.$dirty, 'has-error': form.name.$invalid && (form.name.$dirty || form.$submitted)}">
-                <label for="nombre" class="col-md-2 control-label">Nombre</label>
-                <div class="col-md-4">
-                    <input id="nombre" name="nombre" class="form-control" type="text" ng-model="currentRecord.nombre" ng-init="currentRecord.nombre" required />
-                </div>
-                <label for="valor" class="col-md-2 control-label">Valor</label>
-                <div class="col-md-4">
-                    <input id="valor" name="valor" class="form-control" type="number" ng-model="currentRecord.valor" ng-init="currentRecord.valor" required />
-                </div>
-                <label for="fechaInicio" class="col-md-2 control-label">Fecha de inicio</label>
-                <div class="col-md-4">
-                    <input id="fechaInicio" name="fechaInicio" class="form-control" type="text" ng-model="currentRecord.fechaInicio" ng-init="currentRecord.fechaInicio" required />
-                </div>
-                <label for="fechaFinal" class="col-md-2 control-label">Fecha fin</label>
-                <div class="col-md-4">
-                    <input id="fechaFinal" name="fechaFinal" class="form-control" type="text" ng-model="currentRecord.fechaFinal" ng-init="currentRecord.fechaFinal" required />
-                </div>
-                <label for="descripcion" class="col-md-2 control-label">Descripción</label>
-                <div class="col-md-4">
-                    <input id="descripcion" name="descripcion" class="form-control" type="text" ng-model="currentRecord.descripcion" ng-init="currentRecord.descripcion" required />
-                </div>
             </div>
-            <button type="button" ui-sref='hospedajesList' style="float: center;">Cancelar</button>
-            <button type="submit">Finalizar</button>
-            
-        </fieldset>
-    </form>
+        </div>
+    </div>
 </div>
+
+
