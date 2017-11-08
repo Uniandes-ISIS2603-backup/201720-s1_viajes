@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><label>Itinerario Detail</label></div>
+            <div class="panel-body">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                                         </div>
+                </div>
+                <div class="col-md-8">
+                    <button type="button" ui-sref='itinerariosList' style="float: right;">Volver</button>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>    
+                                <th>Costo</th>
+                                <th>Fecha inicial</th>
+                                <th>Fecha final</th>
+                                <th>Visitantes</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                             <td id="{{$index}}-id">{{currentRecord.id}}</td>
+                             <td id="{{$index}}-costo">{{currentRecord.costoTotal}}</td>   
+                             <td id="{{$index}}-fechaIni">{{currentRecord.fechaInicial}}</td>   
+                             <td id="{{$index}}-fechaFi">{{currentRecord.fechaFinal}}</td>   
+                             <td id="{{$index}}-cantidad">{{currentRecord.numeroVisitantes}}</td>   
+                             <td>
+                                <button type="button" style="float: right;">Pagar</button>
+                             </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
