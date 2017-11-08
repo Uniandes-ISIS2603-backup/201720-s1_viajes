@@ -4,11 +4,7 @@ var mod = ng.module("usuariosModule", []);
     mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             var basePath = 'src/modules/usuarios/';
 
-            $stateProvider
-                    .state('usuarios',{
-                        abstract: true
-            })
-                    .state('usuariosList', {
+            $stateProvider.state('usuariosList', {
                 url: '/usuarios',
                 views: {
                     'mainView': {
@@ -40,10 +36,10 @@ var mod = ng.module("usuariosModule", []);
                     }
                 }
                  }).state('usuarioDetail', {
-                        url: '/{usuarioId:int}/detail',
+                        url: '/{usuariosId:int}/detail',
                         parent:'usuarios',
                         param: {
-                            usuarioId: null
+                            usuariosId: null
                         },
                         views: {
                             'mainView': {

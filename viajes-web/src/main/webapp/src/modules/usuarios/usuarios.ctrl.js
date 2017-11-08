@@ -9,18 +9,16 @@
             // carga los usuarios
             $http.get(usuariosContext).then(function (response) {
                 $scope.records = response.data;
-                console.log($scope.records)
             });
 
             // el controlador recibió un usuarioId ??
             // revisa los parámetros (ver el :usuarioId en la definición de la ruta)
-            if ($stateParams.usuarioId) {
+            if ($stateParams.usuariosId) {
 
                 // toma el id del parámetro
-                id = $stateParams.usuarioId;
+                id = $stateParams.usuariosId;
                 // obtiene el dato del recurso REST
-                console.log(usuariosContext)
-                $http.get(/*usuariosContext*/ + "api/usuarios/" + id)
+                $http.get(usuariosContext + "/" + id)
                         .then(function (response) {
                             // $http.get es una promesa
                             // cuando llegue el dato, actualice currentRecord
@@ -66,7 +64,6 @@
             };
 
             this.deleteRecord = function (id) {
-                console.log(id)
                 $http.delete(usuariosContext + "/" + id);
                 $state.reload('usuariosList');
             };
