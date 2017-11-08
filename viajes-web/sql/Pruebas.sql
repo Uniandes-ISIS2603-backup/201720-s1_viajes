@@ -10,6 +10,8 @@
 delete from GuiaEntity;
 delete from CompaniaEntity;
 delete from HospedajeEntity;
+delete from BlogEntity_ImagenEntity;
+delete from EntretenimientoEntity_ImagenEntity;
 delete from ImagenEntity;
 delete from PagoEntity;
 delete from TarjetaCreditoEntity;
@@ -22,16 +24,45 @@ delete from OficinaEntity;
 delete from GuiaEntity;
 delete from ItinerarioEntity;
 
-insert into BlogEntity (id, titulo, comentario) values (100,'Mi primer blog', 'No se que escribir');
-insert into BlogEntity (id, titulo, comentario) values (200,'Hello world!', 'I wanna be the very best');
+insert into BlogEntity (id, titulo, comentario) values (100,'Mi experiencia Green Day', 'La experiencia de ver a Green Day en vivo no se limita únicamente al mega show que dieron el pasado viernes 8 de octubre en las instalaciones de la Universidad Simón Bolivar.');
+
+insert into BlogEntity (id, titulo, comentario) values (200,'Hello world!', 'Amo HTML, CSS, Angular y Bootstrap (not really)');
 
 insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (100,'Oficina Avianca Chapinero', 'Alfonso Lopez');
 insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (400,'Edificio Sotomayor SATENA', 'Gonzalo Jimenez');
 
 insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
-values (100, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
+values (100, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395000, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
+
 insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
-values (600, 'Concierto Green Day', '17/11/2017 16:30', '17/11/2017 22:30', 395, null, null, 'Al aire libre, sin asiento fijo. Localidad: Revolution (VIP)');
+values (600, 'Museo nacional', '17/11/2017 8:30', '17/11/2017 22:30', 20000, null, null, 'Exposicion por tiempo limitado');
+
+insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
+values (700, 'Ballet El lago de los cisnes', '31/10/17 20:00', '31/10/17 22:00', 60000, 5, 'Lo disfrute de principio a fin', 'El Lago de los cisnes es uno de los ballets clásicos tradicionales más conocidos en todo el mundo.');
+
+insert into EntretenimientoEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
+values (800, 'Zoologico ^_^', '31/10/17 20:00', '25/11/17 14:00', 20000,null, null, 'El mejor lugar para disfrutar de la fauna local. Tratamos a nuestros animales con el mejor cariño.');
+
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (16,'El lago de los cisnes','resources/images/ballet.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Revolution radio poster','resources/images/greenday1.jpeg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (18,'Una experiencia inolvidable!','resources/images/greenday1.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (19,'G R E E N  D A Y','resources/images/greenday2.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (20,'El escenario','resources/images/greenday3.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (21,'Museo nacional','resources/images/museo.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (22,'Tigre de bengala - Zoologico','resources/images/zoo.jpg');
+
+insert into blogentity_imagenentity (blogentity_id, imagenes_id) values (100, 17);
+insert into blogentity_imagenentity (blogentity_id, imagenes_id) values (100, 18);
+insert into blogentity_imagenentity (blogentity_id, imagenes_id) values (100, 19);
+insert into blogentity_imagenentity (blogentity_id, imagenes_id) values (100, 20);
+
+insert into entretenimientoentity_imagenentity (entretenimientoentity_id, imagenes_id) values (100, 17);
+insert into entretenimientoentity_imagenentity (entretenimientoentity_id, imagenes_id) values (100, 18);
+insert into entretenimientoentity_imagenentity (entretenimientoentity_id, imagenes_id) values (100, 19);
+insert into entretenimientoentity_imagenentity (entretenimientoentity_id, imagenes_id) values (100, 20);
+insert into entretenimientoentity_imagenentity (entretenimientoentity_id, imagenes_id) values (700, 16);
+insert into entretenimientoentity_imagenentity (entretenimientoentity_id, imagenes_id) values (600, 21);
+insert into entretenimientoentity_imagenentity (entretenimientoentity_id, imagenes_id) values (800, 22);
 
 insert into BlogEntity (id, titulo, comentario) values (7,'Mi primer blog', 'No se que escribir');
 insert into BlogEntity (id, titulo, comentario) values (8,'Hello world!', 'I wanna be the very best');
@@ -90,9 +121,6 @@ values (300, 'Hotel Margaritas', '12/12/2017 10:30', '20/12/2017 22:30', 1395000
 
 insert into HospedajeEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
 values (400, 'Hotel Claveles', '12/01/2018 06:30', '30/02/2018 20:30', 1500000, 9.9, 'Impresionante, espectacular, increíble', 'Random descripción xd');
-
-insert into ImagenEntity (ID, COMENTARIO, RUTA) values (16,'Hola 1','Ruta1');
-insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Hola 2','Ruta2');
 
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (100,'01/01/17','02/02/17',1000,1);
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (200,'02/02/17','03/03/17',2000,2);

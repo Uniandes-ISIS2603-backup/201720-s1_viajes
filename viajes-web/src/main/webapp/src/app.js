@@ -13,7 +13,9 @@
         'hospedajesModule',
         'itinerariosModule',
         'transportesModule',
-        'entretenimientosModule'
+        'entretenimientosModule',
+        'blogModule',
+        'imagenModule'
 
     ]);
     // Resuelve problemas de las promesas

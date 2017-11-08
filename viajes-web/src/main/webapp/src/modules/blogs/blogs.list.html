@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><label>Blogs!</label></div>
+            <div class="panel-body">
+                <a class="btn btn-info" ui-sref="blogsCreate" style="float: right;"><span class="glyphicon glyphicon-plus-sign"></span> Agregar blog</a>
+                
+                <div class="col-md-8">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Titulo</th>     
+                                <th>Acciones</th>  
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="blog in blogsRecords">
+                                <td id="{{$index}}-titulo"><a ui-sref="blogDetail({blogId: blog.id})">{{blog.titulo}}</a></td>
+                                <td id="{{$index}}-actions">
+                                    <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ui-sref="blogUpdate({blogId: blog.id})"><span class="glyphicon glyphicon-edit"></span> Editar</button>
+                                    <button id="{{$index}}-delete-btn" class="btn btn-danger btn-sm" ui-sref="blogDelete({blogId: blog.id})"><span class="glyphicon glyphicon-trash"></span> Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

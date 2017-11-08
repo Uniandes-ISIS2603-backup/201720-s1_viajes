@@ -14,14 +14,14 @@
     </thead>
     <tbody>
       <tr ng-repeat="record in records">
-        <td id="{{$index}}-nombre">{{record.nombre}}</td>
+         <td id="{{$index}}-nombre"><a ui-sref="entretenimientosDetail({entretenimientoId: record.id})">{{record.nombre}}</a></td>
         <td id="{{$index}}-valor"><span id="currency-no-fractions">{{record.valor | currency}}</span></td>
         <td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>
         <td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>
         <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
         <td>
             <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ui-sref="entretenimientoEdit({entretenimientoId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
-            <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+            <button id="{{$index}}-delete-btn" class="btn btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-trash"></span> Eliminar</button>
         </td>
       </tr>
     </tbody>

@@ -6,8 +6,10 @@
 package co.edu.uniandes.csw.viajes.resources;
 
 import co.edu.uniandes.csw.viajes.dtos.BlogDetailDTO;
+import co.edu.uniandes.csw.viajes.dtos.ImagenDTO;
 import co.edu.uniandes.csw.viajes.ejb.BlogLogic;
 import co.edu.uniandes.csw.viajes.entities.BlogEntity;
+import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import co.edu.uniandes.csw.viajes.persistence.BlogPersistence;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +91,9 @@ public class BlogResource {
         if (entity == null) {
             throw new WebApplicationException("El recurso /blogs/" + id + " no existe.", 404);
         }
-        return new BlogDetailDTO(blogLogic.getBlog(id));
+        List<ImagenEntity> a = blogLogic.listImagenes(id);
+        entity.setImagenes(a);
+        return new BlogDetailDTO(entity);
     }
 
     /**

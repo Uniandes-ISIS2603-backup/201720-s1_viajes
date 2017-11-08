@@ -13,6 +13,19 @@ var mod = ng.module("entretenimientosModule", []);
                         templateUrl: basePath + 'entretenimientos.list.html'
                     }
                 }
+            }).state('entretenimientosDetail', {
+                url: '/entretenimientos/{entretenimientoId:int}',
+                param: {
+                    entretenimientoId: null
+                },
+                views: {
+                    'mainView': {
+                        controller: 'entretenimientosCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'entretenimientos.detail.html'
+                    }
+                }
+
             }).state('entretenimientoCreate', {
                 url: '/entretenimientos/create',
                 views: {
