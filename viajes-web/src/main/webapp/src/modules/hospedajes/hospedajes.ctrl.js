@@ -2,7 +2,7 @@
     
     var mod = ng.module("hospedajesModule");
     
-//    mod.constant("hospedajesContext", "api/hospedajes");
+  mod.constant("hospedajesContext", "api/hospedajes");
     
     mod.controller('hospedajesCtrl', ['$scope', '$state', '$http', 'hospedajesContext', function ($scope, $state, $http, hospedajesContext ) {
             // inicialmente el listado de ciudades está vacio
@@ -21,8 +21,8 @@
                 console.log("1->>>>>>>>>>>>>>>>>>>>>>>");
                 // toma el id del parámetro
                 id = $state.params.hospedajesId;
-                console.log(id);
-                console.log(hospedajesContext);
+//                console.log(id);
+//                console.log(hospedajesContext);
                 // obtiene el dato del recurso REST
                 $http.get(hospedajesContext + "/" + id)
                         .then(function (response) {

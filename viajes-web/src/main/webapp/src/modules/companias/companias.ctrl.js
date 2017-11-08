@@ -1,8 +1,8 @@
 (function (ng) {
 
-    var mod = ng.module("transportesModule");
-    mod.constant("transportesContext", "api/transportes");
-    mod.controller("transportesCtrl", ['$scope', '$state', '$stateParams', '$http', 'transportesContext',
+    var mod = ng.module("companiasModule");
+    mod.constant("companiasContext", "api/companias");
+    mod.controller("companiasCtrl", ['$scope', '$state', '$stateParams', '$http', 'companiasContext',
         function ($scope, $state, $stateParams, $http, context) {
 
             // inicialmente el listado de transportes está vacio
@@ -12,10 +12,10 @@
                 $scope.records = response.data;
             });
 
-            if ($stateParams.transporteId !== null && $stateParams.transporteId !== undefined) {
+            if ($stateParams.companiaId !== null && $stateParams.companiaId !== undefined) {
 
                 // toma el id del parámetro
-                id = $stateParams.transporteId;
+                id = $stateParams.companiaId;
                 // obtiene el dato del recurso REST
                 $http.get(context + "/" + id)
                         .then(function (response) {
@@ -27,13 +27,9 @@
                 // el registro actual debe estar vacio
                 $scope.currentRecord = {
                     id: undefined /*Tipo Long. El valor se asigna en el backend*/,
-                    nombre: '' /*Tipo String*/,
-                    valor: 0 /*Tipo Double*/,
-                    fechaInicio: '' /*Tipo String*/,
-                    fechaFin: '' /*Tipo String*/,
-                    calificacion: 0 /*Tipo Double*/,
-                    comentarios: '',
-                    descripcion: ''
+                    email: '' /*Tipo String*/,
+                    telefono: 0 /*Tipo Double*/,
+                    nombre: '' /*Tipo String*/
                 };
                 $scope.alerts = [];
             }
@@ -51,7 +47,7 @@
                             .then(function () {
                                 // $http.put es una promesa
                                 // cuando termine bien, cambie de estado
-                                $state.go('transportesList');
+                                $state.go('companiasList');
                             });
 
                     // si el id no es null, es un registro existente entonces lo actualiza
@@ -61,7 +57,7 @@
                             .then(function () {
                                 // $http.post es una promesa
                                 // cuando termine bien, cambie de estado
-                                $state.go('transportesList');
+                                $state.go('companiasList');
                             });
 
                     // ejecuta PUT en el recurso REST
@@ -72,7 +68,7 @@
 
             this.deleteRecord = function (id) {
                 $http.delete(context + "/" + id);
-                $state.reload('transportesList');
+                $state.reload('companiasList');
 
             };
 

@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.viajes.ejb;
 
+import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import co.edu.uniandes.csw.viajes.entities.TransporteEntity;
 import co.edu.uniandes.csw.viajes.persistence.TransportePersistence;
 import java.util.List;
@@ -104,5 +105,82 @@ public class TransporteLogic {
         // Note que, por medio de la inyección de dependencias se llama al método "delete(id)" que se encuentra en la persistencia.
         persistence.delete(id);
         LOGGER.log(Level.INFO, "Termina proceso de borrar transporte con id={0}", id);
+    }
+    
+    /**
+     * Obtiene una colección de instancias de ImagenEntity asociadas a una
+     * instancia de Transporte
+     *
+     * @param transporteId Identificador de la instancia de Transporte
+     * @return Colección de instancias de ImagenEntity asociadas a la instancia
+     * de Transporte
+     * 
+     */
+    public List<ImagenEntity> listImagenes(Long transporteId) {
+        return getTransporte(transporteId).getImagenes();
+    }
+    
+    /**
+     * Obtiene una instancia de ImagenEntity asociada a una instancia de Transporte
+     *
+     * @param transporteId Identificador de la instancia de Transporte
+     * @param imagenesId Identificador de la instancia de Imagen
+     * @return La imagen con id dado
+     * 
+     */
+    public ImagenEntity getImagen(Long transporteId, Long imagenesId) {
+        List<ImagenEntity> list = getTransporte(transporteId).getImagenes();
+        ImagenEntity imagenesEntity = new ImagenEntity();
+        imagenesEntity.setId(imagenesId);
+        int index = list.indexOf(imagenesEntity);
+        if (index >= 0) {
+            return list.get(index);
+        }
+        return null;
+    }
+    
+    /**
+     * Asocia una Imagen existente a un Transporte
+     *
+     * @param transporteId Identificador de la instancia de Transporte
+     * @param imagenesId Identificador de la instancia de Imagen
+     * @return Instancia de ImagenEntity que fue asociada a Transporte
+     * 
+     */
+    public ImagenEntity addImagen(Long transporteId, Long imagenesId) {
+        TransporteEntity transporteEntity = getTransporte(transporteId);
+        ImagenEntity imagenesEntity = new ImagenEntity();
+        imagenesEntity.setId(imagenesId);
+        transporteEntity.getImagenes().add(imagenesEntity);
+        return getImagen(transporteId, imagenesId);
+    }
+
+    /**
+     * Remplaza las instancias de Imagen asociadas a una instancia de Transporte
+     *
+     * @param transporteId Identificador de la instancia de Transporte
+     * @param list Colección de instancias de ImagenEntity a asociar a instancia
+     * de Transporte
+     * @return Nueva colección de ImagenEntity asociada a la instancia de Transporte
+     * 
+     */
+    public List<ImagenEntity> replaceImagenes(Long transporteId, List<ImagenEntity> list) {
+        TransporteEntity transporteEntity = getTransporte(transporteId);
+        transporteEntity.setImagenes(list);
+        return transporteEntity.getImagenes();
+    }
+
+    /**
+     * Desasocia un Imagen existente de un Transporte existente
+     *
+     * @param transporteId Identificador de la instancia de Transporte
+     * @param imagenesId Identificador de la instancia de Imagen
+     * 
+     */
+    public void removeImagen(Long transporteId, Long imagenesId) {
+        TransporteEntity entity = getTransporte(transporteId);
+        ImagenEntity imagenesEntity = new ImagenEntity();
+        imagenesEntity.setId(imagenesId);
+        entity.getImagenes().remove(imagenesEntity);
     }
 }

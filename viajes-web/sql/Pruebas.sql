@@ -85,11 +85,17 @@ values (400, 'Fernando Huertas', '17/11/2017 16:30',600);
 insert into PagoEntity (id, nombre, fecha, valor)
 values (401, 'Jenny bolaños', '20/12/2017 17:30',500);
 
-insert into CompaniaEntity (ID, EMAIL, TELEFONO, NOMBRE) values (12,'Desarrollo2017@uniandes.edu.co',9833219,'Cesar');
-insert into CompaniaEntity (ID, EMAIL, TELEFONO, NOMBRE) values (13,'Jarjar@uniandes.edu.co',458434832,'Juan');
+insert into CompaniaEntity (ID, EMAIL, TELEFONO, NOMBRE) values (12,'Desarrollo2017@uniandes.edu.co',9833219,'CesarInc');
+insert into CompaniaEntity (ID, EMAIL, TELEFONO, NOMBRE) values (13,'quesoConBocadillo@uniandes.edu.co',342152,'JuanLtda');
+insert into CompaniaEntity (ID, EMAIL, TELEFONO, NOMBRE) values (14,'avionesDisparatados@uniandes.edu.co',6421697,'DavidSAS');
+insert into CompaniaEntity (ID, EMAIL, TELEFONO, NOMBRE) values (15,'jenjibreConUvasPasas@uniandes.edu.co',045602782,'ÓscarHnos');
+insert into CompaniaEntity (ID, EMAIL, TELEFONO, NOMBRE) values (16,'habiaUnaVezUnaVentana@uniandes.edu.co',89156721,'Victor Manuel & Asociados');
 
-insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFINAL, NOMBRE, CALIFICACION) values (14,'INGLES',2000,9000,'25/09/17','25/09/17', 'Juan', 5.0);
-insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFINAL, NOMBRE, CALIFICACION) values (15,'FRANCES',7000,10000,'26/09/17','26/09/17', 'Tatiana', 2.5);
+insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFINAL, NOMBRE, CALIFICACION) values (14,'INGLES',20000,9000,'25/09/17','16/05/18', 'Juan', 5.0);
+insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFINAL, NOMBRE, CALIFICACION) values (15,'FRANCES',75000,10000,'26/09/17','23/09/19', 'Tatiana', 4.5);
+insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFINAL, NOMBRE, CALIFICACION) values (16,'INDÚ',94000,9000,'01/03/17','11/09/18', 'Carlos', 2.8);
+insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFINAL, NOMBRE, CALIFICACION) values (17,'ÁRABE',12000,5000,'05/12/17','23/12/17', 'Alberto', 3.2);
+insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFINAL, NOMBRE, CALIFICACION) values (18,'LATÍN',44000,8000,'12/11/17','12/12/17', 'Eustaquio', 4.6);
 
 insert into HospedajeEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
 values (100, 'Hotel Rosas', '17/11/2017 16:30', '17/11/2017 22:30', 395000, 7.5, 'Muy bueno', 'Cerca de la playa');
@@ -108,8 +114,3 @@ insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Hola 2','Ruta2');
 
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (100,'01/01/17','02/02/17',1000,1);
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (200,'02/02/17','03/03/17',2000,2);
-
-insert into GuiaEntity(ID, CALIFICACION, CONTRATOHORA, LENGUAJE, NOMBRE, COMPANIA_ID) values (100,5,1000,'FRANCES','SEBASTIAN',13);
-insert into GuiaEntity(ID, CALIFICACION, CONTRATOHORA, LENGUAJE, NOMBRE, COMPANIA_ID) values (200,4,500,'ITALIANO','SEBASTIAN',13);
-insert into GuiaEntity(ID, CALIFICACION, CONTRATOHORA, LENGUAJE, NOMBRE, COMPANIA_ID) values (300,5,1000,'FRANCES','SEBASTIAN',13);
-insert into GuiaEntity(ID, CALIFICACION, CONTRATOHORA, LENGUAJE, NOMBRE, COMPANIA_ID) values (400,4,500,'ITALIANO','SEBASTIAN',13);

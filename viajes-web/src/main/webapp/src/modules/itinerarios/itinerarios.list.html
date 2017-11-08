@@ -5,10 +5,12 @@
             <div class="panel-body">
                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <a class="btn btn-info" ui-sref="itinerariosCreate"><span class="glyphicon glyphicon-plus-sign"></span> Crear un nuevo itinerario</a>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <button id="create-btn" class="btn btn-default btn-sm" ui-sref="itinerariosCreate" style="float: right;"><span class="glyphicon glyphicon-plus"></span>Agregar</button>
+                <br>
+                <div>
+                    <!--<button id="create-btn" class="btn btn-default btn-sm" ui-sref="itinerariosCreate" style="float: right;"><span class="glyphicon glyphicon-plus"></span>Agregar</button>-->
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -22,16 +24,16 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="record in itinerariosRecords">
-                             <td id="{{$index}}-id">{{record.id}}</td>
-                             <td id="{{$index}}-costo">{{record.costoTotal}}</td>   
-                             <td id="{{$index}}-fechaIni">{{record.fechaInicial}}</td>   
-                             <td id="{{$index}}-fechaFi">{{record.fechaFinal}}</td>   
-                             <td id="{{$index}}-cantidad">{{record.numeroVisitantes}}</td>   
-                             <td>
-                                <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ui-sref="itinerariosEdit({itinerarioId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
-                                <button id="{{$index}}-delete-btn" class="btn btn-default btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
-                                <button id="{{$index}}-edit-btn" ui-sref="itinerariosDetail({itinerarioId: record.id})" class="btn btn-default btn-sm" ><span class="glyphicon glyphicon-edit"></span>Detail</button>
-                             </td>
+                                <td id="{{$index}}-id">{{record.id}}</td>
+                                <td id="{{$index}}-costo">{{record.costoTotal}}</td>   
+                                <td id="{{$index}}-fechaIni">{{record.fechaInicial}}</td>   
+                                <td id="{{$index}}-fechaFi">{{record.fechaFinal}}</td>   
+                                <td id="{{$index}}-cantidad">{{record.numeroVisitantes}}</td>   
+                                <td>
+                                    <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="itinerariosEdit({itinerarioId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
+                                    <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                                    <button id="{{$index}}-edit-btn" ui-sref="itinerariosDetail({itinerarioId: record.id})" class="btn btn-default btn-sm" ><span class="glyphicon glyphicon-edit"></span>Detail</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
