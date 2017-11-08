@@ -10,12 +10,17 @@
         'ui.bootstrap',
         
         // Internal modules dependencies       
+        'transportesModule',
         'hospedajesModule',
         'itinerariosModule',
         'transportesModule',
         'entretenimientosModule',
         'usuariosModule',
-        'logModule'
+        'logModule',
+        'companiasModule',
+        'guiasModule'
+
+
     ]);
     // Resuelve problemas de las promesas
     app.config(['$qProvider', function ($qProvider) {

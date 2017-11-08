@@ -39,6 +39,7 @@ public class ApplicationConfig extends Application {
         resources.add(co.edu.uniandes.csw.viajes.resources.HospedajeResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ImagenResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioEntretenimientosResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioHospedajesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioTransportesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ItinerariosGuiasResource.class);

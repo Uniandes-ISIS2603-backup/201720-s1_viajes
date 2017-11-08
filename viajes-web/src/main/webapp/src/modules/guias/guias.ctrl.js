@@ -1,23 +1,23 @@
 (function (ng) {
 
-    var mod = ng.module("transportesModule");
-    mod.constant("transportesContext", "api/transportes");
-    mod.controller("transportesCtrl", ['$scope', '$state', '$stateParams', '$http', 'transportesContext',
-        function ($scope, $state, $stateParams, $http, context) {
+    var mod = ng.module("guiasModule");
+    mod.constant("guiasContext", "api/guias");
+    mod.controller("guiasCtrl", ['$scope', '$state', '$stateParams', '$http', 'guiasContext',
+        function ($scope, $state, $stateParams, $http, guiasContext) {
 
             // inicialmente el listado de transportes está vacio
             $scope.records = {};
             // carga los transportes
-            $http.get(context).then(function (response) {
+            $http.get(guiasContext).then(function (response) {
                 $scope.records = response.data;
             });
 
-            if ($stateParams.transporteId !== null && $stateParams.transporteId !== undefined) {
+            if ($stateParams.guiaId !== null && $stateParams.guiaId !== undefined) {
 
                 // toma el id del parámetro
-                id = $stateParams.transporteId;
+                id = $stateParams.guiaId;
                 // obtiene el dato del recurso REST
-                $http.get(context + "/" + id)
+                $http.get(guiasContext + "/" + id)
                         .then(function (response) {
                             // $http.get es una promesa
                             // cuando llegue el dato, actualice currentRecord
@@ -29,39 +29,40 @@
                     id: undefined /*Tipo Long. El valor se asigna en el backend*/,
                     nombre: '' /*Tipo String*/,
                     valor: 0 /*Tipo Double*/,
-                    fechaInicio: '' /*Tipo String*/,
-                    fechaFin: '' /*Tipo String*/,
-                    calificacion: 0 /*Tipo Double*/,
-                    comentarios: '',
-                    descripcion: ''
+                    lenguaje: '' /*Tipo String*/,
+                    fechaInicio: '',
+                    fechaFinal:'',
+                    calificacion:'',
+                    comentarios:'',
+                    descripcion:''
                 };
                 $scope.alerts = [];
             }
 
 
             this.saveRecord = function (id) {
-                console.log(id)
+                console.log(id);
                 currentRecord = $scope.currentRecord;
-                console.log(currentRecord.id)
+                console.log(currentRecord.id);
                 // si el id es null, es un registro nuevo, entonces lo crea
                 if (id !== null && id !== undefined) {
 
                     // ejecuta POST en el recurso REST
-                    return $http.put(context + "/" + currentRecord.id, currentRecord)
+                    return $http.put(guiasContext + "/" + currentRecord.id, currentRecord)
                             .then(function () {
                                 // $http.put es una promesa
                                 // cuando termine bien, cambie de estado
-                                $state.go('transportesList');
+                                $state.go('guiasList');
                             });
 
                     // si el id no es null, es un registro existente entonces lo actualiza
                 } else {
 
-                    return $http.post(context, currentRecord)
+                    return $http.post(guiasContext, currentRecord)
                             .then(function () {
                                 // $http.post es una promesa
                                 // cuando termine bien, cambie de estado
-                                $state.go('transportesList');
+                                $state.go('guiasList');
                             });
 
                     // ejecuta PUT en el recurso REST
@@ -71,8 +72,8 @@
             };
 
             this.deleteRecord = function (id) {
-                $http.delete(context + "/" + id);
-                $state.reload('transportesList');
+                $http.delete(guiasContext + "/" + id);
+                $state.reload('guiasList');
 
             };
 

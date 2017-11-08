@@ -1,37 +1,27 @@
- <alert class="alert alert-danger" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert()">{{alert.msg}} </alert>
- <div class="container-fluid">
+<alert class="alert alert-danger" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert()">{{alert.msg}} </alert>
+<div class="container-fluid">
     <div class="panel-group">
         <div class="panel panel-primary">
-         
-               
             <div class="panel-body">
                 <form ng-submit="ctrl.saveRecord(currentRecord.id)" name="transporte">
-                    
                     <div class="form-group row">
                         <div class="form-group col-md-6">
-                            <label for="costo" class="col-sm-2">Costo</label>
-                            <input id="costo" required ng-model="currentRecord.costo" class="col-sm-6"/>
+                            <label for="nombre" class="col-sm-2">Nombre</label>
+                            <input id="nombre" required ng-model="currentRecord.nombre" class="col-sm-6"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="valor" class="col-sm-2">Email</label>
+                            <textarea id="email" required ng-model="currentRecord.email" class="col-sm-6"></textarea>
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <div class="form-group col-md-6">
-                            <label for="fechaInicio" class="col-sm-2">Fecha de Inicio</label>
-                            <textarea id="fechaInicio" required ng-model="currentRecord.fechaInicio" class="col-sm-6"></textarea>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group row">
-                        <div class="form-group col-md-6">
-                            <label for="fechaFinal" class="col-sm-2">Fecha Final</label>
-                            <textarea id="fechaFinal" required ng-model="currentRecord.fechaFinal" class="col-sm-6"></textarea>
-                        </div>
-                    </div> 
-                    
-                    <div class="form-group row">
-                        <div class="form-group col-md-6">
-                            <label for="cantidad" class="col-sm-2">Cantidad</label>
-                            <textarea id="cantidad" required ng-model="currentRecord.cantidad" class="col-sm-6"></textarea>
+                            <label for="fechaInicio" class="col-sm-2">Teléfono</label>
+                            <textarea id="telefono" required ng-model="currentRecord.telefono" class="col-sm-6"></textarea>
                         </div>
                     </div>
                     
@@ -46,12 +36,10 @@
                     <div class="form-group row">
                         <div class="form-group col-sm-12">
                             <input ng-show="transporte.$valid" type="submit" value="Save" class="btn btn-success"/>
-                            <a class="btn btn-danger" ui-sref="itinerariosList">Cancelar</a>
+                            <a class="btn btn-info" ui-sref="companiasList">Cancelar</a>
                         </div>
                     </div>
-                    
                 </form>
-
             </div>
         </div>
     </div>

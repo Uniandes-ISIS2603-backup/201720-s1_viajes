@@ -4,7 +4,7 @@ var mod = ng.module("logModule", []);
     mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             var basePath = 'src/modules/log/';
 
-            $stateProvider.state('signup', {
+            $stateProvider.state('signin', {
                 url: '/signin',
                 views: {
                     'mainView': {
