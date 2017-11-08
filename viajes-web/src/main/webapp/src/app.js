@@ -23,4 +23,3 @@
             $qProvider.errorOnUnhandledRejections(false);
         }]);
 })(window.angular);
-
