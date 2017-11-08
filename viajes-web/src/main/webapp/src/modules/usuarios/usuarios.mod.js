@@ -37,7 +37,7 @@ var mod = ng.module("usuariosModule", []);
                 }
                  }).state('usuarioDetail', {
                         url: '/{usuariosId:int}/detail',
-                        parent:'usuarios',
+                      //  parent:'usuarios',
                         param: {
                             usuariosId: null
                         },

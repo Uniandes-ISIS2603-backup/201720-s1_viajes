@@ -18,7 +18,8 @@
         'usuariosModule',
         'logModule',
         'companiasModule',
-        'guiasModule'
+        'guiasModule',
+        'tarjetasModule'
 
 
     ]);

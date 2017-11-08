@@ -1,39 +1,39 @@
 (function (ng) {
 
-    var mod = ng.module("usuariosModule");
+    var mod = ng.module("tarjetasModule");
 
-    mod.controller("usuariosCtrl", ['$scope', '$state', '$stateParams', '$http', 'usuariosContext', function ($scope, $state, $stateParams, $http, usuariosContext) {
+    mod.controller("tarjetasCtrl", ['$scope', '$state', '$stateParams', '$http', 'tarjetasContext', function ($scope, $state, $stateParams, $http, tarjetasContext) {
 
-            // inicialmente el listado de usuarios está vacio
+            // inicialmente el listado de tarjetas está vacio
             $scope.records = {};
-            // carga los usuarios
-            $http.get(usuariosContext).then(function (response) {
+            // carga las tarjetas
+            $http.get(tarjetasContext).then(function (response) {
                 $scope.records = response.data;
             });
 
-            // el controlador recibió un usuarioId ??
-            // revisa los parámetros (ver el :usuarioId en la definición de la ruta)
-            if ($stateParams.usuarioId) {
+            // el controlador recibió un tarjetasId ??
+            // revisa los parámetros (ver el :tarjetasId en la definición de la ruta)
+            if ($stateParams.tarjetasId) {
 
                 // toma el id del parámetro
-                id = $stateParams.usuarioId;
+                id = $stateParams.tarjetasId;
                 // obtiene el dato del recurso REST
-                $http.get(usuariosContext + "/" + id)
+                $http.get(tarjetasContext + "/" + id)
                         .then(function (response) {
                             // $http.get es una promesa
                             // cuando llegue el dato, actualice currentRecord
                             $scope.currentRecord = response.data;
                         });
 
-                // el controlador no recibió un usuarioId
+                // el controlador no recibió un tarjetasId
             } else {
                 // el registro actual debe estar vacio
                 $scope.currentRecord = {
                     id: undefined /*Tipo Long. El valor se asigna en el backend*/,
-                    nombre: '' /*Tipo String*/
+                    numero: 0 /*Tipo Integer*/,
+                    fondos: 0 /*Tipo Long*/
                 };
             }
-
 
             this.saveRecord = function (id) {
                 currentRecord = $scope.currentRecord;
@@ -42,30 +42,30 @@
                 if (id == null) {
 
                     // ejecuta POST en el recurso REST
-                    return $http.post(usuariosContext, currentRecord)
+                    return $http.post(tarjetasContext, currentRecord)
                             .then(function () {
                                 // $http.post es una promesa
                                 // cuando termine bien, cambie de estado
-                                $state.go('usuariosList');
+                                $state.go('tarjetasList');
                             });
 
                     // si el id no es null, es un registro existente entonces lo actualiza
                 } else {
 
                     // ejecuta PUT en el recurso REST
-                    return $http.put(usuariosContext + "/" + currentRecord.id, currentRecord)
+                    return $http.put(tarjetasContext + "/" + currentRecord.id, currentRecord)
                             .then(function () {
                                 // $http.put es una promesa
                                 // cuando termine bien, cambie de estado
-                                $state.go('usuariosList');
+                                $state.go('tarjetasList');
                             });
                 }
                 ;
             };
 
             this.deleteRecord = function (id) {
-                $http.delete(usuariosContext + "/" + id);
-                $state.reload('usuariosList');
+                $http.delete(tarjetasContext + "/" + id);
+                $state.reload('tarjetasList');
             };
         }]);
 })(window.angular);

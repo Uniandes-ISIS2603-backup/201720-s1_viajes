@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <div class="panel-group">
         <div class="panel panel-primary">
-            <div class="panel-heading"><label>Usuarios</label></div>
+            <div class="panel-heading"><label>Tarjetas</label></div>
             <div class="panel-body">
                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group mr-2" role="group" aria-label="First group">
-                        <a class="btn btn-info" ui-sref="usuariosCreate"><span class="glyphicon glyphicon-plus-sign"></span> Agregar un nuevo usuario</a>
+                        <a class="btn btn-info" ui-sref="tarjetasCreate"><span class="glyphicon glyphicon-plus-sign"></span> Agregar una nueva tarjeta</a>
                     </div>
                 </div>
                 <br>
@@ -13,19 +13,21 @@
                     <table class="table table-striped col-md-4">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
+                                <th>Numero</th>
+                                <th>Fondos</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="record in records">
-                                <td id="{{$index}}-nombre"><a ui-sref="usuarioDetail({usuariosId: record.id})">{{record.nombre}}</a></td>
+                                <td id="{{$index}}-numero"><a ui-sref="tarjetaDetail({tarjetasId: record.id})">{{record.numero}}</a></td>
+                                <td id="{{$index}}-fondos">{{record.fondos}}</td>
                                 <td>
-                                    <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="usuariosEdit({usuariosId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
+                                    <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="tarjetasEdit({tarjetasId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
                                     <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
                                 </td>
                             </tr>
-                        </tbody>                        
+                        </tbody>
                     </table>
                 </div>
             </div>

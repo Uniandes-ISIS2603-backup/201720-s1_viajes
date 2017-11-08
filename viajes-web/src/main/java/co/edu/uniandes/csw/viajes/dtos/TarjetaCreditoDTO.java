@@ -90,7 +90,7 @@ public class TarjetaCreditoDTO {
      * @param tarjeta:Es la entidad que se va a convertir a DTO 
      */
      public TarjetaCreditoDTO(TarjetaCreditoEntity tarjeta) {
-       
+       this.id = tarjeta.getId();
         this.numero = tarjeta.getNumero();
         this.fondos = tarjeta.getFondos();
     }
@@ -101,6 +101,7 @@ public class TarjetaCreditoDTO {
      */
     public TarjetaCreditoEntity toEntity() {
         TarjetaCreditoEntity entity = new TarjetaCreditoEntity();
+        entity.setId(this.id);
         entity.setNumero(this.numero);
         entity.setFondos(this.fondos);
         return entity;
