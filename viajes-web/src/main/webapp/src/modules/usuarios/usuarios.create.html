@@ -5,7 +5,7 @@
         <div ng-messages="form.$error">
             <div ng-message="required">Llene los campos requeridos!</div>
         </div>
-
+        <br><br>
         <fieldset>
             <input id="id" class="form-control" type="hidden" ng-model="currentRecord.id" />
             <div class="form-group col-md-12" ng-class="{'has-success': form.name.$valid && form.name.$dirty, 'has-error': form.name.$invalid && (form.name.$dirty || form.$submitted)}">
@@ -14,6 +14,7 @@
                     <input id="nombre" name="nombre" class="form-control" type="text" ng-model="currentRecord.nombre" ng-init="currentRecord.nombre" required />
                 </div>               
             </div>
+            <br><br>
             <button type="button" ui-sref='usuariosList' style="float: center;">Cancelar</button>
             <button type="submit">Finalizar</button>            
         </fieldset>
