@@ -14,7 +14,7 @@
         'imagenModule',
         'usuariosModule',
         'logModule',
-        'companiasModule',
+        'companiaModule',
         'guiasModule',
         'tarjetasModule'
     ]);
