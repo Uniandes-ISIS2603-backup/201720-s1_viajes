@@ -34,6 +34,7 @@
                             <td>
                                 <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="transporteEdit({transporteId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar </button>
                                 <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar </button>
+                                <button id="{{$index}}-edit-btn" ui-sref="transportesDetail({transporteId: record.id})" class="btn btn-default btn-sm" ><span class="glyphicon glyphicon-edit"></span>Ver</button>
                             </td>
                         </tr>
                     </tbody>
