@@ -1,14 +1,14 @@
 (function (ng) {
 
-    var mod = ng.module("companiasModule");
+    var mod = ng.module("companiaModule");
     mod.constant("companiasContext", "api/companias");
-    mod.controller("companiasCtrl", ['$scope', '$state', '$stateParams', '$http', 'companiasContext',
-        function ($scope, $state, $stateParams, $http, context) {
+    mod.controller("companiaCtrl", ['$scope', '$state', '$stateParams', '$http', 'companiasContext',
+        function ($scope, $state, $stateParams, $http, companiasContext) {
 
             // inicialmente el listado de transportes está vacio
             $scope.records = {};
             // carga los transportes
-            $http.get(context).then(function (response) {
+            $http.get(companiasContext).then(function (response) {
                 $scope.records = response.data;
             });
 
@@ -17,7 +17,8 @@
                 // toma el id del parámetro
                 id = $stateParams.companiaId;
                 // obtiene el dato del recurso REST
-                $http.get(context + "/" + id)
+                console.log(companiasContext+"Contexto companias");
+                $http.get(companiasContext + "/" + id)
                         .then(function (response) {
                             // $http.get es una promesa
                             // cuando llegue el dato, actualice currentRecord
@@ -36,14 +37,14 @@
 
 
             this.saveRecord = function (id) {
-                console.log(id)
+                console.log(id);
                 currentRecord = $scope.currentRecord;
-                console.log(currentRecord.id)
+                console.log(currentRecord.id);
                 // si el id es null, es un registro nuevo, entonces lo crea
                 if (id !== null && id !== undefined) {
 
                     // ejecuta POST en el recurso REST
-                    return $http.put(context + "/" + currentRecord.id, currentRecord)
+                    return $http.put(companiasContext + "/" + currentRecord.id, currentRecord)
                             .then(function () {
                                 // $http.put es una promesa
                                 // cuando termine bien, cambie de estado
@@ -53,7 +54,7 @@
                     // si el id no es null, es un registro existente entonces lo actualiza
                 } else {
 
-                    return $http.post(context, currentRecord)
+                    return $http.post(companiasContext, currentRecord)
                             .then(function () {
                                 // $http.post es una promesa
                                 // cuando termine bien, cambie de estado
@@ -67,7 +68,7 @@
             };
 
             this.deleteRecord = function (id) {
-                $http.delete(context + "/" + id);
+                $http.delete(companiasContext + "/" + id);
                 $state.reload('companiasList');
 
             };

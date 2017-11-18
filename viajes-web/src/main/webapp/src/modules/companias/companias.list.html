@@ -14,15 +14,15 @@
                     <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Telefono</th>
+<!--                            <th>Email</th>
+                            <th>Telefono</th>-->
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="record in records">
-                            <td id="{{$index}}-nombre">{{record.nombre}}</td>
-                            <td id="{{$index}}-email">{{record.email}}</td>
-                            <td id="{{$index}}-telefono">{{record.telefono}}</td>
+                            <td id="{{$index}}-nombre"><a ui-sref="companiaDetail({companiaId: record.id})">{{record.nombre}}</a></td>
+                            <!--<td id="{{$index}}-email">{{record.email}}</td>-->
+                            <!--<td id="{{$index}}-telefono">{{record.telefono}}</td>-->
                             <td>
                                 <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="companiasEdit({companiaId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar </button>
                                 <button id="{{$index}}-delete-btn" class="btn btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar </button>
