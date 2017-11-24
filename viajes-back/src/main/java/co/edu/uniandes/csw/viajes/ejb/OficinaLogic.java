@@ -6,7 +6,6 @@
 package co.edu.uniandes.csw.viajes.ejb;
 
 import co.edu.uniandes.csw.viajes.entities.OficinaEntity;
-import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
 import co.edu.uniandes.csw.viajes.persistence.OficinaPersistence;
 import java.util.List;
 import java.util.logging.Level;
