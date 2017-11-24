@@ -49,6 +49,7 @@ public class CompaniaDetailDTO extends CompaniaDTO{
      * Transformar un DTO  en una  Entity 
      * @return una  CompaniaEntity
      */
+    @Override
     public CompaniaEntity toEntity()
     {
         CompaniaEntity companiaE= super.toEntity();

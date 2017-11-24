@@ -38,7 +38,7 @@ public class PagoDTO {
      */
     public PagoDTO()
     {
-        
+         //Constructor por defecto
     }
     
     /**

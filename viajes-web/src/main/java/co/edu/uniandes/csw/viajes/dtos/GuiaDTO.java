@@ -27,7 +27,7 @@ public class GuiaDTO {
      */
     public GuiaDTO()
     {
-        
+         //Constructor por defecto
     }
     
     /**

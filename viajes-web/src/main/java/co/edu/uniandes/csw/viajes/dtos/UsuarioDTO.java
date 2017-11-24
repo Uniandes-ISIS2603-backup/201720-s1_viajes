@@ -28,6 +28,7 @@ public class UsuarioDTO {
      */
     public UsuarioDTO()
     {       
+         //Constructor por defecto
     }
     
     /**
