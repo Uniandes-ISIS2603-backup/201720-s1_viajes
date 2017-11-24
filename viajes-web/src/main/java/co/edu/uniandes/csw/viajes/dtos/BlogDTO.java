@@ -86,6 +86,5 @@ public class BlogDTO {
         entity.setTitulo(this.titulo);
         entity.setComentario(this.comentario);
         return entity;
-    }
-    
+    }    
 }

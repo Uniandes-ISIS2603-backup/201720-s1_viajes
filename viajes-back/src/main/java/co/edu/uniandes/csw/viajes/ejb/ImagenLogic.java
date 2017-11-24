@@ -8,7 +8,6 @@ package co.edu.uniandes.csw.viajes.ejb;
 import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import co.edu.uniandes.csw.viajes.persistence.ImagenPersistence;
 import java.util.List;
-import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -19,40 +18,40 @@ import javax.inject.Inject;
 @Stateless
 public class ImagenLogic {
     
-    private static final Logger LOGGER = Logger.getLogger(ImagenLogic.class.getName());
-    
+    /**
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
+     */
     @Inject
     private ImagenPersistence persistence;
     
-     public List<ImagenEntity> getImagenes() {
-        LOGGER.info("Inicia proceso de consultar todas las imagenes");
+    /**
+     * Obtiene la lista de los registros de Imagenes
+     * @return Colección de objetos de Imagen.
+     */    
+    public List<ImagenEntity> getImagenes() {
         return persistence.findAll();
     }
     
-      public ImagenEntity getImagen(Long id) {
-        LOGGER.info("Inicia proceso de consultar una imagen");  
+    /**
+     * Obtiene los datos de una instancia de Imagen a partir de su ID.
+     * @param id Identificador de la instancia a consultar
+     * @return Instancia de HospedajeEntity con los datos del Hospedaje consultado.
+     */
+    public ImagenEntity getImagen(Long id) {
         return persistence.find(id);
     }
      
      public ImagenEntity createImagen(ImagenEntity entity) {
-        LOGGER.info("Inicia proceso de creación de imagen");
         persistence.create(entity);
-        LOGGER.info("Termina proceso de creación de imagen");
-        LOGGER.info(entity.getRuta());
         return entity;
     }
-
    
     public ImagenEntity updateImagen(ImagenEntity entity) {
-        LOGGER.info("Inicia proceso de consultar una imagen");
         return persistence.update(entity);
     }
-
    
     public void deleteImagen(Long id) {
-        LOGGER.info("Inicia proceso de borrar una imagen");
         persistence.delete(id);
-        LOGGER.info("Termina proceso de borrar una imagen");
-    }
-      
+    }     
 }

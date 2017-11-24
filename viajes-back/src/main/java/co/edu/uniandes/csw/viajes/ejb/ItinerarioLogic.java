@@ -26,6 +26,10 @@ public class ItinerarioLogic {
     
     private static final Logger LOGGER = Logger.getLogger(ItinerarioLogic.class.getName());
     
+    /**
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
+     */
     @Inject
     private ItinerarioPersistence persistence;
     

@@ -16,12 +16,15 @@ import javax.inject.Inject;
  */
 public class CompaniaLogic {
     
+    /**
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
+     */
     @Inject
     private CompaniaPersistence persistence;
     
     /**
      * Obtiene la lista de los registros de Compania.
-     *
      * @return Colección de objetos de CompaniaEntity.
      * @generated
      */
@@ -30,8 +33,7 @@ public class CompaniaLogic {
     }
     
     /**
-     * Obtiene los datos de una instancia de Guia a partir de su ID.
-     *
+     * Obtiene los datos de una instancia de Compania a partir de su ID.
      * @param id Identificador de la instancia a consultar
      * @return Instancia de CompaniaEntity con los datos del compania consultado.
      * @generated
@@ -41,8 +43,7 @@ public class CompaniaLogic {
     }
     
     /**
-     * Se encarga de crear un compania en la base de datos.
-     *
+     * Se encarga de crear una Compania en la base de datos.
      * @param entity Objeto de CompaniaEntity con los datos nuevos
      * @return Objeto de CompaniaEntity con los datos nuevos y su ID.
      * @generated
@@ -52,8 +53,7 @@ public class CompaniaLogic {
     }
     
     /**
-     * Actualiza la información de una instancia de Guia.
-     *
+     * Actualiza la información de una instancia de Compania.
      * @param entity Instancia de CompaniaEntity con los nuevos datos.
      * @return Instancia de CompaniaEntity con los datos actualizados.
      * @generated
@@ -63,8 +63,7 @@ public class CompaniaLogic {
     }
     
      /**
-     * Elimina una instancia de Guia de la base de datos.
-     *
+     * Elimina una instancia de Compania de la base de datos.
      * @param id Identificador de la instancia a eliminar.
      * @generated
      */

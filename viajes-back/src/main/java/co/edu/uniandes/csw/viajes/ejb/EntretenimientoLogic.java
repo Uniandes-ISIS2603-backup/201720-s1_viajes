@@ -9,8 +9,6 @@ import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
 import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import co.edu.uniandes.csw.viajes.persistence.EntretenimientoPersistence;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.inject.Inject;
 
 /**
@@ -19,94 +17,73 @@ import javax.inject.Inject;
  */
 public class EntretenimientoLogic {
     
-    private static final Logger LOGGER = Logger.getLogger(EntretenimientoLogic.class.getName());
-
+    /**
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
+     */
     @Inject
-    private EntretenimientoPersistence persistence; // Variable para acceder a la persistencia de la aplicación. Es una inyección de dependencias.
+    private EntretenimientoPersistence persistence;
 
     /**
-     *Crear un nuevo entretenimiento
-     * 
+     *Crear un nuevo Entretenimiento
      * @param entity
      * @return
      */
     public EntretenimientoEntity createEntretenimiento(EntretenimientoEntity entity) {
-        LOGGER.info("Inicia proceso de creación de entretenimiento");
         // Invoca la persistencia para crear la entretenimiento
         persistence.create(entity);
-        LOGGER.info("Termina proceso de creación de entretenimiento");
         return entity;
     }
 
     /**
-     * 
      * Obtener todos los entretenimientos existentes en la base de datos.
-     *
      * @return una lista de entretenimientos.
      */
     public List<EntretenimientoEntity> getEntretenimientos() {
-        LOGGER.info("Inicia proceso de consultar todas las entretenimientos");
         // Note que, por medio de la inyección de dependencias se llama al método "findAll()" que se encuentra en la persistencia.
         List<EntretenimientoEntity> entretenimientos = persistence.findAll();
-        LOGGER.info("Termina proceso de consultar todas las entretenimientos");
         return entretenimientos;
     }
 
     /**
-     *
      * Obtener una entretenimiento por medio de su id.
-     * 
      * @param id: id del entretenimiento para ser buscada.
      * @return la entretenimiento solicitada por medio de su id.
      */
     public EntretenimientoEntity getEntretenimiento(Long id) {
-        LOGGER.log(Level.INFO, "Inicia proceso de consultar entretenimiento con id={0}", id);
         // Note que, por medio de la inyección de dependencias se llama al método "find(id)" que se encuentra en la persistencia.
         EntretenimientoEntity entretenimiento = persistence.find(id);
-        if (entretenimiento == null) {
-            LOGGER.log(Level.SEVERE, "La entretenimiento con el id {0} no existe", id);
-        }
-        LOGGER.log(Level.INFO, "Termina proceso de consultar entretenimiento con id={0}", id);
         return entretenimiento;
     }
 
     /**
-     *
      * Actualizar una entretenimiento.
-     *
      * @param id: id del entretenimiento para buscarla en la base de datos.
      * @param entity: entretenimiento con los cambios para ser actualizada, por
      * ejemplo el nombre.
      * @return la entretenimiento con los cambios actualizados en la base de datos.
      */
     public EntretenimientoEntity updateEntretenimiento(Long id, EntretenimientoEntity entity) {
-        LOGGER.log(Level.INFO, "Inicia proceso de actualizar entretenimiento con id={0}", id);
         // Note que, por medio de la inyección de dependencias se llama al método "update(entity)" que se encuentra en la persistencia.
         EntretenimientoEntity newEntity = persistence.update(entity);
-        LOGGER.log(Level.INFO, "Termina proceso de actualizar entretenimiento con id={0}", entity.getId());
         return newEntity;
     }
 
     /**
      * Borrar un entretenimiento
-     *
      * @param id: id del entretenimiento a borrar
      */
     public void deleteEntretenimiento(Long id) {
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar entretenimiento con id={0}", id);
         // Note que, por medio de la inyección de dependencias se llama al método "delete(id)" que se encuentra en la persistencia.
         persistence.delete(id);
-        LOGGER.log(Level.INFO, "Termina proceso de borrar entretenimiento con id={0}", id);
     }
     
     /**
      * Obtiene una colección de instancias de ImagenEntity asociadas a una
      * instancia de Entretenimiento
-     *
      * @param entretenimientoId Identificador de la instancia de Entretenimiento
      * @return Colección de instancias de ImagenEntity asociadas a la instancia
      * de Entretenimiento
-     * 
      */
     public List<ImagenEntity> listImagenes(Long entretenimientoId) {
         return getEntretenimiento(entretenimientoId).getImagenes();
@@ -114,11 +91,9 @@ public class EntretenimientoLogic {
 
     /**
      * Obtiene una instancia de ImagenEntity asociada a una instancia de Entretenimiento
-     *
      * @param entretenimientoId Identificador de la instancia de Entretenimiento
      * @param imagenesId Identificador de la instancia de Imagen
      * @return La imagen con id dado
-     * 
      */
     public ImagenEntity getImagen(Long entretenimientoId, Long imagenesId) {
         List<ImagenEntity> list = getEntretenimiento(entretenimientoId).getImagenes();
@@ -133,11 +108,9 @@ public class EntretenimientoLogic {
 
     /**
      * Asocia una Imagen existente a un Entretenimiento
-     *
      * @param entretenimientoId Identificador de la instancia de Entretenimiento
      * @param imagenesId Identificador de la instancia de Imagen
      * @return Instancia de ImagenEntity que fue asociada a Entretenimiento
-     * 
      */
     public ImagenEntity addImagen(Long entretenimientoId, Long imagenesId) {
         EntretenimientoEntity entretenimientoEntity = getEntretenimiento(entretenimientoId);
@@ -149,12 +122,10 @@ public class EntretenimientoLogic {
 
     /**
      * Remplaza las instancias de Imagen asociadas a una instancia de Entretenimiento
-     *
      * @param entretenimientoId Identificador de la instancia de Entretenimiento
      * @param list Colección de instancias de ImagenEntity a asociar a instancia
      * de Entretenimiento
      * @return Nueva colección de ImagenEntity asociada a la instancia de Entretenimiento
-     * 
      */
     public List<ImagenEntity> replaceImagenes(Long entretenimientoId, List<ImagenEntity> list) {
         EntretenimientoEntity entretenimientoEntity = getEntretenimiento(entretenimientoId);
@@ -164,10 +135,8 @@ public class EntretenimientoLogic {
 
     /**
      * Desasocia un Imagen existente de un Entretenimiento existente
-     *
      * @param entretenimientoId Identificador de la instancia de Entretenimiento
      * @param imagenesId Identificador de la instancia de Imagen
-     * 
      */
     public void removeImagen(Long entretenimientoId, Long imagenesId) {
         EntretenimientoEntity entity = getEntretenimiento(entretenimientoId);
