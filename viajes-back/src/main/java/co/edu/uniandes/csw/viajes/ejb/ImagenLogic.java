@@ -33,6 +33,11 @@ public class ImagenLogic {
         return persistence.findAll();
     }
     
+    /**
+     * Obtiene los datos de una instancia de Imagen a partir de su ID.
+     * @param id Identificador de la instancia a consultar
+     * @return Instancia de HospedajeEntity con los datos del Hospedaje consultado.
+     */
     public ImagenEntity getImagen(Long id) {
         return persistence.find(id);
     }

@@ -9,7 +9,6 @@ import co.edu.uniandes.csw.viajes.entities.HospedajeEntity;
 import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import co.edu.uniandes.csw.viajes.persistence.HospedajePersistence;
 import java.util.List;
-import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
