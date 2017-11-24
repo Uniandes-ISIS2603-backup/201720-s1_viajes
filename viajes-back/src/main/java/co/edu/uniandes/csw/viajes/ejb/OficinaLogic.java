@@ -21,6 +21,10 @@ public class OficinaLogic {
     
     private static final Logger LOGGER = Logger.getLogger(OficinaLogic.class.getName());
 
+    /**
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
+     */
     @Inject
     private OficinaPersistence persistence; // Variable para acceder a la persistencia de la aplicación. Es una inyección de dependencias.
 

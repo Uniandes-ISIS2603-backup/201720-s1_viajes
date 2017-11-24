@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -21,14 +20,15 @@ import javax.inject.Inject;
 @Stateless
 public class HospedajeLogic {
     
-    private static final Logger LOGGER = Logger.getLogger(HospedajeLogic.class.getName());
-    
+    /**
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
+     */
     @Inject
     private HospedajePersistence persistence;
     
     /**
      * Obtiene la lista de los registros de Hospedajes.
-     *
      * @return Colección de objetos de Hospedaje.
      */
     public List<HospedajeEntity> getHospedajes() {
@@ -37,7 +37,6 @@ public class HospedajeLogic {
     
     /**
      * Obtiene los datos de una instancia de Hospedaje a partir de su ID.
-     *
      * @param id Identificador de la instancia a consultar
      * @return Instancia de HospedajeEntity con los datos del Hospedaje consultado.
      */
@@ -47,7 +46,6 @@ public class HospedajeLogic {
     
     /**
      * Se encarga de crear un hospedaje en la base de datos.
-     *
      * @param entity Objeto de HospedajeEntity con los datos nuevos
      * @return Objeto de HospedajeEntity con los datos nuevos y su ID.
      */
@@ -58,7 +56,6 @@ public class HospedajeLogic {
     
     /**
      * Actualiza la información de una instancia de Hospedaje.
-     *
      * @param entity Instancia de HospedajeEntity con los nuevos datos.
      * @return Instancia de HospedajeEntity con los datos actualizados.
      */
@@ -68,21 +65,18 @@ public class HospedajeLogic {
  
     /**
      * Elimina una instancia de Hospedaje de la base de datos.
-     *
      * @param id Identificador de la instancia a eliminar.
      */
      public void deleteHospedaje(Long id) {
          persistence.delete(id);
      }
      
-         /**
+     /**
      * Obtiene una colección de instancias de ImagenEntity asociadas a una
      * instancia de Hospedaje
-     *
      * @param hospedajeId Identificador de la instancia de Hospedaje
      * @return Colección de instancias de ImagenEntity asociadas a la instancia
      * de Hospedaje
-     * 
      */
     public List<ImagenEntity> listImagenes(Long hospedajeId) {
         return getHospedaje(hospedajeId).getImagenes();
@@ -90,11 +84,9 @@ public class HospedajeLogic {
     
     /**
      * Obtiene una instancia de ImagenEntity asociada a una instancia de Hospedaje
-     *
      * @param hospedajeId Identificador de la instancia de Hospedaje
      * @param imagenesId Identificador de la instancia de Imagen
      * @return La imagen con id dado
-     * 
      */
     public ImagenEntity getImagen(Long hospedajeId, Long imagenesId) {
         List<ImagenEntity> list = getHospedaje(hospedajeId).getImagenes();
@@ -109,11 +101,9 @@ public class HospedajeLogic {
 
     /**
      * Asocia una Imagen existente a un Hospedaje
-     *
      * @param hospedajeId Identificador de la instancia de Hospedaje
      * @param imagenesId Identificador de la instancia de Imagen
      * @return Instancia de ImagenEntity que fue asociada a Hospedaje
-     * 
      */
     public ImagenEntity addImagen(Long hospedajeId, Long imagenesId) {
         HospedajeEntity hospedajeEntity = getHospedaje(hospedajeId);
@@ -123,14 +113,13 @@ public class HospedajeLogic {
         return getImagen(hospedajeId, imagenesId);
     }
     
-        /**
+     /**
      * Remplaza las instancias de Imagen asociadas a una instancia de Hospedaje
      *
      * @param hospedajeId Identificador de la instancia de Blog
      * @param list Colección de instancias de ImagenEntity a asociar a instancia
      * de Hospedaje
      * @return Nueva colección de ImagenEntity asociada a la instancia de Hospedaje
-     * 
      */
     public List<ImagenEntity> replaceImagenes(Long hospedajeId, List<ImagenEntity> list) {
         HospedajeEntity hospedajeEntity = getHospedaje(hospedajeId);
@@ -140,17 +129,13 @@ public class HospedajeLogic {
 
     /**
      * Desasocia un Imagen existente de un Blog existente
-     *
-     * @param blogId Identificador de la instancia de Blog
+     * @param hospedajeId Identificador de la instancia de Blog
      * @param imagenesId Identificador de la instancia de Imagen
-     * 
      */
     public void removeImagen(Long hospedajeId, Long imagenesId) {
         HospedajeEntity entity = getHospedaje(hospedajeId);
         ImagenEntity imagenesEntity = new ImagenEntity();
         imagenesEntity.setId(imagenesId);
         entity.getImagenes().remove(imagenesEntity);
-    }
-    
-    
+    }   
 }

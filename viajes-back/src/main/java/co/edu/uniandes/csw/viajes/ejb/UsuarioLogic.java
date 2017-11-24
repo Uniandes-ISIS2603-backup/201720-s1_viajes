@@ -19,7 +19,8 @@ import javax.inject.Inject;
 public class UsuarioLogic {
 
     /**
-     * Acceso a la aplicación
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
      */
     @Inject
     private UsuarioPersistence persistence;
