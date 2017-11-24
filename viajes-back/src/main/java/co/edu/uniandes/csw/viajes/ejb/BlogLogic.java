@@ -19,18 +19,21 @@ import javax.inject.Inject;
 @Stateless
 public class BlogLogic {
 
+    /**
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
+     */
    @Inject
-    private BlogPersistence persistence; // Variable para acceder a la persistencia de la aplicación. Es una inyección de dependencias.
+    private BlogPersistence persistence; 
 
     /**
      *
      * Crear un nuevo blog.
      * 
      * @param entity
-     * @return
+     * @return El blog
      */
     public BlogEntity createBlog(BlogEntity entity) {
-        // Invoca la persistencia para crear la blog
         persistence.create(entity);
         return entity;
     }
@@ -42,7 +45,6 @@ public class BlogLogic {
      * @return una lista de blogs.
      */
     public List<BlogEntity> getBlogs() {
-        // Note que, por medio de la inyección de dependencias se llama al método "findAll()" que se encuentra en la persistencia.
         List<BlogEntity> blogs = persistence.findAll();
         return blogs;
     }
@@ -51,11 +53,10 @@ public class BlogLogic {
      *
      * Obtener un blog por medio de su id.
      * 
-     * @param id: id del blog para ser buscado.
-     * @return el blog solicitado por medio de su id.
+     * @param id: Id del blog para ser buscado.
+     * @return El blog solicitado por medio de su id.
      */
     public BlogEntity getBlog(Long id) {
-        // Note que, por medio de la inyección de dependencias se llama al método "find(id)" que se encuentra en la persistencia.
         BlogEntity blog = persistence.find(id);
         if (blog != null) {
                 return blog;
