@@ -91,12 +91,6 @@ public class ItinerarioEntretenimientosResource {
         return new EntretenimientoDetailDTO(itinerarioLogic.addEntretenimiento(itinerarioId, entretenimientoId));
     }
     
-    
-    @PUT
-    public List<EntretenimientoDetailDTO> replaceEntretenimiento(@PathParam("itinerarioId") Long itinerarioId, List<EntretenimientoDetailDTO> entretenimientos) {
-        return EntretenimientosListEntity2DTO(itinerarioLogic.replaceEntretenimientos(itinerarioId, entretenimientosListDTO2Entity(entretenimientos)));
-    }
-    
     /**
      * Desasocia un entretenimiento existente de un Itinerario existente
      *

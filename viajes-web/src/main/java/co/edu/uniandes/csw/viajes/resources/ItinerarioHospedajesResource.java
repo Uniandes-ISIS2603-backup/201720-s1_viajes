@@ -91,11 +91,6 @@ public class ItinerarioHospedajesResource {
         return new HospedajeDetailDTO(itinerarioLogic.addHospedaje(itinerarioId, hospedajesId));
     }
     
-    @PUT
-    public List<HospedajeDetailDTO> replaceHospedajes(@PathParam("itinerarioId") Long itinerarioId, List<HospedajeDetailDTO> hospedajes) {
-        return hospedajesListEntity2DTO(itinerarioLogic.replaceHospedaje(itinerarioId, hospedajesListDTO2Entity(hospedajes)));
-    }
-    
     /**
      * Desasocia un hospedaje existente de un Itinerario existente
      *

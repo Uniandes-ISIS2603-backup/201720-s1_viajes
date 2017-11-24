@@ -91,10 +91,6 @@ public class ItinerarioTransportesResource {
         return new TransporteDetailDTO(itinerarioLogic.addTransporte(itinerarioId, transportesId));
     }
     
-    @PUT
-    public List<TransporteDetailDTO> replaceTransportes(@PathParam("itinerarioId") Long itinerarioId, List<TransporteDetailDTO> transportes) {
-        return transportesListEntity2DTO(itinerarioLogic.replaceTransportes(itinerarioId, transportesListDTO2Entity(transportes)));
-    }
     
     /**
      * Desasocia un transporte existente de un Itinerario existente

@@ -110,8 +110,8 @@ public class ItinerarioLogic {
      * @param itinerarioId : id del itinerario
      */
      public GuiaEntity addGuia(Long itinerarioId, Long guiaId) {
-        GuiaEntity guiaEntity = guiaLogic.getGuia(guiaId);
-        return guiaEntity;
+        return guiaLogic.getGuia(guiaId);
+        
     }
      
      /**
@@ -121,8 +121,8 @@ public class ItinerarioLogic {
      * @param itinerarioId : id del itinerario
      */
      public EntretenimientoEntity addEntretenimiento(Long itinerarioId, Long entretenimientoId){
-         EntretenimientoEntity entretenimientoEntity = entretenimientoLogic.getEntretenimiento(entretenimientoId);
-         return entretenimientoEntity;
+         return entretenimientoLogic.getEntretenimiento(entretenimientoId);
+         
     }
      
      
@@ -133,8 +133,8 @@ public class ItinerarioLogic {
      * @param itinerarioId : id del itinerario
      */
      public HospedajeEntity addHospedaje(Long itinerarioId, Long hospedajeId){
-         HospedajeEntity hospedajeEntity = hospedajeLogic.getHospedaje(hospedajeId);
-         return hospedajeEntity;
+         return hospedajeLogic.getHospedaje(hospedajeId);
+         
     }
      
      
@@ -145,8 +145,8 @@ public class ItinerarioLogic {
      * @param itinerarioId : id del itinerario
      */
     public TransporteEntity addTransporte(Long itinerarioId, Long transporteId){
-         TransporteEntity transporteEntity = transporteLogic.getTransporte(transporteId);
-         return transporteEntity;
+         return transporteLogic.getTransporte(transporteId);
+         
      }
      
      /**
@@ -200,84 +200,7 @@ public class ItinerarioLogic {
          itinerarioEntity.getTransportes().remove(transporte);
      }
      
-     /**
-     * adiere un guia a un itinerario
-     *
-     * @param itinerarioId : id del guia 
-     * @param guias : guias
-     */
-    public List<GuiaEntity> replaceGuias(Long itinerarioId, List<GuiaEntity> guias) {
-        ItinerarioEntity itinerario = getItinerario(itinerarioId);
-        List<GuiaEntity> guiaList = guiaLogic.getGuias();
-        //for (GuiaEntity guia : guiaList) {
-          //  if (guias.contains(guia)) {
-            //} else if (guia.getItinerario() != null && guia.getItinerario().equals(itinerario)) {
-              //  guia.setItinerario(null);
-            //}
-        //}
-        return guias;
-    } 
-    
-    
-     /**
-     * adiere un entretenimiento a un itinerario
-     *
-     * @param itinerarioId : id del guia 
-     * @param entretenimientos  : entretenimientos
-     */
-    public List<EntretenimientoEntity> replaceEntretenimientos(Long itinerarioId, List<EntretenimientoEntity> entretenimientos){
-        ItinerarioEntity itinerario = getItinerario(itinerarioId);
-        List<EntretenimientoEntity> entretenimientoList = entretenimientoLogic.getEntretenimientos();
-        /*for(EntretenimientoEntity entreteniiento : entretenimientoList){
-            if(entretenimientos.contains(entreteniiento)){
-                
-            } else if(entreteniiento.ge){
-                
-            }
-        }*/
-        return entretenimientos;
-    }
-    
-    
-     /**
-     * adiere un hospedaje a un itinerario
-     *
-     * @param itinerarioId : id del guia 
-     * @param hospedajes  : hospedajes
-     */
-    public List<HospedajeEntity> replaceHospedaje(Long itinerarioId, List<HospedajeEntity> hospedajes){
-        ItinerarioEntity itinerario = getItinerario(itinerarioId);
-        List<HospedajeEntity> hospedajeList = hospedajeLogic.getHospedajes();
-        /*for(EntretenimientoEntity entreteniiento : entretenimientoList){
-            if(entretenimientos.contains(entreteniiento)){
-                
-            } else if(entreteniiento.ge){
-                
-            }
-        }*/
-        return hospedajes;
-    }
-    
-    
-     /**
-     * adiere un transporte a un itinerario
-     *
-     * @param itinerarioId : id del guia 
-     * @param transportes  : transortes
-     */
-    public List<TransporteEntity> replaceTransportes(Long itinerarioId, List<TransporteEntity> transportes){
-        ItinerarioEntity itinerario = getItinerario(itinerarioId);
-        List<TransporteEntity> transporteList = transporteLogic.getTransportes();
-        /*for(EntretenimientoEntity entreteniiento : entretenimientoList){
-            if(entretenimientos.contains(entreteniiento)){
-                
-            } else if(entreteniiento.ge){
-                
-            }
-        }*/
-        return transporteList;
-    }
-    
+     
     
     /**
      * @return  los guia a un itinerario
