@@ -133,6 +133,12 @@ public class EntretenimientoResource {
         entretenimientoLogic.deleteEntretenimiento(id);
     }
 
+    /**
+     * Retorna el subrecurso de imagenes
+     * 
+     * @param entretenimientoId
+     * @return EntretenimientoImagenesResource
+     */
     @Path("{entretenimientoId: \\d+}/imagenes")
     public Class<EntretenimientoImagenesResource> getBlogImagenesResource(@PathParam("entretenimientoId") Long entretenimientoId) {
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(entretenimientoId);

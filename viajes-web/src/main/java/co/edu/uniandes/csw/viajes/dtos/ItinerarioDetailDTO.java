@@ -28,6 +28,10 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
     
     private List<TransporteDTO> transportes;
     
+    /**
+     * Constructor por defecto
+     *
+     */
     public ItinerarioDetailDTO(){
         super();
     }

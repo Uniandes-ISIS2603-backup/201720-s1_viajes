@@ -33,6 +33,13 @@ public class ItinerarioEntretenimientosResource {
     @Inject
     ItinerarioLogic itinerarioLogic;
     
+    /**
+     * Convierte una lista de EntretenimientoEntity a una lista de EntretenimientoDetailDTO.
+     *
+     * @param entityList Lista de EntretenimientoEntity a convertir.
+     * @return Lista de EntretenimientoDetailDTO convertida.
+     * 
+     */
     private List<EntretenimientoDetailDTO> EntretenimientosListEntity2DTO(List<EntretenimientoEntity> entityList){
        List<EntretenimientoDetailDTO> list = new ArrayList<>();
        for(EntretenimientoEntity entity : entityList){
@@ -41,6 +48,13 @@ public class ItinerarioEntretenimientosResource {
        return list;
     }
     
+    /**
+     * Convierte una lista de EntretenimientoDetailDTO a una lista de EntretenimientoEntity.
+     *
+     * @param dtos Lista de EntretenimientoDetailDTO a convertir.
+     * @return Lista de EntretenimientoEntity convertida.
+     * 
+     */
     private List<EntretenimientoEntity> entretenimientosListDTO2Entity(List<EntretenimientoDetailDTO> dtos){
         List<EntretenimientoEntity> list = new ArrayList<>();
         for (EntretenimientoDetailDTO dto : dtos) {
@@ -90,17 +104,17 @@ public class ItinerarioEntretenimientosResource {
     public EntretenimientoDetailDTO addEntretenimiento(@PathParam("itinerarioId") Long itinerarioId, @PathParam("entretenimientosId") Long entretenimientoId) {
         return new EntretenimientoDetailDTO(itinerarioLogic.addEntretenimiento(itinerarioId, entretenimientoId));
     }
-    
+        
     /**
-     * Desasocia un entretenimiento existente de un Itinerario existente
+     * Desasocia un Entretenimiento existente de un Entretetenimiento existente
      *
      * @param itinerarioId  Identificador de la instancia de itinerario
      * @param entretenimientoId  Identificador de la instancia de entretenimiento
      * 
      */
     @DELETE
-    @Path("{entretenimientosId: \\d+}")
-    public void removeEntretenimiento(@PathParam("itinerarioId") Long itinerarioId, @PathParam("entretenimientosId") Long entretenimientoId) {
+    @Path("{entretenimientoId: \\d+}")
+    public void removeEntretenimiento(@PathParam("itinerarioId") Long itinerarioId, @PathParam("entretenimientoId") Long entretenimientoId) {
         itinerarioLogic.removeEntretenimiento(itinerarioId, entretenimientoId);
     }
     
