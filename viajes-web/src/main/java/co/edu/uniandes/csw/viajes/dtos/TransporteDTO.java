@@ -18,12 +18,34 @@ public class TransporteDTO{
      * Id del transporte
      */
     private Long id;
+    
+    /**
+     * Nombre del transporte
+     */
     private String nombre;
+    /**
+     * Fecha de inicio del transporte
+     */
     private String fechaInicio;
+    /**
+     * Fecha final del transporte
+     */
     private String fechaFinal;
+    /**
+     * Valor del transporte
+     */
     private Double valor;
+    /**
+     * Calificacion del transporte
+     */
     private Double calificacion;
+    /**
+     * Comentarios del transporte
+     */
     private String comentarios;
+    /**
+     * Descripcion del transporte
+     */
     private String descripcion;
     
     /**
