@@ -31,17 +31,14 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(co.edu.uniandes.csw.viajes.resources.BlogResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.CompaniaResource.class);
-        resources.add(co.edu.uniandes.csw.viajes.resources.EntretenimientoImagenesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.EntretenimientoResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.GuiaResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.HospedajeResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ImagenResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioResource.class);
-        resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioTransportesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.OficinaResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.PagoResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.TarjetaCreditoResource.class);
-        resources.add(co.edu.uniandes.csw.viajes.resources.TransporteImagenesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.TransporteResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.UbicacionResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.UsuarioResource.class);

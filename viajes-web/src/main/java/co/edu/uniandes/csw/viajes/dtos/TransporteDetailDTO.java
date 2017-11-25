@@ -37,6 +37,6 @@ public class TransporteDetailDTO extends TransporteDTO{
      */
     @Override
     public TransporteEntity toEntity() {
-         return super.toEntity();
+        return super.toEntity();
     }
 }

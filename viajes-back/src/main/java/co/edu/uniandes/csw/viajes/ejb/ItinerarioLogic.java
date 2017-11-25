@@ -199,9 +199,7 @@ public class ItinerarioLogic {
          TransporteEntity transporte = transporteLogic.getTransporte(transporteId);
          itinerarioEntity.getTransportes().remove(transporte);
      }
-     
-     
-    
+   
     /**
      * @return  los guia a un itinerario
      *

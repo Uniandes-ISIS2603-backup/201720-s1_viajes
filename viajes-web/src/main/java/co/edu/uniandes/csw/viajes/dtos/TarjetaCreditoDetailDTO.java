@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package co.edu.uniandes.csw.viajes.dtos;
+
 import co.edu.uniandes.csw.viajes.entities.PagoEntity;
 import co.edu.uniandes.csw.viajes.entities.TarjetaCreditoEntity;
 import java.util.ArrayList;
