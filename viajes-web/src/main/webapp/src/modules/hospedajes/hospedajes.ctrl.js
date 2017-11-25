@@ -15,7 +15,6 @@
             // el controlador recibió un entretenimientoId ??
             // revisa los parámetros (ver el :entretenimientoId en la definición de la ruta)
             if ($state.params.hospedajesId !== null && $state.params.hospedajesId !== undefined) {
-                console.log("1->>>>>>>>>>>>>>>>>>>>>>>");
                 // toma el id del parámetro
                 id = $state.params.hospedajesId;
                 // obtiene el dato del recurso REST
@@ -42,7 +41,7 @@
 
 
             this.saveRecord = function (id) {
-                currentRecord = $scope.currentRecord;
+                var currentRecord = $scope.currentRecord;
 
                 // si el id es null, es un registro nuevo, entonces lo crea
                 if (id == null) {

@@ -1,29 +1,45 @@
 <div class="container-fluid">
-   <br>
-  <button id="create-btn" class="btn btn-default btn-sm" ui-sref="entretenimientoCreate" style="float: right;"><span class="glyphicon glyphicon-plus"></span>Agregar</button>
-  <table class="table table-striped" class="col-md-4">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Valor</th>
-        <th>Fecha inicio</th>
-        <th>Fecha fin</th>
-        <th>Calificacion</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="record in records">
-         <td id="{{$index}}-nombre"><a ui-sref="entretenimientosDetail({entretenimientoId: record.id})">{{record.nombre}}</a></td>
-        <td id="{{$index}}-valor"><span id="currency-no-fractions">{{record.valor | currency}}</span></td>
-        <td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>
-        <td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>
-        <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
-        <td>
-            <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ui-sref="entretenimientoEdit({entretenimientoId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
-            <button id="{{$index}}-delete-btn" class="btn btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-trash"></span> Eliminar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><label>Entretenimiento</label></div>
+            <div class="panel-body">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <a class="btn btn-info" ui-sref="entretenimientosCreate"><span class="glyphicon glyphicon-plus-sign"></span> Agregar entretenimiento</a>
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                              <tr>
+                                <th>Nombre</th>
+                                <th>Valor</th>
+                                <th>Fecha inicio</th>
+                                <th>Fecha fin</th>
+                                <th>Calificacion</th>
+                                <th>Acciones</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="record in records">
+                                 <td id="{{$index}}-nombre"><a ui-sref="entretenimientosDetail({entretenimientoId: record.id})">{{record.nombre}}</a></td>
+                                <td id="{{$index}}-valor"><span id="currency-no-fractions">{{record.valor | currency}}</span></td>
+                                <td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>
+                                <td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>
+                                <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
+                                <td>
+                                    <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ui-sref="entretenimientoUpdate({entretenimientoId: record.id})"><span class="glyphicon glyphicon-edit"></span> Editar</button>
+                                    <button id="{{$index}}-delete-btn" class="btn btn-danger btn-sm" ui-sref="entretenimientoDelete({entretenimientoId: record.id})"><span class="glyphicon glyphicon-trash"></span> Eliminar</button>        
+                                </td>
+                              </tr>
+                            </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>

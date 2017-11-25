@@ -133,6 +133,15 @@ public class EntretenimientoResource {
         entretenimientoLogic.deleteEntretenimiento(id);
     }
 
+    @Path("{entretenimientoId: \\d+}/imagenes")
+    public Class<EntretenimientoImagenesResource> getBlogImagenesResource(@PathParam("entretenimientoId") Long entretenimientoId) {
+        EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(entretenimientoId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /entretenimientos/" + entretenimientoId + "/imagenes no existe.", 404);
+        }
+        return EntretenimientoImagenesResource.class;
+    }
+    
     /**
      *
      * lista de entidades a DTO.

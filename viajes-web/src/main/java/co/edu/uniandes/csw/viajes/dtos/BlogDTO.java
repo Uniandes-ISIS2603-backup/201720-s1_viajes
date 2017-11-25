@@ -20,7 +20,9 @@ public class BlogDTO {
     /**
      * Constructor por defecto
      */
-    public BlogDTO() {
+    public BlogDTO() 
+    {
+        //Crea un DTO vacio
     }
 
     /**
@@ -86,6 +88,5 @@ public class BlogDTO {
         entity.setTitulo(this.titulo);
         entity.setComentario(this.comentario);
         return entity;
-    }
-    
+    }    
 }

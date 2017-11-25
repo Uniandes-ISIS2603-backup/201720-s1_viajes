@@ -27,10 +27,11 @@ public class TransporteLogic {
     private static final Logger LOGGER = Logger.getLogger(TransporteLogic.class.getName());
 
     /**
-    *Persistencia de transporte
-    */
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
+     */
     @Inject
-    private TransportePersistence persistence; // Variable para acceder a la persistencia de la aplicación. Es una inyección de dependencias.
+    private TransportePersistence persistence; 
     
     
      /**

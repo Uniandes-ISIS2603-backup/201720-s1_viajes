@@ -22,6 +22,7 @@ public class OficinaDTO {
      * Constructor por defecto
      */
     public OficinaDTO() {
+         //Constructor por defecto
     }
 
     /**

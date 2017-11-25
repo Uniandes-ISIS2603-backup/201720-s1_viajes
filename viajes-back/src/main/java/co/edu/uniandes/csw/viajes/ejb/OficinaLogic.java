@@ -6,7 +6,6 @@
 package co.edu.uniandes.csw.viajes.ejb;
 
 import co.edu.uniandes.csw.viajes.entities.OficinaEntity;
-import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
 import co.edu.uniandes.csw.viajes.persistence.OficinaPersistence;
 import java.util.List;
 import java.util.logging.Level;
@@ -21,6 +20,10 @@ public class OficinaLogic {
     
     private static final Logger LOGGER = Logger.getLogger(OficinaLogic.class.getName());
 
+    /**
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
+     */
     @Inject
     private OficinaPersistence persistence; // Variable para acceder a la persistencia de la aplicación. Es una inyección de dependencias.
 

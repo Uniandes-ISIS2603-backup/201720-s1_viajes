@@ -33,7 +33,7 @@ public class TarjetaCreditoDTO {
      */
     public TarjetaCreditoDTO()
     {
-        
+         //Constructor por defecto
     }
     
     /**

@@ -44,6 +44,24 @@ public class UbicacionEntity extends BaseEntity {
      */
     private String pais;
 
+    
+
+    /**
+     * Nombre del lugar
+     * @return nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * Cambiar el nombre del lugar
+     * @param nombre 
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     /**
      * Longitud de la ubicación
      * @return longitud
@@ -77,22 +95,6 @@ public class UbicacionEntity extends BaseEntity {
     }
 
     /**
-     * Nombre del lugar
-     * @return nombre
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Cambiar el nombre del lugar
-     * @param nombre 
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
      * Dirección del lugar
      * @return direccion
      */
@@ -106,6 +108,22 @@ public class UbicacionEntity extends BaseEntity {
      */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }    
+    
+    /**
+     * País del lugar 
+     * @return 
+     */
+    public String getPais() {
+        return pais;
+    }
+
+    /**
+     * Cambiar el país
+     * @param pais 
+     */
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     /**
@@ -124,19 +142,4 @@ public class UbicacionEntity extends BaseEntity {
         this.ciudad = ciudad;
     }
 
-    /**
-     * País del lugar 
-     * @return 
-     */
-    public String getPais() {
-        return pais;
-    }
-
-    /**
-     * Cambiar el país
-     * @param pais 
-     */
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
  }

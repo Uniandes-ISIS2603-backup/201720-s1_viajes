@@ -19,7 +19,7 @@ public class EntretenimientoDTO extends ServicesAbstract{
      * Constructor por defecto
      */
     public EntretenimientoDTO() {
-        
+         //Constructor por defecto
     }
     
     /**

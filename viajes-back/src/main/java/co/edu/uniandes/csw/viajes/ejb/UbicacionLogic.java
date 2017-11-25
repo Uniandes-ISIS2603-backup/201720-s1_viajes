@@ -22,6 +22,10 @@ public class UbicacionLogic {
     
     private static final Logger LOGGER = Logger.getLogger(HospedajeLogic.class.getName());
     
+    /**
+     * Variable para acceder a la persistencia de la aplicación. 
+     * Es una inyección de dependencias.
+     */
     @Inject
     private UbicacionPersistence persistence;
     
@@ -51,7 +55,10 @@ public class UbicacionLogic {
      * @return Objeto de UbicacionEntity con los datos nuevos y su ID.
      */
     public UbicacionEntity createUbicacion(UbicacionEntity entity) {
+        LOGGER.info("Inicia proceso de creación de ubicación");
+        // Invoca la persistencia para crear la ubicación
          persistence.create(entity);
+        LOGGER.info("Termina proceso de creación de ibicación");
          return entity;
      }
     
