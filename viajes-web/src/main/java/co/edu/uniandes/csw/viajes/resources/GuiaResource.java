@@ -52,14 +52,14 @@ public class GuiaResource
      */
     @GET
     public List<GuiaDTO> getGuia(){
-        List<GuiaDTO> GuiasDTOS = new ArrayList<>();
+        List<GuiaDTO> guiasDTOS = new ArrayList<>();
 
         List<GuiaEntity> guias = guialogic.getGuias();
         for(GuiaEntity guia : guias){
             GuiaDTO dto = new GuiaDTO(guia);
-            GuiasDTOS.add(dto);
+            guiasDTOS.add(dto);
         }
-        return GuiasDTOS;
+        return guiasDTOS;
     }
     
     /**
@@ -108,7 +108,6 @@ public class GuiaResource
         if (oldEntity == null) {
             throw new WebApplicationException("El guia no existe", 404);
         }
-//        entity.setCompania(oldEntity.getCompania());
         return new GuiaDetailDTO(guialogic.updateGuia(entity));
     }
 

@@ -16,7 +16,7 @@
             // revisa los parámetros (ver el :entretenimientoId en la definición de la ruta)
             if ($state.params.hospedajesId !== null && $state.params.hospedajesId !== undefined) {
                 // toma el id del parámetro
-                id = $state.params.hospedajesId;
+                var id = $state.params.hospedajesId;
                 // obtiene el dato del recurso REST
                 $http.get(hospedajesContext + "/" + id)
                         .then(function (response) {

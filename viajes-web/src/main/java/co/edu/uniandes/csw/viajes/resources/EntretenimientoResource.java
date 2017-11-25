@@ -87,7 +87,7 @@ public class EntretenimientoResource {
     public EntretenimientoDetailDTO getEntretenimiento(@PathParam("id") Long id){
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /entretenimientos/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         return new EntretenimientoDetailDTO(entretenimientoLogic.getEntretenimiento(id));
     }
@@ -109,7 +109,7 @@ public class EntretenimientoResource {
         entretenimiento.setId(id);
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /entretenimientos/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         return new EntretenimientoDetailDTO(entretenimientoLogic.updateEntretenimiento(entretenimiento.toEntity()));
     }
@@ -128,7 +128,7 @@ public class EntretenimientoResource {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar una entretenimiento con id {0}", id);
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /entretenimientos/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         entretenimientoLogic.deleteEntretenimiento(id);
     }
@@ -143,7 +143,7 @@ public class EntretenimientoResource {
     public Class<EntretenimientoImagenesResource> getBlogImagenesResource(@PathParam("entretenimientoId") Long entretenimientoId) {
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(entretenimientoId);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /entretenimientos/" + entretenimientoId + "/imagenes no existe.", 404);
+            throw new WebApplicationException(mensajeError(entretenimientoId), 404);
         }
         return EntretenimientoImagenesResource.class;
     }
@@ -166,4 +166,15 @@ public class EntretenimientoResource {
         }
         return list;
     }    
+    
+     /**
+     * Retorna un mensaje de error
+     *
+     * @param blogId el id del blog que no se encontro
+     * @return lmensaje de error
+     */
+    private String mensajeError(Long blogId)
+    {
+        return "El recurso /entretenimientos/"+blogId+" no existe.";
+    }
 }
