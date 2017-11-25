@@ -41,8 +41,7 @@ public class EntretenimientoLogic {
      */
     public List<EntretenimientoEntity> getEntretenimientos() {
         // Note que, por medio de la inyección de dependencias se llama al método "findAll()" que se encuentra en la persistencia.
-        List<EntretenimientoEntity> entretenimientos = persistence.findAll();
-        return entretenimientos;
+        return persistence.findAll();
     }
 
     /**
@@ -52,21 +51,18 @@ public class EntretenimientoLogic {
      */
     public EntretenimientoEntity getEntretenimiento(Long id) {
         // Note que, por medio de la inyección de dependencias se llama al método "find(id)" que se encuentra en la persistencia.
-        EntretenimientoEntity entretenimiento = persistence.find(id);
-        return entretenimiento;
+        return persistence.find(id);
     }
 
     /**
      * Actualizar una entretenimiento.
-     * @param id: id del entretenimiento para buscarla en la base de datos.
      * @param entity: entretenimiento con los cambios para ser actualizada, por
      * ejemplo el nombre.
      * @return la entretenimiento con los cambios actualizados en la base de datos.
      */
-    public EntretenimientoEntity updateEntretenimiento(Long id, EntretenimientoEntity entity) {
+    public EntretenimientoEntity updateEntretenimiento(EntretenimientoEntity entity) {
         // Note que, por medio de la inyección de dependencias se llama al método "update(entity)" que se encuentra en la persistencia.
-        EntretenimientoEntity newEntity = persistence.update(entity);
-        return newEntity;
+        return persistence.update(entity);
     }
 
     /**

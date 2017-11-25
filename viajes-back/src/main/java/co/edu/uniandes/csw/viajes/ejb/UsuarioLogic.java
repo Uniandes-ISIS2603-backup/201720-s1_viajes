@@ -71,12 +71,11 @@ public class UsuarioLogic {
     
     /**
      * Actualiza la información de una instancia de Usuario.
-     * @param id Identificador de la instancia a actualizar
      * @param entity Instancia de UsuarioEntity con los nuevos datos.
      * @return Instancia de UsuarioEntity con los datos actualizados.
      * @generated
      */
-    public UsuarioEntity updateUsuario(Long id, UsuarioEntity entity) {
+    public UsuarioEntity updateUsuario(UsuarioEntity entity) {
         return persistence.update(entity);
     }
     
@@ -93,16 +92,12 @@ public class UsuarioLogic {
 /**
      * Obtiene una instancia de TarjetaCreditoEntity asociada a una instancia de Usuario
      *
-     * @param UsuarioId Id Identificador de la instancia de Author
+     * @param usuarioId Id Identificador de la instancia de Author
      * @return
      * @generated
      */
-    public List<TarjetaCreditoEntity> getTarjetaCredito(Long UsuarioId) {
-       List<TarjetaCreditoEntity> tarjeta = getUsuario(UsuarioId).getTarjetas();
-        if (tarjeta!=null) {
-            return tarjeta;
-        }
-        return null;
+    public List<TarjetaCreditoEntity> getTarjetaCredito(Long usuarioId) {
+       return getUsuario(usuarioId).getTarjetas();
     } 
     
     /**
@@ -112,12 +107,8 @@ public class UsuarioLogic {
      * @return
      * @generated
      */
-    public List<ItinerarioEntity> getItinerario(Long UsuarioId) {
-       List<ItinerarioEntity> itinerario = getUsuario(UsuarioId).getItinerarios();
-        if (itinerario!=null) {
-            return itinerario;
-        }
-        return null;
+    public List<ItinerarioEntity> getItinerario(Long usuarioId) {
+       return getUsuario(usuarioId).getItinerarios();
     } 
     
     /**
@@ -191,12 +182,8 @@ public class UsuarioLogic {
      * @return
      * @generated
      */
-    public List<TarjetaCreditoEntity> getTarjetasCredito(Long UsuarioId) {
-       List<TarjetaCreditoEntity> tarjetas = getUsuario(UsuarioId).getTarjetas();
-        if (tarjetas != null) {
-            return tarjetas;
-        }
-        return null;
+    public List<TarjetaCreditoEntity> getTarjetasCredito(Long usuarioId) {
+       return getUsuario(usuarioId).getTarjetas();
     } 
     
     /**

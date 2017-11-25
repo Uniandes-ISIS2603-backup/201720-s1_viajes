@@ -111,7 +111,7 @@ public class EntretenimientoResource {
         if (entity == null) {
             throw new WebApplicationException("El recurso /entretenimientos/" + id + " no existe.", 404);
         }
-        return new EntretenimientoDetailDTO(entretenimientoLogic.updateEntretenimiento(id, entretenimiento.toEntity()));
+        return new EntretenimientoDetailDTO(entretenimientoLogic.updateEntretenimiento(entretenimiento.toEntity()));
     }
 
     /**
@@ -133,6 +133,12 @@ public class EntretenimientoResource {
         entretenimientoLogic.deleteEntretenimiento(id);
     }
 
+    /**
+     * Retorna el subrecurso de imagenes
+     * 
+     * @param entretenimientoId
+     * @return EntretenimientoImagenesResource
+     */
     @Path("{entretenimientoId: \\d+}/imagenes")
     public Class<EntretenimientoImagenesResource> getBlogImagenesResource(@PathParam("entretenimientoId") Long entretenimientoId) {
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(entretenimientoId);

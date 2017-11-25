@@ -10,7 +10,6 @@ import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
 import co.edu.uniandes.csw.viajes.entities.HospedajeEntity;
 import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
 import co.edu.uniandes.csw.viajes.entities.TransporteEntity;
-import com.gs.collections.impl.list.fixed.ArrayAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +28,10 @@ public class ItinerarioDetailDTO extends ItinerarioDTO{
     
     private List<TransporteDTO> transportes;
     
+    /**
+     * Constructor por defecto
+     *
+     */
     public ItinerarioDetailDTO(){
         super();
     }

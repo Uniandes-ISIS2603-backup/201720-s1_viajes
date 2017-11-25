@@ -65,7 +65,7 @@ public class PagoLogic {
      * @return Instancia de PagoEntity con los datos actualizados.
      * @generated
      */
-    public PagoEntity updatePago(Long id, PagoEntity entity) {
+    public PagoEntity updatePago(PagoEntity entity) {
         return persistence.update(entity);
     }
     
@@ -82,12 +82,12 @@ public class PagoLogic {
 /**
      * Obtiene una instancia de TarjetaCreditoEntity asociada a una instancia de Pago
      *
-     * @param PagoId Id Identificador de la instancia de Author
+     * @param pagoId Id Identificador de la instancia de Author
      * @return
      * @generated
      */
-    public TarjetaCreditoEntity getTarjetaCredito(Long PagoId) {
-       TarjetaCreditoEntity tarjeta = getPago(PagoId).getTarjeta();
+    public TarjetaCreditoEntity getTarjetaCredito(Long pagoId) {
+       TarjetaCreditoEntity tarjeta = getPago(pagoId).getTarjeta();
         if (tarjeta!=null) {
             return tarjeta;
         }

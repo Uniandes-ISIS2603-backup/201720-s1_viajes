@@ -32,6 +32,16 @@ public class UsuarioDTO {
     }
     
     /**
+     * Conviertir Entity a DTO
+     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
+     * @param usuario:Es la entidad que se va a convertir a DTO 
+     */
+    public UsuarioDTO(UsuarioEntity usuario) {
+        this.id = usuario.getId();
+        this.nombre = usuario.getNombre();
+    }
+    
+    /**
      * Nombre del usuario
      * @return nombre 
      */
@@ -47,16 +57,6 @@ public class UsuarioDTO {
     public void setNombre(String nombre) {     
         this.nombre = nombre;
     }
-
-    /**
-     * Conviertir Entity a DTO
-     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
-     * @param usuario:Es la entidad que se va a convertir a DTO 
-     */
-    public UsuarioDTO(UsuarioEntity usuario) {
-        this.id = usuario.getId();
-        this.nombre = usuario.getNombre();
-       }
      
      /**
      * Convertir DTO a Entity

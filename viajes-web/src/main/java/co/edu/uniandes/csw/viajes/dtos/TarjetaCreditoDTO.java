@@ -37,6 +37,17 @@ public class TarjetaCreditoDTO {
     }
     
     /**
+     * Conviertir Entity a DTO
+     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
+     * @param tarjeta:Es la entidad que se va a convertir a DTO 
+     */
+     public TarjetaCreditoDTO(TarjetaCreditoEntity tarjeta) {
+       this.id = tarjeta.getId();
+        this.numero = tarjeta.getNumero();
+        this.fondos = tarjeta.getFondos();
+    }
+    
+    /**
      * Número de la cuenta
      * @return numero
      */
@@ -82,17 +93,6 @@ public class TarjetaCreditoDTO {
      */    
     public void setFondos(Long fondos) {
         this.fondos = fondos;
-    }
-    
-    /**
-     * Conviertir Entity a DTO
-     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
-     * @param tarjeta:Es la entidad que se va a convertir a DTO 
-     */
-     public TarjetaCreditoDTO(TarjetaCreditoEntity tarjeta) {
-       this.id = tarjeta.getId();
-        this.numero = tarjeta.getNumero();
-        this.fondos = tarjeta.getFondos();
     }
      
       /**

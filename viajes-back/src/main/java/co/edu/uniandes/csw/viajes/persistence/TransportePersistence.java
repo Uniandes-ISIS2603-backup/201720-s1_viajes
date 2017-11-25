@@ -19,9 +19,17 @@ import javax.persistence.Query;
 @Stateless
 public class TransportePersistence {
     
+    /**
+     * Entity Manager del persistence.
+     */
       @PersistenceContext(unitName = "viajesPU")
       protected EntityManager em;
       
+      /**
+       * Retorna el transporte buscado con el id ingresado
+       * @param id del transporte a encontrar
+       * @return transporte con el id ingresado
+       */
       public TransporteEntity find(Long id) {
         return em.find(TransporteEntity.class, id);
     }

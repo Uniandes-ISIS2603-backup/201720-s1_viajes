@@ -6,7 +6,6 @@
 package co.edu.uniandes.csw.viajes.dtos;
 
 import co.edu.uniandes.csw.viajes.entities.ItinerarioEntity;
-import co.edu.uniandes.csw.viajes.entities.PagoEntity;
 import co.edu.uniandes.csw.viajes.entities.TarjetaCreditoEntity;
 import co.edu.uniandes.csw.viajes.entities.UsuarioEntity;
 import java.util.ArrayList;
@@ -17,6 +16,35 @@ import java.util.List;
  * @author Vanessa Huertas <tv.huertas10>
  */
 public class UsuarioDetailDTO extends UsuarioDTO{
+       
+    /**
+     * Constructor para transformar un Entity a un DTO
+     *
+     * @param entity
+     */
+    public UsuarioDetailDTO(UsuarioEntity entity) {
+        super(entity);
+        
+        if (entity.getTarjetas() != null) {
+            tarjeta = new ArrayList<>();
+            for (TarjetaCreditoEntity entityTarjetaCredito : entity.getTarjetas()) {
+                tarjeta.add(new TarjetaCreditoDTO(entityTarjetaCredito));
+            }
+        }
+        
+        if (entity.getItinerarios() != null) {
+            itinerario = new ArrayList<>();
+            for (ItinerarioEntity entityItinerario : entity.getItinerarios()) {
+                itinerario.add(new ItinerarioDTO(entityItinerario));
+            }
+        }
+        
+        if (entity.getBlog() != null) {
+            this.blog = new BlogDTO(entity.getBlog());
+        } else {
+            entity.setBlog(null);
+        }
+    } 
     
     /**
      * Lista de tarjetas que le pertenecen al usuario
@@ -90,35 +118,6 @@ public class UsuarioDetailDTO extends UsuarioDTO{
         this.tarjeta = tarjeta;
     }
     
-    /**
-     * Constructor para transformar un Entity a un DTO
-     *
-     * @param entity
-     */
-    public UsuarioDetailDTO(UsuarioEntity entity) {
-        super(entity);
-        
-        if (entity.getTarjetas() != null) {
-            tarjeta = new ArrayList<>();
-            for (TarjetaCreditoEntity entityTarjetaCredito : entity.getTarjetas()) {
-                tarjeta.add(new TarjetaCreditoDTO(entityTarjetaCredito));
-            }
-        }
-        
-        if (entity.getItinerarios() != null) {
-            itinerario = new ArrayList<>();
-            for (ItinerarioEntity entityItinerario : entity.getItinerarios()) {
-                itinerario.add(new ItinerarioDTO(entityItinerario));
-            }
-        }
-        
-        if (entity.getBlog() != null) {
-            this.blog = new BlogDTO(entity.getBlog());
-        } else {
-            entity.setBlog(null);
-        }
-    } 
-
     /**
      * Transformar un DTO a un Entity
      *
