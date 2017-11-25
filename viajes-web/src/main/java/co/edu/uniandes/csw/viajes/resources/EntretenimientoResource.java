@@ -111,7 +111,7 @@ public class EntretenimientoResource {
         if (entity == null) {
             throw new WebApplicationException("El recurso /entretenimientos/" + id + " no existe.", 404);
         }
-        return new EntretenimientoDetailDTO(entretenimientoLogic.updateEntretenimiento(id, entretenimiento.toEntity()));
+        return new EntretenimientoDetailDTO(entretenimientoLogic.updateEntretenimiento(entretenimiento.toEntity()));
     }
 
     /**

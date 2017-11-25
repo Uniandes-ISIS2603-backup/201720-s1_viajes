@@ -106,7 +106,7 @@ public class UsuarioResource {
         if (entity == null) {
             throw new WebApplicationException("El recurso /usuarios/" + id + " no existe.", 404);
         }
-        return new UsuarioDetailDTO(usuarioLogic.updateUsuario(id,usuario.toEntity()));
+        return new UsuarioDetailDTO(usuarioLogic.updateUsuario(usuario.toEntity()));
     }
 
     /**

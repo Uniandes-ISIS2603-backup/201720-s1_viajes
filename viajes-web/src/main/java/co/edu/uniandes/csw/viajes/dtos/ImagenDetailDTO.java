@@ -26,15 +26,4 @@ public class ImagenDetailDTO extends ImagenDTO{
         super(entity);
     }
     
-    /**
-     * Transformar un DTO a un Entity
-     *
-     * @return 
-     */
-    @Override
-    public ImagenEntity toEntity(){
-        return super.toEntity();
-        
-    }
-    
 }
