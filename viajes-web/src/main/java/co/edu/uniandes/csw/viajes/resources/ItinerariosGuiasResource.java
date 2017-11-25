@@ -104,21 +104,7 @@ public class ItinerariosGuiasResource {
     public GuiaDetailDTO addGuias(@PathParam("itinerariosId") Long itinerariosId, @PathParam("guiaId") Long guiaId) {
         return new GuiaDetailDTO(itinerarioLogic.addGuia(itinerariosId, guiaId));
     }
-    
-    /**
-     * Remplaza las instancias de Guia asociadas a una instancia de Itinerario
-     *
-     * @param itinerariosId Identificador de la instancia de Itinerario
-     * @param guias Colección de instancias de GuiaDTO a asociar a instancia
-     * de Itinerario
-     * @return Nueva colección de GuiaDTO asociada a la instancia de Itinerario
-     * 
-     */
-    @PUT
-    public List<GuiaDetailDTO> replaceGuias(@PathParam("itinerariosId") Long itinerariosId, List<GuiaDetailDTO> guias) {
-        return guiasListEntity2DTO(itinerarioLogic.replaceGuias(itinerariosId, guiasListDTO2Entity(guias)));
-    }
-    
+
     /**
      * Desasocia un Guia existente de un Itinerario existente
      *

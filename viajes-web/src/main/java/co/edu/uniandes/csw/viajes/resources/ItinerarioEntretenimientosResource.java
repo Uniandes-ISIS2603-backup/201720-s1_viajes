@@ -64,24 +64,24 @@ public class ItinerarioEntretenimientosResource {
     }
     
     /**
-     * Obtiene una colección de instancias de EntretenimientoDetailDTO asociadas a una
-     * instancia de Entretetenimiento
+     * Obtiene una colección de instancias de DetailDTO asociadas a una
+     * instancia de Itinerario
      *
-     * @param itinerarioId Identificador de la instancia de Entretetenimiento
-     * @return Colección de instancias de EntretenimientoDetailDTO asociadas a la
-     * instancia de Entretetenimiento
+     * @param itinerariosId  Identificador de la instancia de Itinerario
+     * @return Colección de instancias de DetailDTO asociadas a la
+     * instancia de Itinerario
      * 
      */
     @GET
-    public List<EntretenimientoDetailDTO> listGuias(@PathParam("itinerarioId") Long itinerarioId) {
-        return EntretenimientosListEntity2DTO(itinerarioLogic.listEntretenimientos(itinerarioId));
+    public List<EntretenimientoDetailDTO> listEntretenimientos(@PathParam("itinerariosId") Long itinerariosId) {
+        return EntretenimientosListEntity2DTO(itinerarioLogic.listEntretenimientos(itinerariosId));
     }
     
     /**
-     * Obtiene una instancia de Entretenimiento asociada a una instancia de Entretetenimiento
+     * Obtiene una instancia de entretenimiento asociada a una instancia de itinerario
      *
-     * @param itinerarioId Identificador de la instancia de Entretetenimiento
-     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @param itinerarioId  Identificador de la instancia de itinerario
+     * @param entretenimientoId  Identificador de la instancia de entretenimiento
      * @return 
      * 
      */
@@ -92,11 +92,11 @@ public class ItinerarioEntretenimientosResource {
     }
     
     /**
-     * Asocia un Entretenimiento existente a un Entretetenimiento
+     * Asocia un entretenimiento existente a un itinerario
      *
-     * @param itinerarioId Identificador de la instancia de Entretetenimiento
-     * @param entretenimientoId Identificador de la instancia de Entretenimiento
-     * @return Instancia de EntretenimientoDetailDTO que fue asociada a Entretetenimiento
+     * @param entretenimientoId  Identificador de la instancia de entretenimiento
+     * @param itinerarioId  Identificador de la instancia de itinerario
+     * @return Instancia de DetailDTO que fue asociada a itinerario
      * 
      */
     @POST
@@ -104,26 +104,12 @@ public class ItinerarioEntretenimientosResource {
     public EntretenimientoDetailDTO addEntretenimiento(@PathParam("itinerarioId") Long itinerarioId, @PathParam("entretenimientosId") Long entretenimientoId) {
         return new EntretenimientoDetailDTO(itinerarioLogic.addEntretenimiento(itinerarioId, entretenimientoId));
     }
-    
-    /**
-     * Remplaza las instancias de Entretenimiento asociadas a una instancia de Entretetenimiento
-     *
-     * @param eitinerarioId Identificador de la instancia de Entretetenimiento
-     * @param entretenimientos Colección de instancias de EntretenimientoDTO a asociar a instancia
-     * de Entretetenimiento
-     * @return Nueva colección de EntretenimientoDTO asociada a la instancia de Entretetenimiento
-     * 
-     */
-    @PUT
-    public List<EntretenimientoDetailDTO> replaceEntretenimiento(@PathParam("itinerarioId") Long itinerarioId, List<EntretenimientoDetailDTO> entretenimientos) {
-        return EntretenimientosListEntity2DTO(itinerarioLogic.replaceEntretenimientos(itinerarioId, entretenimientosListDTO2Entity(entretenimientos)));
-    }
-    
+        
     /**
      * Desasocia un Entretenimiento existente de un Entretetenimiento existente
      *
-     * @param itinerarioId Identificador de la instancia de Entretetenimiento
-     * @param entretenimientoId Identificador de la instancia de Entretenimiento
+     * @param itinerarioId  Identificador de la instancia de itinerario
+     * @param entretenimientoId  Identificador de la instancia de entretenimiento
      * 
      */
     @DELETE

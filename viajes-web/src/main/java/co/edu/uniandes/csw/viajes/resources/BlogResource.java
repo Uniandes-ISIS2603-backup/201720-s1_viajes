@@ -139,7 +139,7 @@ public class BlogResource {
      * Retorna el subrecurso Imagenes
      * 
      * @param blogsId el usuario del que se quieren obtener los itinerarios
-     * @return UsuarioImagenesResource
+     * @return BlogImagenesResource
      */
     @Path("{blogsId: \\d+}/imagenes")
     public Class<BlogImagenesResource> getBlogImagenesResource(@PathParam("blogsId") Long blogsId) {

@@ -15,7 +15,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -63,18 +62,26 @@ public class ItinerarioHospedajesResource {
         return list;
     }
     
+    /**
+     * Obtiene una colección de instancias de DetailDTO asociadas a una
+     * instancia de Itinerario
+     *
+     * @param itinerariosId  Identificador de la instancia de Itinerario
+     * @return Colección de instancias de DetailDTO asociadas a la
+     * instancia de Itinerario
+     * 
+     */
     @GET
     public List<HospedajeDetailDTO> listHospedajes(@PathParam("itinerariosId") Long itinerariosId) {
         return hospedajesListEntity2DTO(itinerarioLogic.listHospedajes(itinerariosId));
     }
     
     /**
-     * Obtiene una colección de instancias de HospedajeDetailDTO asociadas a una
-     * instancia de Itinerario
+     * Obtiene una instancia de hospedaje asociada a una instancia de itinerario
      *
-     * @param itinerariosId Identificador de la instancia de Itinerario
-     * @return Colección de instancias de HospedajeDetailDTO asociadas a la
-     * instancia de Itinerario
+     * @param itinerariosId  Identificador de la instancia de itinerario
+     * @param hospedajesId   Identificador de la instancia de entretenimiento
+     * @return 
      * 
      */
     @GET
@@ -89,28 +96,13 @@ public class ItinerarioHospedajesResource {
      * @param itinerariosId Identificador de la instancia de Itinerario
      * @param hospedajesId Identificador de la instancia de Hospedaje
      * @return Instancia de HospedajeDetailDTO que fue asociada a Itinerario
-     * 
      */
     @POST
     @Path("{hospedajesId: \\d+}")
     public HospedajeDetailDTO addHospedajes(@PathParam("itinerariosId") Long itinerariosId, @PathParam("hospedajeId") Long hospedajesId) {
         return new HospedajeDetailDTO(itinerarioLogic.addHospedaje(itinerariosId, hospedajesId));
     }
-    
-    /**
-     * Remplaza las instancias de Hospedaje asociadas a una instancia de Itinerario
-     *
-     * @param itinerariosId Identificador de la instancia de Itinerario
-     * @param hospedajes Colección de instancias de HospedajeDTO a asociar a instancia
-     * de Itinerario
-     * @return Nueva colección de HospedajeDTO asociada a la instancia de Itinerario
-     * 
-     */
-    @PUT
-    public List<HospedajeDetailDTO> replaceHospedajes(@PathParam("itinerariosId") Long itinerariosId, List<HospedajeDetailDTO> hospedajes) {
-        return hospedajesListEntity2DTO(itinerarioLogic.replaceHospedaje(itinerariosId, hospedajesListDTO2Entity(hospedajes)));
-    }
-    
+        
     /**
      * Desasocia un Hospedaje existente de un Itinerario existente
      *

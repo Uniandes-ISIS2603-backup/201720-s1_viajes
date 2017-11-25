@@ -104,21 +104,7 @@ public class ItinerarioTransportesResource {
     public TransporteDetailDTO addTransportes(@PathParam("itinerariosId") Long itinerariosId, @PathParam("transportesId") Long transportesId) {
         return new TransporteDetailDTO(itinerarioLogic.addTransporte(itinerariosId, transportesId));
     }
-    
-    /**
-     * Remplaza las instancias de Transporte asociadas a una instancia de Itinerario
-     *
-     * @param itinerariosId Identificador de la instancia de Itinerario
-     * @param transportes Colección de instancias de TransporteDTO a asociar a instancia
-     * de Itinerario
-     * @return Nueva colección de TransporteDTO asociada a la instancia de Itinerario
-     * 
-     */
-    @PUT
-    public List<TransporteDetailDTO> replaceTransportes(@PathParam("itinerariosId") Long itinerariosId, List<TransporteDetailDTO> transportes) {
-        return transportesListEntity2DTO(itinerarioLogic.replaceTransportes(itinerariosId, transportesListDTO2Entity(transportes)));
-    }
-    
+        
     /**
      * Desasocia un Transporte existente de un Itinerario existente
      *

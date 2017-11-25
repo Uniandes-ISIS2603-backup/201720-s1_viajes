@@ -21,6 +21,9 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class HospedajeEntity extends ServicioEntity{
 
+    /**
+     * Tipos de hospedaje ofrecidos
+     */
     public enum TipoHospedaje {
     
     HOTEL,
