@@ -110,24 +110,43 @@ public class ItinerarioLogic {
      * @param itinerarioId : id del itinerario
      */
      public GuiaEntity addGuia(Long itinerarioId, Long guiaId) {
-        GuiaEntity guiaEntity = guiaLogic.getGuia(guiaId);
-        return guiaEntity;
+        return guiaLogic.getGuia(guiaId);
+        
     }
      
+     /**
+     * adiere un guia a un itinerario
+     *
+     * @param entretenimientoId : id del entretenimiento 
+     * @param itinerarioId : id del itinerario
+     */
      public EntretenimientoEntity addEntretenimiento(Long itinerarioId, Long entretenimientoId){
-         EntretenimientoEntity entretenimientoEntity = entretenimientoLogic.getEntretenimiento(entretenimientoId);
-         return entretenimientoEntity;
+         return entretenimientoLogic.getEntretenimiento(entretenimientoId);
+         
     }
      
+     
+     /**
+     * adiere un guia a un itinerario
+     *
+     * @param hospedajeId  : id del hospedaje 
+     * @param itinerarioId : id del itinerario
+     */
      public HospedajeEntity addHospedaje(Long itinerarioId, Long hospedajeId){
-         HospedajeEntity hospedajeEntity = hospedajeLogic.getHospedaje(hospedajeId);
-         return hospedajeEntity;
+         return hospedajeLogic.getHospedaje(hospedajeId);
+         
     }
      
-   
+     
+     /**
+     * adiere un guia a un itinerario
+     *
+     * @param transporteId  : id del transporte 
+     * @param itinerarioId : id del itinerario
+     */
     public TransporteEntity addTransporte(Long itinerarioId, Long transporteId){
-         TransporteEntity transporteEntity = transporteLogic.getTransporte(transporteId);
-         return transporteEntity;
+         return transporteLogic.getTransporte(transporteId);
+         
      }
      
      /**
@@ -142,81 +161,46 @@ public class ItinerarioLogic {
         itinerarioEntity.getGias().remove(guia);
     }
     
+     
+     /**
+     * remueve un entretentretenimiento a un itinerario
+     *
+     * @param entretenimientoId  : id del entretenimiento 
+     * @param itinerarioId : id del itinerario
+     */
      public void removeEntretenimiento(Long itinerarioId, Long entretenimientoId){
          ItinerarioEntity itinerarioEntity = getItinerario(itinerarioId);
          EntretenimientoEntity entretenimiento = entretenimientoLogic.getEntretenimiento(entretenimientoId);
          itinerarioEntity.getEntretenimientos().remove(entretenimiento);
      }
      
+     
+     /**
+     * remueve un hospedaje a un itinerario
+     *
+     * @param hospedajeId  : id del hospedaje 
+     * @param itinerarioId : id del itinerario
+     */
      public void removeHospedaje(Long itinerarioId, Long hospedajeId){
          ItinerarioEntity itinerarioEntity = getItinerario(itinerarioId);
          HospedajeEntity hospedaje = hospedajeLogic.getHospedaje(hospedajeId);
          itinerarioEntity.getHospedajes().remove(hospedaje);
      }
      
+     
+     /**
+     * remueve un transporte a un itinerario
+     *
+     * @param transporteId  : id del transporte 
+     * @param itinerarioId : id del itinerario
+     */
       public void removeTransporte(Long itinerarioId, Long transporteId){
          ItinerarioEntity itinerarioEntity = getItinerario(itinerarioId);
          TransporteEntity transporte = transporteLogic.getTransporte(transporteId);
          itinerarioEntity.getTransportes().remove(transporte);
      }
      
-     /**
-     * adiere un guia a un itinerario
-     *
-     * @param itinerarioId : id del guia 
-     * @param guias : id del itinerario
-     */
-    public List<GuiaEntity> replaceGuias(Long itinerarioId, List<GuiaEntity> guias) {
-        ItinerarioEntity itinerario = getItinerario(itinerarioId);
-        List<GuiaEntity> guiaList = guiaLogic.getGuias();
-        //for (GuiaEntity guia : guiaList) {
-          //  if (guias.contains(guia)) {
-            //} else if (guia.getItinerario() != null && guia.getItinerario().equals(itinerario)) {
-              //  guia.setItinerario(null);
-            //}
-        //}
-        return guias;
-    } 
-    
-    public List<EntretenimientoEntity> replaceEntretenimientos(Long itinerarioId, List<EntretenimientoEntity> entretenimientos){
-        ItinerarioEntity itinerario = getItinerario(itinerarioId);
-        List<EntretenimientoEntity> entretenimientoList = entretenimientoLogic.getEntretenimientos();
-        /*for(EntretenimientoEntity entreteniiento : entretenimientoList){
-            if(entretenimientos.contains(entreteniiento)){
-                
-            } else if(entreteniiento.ge){
-                
-            }
-        }*/
-        return entretenimientos;
-    }
-    
-    public List<HospedajeEntity> replaceHospedaje(Long itinerarioId, List<HospedajeEntity> hospedajes){
-        ItinerarioEntity itinerario = getItinerario(itinerarioId);
-        List<HospedajeEntity> hospedajeList = hospedajeLogic.getHospedajes();
-        /*for(EntretenimientoEntity entreteniiento : entretenimientoList){
-            if(entretenimientos.contains(entreteniiento)){
-                
-            } else if(entreteniiento.ge){
-                
-            }
-        }*/
-        return hospedajes;
-    }
-    
-    public List<TransporteEntity> replaceTransportes(Long itinerarioId, List<TransporteEntity> transportes){
-        ItinerarioEntity itinerario = getItinerario(itinerarioId);
-        List<TransporteEntity> transporteList = transporteLogic.getTransportes();
-        /*for(EntretenimientoEntity entreteniiento : entretenimientoList){
-            if(entretenimientos.contains(entreteniiento)){
-                
-            } else if(entreteniiento.ge){
-                
-            }
-        }*/
-        return transporteList;
-    }
-    
+     
     
     /**
      * @return  los guia a un itinerario
@@ -227,14 +211,32 @@ public class ItinerarioLogic {
         return getItinerario(itinerarioId).getGias();
     }
     
+    
+    /**
+     * @return  los entretenimientos a un itinerario
+     *
+     * @param itinerarioId : id del itinerario
+     */
     public List<EntretenimientoEntity> getEntretenimientos(Long itinerarioId){
         return getItinerario(itinerarioId).getEntretenimientos();
     }
     
+    
+    /**
+     * @return  los hospedajes a un itinerario
+     *
+     * @param itinerarioId : id del itinerario
+     */
     public List<HospedajeEntity> getHospedajes(Long itinerarioId){
         return getItinerario(itinerarioId).getHospedajes();
     }
     
+    
+    /**
+     * @return  los transportes a un itinerario
+     *
+     * @param itinerarioId : id del itinerario
+     */
     public List<TransporteEntity> getTransportes(Long itinerarioId){
         return getItinerario(itinerarioId).getTransportes();
     }
@@ -256,9 +258,15 @@ public class ItinerarioLogic {
 
     }
     
-    public EntretenimientoEntity getEntretenimiento(Long itinerarioId, Long guiaId) throws WebApplicationException{
+    /**
+     * @return  un entretenimiento a un itinerario
+     *
+     * @param entretenimientoId  : id del entretenimiento 
+     * @param itinerarioId : id del itinerario
+     */
+    public EntretenimientoEntity getEntretenimiento(Long itinerarioId, Long entretenimientoId) throws WebApplicationException{
         List<EntretenimientoEntity> entretenimientos = getItinerario(itinerarioId).getEntretenimientos();
-        EntretenimientoEntity entreteniiento = entretenimientoLogic.getEntretenimiento(guiaId);
+        EntretenimientoEntity entreteniiento = entretenimientoLogic.getEntretenimiento(entretenimientoId);
         int index = entretenimientos.indexOf(entreteniiento);
         if(index>=0){
             return entretenimientos.get(index);
@@ -267,6 +275,13 @@ public class ItinerarioLogic {
 
     }
     
+    
+    /**
+     * @return  un hospedaje a un itinerario
+     *
+     * @param hospedajeId   : id del hospedaje 
+     * @param itinerarioId : id del itinerario
+     */
     public HospedajeEntity getHospedaje(Long itinerarioId, Long hospedajeId) throws WebApplicationException{
         List<HospedajeEntity> hospedajes = getItinerario(itinerarioId).getHospedajes();
         HospedajeEntity hospedaje = hospedajeLogic.getHospedaje(hospedajeId);
@@ -278,6 +293,13 @@ public class ItinerarioLogic {
 
     }
     
+    
+    /**
+     * @return  un transporte a un itinerario
+     *
+     * @param transporteId   : id del transporte 
+     * @param itinerarioId : id del itinerario
+     */
     public TransporteEntity getTransporte(Long itinerarioId, Long transporteId) throws WebApplicationException{
         List<TransporteEntity> transportes = getItinerario(itinerarioId).getTransportes();
         TransporteEntity transporte = transporteLogic.getTransporte(transporteId);
@@ -298,14 +320,32 @@ public class ItinerarioLogic {
         return getItinerario(itinerarioId).getGias();
     }
     
+    
+    /**
+     * @return lista con entretenimientos
+     *
+     * @param itinerarioId : id del itinerario
+     */
     public List<EntretenimientoEntity> listEntretenimientos(Long itinerarioId){
         return getItinerario(itinerarioId).getEntretenimientos();
     }
     
+    
+    /**
+     * @return lista con hospedajes
+     *
+     * @param itinerarioId : id del itinerario
+     */
     public List<HospedajeEntity> listHospedajes(Long itinerarioId){
         return getItinerario(itinerarioId).getHospedajes();
     }
     
+    
+    /**
+     * @return lista con transportes
+     *
+     * @param itinerarioId : id del itinerario
+     */
     public List<TransporteEntity> listTransportes(Long itinerarioId){
         return getItinerario(itinerarioId).getTransportes();
     }

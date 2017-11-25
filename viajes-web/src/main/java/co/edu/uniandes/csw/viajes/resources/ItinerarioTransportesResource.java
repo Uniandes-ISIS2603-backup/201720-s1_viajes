@@ -49,28 +49,56 @@ public class ItinerarioTransportesResource {
         return list;
     }
     
+    /**
+     * Obtiene una colección de instancias de DetailDTO asociadas a una
+     * instancia de Itinerario
+     *
+     * @param itinerariosId  Identificador de la instancia de Itinerario
+     * @return Colección de instancias de DetailDTO asociadas a la
+     * instancia de Itinerario
+     * 
+     */
     @GET
     public List<TransporteDetailDTO> listTransportes(@PathParam("itinerariosId") Long itinerariosId) {
         return transportesListEntity2DTO(itinerarioLogic.listTransportes(itinerariosId));
     }
     
+    /**
+     * Obtiene una instancia de transporte asociada a una instancia de itinerario
+     *
+     * @param itinerarioId  Identificador de la instancia de itinerario
+     * @param transportesId  Identificador de la instancia de transporte
+     * @return 
+     * 
+     */
     @GET
     @Path("{transportesId: \\d+}")
     public TransporteDetailDTO getTransportes(@PathParam("itinerarioId") Long itinerarioId, @PathParam("transportesId") Long transportesId) throws WebApplicationException {
         return new TransporteDetailDTO(itinerarioLogic.getTransporte(itinerarioId, transportesId));
     }
     
+     /**
+     * Asocia un transporte existente a un itinerario
+     *
+     * @param transportesId   Identificador de la instancia de transporte
+     * @param itinerarioId  Identificador de la instancia de itinerario
+     * @return Instancia de DetailDTO que fue asociada a itinerario
+     * 
+     */
     @POST
     @Path("{transportesId: \\d+}")
     public TransporteDetailDTO addTransportes(@PathParam("itinerarioId") Long itinerarioId, @PathParam("transportesId") Long transportesId) {
         return new TransporteDetailDTO(itinerarioLogic.addTransporte(itinerarioId, transportesId));
     }
     
-    @PUT
-    public List<TransporteDetailDTO> replaceTransportes(@PathParam("itinerarioId") Long itinerarioId, List<TransporteDetailDTO> transportes) {
-        return transportesListEntity2DTO(itinerarioLogic.replaceTransportes(itinerarioId, transportesListDTO2Entity(transportes)));
-    }
     
+    /**
+     * Desasocia un transporte existente de un Itinerario existente
+     *
+     * @param itinerarioId  Identificador de la instancia de itinerario
+     * @param transportesId   Identificador de la instancia de transporte
+     * 
+     */
     @DELETE
     @Path("{transportesId: \\d+}")
     public void removeTransportes(@PathParam("itinerarioId") Long itinerarioId, @PathParam("transportesId") Long transportesId) {
