@@ -6,7 +6,6 @@
 package co.edu.uniandes.csw.viajes.resources;
 
 import co.edu.uniandes.csw.viajes.dtos.BlogDetailDTO;
-import co.edu.uniandes.csw.viajes.dtos.ImagenDTO;
 import co.edu.uniandes.csw.viajes.ejb.BlogLogic;
 import co.edu.uniandes.csw.viajes.entities.BlogEntity;
 import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
@@ -67,7 +66,6 @@ public class BlogResource {
      * http://localhost:8080/viajes-web/api/blogs
      *
      * @return la lista de todas las bloges en objetos json DTO.
-     * @throws BusinessLogicException
      */
     @GET
     public List<BlogDetailDTO> getBlogs(){
@@ -89,7 +87,7 @@ public class BlogResource {
     public BlogDetailDTO getBlog(@PathParam("id") Long id){
         BlogEntity entity = blogLogic.getBlog(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /blogs/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         List<ImagenEntity> a = blogLogic.listImagenes(id);
         entity.setImagenes(a);
@@ -113,9 +111,9 @@ public class BlogResource {
         blog.setId(id);
         BlogEntity entity = blogLogic.getBlog(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /blogs/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
-        return new BlogDetailDTO(blogLogic.updateBlog(id, blog.toEntity()));
+        return new BlogDetailDTO(blogLogic.updateBlog(blog.toEntity()));
     }
 
     /**
@@ -132,7 +130,7 @@ public class BlogResource {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar una blog con id {0}", id);
         BlogEntity entity = blogLogic.getBlog(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /blogs/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         blogLogic.deleteBlog(id);
     }
@@ -163,6 +161,17 @@ public class BlogResource {
             list.add(new BlogDetailDTO(entity));
         }
         return list;
+    }
+    
+    /**
+     * Retorna un mensaje de error
+     *
+     * @param blogId el id del blog que no se encontro
+     * @return lmensaje de error
+     */
+    private String mensajeError(Long blogId)
+    {
+        return "El recurso /blogs/"+blogId+" no existe.";
     }
     
 }

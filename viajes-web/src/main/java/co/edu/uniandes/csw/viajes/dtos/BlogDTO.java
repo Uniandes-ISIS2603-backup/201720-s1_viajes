@@ -20,7 +20,9 @@ public class BlogDTO {
     /**
      * Constructor por defecto
      */
-    public BlogDTO() {
+    public BlogDTO() 
+    {
+        //Crea un DTO vacio
     }
 
     /**

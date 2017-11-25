@@ -26,7 +26,7 @@ public class HospedajeDTO {
      * Constructor por defecto
      */
     public HospedajeDTO (){
-        
+         //Constructor por defecto
     }
     
     public HospedajeDTO (HospedajeEntity entity){

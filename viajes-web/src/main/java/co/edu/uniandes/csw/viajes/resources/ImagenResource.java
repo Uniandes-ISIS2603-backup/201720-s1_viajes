@@ -20,6 +20,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.WebApplicationException;
 import javax.xml.ws.http.HTTPException;
 
 /**
@@ -59,9 +60,11 @@ public class ImagenResource {
      */
     @GET
     @Path("{id: \\d+}")
-    public ImagenDTO getImagen(@PathParam("id") Long id) throws HTTPException {
+    public ImagenDTO getImagen(@PathParam("id") Long id) {
         ImagenEntity toGet = imagenLogic.getImagen(id);
-        if(toGet==null) throw new HTTPException(404);
+        if (toGet == null) {
+            throw new WebApplicationException("El recurso imagenes/"+id+"no existe", 404);
+        }
         return new ImagenDTO(toGet);
     }
     

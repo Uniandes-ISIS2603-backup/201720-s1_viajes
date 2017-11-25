@@ -190,9 +190,12 @@ public class TransporteDTO {
     }
 
     /**
-     * Constructor por defecto
+     * Constructor por defecto.
+     * Esta vacío ya que el constructor que necesitamos necesita un parámetro 
+     * de TransporteEntity.
      */
     public TransporteDTO() {
+        //No es utilizado
     }
     
     /**

@@ -26,6 +26,7 @@ public class EntretenimientoDTO {
      * Constructor por defecto
      */
     public EntretenimientoDTO() {
+         //Constructor por defecto
     }
     
     /**

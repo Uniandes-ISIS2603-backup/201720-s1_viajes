@@ -37,7 +37,7 @@ public class CompaniaDTO {
    */
    public CompaniaDTO()
    {
-       
+        //Constructor por defecto
    }
     
     /**

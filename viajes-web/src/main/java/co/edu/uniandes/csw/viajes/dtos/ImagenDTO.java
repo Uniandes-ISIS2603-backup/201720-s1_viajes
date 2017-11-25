@@ -20,7 +20,7 @@ public class ImagenDTO {
     private String comentario;
 
     public ImagenDTO(){
-        
+         //Constructor por defecto
     }
     
     /**

@@ -24,7 +24,7 @@ public class ItinerarioDTO {
     private int numeroVisitantes;
     
     public ItinerarioDTO(){
-        
+         //Constructor por defecto
     }
     
      /**

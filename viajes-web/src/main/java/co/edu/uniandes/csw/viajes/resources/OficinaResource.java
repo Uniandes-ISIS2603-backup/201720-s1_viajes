@@ -86,7 +86,7 @@ public class OficinaResource {
     public OficinaDetailDTO getOficina(@PathParam("id") Long id){
         OficinaEntity entity = oficinaLogic.getOficina(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /oficinas/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         return new OficinaDetailDTO(oficinaLogic.getOficina(id));
     }
@@ -108,7 +108,7 @@ public class OficinaResource {
         oficina.setId(id);
         OficinaEntity entity = oficinaLogic.getOficina(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /oficinas/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         return new OficinaDetailDTO(oficinaLogic.updateOficina(id, oficina.toEntity()));
     }
@@ -127,7 +127,7 @@ public class OficinaResource {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar una oficina con id {0}", id);
         OficinaEntity entity = oficinaLogic.getOficina(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /oficinas/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         oficinaLogic.deleteOficina(id);
     }
@@ -149,5 +149,16 @@ public class OficinaResource {
             list.add(new OficinaDetailDTO(entity));
         }
         return list;
+    }
+    
+    /**
+     * Retorna un mensaje de error
+     *
+     * @param oficinaId el id del blog que no se encontro
+     * @return lmensaje de error
+     */
+    private String mensajeError(Long oficinaId)
+    {
+        return "El recurso /oficinas/"+oficinaId+" no existe.";
     }
 }
