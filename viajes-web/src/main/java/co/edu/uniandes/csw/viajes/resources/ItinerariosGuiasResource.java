@@ -33,6 +33,13 @@ public class ItinerariosGuiasResource {
     @Inject
     ItinerarioLogic itinerarioLogic;
     
+    /**
+     * Convierte una lista de GuiaEntity a una lista de GuiaDetailDTO.
+     *
+     * @param entityList Lista de GuiaEntity a convertir.
+     * @return Lista de GuiaDetailDTO convertida.
+     * 
+     */
     private List<GuiaDetailDTO> guiasListEntity2DTO(List<GuiaEntity> entityList){
         List<GuiaDetailDTO> list = new ArrayList<>();
         for (GuiaEntity entity : entityList) {
@@ -41,6 +48,13 @@ public class ItinerariosGuiasResource {
         return list;
     }
     
+    /**
+     * Convierte una lista de GuiaDetailDTO a una lista de GuiaEntity.
+     *
+     * @param dtos Lista de GuiaDetailDTO a convertir.
+     * @return Lista de GuiaEntity convertida.
+     * 
+     */
     private List<GuiaEntity> guiasListDTO2Entity(List<GuiaDetailDTO> dtos){
         List<GuiaEntity> list = new ArrayList<>();
         for (GuiaDetailDTO dto : dtos) {
@@ -50,11 +64,11 @@ public class ItinerariosGuiasResource {
     }
     
     /**
-     * Obtiene una colección de instancias de DetailDTO asociadas a una
+     * Obtiene una colección de instancias de GuiaDetailDTO asociadas a una
      * instancia de Itinerario
      *
-     * @param itinerariosId  Identificador de la instancia de Itinerario
-     * @return Colección de instancias de DetailDTO asociadas a la
+     * @param itinerariosId Identificador de la instancia de Itinerario
+     * @return Colección de instancias de GuiaDetailDTO asociadas a la
      * instancia de Itinerario
      * 
      */
@@ -64,44 +78,43 @@ public class ItinerariosGuiasResource {
     }
     
     /**
-     * Obtiene una instancia de guia asociada a una instancia de itinerario
+     * Obtiene una instancia de Guia asociada a una instancia de Itinerario
      *
-     * @param itinerarioId  Identificador de la instancia de itinerario
-     * @param guiasId   Identificador de la instancia de guia
+     * @param itinerariosId Identificador de la instancia de Itinerario
+     * @param guiasId Identificador de la instancia de Guia
      * @return 
      * 
      */
     @GET
     @Path("{guiasId: \\d+}")
-    public GuiaDetailDTO getGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("guiasId") Long guiasId) throws WebApplicationException {
-        return new GuiaDetailDTO(itinerarioLogic.getGuia(itinerarioId, guiasId));
+    public GuiaDetailDTO getGuias(@PathParam("itinerariosId") Long itinerariosId, @PathParam("guiasId") Long guiasId) throws WebApplicationException {
+        return new GuiaDetailDTO(itinerarioLogic.getGuia(itinerariosId, guiasId));
     }
     
     /**
-     * Asocia un guia existente a un itinerario
+     * Asocia un Guia existente a un Itinerario
      *
-     * @param guiaId   Identificador de la instancia de guia
-     * @param itinerarioId  Identificador de la instancia de itinerario
-     * @return Instancia de DetailDTO que fue asociada a itinerario
+     * @param itinerariosId Identificador de la instancia de Itinerario
+     * @param guiaId Identificador de la instancia de Guia
+     * @return Instancia de GuiaDetailDTO que fue asociada a Itinerario
      * 
      */
     @POST
     @Path("{guiaId: \\d+}")
-    public GuiaDetailDTO addGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("guiaId") Long guiaId) {
-        return new GuiaDetailDTO(itinerarioLogic.addGuia(itinerarioId, guiaId));
+    public GuiaDetailDTO addGuias(@PathParam("itinerariosId") Long itinerariosId, @PathParam("guiaId") Long guiaId) {
+        return new GuiaDetailDTO(itinerarioLogic.addGuia(itinerariosId, guiaId));
     }
 
-    
-     /**
-     * Desasocia un guia existente de un Itinerario existente
+    /**
+     * Desasocia un Guia existente de un Itinerario existente
      *
-     * @param itinerarioId  Identificador de la instancia de itinerario
-     * @param guiaId   Identificador de la instancia de guia
+     * @param itinerariosId Identificador de la instancia de Itinerario
+     * @param guiaId Identificador de la instancia de Guia
      * 
      */
     @DELETE
     @Path("{guiaId: \\d+}")
-    public void removeGuias(@PathParam("itinerarioId") Long itinerarioId, @PathParam("guiaId") Long guiaId) {
-        itinerarioLogic.removeGuia(itinerarioId, guiaId);
+    public void removeGuias(@PathParam("itinerariosId") Long itinerariosId, @PathParam("guiaId") Long guiaId) {
+        itinerarioLogic.removeGuia(itinerariosId, guiaId);
     }
 }

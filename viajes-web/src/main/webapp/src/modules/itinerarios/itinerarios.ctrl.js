@@ -13,7 +13,7 @@
              if ($stateParams.itinerarioId !== null && $stateParams.itinerarioId !== undefined) {
 
                 // toma el id del parámetro
-                 id = $stateParams.itinerarioId;
+                var id = $stateParams.itinerarioId;
                 // obtiene el dato del recurso REST
                 $http.get(itinerariosContext + "/" + id)
                         .then(function (response) {
@@ -37,7 +37,7 @@
             }
             
             this.saveRecord = function (id) {
-                 currentRecord = $scope.currentRecord;
+                var currentRecord = $scope.currentRecord;
 
                 // si el id es null, es un registro nuevo, entonces lo crea
                 if (id == null) {

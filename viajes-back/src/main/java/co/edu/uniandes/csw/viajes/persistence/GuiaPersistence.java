@@ -5,12 +5,8 @@
  */
 package co.edu.uniandes.csw.viajes.persistence;
 
-
-
 import co.edu.uniandes.csw.viajes.entities.GuiaEntity;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

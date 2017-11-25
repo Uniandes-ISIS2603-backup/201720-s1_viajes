@@ -34,6 +34,8 @@ import javax.ws.rs.core.MediaType;
 @RequestScoped
 public class CompaniaResource {
     
+    public static final String ERROR = "La compania no existe.";
+    
     @Inject
     private CompaniaLogic companialogic;
   
@@ -63,7 +65,7 @@ public class CompaniaResource {
     {
         CompaniaEntity entity= companialogic.getCompania(id);
         if (entity==null) {
-            throw new  WebApplicationException("La compania no existe", 404);    
+            throw new  WebApplicationException(ERROR, 404);    
         }
         return new CompaniaDetailDTO(entity);
     }
@@ -74,14 +76,14 @@ public class CompaniaResource {
      */
     @GET
     public List<CompaniaDTO> getGuia(){
-        List<CompaniaDTO> CompaniasDTOS = new ArrayList<>();
+        List<CompaniaDTO> companiasDTOS = new ArrayList<>();
 
         List<CompaniaEntity> guias = companialogic.getCompanias();
         for(CompaniaEntity guia : guias){
             CompaniaDTO dto = new CompaniaDTO(guia);
-            CompaniasDTOS.add(dto);
+            companiasDTOS.add(dto);
         }
-        return CompaniasDTOS;
+        return companiasDTOS;
     }
     
     
@@ -99,6 +101,7 @@ public class CompaniaResource {
     /**
      *
      * @param id
+     * @param dto
      * @return
      */
     @PUT
@@ -109,7 +112,7 @@ public class CompaniaResource {
         entity.setId(id);
         CompaniaEntity oldEntity = companialogic.getCompania(id);
         if (oldEntity==null) {
-            throw new  WebApplicationException("La compania no existe", 404); 
+            throw new  WebApplicationException(ERROR, 404); 
         }
         entity.setOficinas(oldEntity.getOficinas());
         return new CompaniaDetailDTO(companialogic.updateCompania(entity));
@@ -121,7 +124,7 @@ public class CompaniaResource {
     {
      CompaniaEntity entity= companialogic.getCompania(id);
          if (entity==null) {
-            throw new  WebApplicationException("La compania no existe", 404); 
+            throw new  WebApplicationException(ERROR, 404); 
         }
        companialogic.deleteCompania(id);
     }

@@ -58,13 +58,11 @@ public class TransporteResource {
      */
     @POST
     public TransporteDetailDTO createTransporte(TransporteDetailDTO transporte) {
-        System.out.println("aja");
         // Convierte el DTO (json) en un objeto Entity para ser manejado por la lógica.
         TransporteEntity transporteEntity = transporte.toEntity();
         // Invoca la lógica para crear lel transporte nuevo
         TransporteEntity nuevoTransporte = transporteLogic.createTransporte(transporteEntity);
         // Como debe retornar un DTO (json) se invoca el constructor del DTO con argumento el entity nuevo
-        System.out.println("espero que si");
         return new TransporteDetailDTO(nuevoTransporte);
     }
 

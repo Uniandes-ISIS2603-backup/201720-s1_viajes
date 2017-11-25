@@ -4,7 +4,7 @@ var mod = ng.module("transportesModule", []);
     mod.config(['$stateProvider', '$urlRouterProvider', 
         function ($stateProvider, $urlRouterProvider) {
             var basePath = 'src/modules/transportes/';
-//            $urlRouterProvider.otherwise("/transportesList");
+            $urlRouterProvider.otherwise("/transportesList");
 
             $stateProvider.state('transportesList', {
                 url: '/transportes',

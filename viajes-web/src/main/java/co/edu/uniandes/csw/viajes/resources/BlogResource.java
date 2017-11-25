@@ -54,9 +54,9 @@ public class BlogResource {
     @POST
     public BlogDetailDTO createBlog(BlogDetailDTO blog)  {
         // Convierte el DTO (json) en un objeto Entity para ser manejado por la lógica.
-        BlogEntity blogEntity = blog.toEntity();
+        BlogEntity blogEntityy = blog.toEntity();
         // Invoca la lógica para crear la blog nueva
-        BlogEntity nuevoBlog = blogLogic.createBlog(blogEntity);
+        BlogEntity nuevoBlog = blogLogic.createBlog(blogEntityy);
         // Como debe retornar un DTO (json) se invoca el constructor del DTO con argumento el entity nuevo
         return new BlogDetailDTO(nuevoBlog);
     }
@@ -135,6 +135,12 @@ public class BlogResource {
         blogLogic.deleteBlog(id);
     }
     
+    /**
+     * Retorna el subrecurso Imagenes
+     * 
+     * @param blogsId el usuario del que se quieren obtener los itinerarios
+     * @return BlogImagenesResource
+     */
     @Path("{blogsId: \\d+}/imagenes")
     public Class<BlogImagenesResource> getBlogImagenesResource(@PathParam("blogsId") Long blogsId) {
         BlogEntity entity = blogLogic.getBlog(blogsId);

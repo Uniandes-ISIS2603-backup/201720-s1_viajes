@@ -40,7 +40,19 @@ public class PagoDTO {
     {
          //Constructor por defecto
     }
-    
+        
+    /**
+     * Conviertir Entity a DTO
+     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
+     * @param pago:Es la entidad que se va a convertir a DTO 
+     */
+     public PagoDTO(PagoEntity pago) {
+       
+        this.nombre = pago.getNombre();
+        this.fecha= pago.getFecha();
+        this.valor=pago.getValor();
+    }
+         
     /**
      * Valor del pago
      * @return valor
@@ -97,18 +109,6 @@ public class PagoDTO {
         this.nombre = nombre;
     }
     
-    /**
-     * Conviertir Entity a DTO
-     * (Crea un nuevo DTO con los valores que recibe en  la entidad que viene de argumento.
-     * @param pago:Es la entidad que se va a convertir a DTO 
-     */
-     public PagoDTO(PagoEntity pago) {
-       
-        this.nombre = pago.getNombre();
-        this.fecha= pago.getFecha();
-        this.valor=pago.getValor();
-    }
-     
       /**
      * Convertir DTO a Entity
      * @return Un Entity con los valores del DTO 

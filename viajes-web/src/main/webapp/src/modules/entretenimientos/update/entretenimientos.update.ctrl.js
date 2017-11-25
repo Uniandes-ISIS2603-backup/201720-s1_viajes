@@ -2,8 +2,8 @@
         function (ng) {
             var mod = ng.module("entretenimientosModule");
             mod.constant("entretenimientosContext", "api/entretenimientos");
-            mod.controller('entretenimientoUpdateCtrl', ['$scope', '$http', 'entretenimientosContext', '$state',  '$rootScope', '$filter',
-                function ($scope, $http, entretenimientosContext, $state, $rootScope, $filter) {
+            mod.controller('entretenimientoUpdateCtrl', ['$scope', '$http', 'entretenimientosContext', '$state',  '$rootScope',
+                function ($scope, $http, entretenimientosContext, $state, $rootScope) {
                     $rootScope.edit = true;
 
                     var idE = $state.params.entretenimientoId;

@@ -100,6 +100,12 @@ public class ItinerarioResource {
        itinerarioLogic.deleteItinerario(id);
     }
     
+    /**
+     * Retorna el subrecurso Guias
+     * 
+     * @param itinerariosId el itinerario del que se quieren obtener los guias
+     * @return ItinerariosGuiasResource
+     */
     @Path("{itinerariosId: \\d+}/guias")
     public Class<ItinerariosGuiasResource> getItinerariosGuiasResource(@PathParam("itinerariosId") Long itinerariosId){
         ItinerarioEntity entity = itinerarioLogic.getItinerario(itinerariosId);

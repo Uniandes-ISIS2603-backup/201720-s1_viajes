@@ -106,7 +106,7 @@ public class UsuarioResource {
         if (entity == null) {
             throw new WebApplicationException("El recurso /usuarios/" + id + " no existe.", 404);
         }
-        return new UsuarioDetailDTO(usuarioLogic.updateUsuario(id,usuario.toEntity()));
+        return new UsuarioDetailDTO(usuarioLogic.updateUsuario(usuario.toEntity()));
     }
 
     /**
@@ -127,6 +127,12 @@ public class UsuarioResource {
         usuarioLogic.deleteUsuario(id);
     }
     
+    /**
+     * Retorna el subrecurso Itinerarios
+     * 
+     * @param usuariosId el usuario del que se quieren obtener los itinerarios
+     * @return UsuarioItinerariosResource
+     */
     @Path("usuariosId: \\d+}/itinerarios")
     public Class<UsuarioItinerariosResource> getUsuarioItinerariosResource(@PathParam("usuariosId") Long usuariosId) {
         UsuarioEntity entity = usuarioLogic.getUsuario(usuariosId);

@@ -5,14 +5,11 @@
  */
 package co.edu.uniandes.csw.viajes.resources;
 
-import co.edu.uniandes.csw.viajes.dtos.EntretenimientoDetailDTO;
 import co.edu.uniandes.csw.viajes.dtos.TarjetaCreditoDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.TarjetaCreditoLogic;
-import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
 import co.edu.uniandes.csw.viajes.entities.TarjetaCreditoEntity;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -112,7 +109,7 @@ public class TarjetaCreditoResource {
         if (entity == null) {
             throw new WebApplicationException("El recurso /tarjetas/" + id + " no existe.", 404);
         }
-        return new TarjetaCreditoDetailDTO(tarjetaLogic.updateTarjetaCredito(id, tarjeta.toEntity()));
+        return new TarjetaCreditoDetailDTO(tarjetaLogic.updateTarjetaCredito(tarjeta.toEntity()));
     }
 
     /**
