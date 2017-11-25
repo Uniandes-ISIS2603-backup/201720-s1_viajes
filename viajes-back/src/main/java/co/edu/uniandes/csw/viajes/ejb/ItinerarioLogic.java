@@ -107,25 +107,24 @@ public class ItinerarioLogic {
      * adiere un guia a un itinerario
      *
      * @param guiaId : id del guia 
-     * @param itinerarioId : id del itinerario
      */
-     public GuiaEntity addGuia(Long itinerarioId, Long guiaId) {
+     public GuiaEntity addGuia(Long guiaId) {
         GuiaEntity guiaEntity = guiaLogic.getGuia(guiaId);
         return guiaEntity;
     }
      
-     public EntretenimientoEntity addEntretenimiento(Long itinerarioId, Long entretenimientoId){
+     public EntretenimientoEntity addEntretenimiento( Long entretenimientoId){
          EntretenimientoEntity entretenimientoEntity = entretenimientoLogic.getEntretenimiento(entretenimientoId);
          return entretenimientoEntity;
     }
      
-     public HospedajeEntity addHospedaje(Long itinerarioId, Long hospedajeId){
+     public HospedajeEntity addHospedaje( Long hospedajeId){
          HospedajeEntity hospedajeEntity = hospedajeLogic.getHospedaje(hospedajeId);
          return hospedajeEntity;
     }
      
    
-    public TransporteEntity addTransporte(Long itinerarioId, Long transporteId){
+    public TransporteEntity addTransporte( Long transporteId){
          TransporteEntity transporteEntity = transporteLogic.getTransporte(transporteId);
          return transporteEntity;
      }
@@ -205,7 +204,6 @@ public class ItinerarioLogic {
     }
     
     public List<TransporteEntity> replaceTransportes(Long itinerarioId, List<TransporteEntity> transportes){
-        ItinerarioEntity itinerario = getItinerario(itinerarioId);
         List<TransporteEntity> transporteList = transporteLogic.getTransportes();
         /*for(EntretenimientoEntity entreteniiento : entretenimientoList){
             if(entretenimientos.contains(entreteniiento)){
