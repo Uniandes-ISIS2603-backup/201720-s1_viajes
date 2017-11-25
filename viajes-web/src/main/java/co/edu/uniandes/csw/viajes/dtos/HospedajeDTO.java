@@ -11,9 +11,16 @@ import co.edu.uniandes.csw.viajes.entities.HospedajeEntity;
  *
  * @author ma.forero11
  */
-public class HospedajeDTO extends ServicesAbstract{
+public class HospedajeDTO{
    
     private Long id;
+    public String nombre;
+    public String fechaInicio;
+    public String fechaFinal;
+    public Double valor;
+    public Double calificacion;
+    public String comentarios;
+    public String descripcion;
     
     /**
      * Constructor por defecto
@@ -45,6 +52,62 @@ public class HospedajeDTO extends ServicesAbstract{
      */
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public String getFechaFinal() {
+        return fechaFinal;
+    }
+
+    public void setFechaFinal(String fechaFinal) {
+        this.fechaFinal = fechaFinal;
+    }
+
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public Double getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(Double calificacion) {
+        this.calificacion = calificacion;
+    }
+
+    public String getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
+    }
+    
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     /**
      * Transforma a entity
