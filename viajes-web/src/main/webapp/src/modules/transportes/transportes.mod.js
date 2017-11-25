@@ -2,7 +2,7 @@
 var mod = ng.module("transportesModule", []);
     mod.constant("transportesContext", "api/transportes");
     mod.config(['$stateProvider', '$urlRouterProvider', 
-        function ($stateProvider) {
+        function ($stateProvider, $urlRouterProvider) {
             var basePath = 'src/modules/transportes/';
             $urlRouterProvider.otherwise("/transportesList");
 
