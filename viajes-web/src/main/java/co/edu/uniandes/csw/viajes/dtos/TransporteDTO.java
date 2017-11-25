@@ -12,47 +12,12 @@ import co.edu.uniandes.csw.viajes.entities.TransporteEntity.TipoTransporte;
  * Clase que representa el DTO de un transporte
  * @author sa.silva1
  */
-public class TransporteDTO {
+public class TransporteDTO extends ServicesAbstract{
     
     /**
      * Id del transporte
      */
     private Long id;
-    
-    /**
-     * Nombre del transporte
-     */
-    private String nombre;
-    
-    /**
-     * Fecha de inicio del transporte
-     */
-    private String fechaInicio;
-    
-    /**
-     * Fecha de finalizacion del transporte 
-     */
-    private String fechaFinal;
-    
-    /**
-     * Valor del transporte
-     */
-    private Double valor;
-    
-    /**
-     * Calificacion del transporte
-     */
-    private Double calificacion;
-    
-    /**
-     * Comentarios del transporte
-     */
-    private String comentarios;
-    
-    /**
-     * Descripcion del transporte
-     */
-    private String descripcion;
     
     /**
      * Tipo de transporte
@@ -74,119 +39,6 @@ public class TransporteDTO {
      */
     public void setId(Long id) {
         this.id = id;
-    }
-
-    
-    /**
-     *Retorna el nombre del transporte
-     * @return nombre del transporte
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Asigna un nombre al transporte
-     * @param nombre a asigna
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Retorna la fecha de inicio del transporte
-     * @return la fecha de inicio del transporte
-     */
-    public String getFechaInicio() {
-        return fechaInicio;
-    }
-
-    /**
-     * Asigna una fecha de inicio al transporte
-     * @param fechaInicio a asignar
-     */
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    /**
-     * Retorna la fecha de finalizacion del transporte
-     * @return fecha de finalizacion del transporte
-     */
-    public String getFechaFinal() {
-        return fechaFinal;
-    }
-
-    /**
-     * Asigna la fecha de finalizacion del transporte
-     * @param fechaFinal a asignar
-     */
-    public void setFechaFinal(String fechaFinal) {
-        this.fechaFinal = fechaFinal;
-    }
-
-    /**
-     * Retorna el valor del transporte
-     * @return el valor del transporte
-     */
-    public Double getValor() {
-        return valor;
-    }
-
-    /**
-     * Asigna un valor al transporte
-     * @param valor a asignar
-     */
-    public void setValor(Double valor) {
-        this.valor = valor;
-    }
-
-    /**
-     * Retorna la calificacion de un transporte
-     * @return la calificacion de un transporte
-     */
-    public Double getCalificacion() {
-        return calificacion;
-    }
-
-    /**
-     * Asigna una calificacion a un transporte
-     * @param calificacion a asignar
-     */
-    public void setCalificacion(Double calificacion) {
-        this.calificacion = calificacion;
-    }
-
-    /**
-     * Retorna los comentarios asociados a un transporte
-     * @return los comentarios asociados al transporte
-     */
-    public String getComentarios() {
-        return comentarios;
-    }
-
-    /**
-     * Asigna comentarios a un transporte
-     * @param comentarios a asignar
-     */
-    public void setComentarios(String comentarios) {
-        this.comentarios = comentarios;
-    }
-
-    /**
-     * Retorna la descripcion de unn transporte
-     * @return la descripcion del transporte
-     */
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    /**
-     * Asigna una descripcion a un transporte
-     * @param descripcion a asignar
-     */
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
 
     /**
