@@ -11,16 +11,16 @@ import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
  *
  * @author m.rodriguez21
  */
-public class EntretenimientoDTO {
+public class EntretenimientoDTO{
     
     private Long id;
-    private String nombre;
-    private String fechaInicio;
-    private String fechaFinal;
-    private Double valor;
-    private Double calificacion;
-    private String comentarios;
-    private String descripcion;
+    public String nombre;
+    public String fechaInicio;
+    public String fechaFinal;
+    public Double valor;
+    public Double calificacion;
+    public String comentarios;
+    public String descripcion;
     
     /**
      * Constructor por defecto
@@ -58,7 +58,7 @@ public class EntretenimientoDTO {
     public void setId(Long id) {
         this.id = id;
     }
-
+    
     public String getNombre() {
         return nombre;
     }

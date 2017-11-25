@@ -17,7 +17,6 @@
                 // toma el id del parámetro
                 id = $stateParams.companiaId;
                 // obtiene el dato del recurso REST
-                console.log(companiasContext+"Contexto companias");
                 $http.get(companiasContext + "/" + id)
                         .then(function (response) {
                             // $http.get es una promesa
@@ -37,9 +36,7 @@
 
 
             this.saveRecord = function (id) {
-                console.log(id);
                 currentRecord = $scope.currentRecord;
-                console.log(currentRecord.id);
                 // si el id es null, es un registro nuevo, entonces lo crea
                 if (id !== null && id !== undefined) {
 

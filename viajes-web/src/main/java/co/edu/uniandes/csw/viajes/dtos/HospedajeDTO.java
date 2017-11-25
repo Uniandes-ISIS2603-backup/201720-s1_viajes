@@ -11,16 +11,16 @@ import co.edu.uniandes.csw.viajes.entities.HospedajeEntity;
  *
  * @author ma.forero11
  */
-public class HospedajeDTO {
-    
-    private String fechaInicio;
-    private String fechaFinal;
-    private String nombre;
-    private Double valor;
-    private Double calificacion;
-    private String comentarios;
+public class HospedajeDTO{
+   
     private Long id;
-    private String descripcion;
+    public String nombre;
+    public String fechaInicio;
+    public String fechaFinal;
+    public Double valor;
+    public Double calificacion;
+    public String comentarios;
+    public String descripcion;
     
     /**
      * Constructor por defecto
@@ -39,6 +39,28 @@ public class HospedajeDTO {
         this.id = entity.getId();
         this.descripcion = entity.getDescripcion();
     }
+    
+    /**
+     * Devuelve el id
+     * @return id
+     */
+    public Long getId() {
+        return id;
+    }
+    /**
+     * Setea el id
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public String getFechaInicio() {
         return fechaInicio;
@@ -54,14 +76,6 @@ public class HospedajeDTO {
 
     public void setFechaFinal(String fechaFinal) {
         this.fechaFinal = fechaFinal;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public Double getValor() {
@@ -87,15 +101,7 @@ public class HospedajeDTO {
     public void setComentarios(String comentarios) {
         this.comentarios = comentarios;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    
     public String getDescripcion() {
         return descripcion;
     }
@@ -103,7 +109,10 @@ public class HospedajeDTO {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+    /**
+     * Transforma a entity
+     * @return entidad de hospedaje
+     */
     public HospedajeEntity toEntity(){
         HospedajeEntity entity = new HospedajeEntity();
         entity.setFechaInicio(this.fechaInicio);
