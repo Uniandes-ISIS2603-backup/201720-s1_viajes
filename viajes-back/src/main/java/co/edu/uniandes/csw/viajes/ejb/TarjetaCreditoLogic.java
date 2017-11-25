@@ -66,7 +66,7 @@ public class TarjetaCreditoLogic {
      * @return Instancia de TarjetaCreditoEntity con los datos actualizados.
      * @generated
      */
-    public TarjetaCreditoEntity updateTarjetaCredito(Long id,TarjetaCreditoEntity entity) {
+    public TarjetaCreditoEntity updateTarjetaCredito(TarjetaCreditoEntity entity) {
         return persistence.update(entity);
     }
     
@@ -83,12 +83,12 @@ public class TarjetaCreditoLogic {
     /**
      * Obtiene una instancia de UsuarioEntity asociada a una instancia de TarjetaCredito
      *
-     * @param TarjetaCreditoId Id Identificador de la instancia de Author
+     * @param tarjetaCreditoId Id Identificador de la instancia de Author
      * @return
      * @generated
      */
-    public UsuarioEntity getUsuario(Long TarjetaCreditoId) {
-       UsuarioEntity usuario = getTarjetaCredito(TarjetaCreditoId).getUsuario();
+    public UsuarioEntity getUsuario(Long tarjetaCreditoId) {
+       UsuarioEntity usuario = getTarjetaCredito(tarjetaCreditoId).getUsuario();
         if (usuario!=null) {
             return usuario;
         }
@@ -167,10 +167,6 @@ public class TarjetaCreditoLogic {
      * @generated
      */
     public List<PagoEntity> getPagos(Long tarjetaCreditoId) {
-       List<PagoEntity> pagos = getTarjetaCredito(tarjetaCreditoId).getPagos();
-        if (pagos != null) {
-            return pagos;
-        }
-        return null;
+       return getTarjetaCredito(tarjetaCreditoId).getPagos();
     }    
 }

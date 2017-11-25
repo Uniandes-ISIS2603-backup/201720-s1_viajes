@@ -2,7 +2,7 @@
 
     var mod = ng.module("companiaModule");
     mod.constant("companiasContext", "api/companias");
-    mod.controller("companiaCtrl", ['$scope', '$state', '$stateParams', '$http', 'companiasContext',
+    mod.controller("companiasCtrl", ['$scope', '$state', '$stateParams', '$http', 'companiasContext',
         function ($scope, $state, $stateParams, $http, companiasContext) {
 
             // inicialmente el listado de transportes está vacio

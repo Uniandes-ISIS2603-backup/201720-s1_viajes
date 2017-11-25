@@ -143,7 +143,7 @@ public class TransportePersistenceTest {
         Assert.assertEquals(newEntity.getCalificacion(), entity.getCalificacion());
         Assert.assertEquals(newEntity.getComentarios(), entity.getComentarios());
         
-        entity.setCompañia(newEntity.getCompania());
+        entity.setCompania(newEntity.getCompania());
         Assert.assertEquals("Incoherencia de datos", entity.getCompania(), newEntity.getCompania());
         
         entity.setImagenes(newEntity.getImagenes());

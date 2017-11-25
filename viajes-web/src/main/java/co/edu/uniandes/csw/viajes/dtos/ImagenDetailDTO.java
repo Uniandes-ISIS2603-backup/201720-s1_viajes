@@ -35,5 +35,4 @@ public class ImagenDetailDTO extends ImagenDTO{
     public ImagenEntity toEntity(){
         return super.toEntity();
     }
-    
 }
