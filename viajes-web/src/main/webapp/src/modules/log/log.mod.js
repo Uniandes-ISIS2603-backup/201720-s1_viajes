@@ -1,7 +1,7 @@
 (function (ng) {
 var mod = ng.module("logModule", []);
     mod.constant("logContext", "api/log");
-    mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider) {
             var basePath = 'src/modules/log/';
 
             $stateProvider.state('signin', {

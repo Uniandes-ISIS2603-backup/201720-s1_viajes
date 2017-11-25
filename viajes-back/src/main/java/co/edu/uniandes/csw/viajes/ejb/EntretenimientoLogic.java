@@ -63,7 +63,7 @@ public class EntretenimientoLogic {
      * ejemplo el nombre.
      * @return la entretenimiento con los cambios actualizados en la base de datos.
      */
-    public EntretenimientoEntity updateEntretenimiento(Long id, EntretenimientoEntity entity) {
+    public EntretenimientoEntity updateEntretenimiento(EntretenimientoEntity entity) {
         // Note que, por medio de la inyección de dependencias se llama al método "update(entity)" que se encuentra en la persistencia.
         EntretenimientoEntity newEntity = persistence.update(entity);
         return newEntity;

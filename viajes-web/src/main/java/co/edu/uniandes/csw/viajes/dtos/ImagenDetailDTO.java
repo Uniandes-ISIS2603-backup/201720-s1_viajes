@@ -33,8 +33,7 @@ public class ImagenDetailDTO extends ImagenDTO{
      */
     @Override
     public ImagenEntity toEntity(){
-        ImagenEntity entity = super.toEntity();
-        return entity;
+        return super.toEntity();
     }
     
 }

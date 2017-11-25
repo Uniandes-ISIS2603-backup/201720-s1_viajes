@@ -2,7 +2,7 @@
 var mod = ng.module("companiaModule", []);
     mod.constant("companiasContext", "api/companias");
     mod.config(['$stateProvider', '$urlRouterProvider', 
-        function ($stateProvider, $urlRouterProvider) {
+        function ($stateProvider) {
             var basePath = 'src/modules/companias/';
 //            $urlRouterProvider.otherwise("/companiasList");
 
