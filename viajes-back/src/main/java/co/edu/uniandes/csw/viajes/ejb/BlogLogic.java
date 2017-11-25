@@ -41,8 +41,8 @@ public class BlogLogic {
      * @return una lista de blogs.
      */
     public List<BlogEntity> getBlogs() {
-        List<BlogEntity> blogs = persistence.findAll();
-        return blogs;
+        // Note que, por medio de la inyección de dependencias se llama al método "findAll()" que se encuentra en la persistencia.
+        return persistence.findAll();
     }
 
     /**
@@ -65,10 +65,9 @@ public class BlogLogic {
      * ejemplo el nombre.
      * @return el blog con los cambios actualizados en la base de datos.
      */
-    public BlogEntity updateBlog(Long id, BlogEntity entity) {
+    public BlogEntity updateBlog(BlogEntity entity) {
         // Note que, por medio de la inyección de dependencias se llama al método "update(entity)" que se encuentra en la persistencia.
-        BlogEntity newEntity = persistence.update(entity);
-        return newEntity;
+        return persistence.update(entity);
     }
 
     /**

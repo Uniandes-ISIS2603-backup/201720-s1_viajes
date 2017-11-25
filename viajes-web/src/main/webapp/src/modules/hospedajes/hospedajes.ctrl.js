@@ -12,10 +12,8 @@
                 $scope.hospedajesRecords = response.data;
             });
             
-
             // el controlador recibió un entretenimientoId ??
             // revisa los parámetros (ver el :entretenimientoId en la definición de la ruta)
-//            console.log($state.params.);
             if ($state.params.hospedajesId !== null && $state.params.hospedajesId !== undefined) {
                 // toma el id del parámetro
                 id = $state.params.hospedajesId;
