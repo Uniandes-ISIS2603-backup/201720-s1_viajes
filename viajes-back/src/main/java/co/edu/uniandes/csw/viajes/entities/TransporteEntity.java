@@ -93,7 +93,7 @@ public class TransporteEntity extends ServicioEntity
      * Asignar la compania del transporte
      * @param compania del transporte
      */
-    public void setCompañia(CompaniaEntity compania) {
+    public void setCompania(CompaniaEntity compania) {
         this.compania = compania;
     }
 

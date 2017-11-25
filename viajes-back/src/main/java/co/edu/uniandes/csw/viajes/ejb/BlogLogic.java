@@ -60,7 +60,6 @@ public class BlogLogic {
 
     /**
      * Actualizar un Blog.
-     * @param id: id del blog para buscarlo en la base de datos.
      * @param entity: blog con los cambios para ser actualizada, por
      * ejemplo el nombre.
      * @return el blog con los cambios actualizados en la base de datos.
