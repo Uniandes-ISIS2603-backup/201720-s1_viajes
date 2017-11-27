@@ -106,7 +106,7 @@ public class EntretenimientoResource {
     @PUT
     @Path("{id: \\d+}")
     public EntretenimientoDetailDTO updateEntretenimiento(@PathParam("id") Long id, EntretenimientoDetailDTO entretenimiento)  {
-        entretenimiento.setId(id);
+        entretenimiento.setIdEntretenimiento(id);
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(id);
         if (entity == null) {
             throw new WebApplicationException(mensajeError(id), 404);
