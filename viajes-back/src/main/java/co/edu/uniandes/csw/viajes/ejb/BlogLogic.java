@@ -20,14 +20,15 @@ import javax.inject.Inject;
 public class BlogLogic {
 
     /**
-     * Variable para acceder a la persistencia de la aplicación. 
-     * Es una inyección de dependencias.
+     * Variable para acceder a la persistencia de la aplicación. Es una
+     * inyección de dependencias.
      */
     @Inject
-    private BlogPersistence persistence; 
+    private BlogPersistence persistence;
 
     /**
      * Crear un nuevo Blog.
+     *
      * @param entity
      * @return El blog
      */
@@ -38,6 +39,7 @@ public class BlogLogic {
 
     /**
      * Obtener todos los blogs existentes en la base de datos.
+     *
      * @return una lista de blogs.
      */
     public List<BlogEntity> getBlogs() {
@@ -47,21 +49,23 @@ public class BlogLogic {
 
     /**
      * Obtener un Blog por medio de su id.
+     *
      * @param id: Id del blog para ser buscado.
      * @return El blog solicitado por medio de su id.
      */
     public BlogEntity getBlog(Long id) {
         BlogEntity blog = persistence.find(id);
         if (blog != null) {
-                return blog;
+            return blog;
         }
         return null;
     }
 
     /**
      * Actualizar un Blog.
-     * @param entity: blog con los cambios para ser actualizada, por
-     * ejemplo el nombre.
+     *
+     * @param entity: blog con los cambios para ser actualizada, por ejemplo el
+     * nombre.
      * @return el blog con los cambios actualizados en la base de datos.
      */
     public BlogEntity updateBlog(BlogEntity entity) {
@@ -71,6 +75,7 @@ public class BlogLogic {
 
     /**
      * Borrar un Blog
+     *
      * @param id: id del blog a borrar
      */
     public void deleteBlog(Long id) {
@@ -81,6 +86,7 @@ public class BlogLogic {
     /**
      * Obtiene una colección de instancias de ImagenEntity asociadas a una
      * instancia de Blog
+     *
      * @param blogId Identificador de la instancia de Blog
      * @return Colección de instancias de ImagenEntity asociadas a la instancia
      * de Blog
@@ -91,6 +97,7 @@ public class BlogLogic {
 
     /**
      * Obtiene una instancia de ImagenEntity asociada a una instancia de Blog
+     *
      * @param blogId Identificador de la instancia de Blog
      * @param imagenesId Identificador de la instancia de Imagen
      * @return La imagen con id dado
@@ -108,6 +115,7 @@ public class BlogLogic {
 
     /**
      * Asocia una Imagen existente a un Blog
+     *
      * @param blogId Identificador de la instancia de Blog
      * @param imagenesId Identificador de la instancia de Imagen
      * @return Instancia de ImagenEntity que fue asociada a Blog
@@ -122,6 +130,7 @@ public class BlogLogic {
 
     /**
      * Remplaza las instancias de Imagen asociadas a una instancia de Blog
+     *
      * @param blogId Identificador de la instancia de Blog
      * @param list Colección de instancias de ImagenEntity a asociar a instancia
      * de Blog
@@ -135,6 +144,7 @@ public class BlogLogic {
 
     /**
      * Desasocia un Imagen existente de un Blog existente
+     *
      * @param blogId Identificador de la instancia de Blog
      * @param imagenesId Identificador de la instancia de Imagen
      */

@@ -73,7 +73,7 @@ public class ItinerarioResource {
     @POST
     public ItinerarioDetailDTO createItinerario(ItinerarioDTO itinerarioDTO){
         ItinerarioEntity itinerario = itinerarioDTO.toEntity();
-        ItinerarioEntity entity = itinerarioLogic.createItinrario(itinerario);  
+        ItinerarioEntity entity = itinerarioLogic.createItinerario(itinerario);  
         return new ItinerarioDetailDTO(entity);
     }
     
