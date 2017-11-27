@@ -15,7 +15,6 @@
                     return response;
                 },
                 responseError: function (rejection) {
-                    
                     function showError(message, type) {
 
                         var types = ["info", "danger", "warning", "success"];

@@ -22,7 +22,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 /**
- * URI: entretenimientos/{entretenimientosId: \\d+}/imagenes
+ * URI: entretenimiento/{entretenimientoId: \\d+}/imagenes
  *
  * @author m.rodriguez21
  */
@@ -40,7 +40,7 @@ public class EntretenimientoImagenesResource {
      * @return Lista de ImagenDetailDTO convertida.
      * 
      */
-    private List<ImagenDetailDTO> imagenesListEntity2DTO(List<ImagenEntity> entityList) {
+    private List<ImagenDetailDTO> imagenesEntretenimientoListEntity2DTO(List<ImagenEntity> entityList) {
         List<ImagenDetailDTO> list = new ArrayList<>();
         for (ImagenEntity entity : entityList) {
             list.add(new ImagenDetailDTO(entity));
@@ -55,7 +55,7 @@ public class EntretenimientoImagenesResource {
      * @return Lista de ImagenEntity convertida.
      * 
      */
-    private List<ImagenEntity> imagenesListDTO2Entity(List<ImagenDetailDTO> dtos) {
+    private List<ImagenEntity> imagenesEntretenimientoListDTO2Entity(List<ImagenDetailDTO> dtos) {
         List<ImagenEntity> list = new ArrayList<>();
         for (ImagenDetailDTO dto : dtos) {
             list.add(dto.toEntity());
@@ -67,69 +67,69 @@ public class EntretenimientoImagenesResource {
      * Obtiene una colección de instancias de ImagenDetailDTO asociadas a una
      * instancia de Entretetenimiento
      *
-     * @param entretenimientosId Identificador de la instancia de Entretetenimiento
+     * @param entretenimientoId Identificador de la instancia de Entretetenimiento
      * @return Colección de instancias de ImagenDetailDTO asociadas a la
      * instancia de Entretetenimiento
      * 
      */
     @GET
-    public List<ImagenDetailDTO> listImagens(@PathParam("entretenimientosId") Long entretenimientosId) {
-        return imagenesListEntity2DTO(entretenimientoLogic.listImagenes(entretenimientosId));
+    public List<ImagenDetailDTO> listImagenesEntretenimiento(@PathParam("entretenimientoId") Long entretenimientoId) {
+        return imagenesEntretenimientoListEntity2DTO(entretenimientoLogic.listImagenes(entretenimientoId));
     }
 
     /**
      * Obtiene una instancia de Imagen asociada a una instancia de Entretetenimiento
      *
-     * @param entretenimientosId Identificador de la instancia de Entretetenimiento
+     * @param entretenimientoId Identificador de la instancia de Entretetenimiento
      * @param imagenesId Identificador de la instancia de Imagen
      * @return 
      * 
      */
     @GET
     @Path("{imagenesId: \\d+}")
-    public ImagenDetailDTO getImagens(@PathParam("entretenimientosId") Long entretenimientosId, @PathParam("imagenesId") Long imagenesId) {
+    public ImagenDetailDTO getImagens(@PathParam("entretenimientoId") Long entretenimientoId, @PathParam("imagenesId") Long imagenesId) {
        
-        return new ImagenDetailDTO(entretenimientoLogic.getImagen(entretenimientosId, imagenesId));
+        return new ImagenDetailDTO(entretenimientoLogic.getImagen(entretenimientoId, imagenesId));
     }
 
     /**
      * Asocia un Imagen existente a un Entretetenimiento
      *
-     * @param entretenimientosId Identificador de la instancia de Entretetenimiento
+     * @param entretenimientoId Identificador de la instancia de Entretetenimiento
      * @param imagenesId Identificador de la instancia de Imagen
      * @return Instancia de ImagenDetailDTO que fue asociada a Entretetenimiento
      * 
      */
     @POST
     @Path("{imagenesId: \\d+}")
-    public ImagenDetailDTO addImagens(@PathParam("entretenimientosId") Long entretenimientosId, @PathParam("imagenesId") Long imagenesId) {
-        return new ImagenDetailDTO(entretenimientoLogic.addImagen(entretenimientosId, imagenesId));
+    public ImagenDetailDTO addImagens(@PathParam("entretenimientoId") Long entretenimientoId, @PathParam("imagenesId") Long imagenesId) {
+        return new ImagenDetailDTO(entretenimientoLogic.addImagen(entretenimientoId, imagenesId));
     }
 
     /**
      * Remplaza las instancias de Imagen asociadas a una instancia de Entretetenimiento
      *
-     * @param entretenimientosId Identificador de la instancia de Entretetenimiento
+     * @param entretenimientoId Identificador de la instancia de Entretetenimiento
      * @param imagenes Colección de instancias de ImagenDTO a asociar a instancia
      * de Entretetenimiento
      * @return Nueva colección de ImagenDTO asociada a la instancia de Entretetenimiento
      * 
      */
     @PUT
-    public List<ImagenDetailDTO> replaceImagens(@PathParam("entretenimientosId") Long entretenimientosId, List<ImagenDetailDTO> imagenes) {
-        return imagenesListEntity2DTO(entretenimientoLogic.replaceImagenes(entretenimientosId, imagenesListDTO2Entity(imagenes)));
+    public List<ImagenDetailDTO> replaceImagens(@PathParam("entretenimientoId") Long entretenimientoId, List<ImagenDetailDTO> imagenes) {
+        return imagenesEntretenimientoListEntity2DTO(entretenimientoLogic.replaceImagenes(entretenimientoId, imagenesEntretenimientoListDTO2Entity(imagenes)));
     }
 
     /**
      * Desasocia un Imagen existente de un Entretetenimiento existente
      *
-     * @param entretenimientosId Identificador de la instancia de Entretetenimiento
+     * @param entretenimientoId Identificador de la instancia de Entretetenimiento
      * @param imagenesId Identificador de la instancia de Imagen
      * 
      */
     @DELETE
     @Path("{imagenesId: \\d+}")
-    public void removeImagenes(@PathParam("entretenimientosId") Long entretenimientosId, @PathParam("imagenesId") Long imagenesId) {
-        entretenimientoLogic.removeImagen(entretenimientosId, imagenesId);
+    public void removeImagenes(@PathParam("entretenimientoId") Long entretenimientoId, @PathParam("imagenesId") Long imagenesId) {
+        entretenimientoLogic.removeImagen(entretenimientoId, imagenesId);
     }
 }

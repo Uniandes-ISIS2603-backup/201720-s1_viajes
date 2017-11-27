@@ -76,9 +76,9 @@ public class HospedajeResource {
      * la base de datos y el tipo del objeto java.
      */
     @POST
-    public HospedajeDetailDTO createHospedaje(HospedajeDetailDTO itinerarioDTO)throws WebApplicationException{
-        HospedajeEntity itinerario = itinerarioDTO.toEntity();
-        HospedajeEntity entity = hospedajeLogic.createHospedaje(itinerario);  
+    public HospedajeDetailDTO createHospedaje(HospedajeDetailDTO hospedaje)throws WebApplicationException{
+        HospedajeEntity h =  hospedaje.toEntity();
+        HospedajeEntity entity = hospedajeLogic.createHospedaje(h);  
         return new HospedajeDetailDTO(entity);
     }
     
@@ -86,7 +86,7 @@ public class HospedajeResource {
      * PUT http://localhost:8080/viajesp-web/api/hospedajes/1 
      *
      * @param id corresponde al hospedaje a actualizar.
-     * @param hospedaje corresponde a al objeto con los cambios que se van a
+     * @param dto corresponde a al objeto con los cambios que se van a
      * realizar.
      * @return El Hospedaje actualizado.
      * En caso de no existir el id del Hospedaje a actualizar se retorna un
@@ -95,7 +95,7 @@ public class HospedajeResource {
     @PUT
     @Path("{id: \\d+}")
     public HospedajeDetailDTO updateHospedaje(@PathParam("id") Long id, HospedajeDetailDTO dto)throws WebApplicationException {
-        dto.setId(id);
+        dto.setIdHospedaje(id);
         HospedajeEntity entity = hospedajeLogic.getHospedaje(id);
         if (entity == null) {
             throw new WebApplicationException("El recurso /hospedaje/" + id + " no existe.", 404);
@@ -121,6 +121,12 @@ public class HospedajeResource {
         hospedajeLogic.deleteHospedaje(id);
     }
     
+    /**
+     * Retorna el subrecurso de imagenes
+     * 
+     * @param hospedajeId
+     * @return EntretenimientoImagenesResource
+     */
     @Path("{hospedajeId: \\d+}/imagenes")
     public Class<HospedajeImagenesResource> getHospedajeImagenesResource(@PathParam("hospedajeId") Long hospedajeId) {
         HospedajeEntity entity = hospedajeLogic.getHospedaje(hospedajeId);

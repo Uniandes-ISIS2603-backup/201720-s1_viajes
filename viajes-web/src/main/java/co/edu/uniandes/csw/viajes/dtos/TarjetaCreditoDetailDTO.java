@@ -5,8 +5,6 @@
  */
 package co.edu.uniandes.csw.viajes.dtos;
 
-import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
-import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import co.edu.uniandes.csw.viajes.entities.PagoEntity;
 import co.edu.uniandes.csw.viajes.entities.TarjetaCreditoEntity;
 import java.util.ArrayList;
@@ -36,6 +34,27 @@ public class TarjetaCreditoDetailDTO extends TarjetaCreditoDTO
     {
         super();
     }
+
+    /**
+     * Constructor para transformar un Entity a un DTO
+     *
+     * @param entity
+     */
+    public TarjetaCreditoDetailDTO(TarjetaCreditoEntity entity) {
+        super(entity);
+        
+        if (entity.getPagos() != null) {
+            pagos = new ArrayList<>();
+            for (PagoEntity entityPago : entity.getPagos()) {
+                pagos.add(new PagoDTO(entityPago));
+            }
+        }
+        if (entity.getUsuario() != null) {
+            this.usuario = new UsuarioDTO(entity.getUsuario());
+        } else {
+            entity.setUsuario(null);
+        }
+    } 
    
     /**
      * Lista de pagos realizados con la tarjeta
@@ -68,27 +87,6 @@ public class TarjetaCreditoDetailDTO extends TarjetaCreditoDTO
     public void setUsuario(UsuarioDTO usuario) {
         this.usuario = usuario;
     }
-
-    /**
-     * Constructor para transformar un Entity a un DTO
-     *
-     * @param entity
-     */
-    public TarjetaCreditoDetailDTO(TarjetaCreditoEntity entity) {
-        super(entity);
-        
-        if (entity.getPagos() != null) {
-            pagos = new ArrayList<>();
-            for (PagoEntity entityPago : entity.getPagos()) {
-                pagos.add(new PagoDTO(entityPago));
-            }
-        }
-        if (entity.getUsuario() != null) {
-            this.usuario = new UsuarioDTO(entity.getUsuario());
-        } else {
-            entity.setUsuario(null);
-        }
-    } 
     
     /**
      * Transformar un DTO a un Entity

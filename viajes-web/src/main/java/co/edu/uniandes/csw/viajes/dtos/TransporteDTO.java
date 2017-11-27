@@ -12,7 +12,7 @@ import co.edu.uniandes.csw.viajes.entities.TransporteEntity.TipoTransporte;
  * Clase que representa el DTO de un transporte
  * @author sa.silva1
  */
-public class TransporteDTO {
+public class TransporteDTO{
     
     /**
      * Id del transporte
@@ -23,32 +23,26 @@ public class TransporteDTO {
      * Nombre del transporte
      */
     private String nombre;
-    
     /**
      * Fecha de inicio del transporte
      */
     private String fechaInicio;
-    
     /**
-     * Fecha de finalizacion del transporte 
+     * Fecha final del transporte
      */
     private String fechaFinal;
-    
     /**
      * Valor del transporte
      */
     private Double valor;
-    
     /**
      * Calificacion del transporte
      */
     private Double calificacion;
-    
     /**
      * Comentarios del transporte
      */
     private String comentarios;
-    
     /**
      * Descripcion del transporte
      */
@@ -59,140 +53,13 @@ public class TransporteDTO {
      */
     private TipoTransporte tipo;
 
-    
     /**
-     * Rretorna el id del transporte
-     * @return id del transporte
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * Asigna un id al transporte
-     * @param id a asignar
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    
-    /**
-     *Retorna el nombre del transporte
-     * @return nombre del transporte
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Asigna un nombre al transporte
-     * @param nombre a asigna
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Retorna la fecha de inicio del transporte
-     * @return la fecha de inicio del transporte
-     */
-    public String getFechaInicio() {
-        return fechaInicio;
-    }
-
-    /**
-     * Asigna una fecha de inicio al transporte
-     * @param fechaInicio a asignar
-     */
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    /**
-     * Retorna la fecha de finalizacion del transporte
-     * @return fecha de finalizacion del transporte
-     */
-    public String getFechaFinal() {
-        return fechaFinal;
-    }
-
-    /**
-     * Asigna la fecha de finalizacion del transporte
-     * @param fechaFinal a asignar
-     */
-    public void setFechaFinal(String fechaFinal) {
-        this.fechaFinal = fechaFinal;
-    }
-
-    /**
-     * Retorna el valor del transporte
-     * @return el valor del transporte
-     */
-    public Double getValor() {
-        return valor;
-    }
-
-    /**
-     * Asigna un valor al transporte
-     * @param valor a asignar
-     */
-    public void setValor(Double valor) {
-        this.valor = valor;
-    }
-
-    /**
-     * Retorna la calificacion de un transporte
-     * @return la calificacion de un transporte
-     */
-    public Double getCalificacion() {
-        return calificacion;
-    }
-
-    /**
-     * Asigna una calificacion a un transporte
-     * @param calificacion a asignar
-     */
-    public void setCalificacion(Double calificacion) {
-        this.calificacion = calificacion;
-    }
-
-    /**
-     * Retorna los comentarios asociados a un transporte
-     * @return los comentarios asociados al transporte
-     */
-    public String getComentarios() {
-        return comentarios;
-    }
-
-    /**
-     * Asigna comentarios a un transporte
-     * @param comentarios a asignar
-     */
-    public void setComentarios(String comentarios) {
-        this.comentarios = comentarios;
-    }
-
-    /**
-     * Retorna la descripcion de unn transporte
-     * @return la descripcion del transporte
-     */
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    /**
-     * Asigna una descripcion a un transporte
-     * @param descripcion a asignar
-     */
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    /**
-     * Constructor por defecto
+     * Constructor por defecto.
+     * Esta vacío ya que el constructor que necesitamos necesita un parámetro 
+     * de TransporteEntity.
      */
     public TransporteDTO() {
+        //No es utilizado
     }
     
     /**
@@ -210,12 +77,28 @@ public class TransporteDTO {
         this.descripcion = transporte.getDescripcion();
         this.tipo = transporte.getTipo();
     }
+    
+    /**
+     * Rretorna el id del transporte
+     * @return id del transporte
+     */
+    public Long getIdTransporte() {
+        return id;
+    }
 
+    /**
+     * Asigna un id al transporte
+     * @param id a asignar
+     */
+    public void setIdTransporte(Long id) {
+        this.id = id;
+    }
+    
     /**
      * Retorna el tipo de transporte
      * @return el tipo de transporte
      */
-    public TipoTransporte getTipo() {
+    public TipoTransporte getTipoTransporte() {
         return tipo;
     }
 
@@ -223,10 +106,150 @@ public class TransporteDTO {
      * Asigna un tipo a un transporte
      * @param tipo a asignar
      */
-    public void setTipo(TipoTransporte tipo) {
+    public void setTipoTransporte(TipoTransporte tipo) {
         this.tipo = tipo;
     }
     
+    /**
+     * Obtiene el atributo nombre.
+     *
+     * @return atributo nombre.
+     * 
+     */
+    public String getNombreTransporte() {
+        return nombre;
+    }
+
+    /**
+     * Establece el valor del atributo nombre.
+     *
+     * @param nombre nuevo valor del atributo
+     * 
+     */
+    public void setNombreTransporte(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    /**
+     * Obtiene el atributo fechaInicio.
+     *
+     * @return atributo fechaInicio.
+     * 
+     */
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param fechaInicio nuevo valor del atributo
+     * 
+     */
+    public void setFechaInicioTransporte(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    /**
+     * Obtiene el atributo fechaFinal.
+     *
+     * @return atributo fechaFinal.
+     * 
+     */
+    public String getFechaFinalTransporte() {
+        return fechaFinal;
+    }
+
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param fechaFinal nuevo valor del atributo
+     * 
+     */
+    public void setFechaFinalTransporte(String fechaFinal) {
+        this.fechaFinal = fechaFinal;
+    }
+
+    /**
+     * Obtiene el atributo valor.
+     *
+     * @return atributo valor.
+     * 
+     */
+    public Double getValorTransporte() {
+        return valor;
+    }
+
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param valor nuevo valor del atributo
+     * 
+     */
+    public void setValorTransporte(Double valor) {
+        this.valor = valor;
+    }
+    
+    /**
+     * Obtiene el atributo calificacion.
+     *
+     * @return atributo calificacion.
+     * 
+     */
+    public Double getCalificacionTransporte() {
+        return calificacion;
+    }
+
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param calificacion nuevo valor del atributo
+     * 
+     */
+    public void setCalificacionTransporte(Double calificacion) {
+        this.calificacion = calificacion;
+    }
+
+    /**
+     * Obtiene el atributo comentarios.
+     *
+     * @return atributo calificacion.
+     * 
+     */
+    public String getComentariosTransporte() {
+        return comentarios;
+    }
+
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param comentarios nuevo valor del atributo
+     * 
+     */
+    public void setComentariosTransporte(String comentarios) {
+        this.comentarios = comentarios;
+    }
+    
+    /**
+     * Obtiene el atributo descripcion.
+     *
+     * @return atributo calificacion.
+     * 
+     */
+    public String getDescripcionTransporte() {
+        return descripcion;
+    }
+
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param descripcion nuevo valor del atributo
+     * 
+     */
+    public void setDescripcionTransporte(String descripcion) {
+        this.descripcion = descripcion;
+    }
+        
     /**
      * Crea un transporte entity con base a la informacion del DTO
      * @return la entidad transporte creada
@@ -244,6 +267,5 @@ public class TransporteDTO {
         entity.setDescripcion(this.descripcion);
         entity.setTipo(this.tipo);
         return entity;
-    }
-    
+    }   
 }

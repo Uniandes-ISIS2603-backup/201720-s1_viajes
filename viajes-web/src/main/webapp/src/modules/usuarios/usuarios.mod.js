@@ -1,7 +1,7 @@
 (function (ng) {
 var mod = ng.module("usuariosModule", []);
     mod.constant("usuariosContext", "api/usuarios");
-    mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider) {
             var basePath = 'src/modules/usuarios/';
 
             $stateProvider.state('usuariosList', {

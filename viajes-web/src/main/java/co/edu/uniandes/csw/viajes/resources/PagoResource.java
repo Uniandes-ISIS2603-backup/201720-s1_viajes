@@ -109,7 +109,7 @@ public class PagoResource {
         if (entity == null) {
             throw new WebApplicationException("El recurso /pagos/" + id + " no existe.", 404);
         }
-        return new PagoDetailDTO(pagoLogic.updatePago(id, pago.toEntity()));
+        return new PagoDetailDTO(pagoLogic.updatePago(pago.toEntity()));
     }
 
     /**

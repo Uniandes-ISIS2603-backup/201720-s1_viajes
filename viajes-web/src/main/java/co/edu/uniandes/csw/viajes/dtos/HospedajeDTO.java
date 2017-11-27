@@ -11,22 +11,22 @@ import co.edu.uniandes.csw.viajes.entities.HospedajeEntity;
  *
  * @author ma.forero11
  */
-public class HospedajeDTO {
-    
+public class HospedajeDTO{
+   
+    private Long id;
+    private String nombre;
     private String fechaInicio;
     private String fechaFinal;
-    private String nombre;
     private Double valor;
     private Double calificacion;
     private String comentarios;
-    private Long id;
     private String descripcion;
     
     /**
      * Constructor por defecto
      */
     public HospedajeDTO (){
-        
+         //Constructor por defecto
     }
     
     public HospedajeDTO (HospedajeEntity entity){
@@ -39,71 +39,166 @@ public class HospedajeDTO {
         this.id = entity.getId();
         this.descripcion = entity.getDescripcion();
     }
-
-    public String getFechaInicio() {
-        return fechaInicio;
+    
+    /**
+     * Devuelve el id
+     * @return id
+     */
+    public Long getIdHospedaje() {
+        return id;
     }
-
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    /**
+     * Setea el id
+     * @param id
+     */
+    public void setIdHospedaje(Long id) {
+        this.id = id;
     }
-
-    public String getFechaFinal() {
-        return fechaFinal;
-    }
-
-    public void setFechaFinal(String fechaFinal) {
-        this.fechaFinal = fechaFinal;
-    }
-
-    public String getNombre() {
+    
+    /**
+     * Obtiene el atributo nombre.
+     *
+     * @return atributo nombre.
+     * 
+     */
+    public String getNombreHospedaje() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    /**
+     * Establece el valor del atributo nombre.
+     *
+     * @param nombre nuevo valor del atributo
+     * 
+     */
+    public void setNombreHospedaje(String nombre) {
         this.nombre = nombre;
     }
+    
+    /**
+     * Obtiene el atributo fechaInicio.
+     *
+     * @return atributo fechaInicio.
+     * 
+     */
+    public String getFechaInicioHospedaje() {
+        return fechaInicio;
+    }
 
-    public Double getValor() {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param fechaInicio nuevo valor del atributo
+     * 
+     */
+    public void setFechaInicioHospedaje(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    /**
+     * Obtiene el atributo fechaFinal.
+     *
+     * @return atributo fechaFinal.
+     * 
+     */
+    public String getFechaFinalHospedaje() {
+        return fechaFinal;
+    }
+
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param fechaFinal nuevo valor del atributo
+     * 
+     */
+    public void setFechaFinalHospedaje(String fechaFinal) {
+        this.fechaFinal = fechaFinal;
+    }
+
+    /**
+     * Obtiene el atributo valor.
+     *
+     * @return atributo valor.
+     * 
+     */
+    public Double getValorHospedaje() {
         return valor;
     }
 
-    public void setValor(Double valor) {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param valor nuevo valor del atributo
+     * 
+     */
+    public void setValorHospedaje(Double valor) {
         this.valor = valor;
     }
-
-    public Double getCalificacion() {
+    
+    /**
+     * Obtiene el atributo calificacion.
+     *
+     * @return atributo calificacion.
+     * 
+     */
+    public Double getCalificacionHospedaje() {
         return calificacion;
     }
 
-    public void setCalificacion(Double calificacion) {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param calificacion nuevo valor del atributo
+     * 
+     */
+    public void setCalificacionHospedaje(Double calificacion) {
         this.calificacion = calificacion;
     }
 
-    public String getComentarios() {
+    /**
+     * Obtiene el atributo comentarios.
+     *
+     * @return atributo calificacion.
+     * 
+     */
+    public String getComentariosHospedaje() {
         return comentarios;
     }
 
-    public void setComentarios(String comentarios) {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param comentarios nuevo valor del atributo
+     * 
+     */
+    public void setComentariosHospedaje(String comentarios) {
         this.comentarios = comentarios;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescripcion() {
+    
+    /**
+     * Obtiene el atributo descripcion.
+     *
+     * @return atributo calificacion.
+     * 
+     */
+    public String getDescripcionHospedaje() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param descripcion nuevo valor del atributo
+     * 
+     */
+    public void setDescripcionHospedaje(String descripcion) {
         this.descripcion = descripcion;
     }
     
+    /**
+     * Transforma a entity
+     * @return entidad de hospedaje
+     */
     public HospedajeEntity toEntity(){
         HospedajeEntity entity = new HospedajeEntity();
         entity.setFechaInicio(this.fechaInicio);

@@ -1,8 +1,8 @@
 (function (ng) {
-var mod = ng.module("companiasModule", []);
+var mod = ng.module("companiaModule", []);
     mod.constant("companiasContext", "api/companias");
     mod.config(['$stateProvider', '$urlRouterProvider', 
-        function ($stateProvider, $urlRouterProvider) {
+        function ($stateProvider) {
             var basePath = 'src/modules/companias/';
 //            $urlRouterProvider.otherwise("/companiasList");
 
@@ -37,8 +37,19 @@ var mod = ng.module("companiasModule", []);
                         templateUrl: basePath + 'companias.create.html'
                     }
                 }
+            }).state('companiaDetail', {
+                url: '/{companiaId:int}/detail',
+                param: {
+                    companiaId: null
+                },
+                views: {
+                    'mainView': {
+                        templateUrl: basePath + 'companias.detail.html',
+                        controller: 'companiaCtrl',
+                        controllerAs: 'ctrl'
+                    }
+                }
             });
         }]);
 
 })(window.angular);
-

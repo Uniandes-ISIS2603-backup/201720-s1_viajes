@@ -15,7 +15,7 @@
             if ($stateParams.transporteId !== null && $stateParams.transporteId !== undefined) {
 
                 // toma el id del parámetro
-                id = $stateParams.transporteId;
+                var id = $stateParams.transporteId;
                 // obtiene el dato del recurso REST
                 $http.get(context + "/" + id)
                         .then(function (response) {
@@ -40,9 +40,7 @@
 
 
             this.saveRecord = function (id) {
-                console.log(id)
-                currentRecord = $scope.currentRecord;
-                console.log(currentRecord.id)
+                var currentRecord = $scope.currentRecord;
                 // si el id es null, es un registro nuevo, entonces lo crea
                 if (id !== null && id !== undefined) {
 

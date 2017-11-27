@@ -15,7 +15,7 @@
             if ($stateParams.guiaId !== null && $stateParams.guiaId !== undefined) {
 
                 // toma el id del parámetro
-                id = $stateParams.guiaId;
+                var id = $stateParams.guiaId;
                 // obtiene el dato del recurso REST
                 $http.get(guiasContext + "/" + id)
                         .then(function (response) {
@@ -41,9 +41,7 @@
 
 
             this.saveRecord = function (id) {
-                console.log(id);
-                currentRecord = $scope.currentRecord;
-                console.log(currentRecord.id);
+                var currentRecord = $scope.currentRecord;
                 // si el id es null, es un registro nuevo, entonces lo crea
                 if (id !== null && id !== undefined) {
 

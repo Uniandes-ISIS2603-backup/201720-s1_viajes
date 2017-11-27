@@ -11,7 +11,7 @@ import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
  *
  * @author m.rodriguez21
  */
-public class EntretenimientoDTO {
+public class EntretenimientoDTO{
     
     private Long id;
     private String nombre;
@@ -26,6 +26,7 @@ public class EntretenimientoDTO {
      * Constructor por defecto
      */
     public EntretenimientoDTO() {
+         //Constructor por defecto
     }
     
     /**
@@ -47,70 +48,154 @@ public class EntretenimientoDTO {
      /**
      * @return the id
      */
-    public Long getId() {
+    public Long getIdEntretenimiento() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(Long id) {
+    public void setIdEntretenimiento(Long id) {
         this.id = id;
     }
-
-    public String getNombre() {
+    
+    /**
+     * Obtiene el atributo nombre.
+     *
+     * @return atributo nombre.
+     * 
+     */
+    public String getNombreEntretenimiento() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    /**
+     * Establece el valor del atributo nombre.
+     *
+     * @param nombre nuevo valor del atributo
+     * 
+     */
+    public void setNombreEntretenimiento(String nombre) {
         this.nombre = nombre;
     }
-
-    public String getFechaInicio() {
+    
+    /**
+     * Obtiene el atributo fechaInicio.
+     *
+     * @return atributo fechaInicio.
+     * 
+     */
+    public String getFechaInicioEntretenimiento() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(String fechaInicio) {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param fechaInicio nuevo valor del atributo
+     * 
+     */
+    public void setFechaInicioEntretenimiento(String fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public String getFechaFinal() {
+    /**
+     * Obtiene el atributo fechaFinal.
+     *
+     * @return atributo fechaFinal.
+     * 
+     */
+    public String getFechaFinalEntretenimiento() {
         return fechaFinal;
     }
 
-    public void setFechaFinal(String fechaFinal) {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param fechaFinal nuevo valor del atributo
+     * 
+     */
+    public void setFechaFinalEntretenimiento(String fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
 
-    public Double getValor() {
+    /**
+     * Obtiene el atributo valor.
+     *
+     * @return atributo valor.
+     * 
+     */
+    public Double getValorEntretenimiento() {
         return valor;
     }
 
-    public void setValor(Double valor) {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param valor nuevo valor del atributo
+     * 
+     */
+    public void setValorEntretenimiento(Double valor) {
         this.valor = valor;
     }
-
-    public Double getCalificacion() {
+    
+    /**
+     * Obtiene el atributo calificacion.
+     *
+     * @return atributo calificacion.
+     * 
+     */
+    public Double getCalificacionEntretenimiento() {
         return calificacion;
     }
 
-    public void setCalificacion(Double calificacion) {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param calificacion nuevo valor del atributo
+     * 
+     */
+    public void setCalificacionEntretenimiento(Double calificacion) {
         this.calificacion = calificacion;
     }
 
-    public String getComentarios() {
+    /**
+     * Obtiene el atributo comentarios.
+     *
+     * @return atributo calificacion.
+     * 
+     */
+    public String getComentariosEntretenimiento() {
         return comentarios;
     }
 
-    public void setComentarios(String comentarios) {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param comentarios nuevo valor del atributo
+     * 
+     */
+    public void setComentariosEntretenimiento(String comentarios) {
         this.comentarios = comentarios;
     }
     
-    public String getDescripcion() {
+    /**
+     * Obtiene el atributo descripcion.
+     *
+     * @return atributo calificacion.
+     * 
+     */
+    public String getDescripcionEntretenimiento() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
+    /**
+     * Establece el valor del atributo valor.
+     *
+     * @param descripcion nuevo valor del atributo
+     * 
+     */
+    public void setDescripcionEntretenimiento(String descripcion) {
         this.descripcion = descripcion;
     }
     

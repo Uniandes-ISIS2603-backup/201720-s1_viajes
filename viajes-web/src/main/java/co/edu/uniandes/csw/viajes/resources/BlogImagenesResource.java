@@ -40,7 +40,7 @@ public class BlogImagenesResource {
      * @return Lista de ImagenDetailDTO convertida.
      * 
      */
-    private List<ImagenDetailDTO> imagenesListEntity2DTO(List<ImagenEntity> entityList) {
+    private List<ImagenDetailDTO> imagenesBlogListEntity2DTO(List<ImagenEntity> entityList) {
         List<ImagenDetailDTO> list = new ArrayList<>();
         for (ImagenEntity entity : entityList) {
             list.add(new ImagenDetailDTO(entity));
@@ -55,7 +55,7 @@ public class BlogImagenesResource {
      * @return Lista de ImagenEntity convertida.
      * 
      */
-    private List<ImagenEntity> imagenesListDTO2Entity(List<ImagenDetailDTO> dtos) {
+    private List<ImagenEntity> imagenesBlogListDTO2Entity(List<ImagenDetailDTO> dtos) {
         List<ImagenEntity> list = new ArrayList<>();
         for (ImagenDetailDTO dto : dtos) {
             list.add(dto.toEntity());
@@ -73,8 +73,8 @@ public class BlogImagenesResource {
      * 
      */
     @GET
-    public List<ImagenDetailDTO> listImagens(@PathParam("blogsId") Long blogsId) {
-        return imagenesListEntity2DTO(blogLogic.listImagenes(blogsId));
+    public List<ImagenDetailDTO> listImagenesBlog(@PathParam("blogsId") Long blogsId) {
+        return imagenesBlogListEntity2DTO(blogLogic.listImagenes(blogsId));
     }
 
     /**
@@ -116,7 +116,7 @@ public class BlogImagenesResource {
      */
     @PUT
     public List<ImagenDetailDTO> replaceImagens(@PathParam("blogsId") Long blogsId, List<ImagenDetailDTO> imagenes) {
-        return imagenesListEntity2DTO(blogLogic.replaceImagenes(blogsId, imagenesListDTO2Entity(imagenes)));
+        return imagenesBlogListEntity2DTO(blogLogic.replaceImagenes(blogsId, imagenesBlogListDTO2Entity(imagenes)));
     }
 
     /**

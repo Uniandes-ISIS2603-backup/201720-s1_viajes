@@ -26,15 +26,4 @@ public class UbicacionDetailDTO extends UbicacionDTO{
     public UbicacionDetailDTO (UbicacionEntity entity){
         super(entity);
     }
-    
-    /**
-     * Transformar un DTO a un Entity
-     *
-     * @return 
-     */
-    @Override
-    public UbicacionEntity toEntity(){
-        UbicacionEntity entity = super.toEntity();
-        return entity;
-    }
 }

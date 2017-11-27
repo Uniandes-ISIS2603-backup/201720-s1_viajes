@@ -73,7 +73,7 @@ public class UsuarioItinerariosResource {
      */
     @GET
     public List<ItinerarioDetailDTO> listItinerarios(@PathParam("usuariosId") Long usuariosId) {
-        return itinerariosListEntity2DTO(usuarioLogic.getItinerario(usuariosId));
+        return itinerariosListEntity2DTO(usuarioLogic.getItinerarios(usuariosId));
     }
 
     /**

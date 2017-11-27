@@ -14,46 +14,48 @@ import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
- * @author ma.forero11
- * Anotaciones: no tenia @Entity, no extendia de servicio entity, no tenia id
- * Se agrego la enumeracion
+ * @author ma.forero11 Anotaciones: no tenia @Entity, no extendia de servicio
+ * entity, no tenia id Se agrego la enumeracion
  */
 @Entity
-public class HospedajeEntity extends ServicioEntity{
+public class HospedajeEntity extends ServicioEntity {
 
+    /**
+     * Tipos de hospedaje ofrecidos
+     */
     public enum TipoHospedaje {
-    
-    HOTEL,
-    CAMPING
-    
+
+        HOTEL,
+        CAMPING
+
     }
-    
+
     /**
      * Tipo de hospedaje
      */
     private TipoHospedaje tipo;
-    
+
     /**
      * Ubicación del hospedaje
      */
     @PodamExclude
     @OneToOne()
     private UbicacionEntity ubicacion;
-    
+
     /**
      * Compañia a la que pertenece el hospedaje
      */
     @PodamExclude
     @ManyToOne
     private CompaniaEntity compania;
-    
+
     /**
      * Imagenes del hospedaje
      */
-    @PodamExclude   
+    @PodamExclude
     @OneToMany
     private List<ImagenEntity> imagenes;
-    
+
     /**
      * Itinerario al que pertenece el hospedaje
      */
@@ -63,6 +65,7 @@ public class HospedajeEntity extends ServicioEntity{
 
     /**
      * Ubicacion del hospedaje
+     *
      * @return ubicacion
      */
     public UbicacionEntity getUbicacion() {
@@ -71,16 +74,17 @@ public class HospedajeEntity extends ServicioEntity{
 
     /**
      * Itinerario al que pertenece el hospedaje
+     *
      * @return itinerario
      */
     public ItinerarioEntity getItinerario() {
         return itinerario;
     }
-    
-    
-    /** 
+
+    /**
      * Cambia el itinerario al que pertenece el hospedaje
-     * @param itinerario 
+     *
+     * @param itinerario
      */
     public void setItinerario(ItinerarioEntity itinerario) {
         this.itinerario = itinerario;
@@ -88,49 +92,53 @@ public class HospedajeEntity extends ServicioEntity{
 
     /**
      * Cambia la ubicacion del hospedaje
-     * @param ubicacion 
+     *
+     * @param ubicacion
      */
     public void setUbicacion(UbicacionEntity ubicacion) {
         this.ubicacion = ubicacion;
     }
-    
-   /**
-    * Tipo de hospedaje
-    * @return tipo
-    */
-   public TipoHospedaje getTipo() {
+
+    /**
+     * Tipo de hospedaje
+     *
+     * @return tipo
+     */
+    public TipoHospedaje getTipo() {
         return tipo;
     }
 
-   /**
-    * Cambia el tipo de hospedaje
-    * @param tipo 
-    */
+    /**
+     * Cambia el tipo de hospedaje
+     *
+     * @param tipo
+     */
     public void setTipo(TipoHospedaje tipo) {
         this.tipo = tipo;
     }
 
     /**
      * Compañia a la que pertenece el hospedaje
+     *
      * @return compania
      */
-    public CompaniaEntity getCompania()
-    {
+    public CompaniaEntity getCompania() {
         return compania;
     }
-    
+
     /**
      * Cambia la compañia a la que pertenece el hospedaje
-     * @param compania 
+     *
+     * @param compania
      */
-    public void setCompania(CompaniaEntity compania)
-    {
+    public void setCompania(CompaniaEntity compania) {
         this.compania = compania;
     }
 
     /**
      * Cambia las imagenes del hospedaje
-     * @param imagenes 
+     *
+     * @param imagenes
      */
     public void setImagenes(List<ImagenEntity> imagenes) {
         this.imagenes = imagenes;
@@ -138,6 +146,7 @@ public class HospedajeEntity extends ServicioEntity{
 
     /**
      * Imagenes del hospedaje
+     *
      * @return imagenes
      */
     public List<ImagenEntity> getImagenes() {

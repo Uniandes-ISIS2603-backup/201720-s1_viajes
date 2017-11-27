@@ -20,7 +20,7 @@ public class ImagenDTO {
     private String comentario;
 
     public ImagenDTO(){
-        
+         //Constructor por defecto
     }
     
     /**
@@ -88,6 +88,4 @@ public class ImagenDTO {
         entity.setRuta(this.ruta);
         return entity;
     }
-
-    
 }

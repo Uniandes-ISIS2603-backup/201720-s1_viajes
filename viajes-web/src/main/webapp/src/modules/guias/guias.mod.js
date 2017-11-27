@@ -2,9 +2,9 @@
 var mod = ng.module("guiasModule", []);
     mod.constant("guiasContext", "api/guias");
     mod.config(['$stateProvider', '$urlRouterProvider', 
-        function ($stateProvider, $urlRouterProvider) {
+        function ($stateProvider,$urlRouterProvider) {
             var basePath = 'src/modules/guias/';
-//            $urlRouterProvider.otherwise("/companiasList");
+           $urlRouterProvider.otherwise("/companiasList");
 
             $stateProvider.state('guiasList', {
                 url: '/guias',

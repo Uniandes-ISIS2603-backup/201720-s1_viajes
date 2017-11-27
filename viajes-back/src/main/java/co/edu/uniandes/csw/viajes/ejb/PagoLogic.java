@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.csw.viajes.ejb;
 
-
 import co.edu.uniandes.csw.viajes.entities.PagoEntity;
 import co.edu.uniandes.csw.viajes.entities.TarjetaCreditoEntity;
 import co.edu.uniandes.csw.viajes.persistence.PagoPersistence;
@@ -17,79 +16,74 @@ import javax.inject.Inject;
  * @author tv.huertas10
  */
 public class PagoLogic {
-    
+
     /**
-     * Acceso a la aplicación 
+     * Variable para acceder a la persistencia de la aplicación. Es una
+     * inyección de dependencias.
      */
     @Inject
     private PagoPersistence persistence;
-    
-   /**
+
+    /**
      * Obtiene la lista de los registros de Pago.
      *
      * @return Colección de objetos de PagoEntity.
-     * @generated
      */
     public List<PagoEntity> getPagos() {
         return persistence.findAll();
     }
-    
+
     /**
      * Obtiene los datos de una instancia de Pago a partir de su ID.
      *
      * @param id Identificador de la instancia a consultar
      * @return Instancia de PagoEntity con los datos del Pago consultado.
-     * @generated
      */
     public PagoEntity getPago(Long id) {
         return persistence.findById(id);
     }
-    
+
     /**
      * Se encarga de crear un Pago en la base de datos.
      *
      * @param entity Objeto de PagoEntity con los datos nuevos
      * @return Objeto de PagoEntity con los datos nuevos y su ID.
-     * @generated
      */
     public PagoEntity createPago(PagoEntity entity) {
         return persistence.create(entity);
     }
-    
+
     /**
      * Actualiza la información de una instancia de Pago.
      *
-     * @param id Id del pago
      * @param entity Instancia de PagoEntity con los nuevos datos.
      * @return Instancia de PagoEntity con los datos actualizados.
-     * @generated
      */
-    public PagoEntity updatePago(Long id, PagoEntity entity) {
+    public PagoEntity updatePago(PagoEntity entity) {
         return persistence.update(entity);
     }
-    
-     /**
+
+    /**
      * Elimina una instancia de Pago de la base de datos.
      *
      * @param id Identificador de la instancia a eliminar.
-     * @generated
      */
     public void deletePago(Long id) {
         persistence.delete(id);
     }
-    
-/**
-     * Obtiene una instancia de TarjetaCreditoEntity asociada a una instancia de Pago
+
+    /**
+     * Obtiene una instancia de TarjetaCreditoEntity asociada a una instancia de
+     * Pago
      *
-     * @param PagoId Id Identificador de la instancia de Author
-     * @return
-     * @generated
+     * @param pagoId Id Identificador de la instancia de Author
+     * @return La tarjeta de crédito con el Id dado
      */
-    public TarjetaCreditoEntity getTarjetaCredito(Long PagoId) {
-       TarjetaCreditoEntity tarjeta = getPago(PagoId).getTarjeta();
-        if (tarjeta!=null) {
+    public TarjetaCreditoEntity getTarjetaCredito(Long pagoId) {
+        TarjetaCreditoEntity tarjeta = getPago(pagoId).getTarjeta();
+        if (tarjeta != null) {
             return tarjeta;
         }
         return null;
-    } 
+    }
 }

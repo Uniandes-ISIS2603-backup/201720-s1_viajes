@@ -29,15 +29,4 @@ public class TransporteDetailDTO extends TransporteDTO{
     public TransporteDetailDTO(TransporteEntity entity) {
         super(entity);
     }
-
-    /**
-     * Transformar un DTO a un Entity
-     *
-     * @return 
-     */
-    @Override
-    public TransporteEntity toEntity() {
-        TransporteEntity transporteE = super.toEntity();
-        return transporteE;
-    }
 }

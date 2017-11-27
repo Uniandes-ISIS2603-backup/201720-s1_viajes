@@ -12,17 +12,11 @@
                 $scope.hospedajesRecords = response.data;
             });
             
-//            console.log("aa"+$stateParams);
-//            console.log($scope.hospedajesRecords)
             // el controlador recibió un entretenimientoId ??
             // revisa los parámetros (ver el :entretenimientoId en la definición de la ruta)
-//            console.log($state.params.);
             if ($state.params.hospedajesId !== null && $state.params.hospedajesId !== undefined) {
-                console.log("1->>>>>>>>>>>>>>>>>>>>>>>");
                 // toma el id del parámetro
-                id = $state.params.hospedajesId;
-//                console.log(id);
-//                console.log(hospedajesContext);
+                var id = $state.params.hospedajesId;
                 // obtiene el dato del recurso REST
                 $http.get(hospedajesContext + "/" + id)
                         .then(function (response) {
@@ -33,7 +27,6 @@
 
                 // el controlador no recibió un entretenimientoId
             } else {
-                console.log("2->>>>>>>>>>>>>>>>>>>>>>>")
                 // el registro actual debe estar vacio
                 $scope.currentRecord = {
                     id: undefined /*Tipo Long. El valor se asigna en el backend*/,
@@ -48,7 +41,7 @@
 
 
             this.saveRecord = function (id) {
-                currentRecord = $scope.currentRecord;
+                var currentRecord = $scope.currentRecord;
 
                 // si el id es null, es un registro nuevo, entonces lo crea
                 if (id == null) {

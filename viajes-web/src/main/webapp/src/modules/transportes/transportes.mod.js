@@ -4,7 +4,7 @@ var mod = ng.module("transportesModule", []);
     mod.config(['$stateProvider', '$urlRouterProvider', 
         function ($stateProvider, $urlRouterProvider) {
             var basePath = 'src/modules/transportes/';
-//            $urlRouterProvider.otherwise("/transportesList");
+            $urlRouterProvider.otherwise("/transportesList");
 
             $stateProvider.state('transportesList', {
                 url: '/transportes',
@@ -37,8 +37,19 @@ var mod = ng.module("transportesModule", []);
                         templateUrl: basePath + 'transportes.create.html'
                     }
                 }
+            }).state('transportesDetail', {
+                url: '/transportes/detail/:transporteId',
+                param: {
+                    transporteId: null
+                },
+                views: {
+                    'mainView': {
+                        controller: 'transportesCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'transportes.detail.html'
+                    }
+                }
             });
         }]);
-
 })(window.angular);
 
