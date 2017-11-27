@@ -20,6 +20,7 @@
                             // $http.get es una promesa
                             // cuando llegue el dato, actualice currentRecord
                             $scope.currentRecord = response.data;
+                            $scope.currentGuias = response.data.guias;
                         });
 
                 // el controlador no recibió un entretenimientoId
