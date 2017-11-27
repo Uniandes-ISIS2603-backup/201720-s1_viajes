@@ -15,8 +15,30 @@ import java.util.List;
  *
  * @author Vanessa Huertas <tv.huertas10>
  */
-public class UsuarioDetailDTO extends UsuarioDTO{
-       
+public class UsuarioDetailDTO extends UsuarioDTO {
+
+    /**
+     * Lista de tarjetas que le pertenecen al usuario
+     */
+    private List<TarjetaCreditoDTO> tarjeta;
+
+    /**
+     * Lista de itinerarios planeados por el usuario
+     */
+    private List<ItinerarioDTO> itinerario;
+
+    /**
+     * Blog en el que el usuario interactua
+     */
+    private BlogDTO blog;
+
+    /**
+     * Constructor por defecto
+     */
+    public UsuarioDetailDTO() {
+        super();
+    }
+
     /**
      * Constructor para transformar un Entity a un DTO
      *
@@ -24,54 +46,31 @@ public class UsuarioDetailDTO extends UsuarioDTO{
      */
     public UsuarioDetailDTO(UsuarioEntity entity) {
         super(entity);
-        
+
         if (entity.getTarjetas() != null) {
             tarjeta = new ArrayList<>();
             for (TarjetaCreditoEntity entityTarjetaCredito : entity.getTarjetas()) {
                 tarjeta.add(new TarjetaCreditoDTO(entityTarjetaCredito));
             }
         }
-        
+
         if (entity.getItinerarios() != null) {
             itinerario = new ArrayList<>();
             for (ItinerarioEntity entityItinerario : entity.getItinerarios()) {
                 itinerario.add(new ItinerarioDTO(entityItinerario));
             }
         }
-        
+
         if (entity.getBlog() != null) {
             this.blog = new BlogDTO(entity.getBlog());
         } else {
             entity.setBlog(null);
         }
-    } 
-    
-    /**
-     * Lista de tarjetas que le pertenecen al usuario
-     */
-    private List<TarjetaCreditoDTO> tarjeta;
-    
-    /**
-     * Lista de itinerarios planeados por el usuario
-     */
-    private List<ItinerarioDTO> itinerario;
-    
-    
-    /**
-     * Blog en el que el usuario interactua
-     */
-    private BlogDTO blog;
-    
-    /**
-     * Constructor por defecto
-     */
-    public UsuarioDetailDTO()
-    {
-        super();
     }
 
     /**
      * Blog en el que el usuario interactua
+     *
      * @return blog
      */
     public BlogDTO getBlog() {
@@ -80,14 +79,16 @@ public class UsuarioDetailDTO extends UsuarioDTO{
 
     /**
      * Lista de itinerarios planeados por el usuario
+     *
      * @return itinerario
      */
     public List<ItinerarioDTO> getItinerario() {
         return itinerario;
     }
-    
+
     /**
      * Lista de tarjetas que le pertenecen al usuario
+     *
      * @return tarjeta
      */
     public List<TarjetaCreditoDTO> getTarjeta() {
@@ -96,7 +97,8 @@ public class UsuarioDetailDTO extends UsuarioDTO{
 
     /**
      * Agrega el nuevo blog del usuario
-     * @param blog 
+     *
+     * @param blog
      */
     public void setBlog(BlogDTO blog) {
         this.blog = blog;
@@ -104,7 +106,8 @@ public class UsuarioDetailDTO extends UsuarioDTO{
 
     /**
      * Agrega un nuevo itinerario a la lista
-     * @param itinerario 
+     *
+     * @param itinerario
      */
     public void setItinerario(List<ItinerarioDTO> itinerario) {
         this.itinerario = itinerario;
@@ -112,21 +115,22 @@ public class UsuarioDetailDTO extends UsuarioDTO{
 
     /**
      * Se agrega una nueva tarjeta a la lista que le pertenecen al usuario
-     * @param tarjeta 
+     *
+     * @param tarjeta
      */
     public void setTarjeta(List<TarjetaCreditoDTO> tarjeta) {
         this.tarjeta = tarjeta;
     }
-    
+
     /**
      * Transformar un DTO a un Entity
      *
-     * @return 
+     * @return
      */
     @Override
     public UsuarioEntity toEntity() {
         UsuarioEntity usuarioE = super.toEntity();
-        
+
         if (this.getTarjeta() != null) {
             List<TarjetaCreditoEntity> tarjetaCreditoEntity = new ArrayList<>();
             for (TarjetaCreditoDTO dtoTarjetaCredito : getTarjeta()) {
@@ -134,18 +138,18 @@ public class UsuarioDetailDTO extends UsuarioDTO{
             }
             usuarioE.setTarjetas(tarjetaCreditoEntity);
         }
-        
+
         if (this.getItinerario() != null) {
             List<ItinerarioEntity> itinerarioEntity = new ArrayList<>();
             for (ItinerarioDTO dtoItinerario : getItinerario()) {
                 itinerarioEntity.add(dtoItinerario.toEntity());
             }
             usuarioE.setItinerarios(itinerarioEntity);
-        }        
-        
+        }
+
         if (this.getBlog() != null) {
             usuarioE.setBlog(this.getBlog().toEntity());
         }
         return usuarioE;
-    }    
+    }
 }

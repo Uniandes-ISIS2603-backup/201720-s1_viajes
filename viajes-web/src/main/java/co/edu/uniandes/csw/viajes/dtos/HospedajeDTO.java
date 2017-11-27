@@ -44,14 +44,14 @@ public class HospedajeDTO{
      * Devuelve el id
      * @return id
      */
-    public Long getId() {
+    public Long getIdHospedaje() {
         return id;
     }
     /**
      * Setea el id
      * @param id
      */
-    public void setId(Long id) {
+    public void setIdHospedaje(Long id) {
         this.id = id;
     }
     
@@ -61,7 +61,7 @@ public class HospedajeDTO{
      * @return atributo nombre.
      * 
      */
-    public String getNombre() {
+    public String getNombreHospedaje() {
         return nombre;
     }
 
@@ -71,7 +71,7 @@ public class HospedajeDTO{
      * @param nombre nuevo valor del atributo
      * 
      */
-    public void setNombre(String nombre) {
+    public void setNombreHospedaje(String nombre) {
         this.nombre = nombre;
     }
     
@@ -81,7 +81,7 @@ public class HospedajeDTO{
      * @return atributo fechaInicio.
      * 
      */
-    public String getFechaInicio() {
+    public String getFechaInicioHospedaje() {
         return fechaInicio;
     }
 
@@ -91,7 +91,7 @@ public class HospedajeDTO{
      * @param fechaInicio nuevo valor del atributo
      * 
      */
-    public void setFechaInicio(String fechaInicio) {
+    public void setFechaInicioHospedaje(String fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
@@ -101,7 +101,7 @@ public class HospedajeDTO{
      * @return atributo fechaFinal.
      * 
      */
-    public String getFechaFinal() {
+    public String getFechaFinalHospedaje() {
         return fechaFinal;
     }
 
@@ -111,7 +111,7 @@ public class HospedajeDTO{
      * @param fechaFinal nuevo valor del atributo
      * 
      */
-    public void setFechaFinal(String fechaFinal) {
+    public void setFechaFinalHospedaje(String fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
 
@@ -121,7 +121,7 @@ public class HospedajeDTO{
      * @return atributo valor.
      * 
      */
-    public Double getValor() {
+    public Double getValorHospedaje() {
         return valor;
     }
 
@@ -131,7 +131,7 @@ public class HospedajeDTO{
      * @param valor nuevo valor del atributo
      * 
      */
-    public void setValor(Double valor) {
+    public void setValorHospedaje(Double valor) {
         this.valor = valor;
     }
     
@@ -141,7 +141,7 @@ public class HospedajeDTO{
      * @return atributo calificacion.
      * 
      */
-    public Double getCalificacion() {
+    public Double getCalificacionHospedaje() {
         return calificacion;
     }
 
@@ -151,7 +151,7 @@ public class HospedajeDTO{
      * @param calificacion nuevo valor del atributo
      * 
      */
-    public void setCalificacion(Double calificacion) {
+    public void setCalificacionHospedaje(Double calificacion) {
         this.calificacion = calificacion;
     }
 
@@ -161,7 +161,7 @@ public class HospedajeDTO{
      * @return atributo calificacion.
      * 
      */
-    public String getComentarios() {
+    public String getComentariosHospedaje() {
         return comentarios;
     }
 
@@ -171,7 +171,7 @@ public class HospedajeDTO{
      * @param comentarios nuevo valor del atributo
      * 
      */
-    public void setComentarios(String comentarios) {
+    public void setComentariosHospedaje(String comentarios) {
         this.comentarios = comentarios;
     }
     
@@ -181,7 +181,7 @@ public class HospedajeDTO{
      * @return atributo calificacion.
      * 
      */
-    public String getDescripcion() {
+    public String getDescripcionHospedaje() {
         return descripcion;
     }
 
@@ -191,7 +191,7 @@ public class HospedajeDTO{
      * @param descripcion nuevo valor del atributo
      * 
      */
-    public void setDescripcion(String descripcion) {
+    public void setDescripcionHospedaje(String descripcion) {
         this.descripcion = descripcion;
     }
     
