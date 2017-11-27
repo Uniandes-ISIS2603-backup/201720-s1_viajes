@@ -38,7 +38,7 @@ public class HospedajeImagenesResource {
      * @return Lista de ImagenDetailDTO convertida.
      * 
      */
-    private List<ImagenDetailDTO> imagenesListEntity2DTO(List<ImagenEntity> entityList) {
+    private List<ImagenDetailDTO> imagenesHospedajeListEntity2DTO(List<ImagenEntity> entityList) {
         List<ImagenDetailDTO> list = new ArrayList<>();
         for (ImagenEntity entity : entityList) {
             list.add(new ImagenDetailDTO(entity));
@@ -54,7 +54,7 @@ public class HospedajeImagenesResource {
      * @return Lista de ImagenEntity convertida.
      * 
      */
-    private List<ImagenEntity> imagenesListDTO2Entity(List<ImagenDetailDTO> dtos) {
+    private List<ImagenEntity> imagenesHospedajeListDTO2Entity(List<ImagenDetailDTO> dtos) {
         List<ImagenEntity> list = new ArrayList<>();
         for (ImagenDetailDTO dto : dtos) {
             list.add(dto.toEntity());
@@ -72,8 +72,8 @@ public class HospedajeImagenesResource {
      * 
      */
     @GET
-    public List<ImagenDetailDTO> listImagens(@PathParam("hospedajeId") Long hospedajeId) {
-        return imagenesListEntity2DTO(hospedajeLogic.listImagenes(hospedajeId));
+    public List<ImagenDetailDTO> listImagenesHospedaje(@PathParam("hospedajeId") Long hospedajeId) {
+        return imagenesHospedajeListEntity2DTO(hospedajeLogic.listImagenes(hospedajeId));
     }
     
     /**
