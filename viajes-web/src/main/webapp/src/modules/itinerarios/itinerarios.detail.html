@@ -53,7 +53,7 @@
                              <td id="{{$index}}-guia">{{guia.fechaInicio}}</td>
                              <td id="{{$index}}-guia">{{guia.fechaFinal}}</td>
                              <td>
-                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click=""><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordGuia(currentRecord.id, guia.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
                              </td>
                             </tr>
                         </tbody>
@@ -77,7 +77,7 @@
                              <td id="{{$index}}-transporte">{{transporte.fechaInicio}}</td>
                              <td id="{{$index}}-transporte">{{transporte.fechaFinal}}</td>
                              <td>
-                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click=""><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordTransporte(currentRecord.id, transporte.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
                              </td>
                             </tr>
                         </tbody>
@@ -101,7 +101,7 @@
                              <td id="{{$index}}-hospedaje">{{hospedaje.fechaInicio}}</td>
                              <td id="{{$index}}-hospedaje">{{hospedaje.fechaFinal}}</td>
                              <td>
-                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click=""><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordHospedaje(currentRecord.id, hospedaje.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
                              </td>
                             </tr>
                         </tbody>
@@ -125,7 +125,7 @@
                              <td id="{{$index}}-entretenimiento">{{entretenimiento.fechaInicio}}</td>
                              <td id="{{$index}}-entretenimiento">{{entretenimiento.fechaFinal}}</td>
                              <td>
-                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click=""><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordEntretenimiento(currentRecord.id, entretenimiento.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
                              </td>
                             </tr>
                         </tbody>

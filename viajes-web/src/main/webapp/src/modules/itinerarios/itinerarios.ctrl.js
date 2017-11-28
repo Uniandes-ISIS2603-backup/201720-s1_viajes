@@ -70,6 +70,31 @@
                 $state.reload('itinerariosList');
 
             };
+            
+            this.deleteRecordGuia = function (idItinerario, idGuia) {
+                $http.delete(itinerariosContext + "/" + idItinerario + "/guias/" + idGuia);
+                $state.reload('itinerariosList');
+
+            };
+            
+            this.deleteRecordEntretenimiento = function (idItinerario, idEntretenimiento) {
+                $http.delete(itinerariosContext + "/" + idItinerario + "/entretenimientos/" + idEntretenimiento);
+                $state.reload('itinerariosList');
+
+            };
+            
+            this.deleteRecordHospedaje = function (idItinerario, idHospedaje) {
+                $http.delete(itinerariosContext + "/" + idItinerario + "/hospedajes/" + idHospedaje);
+                $state.reload('itinerariosList');
+
+            };
+            
+            this.deleteRecordTransporte = function (idItinerario, idTransporte) {
+                $http.delete(itinerariosContext + "/" + idItinerario + "/transportes/" + idTransporte);
+                $state.reload('itinerariosList');
+
+            };
+            
         }
     ]);
 })(angular);
