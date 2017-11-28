@@ -13,10 +13,12 @@ import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
  */
 public class UbicacionDetailDTO extends UbicacionDTO{
     
+    /**
+     * Constructor por defecto
+     */
     public UbicacionDetailDTO(){
         super();
     }
-    
     
     /**
      * Constructor para transformar un Entity a un DTO
@@ -25,15 +27,5 @@ public class UbicacionDetailDTO extends UbicacionDTO{
      */
     public UbicacionDetailDTO (UbicacionEntity entity){
         super(entity);
-    }
-    
-    /**
-     * Transformar un DTO a un Entity
-     *
-     * @return 
-     */
-    @Override
-    public UbicacionEntity toEntity(){
-        return super.toEntity();
     }
 }

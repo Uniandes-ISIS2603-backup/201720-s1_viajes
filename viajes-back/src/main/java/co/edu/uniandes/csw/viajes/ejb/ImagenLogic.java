@@ -36,21 +36,35 @@ public class ImagenLogic {
     /**
      * Obtiene los datos de una instancia de Imagen a partir de su ID.
      * @param id Identificador de la instancia a consultar
-     * @return Instancia de HospedajeEntity con los datos del Hospedaje consultado.
+     * @return Instancia de ImagenEntity con los datos de la Imagen consultado.
      */
     public ImagenEntity getImagen(Long id) {
         return persistence.find(id);
     }
      
-     public ImagenEntity createImagen(ImagenEntity entity) {
+    /**
+     * Se encarga de crear una imagen en la base de datos.
+     * @param entity Objeto de ImagenEntity con los datos nuevos
+     * @return Objeto de ImagenEntity con los datos nuevos y su ID.
+     */
+    public ImagenEntity createImagen(ImagenEntity entity) {
         persistence.create(entity);
         return entity;
     }
-   
+    
+    /**
+     * Actualiza la información de una instancia de Imagen.
+     * @param entity Instancia de ImagenEntity con los nuevos datos.
+     * @return Instancia de ImagenEntity con los datos actualizados.
+     */   
     public ImagenEntity updateImagen(ImagenEntity entity) {
         return persistence.update(entity);
     }
    
+    /**
+     * Elimina una instancia de Hospedaje de la base de datos.
+     * @param id Identificador de la instancia a eliminar.
+     */
     public void deleteImagen(Long id) {
         persistence.delete(id);
     }     

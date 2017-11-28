@@ -14,35 +14,44 @@ import javax.persistence.Entity;
  */
 @Entity
 public class ImagenEntity extends BaseEntity{
-    
-    private String ruta;
-    
-    private String comentario;
-       
-    
+
     /**
-     * @return the ruta
+     * Ruta de la imagen
+     */
+    private String ruta;
+        
+    /**
+     * Comentario de la imagen 
+     */
+    private String comentario;
+           
+    /**
+     * Obtener la ruta de la imagen 
+     * @return ruta de la imagen
      */
     public String getRuta() {
         return ruta;
     }
 
     /**
-     * @param ruta the ruta to set
+     * Actaulizar la ruta de la imagen 
+     * @param ruta la ruta a actualizar
      */
     public void setRuta(String ruta) {
         this.ruta = ruta;
     }
 
     /**
-     * @return the comentario
+     * Obtener el comentario de la imagen 
+     * @return El comentario de la imagen
      */
     public String getComentario() {
         return comentario;
     }
 
     /**
-     * @param comentario the comentario to set
+     * Actualizar el comentario de la imagen 
+     * @param comentario el comentario a actualizar
      */
     public void setComentario(String comentario) {
         this.comentario = comentario;

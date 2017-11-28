@@ -16,16 +16,17 @@ import javax.inject.Inject;
  * @author m.rodriguez21
  */
 public class EntretenimientoLogic {
-    
+
     /**
-     * Variable para acceder a la persistencia de la aplicación. 
-     * Es una inyección de dependencias.
+     * Variable para acceder a la persistencia de la aplicación. Es una
+     * inyección de dependencias.
      */
     @Inject
     private EntretenimientoPersistence persistence;
 
     /**
-     *Crear un nuevo Entretenimiento
+     * Crear un nuevo Entretenimiento
+     *
      * @param entity
      * @return
      */
@@ -37,6 +38,7 @@ public class EntretenimientoLogic {
 
     /**
      * Obtener todos los entretenimientos existentes en la base de datos.
+     *
      * @return una lista de entretenimientos.
      */
     public List<EntretenimientoEntity> getEntretenimientos() {
@@ -46,6 +48,7 @@ public class EntretenimientoLogic {
 
     /**
      * Obtener una entretenimiento por medio de su id.
+     *
      * @param id: id del entretenimiento para ser buscada.
      * @return la entretenimiento solicitada por medio de su id.
      */
@@ -56,9 +59,11 @@ public class EntretenimientoLogic {
 
     /**
      * Actualizar una entretenimiento.
+     *
      * @param entity: entretenimiento con los cambios para ser actualizada, por
      * ejemplo el nombre.
-     * @return la entretenimiento con los cambios actualizados en la base de datos.
+     * @return la entretenimiento con los cambios actualizados en la base de
+     * datos.
      */
     public EntretenimientoEntity updateEntretenimiento(EntretenimientoEntity entity) {
         // Note que, por medio de la inyección de dependencias se llama al método "update(entity)" que se encuentra en la persistencia.
@@ -67,16 +72,18 @@ public class EntretenimientoLogic {
 
     /**
      * Borrar un entretenimiento
+     *
      * @param id: id del entretenimiento a borrar
      */
     public void deleteEntretenimiento(Long id) {
         // Note que, por medio de la inyección de dependencias se llama al método "delete(id)" que se encuentra en la persistencia.
         persistence.delete(id);
     }
-    
+
     /**
      * Obtiene una colección de instancias de ImagenEntity asociadas a una
      * instancia de Entretenimiento
+     *
      * @param entretenimientoId Identificador de la instancia de Entretenimiento
      * @return Colección de instancias de ImagenEntity asociadas a la instancia
      * de Entretenimiento
@@ -86,7 +93,9 @@ public class EntretenimientoLogic {
     }
 
     /**
-     * Obtiene una instancia de ImagenEntity asociada a una instancia de Entretenimiento
+     * Obtiene una instancia de ImagenEntity asociada a una instancia de
+     * Entretenimiento
+     *
      * @param entretenimientoId Identificador de la instancia de Entretenimiento
      * @param imagenesId Identificador de la instancia de Imagen
      * @return La imagen con id dado
@@ -104,6 +113,7 @@ public class EntretenimientoLogic {
 
     /**
      * Asocia una Imagen existente a un Entretenimiento
+     *
      * @param entretenimientoId Identificador de la instancia de Entretenimiento
      * @param imagenesId Identificador de la instancia de Imagen
      * @return Instancia de ImagenEntity que fue asociada a Entretenimiento
@@ -117,11 +127,14 @@ public class EntretenimientoLogic {
     }
 
     /**
-     * Remplaza las instancias de Imagen asociadas a una instancia de Entretenimiento
+     * Remplaza las instancias de Imagen asociadas a una instancia de
+     * Entretenimiento
+     *
      * @param entretenimientoId Identificador de la instancia de Entretenimiento
      * @param list Colección de instancias de ImagenEntity a asociar a instancia
      * de Entretenimiento
-     * @return Nueva colección de ImagenEntity asociada a la instancia de Entretenimiento
+     * @return Nueva colección de ImagenEntity asociada a la instancia de
+     * Entretenimiento
      */
     public List<ImagenEntity> replaceImagenes(Long entretenimientoId, List<ImagenEntity> list) {
         EntretenimientoEntity entretenimientoEntity = getEntretenimiento(entretenimientoId);
@@ -131,6 +144,7 @@ public class EntretenimientoLogic {
 
     /**
      * Desasocia un Imagen existente de un Entretenimiento existente
+     *
      * @param entretenimientoId Identificador de la instancia de Entretenimiento
      * @param imagenesId Identificador de la instancia de Imagen
      */

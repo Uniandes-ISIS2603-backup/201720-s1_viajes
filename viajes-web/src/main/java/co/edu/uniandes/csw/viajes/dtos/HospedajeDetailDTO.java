@@ -17,8 +17,14 @@ import java.util.List;
  */
 public class HospedajeDetailDTO extends HospedajeDTO {
     
+    /**
+     * Lista de imagenes del hospedaje
+     */
     private List<ImagenDTO> imagenes;
     
+    /**
+     * Constructor por defecto
+     */
     public HospedajeDetailDTO(){
         super();
     }
@@ -70,5 +76,4 @@ public class HospedajeDetailDTO extends HospedajeDTO {
     public void setImagens(List<ImagenDTO> imagenes) {
         this.imagenes = imagenes;
     }
-
 }

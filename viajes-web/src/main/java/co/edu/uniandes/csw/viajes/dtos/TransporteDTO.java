@@ -82,7 +82,7 @@ public class TransporteDTO{
      * Rretorna el id del transporte
      * @return id del transporte
      */
-    public Long getId() {
+    public Long getIdTransporte() {
         return id;
     }
 
@@ -90,7 +90,7 @@ public class TransporteDTO{
      * Asigna un id al transporte
      * @param id a asignar
      */
-    public void setId(Long id) {
+    public void setIdTransporte(Long id) {
         this.id = id;
     }
     
@@ -98,7 +98,7 @@ public class TransporteDTO{
      * Retorna el tipo de transporte
      * @return el tipo de transporte
      */
-    public TipoTransporte getTipo() {
+    public TipoTransporte getTipoTransporte() {
         return tipo;
     }
 
@@ -106,7 +106,7 @@ public class TransporteDTO{
      * Asigna un tipo a un transporte
      * @param tipo a asignar
      */
-    public void setTipo(TipoTransporte tipo) {
+    public void setTipoTransporte(TipoTransporte tipo) {
         this.tipo = tipo;
     }
     
@@ -116,7 +116,7 @@ public class TransporteDTO{
      * @return atributo nombre.
      * 
      */
-    public String getNombre() {
+    public String getNombreTransporte() {
         return nombre;
     }
 
@@ -126,7 +126,7 @@ public class TransporteDTO{
      * @param nombre nuevo valor del atributo
      * 
      */
-    public void setNombre(String nombre) {
+    public void setNombreTransporte(String nombre) {
         this.nombre = nombre;
     }
     
@@ -146,7 +146,7 @@ public class TransporteDTO{
      * @param fechaInicio nuevo valor del atributo
      * 
      */
-    public void setFechaInicio(String fechaInicio) {
+    public void setFechaInicioTransporte(String fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
@@ -156,7 +156,7 @@ public class TransporteDTO{
      * @return atributo fechaFinal.
      * 
      */
-    public String getFechaFinal() {
+    public String getFechaFinalTransporte() {
         return fechaFinal;
     }
 
@@ -166,7 +166,7 @@ public class TransporteDTO{
      * @param fechaFinal nuevo valor del atributo
      * 
      */
-    public void setFechaFinal(String fechaFinal) {
+    public void setFechaFinalTransporte(String fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
 
@@ -176,7 +176,7 @@ public class TransporteDTO{
      * @return atributo valor.
      * 
      */
-    public Double getValor() {
+    public Double getValorTransporte() {
         return valor;
     }
 
@@ -186,7 +186,7 @@ public class TransporteDTO{
      * @param valor nuevo valor del atributo
      * 
      */
-    public void setValor(Double valor) {
+    public void setValorTransporte(Double valor) {
         this.valor = valor;
     }
     
@@ -196,7 +196,7 @@ public class TransporteDTO{
      * @return atributo calificacion.
      * 
      */
-    public Double getCalificacion() {
+    public Double getCalificacionTransporte() {
         return calificacion;
     }
 
@@ -206,7 +206,7 @@ public class TransporteDTO{
      * @param calificacion nuevo valor del atributo
      * 
      */
-    public void setCalificacion(Double calificacion) {
+    public void setCalificacionTransporte(Double calificacion) {
         this.calificacion = calificacion;
     }
 
@@ -216,7 +216,7 @@ public class TransporteDTO{
      * @return atributo calificacion.
      * 
      */
-    public String getComentarios() {
+    public String getComentariosTransporte() {
         return comentarios;
     }
 
@@ -226,7 +226,7 @@ public class TransporteDTO{
      * @param comentarios nuevo valor del atributo
      * 
      */
-    public void setComentarios(String comentarios) {
+    public void setComentariosTransporte(String comentarios) {
         this.comentarios = comentarios;
     }
     
@@ -236,7 +236,7 @@ public class TransporteDTO{
      * @return atributo calificacion.
      * 
      */
-    public String getDescripcion() {
+    public String getDescripcionTransporte() {
         return descripcion;
     }
 
@@ -246,7 +246,7 @@ public class TransporteDTO{
      * @param descripcion nuevo valor del atributo
      * 
      */
-    public void setDescripcion(String descripcion) {
+    public void setDescripcionTransporte(String descripcion) {
         this.descripcion = descripcion;
     }
         
@@ -267,6 +267,5 @@ public class TransporteDTO{
         entity.setDescripcion(this.descripcion);
         entity.setTipo(this.tipo);
         return entity;
-    }
-    
+    }   
 }

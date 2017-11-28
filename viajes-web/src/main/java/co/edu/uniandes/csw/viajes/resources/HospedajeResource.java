@@ -95,7 +95,7 @@ public class HospedajeResource {
     @PUT
     @Path("{id: \\d+}")
     public HospedajeDetailDTO updateHospedaje(@PathParam("id") Long id, HospedajeDetailDTO dto)throws WebApplicationException {
-        dto.setId(id);
+        dto.setIdHospedaje(id);
         HospedajeEntity entity = hospedajeLogic.getHospedaje(id);
         if (entity == null) {
             throw new WebApplicationException("El recurso /hospedaje/" + id + " no existe.", 404);

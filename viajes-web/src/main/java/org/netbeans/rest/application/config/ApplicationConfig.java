@@ -29,16 +29,13 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(co.edu.uniandes.csw.viajes.resources.BlogImagenesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.BlogResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.CompaniaResource.class);
+        resources.add(co.edu.uniandes.csw.viajes.resources.EntretenimientoImagenesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.EntretenimientoResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.GuiaResource.class);
-        resources.add(co.edu.uniandes.csw.viajes.resources.HospedajeImagenesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.HospedajeResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ImagenResource.class);
-        resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioEntretenimientosResource.class);
-        resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioHospedajesResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.ItinerarioResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.OficinaResource.class);
         resources.add(co.edu.uniandes.csw.viajes.resources.PagoResource.class);

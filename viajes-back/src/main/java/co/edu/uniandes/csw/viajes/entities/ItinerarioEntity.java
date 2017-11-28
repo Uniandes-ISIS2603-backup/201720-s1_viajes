@@ -15,23 +15,23 @@ import uk.co.jemos.podam.common.PodamExclude;
  * @author js.beltran14
  */
 @Entity
-public class ItinerarioEntity extends BaseEntity{
-    
+public class ItinerarioEntity extends BaseEntity {
+
     /**
      * Costo del itinerario
      */
     private int costoTotal;
-    
+
     /**
      * Fecha de inicio del itinerario
      */
     private String fechaInicial;
-    
+
     /**
      * Fecha final del itinerario
      */
     private String fechaFinal;
-    
+
     /**
      * Numero de visitantes del itinerario
      */
@@ -43,38 +43,67 @@ public class ItinerarioEntity extends BaseEntity{
     @PodamExclude
     @OneToMany
     private List<GuiaEntity> guias;
-        
+
     /**
      * Hospedajes en el itinerario
      */
     @PodamExclude
     @OneToMany
     private List<HospedajeEntity> hospedajes;
-     
+
     /**
      * Entretenimientos que se encuentran en el itinerario
      */
     @PodamExclude
     @OneToMany
     private List<EntretenimientoEntity> entretenimientos;
-      
+
     /**
      * Transportes que se encuentran en el itinerario
      */
     @PodamExclude
     @OneToMany
     private List<TransporteEntity> transportes;
-    
+
     /**
-     * Entretenimientos que se encuentran en el itinerario
-     * @return entretenimientos
+     * Obtener el costo total del itinerario
+     *
+     * @return costoTotal
      */
-    public List<EntretenimientoEntity> getEntretenimientos() {
-        return entretenimientos;
+    public int getCostoTotal() {
+        return costoTotal;
+    }
+
+    /**
+     * Obtener la fecha inicial del itinerario
+     *
+     * @return the fechaInicial
+     */
+    public String getFechaInicial() {
+        return fechaInicial;
+    }
+
+    /**
+     * Obtener la fecha final del itinerario
+     *
+     * @return fechaFinal
+     */
+    public String getFechaFinal() {
+        return fechaFinal;
+    }
+
+    /**
+     * Obtener el numero de visitantes del itinerario
+     *
+     * @return numeroVisitantes
+     */
+    public int getNumeroVisitantes() {
+        return numeroVisitantes;
     }
 
     /**
      * Guias del itinerario
+     *
      * @return guias
      */
     public List<GuiaEntity> getGias() {
@@ -83,6 +112,7 @@ public class ItinerarioEntity extends BaseEntity{
 
     /**
      * Hospedajes del itinerario
+     *
      * @return hospedajes
      */
     public List<HospedajeEntity> getHospedajes() {
@@ -90,7 +120,17 @@ public class ItinerarioEntity extends BaseEntity{
     }
 
     /**
+     * Entretenimientos que se encuentran en el itinerario
+     *
+     * @return entretenimientos
+     */
+    public List<EntretenimientoEntity> getEntretenimientos() {
+        return entretenimientos;
+    }
+
+    /**
      * Transportes del itinerario
+     *
      * @return transportes
      */
     public List<TransporteEntity> getTransportes() {
@@ -98,90 +138,74 @@ public class ItinerarioEntity extends BaseEntity{
     }
 
     /**
-     * Cambia o agrega los entretenimientos del itinerario
-     * @param entretenimientos 
-     */
-    public void setEntretenimientos(List<EntretenimientoEntity> entretenimientos) {
-        this.entretenimientos = entretenimientos;
-    }
-
-    /**
-     * Cambia los guias del itinerario
-     * @param gias 
-     */
-    public void setGias(List<GuiaEntity> gias) {
-        this.guias = gias;
-    }
-
-    /**
-     * Cambia los hospedajes del itinerario
-     * @param hospedajes 
-     */
-    public void setHospedajes(List<HospedajeEntity> hospedajes) {
-        this.hospedajes = hospedajes;
-    }
-
-    /**
-     * Cambia los transportes del itinerario
-     * @param transportes 
-     */
-    public void setTransportes(List<TransporteEntity> transportes) {
-        this.transportes = transportes;
-    }
-    
-    /**
-     * @return the costoTotal
-     */
-    public int getCostoTotal() {
-        return costoTotal;
-    }
-
-    /**
-     * @param costoTotal the costoTotal to set
+     * Actualizar el costo total del itinerario
+     *
+     * @param costoTotal el costo total a actualizar
      */
     public void setCostoTotal(int costoTotal) {
         this.costoTotal = costoTotal;
     }
-
+    
     /**
-     * @return the fechaInicial
-     */
-    public String getFechaInicial() {
-        return fechaInicial;
-    }
-
-    /**
-     * @param fechaInicial the fechaInicial to set
+     * Actualizar la fecha inicial del itinerario
+     *
+     * @param fechaInicial la fechaInicial a actualizar
      */
     public void setFechaInicial(String fechaInicial) {
         this.fechaInicial = fechaInicial;
     }
-
+    
     /**
-     * @return the fechaFinal
-     */
-    public String getFechaFinal() {
-        return fechaFinal;
-    }
-
-    /**
-     * @param fechaFinal the fechaFinal to set
+     * Actualizar la fecha inicial del itinerario
+     *
+     * @param fechaFinal la fechaFinal a actualizar
      */
     public void setFechaFinal(String fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
 
     /**
-     * @return the numeroVisitantes
-     */
-    public int getNumeroVisitantes() {
-        return numeroVisitantes;
-    }
-
-    /**
-     * @param numeroVisitantes the numeroVisitantes to set
+     * Actualizar el numero de visitantes del itinerario
+     *
+     * @param numeroVisitantes la numeroVisitantes a actualizar
      */
     public void setNumeroVisitantes(int numeroVisitantes) {
         this.numeroVisitantes = numeroVisitantes;
     }
+    
+    /**
+     * Cambia los guias del itinerario
+     *
+     * @param gias
+     */
+    public void setGias(List<GuiaEntity> gias) {
+        this.guias = gias;
+    }
+    
+    /**
+     * Cambia los hospedajes del itinerario
+     *
+     * @param hospedajes
+     */
+    public void setHospedajes(List<HospedajeEntity> hospedajes) {
+        this.hospedajes = hospedajes;
+    }
+    
+    /**
+     * Cambia o agrega los entretenimientos del itinerario
+     *
+     * @param entretenimientos
+     */
+    public void setEntretenimientos(List<EntretenimientoEntity> entretenimientos) {
+        this.entretenimientos = entretenimientos;
+    }
+
+    /**
+     * Cambia los transportes del itinerario
+     *
+     * @param transportes
+     */
+    public void setTransportes(List<TransporteEntity> transportes) {
+        this.transportes = transportes;
+    } 
 }

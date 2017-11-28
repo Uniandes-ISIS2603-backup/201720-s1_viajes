@@ -131,7 +131,7 @@ public class TransporteResource {
     @PUT
     @Path("{id: \\d+}")
     public TransporteDetailDTO updateTransporte(@PathParam("id") Long id, TransporteDetailDTO transporte){
-        transporte.setId(id);
+        transporte.setIdTransporte(id);
         TransporteEntity entity = transporteLogic.getTransporte(id);
         if (entity == null) {
             throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);

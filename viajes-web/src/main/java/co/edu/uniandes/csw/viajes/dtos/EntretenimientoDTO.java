@@ -48,14 +48,14 @@ public class EntretenimientoDTO{
      /**
      * @return the id
      */
-    public Long getId() {
+    public Long getIdEntretenimiento() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(Long id) {
+    public void setIdEntretenimiento(Long id) {
         this.id = id;
     }
     
@@ -65,7 +65,7 @@ public class EntretenimientoDTO{
      * @return atributo nombre.
      * 
      */
-    public String getNombre() {
+    public String getNombreEntretenimiento() {
         return nombre;
     }
 
@@ -75,7 +75,7 @@ public class EntretenimientoDTO{
      * @param nombre nuevo valor del atributo
      * 
      */
-    public void setNombre(String nombre) {
+    public void setNombreEntretenimiento(String nombre) {
         this.nombre = nombre;
     }
     
@@ -85,7 +85,7 @@ public class EntretenimientoDTO{
      * @return atributo fechaInicio.
      * 
      */
-    public String getFechaInicio() {
+    public String getFechaInicioEntretenimiento() {
         return fechaInicio;
     }
 
@@ -95,7 +95,7 @@ public class EntretenimientoDTO{
      * @param fechaInicio nuevo valor del atributo
      * 
      */
-    public void setFechaInicio(String fechaInicio) {
+    public void setFechaInicioEntretenimiento(String fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
@@ -105,7 +105,7 @@ public class EntretenimientoDTO{
      * @return atributo fechaFinal.
      * 
      */
-    public String getFechaFinal() {
+    public String getFechaFinalEntretenimiento() {
         return fechaFinal;
     }
 
@@ -115,7 +115,7 @@ public class EntretenimientoDTO{
      * @param fechaFinal nuevo valor del atributo
      * 
      */
-    public void setFechaFinal(String fechaFinal) {
+    public void setFechaFinalEntretenimiento(String fechaFinal) {
         this.fechaFinal = fechaFinal;
     }
 
@@ -125,7 +125,7 @@ public class EntretenimientoDTO{
      * @return atributo valor.
      * 
      */
-    public Double getValor() {
+    public Double getValorEntretenimiento() {
         return valor;
     }
 
@@ -135,7 +135,7 @@ public class EntretenimientoDTO{
      * @param valor nuevo valor del atributo
      * 
      */
-    public void setValor(Double valor) {
+    public void setValorEntretenimiento(Double valor) {
         this.valor = valor;
     }
     
@@ -145,7 +145,7 @@ public class EntretenimientoDTO{
      * @return atributo calificacion.
      * 
      */
-    public Double getCalificacion() {
+    public Double getCalificacionEntretenimiento() {
         return calificacion;
     }
 
@@ -155,7 +155,7 @@ public class EntretenimientoDTO{
      * @param calificacion nuevo valor del atributo
      * 
      */
-    public void setCalificacion(Double calificacion) {
+    public void setCalificacionEntretenimiento(Double calificacion) {
         this.calificacion = calificacion;
     }
 
@@ -165,7 +165,7 @@ public class EntretenimientoDTO{
      * @return atributo calificacion.
      * 
      */
-    public String getComentarios() {
+    public String getComentariosEntretenimiento() {
         return comentarios;
     }
 
@@ -175,7 +175,7 @@ public class EntretenimientoDTO{
      * @param comentarios nuevo valor del atributo
      * 
      */
-    public void setComentarios(String comentarios) {
+    public void setComentariosEntretenimiento(String comentarios) {
         this.comentarios = comentarios;
     }
     
@@ -185,7 +185,7 @@ public class EntretenimientoDTO{
      * @return atributo calificacion.
      * 
      */
-    public String getDescripcion() {
+    public String getDescripcionEntretenimiento() {
         return descripcion;
     }
 
@@ -195,7 +195,7 @@ public class EntretenimientoDTO{
      * @param descripcion nuevo valor del atributo
      * 
      */
-    public void setDescripcion(String descripcion) {
+    public void setDescripcionEntretenimiento(String descripcion) {
         this.descripcion = descripcion;
     }
     

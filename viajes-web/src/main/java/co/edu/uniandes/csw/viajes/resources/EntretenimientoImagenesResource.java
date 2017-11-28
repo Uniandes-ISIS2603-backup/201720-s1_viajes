@@ -40,7 +40,7 @@ public class EntretenimientoImagenesResource {
      * @return Lista de ImagenDetailDTO convertida.
      * 
      */
-    private List<ImagenDetailDTO> imagenesListEntity2DTO(List<ImagenEntity> entityList) {
+    private List<ImagenDetailDTO> imagenesEntretenimientoListEntity2DTO(List<ImagenEntity> entityList) {
         List<ImagenDetailDTO> list = new ArrayList<>();
         for (ImagenEntity entity : entityList) {
             list.add(new ImagenDetailDTO(entity));
@@ -55,7 +55,7 @@ public class EntretenimientoImagenesResource {
      * @return Lista de ImagenEntity convertida.
      * 
      */
-    private List<ImagenEntity> imagenesListDTO2Entity(List<ImagenDetailDTO> dtos) {
+    private List<ImagenEntity> imagenesEntretenimientoListDTO2Entity(List<ImagenDetailDTO> dtos) {
         List<ImagenEntity> list = new ArrayList<>();
         for (ImagenDetailDTO dto : dtos) {
             list.add(dto.toEntity());
@@ -73,8 +73,8 @@ public class EntretenimientoImagenesResource {
      * 
      */
     @GET
-    public List<ImagenDetailDTO> listImagens(@PathParam("entretenimientoId") Long entretenimientoId) {
-        return imagenesListEntity2DTO(entretenimientoLogic.listImagenes(entretenimientoId));
+    public List<ImagenDetailDTO> listImagenesEntretenimiento(@PathParam("entretenimientoId") Long entretenimientoId) {
+        return imagenesEntretenimientoListEntity2DTO(entretenimientoLogic.listImagenes(entretenimientoId));
     }
 
     /**
@@ -117,7 +117,7 @@ public class EntretenimientoImagenesResource {
      */
     @PUT
     public List<ImagenDetailDTO> replaceImagens(@PathParam("entretenimientoId") Long entretenimientoId, List<ImagenDetailDTO> imagenes) {
-        return imagenesListEntity2DTO(entretenimientoLogic.replaceImagenes(entretenimientoId, imagenesListDTO2Entity(imagenes)));
+        return imagenesEntretenimientoListEntity2DTO(entretenimientoLogic.replaceImagenes(entretenimientoId, imagenesEntretenimientoListDTO2Entity(imagenes)));
     }
 
     /**
