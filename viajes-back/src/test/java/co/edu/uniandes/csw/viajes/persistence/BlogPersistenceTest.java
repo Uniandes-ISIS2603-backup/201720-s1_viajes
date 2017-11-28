@@ -32,10 +32,10 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
  */
 @RunWith(Arquillian.class)
 public class BlogPersistenceTest {
-    
+
     /**
-     * Inyección de la dependencia a la clase BlogPersistence cuyos métodos
-     * se van a probar.
+     * Inyección de la dependencia a la clase BlogPersistence cuyos métodos se
+     * van a probar.
      */
     @Inject
     private BlogPersistence persistence;
@@ -54,17 +54,16 @@ public class BlogPersistenceTest {
     @Inject
     UserTransaction utx;
 
-     /**
-     *
+    /**
+     * Lista de blogs
      */
     private List<BlogEntity> data = new ArrayList<BlogEntity>();
-    
+
     /**
      *
      * @return Devuelve el jar que Arquillian va a desplegar en el Glassfish
-     * embebido. El jar contiene las clases de Blog, el descriptor de la
-     * base de datos y el archivo beans.xml para resolver la inyección de
-     * dependencias.
+     * embebido. El jar contiene las clases de Blog, el descriptor de la base de
+     * datos y el archivo beans.xml para resolver la inyección de dependencias.
      */
     @Deployment
     public static JavaArchive createDeployment() {
@@ -74,18 +73,18 @@ public class BlogPersistenceTest {
                 .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
                 .addAsManifestResource("META-INF/beans.xml", "beans.xml");
     }
-    
+
     public BlogPersistenceTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
         try {
@@ -103,11 +102,10 @@ public class BlogPersistenceTest {
             }
         }
     }
-    
+
     private void clearData() {
         em.createQuery("delete from BlogEntity").executeUpdate();
     }
-
 
     private void insertData() {
         PodamFactory factory = new PodamFactoryImpl();
@@ -118,7 +116,7 @@ public class BlogPersistenceTest {
             data.add(entity);
         }
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -128,16 +126,16 @@ public class BlogPersistenceTest {
      */
     @Test
     public void createBlogEntityTest() {
-    PodamFactory factory = new PodamFactoryImpl();
-    BlogEntity newEntity = factory.manufacturePojo(BlogEntity.class);
-    BlogEntity result = persistence.create(newEntity);
+        PodamFactory factory = new PodamFactoryImpl();
+        BlogEntity newEntity = factory.manufacturePojo(BlogEntity.class);
+        BlogEntity result = persistence.create(newEntity);
 
-    Assert.assertNotNull(result);
-    BlogEntity entity = em.find(BlogEntity.class, result.getId());
-    Assert.assertNotNull(entity);
-    Assert.assertEquals(newEntity.getTitulo(), entity.getTitulo());
-    Assert.assertEquals(newEntity.getComentario(), entity.getComentario());
-    Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
+        Assert.assertNotNull(result);
+        BlogEntity entity = em.find(BlogEntity.class, result.getId());
+        Assert.assertNotNull(entity);
+        Assert.assertEquals(newEntity.getTitulo(), entity.getTitulo());
+        Assert.assertEquals(newEntity.getComentario(), entity.getComentario());
+        Assert.assertEquals(newEntity.getImagenes(), entity.getImagenes());
     }
 
     /**
@@ -145,19 +143,19 @@ public class BlogPersistenceTest {
      */
     @Test
     public void updateBlogTest() {
-    BlogEntity entity = data.get(0);
-    PodamFactory factory = new PodamFactoryImpl();
-    BlogEntity newEntity = factory.manufacturePojo(BlogEntity.class);
+        BlogEntity entity = data.get(0);
+        PodamFactory factory = new PodamFactoryImpl();
+        BlogEntity newEntity = factory.manufacturePojo(BlogEntity.class);
 
-    newEntity.setId(entity.getId());
+        newEntity.setId(entity.getId());
 
-    persistence.update(newEntity);
+        persistence.update(newEntity);
 
-    BlogEntity resp = em.find(BlogEntity.class, entity.getId());
+        BlogEntity resp = em.find(BlogEntity.class, entity.getId());
 
-    Assert.assertEquals(newEntity.getTitulo(), resp.getTitulo());
-    Assert.assertEquals(newEntity.getComentario(), resp.getComentario());
-    Assert.assertEquals(newEntity.getImagenes(), resp.getImagenes());
+        Assert.assertEquals(newEntity.getTitulo(), resp.getTitulo());
+        Assert.assertEquals(newEntity.getComentario(), resp.getComentario());
+        Assert.assertEquals(newEntity.getImagenes(), resp.getImagenes());
     }
 
     /**
@@ -165,10 +163,10 @@ public class BlogPersistenceTest {
      */
     @Test
     public void deleteBlogTest() {
-    BlogEntity entity = data.get(0);
-    persistence.delete(entity.getId());
-    BlogEntity deleted = em.find(BlogEntity.class, entity.getId());
-    Assert.assertNull(deleted);
+        BlogEntity entity = data.get(0);
+        persistence.delete(entity.getId());
+        BlogEntity deleted = em.find(BlogEntity.class, entity.getId());
+        Assert.assertNull(deleted);
     }
 
     /**
@@ -176,15 +174,15 @@ public class BlogPersistenceTest {
      */
     @Test
     public void getBlogTest() {
-    BlogEntity entity = data.get(0);
-    BlogEntity newEntity = persistence.find(entity.getId());
-    Assert.assertNotNull(newEntity);
-    Assert.assertEquals(entity.getTitulo(), newEntity.getTitulo());
-    Assert.assertEquals(entity.getComentario(), newEntity.getComentario());
-    Assert.assertEquals(entity.getImagenes(), newEntity.getImagenes());
-    
-    entity.setImagenes(newEntity.getImagenes());
-    Assert.assertEquals("Incoherencia de datos", entity.getImagenes(), newEntity.getImagenes());
+        BlogEntity entity = data.get(0);
+        BlogEntity newEntity = persistence.find(entity.getId());
+        Assert.assertNotNull(newEntity);
+        Assert.assertEquals(entity.getTitulo(), newEntity.getTitulo());
+        Assert.assertEquals(entity.getComentario(), newEntity.getComentario());
+        Assert.assertEquals(entity.getImagenes(), newEntity.getImagenes());
+
+        entity.setImagenes(newEntity.getImagenes());
+        Assert.assertEquals("Incoherencia de datos", entity.getImagenes(), newEntity.getImagenes());
     }
 
     /**
@@ -192,16 +190,16 @@ public class BlogPersistenceTest {
      */
     @Test
     public void getBlogsTest() {
-    List<BlogEntity> list = persistence.findAll();
-    Assert.assertEquals(data.size(), list.size());
-    for (BlogEntity ent : list) {
-        boolean found = false;
-        for (BlogEntity entity : data) {
-            if (ent.getId().equals(entity.getId())) {
-                found = true;
+        List<BlogEntity> list = persistence.findAll();
+        Assert.assertEquals(data.size(), list.size());
+        for (BlogEntity ent : list) {
+            boolean found = false;
+            for (BlogEntity entity : data) {
+                if (ent.getId().equals(entity.getId())) {
+                    found = true;
+                }
             }
+            Assert.assertTrue(found);
         }
-        Assert.assertTrue(found);
     }
-    }    
 }
