@@ -122,6 +122,18 @@ public class ItinerarioResource {
     }
 
     /**
+     *  @param itinerariosId  del dto itinerario 
+     * @param guiasId  del dto guia 
+     */
+    @DELETE
+    @Path("{itinerariosId: \\d+}/guias/{guiasId: \\d+}")
+    public void deleteItinerariosGuiasResource(@PathParam("itinerariosId") Long itinerariosId, @PathParam("guiasId") Long guiasId){
+        itinerarioLogic.removeGuia(guiasId, itinerariosId);
+    }
+    
+
+
+    /**
      * Retorna el subrecurso Entretenimientos
      *
      * @param itinerariosId
@@ -135,6 +147,18 @@ public class ItinerarioResource {
         }
         return ItinerarioEntretenimientosResource.class;
     }
+
+    /**
+     *  @param itinerariosId  del dto itinerario 
+     * @param entretenimientosId   del dto entretenimiento 
+     */
+    @DELETE
+    @Path("{itinerariosId: \\d+}/entretenimientos/{entretenimientosId: \\d+}")
+    public void deleteItinerariosEntretenimientosResource(@PathParam("itinerariosId") Long itinerariosId, @PathParam("entretenimientosId") Long entretenimientosId){
+        itinerarioLogic.removeEntretenimiento(itinerariosId, entretenimientosId);
+    }
+    
+
 
     /**
      * Retorna el subrecurso Hospedajes
@@ -152,6 +176,18 @@ public class ItinerarioResource {
     }
 
     /**
+     *  @param itinerariosId  del dto itinerario 
+     * @param hospedajesId   del dto hospedaje 
+     */
+    @DELETE
+    @Path("{itinerariosId: \\d+}/hospedajes/{hospedajesId: \\d+}")
+    public void deleteItinerariosHospedajesResource(@PathParam("itinerariosId") Long itinerariosId, @PathParam("hospedajesId") Long hospedajesId){
+        itinerarioLogic.removeHospedaje(itinerariosId, hospedajesId);
+    }
+    
+
+
+    /**
      * Retorna el subrecurso Transportes
      *
      * @param itinerariosId
@@ -165,4 +201,15 @@ public class ItinerarioResource {
         }
         return ItinerarioTransportesResource.class;
     }
+
+    /**
+     *  @param itinerariosId  del dto itinerario 
+     * @param transportesId   del dto transporte 
+     */
+    @DELETE
+    @Path("{itinerariosId: \\d+}/transportes/{transportesId: \\d+}")
+    public void deleteItinerariosTransportesResource(@PathParam("itinerariosId") Long itinerariosId, @PathParam("transportesId") Long transportesId){
+        itinerarioLogic.removeTransporte(itinerariosId, transportesId);
+    }
+
 }

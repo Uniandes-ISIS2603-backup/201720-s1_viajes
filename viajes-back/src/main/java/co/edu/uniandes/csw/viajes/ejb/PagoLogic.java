@@ -15,7 +15,8 @@ import javax.inject.Inject;
  *
  * @author tv.huertas10
  */
-public class PagoLogic {
+public class PagoLogic 
+{
 
     /**
      * Variable para acceder a la persistencia de la aplicación. Es una
@@ -29,7 +30,8 @@ public class PagoLogic {
      *
      * @return Colección de objetos de PagoEntity.
      */
-    public List<PagoEntity> getPagos() {
+    public List<PagoEntity> getPagos() 
+    {
         return persistence.findAll();
     }
 
@@ -39,7 +41,8 @@ public class PagoLogic {
      * @param id Identificador de la instancia a consultar
      * @return Instancia de PagoEntity con los datos del Pago consultado.
      */
-    public PagoEntity getPago(Long id) {
+    public PagoEntity getPago(Long id) 
+    {
         return persistence.findById(id);
     }
 
@@ -49,7 +52,8 @@ public class PagoLogic {
      * @param entity Objeto de PagoEntity con los datos nuevos
      * @return Objeto de PagoEntity con los datos nuevos y su ID.
      */
-    public PagoEntity createPago(PagoEntity entity) {
+    public PagoEntity createPago(PagoEntity entity) 
+    {
         return persistence.create(entity);
     }
 
@@ -68,7 +72,8 @@ public class PagoLogic {
      *
      * @param id Identificador de la instancia a eliminar.
      */
-    public void deletePago(Long id) {
+    public void deletePago(Long id)
+    {
         persistence.delete(id);
     }
 
@@ -79,11 +84,10 @@ public class PagoLogic {
      * @param pagoId Id Identificador de la instancia de Author
      * @return La tarjeta de crédito con el Id dado
      */
-    public TarjetaCreditoEntity getTarjetaCredito(Long pagoId) {
+    public TarjetaCreditoEntity getTarjetaCredito(Long pagoId)
+    {
         TarjetaCreditoEntity tarjeta = getPago(pagoId).getTarjeta();
-        if (tarjeta != null) {
-            return tarjeta;
-        }
-        return null;
+        
+        return tarjeta;
     }
 }
