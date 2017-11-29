@@ -1,8 +1,10 @@
 (function (ng) {
     var mod = ng.module("itinerariosModule");
+    
+    mod.constant("pagoContext", "api/pagos");
     mod.constant("itinerariosContext", "api/itinerarios");
-    mod.controller('itinerariosCtrl', ['$scope', '$http', 'itinerariosContext', '$state', '$stateParams',
-        function ($scope, $http, itinerariosContext, $state, $stateParams) {
+    mod.controller('itinerariosCtrl', ['$scope', '$http', 'itinerariosContext','pagoContext' , '$state', '$stateParams',
+        function ($scope, $http, itinerariosContext, pagoContext , $state, $stateParams) {
             
             $scope.records = {};
             // carga las ciudades
@@ -93,6 +95,16 @@
                 $http.delete(itinerariosContext + "/" + idItinerario + "/transportes/" + idTransporte);
                 $state.reload('itinerariosList');
 
+            };
+            
+            var currentPago = {};
+            this.createPago=function (currentPago){
+                return $http.post(pagoContext, currentPago)
+                            .then(function () {
+                                // $http.post es una promesa
+                                // cuando termine bien, cambie de estado
+                                $state.go('itinerariosList');
+                            });
             };
             
         }
