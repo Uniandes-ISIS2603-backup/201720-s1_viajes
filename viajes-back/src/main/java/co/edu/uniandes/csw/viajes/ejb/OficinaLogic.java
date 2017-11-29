@@ -61,12 +61,12 @@ public class OficinaLogic {
      *
      * Actualizar una oficina.
      *
-     * @param id: id de la oficina para buscarla en la base de datos.
+     *
      * @param entity: oficina con los cambios para ser actualizada, por ejemplo
      * el nombre.
      * @return la oficina con los cambios actualizados en la base de datos.
      */
-    public OficinaEntity updateOficina(Long id, OficinaEntity entity) {
+    public OficinaEntity updateOficina(OficinaEntity entity) {
         OficinaEntity newEntity = persistence.update(entity);
         return newEntity;
     }
