@@ -109,10 +109,9 @@ public class UsuarioLogic {
         ItinerarioEntity itinerariosEntity = new ItinerarioEntity();
         itinerariosEntity.setId(itinerariosId);
         int index = list.indexOf(itinerariosEntity);
-        if (index >= 0) {
-            return list.get(index);
-        }
-        return null;
+
+        return list.get(index);
+
     }
 
     /**
@@ -176,10 +175,9 @@ public class UsuarioLogic {
         TarjetaCreditoEntity tarjetasEntity = new TarjetaCreditoEntity();
         tarjetasEntity.setId(tarjetasId);
         int index = list.indexOf(tarjetasEntity);
-        if (index >= 0) {
-            return list.get(index);
-        }
-        return null;
+
+        return list.get(index);
+
     }
 
     /**
