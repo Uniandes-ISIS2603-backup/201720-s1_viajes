@@ -24,13 +24,6 @@ public class GuiaLogic {
     private GuiaPersistence persistence;
 
     /**
-     * Variable para acceder a la persistencia de la aplicación. Es una
-     * inyección de dependencias.
-     */
-    @Inject
-    private CompaniaLogic companiaLogic;
-
-    /**
      * Obtiene la lista de los registros de Guia.
      *
      * @return Colección de objetos de GuiaEntity.

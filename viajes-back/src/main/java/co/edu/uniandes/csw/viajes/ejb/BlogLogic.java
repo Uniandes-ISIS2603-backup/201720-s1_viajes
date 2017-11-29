@@ -153,5 +153,6 @@ public class BlogLogic {
         ImagenEntity imagenesEntity = new ImagenEntity();
         imagenesEntity.setId(imagenesId);
         entity.getImagenes().remove(imagenesEntity);
+        BlogPersistence p = new BlogPersistence();        
     }
 }

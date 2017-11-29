@@ -136,7 +136,7 @@ public class TransporteResource {
         if (entity == null) {
             throw new WebApplicationException("El recurso /transportes/" + id + " no existe.", 404);
         }
-        return new TransporteDetailDTO(transporteLogic.updateTransporte(id, transporte.toEntity()));
+        return new TransporteDetailDTO(transporteLogic.updateTransporte(transporte.toEntity()));
     }
 
     

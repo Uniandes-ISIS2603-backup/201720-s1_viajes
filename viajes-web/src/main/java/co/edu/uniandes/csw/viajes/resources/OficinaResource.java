@@ -110,7 +110,7 @@ public class OficinaResource {
         if (entity == null) {
             throw new WebApplicationException(mensajeError(id), 404);
         }
-        return new OficinaDetailDTO(oficinaLogic.updateOficina(id, oficina.toEntity()));
+        return new OficinaDetailDTO(oficinaLogic.updateOficina(oficina.toEntity()));
     }
 
     /**
