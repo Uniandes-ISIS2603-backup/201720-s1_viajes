@@ -65,12 +65,12 @@ public class TransporteLogic {
      *
      * Actualizar un transporte.
      *
-     * @param id: id del transporte para buscarlo en la base de datos.
+     * 
      * @param entity: transporte con los cambios para ser actualizados, por
      * ejemplo el nombre.
      * @return el transporte con los cambios actualizados en la base de datos.
      */
-    public TransporteEntity updateTransporte(Long id, TransporteEntity entity) {
+    public TransporteEntity updateTransporte(TransporteEntity entity) {
         TransporteEntity newEntity = persistence.update(entity);
         return newEntity;
     }
