@@ -29,3 +29,239 @@
     position: absolute;
     top: 50%;
 }
+
+h1, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+
+p {
+	margin: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+.agileheader {
+    position: initial;
+}
+
+/*----NAVEGACION------*/
+.nav-tabs {
+    background-color: #3E98D4;
+}
+.nav-tabs > li.active > a {
+  color: white;
+  background-color: #2d83bc;
+}
+.nav-tabs > li > a {
+  color: white;
+  background-color: #3E98D4;
+}
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus
+{
+  background-color: #2d83bc;
+  border-color: #2d83bc;
+}
+#navegacion
+{
+    background-color: #3E98D4;
+}
+
+/*-- Copyright --*/
+.copyright {
+	padding: 50px 15px;
+	text-align: center;
+}
+
+.copyright p {
+	color: #000;
+	line-height: 25px;
+}
+
+.copyright p a {
+	color: #000;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.copyright p a:hover {
+	color: #E91E63;
+}
+
+/*-- Newsletter --*/
+.agilefooterwthree-grid3 form {
+	position: relative;
+}
+
+.agilefooterwthree-grid3 .email {
+	width: 90%;
+	padding: 10px 40px 10px 10px;
+	border-radius: 0;
+	color: #000;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 13px;
+	border: 1px solid #AAA;
+	outline: #333;
+}
+
+.agilefooterwthree-grid3 .submit {
+	width: 35px;
+	height: 35px;
+	background-image: url("../images/subscribe.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent;
+	background-size: contain;
+	position: absolute;
+	top: 2px;
+	right: 40px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+/*-- Footer --*/
+
+.agilefooterwthree {
+	padding: 50px 0;
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+}
+
+.agilefooterwthree-grid h4 {
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.agilefooterwthree-grid ul li {
+	display: block;
+	font-weight: 500;
+	line-height: 25px;
+}
+
+.agilefooterwthree-grid ul li a {
+	color: #333;
+}
+
+.agilefooterwthree-grid ul li a:hover {
+	color: #E91E63;
+}
+
+.agilefooterwthree-grid3 p {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+address {
+	margin-bottom: 0;
+}
+
+/*-- Slider --*/
+
+.rslides {
+        position: relative;
+        list-style: none;
+        overflow: hidden;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+}
+
+.rslides li {
+        -webkit-backface-visibility: hidden;
+        position: absolute;
+        display: none;
+        width: 100%;
+        left: 0;
+        top: 0;
+}
+
+.rslides li:first-child {
+        position: relative;
+        display: block;
+        float: left;
+}
+
+.rslides img {
+        display: block;
+        float: left;
+        width: 100%;
+        height: 100%;
+        border: 0;
+}
+
+.callbacks_nav {
+        position: absolute;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        top: 50%;
+        left: 0;
+        opacity: 0.7;
+        z-index: 3;
+        text-indent: -9999px;
+        text-decoration: none;
+        height: 61px;
+        width: 38px;
+        background: transparent url("../images/themes.gif") no-repeat left top;
+        margin-top: 150px;
+}
+
+.callbacks_nav.next {
+        left: auto;
+        background-position: right top;
+        right: 0;
+}
+
+.callbacks_nav {
+        left: 20px;
+}
+
+.callbacks_nav.next {
+        right: 20px;
+}
+
+ul.callbacks_tabs.callbacks1_tabs {
+        display: none;
+}
+
+/*-- //Slider --*/
+
+/*-- Fading-Image --*/
+
+.animated {
+        background-image: url("../images/heading.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: 20%;
+        padding-top: 285px;
+        margin-bottom: 60px;
+        -webkit-animation-duration: 10s;
+        animation-duration: 10s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+}
+
+.fadeIn {
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+}
+
+.slider button {
+        display: none;
+}
+
+/*-- //Fading-Image --*/

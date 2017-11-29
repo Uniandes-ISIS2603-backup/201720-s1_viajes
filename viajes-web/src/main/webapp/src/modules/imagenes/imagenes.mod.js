@@ -16,7 +16,7 @@
                     }
                 }
             }).state('imagenesList', {
-                url: '/list',
+                url: '',
                 parent: 'imagenes',
                 views: {
                     'listView': {
@@ -24,7 +24,7 @@
                     }
                 }
             }).state('imagenDetail', {
-                url: '/{imagenId:int}/detail',
+                url: '/{imagenId:int}',
                 parent: 'imagenes',
                 param: {
                     imagenId: null
