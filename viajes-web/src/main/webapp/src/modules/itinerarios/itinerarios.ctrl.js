@@ -97,7 +97,14 @@
 
             };
             
-            var currentPago = {};
+            
+            if($stateParams.itinerarioPago!==0 && $stateParams.itinerarioPago!==undefined){
+                $scope.costo = $stateParams.itinerarioPago;
+                $scope.date = new Date();
+                $scope.nombrePago = "pago";
+            var currentPago = {
+                
+            };
             this.createPago=function (currentPago){
                 return $http.post(pagoContext, currentPago)
                             .then(function () {
@@ -105,7 +112,9 @@
                                 // cuando termine bien, cambie de estado
                                 $state.go('itinerariosList');
                             });
-            };
+            };    
+            }
+            
             
         }
     ]);

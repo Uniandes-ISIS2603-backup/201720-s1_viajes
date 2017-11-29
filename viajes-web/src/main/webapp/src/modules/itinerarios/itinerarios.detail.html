@@ -28,7 +28,7 @@
                              <td id="{{$index}}-fechaFi">{{currentRecord.fechaFinal}}</td>   
                              <td id="{{$index}}-cantidad">{{currentRecord.numeroVisitantes}}</td>   
                              <td>
-                                <button type="button" ui-sref='itinerariosPago({itinerarioPago: currentRecord.costoTotal})' style="float: right;">Pagar</button>
+                                <button id="{{$index}}-edit-btn" ui-sref="itinerariosPago({itinerarioPago: currentRecord.costoTotal})" class="btn btn-default btn-sm" ><span class="glyphicon glyphicon-edit"></span>Pagar</button>
                              </td>
                             </tr>
                         </tbody>
