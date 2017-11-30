@@ -23,6 +23,11 @@ public class HospedajeDetailDTO extends HospedajeDTO {
     private List<ImagenDTO> imagenes;
     
     /**
+     * icacio
+     */
+    private UbicacionDTO ubicacion;
+    
+    /**
      * Constructor por defecto
      */
     public HospedajeDetailDTO(){
@@ -42,6 +47,9 @@ public class HospedajeDetailDTO extends HospedajeDTO {
             for(ImagenEntity entityImage : entity.getImagenes())
                 imagenes.add(new ImagenDTO(entityImage));
         }
+        if(entity.getUbicacion()!=null){
+            ubicacion = new UbicacionDTO(entity.getUbicacion());
+        }
     }
     
     /**
@@ -60,6 +68,9 @@ public class HospedajeDetailDTO extends HospedajeDTO {
             }
             entity.setImagenes(imagenesEntity);
         }
+        if(this.getUbicacion()!=null){
+            entity.setUbicacion(ubicacion.toEntity());
+        }
         return entity;
     }
     
@@ -68,6 +79,20 @@ public class HospedajeDetailDTO extends HospedajeDTO {
      */
     public List<ImagenDTO> getImagenes() {
         return imagenes;
+    }
+    
+    /**
+     * @return the ubicacion
+     */
+    public UbicacionDTO getUbicacion(){
+        return ubicacion;
+    }
+    
+    /**
+     * @param ubicacion the ubicacion to set
+     */
+    public void setUbicacion(UbicacionDTO ubicacion){
+    this.ubicacion = ubicacion;
     }
 
     /**

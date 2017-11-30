@@ -12,7 +12,7 @@
         'entretenimientosModule',
         'blogModule',
         'imagenModule',
-        'usuariosModule',
+        'usuarioModule',
         'logModule',
         'companiaModule',
         'guiasModule',
