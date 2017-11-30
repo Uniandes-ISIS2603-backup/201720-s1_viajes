@@ -7,6 +7,7 @@ package co.edu.uniandes.csw.viajes.ejb;
 
 import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
 import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
+import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
 import co.edu.uniandes.csw.viajes.persistence.EntretenimientoPersistence;
 import java.util.List;
 import javax.inject.Inject;
@@ -126,6 +127,16 @@ public class EntretenimientoLogic {
         return getImagen(entretenimientoId, imagenesId);
     }
 
+    /**
+     * Obtiene una instancia de UbicacionEntity asociada a un hospedaje
+     * 
+     * @param hospedajeId Identificador de la instancia de Hospedaje
+     * @return La instancia de Ubicación
+     */
+    public UbicacionEntity getUbicacion(Long entretenimientoId){
+        UbicacionEntity entity = getEntretenimiento(entretenimientoId).getUbicacion();
+        return entity;
+    }
     /**
      * Remplaza las instancias de Imagen asociadas a una instancia de
      * Entretenimiento

@@ -7,6 +7,7 @@ package co.edu.uniandes.csw.viajes.ejb;
 
 import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
 import co.edu.uniandes.csw.viajes.entities.TransporteEntity;
+import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
 import co.edu.uniandes.csw.viajes.persistence.TransportePersistence;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -115,6 +116,28 @@ public class TransporteLogic {
             return list.get(index);
         }
         return null;
+    }
+    
+    /**
+     * Obtiene una instancia de UbicacionEntity asociada a un hospedaje
+     * 
+     * @param origenId Identificador de la instancia de Hospedaje
+     * @return La instancia de Ubicación
+     */
+    public UbicacionEntity getUbicacionOrigen(Long origenId){
+        UbicacionEntity entity = getTransporte(origenId).getOrigen();
+        return entity;
+    }
+    
+    /**
+     * Obtiene una instancia de UbicacionEntity asociada a un hospedaje
+     * 
+     * @param destinoId Identificador de la instancia de Hospedaje
+     * @return La instancia de Ubicación
+     */
+    public UbicacionEntity getUbicacionDestino(Long destinoId){
+        UbicacionEntity entity = getTransporte(destinoId).getDestino();
+        return entity;
     }
 
     /**

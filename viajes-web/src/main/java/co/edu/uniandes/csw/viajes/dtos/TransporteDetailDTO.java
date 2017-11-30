@@ -14,6 +14,16 @@ import co.edu.uniandes.csw.viajes.entities.TransporteEntity;
 public class TransporteDetailDTO extends TransporteDTO{
     
     /**
+     * ubicacion origen
+     */
+    private UbicacionDTO origen;
+    
+    /**
+     * Ubicacion destino
+     */
+    private UbicacionDTO destino;
+    
+    /**
      * Constructor por defecto
      */
     public TransporteDetailDTO() {
