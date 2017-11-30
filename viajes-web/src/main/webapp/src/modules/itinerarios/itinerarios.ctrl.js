@@ -100,9 +100,14 @@
             
             if($stateParams.itinerarioPago!==0 && $stateParams.itinerarioPago!==undefined){
                 $scope.costo = $stateParams.itinerarioPago;
-                $scope.date = new Date();
-                $scope.nombrePago = "pago";
-           
+                $scope.dateD = new Date();
+                $scope.date = $scope.dateD.getDay()+"/"+$scope.dateD.getMonth()+"/"+"17";
+                $scope.nombrePago = "pagos";
+                $scope.currentPago={
+                    nombre : $scope.nombrePago,
+                    valor : $scope.costo 
+                }; 
+                
             this.createPago=function (currentPago){
                 return $http.post(pagoContext, currentPago)
                             .then(function () {
