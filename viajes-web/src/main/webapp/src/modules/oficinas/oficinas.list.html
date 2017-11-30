@@ -19,11 +19,11 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="record in records">
-                            <td id="{{$index}}-nombreLugar">{{record.nombreLugar}}</td>
+                            <td id="{{$index}}-nombreLugar"><a ui-sref="oficinasDetail({oficinaId: record.id})">{{record.nombreLugar}}</a></td>
                             <td id="{{$index}}-nombreEncargado">{{record.nombreEncargado}}</td>
                             <td>
-                                <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="oficinaEdit({oficinaId: record.idOficina})"><span class="glyphicon glyphicon-edit"></span> Modificar </button>
-                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.idOficina)"><span class="glyphicon glyphicon-minus"></span> Eliminar </button>
+                                <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="oficinasEdit({oficinaId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar </button>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar </button>
                             </td>
                         </tr>
                     </tbody>

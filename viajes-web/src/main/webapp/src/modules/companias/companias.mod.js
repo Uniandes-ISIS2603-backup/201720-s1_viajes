@@ -2,14 +2,26 @@
 var mod = ng.module("companiaModule", []);
     mod.constant("companiasContext", "api/companias");
     mod.config(['$stateProvider', '$urlRouterProvider', 
-        function ($stateProvider) {
+        function ($stateProvider, $urlRouterProvider) {
             var basePath = 'src/modules/companias/';
-//            $urlRouterProvider.otherwise("/companiasList");
+             var basePathImagenes = 'src/modules/oficinas/';
+             $urlRouterProvider.otherwise("/companiasList");
 
-            $stateProvider.state('companiasList', {
+            $stateProvider.state('companias', {
                 url: '/companias',
+                abstract: true,
                 views: {
                     'mainView': {
+                        templateUrl: basePath + 'companias.html',
+                        controller: 'companiasCtrl',
+                        controllerAs: 'ctrl'
+                    }
+                }
+            }).state('companiasList', {
+                url: '',
+                parent: 'companias',
+                views: {
+                    'detailView': {
                         controller: 'companiasCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'companias.list.html'
@@ -17,8 +29,9 @@ var mod = ng.module("companiaModule", []);
                 }
             }).state('companiasCreate', {
                 url: '/companias/create',
+                parent: 'companias',
                 views: {
-                    'mainView': {
+                    'detailView': {
                         controller: 'companiasCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'companias.create.html'
@@ -26,26 +39,33 @@ var mod = ng.module("companiaModule", []);
                 }
 
             }).state('companiasEdit', {
-                url: '/companias/:companiaId',
+                url: '/:companiaId/update',
+                parent: 'companias',
                 param: {
                     companiaId: null
                 },
                 views: {
-                    'mainView': {
+                    'detailView': {
                         controller: 'companiasCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'companias.create.html'
                     }
                 }
-            }).state('companiaDetail', {
-                url: '/{companiaId:int}/detail',
+            }).state('companiasDetail', {
+                url: '/{companiaId:int}',
+                parent: 'companias',
                 param: {
                     companiaId: null
                 },
                 views: {
-                    'mainView': {
+                    'listView': {
+                        templateUrl: basePathImagenes + 'oficinas.list.html',
+                        controller: 'companiasCtrl',
+                        controllerAs: 'ctrl'
+                    },
+                    'detailView': {
                         templateUrl: basePath + 'companias.detail.html',
-                        controller: 'companiaCtrl',
+                        controller: 'companiasCtrl',
                         controllerAs: 'ctrl'
                     }
                 }

@@ -37,7 +37,21 @@ var mod = ng.module("oficinasModule", []);
                         templateUrl: basePath + 'oficinas.create.html'
                     }
                 }
+            }).state('oficinasDetail', {
+                url: '/oficinas/{oficinaId:int}/detail',
+                
+                param: {
+                    oficinaId: null
+                },
+                views: {
+                    'mainView': {
+                        controller: 'oficinasCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'oficinas.detail.html'
+                    }
+                }
             });
         }]);
 })(window.angular);
+
 

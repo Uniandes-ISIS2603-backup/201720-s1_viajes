@@ -11,6 +11,7 @@ delete from ITINERARIOENTITY_GUIAENTITY;
 delete from ITINERARIOENTITY_ENTRETENIMIENTOENTITY;
 delete from ITINERARIOENTITY_HOSPEDAJEENTITY;
 delete from ITINERARIOENTITY_TRANSPORTEENTITY;
+DELETE from companiaentity_oficinaentity;
 delete from GuiaEntity;
 delete from CompaniaEntity;
 delete from HospedajeEntity_ImagenEntity;
@@ -162,6 +163,8 @@ insert into hospedajeentity_imagenentity (hospedajeentity_id, imagenes_id) value
 
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (100,'01/01/17','02/02/17',1000,1);
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (200,'02/02/17','03/03/17',2000,2);
+
+insert into companiaentity_oficinaentity (companiaentity_id, oficinas_id) values (12, 10); 
 
 insert into ITINERARIOENTITY_GUIAENTITY (ITINERARIOENTITY_ID, GUIAS_ID) values (100, 14);
 insert into ITINERARIOENTITY_GUIAENTITY (ITINERARIOENTITY_ID, GUIAS_ID) values (100, 15);

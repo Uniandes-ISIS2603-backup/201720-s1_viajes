@@ -22,6 +22,8 @@
                             // $http.get es una promesa
                             // cuando llegue el dato, actualice currentRecord
                             $scope.currentRecord = response.data;
+                            $scope.records= response.data.oficinas;
+                                    
                         });
             } else {
                 // el registro actual debe estar vacio
