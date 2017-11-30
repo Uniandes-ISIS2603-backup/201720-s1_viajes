@@ -54,9 +54,8 @@ public class BlogLogic {
      * @return El blog solicitado por medio de su id.
      */
     public BlogEntity getBlog(Long id) {
-        BlogEntity blog = persistence.find(id);
 
-        return blog;
+        return persistence.find(id);
 
     }
 
