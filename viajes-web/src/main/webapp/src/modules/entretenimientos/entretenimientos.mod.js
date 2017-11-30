@@ -75,6 +75,18 @@
                         controller: 'entretenimientoUpdateCtrl'
                     }
                 }
+            }).state('imagenCreate', {
+                url: '/{entretenimientoId:int}/imagenes',
+                parent: 'entretenimientos',
+                param: {
+                    entretenimientoId: null
+                },
+                views: {
+                    'detailView': {
+                        templateUrl: basePath + 'entretenimientos.imagen.html',
+                        controller: 'entretenimientoCtrl'
+                    }
+                }
             });
         }]);
 })(window.angular);

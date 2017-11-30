@@ -102,7 +102,7 @@ public class ItinerarioResource {
      */
     @DELETE
     @Path("{id: \\d+}")
-    public void deleteImagen(@PathParam("id") Long id) {
+    public void deleteItinerario(@PathParam("id") Long id) {
         itinerarioLogic.deleteItinerario(id);
     }
 

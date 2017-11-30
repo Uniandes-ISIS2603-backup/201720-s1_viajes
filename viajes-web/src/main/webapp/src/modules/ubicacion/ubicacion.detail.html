@@ -1,0 +1,32 @@
+<br>
+<br>
+<br>
+<div class="container-fluid">
+    <div class="col-md-12">   
+        <br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>               
+                    <th>Ciudad</th>               
+                    <th>País</th>               
+                    <th>Latitud</th>               
+                    <th>Longitud</th>               
+                    <th>Dirección</th>               
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="{{$index}}-nombre">{{ubicacion.nombre}}</td>
+                    <td id="{{$index}}-ciudad">{{ubicacion.ciudad}}</td>
+                    <td id="{{$index}}-pais">{{ubicacion.pais}}</td>
+                    <td id="{{$index}}-latitud">{{ubicacion.latitud}}</td>
+                    <td id="{{$index}}-longitud">{{ubicacion.longitud}}</td>
+                    <td id="{{$index}}-direccion">{{ubicacion.direccion}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div ui-view="listView"></div>
+</div>

@@ -11,8 +11,10 @@ delete from ITINERARIOENTITY_GUIAENTITY;
 delete from ITINERARIOENTITY_ENTRETENIMIENTOENTITY;
 delete from ITINERARIOENTITY_HOSPEDAJEENTITY;
 delete from ITINERARIOENTITY_TRANSPORTEENTITY;
+
 delete from USUARIOENTITY_TARJETACREDITOENTITY;
 delete from UsuarioEntity_ItinerarioEntity;
+DELETE from companiaentity_oficinaentity;
 delete from GuiaEntity;
 delete from CompaniaEntity;
 delete from HospedajeEntity_ImagenEntity;
@@ -40,8 +42,8 @@ insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (100,'Oficin
 insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (400,'Edificio Sotomayor SATENA', 'Gonzalo Jimenez');
 
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (16,'El lago de los cisnes','resources/images/ballet.jpg');
-insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Revolution radio poster','resources/images/greenday1.jpeg');
-insert into ImagenEntity (ID, COMENTARIO, RUTA) values (18,'Una experiencia inolvidable!','resources/images/greenday1.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Una experiencia inolvidable!','resources/images/greenday4.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (18,'Revolution radio poster','resources/images/greenday1.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (19,'G R E E N  D A Y','resources/images/greenday2.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (20,'El escenario','resources/images/greenday3.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (21,'Museo nacional','resources/images/museo.jpg');
@@ -87,7 +89,6 @@ values (417, 'Sebastian Beltran');
 
 insert into UsuarioEntity (id, nombre)
 values (418, 'Juan Camilo Sanchez');
-
 
 insert into UbicacionEntity (ID, LONGITUD, LATITUD, NOMBRE, DIRECCION, CIUDAD, PAIS)
  values (2, 12.0, 13.0, 'Hola', 'Calle', 'Bogota', 'Colombia');
@@ -175,6 +176,8 @@ insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVI
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (400,'04/04/17','05/05/17',4000,4);
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (500,'05/05/17','06/06/17',5000,5);
 
+insert into companiaentity_oficinaentity (companiaentity_id, oficinas_id) values (12, 10); 
+
 insert into ITINERARIOENTITY_GUIAENTITY (ITINERARIOENTITY_ID, GUIAS_ID) values (100, 14);
 insert into ITINERARIOENTITY_GUIAENTITY (ITINERARIOENTITY_ID, GUIAS_ID) values (100, 15);
 
@@ -186,7 +189,6 @@ insert into ITINERARIOENTITY_HOSPEDAJEENTITY (ITINERARIOENTITY_ID, HOSPEDAJES_ID
 
 insert into ITINERARIOENTITY_TRANSPORTEENTITY (ITINERARIOENTITY_ID, TRANSPORTES_ID) values (100, 100);
 insert into ITINERARIOENTITY_TRANSPORTEENTITY (ITINERARIOENTITY_ID, TRANSPORTES_ID) values (100, 200);
-
 
 insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
 values (413, 100);

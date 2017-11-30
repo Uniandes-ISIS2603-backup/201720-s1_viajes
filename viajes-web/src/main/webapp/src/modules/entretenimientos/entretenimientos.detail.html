@@ -4,9 +4,14 @@
 <div class="panel panel-default"> 
     <div class="panel-body">
         <div class="row">
+            <div class="col-md-3">
+                <div class="thumb">
+                    <img class="img-responsive" ng-src="{{imagen.ruta}}"/>
+                </div>
+            </div>
             <div class="col-md-8">
                 <dl>     
-                    <dt>{{currentRecord.nombreEntretenimiento}}</dt>
+                    <dt><h2>{{currentRecord.nombreEntretenimiento}}</h2></dt>
                     <hr>
                     <dt> Valor</dt>
                     <dd><span id="currency-no-fractions">{{currentRecord.valorEntretenimiento | currency}}</span></dd>
@@ -17,6 +22,9 @@
                     <dt>Fin</dt>
                     <dd>{{currentRecord.fechaFinalEntretenimiento}}</dd>
                     <hr>
+                    <dt>Descripcion</dt>
+                    <dd>{{currentRecord.descripcionEntretenimiento}}</dd>
+                    <hr>
                     <dt>Calificacion</dt>
                     <dd>{{currentRecord.calificacionEntretenimiento}}</dd>                    
                     <hr>
@@ -26,6 +34,7 @@
                 </dl>
             </div>
         </div>
+              
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-9">
@@ -33,4 +42,10 @@
             </div>
         </div>
     </div>
+    
 </div>
+
+<br>
+<a class="btn btn-info" ui-sref="imagenCreate({entretenimientoId: currentRecord.id})" style="float: right;"><span class="glyphicon glyphicon-plus-sign"></span> Agregar imagen</a>
+<br>
+<br>

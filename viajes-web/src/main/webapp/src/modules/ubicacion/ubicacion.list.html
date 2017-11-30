@@ -1,0 +1,37 @@
+<br>
+<br>
+<br>
+<div class="container-fluid">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><label>Ubicaciones</label></div>
+            <div class="panel-body">
+                <a class="btn btn-info" ui-sref="ubicacionCreate" style="float: right;"><span class="glyphicon glyphicon-plus-sign"></span> Agregar ubicación</a>
+                
+                <div class="col-md-8">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>     
+                                <th>Ciudad</th>  
+                                <th>País</th>  
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="ubicacion in ubicacionesRecords">
+                                <td id="{{$index}}-titulo"><a ui-sref="ubicacionDetail({ubicacionId: ubicacion.id})">{{ubicacion.nombre}}</a></td>
+                                <td id="{{$index}}-titulo">{{ubicacion.ciudad}}</td>
+                                <td id="{{$index}}-titulo">{{ubicacion.pais}}</td>
+                                <td id="{{$index}}-actions">
+                                    <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="ubicacionUpdate({ubicacionId: ubicacion.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
+                                    <button id="{{$index}}-delete-btn" class="btn btn-danger btn-sm" ui-sref="ubicacionDelete({ubicacionId: ubicacion.id})"><span class="glyphicon glyphicon-trash"></span> Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
