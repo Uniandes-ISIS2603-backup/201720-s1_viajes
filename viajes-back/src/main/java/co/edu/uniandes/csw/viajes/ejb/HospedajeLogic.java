@@ -7,6 +7,7 @@ package co.edu.uniandes.csw.viajes.ejb;
 
 import co.edu.uniandes.csw.viajes.entities.HospedajeEntity;
 import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
+import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
 import co.edu.uniandes.csw.viajes.persistence.HospedajePersistence;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -106,6 +107,17 @@ public class HospedajeLogic {
         }
         return null;
     }
+    
+    /**
+     * Obtiene una instancia de UbicacionEntity asociada a un hospedaje
+     * 
+     * @param hospedajeId Identificador de la instancia de Hospedaje
+     * @return La instancia de Ubicación
+     */
+    public UbicacionEntity getUbicacion(Long hospedajeId){
+        UbicacionEntity entity = getHospedaje(hospedajeId).getUbicacion();
+        return entity;
+    }
 
     /**
      * Asocia una Imagen existente a un Hospedaje
@@ -121,6 +133,13 @@ public class HospedajeLogic {
         hospedajeEntity.getImagenes().add(imagenesEntity);
         return getImagen(hospedajeId, imagenesId);
     }
+//    
+//    public UbicacionEntity addUbicacion(Long hospedajeId, Long ubicacionId){
+//        HospedajeEntity hospedajeEntity = getHospedaje(hospedajeId);
+//        UbicacionEntity ubicacionEntity = new UbicacionEntity();
+//        ubicacionEntity.setId(ubicacionId);
+//        hospedajeEntity.
+//    }
 
     /**
      * Remplaza las instancias de Imagen asociadas a una instancia de Hospedaje

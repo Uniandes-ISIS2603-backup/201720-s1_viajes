@@ -8,6 +8,7 @@ package co.edu.uniandes.csw.viajes.resources;
 import co.edu.uniandes.csw.viajes.dtos.EntretenimientoDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.EntretenimientoLogic;
 import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
+import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
 import co.edu.uniandes.csw.viajes.persistence.EntretenimientoPersistence;
 import java.util.ArrayList;
 import java.util.List;
@@ -145,6 +146,21 @@ public class EntretenimientoResource {
             throw new WebApplicationException(mensajeError(entretenimientoId), 404);
         }
         return EntretenimientoImagenesResource.class;
+    }
+    
+    /**
+     * Retorna el subrecurso ubicacion
+     * 
+     * @param entretenimientoId el usuario del que se quieren obtener los itinerarios
+     * @return BlogImagenesResource
+     */
+    @Path("{entretenimientoId: \\d+}/ubicacion")
+    public Class<EntretenimientoUbicacionResource> getUbicacionEntretenimientoResource(@PathParam("entretenimientoId") Long entretenimientoId) {
+        UbicacionEntity entity = entretenimientoLogic.getUbicacion(entretenimientoId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /entretenimiento/" + entretenimientoId + "/ubicacion no existe.", 404);
+        }
+        return EntretenimientoUbicacionResource.class;
     }
     
     /**
