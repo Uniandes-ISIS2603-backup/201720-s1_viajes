@@ -1,7 +1,9 @@
 package co.edu.uniandes.csw.viajes.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
@@ -22,8 +24,8 @@ public class UsuarioEntity extends BaseEntity
      * Tarjetas que le pertenecen al usuario
      */
     @PodamExclude
-    @OneToMany(mappedBy = "usuario")
-    private List<TarjetaCreditoEntity> tarjeta;
+    @OneToMany
+    private List<TarjetaCreditoEntity> tarjeta = new ArrayList<TarjetaCreditoEntity>();
     
     /**
      * Itinerarios que tiene el usuario

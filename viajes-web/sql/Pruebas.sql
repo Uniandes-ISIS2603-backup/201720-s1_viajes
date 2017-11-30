@@ -11,6 +11,8 @@ delete from ITINERARIOENTITY_GUIAENTITY;
 delete from ITINERARIOENTITY_ENTRETENIMIENTOENTITY;
 delete from ITINERARIOENTITY_HOSPEDAJEENTITY;
 delete from ITINERARIOENTITY_TRANSPORTEENTITY;
+delete from USUARIOENTITY_TARJETACREDITOENTITY;
+delete from UsuarioEntity_ItinerarioEntity;
 delete from GuiaEntity;
 delete from CompaniaEntity;
 delete from HospedajeEntity_ImagenEntity;
@@ -24,7 +26,6 @@ delete from TransporteEntity;
 delete from HospedajeEntity;
 delete from EntretenimientoEntity;
 delete from UsuarioEntity;
-delete from UsuarioEntity_ItinerarioEntity;
 delete from BlogEntity;
 delete from OficinaEntity;
 delete from GuiaEntity;
@@ -137,6 +138,12 @@ values (400, 'Fernando Huertas', '17/11/2017 16:30',600);
 insert into PagoEntity (id, nombre, fecha, valor)
 values (401, 'Jenny bolaños', '20/12/2017 17:30',500);
 
+insert into PagoEntity (id, nombre, fecha, valor)
+values (402, 'Mariana Rodriguez', '23/10/2017 13:30',700);
+
+insert into PagoEntity (id, nombre, fecha, valor)
+values (403, 'Tatiana Huertas', '10/08/2017 11:30',800);
+
 insert into CompaniaEntity (ID, EMAIL, TELEFONO, NOMBRE) values (12,'Desarrollo2017@uniandes.edu.co',9833219,'CesarInc');
 insert into CompaniaEntity (ID, EMAIL, TELEFONO, NOMBRE) values (13,'quesoConBocadillo@uniandes.edu.co',342152,'JuanLtda');
 insert into CompaniaEntity (ID, EMAIL, TELEFONO, NOMBRE) values (14,'avionesDisparatados@uniandes.edu.co',6421697,'DavidSAS');
@@ -222,3 +229,10 @@ insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
 values (418, 300);
 insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
 values (418, 500);
+
+insert into UsuarioEntity_TarjetaCreditoEntity (usuarioentity_id, tarjeta_id)
+values(413, 405);
+
+insert into UsuarioEntity_TarjetaCreditoEntity (usuarioentity_id, tarjeta_id)
+values(415, 406);
+

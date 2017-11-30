@@ -27,7 +27,7 @@
                  */
 
                 $http.put(usuariosContext + "/" + idUsuario, {
-                    nombre: $scope.usuarioName,
+                    nombre: $scope.usuarioName
                 }).then(function (response) {
                     //Usuario created successfully
                     $state.go('usuariosList', {usuarioId: response.data.id}, {reload: true});

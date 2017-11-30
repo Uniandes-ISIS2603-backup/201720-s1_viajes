@@ -1,0 +1,47 @@
+<br>
+<br>
+<br>
+<div class="container-fluid">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><label ng-if="!edit" id="createPago"> Crear pago </label>
+                <label ng-if="edit" id="editPago"> Editar pago </label>                
+            </div>  
+            <div  class="panel-body">
+                <form ng-submit="createPago()" name="pago">
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="pagoName" class="col-sm-2"> Nombre:</label>
+                            <input id="pagoName" required ng-model="pagoName" class="col-sm-6" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="pagoDate" class="col-sm-2"> Fecha:</label>
+                            <input id="pagoDate" required ng-model="pagoDate" class="col-sm-6" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="pagoValor" class="col-sm-2"> Valor:</label>
+                            <input id="pagoValor" required ng-model="pagoValor" class="col-sm-6" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="form-group col-sm-4" ng-if="!pago.$valid">
+                            <div class="alert alert-warning" >
+                                <strong>Atención!</strong><p>Todos los campos deben ser llenados*</p>
+                            </div> 
+                        </div> 
+                    </div>
+                    <div class="form-group row">
+                        <div class="form-group col-sm-12">
+                            <input ng-show="pago.$valid" type="submit" value="Save" class="btn btn-success"/>
+                            <a class="btn btn-info" ui-sref="pagosList"> Cancelar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>    
+</div>

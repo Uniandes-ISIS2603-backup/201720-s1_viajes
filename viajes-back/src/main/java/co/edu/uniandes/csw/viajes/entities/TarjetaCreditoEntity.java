@@ -39,7 +39,6 @@ public class TarjetaCreditoEntity extends BaseEntity
      * Usuario al que le pertence la tarjeta
      */
     @PodamExclude
-    @ManyToOne
     private UsuarioEntity usuario;
         
     /**
