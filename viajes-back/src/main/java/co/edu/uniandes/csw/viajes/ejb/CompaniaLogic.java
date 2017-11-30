@@ -29,6 +29,7 @@ public class CompaniaLogic {
      * @return Colección de objetos de CompaniaEntity.
      */
     public List<CompaniaEntity> getCompanias() {
+        
         return persistence.findAll();
     }
 
@@ -40,6 +41,7 @@ public class CompaniaLogic {
      * consultado.
      */
     public CompaniaEntity getCompania(Long id) {
+        
         return persistence.findById(id);
     }
 
@@ -50,6 +52,7 @@ public class CompaniaLogic {
      * @return Objeto de CompaniaEntity con los datos nuevos y su ID.
      */
     public CompaniaEntity createCompania(CompaniaEntity entity) {
+        
         return persistence.create(entity);
     }
 
@@ -60,6 +63,7 @@ public class CompaniaLogic {
      * @return Instancia de CompaniaEntity con los datos actualizados.
      */
     public CompaniaEntity updateCompania(CompaniaEntity entity) {
+        
         return persistence.update(entity);
     }
 
@@ -69,6 +73,7 @@ public class CompaniaLogic {
      * @param id Identificador de la instancia a eliminar.
      */
     public void deleteCompania(Long id) {
+        
         persistence.delete(id);
     }
 }

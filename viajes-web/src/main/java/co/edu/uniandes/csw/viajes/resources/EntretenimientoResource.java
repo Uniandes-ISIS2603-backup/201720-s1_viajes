@@ -65,7 +65,6 @@ public class EntretenimientoResource {
      * http://localhost:8080/viajes-web/api/entretenimientos
      *
      * @return la lista de todas las entretenimientoes en objetos json DTO.
-     * @throws BusinessLogicException
      */
     @GET
     public List<EntretenimientoDetailDTO> getEntretenimientos(){

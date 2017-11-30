@@ -34,6 +34,7 @@ public class EntretenimientoLogic {
     public EntretenimientoEntity createEntretenimiento(EntretenimientoEntity entity) {
         // Invoca la persistencia para crear la entretenimiento
         persistence.create(entity);
+
         return entity;
     }
 
@@ -90,6 +91,7 @@ public class EntretenimientoLogic {
      * de Entretenimiento
      */
     public List<ImagenEntity> listImagenes(Long entretenimientoId) {
+
         return getEntretenimiento(entretenimientoId).getImagenes();
     }
 
@@ -102,14 +104,14 @@ public class EntretenimientoLogic {
      * @return La imagen con id dado
      */
     public ImagenEntity getImagen(Long entretenimientoId, Long imagenesId) {
+
         List<ImagenEntity> list = getEntretenimiento(entretenimientoId).getImagenes();
         ImagenEntity imagenesEntity = new ImagenEntity();
         imagenesEntity.setId(imagenesId);
         int index = list.indexOf(imagenesEntity);
-        if (index >= 0) {
-            return list.get(index);
-        }
-        return null;
+
+        return list.get(index);
+
     }
 
     /**
@@ -120,10 +122,12 @@ public class EntretenimientoLogic {
      * @return Instancia de ImagenEntity que fue asociada a Entretenimiento
      */
     public ImagenEntity addImagen(Long entretenimientoId, Long imagenesId) {
+
         EntretenimientoEntity entretenimientoEntity = getEntretenimiento(entretenimientoId);
         ImagenEntity imagenesEntity = new ImagenEntity();
         imagenesEntity.setId(imagenesId);
         entretenimientoEntity.getImagenes().add(imagenesEntity);
+
         return getImagen(entretenimientoId, imagenesId);
     }
 
@@ -148,8 +152,10 @@ public class EntretenimientoLogic {
      * Entretenimiento
      */
     public List<ImagenEntity> replaceImagenes(Long entretenimientoId, List<ImagenEntity> list) {
+        
         EntretenimientoEntity entretenimientoEntity = getEntretenimiento(entretenimientoId);
         entretenimientoEntity.setImagenes(list);
+        
         return entretenimientoEntity.getImagenes();
     }
 
@@ -160,6 +166,7 @@ public class EntretenimientoLogic {
      * @param imagenesId Identificador de la instancia de Imagen
      */
     public void removeImagen(Long entretenimientoId, Long imagenesId) {
+        
         EntretenimientoEntity entity = getEntretenimiento(entretenimientoId);
         ImagenEntity imagenesEntity = new ImagenEntity();
         imagenesEntity.setId(imagenesId);

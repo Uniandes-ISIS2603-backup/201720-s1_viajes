@@ -54,11 +54,9 @@ public class BlogLogic {
      * @return El blog solicitado por medio de su id.
      */
     public BlogEntity getBlog(Long id) {
-        BlogEntity blog = persistence.find(id);
-        if (blog != null) {
-            return blog;
-        }
-        return null;
+
+        return persistence.find(id);
+
     }
 
     /**
@@ -69,7 +67,7 @@ public class BlogLogic {
      * @return el blog con los cambios actualizados en la base de datos.
      */
     public BlogEntity updateBlog(BlogEntity entity) {
-        // Note que, por medio de la inyección de dependencias se llama al método "update(entity)" que se encuentra en la persistencia.
+
         return persistence.update(entity);
     }
 
@@ -79,8 +77,9 @@ public class BlogLogic {
      * @param id: id del blog a borrar
      */
     public void deleteBlog(Long id) {
-        // Note que, por medio de la inyección de dependencias se llama al método "delete(id)" que se encuentra en la persistencia.
+
         persistence.delete(id);
+
     }
 
     /**
@@ -103,14 +102,14 @@ public class BlogLogic {
      * @return La imagen con id dado
      */
     public ImagenEntity getImagen(Long blogId, Long imagenesId) {
+        
         List<ImagenEntity> list = getBlog(blogId).getImagenes();
         ImagenEntity imagenesEntity = new ImagenEntity();
         imagenesEntity.setId(imagenesId);
         int index = list.indexOf(imagenesEntity);
-        if (index >= 0) {
-            return list.get(index);
-        }
-        return null;
+
+        return list.get(index);
+
     }
 
     /**
@@ -121,10 +120,12 @@ public class BlogLogic {
      * @return Instancia de ImagenEntity que fue asociada a Blog
      */
     public ImagenEntity addImagen(Long blogId, Long imagenesId) {
+
         BlogEntity blogEntity = getBlog(blogId);
         ImagenEntity imagenesEntity = new ImagenEntity();
         imagenesEntity.setId(imagenesId);
         blogEntity.getImagenes().add(imagenesEntity);
+
         return getImagen(blogId, imagenesId);
     }
 
@@ -137,8 +138,10 @@ public class BlogLogic {
      * @return Nueva colección de ImagenEntity asociada a la instancia de Blog
      */
     public List<ImagenEntity> replaceImagenes(Long blogId, List<ImagenEntity> list) {
+
         BlogEntity blogEntity = getBlog(blogId);
         blogEntity.setImagenes(list);
+
         return blogEntity.getImagenes();
     }
 
@@ -150,9 +153,10 @@ public class BlogLogic {
      */
     public void removeImagen(Long blogId, Long imagenesId) {
         BlogEntity entity = getBlog(blogId);
+
         ImagenEntity imagenesEntity = new ImagenEntity();
         imagenesEntity.setId(imagenesId);
+
         entity.getImagenes().remove(imagenesEntity);
-        BlogPersistence p = new BlogPersistence();        
     }
 }

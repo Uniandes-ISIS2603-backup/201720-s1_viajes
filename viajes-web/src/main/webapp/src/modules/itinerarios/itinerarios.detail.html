@@ -72,9 +72,9 @@
                         <tbody>
                             <tr ng-repeat="transporte in currentRecord.transportes">
                                
-                             <td id="{{$index}}-transporte">{{transporte.nombre}}</td>
-                             <td id="{{$index}}-transporte">{{transporte.fechaInicio}}</td>
-                             <td id="{{$index}}-transporte">{{transporte.fechaFinal}}</td>
+                             <td id="{{$index}}-transporte">{{transporte.nombreTransporte}}</td>
+                             <td id="{{$index}}-transporte">{{transporte.fechaInicioTransporte}}</td>
+                             <td id="{{$index}}-transporte">{{transporte.fechaFinalTransporte}}</td>
                              <td>
                                 <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordTransporte(currentRecord.id, transporte.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
                              </td>
@@ -96,9 +96,9 @@
                         <tbody>
                             <tr ng-repeat="hospedaje in currentRecord.hospedajes">
                                
-                             <td id="{{$index}}-hospedaje">{{hospedaje.nombre}}</td>
-                             <td id="{{$index}}-hospedaje">{{hospedaje.fechaInicio}}</td>
-                             <td id="{{$index}}-hospedaje">{{hospedaje.fechaFinal}}</td>
+                             <td id="{{$index}}-hospedaje">{{hospedaje.nombreHospedaje}}</td>
+                             <td id="{{$index}}-hospedaje">{{hospedaje.fechaInicioHospedaje}}</td>
+                             <td id="{{$index}}-hospedaje">{{hospedaje.fechaFinalHospedaje}}</td>
                              <td>
                                 <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordHospedaje(currentRecord.id, hospedaje.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
                              </td>
@@ -120,9 +120,9 @@
                         <tbody>
                             <tr ng-repeat="entretenimiento in currentRecord.entretenimientos">
                                
-                             <td id="{{$index}}-entretenimiento">{{entretenimiento.nombre}}</td>
-                             <td id="{{$index}}-entretenimiento">{{entretenimiento.fechaInicio}}</td>
-                             <td id="{{$index}}-entretenimiento">{{entretenimiento.fechaFinal}}</td>
+                             <td id="{{$index}}-entretenimiento">{{entretenimiento.nombreEntretenimiento}}</td>
+                             <td id="{{$index}}-entretenimiento">{{entretenimiento.fechaInicioEntretenimiento}}</td>
+                             <td id="{{$index}}-entretenimiento">{{entretenimiento.fechaFinalEntretenimiento}}</td>
                              <td>
                                 <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordEntretenimiento(currentRecord.id, entretenimiento.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
                              </td>

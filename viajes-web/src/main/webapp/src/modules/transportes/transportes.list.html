@@ -24,17 +24,16 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="record in records">
-                            <td id="{{$index}}-nombre">{{record.nombre}}</td>
-                            <td id="{{$index}}-valor">{{record.valor}}</td>
-                            <td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>
-                            <td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>
-                            <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
-                            <td id="{{$index}}-comentarios">{{record.comentarios}}</td>
-                            <td id="{{$index}}-descripcion">{{record.descripcion}}</td>
+                            <td id="{{$index}}-nombre"><a ui-sref="transportesDetail({transporteId: record.idTransporte})"></a>{{record.nombreTransporte}}</td>
+                            <td id="{{$index}}-valor">{{record.valorTransporte}}</td>
+                            <td id="{{$index}}-fechaInicio">{{record.fechaInicioTransporte}}</td>
+                            <td id="{{$index}}-fechaFinal">{{record.fechaFinalTransporte}}</td>
+                            <td id="{{$index}}-calificacion">{{record.calificacionTransporte}}</td>
+                            <td id="{{$index}}-comentarios">{{record.comentariosTransporte}}</td>
+                            <td id="{{$index}}-descripcion">{{record.descripcionTransporte}}</td>
                             <td>
-                                <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="transporteEdit({transporteId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar </button>
-                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar </button>
-                                <button id="{{$index}}-edit-btn" ui-sref="transportesDetail({transporteId: record.id})" class="btn btn-default btn-sm" ><span class="glyphicon glyphicon-edit"></span>Ver</button>
+                                <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="transporteEdit({transporteId: record.idTransporte})"><span class="glyphicon glyphicon-edit"></span> Modificar </button>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.idTransporte)"><span class="glyphicon glyphicon-minus"></span> Eliminar </button>
                             </td>
                         </tr>
                     </tbody>
