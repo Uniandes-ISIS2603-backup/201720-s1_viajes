@@ -158,5 +158,20 @@ public class TransporteResource {
         }
         transporteLogic.deleteTransporte(id);
     }
+    
+    /**
+     * Retorna el subrecurso de imagenes
+     * 
+     * @param transporteId
+     * @return TransporteImagenesResource
+     */
+    @Path("{transporteId: \\d+}/imagenes")
+    public Class<TransporteImagenesResource> getBlogImagenesResource(@PathParam("transporteId") Long transporteId) {
+        TransporteEntity entity = transporteLogic.getTransporte(transporteId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /transportes/" + transporteId + "/imagenes no existe.", 404);
+        }
+        return TransporteImagenesResource.class;
+    }
 
 }

@@ -27,8 +27,10 @@
                         </tr>
                     </thead>
                     <tbody>
+
                         <tr ng-repeat="record in records|filter:buscador">
-                            <td id="{{$index}}-nombre"><a ui-sref="transportesDetail({transporteId: record.idTransporte})"></a>{{record.nombreTransporte}}</td>
+                            <td id="{{$index}}-nombre"><a ui-sref="transporteDetail({transporteId: record.idTransporte})">{{record.nombreTransporte}}</a></td>
+
                             <td id="{{$index}}-valor">{{record.valorTransporte}}</td>
                             <td id="{{$index}}-fechaInicio">{{record.fechaInicioTransporte}}</td>
                             <td id="{{$index}}-fechaFinal">{{record.fechaFinalTransporte}}</td>
@@ -48,4 +50,3 @@
 </div>
     
     
-</div>
