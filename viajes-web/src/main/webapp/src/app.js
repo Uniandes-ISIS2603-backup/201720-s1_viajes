@@ -16,7 +16,8 @@
         'logModule',
         'companiaModule',
         'guiasModule',
-        'tarjetasModule'
+        'tarjetasModule',
+        'oficinasModule'
     ]);
     // Resuelve problemas de las promesas
     app.config(['$qProvider', function ($qProvider) {
