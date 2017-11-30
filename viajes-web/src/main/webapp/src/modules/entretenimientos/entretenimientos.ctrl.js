@@ -3,6 +3,9 @@
     mod.constant("entretenimientosContext", "api/entretenimientos");
     mod.controller('entretenimientoCtrl', ['$scope', '$http', 'entretenimientosContext', '$state',
         function ($scope, $http, entretenimientosContext, $state) {
+            
+            var id = $state.params.entretenimientoId;
+            
             $http.get(entretenimientosContext).then(function (response) {
                 $scope.records = response.data;
             });
@@ -17,6 +20,21 @@
                 
                 });
             }
+            
+            $scope.createImagen = function () {
+                $http.post('api/imagenes', {
+                    ruta: $scope.ruta,
+                    comentario: $scope.comentario
+                }).then(function (response) {
+                    //Author created successfully
+                    $http.post(entretenimientosContext+ '/' +id+'/imagenes/'+response.data.id, )
+                    .then(function (response) {                                                 
+                    
+                    $state.go('entretenimientosDetail({})', {entretenimientoId: response.data.id}, {reload: true});
+                });
+                    
+                });
+            };
         }
     ]);
 }
