@@ -49,7 +49,7 @@
                     }
                 }
             }).state('usuarioDelete', {
-                url: '/{usuarioId:int}',
+                url: '/{usuarioId:int}/delete',
                 parent: 'usuarios',
                 param: {
                     usuarioId: null
@@ -70,7 +70,7 @@
                     }
                 }
             }).state('usuarioUpdate', {
-                url: '/{usuarioId:int}',
+                url: '/{usuarioId:int}/update',
                 parent: 'usuarios',
                 param: {
                     usuarioId: null

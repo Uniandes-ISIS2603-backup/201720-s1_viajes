@@ -10,13 +10,8 @@
             if (($state.params.usuarioId !== undefined) && ($state.params.usuarioId !== null)) {
                 $http.get(usuariosContext + '/' + $state.params.usuarioId).then(function (response) {
                     $scope.currentUsuario = response.data;
-                    $http.get(usuariosContext + '/' + $state.params.usuarioId + '/itinerarios').then(function (response) {
-                        $scope.itinerariosRecords = response.data;
-                    });
-                    
-                    $http.get(usuariosContext + '/' + $state.params.usuarioId + '/tarjetas').then(function (response) {
-                        $scope.tarjetasRecords = response.data;
-                    });
+                    $scope.itinerariosRecords = response.data.itinerario;
+                    $scope.records = response.data.tarjeta;
                 });
             }
         }

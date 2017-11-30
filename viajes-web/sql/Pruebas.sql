@@ -25,6 +25,7 @@ delete from TransporteEntity;
 delete from HospedajeEntity;
 delete from EntretenimientoEntity;
 delete from UsuarioEntity;
+delete from UsuarioEntity_ItinerarioEntity;
 delete from BlogEntity;
 delete from OficinaEntity;
 delete from GuiaEntity;
@@ -86,6 +87,48 @@ values (417, 'Sebastian Beltran');
 
 insert into UsuarioEntity (id, nombre)
 values (418, 'Juan Camilo Sanchez');
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (413, 100);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (413, 200);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (413, 300);
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (414, 400);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (414, 500);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (414, 100);
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (415, 200);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (415, 300);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (415, 400);
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (416, 500);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (416, 100);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (416, 200);
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (417, 300);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (417, 400);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (417, 500);
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (418, 100);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (418, 300);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (418, 500);
 
 insert into UbicacionEntity (ID, LONGITUD, LATITUD, NOMBRE, DIRECCION, CIUDAD, PAIS)
  values (2, 12.0, 13.0, 'Hola', 'Calle', 'Bogota', 'Colombia');
@@ -163,6 +206,9 @@ insert into hospedajeentity_imagenentity (hospedajeentity_id, imagenes_id) value
 
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (100,'01/01/17','02/02/17',1000,1);
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (200,'02/02/17','03/03/17',2000,2);
+insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (300,'03/03/17','04/04/17',3000,3);
+insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (400,'04/04/17','05/05/17',4000,4);
+insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (500,'05/05/17','06/06/17',5000,5);
 
 insert into companiaentity_oficinaentity (companiaentity_id, oficinas_id) values (12, 10); 
 
