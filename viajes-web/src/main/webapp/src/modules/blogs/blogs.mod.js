@@ -43,7 +43,7 @@
                     }
                 }
             }).state('blogDelete', {
-                url: '/{blogId:int}',
+                url: '/{blogId:int}/delete',
                 parent: 'blogs',
                 param: {
                     blogId: null
@@ -64,7 +64,7 @@
                     }
                 }
             }).state('blogUpdate', {
-                url: '/{blogId:int}',
+                url: '/{blogId:int}/update',
                 parent: 'blogs',
                 param: {
                     blogId: null

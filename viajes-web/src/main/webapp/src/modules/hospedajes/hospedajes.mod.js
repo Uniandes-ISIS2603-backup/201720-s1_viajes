@@ -54,7 +54,7 @@ var mod = ng.module("hospedajesModule", []);
                 }
 
             }).state('hospedajesEdit', {
-                url: '/{hospedajesId:int}',
+                url: '/{hospedajesId:int}/update',
                 parent: 'hospedajes',
                 param: {
                     hospedajesId: null

@@ -132,16 +132,6 @@ public class EntretenimientoLogic {
     }
 
     /**
-     * Obtiene una instancia de UbicacionEntity asociada a un hospedaje
-     * 
-     * @param hospedajeId Identificador de la instancia de Hospedaje
-     * @return La instancia de Ubicación
-     */
-    public UbicacionEntity getUbicacion(Long entretenimientoId){
-        UbicacionEntity entity = getEntretenimiento(entretenimientoId).getUbicacion();
-        return entity;
-    }
-    /**
      * Remplaza las instancias de Imagen asociadas a una instancia de
      * Entretenimiento
      *
@@ -171,5 +161,16 @@ public class EntretenimientoLogic {
         ImagenEntity imagenesEntity = new ImagenEntity();
         imagenesEntity.setId(imagenesId);
         entity.getImagenes().remove(imagenesEntity);
+    }
+    
+    /**
+     * Obtiene una instancia de UbicacionEntity asociada a un hospedaje
+     * 
+     * @param entretenimientoId Identificador de la instancia de Hospedaje
+     * @return La instancia de Ubicación
+     */
+    public UbicacionEntity getUbicacion(Long entretenimientoId){
+        UbicacionEntity entity = getEntretenimiento(entretenimientoId).getUbicacion();
+        return entity;
     }
 }

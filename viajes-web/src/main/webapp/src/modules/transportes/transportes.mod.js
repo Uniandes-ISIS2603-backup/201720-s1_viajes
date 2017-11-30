@@ -55,7 +55,7 @@ var mod = ng.module("transportesModule", []);
                 }
 
             }).state('transporteEdit', {
-                url: '/{transporteId:int}',
+                url: '/{transporteId:int}/update',
                 parent: 'transportes',
                 param: {
                     transportesId: null
