@@ -13,6 +13,9 @@ import co.edu.uniandes.csw.viajes.entities.ImagenEntity;
  */
 public class ImagenDetailDTO extends ImagenDTO{
     
+    /**
+     * Constructor por defecto
+     */
     public ImagenDetailDTO(){
         super();
     }
@@ -24,15 +27,5 @@ public class ImagenDetailDTO extends ImagenDTO{
      */
     public ImagenDetailDTO(ImagenEntity entity){
         super(entity);
-    }
-    
-    /**
-     * Transformar un DTO a un Entity
-     *
-     * @return 
-     */
-    @Override
-    public ImagenEntity toEntity(){
-        return super.toEntity();
-    }
+    }    
 }

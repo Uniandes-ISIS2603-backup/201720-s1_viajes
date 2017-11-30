@@ -23,14 +23,14 @@
                             </thead>
                             <tbody>
                               <tr ng-repeat="record in records">
-                                 <td id="{{$index}}-nombre"><a ui-sref="entretenimientosDetail({entretenimientoId: record.id})">{{record.nombre}}</a></td>
-                                <td id="{{$index}}-valor"><span id="currency-no-fractions">{{record.valor | currency}}</span></td>
-                                <td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>
-                                <td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>
-                                <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
+                                 <td id="{{$index}}-nombre"><a ui-sref="entretenimientosDetail({entretenimientoId: record.idEntretenimiento})">{{record.nombreEntretenimiento}}</a></td>
+                                <td id="{{$index}}-valor"><span id="currency-no-fractions">{{record.valorEntretenimiento | currency}}</span></td>
+                                <td id="{{$index}}-fechaInicio">{{record.fechaInicioEntretenimiento}}</td>
+                                <td id="{{$index}}-fechaFinal">{{record.fechaFinalEntretenimiento}}</td>
+                                <td id="{{$index}}-calificacion">{{record.calificacionEntretenimiento}}</td>
                                 <td>
-                                    <button id="{{$index}}-edit-btn" class="btn btn-default btn-sm" ui-sref="entretenimientoUpdate({entretenimientoId: record.id})"><span class="glyphicon glyphicon-edit"></span> Editar</button>
-                                    <button id="{{$index}}-delete-btn" class="btn btn-danger btn-sm" ui-sref="entretenimientoDelete({entretenimientoId: record.id})"><span class="glyphicon glyphicon-trash"></span> Eliminar</button>        
+                                    <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="entretenimientoUpdate({entretenimientoId: record.idEntretenimiento})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
+                                    <button id="{{$index}}-delete-btn" class="btn btn-danger btn-sm" ui-sref="entretenimientoDelete({entretenimientoId: record.idEntretenimiento})"><span class="glyphicon glyphicon-trash"></span> Eliminar</button>        
                                 </td>
                               </tr>
                             </tbody>

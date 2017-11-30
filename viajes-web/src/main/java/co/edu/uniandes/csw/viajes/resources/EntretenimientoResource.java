@@ -8,6 +8,7 @@ package co.edu.uniandes.csw.viajes.resources;
 import co.edu.uniandes.csw.viajes.dtos.EntretenimientoDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.EntretenimientoLogic;
 import co.edu.uniandes.csw.viajes.entities.EntretenimientoEntity;
+import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
 import co.edu.uniandes.csw.viajes.persistence.EntretenimientoPersistence;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +66,6 @@ public class EntretenimientoResource {
      * http://localhost:8080/viajes-web/api/entretenimientos
      *
      * @return la lista de todas las entretenimientoes en objetos json DTO.
-     * @throws BusinessLogicException
      */
     @GET
     public List<EntretenimientoDetailDTO> getEntretenimientos(){
@@ -87,7 +87,7 @@ public class EntretenimientoResource {
     public EntretenimientoDetailDTO getEntretenimiento(@PathParam("id") Long id){
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /entretenimientos/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         return new EntretenimientoDetailDTO(entretenimientoLogic.getEntretenimiento(id));
     }
@@ -106,10 +106,10 @@ public class EntretenimientoResource {
     @PUT
     @Path("{id: \\d+}")
     public EntretenimientoDetailDTO updateEntretenimiento(@PathParam("id") Long id, EntretenimientoDetailDTO entretenimiento)  {
-        entretenimiento.setId(id);
+        entretenimiento.setIdEntretenimiento(id);
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /entretenimientos/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         return new EntretenimientoDetailDTO(entretenimientoLogic.updateEntretenimiento(entretenimiento.toEntity()));
     }
@@ -128,7 +128,7 @@ public class EntretenimientoResource {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar una entretenimiento con id {0}", id);
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(id);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /entretenimientos/" + id + " no existe.", 404);
+            throw new WebApplicationException(mensajeError(id), 404);
         }
         entretenimientoLogic.deleteEntretenimiento(id);
     }
@@ -143,9 +143,24 @@ public class EntretenimientoResource {
     public Class<EntretenimientoImagenesResource> getBlogImagenesResource(@PathParam("entretenimientoId") Long entretenimientoId) {
         EntretenimientoEntity entity = entretenimientoLogic.getEntretenimiento(entretenimientoId);
         if (entity == null) {
-            throw new WebApplicationException("El recurso /entretenimientos/" + entretenimientoId + "/imagenes no existe.", 404);
+            throw new WebApplicationException(mensajeError(entretenimientoId), 404);
         }
         return EntretenimientoImagenesResource.class;
+    }
+    
+    /**
+     * Retorna el subrecurso ubicacion
+     * 
+     * @param entretenimientoId el usuario del que se quieren obtener los itinerarios
+     * @return BlogImagenesResource
+     */
+    @Path("{entretenimientoId: \\d+}/ubicacion")
+    public Class<EntretenimientoUbicacionResource> getUbicacionEntretenimientoResource(@PathParam("entretenimientoId") Long entretenimientoId) {
+        UbicacionEntity entity = entretenimientoLogic.getUbicacion(entretenimientoId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /entretenimiento/" + entretenimientoId + "/ubicacion no existe.", 404);
+        }
+        return EntretenimientoUbicacionResource.class;
     }
     
     /**
@@ -166,4 +181,15 @@ public class EntretenimientoResource {
         }
         return list;
     }    
+    
+     /**
+     * Retorna un mensaje de error
+     *
+     * @param blogId el id del blog que no se encontro
+     * @return lmensaje de error
+     */
+    private String mensajeError(Long blogId)
+    {
+        return "El recurso /entretenimientos/"+blogId+" no existe.";
+    }
 }

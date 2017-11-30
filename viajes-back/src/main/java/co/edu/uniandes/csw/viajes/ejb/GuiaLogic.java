@@ -17,62 +17,55 @@ import javax.inject.Inject;
 public class GuiaLogic {
 
     /**
-     * Variable para acceder a la persistencia de la aplicación. 
-     * Es una inyección de dependencias.
+     * Variable para acceder a la persistencia de la aplicación. Es una
+     * inyección de dependencias.
      */
     @Inject
     private GuiaPersistence persistence;
-   
+
     /**
-     * Variable para acceder a la persistencia de la aplicación. 
-     * Es una inyección de dependencias.
-     */
-    @Inject
-    private CompaniaLogic companiaLogic;
-   
-     /**
      * Obtiene la lista de los registros de Guia.
+     *
      * @return Colección de objetos de GuiaEntity.
-     * @generated
      */
     public List<GuiaEntity> getGuias() {
         return persistence.findAll();
     }
-    
+
     /**
      * Obtiene los datos de una instancia de Guia a partir de su ID.
+     *
      * @param id Identificador de la instancia a consultar
      * @return Instancia de GuiaEntity con los datos del Guia consultado.
-     * @generated
      */
     public GuiaEntity getGuia(Long id) {
         return persistence.findById(id);
     }
- 
+
     /**
      * Se encarga de crear un Guia en la base de datos.
+     *
      * @param entity Objeto de GuiaEntity con los datos nuevos
      * @return Objeto de GuiaEntity con los datos nuevos y su ID.
-     * @generated
      */
     public GuiaEntity createGuia(GuiaEntity entity) {
         return persistence.create(entity);
     }
-    
+
     /**
      * Actualiza la información de una instancia de Guia.
+     *
      * @param entity Instancia de GuiaEntity con los nuevos datos.
      * @return Instancia de GuiaEntity con los datos actualizados.
-     * @generated
      */
     public GuiaEntity updateGuia(GuiaEntity entity) {
         return persistence.update(entity);
     }
-    
-     /**
+
+    /**
      * Elimina una instancia de Guia de la base de datos.
+     *
      * @param id Identificador de la instancia a eliminar.
-     * @generated
      */
     public void deleteGuia(Long id) {
         persistence.delete(id);

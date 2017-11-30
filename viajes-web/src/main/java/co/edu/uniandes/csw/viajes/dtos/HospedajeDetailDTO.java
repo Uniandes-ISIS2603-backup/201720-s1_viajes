@@ -17,8 +17,19 @@ import java.util.List;
  */
 public class HospedajeDetailDTO extends HospedajeDTO {
     
+    /**
+     * Lista de imagenes del hospedaje
+     */
     private List<ImagenDTO> imagenes;
     
+    /**
+     * icacio
+     */
+    private UbicacionDTO ubicacion;
+    
+    /**
+     * Constructor por defecto
+     */
     public HospedajeDetailDTO(){
         super();
     }
@@ -35,6 +46,9 @@ public class HospedajeDetailDTO extends HospedajeDTO {
             imagenes = new ArrayList<>();
             for(ImagenEntity entityImage : entity.getImagenes())
                 imagenes.add(new ImagenDTO(entityImage));
+        }
+        if(entity.getUbicacion()!=null){
+            ubicacion = new UbicacionDTO(entity.getUbicacion());
         }
     }
     
@@ -54,6 +68,9 @@ public class HospedajeDetailDTO extends HospedajeDTO {
             }
             entity.setImagenes(imagenesEntity);
         }
+        if(this.getUbicacion()!=null){
+            entity.setUbicacion(ubicacion.toEntity());
+        }
         return entity;
     }
     
@@ -63,6 +80,20 @@ public class HospedajeDetailDTO extends HospedajeDTO {
     public List<ImagenDTO> getImagenes() {
         return imagenes;
     }
+    
+    /**
+     * @return the ubicacion
+     */
+    public UbicacionDTO getUbicacion(){
+        return ubicacion;
+    }
+    
+    /**
+     * @param ubicacion the ubicacion to set
+     */
+    public void setUbicacion(UbicacionDTO ubicacion){
+    this.ubicacion = ubicacion;
+    }
 
     /**
      * @param imagenes the imagenes to set
@@ -70,5 +101,4 @@ public class HospedajeDetailDTO extends HospedajeDTO {
     public void setImagens(List<ImagenDTO> imagenes) {
         this.imagenes = imagenes;
     }
-
 }

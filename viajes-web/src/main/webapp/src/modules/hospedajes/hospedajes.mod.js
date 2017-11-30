@@ -3,6 +3,7 @@ var mod = ng.module("hospedajesModule", []);
     mod.constant("hospedajesContext", "api/hospedajes");
     mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             var basePath = 'src/modules/hospedajes/';
+            $urlRouterProvider.otherwise("/hospedajesList");
             
             $stateProvider.state('hospedajesList',{
                 url: '/hospedajes',

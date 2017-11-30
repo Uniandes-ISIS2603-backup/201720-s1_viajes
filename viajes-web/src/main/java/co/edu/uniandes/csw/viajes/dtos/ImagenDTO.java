@@ -88,6 +88,4 @@ public class ImagenDTO {
         entity.setRuta(this.ruta);
         return entity;
     }
-
-    
 }

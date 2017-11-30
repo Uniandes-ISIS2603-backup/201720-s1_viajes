@@ -4,8 +4,7 @@
             <div class="panel-heading"><label>Itinerario Detail</label></div>
             <div class="panel-body">
                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                                         </div>
+                    <div class="btn-group mr-2" role="group" aria-label="First group"></div>
                 </div>
                 <div class="col-md-8">
                     <button type="button" ui-sref='itinerariosList' style="float: right;">Volver</button>
@@ -28,7 +27,104 @@
                              <td id="{{$index}}-fechaFi">{{currentRecord.fechaFinal}}</td>   
                              <td id="{{$index}}-cantidad">{{currentRecord.numeroVisitantes}}</td>   
                              <td>
-                                <button type="button" style="float: right;">Pagar</button>
+                                <button id="{{$index}}-edit-btn" ui-sref="itinerariosPago({itinerarioPago: currentRecord.costoTotal})" class="btn btn-default btn-sm" ><span class="glyphicon glyphicon-edit"></span>Pagar</button>
+                             </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                     
+                </div>
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+
+                                <th>Guia Nombre</th>
+                                <th>Guia Fecha Inicio</th>
+                                <th>Guia Fecha Fin</th>
+                                <th>Guia Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="guia in currentRecord.guias">
+                               
+                             <td id="{{$index}}-guia">{{guia.nombre}}</td>
+                             <td id="{{$index}}-guia">{{guia.fechaInicio}}</td>
+                             <td id="{{$index}}-guia">{{guia.fechaFinal}}</td>
+                             <td>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordGuia(currentRecord.id, guia.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                             </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+
+                                <th>Transporte Nombre</th>
+                                <th>Transporte Fecha Inicio</th>
+                                <th>Transporte Fecha Fin</th>
+                                <th>Transporte Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="transporte in currentRecord.transportes">
+                               
+                             <td id="{{$index}}-transporte">{{transporte.nombreTransporte}}</td>
+                             <td id="{{$index}}-transporte">{{transporte.fechaInicioTransporte}}</td>
+                             <td id="{{$index}}-transporte">{{transporte.fechaFinalTransporte}}</td>
+                             <td>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordTransporte(currentRecord.id, transporte.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                             </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+
+                                <th>Hospedaje Nombre</th>
+                                <th>Hospedaje Fecha Inicio</th>
+                                <th>Hospedaje Fecha Fin</th>
+                                <th>Hospedaje Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="hospedaje in currentRecord.hospedajes">
+                               
+                             <td id="{{$index}}-hospedaje">{{hospedaje.nombreHospedaje}}</td>
+                             <td id="{{$index}}-hospedaje">{{hospedaje.fechaInicioHospedaje}}</td>
+                             <td id="{{$index}}-hospedaje">{{hospedaje.fechaFinalHospedaje}}</td>
+                             <td>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordHospedaje(currentRecord.id, hospedaje.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                             </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+
+                                <th>Entretenimiento Nombre</th>
+                                <th>Entretenimiento Fecha Inicio</th>
+                                <th>Entretenimiento Fecha Fin</th>
+                                <th>Entretenimiento Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="entretenimiento in currentRecord.entretenimientos">
+                               
+                             <td id="{{$index}}-entretenimiento">{{entretenimiento.nombreEntretenimiento}}</td>
+                             <td id="{{$index}}-entretenimiento">{{entretenimiento.fechaInicioEntretenimiento}}</td>
+                             <td id="{{$index}}-entretenimiento">{{entretenimiento.fechaFinalEntretenimiento}}</td>
+                             <td>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecordEntretenimiento(currentRecord.id, entretenimiento.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
                              </td>
                             </tr>
                         </tbody>

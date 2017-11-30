@@ -1,6 +1,7 @@
 (function (ng) {
     // Definición del módulo
     var mod = ng.module("itinerariosModule", ['ui.router']);
+    mod.constant("pagoContext", "api/pagos");
     mod.constant("itinerariosContext", "api/itinerarios");
     // Configuración de los estados del módulo
     mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider) {
@@ -51,6 +52,18 @@
                         controller: 'itinerariosCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'itinerarios.detail.html'
+                    }
+                }
+            }).state('itinerariosPago', {
+                url: '/itinerarios/Pago/:itinerarioPago',
+                param: {
+                    itinerarioPago: null
+                },
+                views: {
+                    'mainView': {
+                        controller: 'itinerariosCtrl',
+                        controllerAs: 'ctrl',
+                        templateUrl: basePath + 'itinerarios.pago.html'
                     }
                 }
             });

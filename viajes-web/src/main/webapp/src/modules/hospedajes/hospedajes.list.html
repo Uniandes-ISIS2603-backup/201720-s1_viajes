@@ -27,16 +27,16 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="record in hospedajesRecords">
-                                <td id="{{$index}}-nombre"><a ui-sref="hospedajeDetail({hospedajesId: record.id})">{{record.nombre}}</a></td>
-                                <td id="{{$index}}-valor">{{record.valor}}</td>
+                                <td id="{{$index}}-nombre"><a ui-sref="hospedajeDetail({hospedajesId: record.idHospedaje})">{{record.nombreHospedaje}}</a></td>
+                                <td id="{{$index}}-valor">{{record.valorHospedaje | currency}}</td>
                                 <!--<td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>-->
                                 <!--<td id="{{$index}}-fechaFinal">{{record.fechaFinal}}</td>-->
-                                <td id="{{$index}}-calificacion">{{record.calificacion}}</td>
+                                <td id="{{$index}}-calificacion">{{record.calificacionHospedaje}}</td>
                                 <!--<td id="{{$index}}-comentarios">{{record.comentarios}}</td>-->
                                 <!--<td id="{{$index}}-descripcion">{{record.descripcion}}</td>-->
                                 <td>
-                                    <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="hospedajesEdit({hospedajesId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
-                                    <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                                    <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="hospedajesEdit({hospedajesId: record.idHospedaje})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
+                                    <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.idHospedaje)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
                                 </td>
                             </tr>
                         </tbody>
