@@ -4,6 +4,10 @@
             <div class="panel-heading"><label>Usuarios</label></div>
             <div class="panel-body">
                 <a class="btn btn-info" ui-sref="usuariosCreate" style="float: right;"><span class="glyphicon glyphicon-plus-sign"></span> Agregar un nuevo usuario</a>
+                <div>
+                        <label>Filtra tu búsqueda: </label>
+                        <input type="text" ng-model="buscador" />
+                    </div>
                 
                 <div class="col-md-8">
                     <table class="table table-striped">
@@ -15,7 +19,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="usuario in usuariosRecords">
+                            <tr ng-repeat="usuario in usuariosRecords|filter:buscador">
                                 <td id="{{$index}}-nombre"><a ui-sref="usuarioDetail({usuarioId: usuario.id})">{{usuario.nombre}}</a></td>
                                 <td id="{{$index}}-actions">
                                     <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="usuarioUpdate({usuarioId: usuario.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
