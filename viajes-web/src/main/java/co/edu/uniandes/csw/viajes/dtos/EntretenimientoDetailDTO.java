@@ -51,15 +51,16 @@ public class EntretenimientoDetailDTO extends EntretenimientoDTO{
             }
         }
         if (entity.getUbicacion() != null) {
-            this.ubicacion = new UbicacionDTO(entity.getUbicacion());
-        } else {
-            entity.setUbicacion(null);
-        }
-       if (entity.getCompania() != null) {
-            this.compania = new CompaniaDTO(entity.getCompania());
-        } else {
-            entity.setCompania(null);
-        }
+            ubicacion = new UbicacionDTO(entity.getUbicacion());
+        } 
+//        else {
+//            entity.setUbicacion(null);
+//        }
+//       if (entity.getCompania() != null) {
+//            compania = new CompaniaDTO(entity.getCompania());
+//        } else {
+//            entity.setCompania(null);
+//        }
         
     }
 
@@ -79,14 +80,12 @@ public class EntretenimientoDetailDTO extends EntretenimientoDTO{
             }
             entretenimientoE.setImagenes(imagenesEntity);
         }
-        
         if (this.getUbicacion() != null) {
-            entretenimientoE.setUbicacion(this.getUbicacion().toEntity());
+            entretenimientoE.setUbicacion(ubicacion.toEntity());
         }
-        
-        if (this.getCompania() != null) {
-            entretenimientoE.setCompania(this.getCompania().toEntity());
-        }
+//        if (this.getCompania() != null) {
+//            entretenimientoE.setCompania(getCompania().toEntity());
+//        }
         
         return entretenimientoE;
     }
