@@ -3,29 +3,26 @@
         <div class="panel panel-primary">
             <div class="panel-heading"><label>Usuarios</label></div>
             <div class="panel-body">
-                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                        <a class="btn btn-info" ui-sref="usuariosCreate"><span class="glyphicon glyphicon-plus-sign"></span> Agregar un nuevo usuario</a>
-                    </div>
-                </div>
-                <br>
-                <div>
-                    <table class="table table-striped col-md-4">
+                <a class="btn btn-info" ui-sref="usuariosCreate" style="float: right;"><span class="glyphicon glyphicon-plus-sign"></span> Agregar un nuevo usuario</a>
+                
+                <div class="col-md-8">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Acciones</th>
+                                <th>Nombre</th>     
+                                <th>Acciones</th>  
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="record in records">
-                                <td id="{{$index}}-nombre"><a ui-sref="usuarioDetail({usuariosId: record.id})">{{record.nombre}}</a></td>
-                                <td>
-                                    <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="usuariosEdit({usuariosId: record.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
-                                    <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.id)"><span class="glyphicon glyphicon-minus"></span> Eliminar</button>
+                            <tr ng-repeat="usuario in usuariosRecords">
+                                <td id="{{$index}}-nombre"><a ui-sref="usuarioDetail({usuarioId: usuario.id})">{{usuario.nombre}}</a></td>
+                                <td id="{{$index}}-actions">
+                                    <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="usuarioUpdate({usuarioId: usuario.id})"><span class="glyphicon glyphicon-edit"></span> Modificar</button>
+                                    <button id="{{$index}}-delete-btn" class="btn btn-danger btn-sm" ui-sref="usuarioDelete({usuarioId: usuario.id})"><span class="glyphicon glyphicon-trash"></span> Eliminar</button>
                                 </td>
                             </tr>
-                        </tbody>                        
+                        </tbody>
                     </table>
                 </div>
             </div>
