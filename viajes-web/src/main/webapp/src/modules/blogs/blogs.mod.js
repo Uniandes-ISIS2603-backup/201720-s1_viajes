@@ -17,7 +17,7 @@
                     }
                 }
             }).state('blogsList', {
-                url: '/list',
+                url: '',
                 parent: 'blogs',
                 views: {
                     'listView': {
@@ -25,7 +25,7 @@
                     }
                 }
             }).state('blogDetail', {
-                url: '/{blogId:int}/detail',
+                url: '/{blogId:int}',
                 parent: 'blogs',
                 param: {
                     blogId: null
@@ -43,7 +43,7 @@
                     }
                 }
             }).state('blogDelete', {
-                url: '/delete/{blogId:int}',
+                url: '/{blogId:int}',
                 parent: 'blogs',
                 param: {
                     blogId: null
@@ -55,7 +55,7 @@
                     }
                 }
             }).state('blogsCreate', {
-                url: '/create',
+                url: '',
                 parent: 'blogs',
                 views: {
                     'detailView': {
@@ -64,7 +64,7 @@
                     }
                 }
             }).state('blogUpdate', {
-                url: '/update/{blogId:int}',
+                url: '/{blogId:int}',
                 parent: 'blogs',
                 param: {
                     blogId: null

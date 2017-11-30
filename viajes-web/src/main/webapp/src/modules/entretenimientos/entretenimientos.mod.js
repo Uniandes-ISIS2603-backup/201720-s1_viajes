@@ -17,7 +17,7 @@
                     }
                 }
             }).state('entretenimientosList', {
-                url: '/list',
+                url: '',
                 parent: 'entretenimientos',
                 views: {
                     'listView': {
@@ -43,7 +43,7 @@
                     }
                 }
             }).state('entretenimientoDelete', {
-                url: '/delete/{entretenimientoId:int}',
+                url: '/{entretenimientoId:int}',
                 parent: 'entretenimientos',
                 param: {
                     entretenimientoId: null
@@ -55,7 +55,7 @@
                     }
                 }
             }).state('entretenimientosCreate', {
-                url: '/create',
+                url: '',
                 parent: 'entretenimientos',
                 views: {
                     'detailView': {
@@ -64,7 +64,7 @@
                     }
                 }
             }).state('entretenimientoUpdate', {
-                url: '/update/{entretenimientoId:int}',
+                url: '/{entretenimientoId:int}',
                 parent: 'entretenimientos',
                 param: {
                     entretenimientoId: null
