@@ -25,9 +25,11 @@ public class TransporteEntity extends ServicioEntity
      */
     public enum TipoTransporte {
     
-    AVION,
-    TREN,
-    TAXI
+    Avión,
+    Tren,
+    Barco,
+    Bus,
+    Taxi
     
     }
     

@@ -13,13 +13,15 @@ delete from ITINERARIOENTITY_HOSPEDAJEENTITY;
 delete from ITINERARIOENTITY_TRANSPORTEENTITY;
 delete from GuiaEntity;
 delete from CompaniaEntity;
-delete from HospedajeEntity;
+delete from HospedajeEntity_ImagenEntity;
+delete from TransporteEntity_ImagenEntity;
 delete from BlogEntity_ImagenEntity;
 delete from EntretenimientoEntity_ImagenEntity;
 delete from ImagenEntity;
 delete from PagoEntity;
 delete from TarjetaCreditoEntity;
 delete from TransporteEntity;
+delete from HospedajeEntity;
 delete from UbicacionEntity;
 delete from UsuarioEntity;
 delete from BlogEntity;
@@ -54,6 +56,18 @@ insert into ImagenEntity (ID, COMENTARIO, RUTA) values (19,'G R E E N  D A Y','r
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (20,'El escenario','resources/images/greenday3.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (21,'Museo nacional','resources/images/museo.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (22,'Tigre de bengala - Zoologico','resources/images/zoo.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (23,'Hotel Rosas','resources/images/carr1.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (24,'Hotel Hard Rock - vista frontal','resources/images/carr2.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (25,'Habitación del hotel','resources/images/carr3.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (31,'Destino 1','resources/images/location-1.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (32,'Destino 2','resources/images/location-2.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (33,'Destino 3','resources/images/location-3.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (34,'Destino 4','resources/images/location-4.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (35,'Destino 5','resources/images/location-5.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (36,'Destino 6','resources/images/location-6.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (37,'Destino 7','resources/images/location-7.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (38,'Destino 8','resources/images/location-8.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (39,'Destino 9','resources/images/location-9.jpg');
 
 insert into blogentity_imagenentity (blogentity_id, imagenes_id) values (100, 17);
 insert into blogentity_imagenentity (blogentity_id, imagenes_id) values (100, 18);
@@ -102,11 +116,19 @@ insert into UbicacionEntity (ID, LONGITUD, LATITUD, NOMBRE, DIRECCION, CIUDAD, P
 insert into UbicacionEntity (ID, LONGITUD, LATITUD, NOMBRE, DIRECCION, CIUDAD, PAIS)
  values (1, 15.0, 16.0, 'Quiai', 'Avenida', 'Medellín', 'Colombia');
 
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (100, 'Santa fe es muy malo', 15000.158);
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (200, 'Eliminados de la sudamericana', 6550.56);
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (50, 'UBER', 666.666);
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (16, 'TAXIS LIBRES', 4500.25);
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (899, 'TRANSMILENIO', 2200.8966);
+insert into TransporteEntity (ID, NOMBRE, VALOR, calificacion, descripcion, comentarios, fechafinal, fechainicio, tipo) values 
+(100, 'Visita la capital del entretenimiento', 300000, 9.9, 'Una experiencia inolvidable. Ideal para familias', 'Sin comentarios','17/11/2017 16:30','17/11/2017 18:30',1);
+insert into TransporteEntity (ID, NOMBRE, VALOR, calificacion, descripcion, comentarios, fechafinal, fechainicio, tipo) values 
+(500, 'Tiquete a Venecia', 30000, 7.0, 'Una experiencia inolvidable. Ideal para familias', '17/11/2017 16:30','Sin comentarios','17/11/2017 18:30',1);
+insert into TransporteEntity (ID, NOMBRE, VALOR, calificacion, descripcion, comentarios, fechafinal, fechainicio, tipo) values 
+(200, 'Crucero por las Bahamas', 300000, 8.1, 'Una experiencia inolvidable. Ideal para familias', 'Sin comentarios','25/11/2017 10:30','30/11/2017 18:30',3);
+
+insert into transporteentity_imagenentity (transporteentity_id, imagenes_id) values (100, 35);
+insert into transporteentity_imagenentity (transporteentity_id, imagenes_id) values (100, 36);
+insert into transporteentity_imagenentity (transporteentity_id, imagenes_id) values (100, 38);
+insert into transporteentity_imagenentity (transporteentity_id, imagenes_id) values (100, 39);
+insert into transporteentity_imagenentity (transporteentity_id, imagenes_id) values (500, 33);
+insert into transporteentity_imagenentity (transporteentity_id, imagenes_id) values (500, 32);
 
 insert into TarjetaCreditoEntity (id, numero, fondos)
 values (405, 1073175780, 900000000);
@@ -133,7 +155,7 @@ insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFIN
 insert into GuiaEntity (ID, LENGUAJE, VALOR, CONTRATOHORA, FECHAINICIO, FECHAFINAL, NOMBRE, CALIFICACION) values (18,'LATÍN',44000,8000,'12/11/17','12/12/17', 'Eustaquio', 4.6);
 
 insert into HospedajeEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
-values (100, 'Hotel Rosas', '17/11/2017 16:30', '17/11/2017 22:30', 395000, 7.5, 'Muy bueno', 'Cerca de la playa');
+values (100, 'Hotel Hard Rock', '12/01/2018 06:30', '30/02/2018 20:30', 1500000, 9.9, 'Impresionante, espectacular, increíble', 'Random descripción xd');
 
 insert into HospedajeEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
 values (200, 'Hotel Petunias', '17/11/2017 16:30', '17/11/2017 22:30', 500000, 7, 'Muy malo', 'Wifi gratis');
@@ -142,7 +164,11 @@ insert into HospedajeEntity (id, nombre, fechaInicio, fechaFinal, valor, calific
 values (300, 'Hotel Margaritas', '12/12/2017 10:30', '20/12/2017 22:30', 1395000, 9.45, 'Espectacular', 'Buffet');
 
 insert into HospedajeEntity (id, nombre, fechaInicio, fechaFinal, valor, calificacion, comentarios, descripcion)
-values (400, 'Hotel Claveles', '12/01/2018 06:30', '30/02/2018 20:30', 1500000, 9.9, 'Impresionante, espectacular, increíble', 'Random descripción xd');
+values (400, 'Hotel Rosas', '17/11/2017 16:30', '17/11/2017 22:30', 395000, 7.5, 'Muy bueno', 'Cerca de la playa');
+
+insert into hospedajeentity_imagenentity (hospedajeentity_id, imagenes_id) values (400, 23);
+insert into hospedajeentity_imagenentity (hospedajeentity_id, imagenes_id) values (100, 24);
+insert into hospedajeentity_imagenentity (hospedajeentity_id, imagenes_id) values (100, 25);
 
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (100,'01/01/17','02/02/17',1000,1);
 insert into ItinerarioEntity (ID, FECHAINICIAL, FECHAFINAL, COSTOTOTAL, NUMEROVISITANTES) values (200,'02/02/17','03/03/17',2000,2);

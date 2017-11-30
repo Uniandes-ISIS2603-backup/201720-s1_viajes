@@ -22,6 +22,8 @@
                             // $http.get es una promesa
                             // cuando llegue el dato, actualice currentRecord
                             $scope.currentRecord = response.data;
+                            $http.get(context + '/' + id+ '/imagenes').then(function (response) {
+                            $scope.imagenesRecords = response.data;});
                         });
             } else {
                 // el registro actual debe estar vacio
