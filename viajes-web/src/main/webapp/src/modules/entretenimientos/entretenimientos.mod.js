@@ -43,7 +43,7 @@
                     }
                 }
             }).state('entretenimientoDelete', {
-                url: '/{entretenimientoId:int}',
+                url: '/{entretenimientoId:int}/delete',
                 parent: 'entretenimientos',
                 param: {
                     entretenimientoId: null
@@ -64,7 +64,7 @@
                     }
                 }
             }).state('entretenimientoUpdate', {
-                url: '/{entretenimientoId:int}',
+                url: '/{entretenimientoId:int}/update',
                 parent: 'entretenimientos',
                 param: {
                     entretenimientoId: null

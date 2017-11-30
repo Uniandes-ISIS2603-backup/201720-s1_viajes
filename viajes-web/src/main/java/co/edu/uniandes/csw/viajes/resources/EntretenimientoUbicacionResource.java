@@ -13,17 +13,9 @@ package co.edu.uniandes.csw.viajes.resources;
 import co.edu.uniandes.csw.viajes.dtos.UbicacionDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.EntretenimientoLogic;
 import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
-import java.util.ArrayList;
-import java.util.List;
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 /**
  * URI: entretenimientos/{entretenimientoId: \\d+}/ubicacion
  * @author ma.forero11
@@ -58,7 +50,7 @@ public class EntretenimientoUbicacionResource {
     /**
      * Obtiene una ubicación asociada a un hospedaje
      *
-     * @param hospedajeId Identificador de la instancia de Hospedaje
+     * @param entretenimientoId Identificador de la instancia de Hospedaje
      * @return Instancia de UbicacionDetailDTO asociada a la
      * instancia de Hospedaje
      */
