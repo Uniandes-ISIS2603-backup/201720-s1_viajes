@@ -10,7 +10,7 @@ var mod = ng.module("companiaModule", []);
                 url: '/companias',
                 views: {
                     'mainView': {
-                        controller: 'companiasCtrl',
+                        controller: 'companiaCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'companias.list.html'
                     }
@@ -19,7 +19,7 @@ var mod = ng.module("companiaModule", []);
                 url: '/companias/create',
                 views: {
                     'mainView': {
-                        controller: 'companiasCtrl',
+                        controller: 'companiaCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'companias.create.html'
                     }
@@ -32,7 +32,7 @@ var mod = ng.module("companiaModule", []);
                 },
                 views: {
                     'mainView': {
-                        controller: 'companiasCtrl',
+                        controller: 'companiaCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'companias.create.html'
                     }
