@@ -92,7 +92,14 @@
 
         <!--Log-->
         <script src="src/modules/log/log.mod.js" type="text/javascript"></script>
-        <script src="src/modules/log/log.ctrl.js" type="text/javascript"></script>        
+        <script src="src/modules/log/log.ctrl.js" type="text/javascript"></script> 
+        
+        <!--Ubicacion-->
+        <script src="src/modules/ubicacion/ubicacion.mod.js" type="text/javascript"></script>
+        <script src="src/modules/ubicacion/ubicacion.ctrl.js" type="text/javascript"></script>
+        <script src="src/modules/ubicacion/delete/ubicacion.delete.ctrl.js" type="text/javascript"></script>
+        <script src="src/modules/ubicacion/new/ubicacion.new.ctrl.js" type="text/javascript"></script>
+        <script src="src/modules/ubicacion/update/ubicacion.update.ctrl.js" type="text/javascript"></script>
 
         <!--Logo-->
         <link rel="shortcut icon" href="resources/images/logo.png">
@@ -125,6 +132,7 @@
                 </div>
             </div>
             <div id="navegacion" class="col-md-12">
+
                 <ul class="nav nav-tabs">  
                     <li><a ui-sref="hospedajesList"><span class="fa fa-bed" style="font-size:18px"></span> Hospedajes</a></li>
                     <li><a ui-sref="transportesList"><span class="fa fa-plane" style="font-size:18px"></span> Transporte</a></li>
