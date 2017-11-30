@@ -10,6 +10,10 @@
                     </div>
                 </div>
                 <br>
+                <div>
+                        <label>Filtra tu búsqueda: </label>
+                        <input type="text" ng-model="buscador" />
+                    </div>
                 <table class="table table-striped col-md-4">
                     <thead>
                         <tr>
@@ -23,7 +27,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="record in records">
+                        <tr ng-repeat="record in records|filter:buscador">
                             <td id="{{$index}}-nombre"><a ui-sref="transportesDetail({transporteId: record.idTransporte})"></a>{{record.nombreTransporte}}</td>
                             <td id="{{$index}}-valor">{{record.valorTransporte}}</td>
                             <td id="{{$index}}-fechaInicio">{{record.fechaInicioTransporte}}</td>

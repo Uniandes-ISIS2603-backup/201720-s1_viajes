@@ -10,6 +10,10 @@
                 </div>
                 <br>
                 <div>
+                        <label>Filtra tu búsqueda: </label>
+                        <input type="text" ng-model="buscador" />
+                    </div>
+                <div>
                     <!--<button id="create-btn" class="btn btn-default btn-sm" ui-sref="itinerariosCreate" style="float: right;"><span class="glyphicon glyphicon-plus"></span>Agregar</button>-->
                     <table class="table table-striped">
                         <thead>
@@ -23,7 +27,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="record in itinerariosRecords">
+                            <tr ng-repeat="record in itinerariosRecords|filter:buscador">
                                 <td id="{{$index}}-id">{{record.id}}</td>
                                 <td id="{{$index}}-costo">{{record.costoTotal}}</td>   
                                 <td id="{{$index}}-fechaIni">{{record.fechaInicial}}</td>   
