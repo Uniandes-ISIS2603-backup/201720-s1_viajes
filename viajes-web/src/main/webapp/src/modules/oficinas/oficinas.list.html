@@ -1,0 +1,34 @@
+<alert class="alert alert-danger" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert()">{{alert.msg}} </alert>
+<div class="container-fluid">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><label>Oficinas</label></div>
+            <div class="panel-body">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <a class="btn btn-info" ui-sref="oficinasCreate"><span class="glyphicon glyphicon-plus-sign"></span> Agregar una nueva oficina</a>
+                    </div>
+                </div>
+                <br>
+                <table class="table table-striped col-md-4">
+                    <thead>
+                        <tr>
+                            <th>Nombre del Lugar:</th>
+                            <th>Nombre del Encargado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="record in records">
+                            <td id="{{$index}}-nombreLugar">{{record.nombreLugar}}</td>
+                            <td id="{{$index}}-nombreEncargado">{{record.nombreEncargado}}</td>
+                            <td>
+                                <button id="{{$index}}-edit-btn" class="btn btn-primary btn-sm" ui-sref="oficinaEdit({oficinaId: record.idOficina})"><span class="glyphicon glyphicon-edit"></span> Modificar </button>
+                                <button id="{{$index}}-delete-btn" class="btn-danger btn-sm" ng-click="ctrl.deleteRecord(record.idOficina)"><span class="glyphicon glyphicon-minus"></span> Eliminar </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
