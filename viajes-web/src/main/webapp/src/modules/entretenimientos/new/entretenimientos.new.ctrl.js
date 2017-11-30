@@ -6,10 +6,10 @@
             $rootScope.edit = false;
             $scope.createEntretenimiento = function () {
                 $http.post(entretenimientosContext, {
-                    nombre: $scope.entretenimientoNombre,
-                    valor: $scope.entretenimientoValor,
-                    fechaInicio: $scope.entretenimientoFechaInicio,
-                    fechaFinal: $scope.entretenimientoFechaFinal,
+                    nombreEntretenimiento: $scope.entretenimientoNombre,
+                    valorEntretenimiento: $scope.entretenimientoValor,
+                    fechaInicioEntretenimiento: $scope.entretenimientoFechaInicio,
+                    fechaFinalEntretenimiento: $scope.entretenimientoFechaFinal,
                     imagenes: []
                 }).then(function (response) {
                     //Author created successfully

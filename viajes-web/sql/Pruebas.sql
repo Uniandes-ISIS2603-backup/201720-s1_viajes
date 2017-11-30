@@ -39,8 +39,8 @@ insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (100,'Oficin
 insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (400,'Edificio Sotomayor SATENA', 'Gonzalo Jimenez');
 
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (16,'El lago de los cisnes','resources/images/ballet.jpg');
-insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Revolution radio poster','resources/images/greenday1.jpeg');
-insert into ImagenEntity (ID, COMENTARIO, RUTA) values (18,'Una experiencia inolvidable!','resources/images/greenday1.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Una experiencia inolvidable!','resources/images/greenday4.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (18,'Revolution radio poster','resources/images/greenday1.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (19,'G R E E N  D A Y','resources/images/greenday2.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (20,'El escenario','resources/images/greenday3.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (21,'Museo nacional','resources/images/museo.jpg');
@@ -86,48 +86,6 @@ values (417, 'Sebastian Beltran');
 
 insert into UsuarioEntity (id, nombre)
 values (418, 'Juan Camilo Sanchez');
-
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (413, 100);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (413, 200);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (413, 300);
-
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (414, 400);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (414, 500);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (414, 100);
-
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (415, 200);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (415, 300);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (415, 400);
-
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (416, 500);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (416, 100);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (416, 200);
-
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (417, 300);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (417, 400);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (417, 500);
-
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (418, 100);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (418, 300);
-insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
-values (418, 500);
 
 insert into UbicacionEntity (ID, LONGITUD, LATITUD, NOMBRE, DIRECCION, CIUDAD, PAIS)
  values (2, 12.0, 13.0, 'Hola', 'Calle', 'Bogota', 'Colombia');
@@ -220,3 +178,46 @@ insert into ITINERARIOENTITY_HOSPEDAJEENTITY (ITINERARIOENTITY_ID, HOSPEDAJES_ID
 
 insert into ITINERARIOENTITY_TRANSPORTEENTITY (ITINERARIOENTITY_ID, TRANSPORTES_ID) values (100, 100);
 insert into ITINERARIOENTITY_TRANSPORTEENTITY (ITINERARIOENTITY_ID, TRANSPORTES_ID) values (100, 200);
+
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (413, 100);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (413, 200);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (413, 300);
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (414, 400);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (414, 500);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (414, 100);
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (415, 200);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (415, 300);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (415, 400);
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (416, 500);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (416, 100);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (416, 200);
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (417, 300);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (417, 400);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (417, 500);
+
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (418, 100);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (418, 300);
+insert into UsuarioEntity_ItinerarioEntity (usuarioentity_id, itinerario_id)
+values (418, 500);

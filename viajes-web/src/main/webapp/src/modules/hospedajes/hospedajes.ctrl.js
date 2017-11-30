@@ -24,7 +24,8 @@
                             // cuando llegue el dato, actualice currentRecord
                             $scope.currentRecord = response.data;
                             $http.get(hospedajesContext + '/' + id+ '/imagenes').then(function (response) {
-                            $scope.imagenesRecords = response.data;});
+                            $scope.imagenesRecords = response.data;
+                            $scope.imagen = response.data[0];});
                         });
 
                 // el controlador no recibió un entretenimientoId
