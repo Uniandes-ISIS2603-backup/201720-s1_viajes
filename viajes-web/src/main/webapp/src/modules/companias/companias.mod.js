@@ -13,7 +13,7 @@ var mod = ng.module("companiaModule", []);
                 views: {
                     'mainView': {
                         templateUrl: basePath + 'companias.html',
-                        controller: 'companiasCtrl',
+                        controller: 'companiaCtrl',
                         controllerAs: 'ctrl'
                     }
                 }
@@ -22,7 +22,7 @@ var mod = ng.module("companiaModule", []);
                 parent: 'companias',
                 views: {
                     'detailView': {
-                        controller: 'companiasCtrl',
+                        controller: 'companiaCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'companias.list.html'
                     }
@@ -32,7 +32,7 @@ var mod = ng.module("companiaModule", []);
                 parent: 'companias',
                 views: {
                     'detailView': {
-                        controller: 'companiasCtrl',
+                        controller: 'companiaCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'companias.create.html'
                     }
@@ -46,7 +46,7 @@ var mod = ng.module("companiaModule", []);
                 },
                 views: {
                     'detailView': {
-                        controller: 'companiasCtrl',
+                        controller: 'companiaCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'companias.create.html'
                     }
@@ -60,12 +60,12 @@ var mod = ng.module("companiaModule", []);
                 views: {
                     'listView': {
                         templateUrl: basePathImagenes + 'oficinas.list.html',
-                        controller: 'companiasCtrl',
+                        controller: 'companiaCtrl',
                         controllerAs: 'ctrl'
                     },
                     'detailView': {
                         templateUrl: basePath + 'companias.detail.html',
-                        controller: 'companiasCtrl',
+                        controller: 'companiaCtrl',
                         controllerAs: 'ctrl'
                     }
                 }
