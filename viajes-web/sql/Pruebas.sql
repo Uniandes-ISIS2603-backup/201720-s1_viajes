@@ -104,11 +104,11 @@ insert into entretenimientoentity_imagenentity (entretenimientoentity_id, imagen
 insert into entretenimientoentity_imagenentity (entretenimientoentity_id, imagenes_id) values (600, 21);
 insert into entretenimientoentity_imagenentity (entretenimientoentity_id, imagenes_id) values (800, 22);
 
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (100, 'Santa fe es muy malo', 15000.158);
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (200, 'Eliminados de la sudamericana', 6550.56);
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (50, 'UBER', 666.666);
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (16, 'TAXIS LIBRES', 4500.25);
-insert into TransporteEntity (ID, NOMBRE, VALOR) values (899, 'TRANSMILENIO', 2200.8966);
+insert into TransporteEntity (ID, NOMBRE, VALOR, ORIGEN_ID, DESTINO_ID) values (100, 'Santa fe es muy malo', 15000.158, 1, 2);
+insert into TransporteEntity (ID, NOMBRE, VALOR, ORIGEN_ID, DESTINO_ID) values (200, 'Eliminados de la sudamericana', 6550.56, 1, 2);
+insert into TransporteEntity (ID, NOMBRE, VALOR, ORIGEN_ID, DESTINO_ID) values (50, 'UBER', 666.666, 1, 2);
+insert into TransporteEntity (ID, NOMBRE, VALOR, ORIGEN_ID, DESTINO_ID) values (16, 'TAXIS LIBRES', 4500.25, 2, 1);
+insert into TransporteEntity (ID, NOMBRE, VALOR, ORIGEN_ID, DESTINO_ID) values (899, 'TRANSMILENIO', 2200.8966, 2, 1);
 
 insert into TarjetaCreditoEntity (id, numero, fondos)
 values (405, 1073175780, 900000000);
