@@ -10,6 +10,11 @@
                 </div>
                 <br>
                 <div>
+                    <label>Filtra tu búsqueda: </label>
+                    <input type="text" ng-model="buscador" />
+                </div>
+                <br>
+                <div>
                     <table class="table table-striped col-md-4">
                         <thead>
                             <tr>
@@ -24,7 +29,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="record in records">
+                            <tr ng-repeat="record in records|filter:buscador">
                                 <td id="{{$index}}-nombre"><a ui-sref="guiasDetail({guiaId: record.id})">{{record.nombre}}</a></td>
                                 <td id="{{$index}}-valor">{{record.valor}}</td>
                                 <td id="{{$index}}-lenguaje">{{record.lenguaje}}</td>

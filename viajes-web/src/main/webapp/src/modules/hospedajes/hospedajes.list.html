@@ -10,6 +10,10 @@
                 </div>
                 <br>
                 <div>
+                        <label>Filtra tu búsqueda: </label>
+                        <input type="text" ng-model="buscador" />
+                    </div>
+                <div>
                     
                     <!--<button id="create-btn" class="btn btn-default btn-sm" ui-sref="hospedajesCreate" style="float: right;"><span class="glyphicon glyphicon-plus"></span>Agregar</button>-->
                     <table class="table table-striped col-md-4">
@@ -26,7 +30,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="record in hospedajesRecords">
+                            <tr ng-repeat="record in hospedajesRecords|filter:buscador">
                                 <td id="{{$index}}-nombre"><a ui-sref="hospedajeDetail({hospedajesId: record.idHospedaje})">{{record.nombreHospedaje}}</a></td>
                                 <td id="{{$index}}-valor">{{record.valorHospedaje | currency}}</td>
                                 <!--<td id="{{$index}}-fechaInicio">{{record.fechaInicio}}</td>-->

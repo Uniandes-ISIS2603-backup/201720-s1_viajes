@@ -3,21 +3,50 @@ var mod = ng.module("hospedajesModule", []);
     mod.constant("hospedajesContext", "api/hospedajes");
     mod.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
             var basePath = 'src/modules/hospedajes/';
+            var basePathImagenes = 'src/modules/imagenes/';
             $urlRouterProvider.otherwise("/hospedajesList");
             
-            $stateProvider.state('hospedajesList',{
+            $stateProvider.state('hospedajes', {
                 url: '/hospedajes',
+                abstract: true,
                 views: {
                     'mainView': {
+                        templateUrl: basePath + 'hospedajes.html',
                         controller: 'hospedajesCtrl',
-                        controllerAs: 'ctrl',
+                        controllerAs: 'ctrl'
+                    }
+                }
+            }).state('hospedajesList', {
+                url: '',
+                parent: 'hospedajes',
+                views: {
+                    'listView': {
                         templateUrl: basePath + 'hospedajes.list.html'
                     }
                 }
-            }).state('hospedajesCreate', {
-                url: '/hospedajes/create',
+            }).state('hospedajeDetail', {
+                url: '/{hospedajesId:int}',
+                parent: 'hospedajes',
+                param: {
+                    hospedajeId: null
+                },
                 views: {
-                    'mainView': {
+                    'listView': {
+                        templateUrl: basePathImagenes + 'imagenes.list.html',
+                        controller: 'hospedajesCtrl',
+                        controllerAs: 'ctrl'
+                    },
+                    'detailView': {
+                        templateUrl: basePath + 'hospedaje.detail.html',
+                        controller: 'hospedajesCtrl',
+                        controllerAs: 'ctrl'
+                    }
+                }
+            }).state('hospedajesCreate', {
+                url: '',
+                parent: 'hospedajes',
+                views: {
+                    'detailView': {
                         controller: 'hospedajesCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'hospedajes.create.html'
@@ -25,35 +54,17 @@ var mod = ng.module("hospedajesModule", []);
                 }
 
             }).state('hospedajesEdit', {
-                url: '/hospedajes/:hospedajesId',
+                url: '/{hospedajesId:int}/update',
+                parent: 'hospedajes',
                 param: {
                     hospedajesId: null
                 },
                 views: {
-                    'mainView': {
+                    'detailView': {
                         controller: 'hospedajesCtrl',
                         controllerAs: 'ctrl',
                         templateUrl: basePath + 'hospedajes.create.html'
                     }
-                }
-            }).state('hospedajeDetail', {
-                url: '/{hospedajesId:int}/detail',
-//                parent: 'hospedajes',
-                param: {
-                    hospedajesId: null
-                },
-                views: {
-                    'mainView': {
-                        templateUrl: basePath + 'hospedaje.detail.html',
-                        controller: 'hospedajesCtrl',
-                        controllerAs: 'ctrl'
-                    }
-//                    ,
-//                    'detailView': {
-//                        templateUrl: basePath + 'hospedaje.detail.html',
-//                        controller: 'hospedajesCtrl',
-//                        controllerAs: 'ctrl'
-//                    }
                 }
             });
         }]);
