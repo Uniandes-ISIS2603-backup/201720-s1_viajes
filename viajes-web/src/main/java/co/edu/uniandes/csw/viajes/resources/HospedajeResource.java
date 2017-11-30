@@ -9,6 +9,7 @@ import co.edu.uniandes.csw.viajes.dtos.HospedajeDTO;
 import co.edu.uniandes.csw.viajes.dtos.HospedajeDetailDTO;
 import co.edu.uniandes.csw.viajes.ejb.HospedajeLogic;
 import co.edu.uniandes.csw.viajes.entities.HospedajeEntity;
+import co.edu.uniandes.csw.viajes.entities.UbicacionEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
@@ -119,6 +120,21 @@ public class HospedajeResource {
             throw new WebApplicationException("El recurso /hospedaje/" + id + " no existe.", 404);
         }
         hospedajeLogic.deleteHospedaje(id);
+    }
+    
+      /**
+     * Retorna el subrecurso ubicacion
+     * 
+     * @param hospedajeId el usuario del que se quieren obtener los itinerarios
+     * @return BlogImagenesResource
+     */
+    @Path("{hospedajeId: \\d+}/ubicacion")
+    public Class<HospedajeUbicacionResource> getUbicacionHospedajeResource(@PathParam("hospedajeId") Long hospedajeId) {
+        UbicacionEntity entity = hospedajeLogic.getUbicacion(hospedajeId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /hospedaje/" + hospedajeId + "/ubicacion no existe.", 404);
+        }
+        return HospedajeUbicacionResource.class;
     }
     
     /**
