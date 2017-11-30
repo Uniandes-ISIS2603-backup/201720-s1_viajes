@@ -100,7 +100,7 @@ public class UsuarioResource {
      */
     @PUT
     @Path("{id: \\d+}")
-    public UsuarioDetailDTO updateBlog(@PathParam("id") Long id, UsuarioDetailDTO usuario)  {
+    public UsuarioDetailDTO updateUsuario(@PathParam("id") Long id, UsuarioDetailDTO usuario)  {
         usuario.setId(id);
         UsuarioEntity entity = usuarioLogic.getUsuario(id);
         if (entity == null) {

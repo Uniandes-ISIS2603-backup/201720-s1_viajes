@@ -4,9 +4,14 @@
 <div class="panel panel-default"> 
     <div class="panel-body">
         <div class="row">
+            <div class="col-md-3">
+                <div class="thumb">
+                    <img class="img-responsive" ng-src="{{imagen.ruta}}"/>
+                </div>
+            </div>
             <div class="col-md-8">
                 <dl>     
-                    <dt>{{currentRecord.nombreEntretenimiento}}</dt>
+                    <dt><h2>{{currentRecord.nombreEntretenimiento}}</h2></dt>
                     <hr>
                     <dt> Valor</dt>
                     <dd><span id="currency-no-fractions">{{currentRecord.valorEntretenimiento | currency}}</span></dd>
@@ -16,6 +21,9 @@
                     <hr>
                     <dt>Fin</dt>
                     <dd>{{currentRecord.fechaFinalEntretenimiento}}</dd>
+                    <hr>
+                    <dt>Descripcion</dt>
+                    <dd>{{currentRecord.descripcionEntretenimiento}}</dd>
                     <hr>
                     <dt>Calificacion</dt>
                     <dd>{{currentRecord.calificacionEntretenimiento}}</dd>                    

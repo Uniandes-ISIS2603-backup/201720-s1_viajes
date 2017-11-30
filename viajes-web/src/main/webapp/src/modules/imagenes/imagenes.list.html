@@ -1,21 +1,25 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6">
-            <h2 class="mainTitle">Galería de imágenes: </h2>
-        </div>
+<div class="galeria container gallery-container col-md-12">
+
+    <div class="col-md-12">
+        <h2 class="mainTitle">Galería de imágenes: </h2>
     </div>
-    <div class="row" class="col-md-12">
-        <div class="col-md-2" ng-repeat="imagen in imagenesRecords">
-            <div class="thumbnail">
-                <a ui-sref="imagenDetail({imagenId: imagen.id})">                    
-                    <img class="img-responsive" ng-src='{{imagen.ruta}}' alt="{{imagen.id}}" />                  
+    
+    <div class="tz-gallery">
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4" ng-repeat="imagen in imagenesRecords">
+                <a class="lightbox" ui-sref="imagenDetail({imagenId: imagen.id})">
+                    <img src="{{imagen.ruta}}" alt="Park">
                 </a>
-                <div class="caption text-center">
-                    <p></p>
-                </div>
+                <p>{{imagen.comentario}}</p>
+                <br>
             </div>
-        </div>
+         </div>
     </div>
+
 </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>

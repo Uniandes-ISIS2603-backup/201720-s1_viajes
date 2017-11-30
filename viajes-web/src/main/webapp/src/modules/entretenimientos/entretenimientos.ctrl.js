@@ -11,7 +11,9 @@
                 $http.get(entretenimientosContext + '/' + $state.params.entretenimientoId).then(function (response) {                    
                     $scope.currentRecord = response.data;
                     $http.get(entretenimientosContext + '/' + $state.params.entretenimientoId+ '/imagenes').then(function (response) {
-                    $scope.imagenesRecords = response.data;});
+                    $scope.imagenesRecords = response.data;
+                    $scope.imagen = response.data[0];});
+                    
                 
                 });
             }

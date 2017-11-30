@@ -40,8 +40,8 @@ insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (100,'Oficin
 insert into OficinaEntity (id, nombreLugar, nombreEncargado) values (400,'Edificio Sotomayor SATENA', 'Gonzalo Jimenez');
 
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (16,'El lago de los cisnes','resources/images/ballet.jpg');
-insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Revolution radio poster','resources/images/greenday1.jpeg');
-insert into ImagenEntity (ID, COMENTARIO, RUTA) values (18,'Una experiencia inolvidable!','resources/images/greenday1.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (17,'Una experiencia inolvidable!','resources/images/greenday4.jpg');
+insert into ImagenEntity (ID, COMENTARIO, RUTA) values (18,'Revolution radio poster','resources/images/greenday1.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (19,'G R E E N  D A Y','resources/images/greenday2.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (20,'El escenario','resources/images/greenday3.jpg');
 insert into ImagenEntity (ID, COMENTARIO, RUTA) values (21,'Museo nacional','resources/images/museo.jpg');
